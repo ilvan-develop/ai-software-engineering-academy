@@ -1,0 +1,5 @@
+*.docx
+*.epub
+*.pdf
+__pycache__/
+*.pyc

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Hexagon background -->
+  <defs>
+    <linearGradient id="hexGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1A237E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0D47A1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Hexagon -->
+  <polygon points="100,5 180,52.5 180,147.5 100,195 20,147.5 20,52.5"
+           fill="url(#hexGrad)" stroke="#00BFA5" stroke-width="4"/>
+  <!-- Inner border -->
+  <polygon points="100,18 168,58 168,142 100,182 32,142 32,58"
+           fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.3"/>
+  <!-- &#60;A&#62; symbol -->
+  <text x="100" y="118" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+        font-size="72" font-weight="bold" fill="#FFFFFF" text-anchor="middle"
+        dominant-baseline="central">&#60;A&#62;</text>
+  <!-- Small code brackets -->
+  <text x="100" y="165" font-family="'Cascadia Code', monospace"
+        font-size="10" fill="#00BFA5" text-anchor="middle"
+        font-weight="bold">ENGINEERING</text>
+</svg>

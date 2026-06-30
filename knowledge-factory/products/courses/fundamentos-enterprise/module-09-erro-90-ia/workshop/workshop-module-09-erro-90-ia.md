@@ -1,0 +1,161 @@
+# Workshop: O erro que 90% das pessoas cometem usando IA para programar
+
+**Duracao:** 4h
+**Formato:** Presencial / Online
+**Publico:** Desenvolvedores e arquitetos
+**Nivel:** Intermediario
+**Max participantes:** 20
+
+---
+
+## Objetivos de Aprendizagem
+
+- Nível:** Conceitos / Engenharia
+- Tempo estimado:** 20 minutos
+- Público-alvo:** Desenvolvedores iniciantes e intermediários que utilizam assistentes de IA no dia a dia
+- 
+
+---
+
+## Agenda
+
+| Horario | Atividade | Duracao |
+|---------|-----------|---------|
+|   09:00 - 10:50 | Teoria | 10 min |
+|   10:00 - 11:50 | Pratica | 10 min |
+|   11:00 - 12:50 | Teoria | 10 min |
+|   12:00 - 13:50 | Pratica | 10 min |
+
+---
+
+## Material do Facilitador
+
+### Preparacao Antecipada
+
+- [ ] Slides preparados
+- [ ] Ambiente de codigo configurado
+- [ ] Exercicios testados
+- [ ] Repositorio GitHub com codigo base
+- [ ] Link para menti.com ou similar
+- [ ] Post-its, canetas (presencial)
+- [ ] Breakout rooms configuradas (online)
+
+### Roteiro do Facilitador
+
+**Bloco 1: Pré-requisitos**
+
+**Duracao:** 50 min
+
+**Exposicao teorica (50%):**
+- Apresentar conceitos de Pré-requisitos
+- Mostrar exemplos reais
+- Demonstrar codigo ao vivo
+
+**Atividade pratica (50%):**
+- Exercicio em duplas/grupos sobre Pré-requisitos
+- Discussao guiada
+- Compartilhar resultados
+
+**Perguntas para engajamento:**
+- Como isso se aplica no dia a dia de voces?
+- Que desafios enfrentaram com isso?
+- Alguem tem uma experiencia para compartilhar?
+
+---
+
+**Bloco 2: Objetivos de aprendizagem**
+
+**Duracao:** 50 min
+
+**Exposicao teorica (50%):**
+- Apresentar conceitos de Objetivos de aprendizagem
+- Mostrar exemplos reais
+- Demonstrar codigo ao vivo
+
+**Atividade pratica (50%):**
+- Exercicio em duplas/grupos sobre Objetivos de aprendizagem
+- Discussao guiada
+- Compartilhar resultados
+
+**Perguntas para engajamento:**
+- Como isso se aplica no dia a dia de voces?
+- Que desafios enfrentaram com isso?
+- Alguem tem uma experiencia para compartilhar?
+
+---
+
+**Bloco 3: Competências desenvolvidas**
+
+**Duracao:** 50 min
+
+**Exposicao teorica (50%):**
+- Apresentar conceitos de Competências desenvolvidas
+- Mostrar exemplos reais
+- Demonstrar codigo ao vivo
+
+**Atividade pratica (50%):**
+- Exercicio em duplas/grupos sobre Competências desenvolvidas
+- Discussao guiada
+- Compartilhar resultados
+
+**Perguntas para engajamento:**
+- Como isso se aplica no dia a dia de voces?
+- Que desafios enfrentaram com isso?
+- Alguem tem uma experiencia para compartilhar?
+
+---
+
+**Bloco 4: 1. Introdução: por que 90% cometem esse erro**
+
+**Duracao:** 50 min
+
+**Exposicao teorica (50%):**
+- Apresentar conceitos de 1. Introdução: por que 90% cometem esse erro
+- Mostrar exemplos reais
+- Demonstrar codigo ao vivo
+
+**Atividade pratica (50%):**
+- Exercicio em duplas/grupos sobre 1. Introdução: por que 90% cometem esse erro
+- Discussao guiada
+- Compartilhar resultados
+
+**Perguntas para engajamento:**
+- Como isso se aplica no dia a dia de voces?
+- Que desafios enfrentaram com isso?
+- Alguem tem uma experiencia para compartilhar?
+
+---
+
+---
+
+## Material do Participante
+
+### Pre-requisitos
+
+- Node.js 20+ instalado
+- Git configurado
+- IDE (VS Code recomendado)
+- Conhecimento basico de TypeScript
+
+### Entregaveis
+
+- [ ] Projeto pratico completo
+- [ ] Pull Request com sua solucao
+- [ ] Feedback do workshop
+
+---
+
+## Dinamicas Propostas
+
+1. **Icebreaker (5 min):** Cada participante compartilha o maior desafio tech da semana
+2. **Pair Programming (25 min):** Duplas resolvem exercicio juntos, alternando driver/navigator
+3. **Roundtable (15 min):** Cada grupo apresenta solucao, facilitador media feedback
+4. **Retrospectiva (10 min):** O que aprendemos? O que pode melhorar?
+
+---
+
+## Criterios de Sucesso
+
+- [ ] 80% dos participantes completaram o projeto pratico
+- [ ] Todos entregaram feedback
+- [ ] NPS medio >= 8

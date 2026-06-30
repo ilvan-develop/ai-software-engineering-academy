@@ -1,0 +1,75 @@
+# Critérios do Departamento de Design
+# BQS category: 8-design_hierarquia_visual
+# Gate: design_to_publicacao (score ≥95)
+
+department: "design"
+agents:
+  - book-designer
+  - layout-designer
+  - typography-specialist
+  - color-specialist
+  - diagram-designer
+  - illustration-planner
+  - table-designer
+  - callout-designer
+  - cover-designer
+
+quality_criteria:
+  - id: "design-qc1"
+    name: "Layout funcional"
+    description: "Layout de livro completo (margens, fontes, espaçamentos, hierarquia)"
+    weight: 15
+
+  - id: "design-qc2"
+    name: "Tipografia correta"
+    description: "Fonte de corpo (Calibri), cabeçalho (Calibri Bold), código (Consolas)"
+    weight: 15
+
+  - id: "design-qc3"
+    name: "Paleta de cores"
+    description: "Cores seguem design system: primary #1a1a2e, accent #e94560"
+    weight: 10
+
+  - id: "design-qc4"
+    name: "Diagramas informativos"
+    description: "Conceitos complexos têm diagrama ASCII ou referência a imagem"
+    weight: 15
+
+  - id: "design-qc5"
+    name: "Callouts padronizados"
+    description: "Dicas, warnings, notas e exemplos têm formato visual distinto"
+    weight: 10
+
+  - id: "design-qc6"
+    name: "Capa profissional"
+    description: "Especificação de capa completa (frente, lombada, quarta capa)"
+    weight: 15
+
+  - id: "design-qc7"
+    name: "Slide template"
+    description: "Template de slides 16:9 com paleta e estrutura definidas"
+    weight: 10
+
+  - id: "design-qc8"
+    name: "Assets documentados"
+    description: "Assets visuais necessários listados com especificações técnicas"
+    weight: 10
+
+outputs:
+  - "assets/layout-book.yaml"
+  - "assets/cover-spec.md"
+  - "assets/slide-template.md"
+  - "assets/cover-prompt.txt"
+  - "assets/diagrams-prompt.txt"
+
+handoff:
+  to_department: "publicacao"
+  artifacts:
+    - layout-book.yaml
+    - cover-spec.md
+    - slide-template.md
+    - cover-prompt.txt
+    - diagrams-prompt.txt
+  min_score: 95
+  categories_required:
+    - design_hierarquia_visual

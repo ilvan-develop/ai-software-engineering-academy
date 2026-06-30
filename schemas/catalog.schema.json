@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://ai-software-engineering.academy/schemas/catalog",
+  "title": "Content Catalog",
+  "description": "Schema for knowledge-factory/registry/catalog.yaml",
+  "type": "object",
+  "required": ["version", "items"],
+  "properties": {
+    "version": { "type": "integer", "minimum": 1 },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "title"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": ["module", "book", "asset", "social", "newsletter", "certificate"]
+          },
+          "title": { "type": "string" },
+          "source": { "type": "string" },
+          "version": { "type": "integer", "minimum": 1 },
+          "taxonomy": {
+            "type": "object",
+            "properties": {
+              "topics": { "type": "array", "items": { "type": "string" } },
+              "level": { "type": "string", "enum": ["beginner", "intermediate", "advanced"] },
+              "audience": { "type": "array", "items": { "type": "string" } }
+            }
+          },
+          "relationships": {
+            "type": "object",
+            "properties": {
+              "used_in": { "type": "array", "items": { "type": "string" } },
+              "prerequisites": { "type": "array", "items": { "type": "string" } }
+            }
+          },
+          "outputs": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}

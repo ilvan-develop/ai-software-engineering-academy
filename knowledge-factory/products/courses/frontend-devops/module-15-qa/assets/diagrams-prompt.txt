@@ -1,0 +1,2 @@
+# Diagramas para Qualidade e Testes
+# Revisar e gerar manualmente

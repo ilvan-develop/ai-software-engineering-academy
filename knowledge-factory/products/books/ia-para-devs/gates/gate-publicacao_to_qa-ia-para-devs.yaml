@@ -1,0 +1,20 @@
+gate_id: publicacao_to_qa
+gate_name: Gate Publicação → QA
+approved: false
+results:
+- rule: no-self-approval
+  passed: true
+  message: accessibility-auditor ≠ template-manager
+- rule: handoff-artifacts
+  artifact: livro.docx
+  exists: false
+  passed: false
+- rule: handoff-artifacts
+  artifact: livro-digital.pdf
+  exists: false
+  passed: false
+- rule: handoff-artifacts
+  artifact: livro.epub
+  exists: false
+  passed: false
+timestamp: '2026-06-28T19:19:56.497552'

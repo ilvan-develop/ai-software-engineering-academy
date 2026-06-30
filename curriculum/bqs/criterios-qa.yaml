@@ -1,0 +1,71 @@
+# Critérios do Departamento de QA Editorial
+# BQS categories: 2-progressao_pedagogica + auditoria cruzada de todas as categorias
+# Gate: qa_to_publicacao (score ≥95 em TODAS as 11 categorias)
+
+department: "qa"
+agents:
+  - book-quality-auditor
+  - pedagogical-auditor
+  - technical-auditor
+  - visual-auditor
+  - publishing-auditor
+  - gatekeeper
+  - audit-trail-recorder
+  - score-aggregator
+  - compliance-reporter
+
+quality_criteria:
+  - id: "qa-qc1"
+    name: "Score geral"
+    description: "Média ponderada de todas as 11 categorias BQS ≥ 95"
+    weight: 15
+
+  - id: "qa-qc2"
+    name: "Score mínimo por categoria"
+    description: "Nenhuma categoria individual abaixo de 95"
+    weight: 20
+
+  - id: "qa-qc3"
+    name: "Rastreabilidade"
+    description: "Toda decisão de auditoria tem evidência e registro no audit trail"
+    weight: 15
+
+  - id: "qa-qc4"
+    name: "No self-approval"
+    description: "Nenhum auditor aprovou conteúdo que ele mesmo produziu"
+    weight: 20
+
+  - id: "qa-qc5"
+    name: "Relatório completo"
+    description: "Relatório de QA inclui scores por categoria, evidências e recomendações"
+    weight: 15
+
+  - id: "qa-qc6"
+    name: "Compliance com gate policy"
+    description: "Pipeline seguiu todas as regras de gate e handoff definidas"
+    weight: 15
+
+outputs:
+  - "reports/qa-report-{book-id}.md"
+  - "reports/score-card-{book-id}.yaml"
+  - "reports/audit-trail-{book-id}.log"
+
+handoff:
+  to_department: "publicado"
+  artifacts:
+    - qa-report.md
+    - score-card.yaml
+    - audit-trail.log
+  min_score: 95
+  categories_required:
+    - estrutura_conteudo
+    - progressao_pedagogica
+    - qualidade_tecnica
+    - consistencia_terminologica
+    - qualidade_exemplos
+    - exercicios_avaliacoes
+    - tom_legibilidade
+    - design_hierarquia_visual
+    - qualidade_markdown
+    - qualidade_formatos
+    - acessibilidade

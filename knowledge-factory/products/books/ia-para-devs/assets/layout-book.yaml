@@ -1,0 +1,211 @@
+# Especificacao de Layout — IA para Desenvolvedores
+# Versao: 2.1.0
+# Atualizado: 2026-06-28
+# Consome:
+#   - curriculum/editora/design-tokens.yaml (cores, tipografia, espacamento)
+#   - curriculum/editora/brand-book.md (identidade visual)
+#   - curriculum/editora/layout-grid.yaml (grid e margens)
+#   - assets/seal-editora.svg (selo da editora)
+
+references:
+  design_tokens: "curriculum/editora/design-tokens.yaml"
+  brand_book: "curriculum/editora/brand-book.md"
+  layout_grid: "curriculum/editora/layout-grid.yaml"
+  brand_identity: "assets/seal-editora.svg"
+  icons: "curriculum/editora/icons.yaml"
+
+identity:
+  publisher_name: "AI Software Engineering Academy"
+  publisher_seal: "assets/seal-editora.svg"
+  brand_family: "hexagon+A+code brackets  —  identidade visual unica no mercado editorial tecnico brasileiro"
+  brand_values: ["excelencia tecnica", "clareza editorial", "minimalismo informado", "codigo como cidadao de primeira classe"]
+  voice_tone: "profissional, didatico, com autoridade tecnica sem ser academico"
+
+layout:
+  book:
+    format: "6x9in"
+    grid: "print_6x9"  # ref: layout-grid.yaml
+
+    font_title: "Segoe UI Bold 36pt"
+    font_subtitle: "Segoe UI Light 18pt"
+    font_body: "Georgia Regular 11pt"
+    font_code: "'Cascadia Code', 'Fira Code', 'JetBrains Mono', Consolas, monospace"
+    font_heading: "'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+    font_display: "'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+
+  typography:
+    body:
+      family: "Georgia"
+      fallback: "'Times New Roman', serif"
+      size_pt: 11
+      line_height: 1.6
+      letter_spacing: 0
+      color: "#212121"
+    heading_h1:
+      family: "Segoe UI"
+      size_pt: 21
+      weight: "Bold"
+      color: "#1A237E"
+      line_height: 1.3
+      letter_spacing: "0.5px"
+      page_break_before: true
+    heading_h2:
+      family: "Segoe UI"
+      size_pt: 17
+      weight: "Bold"
+      color: "#1A237E"
+      line_height: 1.3
+      letter_spacing: "0.5px"
+    heading_h3:
+      family: "Segoe UI"
+      size_pt: 14
+      weight: "Semibold"
+      color: "#0D47A1"
+      line_height: 1.3
+    heading_h4:
+      family: "Segoe UI"
+      size_pt: 12
+      weight: "Semibold"
+      color: "#212121"
+      line_height: 1.3
+    code:
+      family: "Cascadia Code"
+      fallback: "'Fira Code', 'JetBrains Mono', Consolas, monospace"
+      size_pt: 9
+      line_height: 1.5
+      color_text: "#E0E0E0"
+      color_bg: "#263238"
+      border_radius: 3
+      padding: 8
+
+  colors:
+    primary: "#1A237E"        # brand.primary — titulos, capa
+    accent: "#00BFA5"         # brand.accent — destaques, icones
+    secondary: "#0D47A1"      # brand.secondary — subtitulos, links
+    neutral_dark: "#212121"   # text.body — texto corrido
+    neutral_light: "#757575"  # text.muted — metadados, notas
+    code_bg: "#263238"        # surface.code_block — blocos de codigo
+    code_text: "#E0E0E0"      # text.code — fonte do codigo
+    callout_info: "#E3F2FD"   # surface.callout_info — fundo info
+    callout_warning: "#FFF8E1" # surface.callout_warning — fundo warning
+    callout_tip: "#E8F5E9"    # surface.callout_tip — fundo tip
+    callout_caution: "#FFEBEE" # surface.callout_caution — fundo caution
+    table_header: "#1A237E"   # brand.primary — cabecalho de tabelas
+    table_alt: "#F5F5F5"      # neutral.200 — linhas alternadas
+    # Daltonico-safe: use text symbols/icons alongside color
+    pattern_safe: true        # diagramas funcionam em P&B
+
+  spacing:
+    # Baseado em layout-grid.yaml print_6x9
+    # Baseline grid: 4mm (6x9) — validado via grid over PDF
+    margin_top: 18mm
+    margin_bottom: 18mm
+    margin_inner: 15mm
+    margin_outer: 12mm
+    paragraph_after: 6pt
+    heading_before:
+      h1: 18pt
+      h2: 12pt
+      h3: 8pt
+      h4: 6pt
+    heading_after: 6pt
+    code_block: 8pt
+    list_indent: 12pt
+    blockquote_indent: 0.5cm
+
+  header:
+    font: "Georgia Italic 8pt"
+    color: "#9E9E9E"
+    content: "Titulo do capitulo | IA para Desenvolvedores"
+    alignment: "alternate"  # verso/frente
+
+  footer:
+    font: "Georgia 9pt"
+    color: "#1A237E"  # brand.primary
+    content: "Numero da pagina"
+    alignment: "outside"  # verso esquerda, frente direita
+
+  elements:
+    code_block:
+      bg: "#263238"
+      text_color: "#E0E0E0"
+      font_family: "'Cascadia Code', 'Fira Code', monospace"
+      font_size_pt: 9
+      padding: 8
+      border_radius: 3
+      line_numbers: false
+      # Validado: comprimento de linha 50-75 chars (impresso)
+    callout:
+      border_left_width: 4
+      padding: 8
+      border_radius: 3
+      icon_placement: "left"
+      # Cores por tipo no design-tokens.yaml
+    table:
+      header_bg: "#1A237E"
+      header_text_color: "#FFFFFF"
+      alt_row: "#F5F5F5"
+      border_color: "#E0E0E0"
+      cell_padding: 4
+    mermaid_diagram:
+      enabled: true
+      default_theme: "base"
+      theme_variables:
+        primaryColor: "#1A237E"
+        primaryTextColor: "#FFFFFF"
+        primaryBorderColor: "#0D47A1"
+        lineColor: "#0D47A1"
+        secondaryColor: "#E3F2FD"
+        tertiaryColor: "#F5F5F5"
+        fontSize: "12px"
+
+cover:
+  layout: "full-bleed"
+  title:
+    font: "Segoe UI Bold 36pt"
+    color: "#FFFFFF"
+    position: "center, vertical middle"
+  subtitle:
+    font: "Segoe UI Light 18pt"
+    color: "#00BFA5"  # brand.accent
+    position: "below title, center"
+  author:
+    font: "Segoe UI Regular 12pt"
+    color: "#9E9E9E"
+    position: "bottom, center"
+  background:
+    type: "gradient"
+    colors: ["#1A237E", "#0D47A1"]
+    direction: "top-right to bottom-left"
+  accent:
+    type: "geometric"
+    description: "Abstract circuit board lines in teal (#00BFA5), opacity 30%, radiating from center-right"
+  seal:
+    position: "top-right"
+    size_mm: 25
+    file: "assets/seal-editora.svg"
+    opacity: 0.9
+
+metadata:
+  isbn: "978-65-992345-00-0"
+  isbn_prefix: "978-65-992345"  # ref: design-tokens.yaml media_kit.isbn_prefix
+  language: pt-BR
+  publication_date: "2026-07-01"
+  publisher: "AI Software Engineering Academy"
+  publisher_url: "https://opencode.ai"
+  rights: "CC BY-NC-SA 4.0"
+  edition: 1
+  year: 2026
+
+accessibility:
+  cover_alt_text: "Capa do livro IA para Desenvolvedores: fundo gradiente azul royal (#1A237E a #0D47A1) com linhas abstratas de circuito em teal, titulo em branco e subtitulo em teal"
+  wcag_level: "AA"
+  epub_a11y: true
+  semantic_headings: true
+  code_blocks_labeled: true
+  table_captions: true
+  contrast_ratio: "12:1 (titulos), 13:1 (corpo), 5:1 (links)"
+  font_sizes: "11pt corpo, 9pt codigo — ajustaveis no EPUB"
+  dark_mode_support: true  # prefers-color-scheme no EPUB CSS
+  colorblind_safe: true    # icones e padroes complementam cor
+  print_grayscale_safe: true  # diagramas funcionam em P&B

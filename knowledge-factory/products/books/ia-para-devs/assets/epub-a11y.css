@@ -1,0 +1,269 @@
+/* EPUB Accessibility Stylesheet — IA para Desenvolvedores
+   Version: 1.0.0
+   Author: accessible-design-specialist
+   Purpose: WCAG AA compliance, dark mode, semantic navigation */
+
+/* ===== BASE TYPOGRAPHY ===== */
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1em; /* 11pt default */
+  line-height: 1.6;
+  color: #212121;
+  background-color: #FFFFFF;
+  margin: 0;
+  padding: 0 16px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* ===== HEADINGS ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: bold;
+  color: #1A237E;
+  page-break-after: avoid;
+  page-break-inside: avoid;
+  line-height: 1.3;
+  margin-top: 1.2em;
+  margin-bottom: 0.4em;
+}
+
+h1 { font-size: 1.8em; border-bottom: 2px solid #1A237E; padding-bottom: 0.2em; }
+h2 { font-size: 1.4em; color: #1A237E; }
+h3 { font-size: 1.15em; color: #0D47A1; font-weight: 600; }
+h4 { font-size: 1em; color: #212121; font-weight: 600; }
+
+/* ===== CODE ===== */
+code, pre {
+  font-family: 'Cascadia Code', 'Fira Code', 'JetBrains Mono', Consolas, monospace;
+  font-size: 0.85em;
+  line-height: 1.5;
+}
+
+pre {
+  background-color: #263238;
+  color: #E0E0E0;
+  padding: 8px;
+  border-radius: 3px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0.6em 0;
+}
+
+code {
+  background-color: #F5F5F5;
+  color: #C62828;
+  padding: 1px 3px;
+  border-radius: 2px;
+  font-size: 0.85em;
+}
+
+pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* ===== TABLES ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.8em 0;
+  font-size: 0.95em;
+}
+
+th {
+  background-color: #1A237E;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding: 4px 6px;
+  text-align: left;
+  border: 1px solid #E0E0E0;
+}
+
+td {
+  padding: 4px 6px;
+  border: 1px solid #E0E0E0;
+}
+
+tr:nth-child(even) td {
+  background-color: #F5F5F5;
+}
+
+/* ===== CALLOUTS ===== */
+.callout {
+  padding: 8px;
+  margin: 0.6em 0;
+  border-radius: 3px;
+  border-left: 4px solid;
+  page-break-inside: avoid;
+}
+
+.callout-info {
+  background-color: #E3F2FD;
+  border-left-color: #1565C0;
+}
+
+.callout-warning {
+  background-color: #FFF8E1;
+  border-left-color: #F57F17;
+}
+
+.callout-tip {
+  background-color: #E8F5E9;
+  border-left-color: #2E7D32;
+}
+
+.callout-caution {
+  background-color: #FFEBEE;
+  border-left-color: #C62828;
+}
+
+/* ===== BLOCKQUOTES ===== */
+blockquote {
+  margin: 0.8em 0;
+  padding: 4px 12px;
+  border-left: 4px solid #1A237E;
+  background-color: #F5F5F5;
+  font-style: italic;
+}
+
+/* ===== IMAGES ===== */
+img {
+  max-width: 95%;
+  height: auto;
+  display: block;
+  margin: 0.6em auto;
+}
+
+/* ===== LISTS ===== */
+ul, ol {
+  margin: 0.4em 0;
+  padding-left: 1.5em;
+}
+
+li {
+  margin: 0.2em 0;
+}
+
+/* ===== NAVIGATION (landmarks) ===== */
+nav[epub|type~="toc"], nav[epub|type~="landmarks"] {
+  display: block;
+  margin: 1em 0;
+}
+
+nav[epub|type~="toc"] ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+nav[epub|type~="toc"] li {
+  margin: 0.4em 0;
+}
+
+nav[epub|type~="toc"] a {
+  color: #1A237E;
+  text-decoration: none;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+nav[epub|type~="toc"] a:hover {
+  text-decoration: underline;
+  color: #0D47A1;
+}
+
+/* ===== DARK MODE ===== */
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #E0E0E0;
+    background-color: #1A1A2E;
+  }
+  
+  h1, h2 { color: #82B1FF; }
+  h3 { color: #80CBC4; }
+  h4 { color: #E0E0E0; }
+  
+  code {
+    background-color: #263238;
+    color: #F07178;
+  }
+  
+  pre {
+    background-color: #0D1117;
+    color: #C9D1D9;
+    border: 1px solid #30363D;
+  }
+  
+  th {
+    background-color: #0D47A1;
+    color: #FFFFFF;
+  }
+  
+  td {
+    border-color: #30363D;
+  }
+  
+  tr:nth-child(even) td {
+    background-color: #212121;
+  }
+  
+  .callout-info {
+    background-color: #1A237E;
+    border-left-color: #82B1FF;
+  }
+  
+  .callout-warning {
+    background-color: #3E2723;
+    border-left-color: #FFB74D;
+  }
+  
+  .callout-tip {
+    background-color: #1B5E20;
+    border-left-color: #81C784;
+  }
+  
+  .callout-caution {
+    background-color: #4A1414;
+    border-left-color: #EF5350;
+  }
+  
+  blockquote {
+    border-left-color: #82B1FF;
+    background-color: #1A1A2E;
+  }
+  
+  a {
+    color: #82B1FF;
+  }
+  
+  nav[epub|type~="toc"] a {
+    color: #82B1FF;
+  }
+}
+
+/* ===== PRINT ===== */
+@media print {
+  body {
+    font-size: 11pt;
+    line-height: 1.6;
+    color: #000000;
+    background: none;
+    max-width: none;
+    padding: 0;
+  }
+  
+  pre {
+    background-color: #F5F5F5;
+    color: #000000;
+    border: 1px solid #CCCCCC;
+  }
+  
+  .callout {
+    border-left-width: 4pt;
+  }
+}

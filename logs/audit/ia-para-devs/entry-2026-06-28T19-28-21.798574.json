@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-06-28T19:28:21.798574",
+  "agent": "copy-editor",
+  "action": "revisao-editorial",
+  "score": 95.8,
+  "decision": "aprovado",
+  "metadata": {},
+  "hash": "da2c62e3c2507916aed52432849ba7e5b7cf9ff24a4c1f549e661aff1bf76b22",
+  "previous_hash": "d87b043c8148107ca0df706109af921ef8ee685702a16dd078309cdc8456d5e4"
+}

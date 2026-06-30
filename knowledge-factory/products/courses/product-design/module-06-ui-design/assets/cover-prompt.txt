@@ -1,0 +1,13 @@
+> Prompts para geracao da capa do modulo "UI Design"
+
+## Midjourney
+
+```
+A sleek book cover about UI Design, abstract composition of floating interface components, buttons, cards, color swatches, typography specimens, and a grid system, deep navy #1a1a2e background, vibrant coral #e94560 accents, clean vector illustration, no text in image, modern minimalist style, --ar 2:3 --style raw --v 6
+```
+
+## DALL-E 3
+
+```
+Professional book cover illustration for a UI Design course. Abstract floating interface components including buttons, cards, color swatches, typography specimens, and a subtle grid system. Deep navy blue background (#1a1a2e) with coral red highlights (#e94560). Clean minimalist vector style, no text, vertical 2:3 composition.
+```

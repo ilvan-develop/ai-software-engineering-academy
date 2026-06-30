@@ -1,0 +1,678 @@
+{
+  "governanca-automacao/module-17-governanca": [
+    {
+      "global_num": 1,
+      "content": "Sem governança:\n  → Cada time faz do seu jeito\n  → Código sem padrão, difícil de manter\n  → Segredos vazam para o repositório\n  → Deploy é um evento estressante\n  → Ninguém sabe por que uma decisão foi tomada\n  → Auditoria vira um pesadelo\n\nCom governança:\n  → Padrões claros, código consistente\n  → Segurança por padrão\n  → Deploy previsível e seguro\n  → Decisões documentadas e rastreáveis\n  → Auditoria tranquila"
+    },
+    {
+      "global_num": 3,
+      "content": "\nCalendario operacional de governanca (cadencia de tarefas e janelas):\n\n![Calendario de Governanca e Operacao](/knowledge-factory/products/courses/governanca-automacao/module-17-governanca/assets/diagram-gantt-governance-calendar.svg)\n\n---\n\n## 3. Code Review\n\nCode review é a **prática mais impactante** de governança de código. Mais do que encontrar bugs, é um processo de **transferência de conhecimento e garantia de qualidade**.\n\n### Políticas de Code Review\n"
+    },
+    {
+      "global_num": 4,
+      "content": "\n### Checklist de Code Review\n"
+    },
+    {
+      "global_num": 5,
+      "content": "\n### Approval Gates\n"
+    },
+    {
+      "global_num": 6,
+      "content": "\nO fluxo acima em notação BPMN:\n\n![Fluxo de Code Review](/knowledge-factory/products/courses/governanca-automacao/module-17-governanca/assets/diagram-bpmn-code-review.svg)\n\n### Template de PR\n\n```markdown\n## Descrição\n\n<!-- O que este PR faz? Por quê? -->\n\n## Tipo de mudança\n\n- [ ] Bug fix\n- [ ] Nova feature\n- [ ] Breaking change\n- [ ] Refatoração\n- [ ] Documentação\n\n## Como testar\n\n1. `npm run dev`\n2. Acesse `/rota`\n3. Verifique que [comportamento esperado]\n\n## Checklist\n\n- [ ] Testes unitários/integração\n- [ ] Testes manuais realizados\n- [ ] Lint passa (`npm run lint`)\n- [ ] Documentação atualizada\n- [ ] Nenhum segredo vazou\n\n## Screenshots (se aplicável)\n\n## Linked Issues\n\nCloses #123\n```text\n\n---\n\n## 4. Padrões de Código\n\nPadrões de código são **regras automatizadas** que garantem consistência sem depender de vontade individual.\n\n### ESLint\n\n```jsonc\n// .eslintrc.json — Configuração enterprise\n{\n  \"env\": {\n    \"es2022\": true,\n    \"node\": true\n  },\n  \"extends\": [\n    \"eslint:recommended\",\n    \"plugin:@typescript-eslint/recommended\",\n    \"plugin:prettier/recommended\"\n  ],\n  \"parser\": \"@typescript-eslint/parser\",\n  \"parserOptions\": {\n    \"ecmaVersion\": \"latest\",\n    \"sourceType\": \"module\"\n  },\n  \"rules\": {\n    \"@typescript-eslint/no-unused-vars\": [\"error\", { \"argsIgnorePattern\": \"^_\" }],\n    \"@typescript-eslint/explicit-function-return-type\": \"warn\",\n    \"no-console\": [\"warn\", { \"allow\": [\"warn\", \"error\"] }],\n    \"eqeqeq\": [\"error\", \"always\"],\n    \"curly\": [\"error\", \"all\"],\n    \"no-throw-literal\": \"error\",\n    \"prefer-const\": \"error\"\n  }\n}"
+    },
+    {
+      "global_num": 10,
+      "content": "\n### Husky + lint-staged + commitlint\n\n```jsonc\n// .husky/commit-msg\n// npx --no -- commitlint --edit $1\n\n// .husky/pre-commit\n// npx lint-staged"
+    },
+    {
+      "global_num": 12,
+      "content": "\n### Conventional Commits\n\n```text\n<tipo>(<escopo>): <descrição>\n\nTipos:\n  feat     → Nova funcionalidade\n  fix      → Correção de bug\n  chore    → Tarefa de manutenção\n  docs     → Documentação\n  style    → Formatação (sem mudança de lógica)\n  refactor → Refatoração (sem mudança de comportamento)\n  test     → Testes\n  perf     → Performance\n  ci       → Pipeline/CI\n\nExemplos:\n  feat(auth): add login com Google OAuth\n  fix(api): correct 404 handling for users\n  chore(deps): upgrade express to 4.19\n  docs(readme): update setup instructions"
+    },
+    {
+      "global_num": 13,
+      "content": "Dependabot/Renovate:\n  → Diário: patches (1.x.x → 1.x.x)\n  → Semanal: minor (1.x → 1.y)\n  → Mensal: major (1 → 2) — revisão manual obrigatória\n\nRegras:\n  → Nunca fazer merge de update sem CI passar\n  → Updates major exigem approval de 2 devs\n  → Dependency drift > 30 dias: alerta\n  → Dependências não mantidas (>1 ano sem release): substituir\n  → Dependências com CVE conhecida: atualizar em 48h"
+    },
+    {
+      "global_num": 17,
+      "content": "\n### .env.example\n\n```bash\n# .env.example — valores FICTÍCIOS, nunca reais\nDATABASE_URL=postgresql://user:pass@localhost:5432/db\nREDIS_URL=redis://localhost:6379\nAPI_KEY=sk-your-key-here\nNODE_ENV=development\nPORT=3000"
+    },
+    {
+      "global_num": 21,
+      "content": "\n### Se vazar — plano de ação\n"
+    },
+    {
+      "global_num": 22,
+      "content": "\n---\n\n## 7. Políticas de Deploy\n\nDeploy não é um evento — é um **processo** com gates, validações e rollback.\n\n### Branch Strategy\n\n```text\nGit Flow (projetos com releases versionadas):\n  main ──────┬──────────────────┬───────────\n             │  release/v1.0   │  hotfix\n  develop ───┼──────┬───────────┼────┬──────\n             │      │           │    │\n  feature/* ─┘──────┘           ┘────┘\n\nTrunk-based (deploy contínuo):\n  main ──────┬─────┬─────┬─────┬─────┬────\n             │     │     │     │     │\n  branch  ───┘─────┘─────┘─────┘─────┘\n  (curta, horas/dias, não semanas)"
+    },
+    {
+      "global_num": 23,
+      "content": "Pré-deploy:\n  → Tag da imagem Docker atual (sempre manter última N)\n  → Backup de banco antes de migration destrutiva\n  → Script de rollback testado\n\nDurante deploy:\n  → Health check pós-deploy (timeout: 5min)\n  → Se health check falhar → rollback automático\n  → Notificação no Slack do time\n\nPós-deploy:\n  → Monitoring ativo por 30min\n  → Se erro rate > baseline em 2x → rollback manual\n  → Post-mortem se rollback ocorreu"
+    },
+    {
+      "global_num": 27,
+      "content": "\n### RFCs vs ADRs\n"
+    },
+    {
+      "global_num": 28,
+      "content": "\n---\n\n## 9. Compliance\n\nCompliance não é só coisa do jurídico — **impacta diretamente o time de desenvolvimento**.\n\n### LGPD (Lei Geral de Proteção de Dados)\n"
+    },
+    {
+      "global_num": 29,
+      "content": "\n### SOC2\n"
+    },
+    {
+      "global_num": 30,
+      "content": "\n### ISO 27001\n"
+    },
+    {
+      "global_num": 31,
+      "content": "\n---\n\n## 10. SLAs, SLOs e SLIs\n\nMétricas que **traduzem qualidade técnica em linguagem de negócio**.\n\n### Definições\n"
+    },
+    {
+      "global_num": 32,
+      "content": "\n### Monitoramento na prática\n\n```yaml\n# Exemplo de SLOs para um serviço de API\nslo:\n  availability:\n    sli: uptime\n    target: 99.9%\n    window: 30d\n\n  latency:\n    sli: p99 response time\n    target: < 300ms\n    window: 28d\n    measurement: percentil 99 a cada 5min\n\n  error_rate:\n    sli: http 5xx / total requests\n    target: < 0.1%\n    window: 7d\n\n  freshness:\n    sli: last successful data sync\n    target: < 1h\n    window: 28d\n```text\n\n### Reporte para stakeholders\n\n```text\nDashboard executivo (responder em 5 segundos):\n  → Status geral: 🟢 Verde / 🟡 Amarelo / 🔴 Vermelho\n  → SLOs do período (atingidos ou não)\n  → Incidentes relevantes (com duração e impacto)\n  → Tendência (melhorando, estável, piorando)\n\nRelatório trimestral:\n  → SLO attainment rate\n  → MTTR (Mean Time to Resolve)\n  → MTBF (Mean Time Between Failures)\n  → Top 3 causas de incidentes\n  → Plano de ação para melhoria"
+    },
+    {
+      "global_num": 34,
+      "content": "\n### Changelogs automatizados\n"
+    },
+    {
+      "global_num": 35,
+      "content": "\n### Rastreamento de decisões\n"
+    },
+    {
+      "global_num": 36,
+      "content": "\n---\n\n## 12. Governança em Equipes\n\nO maior erro de governança é criar **burocracia que paralisa o time**. Governança efetiva é leve, automatizada e cultural.\n\n### Princípios de governança leve\n"
+    },
+    {
+      "global_num": 37,
+      "content": "\n### Cultura de qualidade\n"
+    },
+    {
+      "global_num": 38,
+      "content": "\n### Métricas de saúde da governança\n"
+    },
+    {
+      "global_num": 39,
+      "content": "\n---\n\n## Resumo\n"
+    },
+    {
+      "global_num": 40,
+      "content": ""
+    }
+  ],
+  "governanca-automacao/module-18-agentes-ia": [
+    {
+      "global_num": 1,
+      "content": "Agente Genérico:\n  Conhecimento: \"sabe de tudo um pouco\"\n  ├── Frontend: ⭐⭐☆☆☆  (sabe React, mas não Next.js App Router)\n  ├── Backend:  ⭐⭐⭐☆☆  (sabe criar API, mas não DDD)\n  ├── Segurança: ⭐☆☆☆☆  (esquece CSRF, rate limiting)\n  ├── Banco:    ⭐⭐☆☆☆  (faz N+1 sem perceber)\n  └── DevOps:   ⭐☆☆☆☆  (Dockerfile sem multi-stage)\n\nResultado: código \"funciona\", mas cheio de dívida técnica"
+    },
+    {
+      "global_num": 2,
+      "content": "Agente Frontend:\n  Conhecimento: Next.js 14, RSC, Tailwind, shadcn/ui\n  ├── Performance: ⭐⭐⭐⭐⭐ (Lazy loading, Suspense, Image optimization)\n  ├── Acessibilidade: ⭐⭐⭐⭐⭐ (ARIA, WCAG 2.1, keyboard nav)\n  ├── SEO: ⭐⭐⭐⭐⭐ (Metadata API, OG tags, sitemap)\n  └── TypeScript: ⭐⭐⭐⭐⭐ (strict mode, generics)\n\nResultado: código de produção, pronto para review"
+    },
+    {
+      "global_num": 4,
+      "content": "\n### Componentes de um agente eficaz\n\n```text\n┌──────────────────────────────────────┐\n│           IDENTIDADE                  │\n│  Quem é este agente?                  │\n│  O que ele sabe fazer?               │\n│  O que ele NÃO faz?                   │\n├──────────────────────────────────────┤\n│           CONHECIMENTO                │\n│  Stack tecnológica                    │\n│  Padrões e boas práticas             │\n│  Referências externas                │\n├──────────────────────────────────────┤\n│           PROCESSO                    │\n│  Fluxo de trabalho                   │\n│  Entrada → Transformação → Saída     │\n├──────────────────────────────────────┤\n│           QUALIDADE                   │\n│  Checklist de validação              │\n│  Critérios de aceite                 │\n│  Anti-padrões a evitar               │\n├──────────────────────────────────────┤\n│           COMUNICAÇÃO                 │\n│  Formato de entrada (o que recebe)   │\n│  Formato de saída (o que entrega)    │\n│  Como reportar problemas             │\n└──────────────────────────────────────┘"
+    },
+    {
+      "global_num": 5,
+      "content": "1. Definir o DOMÍNIO do agente\n   → Qual área ele cobre? (ex: \"segurança de aplicações web\")\n\n2. Definir o CONHECIMENTO BASE\n   → Quais tecnologias, padrões e boas práticas ele domina?\n\n3. Definir RESPONSABILIDADES\n   → O que ele faz? O que ele NÃO faz? (limites são importantes)\n\n4. Definir o PROCESSO\n   → Qual o fluxo de trabalho? O que recebe na entrada? O que entrega?\n\n5. Criar CHECKLIST DE QUALIDADE\n   → O que validar antes de considerar o trabalho concluído?\n\n6. Criar TEMPLATES DE PROMPT\n   → Prompts reutilizáveis para as tarefas mais comuns\n\n7. TESTAR com um caso real\n   → Executar o agente, revisar o output, ajustar"
+    },
+    {
+      "global_num": 7,
+      "content": "\n---\n\n## 5. Como combinar agentes em pipeline\n\nO verdadeiro poder está em **compor** agentes em sequência.\n\n### Pipeline de features\n\n```text\nProduct Discovery  ──→  UX Designer  ──→  UI Designer\n     │                       │                  │\n     │                  Enterprise Architect     │\n     │                       │                  │\n     └───────────────────────┼──────────────────┘\n                             │\n                    Backend Expert\n                    Frontend Expert\n                    Prisma Expert\n                    Security Expert\n                             │\n                         QA Expert\n                             │\n                    DevOps Expert (deploy)\n                             │\n                     Auditor Agent\n                             │\n                    Documentation Agent"
+    },
+    {
+      "global_num": 8,
+      "content": "Feature implementada\n        │\n        ▼\nSecurity Auditor ──→ Se Bloquer/Critical → Backend Expert (corrige)\n        │                                     │\n        ▼                                     ▼\nArchitecture Auditor ──→ Se problema → Enterprise Architect (revisa)\n        │\n        ▼\nPerformance Auditor ──→ Se lento → Performance Expert (otimiza)\n        │\n        ▼\nCode Quality Auditor ──→ Se abaixo do padrão → Refactoring Agent\n        │\n        ▼\nRelatório consolidado com score geral"
+    },
+    {
+      "global_num": 9,
+      "content": "PO descreve problema em linguagem natural\n        │\n        ▼\nProduct Discovery Agent → User Stories + Acceptance Criteria\n        │\n        ▼\nUX Researcher Agent → Valida com usuários → Personas + Jornada\n        │\n        ▼\nUX Designer Agent → Wireframes + User Flows\n        │\n        ▼\nUI Designer Agent → Mockups com Design System\n        │\n        ▼\nEnterprise Architect → Arquitetura + ADRs\n        │\n        ▼\nBackend + Frontend + Prisma + Security → Implementação\n        │\n        ▼\nQA Agent → Testes\n        │\n        ▼\nDevOps Agent → Deploy\n        │\n        ▼\nAuditor Agent → Score final"
+    },
+    {
+      "global_num": 13,
+      "content": "\n### Como fazer um agente revisar outro\n\n```text\n@auditor Revise a segurança deste endpoint.\n\n[endpoint code]"
+    },
+    {
+      "global_num": 15,
+      "content": "\n---\n\n## 8. O futuro: agentes que criam agentes\n\nO próximo passo natural: um **Meta-Agent** que cria agentes especializados sob demanda.\n\n### Como funcionaria\n"
+    }
+  ],
+  "governanca-automacao/module-19-auditorias": [
+    {
+      "global_num": 2,
+      "content": "\n### O que uma auditoria responde\n\n- \"Este código está pronto para produção?\"\n- \"Qual o nível de segurança deste sistema?\"\n- \"Onde estão os gargalos de performance?\"\n- \"A arquitetura suporta o próximo ano de crescimento?\"\n- \"O que precisa ser corrigido antes do deploy?\"\n\n---\n\n## 2. O sistema de score (0-10)\n\nCada auditoria produz um **score quantitativo** que permite comparar qualidade entre versões e módulos.\n\n### Significado do score\n\n| Score | Significado | Ação |\n|-------|-------------|------|\n| 9-10 | Excelente | Manutenção preventiva |\n| 7-8 | Bom | Correções opcionais menores |\n| 5-6 | Regular | Correções necessárias |\n| 3-4 | Ruim | Correções urgentes |\n| 0-2 | Crítico | Parar e corrigir |\n\n### Como o score é calculado\n"
+    },
+    {
+      "global_num": 3,
+      "content": "\n### Exemplo: Auditoria de uma API\n\n```text\nDimensões avaliadas:\n  Validação de entrada:   9/10  (faltou sanitização em 1 campo)\n  Autenticação:           10/10 (perfeito)\n  Autorização:            6/10  (2 rotas sem verificação de role)\n  Tratamento de erros:    8/10  (exceções genéricas em 3 endpoints)\n  Documentação:           7/10  (Swagger desatualizado)\n  Performance:            9/10  (1 query N+1)\n\nScore geral: (9+10+6+8+7+9) / 6 = 8.2 → \"Bom\"\nRiscos: 1 Critical, 2 Major, 3 Minor"
+    },
+    {
+      "global_num": 5,
+      "content": "\n### Auditorias que todo projeto deveria ter\n\n**Essenciais (obrigatórias antes de todo deploy):**\n1. Segurança — sem isso, não vai para produção\n2. Código — qualidade mínima do código\n3. APIs — contratos corretos\n\n**Recomendadas (a cada release):**\n4. Arquitetura — a arquitetura ainda está adequada?\n5. Performance — não está degradando?\n6. Banco de dados — queries estão saudáveis?\n7. TypeScript — tipos estão sendo respeitados?\n\n**Periódicas (a cada trimestre):**\n8. Governança — documentação está atualizada?\n9. Dependências — bibliotecas desatualizadas ou vulneráveis?\n10. UX — feedback de usuários está sendo endereçado?\n\n---\n\n## 4. Estrutura de cada auditoria\n\n### Template universal\n\n```markdown\n# Auditoria: [Tipo] — [Sistema/Componente]\n\n**Score geral:** [0-10]\n**Riscos:** [Qtd] (Blocker: X, Critical: Y, Major: Z, Minor: W)\n**Data:** [data]\n**Auditor:** [agente responsável]\n\n## Resumo Executivo\n[3-5 frases]\n\n## Resultados por Dimensão\n| Dimensão | Score | Riscos | Observação |\n|----------|-------|--------|------------|\n| ...      | ...   | ...    | ...        |\n\n## Riscos Identificados\n\n### [Blocker/Critical/Major/Minor] [Título do risco]\n- **Localização:** arquivo:linha\n- **Descrição:** o que está errado\n- **Impacto:** o que pode acontecer\n- **Correção:** como corrigir\n- **Dependência:** precisa de outra correção antes?\n\n## Plano de Ação\n| Prioridade | Ação | Responsável | Prazo | Esforço |\n|------------|------|-------------|-------|---------|\n| P0         | ...  | ...         | ...   | ...     |\n\n## Recomendações\n[Melhorias opcionais para atingir score 10]\n```text\n\n### Classificação de riscos\n\n| Gravidade | Definição | Prazo de correção |\n|-----------|-----------|-------------------|\n| **Blocker** | Impede deploy ou quebra funcionalidade crítica | Imediato |\n| **Critical** | Vulnerabilidade grave ou perda de dados | 24h |\n| **Major** | Boa prática não seguida, risco moderado | 1 semana |\n| **Minor** | Sugestão de melhoria, baixo risco | Agenda de refatoração |\n\n---\n\n## 5. Exemplo: Auditoria de Segurança\n\n```markdown\n# Auditoria: Segurança — API de Pagamentos\n\n**Score geral:** 5.8/10\n**Riscos:** 8 (2 Critical, 3 Major, 3 Minor)\n**Data:** 2025-06-01\n**Auditor:** Security Expert Agent\n\n## Resumo Executivo\nA API de pagamentos apresenta 2 riscos críticos que impedem\no deploy em produção: senhas armazenadas com MD5 e falta de\nrate limiting no endpoint de login. Recomenda-se corrigir\nestes itens antes de qualquer release.\n\n## Resultados por Dimensão\n| Dimensão           | Score | Riscos | Observação           |\n|--------------------|-------|--------|----------------------|\n| Autenticação       | 3     | 1 Crit | MD5 + sem refresh    |\n| Autorização        | 7     | 1 Major| Role check ausente   |\n| Input Validation   | 8     | 1 Major| 1 campo sem sanitizar|\n| Rate Limiting      | 2     | 1 Crit | Nenhum implementado  |\n| Headers Segurança  | 6     | 1 Major| CSP ausente          |\n| Secrets Management | 9     | 1 Minor| .env.example exposto |\n\n## Riscos Identificados\n\n### [Critical] Senhas armazenadas com MD5\n- **Localização:** src/auth/password.service.ts:15\n- **Descrição:** A função hashPassword usa MD5\n- **Impacto:** Senhas recuperáveis em segundos\n- **Correção:** Substituir por bcrypt com salt rounds 12\n- **Dependência:** Nenhuma\n\n### [Critical] Ausência de rate limiting no login\n- **Localização:** src/auth/auth.controller.ts:22\n- **Descrição:** Login sem proteção contra brute force\n- **Impacto:** Ataque de força bruta ilimitado\n- **Correção:** Implementar @Throttle(5, 60) no endpoint\n- **Dependência:** Nenhuma"
+    },
+    {
+      "global_num": 7,
+      "content": "\n### Ferramentas para auditoria automatizada\n\n| Tipo | Ferramenta | O que verifica |\n|------|-----------|----------------|\n| Código | ESLint + Prettier | Padrões, formatação |\n| Tipos | TypeScript strict | Tipagem correta |\n| Segurança | npm audit, Snyk | Vulnerabilidades |\n| Testes | Jest --coverage | Cobertura de código |\n| Performance | Lighthouse CI | Core Web Vitals |\n| API | OpenAPI diff | Contratos de API |\n| Docker | Docker Scout | Vulnerabilidades em imagens |\n| Dependências | Renovate/Dependabot | Updates automáticos |\n\n---\n\n## 7. Como interpretar e agir sobre uma auditoria\n\n### Para o time técnico\n"
+    },
+    {
+      "global_num": 8,
+      "content": "\n### Para o gestor\n"
+    },
+    {
+      "global_num": 9,
+      "content": "\n---\n\n## 8. Auditoria como serviço contínuo com agentes\n\nNa nossa biblioteca, o **Auditor Agent** pode ser invocado a qualquer momento:\n\n```bash\n# Auditar segurança de um módulo\n@auditor auditar-seguranca src/modules/pagamentos/\n\n# Auditar performance antes do deploy\n@auditor auditar-performance src/app/page.tsx\n\n# Auditar a arquitetura completa\n@auditor auditar-arquitetura . --format relatorio\n```text\n\n### Pipeline de auditoria completa\n"
+    }
+  ],
+  "product-design/module-02-product-discovery": [
+    {
+      "global_num": 2,
+      "content": "\n![Discovery vs Delivery](/knowledge-factory/products/courses/product-design/module-02-product-discovery/assets/diagram-discovery-vs-delivery.svg)\n\n### Por que Discovery é importante?\n"
+    },
+    {
+      "global_num": 3,
+      "content": "\n### Armadilha comum\n\n```text\nTime: \"Vamos construir um chat bot!\"\nDiscovery: Nenhum\n\n3 meses depois:\nNinguém usa o chat bot.\n\nPor quê?\n- Ninguém perguntou se o problema era real\n- Ninguém validou se chat bot era a melhor solução\n- Ninguém testou com usuários antes de construir"
+    },
+    {
+      "global_num": 5,
+      "content": "\n![Processo de Product Discovery](/knowledge-factory/products/courses/product-design/module-02-product-discovery/assets/diagram-discovery-flow.svg)\n\n### 2.1 Oportunidades\n\nToda feature request, bug report, reclamação de cliente ou insight de analytics é uma **oportunidade**. O desafio é priorizá-las.\n\n**Fontes de oportunidades:**\n- Feedback de clientes (Zendesk, Intercom, surveys)\n- Dados de uso (amplitude, mixpanel, GA4)\n- Conversas com sales/suporte\n- Análise concorrencial\n- Visão do produto (OKRs, estratégia)\n- Próprio time (dívida técnica, bugs recorrentes)\n\n### 2.2 Pesquisa\n\nAntes de pensar em solução, **entenda o problema**. Use técnicas qualitativas e quantitativas (ver seção 3).\n\n### 2.3 Ideação\n\nGere múltiplas opções de solução, não apenas uma. Técnicas:\n- **Crazy 8s** — 8 ideias em 8 minutos\n- **Brainstorming** — quantidade > qualidade, sem julgamento\n- **Design Sprint** — Google Ventures, 5 dias\n- **How Might We** — reformular problema como pergunta\n"
+    },
+    {
+      "global_num": 6,
+      "content": "\n### 2.4 Prototipação\n\nCrie representações da solução com o mínimo esforço necessário para testar:\n\n```text\nNível         Esforço    O que testa\n───           ───────    ──────────\nSketch        Minutos    Fluxo macro\nWireframe     Horas      Layout, estrutura\nMockup        Dias       Visual, branding\nPrototype     Dias       Interação, fluxo real\nMVP           Semanas    Valor real no mercado"
+    },
+    {
+      "global_num": 8,
+      "content": "\n**Regras de ouro:**\n- Não faça perguntas indutoras (\"Você não acha que X é melhor?\")\n- Não pergunte \"você usaria?\" (todo mundo diz sim)\n- Pergunte sobre **comportamento passado**, não intenção futura\n- Escute mais do que fala (ratio 80/20)\n\n### 3.2 Surveys\n\nBom para validar achados qualitativos com escala.\n"
+    },
+    {
+      "global_num": 9,
+      "content": "\n**Dicas de surveys:**\n- Máximo 10 perguntas\n- Escalas consistentes (Likert 1-5 ou 1-7)\n- Sempre incluir pergunta aberta no final\n- Ferramentas: Typeform, Google Forms, SurveyMonkey\n\n### 3.3 Análise Concorrencial\n\n```text\nConcorrente A          Concorrente B            Concorrente C\n──────────────────     ──────────────────       ──────────────────\nFaz X bem              Faz Y bem                Faz Z bem\nNão tem W              Tem W mas é confuso      Tem W excelente\nFeedback: lento        Feedback: caro           Feedback: complexo\n\nOportunidade: X + W simples + preço acessível"
+    },
+    {
+      "global_num": 10,
+      "content": "Métricas de Discovery:\n\n| Métrica                  | O que indica                             |\n|--------------------------|------------------------------------------|\n| Page views               | Interesse bruto                          |\n| Bounce rate              | Não encontrou o que queria               |\n| Drop-off por etapa       | Atrito no fluxo                          |\n| Funil de conversão       | Onde os usuários desistem                |\n| Retenção D1/D7/D30       | Valor entregue vs expectativa            |\n| NPS / CSAT               | Satisfação geral                         |\n| Search terms             | O que usuários procuram (e não acham)    |\n| Feature usage            | O que realmente é usado                  |"
+    },
+    {
+      "global_num": 12,
+      "content": "\n**Estrutura JTBD:**\n\n```text\nQuando [situação], eu quero [motivação] para [resultado esperado].\n\nExemplo:\n\"Quando estou começando um novo projeto, eu quero entender o\nque outros times já tentaram antes, para não repetir erros.\""
+    },
+    {
+      "global_num": 14,
+      "content": "\n### 4.3 Value Proposition Canvas\n\nDetalha o encaixe entre o cliente e o produto.\n\n```text\nVALUE PROPOSITION CANVAS\n\n┌──────────────────────────────┬──────────────────────────────┐\n│ PRODUTO                      │ CLIENTE                      │\n│                              │                              │\n│ ┌────────────────────────┐   │ ┌────────────────────────┐  │\n│ │ Gain Creators          │   │ │ Gains                   │  │\n│ │ O que entrega ganhos   │   │ │ Resultados desejados   │  │\n│ │                        │   │ │                         │  │\n│ ├────────────────────────┤   │ ├────────────────────────┤  │\n│ │ Products & Services    │   │ │ Customer Jobs          │  │\n│ │ O que oferecemos       │   │ │ O que ele quer fazer   │  │\n│ │                        │   │ │                         │  │\n│ ├────────────────────────┤   │ ├────────────────────────┤  │\n│ │ Pain Relievers         │   │ │ Pains                   │  │\n│ │ O que alivia dores     │   │ │ Frustrações, riscos    │  │\n│ └────────────────────────┘   │ └────────────────────────┘  │\n│                              │                              │\n│         ENCAIXE: quando solutions > jobs + pains           │\n└──────────────────────────────┴──────────────────────────────┘"
+    },
+    {
+      "global_num": 16,
+      "content": "\n**Como construir:**\n1. Defina o **outcome** (resultado esperado, ex: \"aumentar ativação em 30%\")\n2. Liste **oportunidades** (problemas/dores que impedem o outcome)\n3. Para cada oportunidade, gere **soluções**\n4. Para cada solução, defina um **experimento** para testar\n\n### 5.2 User Story Mapping\n\nTécnica de Jeff Patton que organiza o backlog em **atividades do usuário** de forma visual, ajudando o time a enxergar o produto como um fluxo.\n\n```text\nJornada: \"Gerenciar projetos\"\n────────────────────────────────────────────────────────────────────\n              │  Semana 1     │  Semana 2    │  Semana 3      │\n──────────────┼───────────────┼──────────────┼────────────────┤\nCriar projeto │ Criar nome    │ Convidar     │                │\n              │               │ membros      │                │\n──────────────┼───────────────┼──────────────┼────────────────┤\nOrganizar     │ Criar         │ Adicionar    │ Arrastar       │\ntarefas       │ colunas       │ cards        │ cards          │\n──────────────┼───────────────┼──────────────┼────────────────┤\nAcompanhar    │               │              │ Dashboard     │\nprogresso     │               │              │ de progresso   │\n──────────────┴───────────────┴──────────────┴────────────────┘\n  ↑ MVP (corta aqui)            ↑ Release 2          ↑ Release 3"
+    },
+    {
+      "global_num": 18,
+      "content": "\n### Tipos de experimento\n\n```text\nExperimento         | Esforço | Confiança | Quando usar\n────────────────────|─────────|───────────|────────────────────────\nEntrevista          | Baixo   | Média     | Entender problema\nLanding page fake   | Baixo   | Alta      | Testar interesse real\nPrototype test      | Médio   | Média     | Validar usabilidade\nTeste A/B           | Médio   | Alta      | Comparar soluções\nConcierge MVP       | Alto    | Alta      | Validar valor real\nWizard of Oz MVP    | Médio   | Alta      | Validar viabilidade\nSingle-feature MVP  | Médio   | Alta      | Testar feature isolada\nPiecemeal MVP       | Baixo   | Média     | Validar sem construir"
+    },
+    {
+      "global_num": 19,
+      "content": "Ideia: \"App que agenda reuniões automaticamente\"\n\n1. Criar landing page:\n   \"Agende reuniões sem trocar emails\"\n\n2. Botão: \"Começar gratis →\" (leva a página de \"em breve\")\n\n3. Métricas:\n   - Visitantes que chegam na página\n   - % que clica no CTA      ← indicador de interesse real\n   - % que deixa o email      ← lead qualificado\n\n4. Resultado:\n   Se < 5% clica → interesse baixo, repense a proposta\n   Se > 15% clica → interesse real, continue"
+    },
+    {
+      "global_num": 21,
+      "content": "\n---\n\n## 7. Product Discovery no Contexto Enterprise\n\nDiscovery em empresas grandes tem desafios específicos.\n\n### Desafios Enterprise\n\n```text\nDesafio                    Impacto no Discovery\n────────────────────────── ──────────────────────────────────\nMuitos stakeholders        Múltiplas visões do que é \"prioridade\"\nProcessos burocráticos     Discovery lento, pouca iteração\nMétrica de sucesso errada  Time mede output, não outcome\nTimes isolados             Descobertas não são compartilhadas\nGerenciamento de risco     Medo de errar → pouca experimentação\nOrçamento anual fixo       Discovery não é orçado → não existe"
+    },
+    {
+      "global_num": 22,
+      "content": "OKR da empresa: \"Aumentar receita recorrente em 25%\"\n\n→ Opportunity: churn de 15% ao mês\n→ Discovery: por que os clientes estão cancelando?\n→ Outcome: reduzir churn pela metade\n→ Backlog: funcionalidades que endereçam as causas"
+    },
+    {
+      "global_num": 24,
+      "content": "\n**3. Envolva stakeholders cedo**\n\n```text\nStakeholder      | O que quer saber                   | Quando envolver\n─────────────────|────────────────────────────────────|─────────────────\nDiretor          | \"Isso entrega o OKR?\"              | Kickoff, review\nProduto          | \"Isso resolve o problema certo?\"   | Discovery inteiro\nEngenharia       | \"Isso é viável tecnicamente?\"      | Prototipação\nDesign           | \"Isso é usável?\"                    | Prototipação, teste\nComercial        | \"O cliente pagaria por isso?\"      | Pesquisa, validação\nSucesso do cl.   | \"Isso reduz chamados?\"             | Pesquisa"
+    },
+    {
+      "global_num": 26,
+      "content": "\n### Cultura de Experimentação\n\nEmpresas maduras em discovery têm:\n\n```text\nAmazon:        \"É mais fácil pedir desculpas do que permissão\"\nNetflix:       Testa tudo, aprende rápido, falha barato\nSpotify:       Squads têm autonomia para discovery\nGoogle:        Data beats opinions\nAirbnb:        Design ops com discovery contínuo\n\nCultura que NÃO funciona:\n  \"Quem decide é o VP\"\n  \"A gente sabe o que o cliente quer\"\n  \"Se deu trabalho, vamos lançar mesmo assim\""
+    },
+    {
+      "global_num": 28,
+      "content": "\n### 8.2 Proto-personas\n\nPersona provisória baseada em hipóteses, não em pesquisa extensa.\n\n```text\nProto-persona: Analista de Dados\n───────────────────────────────────────────────────────────────\nNome fictício:   Carla, 32 anos\nCargo:           Analista de BI Sênior\nContexto:        Trabalha em empresa de médio porte, time pequeno\nObjetivo:        Extrair insights rápido para tomar decisões\nDores:           1. Dados espalhados (planilhas, BI, ERP)\n                 2. Demora dias para gerar um relatório\n                 3. Não confia na qualidade dos dados\nComportamento:   Usa Excel, Tableau, SQL (básico)\nJob to be done:  \"Quando preciso responder uma pergunta de negócio,\n                  quero encontrar os dados certos em minutos, para\n                  não perder credibilidade com o diretor.\""
+    },
+    {
+      "global_num": 30,
+      "content": "\n### 8.4 Opportunity Backlog\n\nUm backlog de oportunidades (não de soluções).\n\n```text\nID  | Oportunidade                              | Evidência              | Tamanho | Prioridade\n────|───────────────────────────────────────────|────────────────────────|─────────|───────────\nO01 | Usuários não encontram dados no sistema   | 45% dos chamados       | Grande  | P0\nO02 | Demora para gerar relatórios              | Survey: 78% citaram    | Médio   | P0\nO03 | Não confiabilidade dos dados              | NPS: 4.2 (crítico)     | Grande  | P1\nO04 | Integração com ferramentas externas       | 3 clientes enterprise  | Médio   | P2"
+    }
+  ],
+  "product-design/module-03-design-thinking": [
+    {
+      "global_num": 2,
+      "content": "\n### Abordagem tradicional vs Design Thinking\n"
+    },
+    {
+      "global_num": 3,
+      "content": "\nEnquanto a abordagem tradicional busca a **solução certa** de primeira, o Design Thinking busca **entender o problema certo** antes de solucionar, iterando quantas vezes for necessário.\n\n---\n\n## 2. As 5 Fases do Design Thinking\n\nO processo é dividido em 5 fases **não-lineares** — você pode (e deve) voltar a fases anteriores conforme aprende.\n\n```text\n                        ┌─────────────┐\n                        │   EMPATIZAR  │\n                        └──────┬──────┘\n                               ↓\n                        ┌─────────────┐\n                        │   DEFINIR   │\n                        └──────┬──────┘\n                               ↓\n                        ┌─────────────┐\n                        │   IDEIAR    │\n                        └──────┬──────┘\n                               ↓\n                   ┌─────────────────────┐\n                   │     PROTOTIPAR      │\n                   └──────────┬──────────┘\n                              ↓\n                   ┌─────────────────────┐\n                   │       TESTAR        │←──── Iteração\n                   └─────────────────────┘"
+    },
+    {
+      "global_num": 7,
+      "content": "\n#### 3.2 Observação contextual\n\nA observação revela o que as pessoas **realmente fazem** (vs. o que dizem fazer).\n\n```typescript\n// Framing da observação\ninterface Observacao {\n  usuario: string;\n  contexto: string;\n  tarefa: string;\n  acoes: Array<{\n    timestamp: string;\n    acao: string;\n    tempo: number;      // segundos\n    frustracao: 1 | 2 | 3 | 4 | 5;\n    observacao: string;\n  }>;\n  workarounds: string[];\n  insights: string[];\n}"
+    },
+    {
+      "global_num": 8,
+      "content": "Usuário: Maria (Analista de BI)\nTarefa: Gerar relatório mensal de vendas\n\n09:01 → Abre sistema, digita login — 12s\n09:02 → Navega por 4 telas até encontrar \"Relatórios\" — 45s\n09:03 → Seleciona filtros (mês, região, produto) — 30s\n09:05 → Sistema trava ao carregar 3 meses de dados — frustração: 4/5\n09:07 → Chama o suporte, enquanto isso abre Excel e começa a fazer manual"
+    },
+    {
+      "global_num": 10,
+      "content": "\n---\n\n## 4. Fase 2: Definir\n\n### Do problema amplo ao ponto de vista\n\nNa fase de Definir, você sintetiza tudo que aprendeu na empatia para criar um **ponto de vista** (POV) claro.\n\n### Problem Statement\n\nUma boa declaração de problema segue esta estrutura:\n"
+    },
+    {
+      "global_num": 11,
+      "content": "\n**Exemplos:**\n\n```text\n❌ Ruim: \"O sistema de relatórios é lento\"\n    (focado na solução, não no usuário)\n\n✅ Bom: \"Maria, analista de BI, precisa gerar relatórios\n    semanais sem depender do time de TI porque cada\n    solicitação leva em média 3 dias para ser atendida\"\n    (focado no usuário, necessidade e motivo real)\n\n✅ Enterprise: \"João, gerente de operações, precisa\n    consolidar dados de 5 fontes diferentes em tempo\n    real porque as decisões baseadas em dados de\n    ontem já não são competitivas\""
+    },
+    {
+      "global_num": 13,
+      "content": "\n**Técnica:** Para cada problem statement, gere 5-10 HMWs em diferentes direções:\n\n```markdown\nProblem Statement: Maria precisa gerar relatórios sem o time de TI\n\nHMWs:\n1. HMW tornar a criação de relatórios tão fácil quanto escrever um email?\n2. HMW permitir que Maria combine dados sem saber SQL?\n3. HMW reduzir o tempo de relatório de 3 dias para 5 minutos?\n4. HMW usar IA para sugerir relatórios que Maria nem sabia que precisava?\n5. HMW fazer o time de TI responder em minutos em vez de dias?\n6. HMW eliminar a necessidade de relatórios manuais completamente?\n7. HMW transformar Maria em power-user que ajuda outros colegas?\n8. HMW integrar as 5 fontes em um único dashboard em tempo real?\n```text\n\n### Matriz de Priorização\n\n```text\n                    ALTO IMPACTO\n                        │\n    ┌───────────────────┼───────────────────┐\n    │                   │                   │\n    │   FAÇA PRIMEIRO   │   FAÇA DEPOIS     │\n    │   (Quick Wins)    │   (Big Bets)      │\n    │                   │                   │\n    │   HMW #3          │   HMW #4          │\n    │   HMW #5          │   HMW #8          │\n    │                   │                   │\n    ├───────────────────┼───────────────────┤\n    │                   │                   │\n    │   FAÇA SE SOBRAR  │   EVITE           │\n    │   (Fill-ins)      │   (Money Pits)    │\n    │                   │                   │\n    │   HMW #1          │   HMW #6          │\n    │   HMW #7          │                   │\n    │                   │                   │\n    └───────────────────┼───────────────────┘\n                        │\n                    BAIXO IMPACTO\n   BAIXO ESFORÇO ─────────────────── ALTO ESFORÇO"
+    },
+    {
+      "global_num": 15,
+      "content": "\n### Crazy 8\n\nCrazy 8 é uma técnica de **divergência rápida**: cada pessoa dobra uma folha A4 em 8 partes e tem 8 minutos para preencher **8 ideias diferentes** (1 minuto por ideia).\n\n```text\n┌──────────┬──────────┬──────────┬──────────┐\n│ Ideia 1  │ Ideia 2  │ Ideia 3  │ Ideia 4  │\n│          │          │          │          │\n│ (esboço) │ (esboço) │ (esboço) │ (esboço) │\n├──────────┼──────────┼──────────┼──────────┤\n│ Ideia 5  │ Ideia 6  │ Ideia 7  │ Ideia 8  │\n│          │          │          │          │\n│ (esboço) │ (esboço) │ (esboço) │ (esboço) │\n└──────────┴──────────┴──────────┴──────────┘"
+    },
+    {
+      "global_num": 17,
+      "content": "\n### Outras técnicas de ideação\n\n| Técnica | Como funciona | Quando usar |\n|---------|--------------|-------------|\n| Brainwriting | Cada pessoa escreve ideias em silêncio, depois passa para o próximo | Grupos grandes ou times tímidos |\n| SCAMPER | Substitute, Combine, Adapt, Modify, Put to another use, Eliminate, Reverse | Melhorar solução existente |\n| Analogias | \"Como a Netflix resolveria isso?\" | Buscar perspectivas diferentes |\n| Storyboarding | Desenhar cenas do usuário usando a solução | Validar fluxo de uso |\n\n---\n\n## 6. Fase 4: Prototipar\n\n### Por que prototipar?\n\n> \"Um protótipo vale mais que mil reuniões.\"\n\nPrototipar transforma ideias abstratas em algo **tangível** que pode ser testado, discutido e melhorado.\n\n### Níveis de fidelidade\n\n```text\nBAIXA FIDELIDADE                        ALTA FIDELIDADE\n├─────────────────────────────────────────────────────┤\n  Papel → Wireframe → Mockup → Protótipo clicável → MVP"
+    },
+    {
+      "global_num": 21,
+      "content": "\nFerramentas: Figma, Balsamiq, Whimsical, Miro.\n\n#### Protótipos de alta fidelidade\n\nInterativos, simulam a experiência real. Podem ser confundidos com o produto final.\n\n```markdown\nFerramentas:\n• Figma (com prototipagem interativa)\n• Axure RP\n• Framer\n• ProtoPie\n• Código real (HTML/CSS/React)\n\nUse quando:\n• Precisa testar interações complexas\n• Stakeholders precisam visualizar o produto final\n• Vai apresentar para clientes\n```text\n\n### Exemplo: Protótipo de baixa fidelidade para app mobile\n\n```text\n┌──────────────────────┐\n│ 📱 09:41          ≡ │  ← Header com hora e menu\n├──────────────────────┤\n│                      │\n│  Buscar produtos...  │  ← Campo de busca\n│                      │\n│  ┌────────────────┐  │\n│  │ 🏆 Promoções   │  │  ← Card de categoria\n│  │ do dia         │  │\n│  └────────────────┘  │\n│                      │\n│  ┌────┬────┬────┬──┐ │\n│  │ 📦 │ 👟 │ 💻 │ 📚│ │  ← Grid de categorias\n│  │Livs│Calç│Elet│Liv│ │\n│  └────┴────┴────┴──┘ │\n│                      │\n│  Produtos em alta     │\n│  ┌────┬────┬────┬──┐ │\n│  │ P1  │ P2  │ P3  │ │  ← Lista horizontal\n│  └────┴────┴────┴──┘ │\n│                      │\n├──────────────────────┤\n│ 🏠  🔍  🛒  👤     │  ← Navigation bar\n└──────────────────────┘"
+    },
+    {
+      "global_num": 23,
+      "content": "\n---\n\n## 7. Fase 5: Testar\n\n### O ciclo de teste\n\n```text\n┌─────────────────────────────────────────────────────────┐\n│                                                          │\n│   PROTÓTIPO → TESTAR → APRENDER → ITERAR → PROTÓTIPO    │\n│                                                          │\n│                    (e recomeça)                           │\n└─────────────────────────────────────────────────────────┘"
+    },
+    {
+      "global_num": 25,
+      "content": "\n### Feedback Loop\n\n```text\nCOLETA                  SÍNTESE                  AÇÃO\n─────────────────────────────────────────────────────────\nGravações              Agrupar padrões          Definir o que\nAnotações              Priorizar problemas      mudar no protótipo\nMétricas (tempo,       Identificar              Iterar e testar\ntaxa de sucesso)       insights                 novamente"
+    },
+    {
+      "global_num": 29,
+      "content": "\n#### Discovery Sprints\n\nAntes de começar a codificar, dedique 1-2 semanas para as fases de Empatizar + Definir + Ideiar.\n\n```markdown\nSprint 0 / Discovery Sprint (2 semanas):\n\nSemana 1 — Empatizar + Definir\n  Seg: Planejamento da pesquisa, recrutamento de usuários\n  Ter-Qua: Entrevistas com 5-8 usuários\n  Qui: Sessão de síntese, mapas de empatia\n  Sex: Definição do problem statement e HMWs\n\nSemana 2 — Ideiar + Prototipar\n  Seg: Sessão de brainstorming + Crazy 8\n  Ter: Priorização (matriz impacto x esforço)\n  Qua: Prototipação de baixa fidelidade\n  Qui: Teste do protótipo com 3-5 usuários\n  Sex: Iteração + apresentação para stakeholders"
+    },
+    {
+      "global_num": 31,
+      "content": "\n### Ritmo: Discovery + Delivery\n\nEmpresas maduras separam em dois tracks paralelos:\n\n```text\nTRACK 1 — DISCOVERY (Design Thinking)\n├── Pesquisa com usuários\n├── Prototipação e testes\n└── Validação de hipóteses\n         │\n         ▼ (hipóteses validadas viram PBIs)\n         │\nTRACK 2 — DELIVERY (Ágil)\n├── Sprint Planning\n├── Desenvolvimento\n└── Sprint Review"
+    },
+    {
+      "global_num": 35,
+      "content": "\n#### 3. Enterprise Design Thinking (IBM)\n\nA IBM criou uma adaptação própria chamada **Enterprise Design Thinking**, que adiciona:\n"
+    },
+    {
+      "global_num": 36,
+      "content": "\n---\n\n## 10. Anti-padrões em Design Thinking\n"
+    },
+    {
+      "global_num": 37,
+      "content": "\n---\n\n## Resumo\n\n1. **Design Thinking** é uma abordagem human-centered para resolver problemas complexos\n2. **5 fases não-lineares:** Empatizar → Definir → Ideiar → Prototipar → Testar\n3. **Empatia** é a base — entrevistas, observação e imersão revelam necessidades reais\n4. **Definir** sintetiza aprendizados em problem statement e perguntas HMW\n5. **Ideiar** prioriza quantidade com brainstorming, Crazy 8 e matriz impacto x esforço\n6. **Prototipar** vai do papel ao código, do rápido ao refinado\n7. **Testar** valida com usuários reais e alimenta o ciclo de iteração\n8. **Design Thinking + Ágil** funciona com Discovery Sprints e Kanban com discovery track\n9. **Em Enterprise**, DesignOps e workshops estruturados escalam a prática\n10. **Anti-padrões** incluem pular empatia, prototipar cedo demais e testar com amigos"
+    }
+  ],
+  "product-design/module-04-ux": [
+    {
+      "global_num": 2,
+      "content": "\n> UI sem UX é como um carro bonito sem motor. UX sem UI é como um motor potente sem carroceria.\n\n### Os 5 Planos de Jesse James Garrett\n\nO modelo mais clássico para estruturar UX, de baixo (abstrato) para cima (concreto):\n\n```text\n┌─────────────────────────────────────────────┐\n│ 5. SUPERFÍCIE      Visual Design            │  ← UI, cores, ícones\n├─────────────────────────────────────────────┤\n│ 4. ESQUELETO       Interface / Navegação    │  ← Layout, botões, inputs\n├─────────────────────────────────────────────┤\n│ 3. ESTRUTURA       Interação / Info Arch    │  ← Fluxos, jornadas\n├─────────────────────────────────────────────┤\n│ 2. ESCOPO          Funcionalidades          │  ← Features, conteúdo\n├─────────────────────────────────────────────┤\n│ 1. ESTRATÉGIA      Necessidades do negócio  │  ← Objetivos, dores\n└─────────────────────────────────────────────┘"
+    },
+    {
+      "global_num": 3,
+      "content": "❌ \"Você usaria um botão de exportar CSV?\"\n✅ \"Me conta como você faz para gerar relatórios hoje.\""
+    },
+    {
+      "global_num": 4,
+      "content": "1. Abertura (5min) — \"Não estamos testando você, queremos aprender\"\n2. Contexto (10min) — \"Me conta seu dia a dia com...\"\n3. Tarefa (15min) — \"Você pode tentar fazer X enquanto pensa em voz alta?\"\n4. Exploração (10min) — \"Por que você fez isso? O que esperava que acontecesse?\"\n5. Fechamento (5min) — \"Algo mais que não perguntei?\""
+    },
+    {
+      "global_num": 8,
+      "content": "\n### Princípios de IA\n\n| Princípio | Descrição |\n|-----------|-----------|\n| Revelância | Mostre o suficiente para o usuário saber o que existe |\n| Exemplos | Mostre exemplos do que está por trás de um link |\n| Portas de entrada | Permita chegar ao mesmo conteúdo por caminhos diferentes |\n| Classificação múltipla | Ofereça diferentes formas de organizar (data, relevância, alfabética) |\n| Navegação focada | Evite misturar navegação principal com conteúdo |\n\n**Para devs:** AO definir rotas de API e URLs, pense na IA:\n```typescript\n// ❌ IA fraca, URLs confusas\n/products/list?type=all\n/user/info\n\n// ✅ IA clara, URLs previsíveis\n/produtos\n/produtos/:id\n/minha-conta/dados\n/minha-conta/pedidos"
+    },
+    {
+      "global_num": 10,
+      "content": "\n### Service Blueprint\n\nVai além do User Journey Map: **inclui a visão do backstage** (o que o sistema e o time fazem).\n"
+    },
+    {
+      "global_num": 11,
+      "content": "\n**Exemplo (simplificado de uma compra):**\n\n| Fase | Cliente | Frontstage | Backstage | Processos |\n|------|---------|------------|-----------|-----------|\n| Carrinho | Adiciona item | UI atualiza | Calcula frete | API de frete |\n| Pagamento | Preenche dados | Formulário | Valida antifraude | Gateway |\n| Confirmação | Recebe email | Tela de sucesso | Gera nota fiscal | ERP |\n| Entrega | Rastreia | Tracking page | Logística | Transportadora |\n\n**Para devs:** Service Blueprint mostra que seu código é apenas uma camada. Falhas na integração com ERP, no job de email ou no gateway de pagamento são **falhas de UX** também.\n\n---\n\n## 5. Personas\n\nPersonas são **personagens fictícios baseados em dados reais** que representam segmentos de usuários.\n\n### Proto-personas vs Data-driven\n\n```text\nProto-persona                        Data-driven persona\nBaseada em hipóteses do time         Baseada em dados reais\nRápida (1 workshop)                  Leva semanas\n\"Eu acho que o usuário...\"           \"Os dados mostram que...\"\nValida: \"Erramos, vamos pesquisar\"   Valida: \"Confirmamos nossas hipóteses\""
+    },
+    {
+      "global_num": 15,
+      "content": "\n### Para devs: personas no código\n\n```typescript\n// Mapeamento de personas para feature flags\ntype Persona = 'admin' | 'dev_individual' | 'gestor_enterprise' | 'suporte';\n\ninterface FeatureFlag {\n  persona: Persona[];\n  rollout: number; // % de usuários\n}\n\nconst flags: Record<string, FeatureFlag> = {\n  'export-csv': {\n    persona: ['gestor_enterprise', 'admin'],\n    rollout: 100,\n  },\n  'ai-suggestions': {\n    persona: ['dev_individual', 'gestor_enterprise'],\n    rollout: 10, // Lançamento gradual\n  },\n};"
+    },
+    {
+      "global_num": 17,
+      "content": "\n### Níveis de conformidade\n\n| Nível | Descrição | Exemplo |\n|-------|-----------|---------|\n| A | Mínimo obrigatório | Alt text em imagens |\n| AA | Recomendado (padrão legal) | Contraste 4.5:1 |\n| AAA | Avançado | Linguagem de sinais em vídeos |\n\n### Contraste\n"
+    },
+    {
+      "global_num": 18,
+      "content": "\n### Navegação por teclado\n\n```typescript\n// ❌ Botão que não recebe foco\n<div onClick={handleClick}>Salvar</div>\n\n// ✅ Botão nativo com foco\n<button onClick={handleClick}>Salvar</button>\n\n// ✅ Se precisar de div, adicione ARIA\n<div\n  role=\"button\"\n  tabIndex={0}\n  onClick={handleClick}\n  onKeyDown={(e) => e.key === 'Enter' && handleClick()}\n>\n  Salvar\n</div>\n```text\n\n### Screen Readers\n\n```html\n<!-- ❌ Imagem decorativa sem alt -->\n<img src=\"lupa.png\" />\n\n<!-- ✅ Imagem funcional com alt descritivo -->\n<img src=\"lupa.png\" alt=\"Pesquisar\" />\n\n<!-- ❌ Ícone sem contexto -->\n<button><i class=\"icon-cog\"></i></button>\n\n<!-- ✅ Ícone com aria-label -->\n<button aria-label=\"Configurações\"><i class=\"icon-cog\"></i></button>\n\n<!-- ❌ Tabela sem escopo -->\n<td>Nome</td>\n\n<!-- ✅ Tabela com scopo -->\n<th scope=\"col\">Nome</th>"
+    },
+    {
+      "global_num": 22,
+      "content": "\n### Tom de voz\n\n| Situação | Tom | Exemplo |\n|----------|-----|---------|\n| Sucesso | Positivo | \"Conta criada com sucesso! 🎉\" |\n| Erro | Empático | \"Algo deu errado. Não se preocupe, seus dados estão seguros.\" |\n| Alerta | Direto | \"Sua sessão vai expirar em 5 minutos.\" |\n| Confirmação | Neutro | \"Tem certeza que deseja excluir este projeto?\" |\n\n### Mensagens de erro\n"
+    },
+    {
+      "global_num": 23,
+      "content": "\n### Para devs: UX Writing no frontend\n\n```typescript\n// ❌ Mensagens de erro hardcoded e genéricas\nconst errorMessagesOld = {\n  400: 'Bad Request',\n  401: 'Unauthorized',\n  500: 'Internal Server Error',\n};\n\n// ✅ Mensagens humanas centralizadas\nconst errorMessages = {\n  400: 'Verifique os dados enviados e tente novamente.',\n  401: 'Sua sessão expirou. Faça login novamente.',\n  403: 'Você não tem permissão para essa ação.',\n  404: 'O recurso solicitado não foi encontrado.',\n  409: 'Já existe um registro com esses dados.',\n  422: 'Corrija os campos destacados e tente novamente.',\n  429: 'Muitas requisições. Aguarde alguns segundos.',\n  500: 'Erro interno. Nossa equipe foi notificada.',\n  502: 'Serviço temporariamente indisponível. Tente novamente.',\n  503: 'Manutenção programada. Volte em instantes.',\n};\n```text\n\n### Princípios de UX Writing\n\n```text\nCLARO          → \"Salvar\" (não \"Persistir alterações no repositório\")\nCONCISO        → \"E-mail inválido\" (não \"O endereço de e-mail digitado não é válido\")\nÚTIL           → \"Digite seu e-mail corporativo\" (orienta, não só rotula)\nCONSISTENTE    → Sempre \"Excluir\", não \"Excluir\"/\"Remover\"/\"Deletar\" aleatoriamente\nHUMANO         → \"Algo deu errado, mas já estamos cuidando disso\""
+    },
+    {
+      "global_num": 25,
+      "content": "\n### Como avaliar com as heurísticas\n\n```typescript\ntype HeuristicSeverity = 0 | 1 | 2 | 3 | 4;\n\ninterface HeuristicEvaluation {\n  heuristic: string;\n  severity: HeuristicSeverity;\n  finding: string;\n  suggestion: string;\n}\n\n// Severidade:\n// 0 = não é problema\n// 1 = problema cosmético\n// 2 = problema menor\n// 3 = problema grave (deve ser corrigido)\n// 4 = catástrofe (uso impossível)\n\nconst evaluation: HeuristicEvaluation[] = [\n  {\n    heuristic: '1. Visibilidade do status',\n    severity: 3,\n    finding: 'Botão \"Exportar\" não mostra progresso',\n    suggestion: 'Adicionar barra de progresso + notificação ao finalizar',\n  },\n  {\n    heuristic: '9. Mensagens de erro',\n    severity: 4,\n    finding: 'Erro 500 sem mensagem ao usuário',\n    suggestion: 'Mensagem amigável + log no backend',\n  },\n];"
+    },
+    {
+      "global_num": 27,
+      "content": "\n### Como colaborar com designers\n\n| Situação | Faça | Não faça |\n|----------|------|----------|\n| Recebeu um design | Pergunte \"qual o fluxo do usuário?\" | Comece a codificar sem entender |\n| Conflito de implementação | Mostre dados (tempo, performance) | Fale \"não dá pra fazer\" sem alternativas |\n| Review de design | Aponte violações de acessibilidade | Critique cor ou fonte |\n| Entrega de funcionalidade | Valide com teste rápido de usabilidade | Considere pronto só porque compilou |\n| Refinamento | Leve dados de analytics/feedback | Apenas \"o PO pediu\" |\n\n### Checklist para devs\n\n```markdown\n## Antes de codificar\n- [ ] Entendi o problema do usuário (não só a solução)\n- [ ] Verifiquei se existem dados/entrevistas que embasam a demanda\n- [ ] Questionei: \"essa é a melhor forma de resolver?\"\n\n## Durante o código\n- [ ] Componentes são acessíveis (teclado, screen reader)\n- [ ] Mensagens de erro são humanas e acionáveis\n- [ ] Estados vazios, loading e erro estão tratados\n- [ ] Contraste mínimo 4.5:1\n- [ ] Microinterações informam o status do sistema\n\n## Antes do deploy\n- [ ] Testei com teclado apenas (sem mouse)\n- [ ] Testei com zoom de 200%\n- [ ] Textos estão consistentes (mesmo label para mesma ação)\n- [ ] Performance: < 3s para carregar (mobile)\n```text\n\n### Exemplo prático: refatorando uma feature com mentalidade UX\n\n```typescript\n// ❌ Antes: feature-centrica\nfunction TelaRelatorios() {\n  const [relatorios] = useQuery(GET_RELATORIOS);\n  return <Table data={relatorios} />;\n  // Usuário: \"e agora? o que eu faço com isso?\"\n}\n\n// ✅ Depois: centrada no usuário\nfunction TelaRelatorios() {\n  const [relatorios, { loading, error }] = useQuery(GET_RELATORIOS);\n  const [search, setSearch] = useState('');\n  const filtered = relatorios.filter(r => r.name.includes(search));\n\n  if (loading) return <Skeleton lines={5} aria-label=\"Carregando relatórios\" />;\n  if (error) return <ErrorAlert message=\"Não foi possível carregar. Tente novamente.\" />;\n  if (filtered.length === 0) return <EmptyState message=\"Nenhum relatório encontrado. Crie o primeiro.\" />;\n\n  return (\n    <Page>\n      <SearchInput\n        value={search}\n        onChange={setSearch}\n        placeholder=\"Buscar relatório por nome...\"\n        aria-label=\"Buscar relatórios\"\n      />\n      <Table\n        data={filtered}\n        emptyMessage=\"Nenhum resultado para essa busca\"\n      />\n    </Page>\n  );\n}"
+    },
+    {
+      "global_num": 28,
+      "content": "1. \"Qual o objetivo do usuário nesta tela?\"\n2. \"O que acontece se der erro?\"\n3. \"Como um usuário novato se sentiria aqui?\"\n4. \"Isso funciona sem JavaScript?\"\n5. \"O usuário consegue desfazer essa ação?\"\n6. \"Onde o usuário vai procurar essa funcionalidade?\"\n7. \"Em quanto tempo isso carrega no 3G?\""
+    }
+  ],
+  "product-design/module-05-wireframes": [
+    {
+      "global_num": 2,
+      "content": "\n### Níveis de Fidelidade\n\n| Fidelidade | Aparência | Quando usar | Prós | Contras |\n|------------|-----------|-------------|------|---------|\n| **Baixa** | Esboço à mão, traços simples | Brainstorming, ideação, sprints | Rápido, barato, encoraja iteração | Pouco realista, difícil compartilhar remotamente |\n| **Média** | Grey box, tons de cinza, formas definidas | Validação de fluxo, testes remotos | Clara distinção de hierarquia, boa para testar | Ainda não testa apelo visual |\n| **Alta** | Quase real, com grid definido, tipografia aproximada | Handoff, aprovação de stakeholders | Mínima ambiguidade, base para protótipo | Leva mais tempo, pode ser confundida com design final |\n\n```typescript\n// Representação de níveis de fidelidade\ntype Fidelity = 'low' | 'medium' | 'high';\n\ninterface WireframeSpec {\n  fidelity: Fidelity;\n  elements: WireframeElement[];\n  interactions?: Interaction[];\n}\n\ninterface WireframeElement {\n  type: 'header' | 'hero' | 'card' | 'form' | 'button' | 'footer';\n  boundingBox: { x: number; y: number; w: number; h: number };\n  placeholder: string; // \"imagem do produto\", \"título\"\n}\n```text\n\n---\n\n## 2. Wireframe vs Mockup vs Protótipo\n\nÉ comum confundir os três. A diferença está no **nível de detalhe** e no **propósito**.\n\n```text\n                  DETALHE VISUAL\n                  ──────────────▶\n  Wireframe ───▶  Mockup ───▶  Protótipo\n  Estrutura        Visual        Interação\n  ────────         ──────        ─────────\n  Caixas           Cores         Clica\n  Hierarquia       Fontes        Navega\n  Fluxo            Ícones        Anima\n  Sem estilo       Imagens       Testa"
+    },
+    {
+      "global_num": 4,
+      "content": "\n---\n\n## 3. Princípios de Layout\n\nWireframe eficiente segue princípios de design visual, mesmo sem cores.\n\n### Grid\n\nO grid é a **espinha dorsal** do layout. Ele garante alinhamento, consistência e ritmo.\n\n```typescript\ninterface Grid {\n  columns: number;       // ex: 12\n  gutter: number;        // ex: 16px (espaço entre colunas)\n  margin: number;        // ex: 24px (margem lateral)\n  breakpoints: Record<string, number>;\n}\n\nconst desktopGrid: Grid = {\n  columns: 12,\n  gutter: 16,\n  margin: 24,\n  breakpoints: { sm: 640, md: 768, lg: 1024, xl: 1280 },\n};\n\n// Utilitário para calcular largura de coluna\nfunction colWidth(cols: number, grid: Grid): number {\n  const contentWidth = 1200 - grid.margin * 2;\n  const totalGutter = (grid.columns - 1) * grid.gutter;\n  const colSize = (contentWidth - totalGutter) / grid.columns;\n  return colSize * cols + (cols - 1) * grid.gutter;\n}"
+    },
+    {
+      "global_num": 6,
+      "content": "\n### Hierarquia Visual\n\nOrganize os elementos por **importância**. O olho do usuário deve saber para onde olhar primeiro.\n\n```text\nHierarquia no wireframe:\n─────────────────────────\n1. Hero / Título principal   (maior box, posição central)\n2. Chamada para ação (CTA)   (destacado, contraste de forma)\n3. Seções de conteúdo         (blocos médios, organizados)\n4. Navegação secundária       (menor, no topo ou sidebar)\n5. Footer                     (menor destaque, no final)"
+    },
+    {
+      "global_num": 8,
+      "content": "\n### Proporção\n\nUse proporções familiares para criar harmonia visual:\n\n```text\n╔══════════════════════════════════════╗\n║  16:9  — Hero/Banner (widescreen)   ║\n║  4:3   — Cards de conteúdo          ║\n║  1:1   — Avatares, thumbnails       ║\n║  3:2   — Imagens de destaque        ║\n║  2:1   — Painéis e dashboards       ║\n╚══════════════════════════════════════╝"
+    },
+    {
+      "global_num": 9,
+      "content": "📝 Papel e caneta\n  → Brainstorming individual ou em dupla\n  → Sprint de design (Google Design Sprint)\n\n✏️ Excalidraw / Whimsical\n  → Esboço remoto rápido\n  → Wireframes de baixa fidelidade colaborativos\n\n🎨 Balsamiq\n  → Wireframes de média fidelidade\n  → Prototipação rápida sem distração visual\n\n🖌️ Figma\n  → Wireframes de média/alta fidelidade\n  → Componentes reutilizáveis\n  → Handoff para devs\n  → Protótipos interativos"
+    },
+    {
+      "global_num": 13,
+      "content": "\n### Grey Box\n\nTécnica de wireframing que usa **apenas caixas cinzas** para representar os elementos. Foco total na estrutura, sem distrações.\n\n```text\nExemplo de Grey Box:\n┌─────────────────────────────────────────────────┐\n│  [LOGO]          [Nav1] [Nav2] [Nav3]  [Login]  │  ← header (cinza escuro)\n├─────────────────────────────────────────────────┤\n│                                                   │\n│   ┌─────────────────────────────────────┐         │\n│   │  ████████████████████████████████  │         │  ← hero (cinza médio)\n│   │  ████████████████████████████████  │         │\n│   └─────────────────────────────────────┘         │\n│                                                   │\n│   ┌──────┐  ┌──────┐  ┌──────┐                   │\n│   │      │  │      │  │      │                    │  ← cards (cinza claro)\n│   │      │  │      │  │      │                    │\n│   └──────┘  └──────┘  └──────┘                   │\n│                                                   │\n├─────────────────────────────────────────────────┤\n│  [Links]         [Contato]         © 2025       │  ← footer (cinza escuro)\n└─────────────────────────────────────────────────┘"
+    },
+    {
+      "global_num": 15,
+      "content": "\n```typescript\ninterface Wireflow {\n  screens: WireframeSpec[];\n  transitions: Transition[];\n}\n\ninterface Transition {\n  from: string;          // id da tela de origem\n  to: string;            // id da tela de destino\n  trigger: 'click' | 'submit' | 'error' | 'success' | 'timeout';\n  element?: string;      // elemento que dispara (ex: \"btn-login\")\n  condition?: string;    // condição (ex: \"campos válidos\")\n}"
+    },
+    {
+      "global_num": 16,
+      "content": "Vantagens do sketching:\n├── Velocidade: 10x mais rápido que digital\n├── Baixo comprometimento: fácil descartar e recomeçar\n├── Qualquer um participa: não precisa saber ferramenta\n└── Memorável: estudos mostram que esboços manuais\n    geram mais feedback honesto que protótipos polidos"
+    },
+    {
+      "global_num": 18,
+      "content": "\n### Detalhamento dos elementos\n\n| Elemento | Função | Wireframe |\n|----------|--------|-----------|\n| **Header** | Identidade + navegação global | Box superior com logo à esquerda, nav ao centro/direita |\n| **Hero** | Primeira impressão, valor principal | Box grande com título, subtítulo e CTA |\n| **Conteúdo** | Informação principal | Grid de cards, listas, formulários |\n| **CTA** | Ação desejada (primário/secundário) | Botão destacado (maior, posição estratégica) |\n| **Navegação** | Explorar o produto | Menu horizontal, sidebar, breadcrumb |\n| **Footer** | Links secundários, legais | Box inferior com informações complementares |\n\n```typescript\n// Definição programática de uma tela\ninterface ScreenAnatomy {\n  header: {\n    logo: string;\n    navItems: NavItem[];\n    ctaButton?: { label: string; action: string };\n  };\n  hero: {\n    headline: string;\n    subheadline?: string;\n    primaryCta: { label: string; action: string };\n    secondaryCta?: { label: string; action: string };\n    mediaType: 'image' | 'video' | 'illustration';\n  };\n  content: ContentSection[];\n  footer: {\n    links: { label: string; url: string }[];\n    legal: string;\n  };\n}\n\ninterface NavItem {\n  label: string;\n  active: boolean;\n  children?: NavItem[];\n}\n```text\n\n### Padrões de layout comuns\n\n```text\n┌─────────────────┐  ┌──────────┬──────────────┐  ┌──────────┬─────────┐\n│   Single        │  │   Sidebar               │  │   Dashboard          │\n│   Column        │  │   + Content             │  │   Cards              │\n│                 │  │                          │  │                      │\n│   Landing       │  │   [Menu] │  Conteúdo     │  │  ┌───┐ ┌───┐ ┌───┐ │\n│   page          │  │   [Sub]  │  principal    │  │  │   │ │   │ │   │ │\n│                 │  │   [Sub]  │  da página    │  │  └───┘ └───┘ └───┘ │\n│   Foco total    │  │          │               │  │  ┌───┐ ┌───┐ ┌───┐ │\n│   no conteúdo   │  │          │               │  │  │   │ │   │ │   │ │\n│                 │  │          │               │  │  └───┘ └───┘ └───┘ │\n└─────────────────┘  └──────────┴──────────────┘  └─────────────────────┘"
+    },
+    {
+      "global_num": 20,
+      "content": "\n### Como representar cada estado no wireframe\n\n| Estado | Representação visual | O que mostra |\n|--------|---------------------|--------------|\n| **Default** | Elemento normal, tons de cinza | Estado neutro |\n| **Loading** | Skeleton boxes (retângulos com animação sugerida) | Dados estão carregando |\n| **Empty** | Box vazio com texto \"Nenhum item encontrado\" + CTA | Não há dados |\n| **Error** | Box com borda tracejada/vermelha + mensagem | Algo deu errado |\n| **Success** | Confirmação visual (checkmark, toast) | Ação concluída |\n| **Disabled** | Elemento opaco, sem contraste | Ação indisponível |\n\n### Skeleton Loading\n\n```typescript\n// Componente de skeleton para wireframe\ninterface SkeletonBox {\n  width: number | string;  // '100%' | '300px'\n  height: number | string;\n  borderRadius: number;\n  lines?: number;          // para texto simulado\n}"
+    },
+    {
+      "global_num": 22,
+      "content": "\n### Estado Empty\n\n```text\nWireframe de estado vazio (empty):\n┌──────────────────────────────────────┐\n│                                       │\n│          ┌──────────────┐            │\n│          │   📦 (ícone) │            │\n│          └──────────────┘            │\n│                                       │\n│    Nenhum projeto encontrado         │\n│                                       │\n│    Crie seu primeiro projeto para     │\n│    começar a organizar suas tarefas.  │\n│                                       │\n│    [Criar Projeto]                    │\n│                                       │\n└──────────────────────────────────────┘"
+    },
+    {
+      "global_num": 24,
+      "content": "\n```text\nRepresentação de transição no wireframe:\n┌────────────┐      push(300ms)      ┌────────────┐\n│  Tela A    │ ────────────────────▶ │  Tela B    │\n│            │                      │            │\n│  [Login]───┤                      │ Dashboard  │\n└────────────┘                      └────────────┘\n        │\n        │ error(modal)\n        ▼\n┌────────────┐\n│ ┌────────┐ │\n│ │ Erro:  │ │\n│ │ \"Email\"│ │\n│ │ [OK]   │ │\n│ └────────┘ │\n└────────────┘"
+    },
+    {
+      "global_num": 28,
+      "content": "\n### Iteração\n\nO ciclo ideal:\n```typescript\nEsboçar → Validar → Aprender → Refinar → (repetir)"
+    },
+    {
+      "global_num": 30,
+      "content": "\n---\n\n## 9. Wireframes em Enterprise\n\nEm contexto enterprise, wireframes vão além do esboço — eles se tornam **documentos de especificação**.\n\n### Documentação\n\nCada wireframe deve incluir metadados:\n\n```typescript\ninterface WireframeDocumentation {\n  // Metadados\n  id: string;                    // \"WF-001\"\n  title: string;                 // \"Tela de Login\"\n  module: string;                // \"Autenticação\"\n  version: string;               // \"1.3\"\n  author: string;                // \"Maria Silva\"\n  createdAt: string;             // ISO date\n  updatedAt: string;             // ISO date\n\n  // Rastreabilidade\n  userStoryId: string;           // \"US-042\"\n  epicId: string;                // \"EPIC-07\"\n\n  // Conteúdo\n  elements: WireframeElement[];\n  states: StatefulComponent[];\n  interactions: Interaction[];\n  notes: string;                 // Observações para dev\n\n  // Aprovações\n  approvals: Approval[];\n}\n\ninterface Approval {\n  role: 'PO' | 'DesignLead' | 'TechLead';\n  name: string;\n  date: string;\n  status: 'pending' | 'approved' | 'changes_requested';\n  comments?: string;\n}\n```text\n\n### Handoff para Devs\n\nO handoff é o momento em que o wireframe vira código. Para que seja eficiente:\n"
+    },
+    {
+      "global_num": 31,
+      "content": "\n```typescript\n// Especificação de handoff\ninterface HandoffSpec {\n  screen: WireframeDocumentation;\n  responsiveBreakpoints: {\n    mobile: WireframeSpec;\n    tablet: WireframeSpec;\n    desktop: WireframeSpec;\n  };\n  componentReferences: {\n    [componentName: string]: string; // \"Button\" → \"ds-button\"\n  };\n  apiContracts: {\n    endpoint: string;\n    method: string;\n    requestFields: string[];\n    responseFields: string[];\n  }[];\n}"
+    },
+    {
+      "global_num": 33,
+      "content": "\n### Exemplo de Changelog de Wireframe\n\n```typescript\ninterface WireframeChangelog {\n  version: string;\n  date: string;\n  author: string;\n  changes: string[];\n  reason: string;\n}\n\nconst changelog: WireframeChangelog[] = [\n  {\n    version: '1.0',\n    date: '2025-06-01',\n    author: 'Maria Silva',\n    changes: ['Criação inicial do wireframe'],\n    reason: 'Primeira versão para alinhamento com PO',\n  },\n  {\n    version: '1.1',\n    date: '2025-06-03',\n    author: 'Maria Silva',\n    changes: [\n      'Adicionado campo de busca no header',\n      'Reduzido hero de 800px para 600px',\n    ],\n    reason: 'Feedback do PO: buscar é prioridade',\n  },\n  {\n    version: '2.0',\n    date: '2025-06-10',\n    author: 'Carlos Lima',\n    changes: [\n      'Reestruturado layout para sidebar + content',\n      'Adicionada seção de relatórios',\n      'Removido carrossel do hero',\n    ],\n    reason: 'Mudança de escopo: nova feature de relatórios',\n  },\n];"
+    }
+  ],
+  "product-design/module-06-ui-design": [
+    {
+      "global_num": 2,
+      "content": "\nUI é a **camada de superfície** dos 5 Planos de Garrett. É o que o usuário vê e com o que interage diretamente.\n\n### A relação UI + UX\n\n```text\nUX sem UI: ideia sem forma, impossível de usar\nUI sem UX: bonito mas inútil, frustrante\nUI + UX: útil, usável e desejável"
+    },
+    {
+      "global_num": 6,
+      "content": "\n### Alinhamento\n\nNada deve ser colocado arbitrariamente. Cada elemento tem conexão visual com outro.\n\n```typescript\n// ❌ Alinhamento solto\nconst misaligned = {\n  title: { marginLeft: 16 },\n  body: { marginLeft: 20 },\n  action: { marginLeft: 12 },\n};\n\n// ✅ Alinhamento consistente\nconst aligned = {\n  title: { marginLeft: 16 },\n  body: { marginLeft: 16 },\n  action: { marginLeft: 16 },\n};"
+    },
+    {
+      "global_num": 7,
+      "content": "❌ Agrupamento confuso:\n  [Nome] [Email] [Telefone]\n  [Senha] [Confirmar Senha]\n\n✅ Agrupamento lógico por proximidade:\n  [Nome] [Email]          ← Dados pessoais\n  [Telefone]              ← Contato\n  [Senha] [Confirmar]     ← Segurança"
+    },
+    {
+      "global_num": 11,
+      "content": "\n### Cor e Branding\n\nNo contexto enterprise, a paleta primária reflete a marca, mas a paleta **funcional** (success, error, warning, info) deve seguir padrões culturais. Nunca use verde para erros ou vermelho para sucesso.\n\n```typescript\ninterface BrandTokens {\n  colors: ColorPalette;\n  usage: {\n    primaryAction: string;\n    dangerAction: string;\n    link: string;\n    border: string;\n    surface: {\n      page: string;\n      card: string;\n      modal: string;\n      sidebar: string;\n    };\n    text: {\n      primary: string;\n      secondary: string;\n      disabled: string;\n      inverse: string;\n    };\n  };\n}\n```text\n\n---\n\n## 4. Tipografia\n\n### Hierarquia Tipográfica\n\nA hierarquia guia o olho do usuário: o que é mais importante deve ser visualmente mais proeminente.\n\n```typescript\ninterface TypographyScale {\n  display: { size: number; lineHeight: number; weight: number };\n  heading1: { size: number; lineHeight: number; weight: number };\n  heading2: { size: number; lineHeight: number; weight: number };\n  heading3: { size: number; lineHeight: number; weight: number };\n  body: { size: number; lineHeight: number; weight: number };\n  bodySmall: { size: number; lineHeight: number; weight: number };\n  caption: { size: number; lineHeight: number; weight: number };\n}\n\nconst enterpriseTypography: TypographyScale = {\n  display:    { size: 32, lineHeight: 40, weight: 700 },\n  heading1:   { size: 24, lineHeight: 32, weight: 700 },\n  heading2:   { size: 20, lineHeight: 28, weight: 600 },\n  heading3:   { size: 16, lineHeight: 24, weight: 600 },\n  body:       { size: 14, lineHeight: 20, weight: 400 },\n  bodySmall:  { size: 12, lineHeight: 16, weight: 400 },\n  caption:    { size: 11, lineHeight: 16, weight: 400 },\n};"
+    },
+    {
+      "global_num": 12,
+      "content": "Escala 1.25 (Major Second):\n11 → 14 → 16 → 20 → 24 → 32 → 40\n\nEscala 1.333 (Major Third):\n12 → 16 → 20 → 24 → 32 → 40 → 48"
+    },
+    {
+      "global_num": 16,
+      "content": "\n```typescript\n// ❌ Espaçamento arbitrário\nconst badCard = { padding: 17, gap: 11 };\n\n// ✅ Espaçamento da escala\nconst goodCard = { padding: spacing.lg, gap: spacing.md };\n```text\n\n### Grid Systems\n\n| Grid | Colunas | Gutters | Uso |\n|------|---------|---------|-----|\n| Mobile | 4 | 16px | Telas < 768px |\n| Tablet | 8 | 24px | 768px–1024px |\n| Desktop | 12 | 24px | > 1024px |\n\n```typescript\ninterface GridConfig {\n  columns: number;\n  gutter: number;\n  margin: number;\n  maxWidth: number;\n}\n\nconst grid: Record<string, GridConfig> = {\n  mobile:  { columns: 4,  gutter: 16, margin: 16, maxWidth: 480 },\n  tablet:  { columns: 8,  gutter: 24, margin: 24, maxWidth: 960 },\n  desktop: { columns: 12, gutter: 24, margin: 0,  maxWidth: 1200 },\n};\n\n// Utility: cálculo de coluna\nfunction colWidth(columns: number, totalColumns: number, gutter: number): string {\n  const fraction = columns / totalColumns;\n  return `calc(${fraction * 100}% - ${gutter}px)`;\n}"
+    },
+    {
+      "global_num": 18,
+      "content": "\n---\n\n## 6. Componentes de UI\n\n### Botões\n\n```typescript\ntype ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger';\ntype ButtonSize = 'sm' | 'md' | 'lg';\n\ninterface ButtonProps {\n  variant: ButtonVariant;\n  size: ButtonSize;\n  disabled?: boolean;\n  loading?: boolean;\n  icon?: React.ReactNode;\n  children: React.ReactNode;\n}\n\n// Mapa de cores por variante\nconst buttonStyles: Record<ButtonVariant, { bg: string; color: string; border: string }> = {\n  primary:   { bg: '#1A73E8', color: '#FFFFFF', border: 'transparent' },\n  secondary: { bg: '#E8F0FE', color: '#1A73E8', border: 'transparent' },\n  outline:   { bg: 'transparent', color: '#1A73E8', border: '#1A73E8' },\n  ghost:     { bg: 'transparent', color: '#5F6368', border: 'transparent' },\n  danger:    { bg: '#EA4335', color: '#FFFFFF', border: 'transparent' },\n};\n```text\n\n### Inputs e Formulários\n\n```typescript\ninterface InputProps {\n  label: string;\n  placeholder?: string;\n  error?: string;\n  hint?: string;\n  disabled?: boolean;\n  required?: boolean;\n  leftIcon?: React.ReactNode;\n}\n\n// Estados do input\nconst inputStates = {\n  default: { border: '#DADCE0', bg: '#FFFFFF' },\n  hover:   { border: '#9AA0A6', bg: '#FFFFFF' },\n  focus:   { border: '#1A73E8', bg: '#FFFFFF', boxShadow: '0 0 0 3px #E8F0FE' },\n  error:   { border: '#EA4335', bg: '#FFFFFF' },\n  disabled: { border: '#E8EAED', bg: '#F1F3F4', color: '#9AA0A6' },\n};"
+    },
+    {
+      "global_num": 22,
+      "content": "\n### Tabelas\n\n```typescript\ninterface Column<T> {\n  key: keyof T;\n  header: string;\n  width?: number;\n  align?: 'left' | 'center' | 'right';\n  render?: (value: T[keyof T], row: T) => React.ReactNode;\n  sortable?: boolean;\n}\n\ninterface TableProps<T> {\n  columns: Column<T>[];\n  data: T[];\n  loading?: boolean;\n  emptyMessage?: string;\n  onRowClick?: (row: T) => void;\n}\n```text\n\n### Dropdowns e Selects\n\n```typescript\ninterface Option {\n  value: string;\n  label: string;\n  disabled?: boolean;\n  group?: string;\n}\n\ninterface SelectProps {\n  options: Option[];\n  value: string;\n  onChange: (value: string) => void;\n  placeholder?: string;\n  searchable?: boolean;\n  clearable?: boolean;\n}"
+    },
+    {
+      "global_num": 26,
+      "content": "\n### Feedback\n\n| Situação | Componente | Exemplo |\n|----------|-----------|---------|\n| Sucesso | Toast/snackbar | \"Projeto salvo\" |\n| Erro | Alert + inline error | \"Email inválido\" |\n| Carregando | Skeleton / Spinner | Skeleton de 3 linhas |\n| Vazio | Empty state | \"Nenhum projeto ainda\" |\n| Confirmação | Modal/dialog | \"Tem certeza?\" |\n\n### Onboarding\n\n```typescript\ninterface OnboardingStep {\n  target: string;        // seletor do elemento alvo\n  title: string;\n  content: string;\n  position: 'top' | 'bottom' | 'left' | 'right';\n}\n\nconst onboarding: OnboardingStep[] = [\n  {\n    target: '#create-project-btn',\n    title: 'Criar projeto',\n    content: 'Clique aqui para criar seu primeiro projeto',\n    position: 'bottom',\n  },\n  {\n    target: '#sidebar',\n    title: 'Navegação',\n    content: 'Use o menu lateral para acessar todas as seções',\n    position: 'right',\n  },\n];\n```text\n\n### Empty States\n\nNunca mostre uma tela em branco. Todo empty state deve ter:\n\n1. **Ilustração** ou ícone representativo\n2. **Título** claro do que falta\n3. **Descrição** do que fazer\n4. **CTA** para a ação principal\n\n```typescript\nconst emptyState = {\n  title: 'Nenhum projeto encontrado',\n  description: 'Crie seu primeiro projeto para começar a organizar suas tarefas.',\n  action: { label: 'Criar projeto', href: '/projects/new' },\n};"
+    },
+    {
+      "global_num": 30,
+      "content": "\n### Microinterações Essenciais\n\n```text\nElemento        | Interação       | Feedback\n─────────────────────────────────────────────────\nBotão           | Click           | Scale 0.98 + cor\nToggle          | Toggle          | Animação do thumb + bg\nInput           | Focus           | Borda azul + box-shadow\nDropdown        | Open            | Fade in + slide\nToast           | Appear          | Slide in da direita\nSkeleton        | Load            | Pulse shimmer\nLink            | Hover           | Underline aparece\nCheckbox        | Toggle          | Check animado"
+    },
+    {
+      "global_num": 34,
+      "content": "\n### Implementação com Context\n\n```typescript\nconst ThemeContext = React.createContext<{\n  theme: Theme;\n  toggleTheme: () => void;\n}>({\n  theme: lightTheme,\n  toggleTheme: () => {},\n});\n\nfunction ThemeProvider({ children }: { children: React.ReactNode }) {\n  const [mode, setMode] = useState<ThemeMode>('light');\n\n  const toggleTheme = () => {\n    setMode(prev => prev === 'light' ? 'dark' : 'light');\n  };\n\n  const theme = mode === 'light' ? lightTheme : darkTheme;\n\n  return (\n    <ThemeContext.Provider value={{ theme, toggleTheme }}>\n      <div data-theme={mode} style={{ background: theme.colors.background.primary }}>\n        {children}\n      </div>\n    </ThemeContext.Provider>\n  );\n}"
+    },
+    {
+      "global_num": 36,
+      "content": "\n### Medidas e Densidade\n\n```typescript\n// Prefira valores da escala de espaçamento\nconst badImplementation = {\n  padding: '13px 22px', // arbitrário\n};\n\nconst faithfulImplementation = {\n  padding: 12, // da escala: spacing.sm\n  gap: 8,      // da escala: spacing.xs\n};\n```text\n\n### Implementação Fiel\n\nChecklist para implementar um componente com fidelidade:\n\n```typescript\ninterface UIInspectionChecklist {\n  layout: {\n    dimensions: boolean;      // width, height, min/max\n    padding: boolean;         // internal spacing\n    margin: boolean;          // external spacing\n    alignment: boolean;       // flex, grid, absolute\n  };\n  typography: {\n    fontFamily: boolean;\n    fontSize: boolean;\n    fontWeight: boolean;\n    lineHeight: boolean;\n    letterSpacing: boolean;\n    textAlign: boolean;\n  };\n  visuals: {\n    backgroundColor: boolean;\n    border: boolean;          // width, style, color, radius\n    boxShadow: boolean;\n    opacity: boolean;\n  };\n  states: {\n    hover: boolean;\n    active: boolean;\n    focus: boolean;\n    disabled: boolean;\n    error: boolean;\n  };\n  responsive: {\n    mobile: boolean;\n    tablet: boolean;\n    desktop: boolean;\n  };\n  accessibility: {\n    contrast: boolean;        // WCAG AA\n    focusVisible: boolean;\n    ariaLabels: boolean;\n    keyboardNav: boolean;\n  };\n}\n\nfunction checkFidelity(inspection: UIInspectionChecklist): number {\n  const items = Object.values(inspection).flatMap(category =>\n    Object.values(category)\n  );\n  const total = items.length;\n  const passed = items.filter(Boolean).length;\n  return Math.round((passed / total) * 100);\n}"
+    }
+  ],
+  "arquitetura-backend/module-08-arquitetura": [
+    {
+      "global_num": 2,
+      "content": "\n### O que arquitetura define\n\n```text\nComponentes:      Em quais partes o sistema se divide?\nComunicação:      Como as partes se comunicam?\nDados:            Como os dados fluem e são armazenados?\nTecnologia:       Qual stack suporta a estrutura?\nEquipe:           Como o time se organiza para desenvolver?"
+    },
+    {
+      "global_num": 6,
+      "content": "\n### L — Liskov Substitution Principle\n\n> Subtipos devem ser substituíveis por seus tipos base.\n\n```typescript\n// ❌ Ruim: Quebra a expectativa\nclass Bird {\n  fly(): void { /* voa */ }\n}\n\nclass Penguin extends Bird {\n  fly(): void { throw new Error('Pinguins não voam'); }  // 💥\n}\n\n// ✅ Bom: Abstração correta\ninterface Bird { }\ninterface FlyingBird extends Bird {\n  fly(): void;\n}\nclass Penguin implements Bird { }\nclass Sparrow implements Bird, FlyingBird { }\n```text\n\n### I — Interface Segregation Principle\n\n> Interfaces específicas são melhores que interfaces genéricas.\n\n```typescript\n// ❌ Ruim: Interface genérica\ninterface Worker {\n  work(): void;\n  eat(): void;\n  sleep(): void;\n}\n\n// ✅ Bom: Interfaces específicas\ninterface Workable { work(): void; }\ninterface Eatable { eat(): void; }\ninterface Sleepable { sleep(): void; }"
+    },
+    {
+      "global_num": 10,
+      "content": "\n### A Regra da Dependência\n\n> As dependências de código fonte apontam **para dentro**, em direção ao centro.\n> Nada no círculo interno pode saber algo sobre o círculo externo.\n\n```text\n❌ ERRADO: Use Case importa Prisma\n  UseCase → PrismaClient  (dependência para fora!)\n\n✅ CERTO: Use Case depende de interface\n  UseCase → UserRepository (interface)\n  PrismaUserRepository → UserRepository (implementa)"
+    },
+    {
+      "global_num": 12,
+      "content": "\n### Bounded Contexts\n\nUm Bounded Context é um **limite explícito** onde um modelo de domínio se aplica.\n\n```text\nContexto de Vendas:         Contexto de Logística:\n  Cliente = quem compra      Cliente = quem recebe\n  Produto = item no catálogo Produto = item no estoque\n  Pedido = carrinho          Pedido = carga para entrega\n\nSão modelos DIFERENTES do mesmo conceito!"
+    },
+    {
+      "global_num": 14,
+      "content": "\n### Exemplo prático de DDD\n\n```typescript\n// Entidade\nclass Usuario {\n  private id: UsuarioId;\n  private email: Email;  // Value Object\n  private perfil: Perfil;\n\n  constructor(id: UsuarioId, email: Email, perfil: Perfil) {\n    this.id = id;\n    this.email = email;\n    this.perfil = perfil;\n  }\n\n  alterarPerfil(novoPerfil: Perfil): void {\n    // Regra de negócio\n    if (this.perfil.eAdmin() && !novoPerfil.eAdmin()\n        && !this.temOutroAdmin()) {\n      throw new Error('Deve haver pelo menos um admin');\n    }\n    this.perfil = novoPerfil;\n  }\n}\n\n// Value Object\nclass Email {\n  private readonly valor: string;\n\n  constructor(valor: string) {\n    if (!valor.includes('@')) {\n      throw new Error('Email inválido');\n    }\n    this.valor = valor;\n  }\n\n  toString(): string { return this.valor; }\n}\n\n// Repository (interface no domínio)\ninterface UsuarioRepository {\n  findById(id: UsuarioId): Promise<Usuario | null>;\n  save(usuario: Usuario): Promise<void>;\n  delete(id: UsuarioId): Promise<void>;\n}\n\n// Use Case\nclass AlterarPerfilUseCase {\n  constructor(\n    private usuarioRepo: UsuarioRepository,\n    private emailService: EmailService\n  ) {}\n\n  async execute(input: { usuarioId: UsuarioId; novoPerfil: Perfil }) {\n    const usuario = await this.usuarioRepo.findById(input.usuarioId);\n    if (!usuario) throw new NotFoundError('Usuário não encontrado');\n\n    usuario.alterarPerfil(input.novoPerfil);\n    await this.usuarioRepo.save(usuario);\n\n    // Efeito colateral via evento\n    await this.emailService.enviarNotificacao(usuario.email);\n  }\n}"
+    },
+    {
+      "global_num": 16,
+      "content": "\nAbaixo, uma visão de container C4 da mesma arquitetura:\n\n![Arquitetura de Referencia Backend - Container](/knowledge-factory/products/courses/arquitetura-backend/module-08-arquitetura/assets/diagram-c4-container.svg)\n\n### Portas\n\n```typescript\n// Porta de saída (interface no domínio)\ninterface PedidoRepository {\n  save(pedido: Pedido): Promise<void>;\n  findById(id: PedidoId): Promise<Pedido | null>;\n}\n\n// Porta de entrada (interface do use case)\ninterface CriarPedidoUseCase {\n  execute(input: CriarPedidoInput): Promise<CriarPedidoOutput>;\n}\n```text\n\n### Adaptadores\n\n```typescript\n// Adaptador de saída (implementação externa)\nclass PrismaPedidoRepository implements PedidoRepository {\n  async save(pedido: Pedido): Promise<void> {\n    await prisma.pedido.create({\n      data: this.toPersistence(pedido),\n    });\n  }\n\n  private toPersistence(pedido: Pedido): PrismaPedido {\n    return {\n      id: pedido.id.toString(),\n      clienteId: pedido.clienteId.toString(),\n      valor: pedido.valor,\n    };\n  }\n}\n\n// Adaptador de entrada (NestJS Controller)\n@Controller('/pedidos')\nclass PedidoController {\n  constructor(private criarPedido: CriarPedidoUseCase) {}\n\n  @Post()\n  async criar(@Body() body: CriarPedidoDto) {\n    return this.criarPedido.execute(this.toInput(body));\n  }\n}"
+    },
+    {
+      "global_num": 18,
+      "content": "\n### Microservices\n\nServiços independentes, cada um com seu banco e deploy.\n\n```text\nPrós:                     Contras:\n- Escala independente     - Complexidade de rede\n- Deploy independente     - Dados distribuídos\n- Stack variada           - Consistência eventual\n- Times autônomos         - Observabilidade complexa\n- Isolamento de falhas    - Testes mais difíceis\n\nQuando usar:\n  - Time grande (> 10 devs por serviço)\n  - Domínios claramente separados\n  - Escala global\n  - Times autônomos por domínio"
+    },
+    {
+      "global_num": 19,
+      "content": "Evento:           \"Algo aconteceu\"\n  → PedidoCriado, UsuarioCadastrado, PagamentoConfirmado\n\nProdutor:         Quem gera o evento\n  → Serviço de pedidos publica \"PedidoCriado\"\n\nConsumidor:       Quem reage ao evento\n  → Serviço de email escuta \"PedidoCriado\" e envia confirmação\n\nBarramento:       Meio de transporte\n  → RabbitMQ, Kafka, Redis Pub/Sub"
+    },
+    {
+      "global_num": 22,
+      "content": "src/\n├── domain/                    # Círculo mais interno\n│   ├── entities/              # Entidades de domínio\n│   │   └── usuario.ts\n│   ├── value-objects/         # Value Objects\n│   │   └── email.ts\n│   ├── repositories/          # Interfaces (portas)\n│   │   └── usuario.repository.ts\n│   └── services/              # Domain Services\n│       └── autenticacao.service.ts\n│\n├── application/               # Use Cases\n│   ├── use-cases/\n│   │   └── criar-usuario.use-case.ts\n│   └── dto/\n│       └── criar-usuario.dto.ts\n│\n├── infrastructure/            # Adaptadores (implementações)\n│   ├── persistence/\n│   │   └── prisma/\n│   │       ├── prisma.service.ts\n│   │       └── repositories/\n│   │           └── prisma-usuario.repository.ts\n│   ├── messaging/\n│   │   └── rabbitmq-event-bus.ts\n│   └── email/\n│       └── nodemailer-email.service.ts\n│\n├── presentation/              # Adaptadores de entrada\n│   ├── controllers/\n│   │   └── usuario.controller.ts\n│   └── guards/\n│       └── jwt-auth.guard.ts\n│\n└── main.ts"
+    }
+  ],
+  "arquitetura-backend/module-09-modelagem": [
+    {
+      "global_num": 2,
+      "content": "\n---\n\n## 2. Entidades e Relacionamentos\n\n### Tipos de Relacionamento\n"
+    },
+    {
+      "global_num": 3,
+      "content": "\n### Exemplo no Prisma\n\n```prisma\n// 1:1\nmodel User {\n  id      String  @id @default(cuid())\n  email   String  @unique\n  profile Profile?\n}\n\nmodel Profile {\n  id        String @id @default(cuid())\n  fullName  String\n  avatarUrl String?\n  userId    String @unique\n  user      User   @relation(fields: [userId], references: [id])\n}\n\n// 1:N\nmodel Order {\n  id       String    @id @default(cuid())\n  total    Decimal\n  userId   String\n  user     User      @relation(fields: [userId], references: [id])\n  items    OrderItem[]\n  createdAt DateTime @default(now())\n}\n\nmodel OrderItem {\n  id        String  @id @default(cuid())\n  orderId   String\n  order     Order   @relation(fields: [orderId], references: [id])\n  productId String\n  product   Product @relation(fields: [productId], references: [id])\n  quantity  Int\n  price     Decimal\n}\n\n// N:M\nmodel Product {\n  id           String          @id @default(cuid())\n  name         String\n  categories   ProductCategory[]\n}\n\nmodel Category {\n  id       String          @id @default(cuid())\n  name     String\n  products ProductCategory[]\n}\n\nmodel ProductCategory {\n  productId  String\n  categoryId String\n  product    Product  @relation(fields: [productId], references: [id])\n  category   Category @relation(fields: [categoryId], references: [id])\n\n  @@id([productId, categoryId])\n}\n```text\n\n---\n\n## 3. Soft Delete e Audit Trail\n\n### Soft Delete\n\nNunca delete dados definitivamente em sistemas Enterprise.\n\n```prisma\nmodel User {\n  id        String    @id @default(cuid())\n  email     String    @unique\n  name      String\n  createdAt DateTime  @default(now())\n  updatedAt DateTime  @updatedAt\n  deletedAt DateTime?  // Soft delete\n\n  // Filtro global no Prisma\n  @@where(\"@deletedAt is null\")\n}"
+    },
+    {
+      "global_num": 7,
+      "content": "\n```typescript\n// AuditService\nclass AuditService {\n  async log(input: AuditInput): Promise<void> {\n    await this.prisma.auditLog.create({\n      data: {\n        entity: input.entity,\n        entityId: input.entityId,\n        action: input.action,\n        changes: JSON.parse(JSON.stringify(input.changes)),\n        userId: input.userId,\n        ip: input.ip,\n        userAgent: input.userAgent,\n      },\n    });\n  }\n}\n\n// Uso com hook do Prisma\nprisma.$use(async (params, next) => {\n  const result = await next(params);\n\n  if (['create', 'update', 'delete'].includes(params.action)) {\n    await auditService.log({\n      entity: params.model,\n      entityId: result?.id,\n      action: params.action.toUpperCase(),\n      changes: params.args.data,\n    });\n  }\n\n  return result;\n});\n```text\n\n---\n\n## 4. Índices e Performance\n\n### Quando criar índices\n\n```prisma\nmodel Order {\n  id         String   @id @default(cuid())\n  userId     String\n  status     OrderStatus\n  total      Decimal\n  createdAt  DateTime @default(now())\n\n  // Índice para busca por usuário (foreign key)\n  @@index([userId])\n\n  // Índice composto para filtro comum\n  @@index([userId, status])\n\n  // Índice para ordenação por data\n  @@index([createdAt])\n\n  // Índice parcial para pedidos ativos\n  @@index([status, createdAt])\n}"
+    },
+    {
+      "global_num": 9,
+      "content": "\n### Query Performance\n\n```typescript\n// ❌ N+1 — busca em loop\nconst orders = await prisma.order.findMany();\nfor (const order of orders) {\n  const items = await prisma.orderItem.findMany({\n    where: { orderId: order.id },\n  });\n}\n\n// ✅ Eager loading — busca tudo de uma vez\nconst orders = await prisma.order.findMany({\n  include: {\n    items: true,\n    user: true,\n  },\n});\n```text\n\n---\n\n## 5. Migrações Seguras\n\n### Criando migrações\n\n```bash\n# Criar migration baseada no schema\nnpx prisma migrate dev --name create-user-table\n\n# Aplicar em produção\nnpx prisma migrate deploy\n\n# Resetar banco (dev)\nnpx prisma migrate reset"
+    },
+    {
+      "global_num": 13,
+      "content": "\n### Script de backup\n\n```bash\n#!/bin/bash\n# backup.sh — backup PostgreSQL com compressão\n\nDB_NAME=\"app\"\nDB_USER=\"admin\"\nBACKUP_DIR=\"/backups\"\nDATE=$(date +%Y%m%d_%H%M%S)\n\npg_dump -U $DB_USER -d $DB_NAME \\\n  --format=custom \\\n  --compress=9 \\\n  --file=\"$BACKUP_DIR/$DB_NAME-$DATE.dump\"\n\n# Manter apenas últimos 7 dias\nfind $BACKUP_DIR -name \"*.dump\" -mtime +7 -delete\n\necho \"Backup concluído: $DB_NAME-$DATE.dump\""
+    },
+    {
+      "global_num": 17,
+      "content": "\n---\n\n## Resumo\n\n1. **Modelagem é a fundação** — erros aqui são os mais caros\n2. **1:1, 1:N, N:M** — conheça os 3 tipos de relacionamento\n3. **Soft Delete** — nunca delete dados (deletedAt)\n4. **Audit Trail** — toda ação importante deve ser registrada\n5. **Índices** — toda FK precisa de índice; índices compostos para filtros comuns\n6. **Eager Loading** — previne N+1\n7. **Migrações seguras** — expand-migrate-contract para mudanças sem downtime\n8. **Backup** — full + incremental + WAL; testar restore periodicamente"
+    }
+  ],
+  "arquitetura-backend/module-12-seguranca": [
+    {
+      "global_num": 2,
+      "content": "\n### Mindset de segurança\n"
+    },
+    {
+      "global_num": 3,
+      "content": "\n---\n\n## 2. OWASP Top 10 (2021)\n\nAs 10 vulnerabilidades mais críticas em aplicações web.\n\n### 1. Broken Access Control\n\n> Usuário acessa recursos que não deveria.\n\n```typescript\n// ❌ Ruim: Não verifica se o recurso pertence ao usuário\n@Get('/orders/:id')\nasync getOrder(@Param('id') id: string) {\n  return this.orderRepo.findById(id);  // qualquer um vê qualquer pedido!\n}\n\n// ✅ Bom: Verifica propriedade\n@Get('/orders/:id')\nasync getOrder(@Param('id') id: string, @Req() req) {\n  const order = await this.orderRepo.findById(id);\n  if (order.userId !== req.user.id) {\n    throw new ForbiddenException();\n  }\n  return order;\n}\n```text\n\n### 2. Cryptographic Failures\n\n> Dados sensíveis expostos ou mal protegidos.\n\n```typescript\n// ❌ Ruim: Senha em texto puro\nconst user = await prisma.user.create({\n  data: { password: req.body.password }  // 💥\n});\n\n// ✅ Bom: Hash com bcrypt\nconst hashedPassword = await bcrypt.hash(req.body.password, 12);\nconst user = await prisma.user.create({\n  data: { password: hashedPassword }\n});"
+    },
+    {
+      "global_num": 7,
+      "content": "\n### 5. Security Misconfiguration\n\n> Configurações padrão inseguras.\n\n```typescript\n// ❌ Ruim: CORS aberto\napp.enableCors();  // permite qualquer origem!\n\n// ✅ Bom: CORS restrito\napp.enableCors({\n  origin: ['https://app.meusistema.com'],\n  methods: ['GET', 'POST', 'PUT', 'DELETE'],\n});\n```text\n\n### 6-10: Vulnerable Components, Auth Failures, Data Integrity, Logging, SSRF\n\n| # | Vulnerabilidade | Prevenção |\n|---|----------------|-----------|\n| 6 | Vulnerable Components | npm audit, Dependabot, manter deps atualizadas |\n| 7 | Identification/Auth Failures | JWT com expiração, MFA, session segura |\n| 8 | Data Integrity Failures | Assinatura de dados, validação, CSP |\n| 9 | Security Logging/Monitoring | Logs estruturados, alertas de segurança |\n| 10 | SSRF | Validar URLs, restringir rede interna |\n\n---\n\n## 3. Autenticação com JWT\n\n### Fluxo completo\n\n```text\n1. Usuário envia email + senha\n2. Servidor valida credenciais\n3. Servidor gera ACCESS TOKEN (15min) + REFRESH TOKEN (7d)\n4. Cliente armazena e envia access token em requisições\n5. Servidor valida token em cada requisição (AuthGuard)\n6. Quando access token expira, cliente usa refresh token para obter novo"
+    },
+    {
+      "global_num": 9,
+      "content": "\n---\n\n## 4. Autorização com CASL (RBAC)\n\n### Definição de abilities\n\n```typescript\n// abilities.ts\nexport type Action = 'manage' | 'create' | 'read' | 'update' | 'delete';\nexport type Subject = 'User' | 'Order' | 'Product' | 'Report' | 'all';\n\nexport function defineAbilitiesFor(user: User): PureAbility {\n  return AbilityBuilder.define((can, cannot) => {\n    // Admin pode fazer tudo\n    if (user.role === 'admin') {\n      can('manage', 'all');\n      return;\n    }\n\n    // Usuário comum\n    can('read', 'User', { id: user.id });       // só próprio perfil\n    can('read', 'Order', { userId: user.id });  // só seus pedidos\n    can('create', 'Order');                      // criar pedidos\n    can('update', 'Order', { userId: user.id, status: 'pending' });\n\n    // Gerente pode ver relatórios\n    if (user.role === 'manager') {\n      can('read', 'Report');\n      can('read', 'User', { tenantId: user.tenantId });\n    }\n\n    // Ninguém pode deletar\n    cannot('delete', 'all');\n  });\n}\n```text\n\n### Uso no controller\n\n```typescript\n@Post('/orders')\nasync create(@Body() dto: CreateOrderDto, @Req() req) {\n  const ability = defineAbilitiesFor(req.user);\n  ForbiddenError.from(ability).throwUnlessCan('create', 'Order');\n  return this.orderService.create(dto, req.user.id);\n}\n\n@Delete('/orders/:id')\nasync delete(@Param('id') id: string, @Req() req) {\n  const ability = defineAbilitiesFor(req.user);\n  ForbiddenError.from(ability).throwUnlessCan('delete', 'Order');\n  // Nunca chega aqui — admin também não pode deletar\n}"
+    },
+    {
+      "global_num": 13,
+      "content": "\n---\n\n## 6. Headers de Segurança (Helmet + CSP)\n\n### Helmet (NestJS)\n\n```typescript\nimport helmet from 'helmet';\n\napp.use(helmet());\n\n// Configura automaticamente:\n// Content-Security-Policy\n// X-Content-Type-Options: nosniff\n// X-Frame-Options: DENY\n// X-XSS-Protection: 0\n// Strict-Transport-Security\n// Referrer-Policy"
+    },
+    {
+      "global_num": 17,
+      "content": "\n### XSS (Cross-Site Scripting)\n\n```typescript\n// ❌ Renderizar HTML sem sanitizar\n<div dangerouslySetInnerHTML={{ __html: userComment }} />\n\n// ✅ Sanitizar antes de renderizar\nimport DOMPurify from 'isomorphic-dompurify';\n<div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(userComment) }} />\n\n// ✅ No backend, escapar output\nconst sanitized = escapeHtml(userComment);\n```text\n\n### CSRF (Cross-Site Request Forgery)\n\n```typescript\n// NestJS com CSRF protection\nimport * as csurf from 'csurf';\n\napp.use(csurf({ cookie: true }));\n\n// Enviar token CSRF em formulários/headers\n// <meta name=\"csrf-token\" content=\"{{csrfToken}}\">\n// Header: X-CSRF-Token"
+    },
+    {
+      "global_num": 21,
+      "content": "\n---\n\n## 9. Auditoria de Segurança\n\n### O que auditar\n\n```typescript\n// Log de ações sensíveis\n@Injectable()\nexport class AuditService {\n  async log(action: AuditAction): Promise<void> {\n    await prisma.auditLog.create({\n      data: {\n        userId: action.userId,\n        action: action.type,\n        resource: action.resource,\n        resourceId: action.resourceId,\n        details: action.details,\n        ip: action.ip,\n        userAgent: action.userAgent,\n        timestamp: new Date(),\n      },\n    });\n  }\n}\n\n// Uso\n@Post('/transfer')\nasync transfer(@Body() dto: TransferDto, @Req() req) {\n  const result = await this.transferService.execute(dto);\n  await this.auditService.log({\n    userId: req.user.id,\n    type: 'TRANSFER',\n    resource: 'Account',\n    resourceId: dto.fromAccountId,\n    details: { to: dto.toAccountId, amount: dto.amount },\n    ip: req.ip,\n    userAgent: req.headers['user-agent'],\n  });\n  return result;\n}\n```text\n\n### Checklist de segurança para code review\n"
+    }
+  ],
+  "capstone/module-21-projeto-final": [
+    {
+      "global_num": 1,
+      "content": "Empresas usam:     NestJS + Next.js + PostgreSQL + Redis + Docker + AWS\nNão usam:          PHP puro, jQuery, MySQL sem ORM, servidor único\n\nA stack escolhida prepara o aluno para:\n  → 85% das vagas de SaaS Enterprise no Brasil\n  → Escalabilidade real (horizontal, stateless)\n  → Ecossistema com alta empregabilidade"
+    },
+    {
+      "global_num": 3,
+      "content": "\n### 6.2 Decisões Arquiteturais (ADRs)\n\n#### ADR-001: Modular Monolith com estratégia de extração para microservices\n\n**Contexto:** Precisamos decidir entre Modular Monolith e Microservices.\n\n**Decisão:** Começar com Modular Monolith, com bounded contexts bem definidos.\n\n**Justificativa:**\n- Time pequeno (1–3 devs) — microservices trariam sobrecarga de comunicação e deploy\n- Domínio bem conhecido (gestão de projetos) — não justifica complexidade inicial\n- Bounded contexts bem definidos permitem extração futura para microservices sem reescrita\n\n**Consequências:**\n- Positivas: deploy único, comunicação in-process, debug simples, CI/CD simples\n- Negativas: acoplamento indireto se módulos não forem disciplinados, escalonamento monolítico\n- Mitigação: módulos estritamente isolados com interfaces públicas e events entre contextos\n\n#### ADR-002: Multi-tenancy via discriminator column (tenant_id)\n\n**Contexto:** Precisamos isolar dados de diferentes empresas.\n\n**Decisão:** Usar coluna `tenant_id` em todas as tabelas (discriminator column) + RLS no PostgreSQL.\n\n**Justificativa:**\n- Menos complexo que schema por tenant (sem migrations N×)\n- Mais isolado que database por tenant (sem conexões N×)\n- RLS garante que nenhuma query vaze dados entre tenants\n- Backup e restore mais simples (único banco)\n\n**Consequências:**\n- Positivas: backup único, migrations únicas, custo menor\n- Negativas: contenção em tabelas grandes, necessidade de índices cuidadosos\n- Mitigação: índices compostos (tenant_id + id), partition by tenant em tabelas grandes\n\n#### ADR-003: Event-driven para comunicação entre módulos\n\n**Contexto:** Módulos precisam se comunicar sem acoplamento direto (ex: ao criar tarefa, notificar usuário).\n\n**Decisão:** Usar Event Emitter in-process (para o monólito) com interface que permita migrar para message broker.\n\n**Justificativa:**\n- Módulos não se importam com quem consome seus eventos\n- Fácil adicionar novos consumers sem modificar producers\n- Se um dia migrar para microservices, os eventos já estão definidos\n\n**Consequências:**\n- Positivas: baixo acoplamento, extensível, testável\n- Negativas: complexidade adicional (eventos precisam ser versionados)\n- Mitigação: eventos versionados (v1, v2), schemas de evento validados com Zod\n\n#### ADR-004: Next.js App Router com Server Components\n\n**Contexto:** Precisamos de SSR para SEO e performance, mas também de interatividade rica.\n\n**Decisão:** Next.js 14+ App Router com Server Components por padrão, Client Components onde necessário.\n\n**Justificativa:**\n- Server Components diminuem JS enviado ao cliente\n- Streaming melhora percepção de performance\n- App Router oferece layout aninhado, loading states, error boundaries nativos\n\n**Consequências:**\n- Positivas: performance, SEO, DX moderna\n- Negativas: curva de aprendizado (server vs client mental model)\n- Mitigação: documentar decisão de componente server vs client no design system\n\n### 6.3 Trade-offs Explicados\n\n| Decisão | Trade-off |\n|---------|-----------|\n| Monólito vs Microservices | Simplicidade inicial vs escalabilidade futura |\n| RLS vs Schema vs DB | Custo vs isolamento vs complexidade |\n| Event-driven in-process | Baixa latência vs dependência de runtime |\n| Server Components | Performance vs interatividade |\n| Prisma vs TypeORM | Type-safe vs maturidade de recursos |\n| Zod vs class-validator | Bundle menor vs ecossistema NestJS nativo |\n\n---\n\n## 7. Módulos do Sistema\n\n### 7.1 User & Tenant Module\n\n**Responsabilidade:** Gerenciar usuários, empresas (tenants), convites, perfis.\n\n```text\nsrc/modules/users/\n├── user.module.ts\n├── user.controller.ts\n├── user.service.ts\n├── user.repository.ts\n├── dto/\n│   ├── create-user.dto.ts\n│   ├── update-user.dto.ts\n│   └── invite-user.dto.ts\n├── entities/\n│   └── user.entity.ts\n├── events/\n│   ├── user-created.event.ts\n│   └── user-invited.event.ts\n└── specs/\n    ├── user.service.spec.ts\n    └── user.controller.spec.ts\n\nsrc/modules/tenants/\n├── tenant.module.ts\n├── tenant.controller.ts\n├── tenant.service.ts\n├── tenant.repository.ts\n├── dto/\n│   ├── create-tenant.dto.ts\n│   └── update-tenant.dto.ts\n├── entities/\n│   └── tenant.entity.ts\n└── specs/\n    └── tenant.service.spec.ts"
+    },
+    {
+      "global_num": 5,
+      "content": "\n### 7.3 Projects Module\n\n**Responsabilidade:** CRUD de projetos, membros do projeto, templates.\n\n```text\nsrc/modules/projects/\n├── project.module.ts\n├── project.controller.ts\n├── project.service.ts\n├── project.repository.ts\n├── dto/\n│   ├── create-project.dto.ts\n│   ├── update-project.dto.ts\n│   └── add-member.dto.ts\n├── entities/\n│   └── project.entity.ts\n├── events/\n│   ├── project-created.event.ts\n│   └── member-added.event.ts\n└── specs/\n    └── project.service.spec.ts"
+    },
+    {
+      "global_num": 7,
+      "content": "\n### 7.5 Notifications Module\n\n**Responsabilidade:** Notificações in-app, push, e-mail, preferências.\n\n```text\nsrc/modules/notifications/\n├── notification.module.ts\n├── notification.controller.ts\n├── notification.service.ts\n├── notification.repository.ts\n├── dto/\n│   └── update-preferences.dto.ts\n├── entities/\n│   └── notification.entity.ts\n├── processors/\n│   ├── email.processor.ts       (Bull)\n│   └── push.processor.ts\n├── templates/\n│   ├── task-assigned.hbs\n│   └── mention.hbs\n└── specs/\n    └── notification.service.spec.ts"
+    },
+    {
+      "global_num": 9,
+      "content": "\n### 7.7 Payments Module\n\n**Responsabilidade:** Planos, assinaturas, gateway Stripe, webhooks, faturas.\n\n```text\nsrc/modules/payments/\n├── payment.module.ts\n├── payment.controller.ts\n├── payment.service.ts\n├── entities/\n│   ├── subscription.entity.ts\n│   └── invoice.entity.ts\n├── webhooks/\n│   └── stripe.webhook.ts\n├── dto/\n│   └── create-checkout.dto.ts\n└── specs/\n    └── payment.service.spec.ts"
+    },
+    {
+      "global_num": 11,
+      "content": "\n---\n\n## 8. Critérios de Avaliação\n\n### 8.1 Checklist por Categoria\n\n#### Código (40% da nota)\n\n| Critério | Peso | Descrição |\n|----------|------|-----------|\n| Estrutura de pastas | 5 | Segue padrão modular, separação clara de responsabilidades |\n| Código limpo | 5 | Nomes significativos, funções pequenas, sem duplicação |\n| TypeScript estrito | 5 | strict mode, sem `any`, tipos bem definidos |\n| Tratamento de erros | 5 | Exception filters, erros de domínio, respostas padronizadas |\n| Validação de entrada | 5 | Zod em toda API, mensagens de erro claras |\n| Segurança | 5 | RBAC, rate limit, headers, validação, hash |\n| Multi-tenancy | 5 | Isolamento verificado, sem vazamento de dados |\n| Performance | 5 | Cache, paginação, índices, N+1 eliminado |\n\n#### Testes (20% da nota)\n\n| Critério | Peso |\n|----------|------|\n| Testes unitários (mín. 40 testes) | 5 |\n| Testes de integração (mín. 10 testes) | 5 |\n| Testes E2E (mín. 5 cenários) | 5 |\n| Cobertura > 80% unitários, > 60% integração | 5 |\n\n#### Documentação (15% da nota)\n\n| Critério | Peso |\n|----------|------|\n| README completo (instalação, configuração, deploy) | 5 |\n| ADRs documentando decisões arquiteturais | 3 |\n| Swagger/OpenAPI da API | 3 |\n| Runbook de operação (como monitorar, como debugar) | 2 |\n| Instruções de setup local (docker-compose) | 2 |\n\n#### Deploy e CI/CD (15% da nota)\n\n| Critério | Peso |\n|----------|------|\n| Dockerfile e docker-compose | 3 |\n| Pipeline CI/CD funcional (GitHub Actions) | 4 |\n| Deploy em cloud funcional | 4 |\n| Health checks e monitoramento ativo | 2 |\n| Variáveis de ambiente externalizadas | 2 |\n\n#### Apresentação (10% da nota)\n\n| Critério | Peso |\n|----------|------|\n| Pitch de 5 min (problema, solução, diferenciais) | 3 |\n| Demo ao vivo (funcionalidades principais) | 4 |\n| Lições aprendidas e próximos passos | 2 |\n| Respostas a perguntas técnicas | 1 |\n\n### 8.2 Nota de Corte\n\n- **Mínimo para aprovação:** 70% (nota geral)\n- **Mínimo por categoria:** 50% em cada uma das 5 categorias\n- **Reprovação automática:** código sem multi-tenancy, senha em texto puro, ou dados vazando entre tenants\n\n---\n\n## 9. Entregáveis\n\n### 9.1 Repositório\n\n- Um repositório GitHub (monorepo com `apps/backend`, `apps/frontend`, `packages/shared`)\n- Ou dois repositórios separados (backend + frontend)\n- Branch principal: `main` com proteção (PR obrigatório, CI obrigatório)\n- Commits seguindo Conventional Commits\n\n### 9.2 README\n\n```markdown\n# Nome do Projeto\n\n## Descrição\n[Proposta de valor em 2-3 frases]\n\n## Stack\n- Backend: NestJS + Prisma + PostgreSQL + Redis\n- Frontend: Next.js 14 + Tailwind + shadcn/ui\n- Infra: Docker + AWS/Azure/GCP\n\n## Funcionalidades\n- [x] Autenticação multi-tenant\n- [x] Gestão de projetos e tarefas\n- [x] Kanban com drag & drop\n- [x] Notificações em tempo real\n- [x] Relatórios e dashboards\n- [x] Pagamentos integrados\n\n## Quick Start\n```bash\ngit clone ...\ncp .env.example .env\ndocker compose up\n```text\n\n## Estrutura\n[Diagrama de pastas]\n\n## Documentação\n- [Swagger](link)\n- [ADRs](docs/adrs/)\n- [Runbook](docs/runbook.md)\n\n## Deploy\n[Link para produção]"
+    },
+    {
+      "global_num": 12,
+      "content": "push / PR → main:\n  1. Lint (ESLint + Prettier)\n  2. Type check (tsc --noEmit)\n  3. Testes unitários + integração\n  4. Build (Docker image)\n  5. Push para container registry\n  6. Deploy para staging (automatizado)\n  7. Smoke tests\n  8. Deploy para produção (manual)"
+    }
+  ],
+  "frontend-devops/module-14-devops": [
+    {
+      "global_num": 2,
+      "content": "\n### A solução DevOps\n"
+    },
+    {
+      "global_num": 3,
+      "content": "\n---\n\n## 2. Docker — Containerização\n\n### O que é um container\n\n```text\n┌────────────────────────────────────────┐\n│  CONTAINER                             │\n│  ┌──────────────────────────────────┐  │\n│  │  Aplicação (Node.js)             │  │\n│  ├──────────────────────────────────┤  │\n│  │  Dependências (npm packages)     │  │\n│  ├──────────────────────────────────┤  │\n│  │  Runtime (Node 20)               │  │\n│  ├──────────────────────────────────┤  │\n│  │  Sistema (Alpine Linux)          │  │\n│  └──────────────────────────────────┘  │\n└────────────────────────────────────────┘"
+    },
+    {
+      "global_num": 7,
+      "content": "\n### .dockerignore\n"
+    },
+    {
+      "global_num": 8,
+      "content": "\n---\n\n## 3. GitHub Actions — CI/CD\n\n### Pipeline de CI (todo push)\n\n```yaml\nname: CI\n\non:\n  push:\n    branches: [main, develop]\n  pull_request:\n    branches: [main]\n\njobs:\n  lint:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 20\n          cache: 'npm'\n      - run: npm ci\n      - run: npm run lint\n      - run: npm run typecheck\n\n  test:\n    runs-on: ubuntu-latest\n    services:\n      postgres:\n        image: postgres:16-alpine\n        env:\n          POSTGRES_USER: test\n          POSTGRES_PASSWORD: test\n          POSTGRES_DB: test\n        ports:\n          - 5432:5432\n        options: >-\n          --health-cmd pg_isready\n          --health-interval 10s\n          --health-timeout 5s\n          --health-retries 5\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 20\n          cache: 'npm'\n      - run: npm ci\n      - run: npm run test -- --coverage\n      - uses: actions/upload-artifact@v4\n        with:\n          name: coverage\n          path: coverage/\n\n  build:\n    runs-on: ubuntu-latest\n    needs: [lint, test]\n    steps:\n      - uses: actions/checkout@v4\n      - run: docker build -t app:${{ github.sha }} .\n      - run: docker tag app:${{ github.sha }} app:latest\n```text\n\n### Pipeline de CD (deploy em staging/produção)\n\n```yaml\nname: CD\n\non:\n  push:\n    branches: [main]\n\njobs:\n  deploy:\n    runs-on: ubuntu-latest\n    needs: [lint, test, build]\n    environment: production\n\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: Login no Docker Hub\n        uses: docker/login-action@v3\n        with:\n          username: ${{ secrets.DOCKER_USERNAME }}\n          password: ${{ secrets.DOCKER_PASSWORD }}\n\n      - name: Build e push da imagem\n        run: |\n          docker build -t app:${{ github.sha }} .\n          docker tag app:${{ github.sha }} app:latest\n          docker push app:${{ github.sha }}\n\n      - name: Deploy via SSH\n        uses: appleboy/ssh-action@v1\n        with:\n          host: ${{ secrets.HOST }}\n          username: ${{ secrets.USERNAME }}\n          key: ${{ secrets.SSH_KEY }}\n          script: |\n            cd /app\n            docker compose pull\n            docker compose up -d --force-recreate\n            docker system prune -f"
+    },
+    {
+      "global_num": 10,
+      "content": "\n### Validação na inicialização\n\n```typescript\nimport { z } from 'zod';\n\nconst EnvSchema = z.object({\n  NODE_ENV: z.enum(['development', 'staging', 'production']),\n  PORT: z.string().transform(Number).pipe(z.number().positive()),\n  DATABASE_URL: z.string().url(),\n  JWT_SECRET: z.string().min(32),\n  JWT_REFRESH_SECRET: z.string().min(32),\n  REDIS_URL: z.string().url(),\n});\n\nexport type Env = z.infer<typeof EnvSchema>;\n\nexport function validateEnv(): Env {\n  const result = EnvSchema.safeParse(process.env);\n  if (!result.success) {\n    console.error('❌ Variáveis de ambiente inválidas:', result.error.flatten());\n    process.exit(1);\n  }\n  return result.data;\n}\n\n// main.ts\nconst env = validateEnv();\n```text\n\n---\n\n## 5. Estratégias de Deploy\n\n### Blue-Green Deployment\n\n```text\nVersão Azul (atual):\n  ┌──────────┐\n  │ app:v1   │ ← Load Balancer (tráfego ativo)\n  └──────────┘\n\nVersão Verde (nova):\n  ┌──────────┐\n  │ app:v2   │ (sem tráfego)\n  └──────────┘\n\nPasso 1: Deploy da versão verde\nPasso 2: Testar versão verde\nPasso 3: Troca LB para verde\nPasso 4: Se erro, troca de volta (rollback imediato)"
+    },
+    {
+      "global_num": 12,
+      "content": "\n### Canary Release\n\n```text\n5% do tráfego → v2 (monitorar)\nSe estável → 25% → 50% → 100%\n\nPrós: Risco mínimo\nContras: Complexo de configurar"
+    },
+    {
+      "global_num": 14,
+      "content": "\n### docker-compose.prod.yml (produção)\n\n```yaml\nservices:\n  api:\n    restart: always\n    deploy:\n      replicas: 3\n      resources:\n        limits:\n          memory: 512M\n    logging:\n      driver: \"json-file\"\n      options:\n        max-size: \"10m\"\n        max-file: \"3\"\n\n  db:\n    restart: always\n    volumes:\n      - postgres_data:/var/lib/postgresql/data\n      - ./backup:/backup\n    deploy:\n      resources:\n        limits:\n          memory: 1G\n```text\n\n---\n\n## 7. Health Checks e Graceful Shutdown\n\n### Health check endpoint\n\n```typescript\n@Controller('health')\nexport class HealthController {\n  constructor(\n    private prisma: PrismaService,\n    private redis: RedisService,\n  ) {}\n\n  @Get()\n  async check(): Promise<HealthResponse> {\n    const checks = await Promise.all([\n      this.checkComponent('database', () => this.prisma.$queryRaw`SELECT 1`),\n      this.checkComponent('redis', () => this.redis.ping()),\n    ]);\n\n    return {\n      status: checks.every(c => c.status === 'healthy') ? 'healthy' : 'degraded',\n      timestamp: new Date().toISOString(),\n      checks,\n    };\n  }\n\n  private async checkComponent(name: string, check: () => Promise<unknown>) {\n    try {\n      await check();\n      return { name, status: 'healthy' as const };\n    } catch (error) {\n      return { name, status: 'unhealthy' as const, error: (error as Error).message };\n    }\n  }\n}\n\n@Get('/ready')\nasync ready(): Promise<{ status: string }> {\n  // Readiness = todas as dependências prontas\n  return this.check();\n}\n\n@Get('/live')\nasync live(): Promise<{ status: string }> {\n  // Liveness = servidor está rodando\n  return { status: 'alive' };\n}"
+    },
+    {
+      "global_num": 18,
+      "content": "\n### Exemplo de log estruturado\n\n```json\n{\n  \"timestamp\": \"2026-06-01T10:30:00.000Z\",\n  \"level\": \"error\",\n  \"message\": \"Falha na autenticação\",\n  \"context\": \"AuthService\",\n  \"userId\": \"abc123\",\n  \"ip\": \"192.168.1.1\",\n  \"attempt\": 3,\n  \"stack\": \"...\"\n}"
+    }
+  ],
+  "fundamentos-enterprise/module-01-mentalidade-enterprise": [
+    {
+      "global_num": 2,
+      "content": "\n---\n\n## 2. Escalabilidade\n\nEscalabilidade é a capacidade do sistema de **manter a performance** à medida que a demanda cresce.\n\n### Tipos de escala\n\n```text\nEscala Vertical (Scale Up):\n  Aumentar recursos da máquina\n  CPU: 4 cores → 16 cores\n  RAM: 8GB → 64GB\n  Limite: hardware máximo\n\nEscala Horizontal (Scale Out):\n  Adicionar mais máquinas\n  1 servidor → 10 servidores\n  Balanceador de carga na frente\n  Limite: gerenciamento de estado"
+    },
+    {
+      "global_num": 4,
+      "content": "\n### Anti-padrões de escalabilidade\n\n- **Banco como broker de mensagens** — usar fila dedicada (RabbitMQ, Redis)\n- **N+1 queries** — usar eager loading ou batch\n- **Session in-process** — usar Redis session store\n- **Arquivos no servidor** — usar S3/CDN\n- **Monólito sem modularização** — pelo menos módulos bem definidos\n\n---\n\n## 3. Governança\n\nGovernança é o conjunto de **regras e processos** que garantem consistência e qualidade no desenvolvimento.\n\n### Pilares da governança\n\n```text\n┌──────────────────────────────────────────────┐\n│                 GOVERNANÇA                    │\n├──────────────────────────────────────────────┤\n│  Código       │  Processo     │  Dados        │\n│───────────────┼───────────────┼──────────────│\n│ TypeScript    │ Git Flow      │ Migrações     │\n│ strict        │ Code Review   │ Audit trail   │\n│ Lint/format   │ CI/CD         │ Backup        │\n│ Padrões       │ ADRs          │ Retention     │\n│ Arquitetura   │ Documentação  │ Compliance    │\n└───────────────┴───────────────┴──────────────┘"
+    },
+    {
+      "global_num": 8,
+      "content": "\n### Como garantir manutenibilidade\n\n1. **Código limpo** — nomes descritivos, funções pequenas, sem duplicação\n2. **Testes** — unitários + integração + E2E\n3. **Documentação** — README, ADRs, Swagger\n4. **Modularização** — baixo acoplamento, alta coesão\n5. **Padronização** — mesmas convenções em todo o código\n\n---\n\n## 5. Observabilidade\n\nObservabilidade é a capacidade de **entender o estado interno do sistema** a partir de seus outputs externos.\n\n### Os 3 pilares\n\n```text\nLOGS                            MÉTRICAS                    TRACING\nEventos discretos               Dados agregados             Fluxo de requisições\n\"Usuário X fez Y\"              \"500 requisições/segundo\"   \"Requisição passou por A→B→C\"\n                                                              \nExemplos:                       Exemplos:                   Exemplos:\n- log.error(\"Falha no pgto\")    - response_time_p95         - span do endpoint\n- log.info(\"Usuário logou\")     - error_rate                - span do banco\n- log.warn(\"Rate limit\")        - cpu/memory usage          - span do cache"
+    },
+    {
+      "global_num": 10,
+      "content": "\n---\n\n## 6. Segurança\n\nSegurança em software Enterprise não é opcional — é **pré-requisito**.\n\n### Mindset de segurança\n\n```text\nNão: \"Vamos adicionar segurança depois\"\nSim: \"Segurança é parte da definição de \"pronto\"\""
+    },
+    {
+      "global_num": 12,
+      "content": "\n### Checklist Enterprise de segurança\n\n- [ ] Nenhum segredo no código (.env, secrets manager)\n- [ ] HTTPS obrigatório (redirect HTTP→HTTPS)\n- [ ] CSP header configurado\n- [ ] CORS com origens específicas (não `*`)\n- [ ] Rate limiting em endpoints críticos\n- [ ] Validação de entrada em todos os endpoints\n- [ ] Autenticação em todas as rotas protegidas\n- [ ] Auditoria de ações sensíveis\n\n---\n\n## 7. Compliance\n\nCompliance é a **conformidade com leis e regulamentações**.\n\n### Principais regulamentações\n\n| Regulamentação | Região | Foco |\n|---------------|--------|------|\n| LGPD | Brasil | Dados pessoais |\n| GDPR | Europa | Dados pessoais |\n| PCI DSS | Global | Dados de cartão |\n| HIPAA | EUA | Dados de saúde |\n| SOC 2 | Global | Controles internos |\n\n### O que a LGPD exige\n\n1. **Consentimento** — usuário autoriza coleta de dados\n2. **Finalidade** — dados coletados para propósito específico\n3. **Minimização** — colete apenas o necessário\n4. **Transparência** — informe como os dados são usados\n5. **Segurança** — proteja os dados armazenados\n6. **Direitos do titular** — acesso, correção, exclusão\n7. **Registro de tratamento** — documente o que faz com os dados\n\n### Implementando compliance no código\n\n```typescript\n// Consentimento\ninterface Consentimento {\n  usuarioId: string;\n  finalidade: string; // \"marketing\", \"analytics\", \"essencial\"\n  autorizado: boolean;\n  data: DateTime;\n}\n\n// Direito de exclusão (right to erasure)\nasync function esquecerUsuario(usuarioId: string) {\n  await prisma.usuario.update({\n    where: { id: usuarioId },\n    data: {\n      nome: anonimizar(usuario.nome),\n      email: anonimizar(usuario.email),\n      deletedAt: new Date(),\n    },\n  });\n  await prisma.consentimento.deleteMany({\n    where: { usuarioId },\n  });\n}"
+    },
+    {
+      "global_num": 14,
+      "content": "\n### Implementação prática (RLS no Prisma)\n\n```prisma\nmodel Tenant {\n  id   String @id\n  slug String @unique\n  name String\n}\n\nmodel Usuario {\n  id        String   @id\n  tenantId  String\n  tenant    Tenant   @relation(fields: [tenantId], references: [id])\n  email     String\n}"
+    },
+    {
+      "global_num": 16,
+      "content": "\n---\n\n## 9. Alta disponibilidade\n\nAlta disponibilidade (HA) é a capacidade do sistema de **permanecer acessível** mesmo com falhas.\n\n### Métricas de disponibilidade\n"
+    },
+    {
+      "global_num": 17,
+      "content": "\n### Estratégias de HA\n\n```text\nSem ponto único de falha:\n  - Múltiplas instâncias do servidor\n  - Múltiplas réplicas do banco\n  - CDN para assets estáticos\n\nRedundância:\n  - Load balancer (distribui tráfego)\n  - Database replica (leitura em réplicas)\n  - Cache (Redis cluster)\n\nRecuperação:\n  - Health checks → reinício automático\n  - Backup automático + testado\n  - Disaster recovery plan"
+    }
+  ]
+}

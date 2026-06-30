@@ -1,0 +1,63 @@
+# book-manifest-template.yaml
+# Template para criar novos livros na fábrica
+
+book:
+  # Identificador único (usado como nome da pasta de saída)
+  id: "identificador-do-livro"
+
+  # Metadados do livro
+  title: "Título do Livro"
+  subtitle: "Subtítulo opcional"
+  author: "AI Software Engineering Academy"
+  language: pt-BR
+  edition: 1
+  year: 2026
+
+  # Capa
+  cover:
+    style: "tech-minimalist"  # tech-minimalist | enterprise | modern-tech
+    prompt: ""  # Opcional: substitui o prompt automático
+
+  # Capítulos
+  chapters:
+    # Front matter automático
+    - id: prefacio
+      type: frontmatter
+      title: "Prefácio"
+      auto_generate: true
+
+    # Capítulos vindos dos cursos
+    - id: capitulo-01
+      title: "Nome do Capítulo"
+      source:
+        course: "nome-do-curso"          # pasta em curriculum/sources/
+        modules:                         # pastas dentro do curso
+          - "module-00-exemplo"
+
+    - id: capitulo-02
+      title: "Outro Capítulo"
+      source:
+        course: "outro-curso"
+        modules:
+          - "module-01-exemplo"
+          - "module-02-exemplo"
+
+    # Back matter automático
+    - id: conclusao
+      type: backmatter
+      title: "Conclusão"
+      auto_generate: true
+
+  # Formatos de saída
+  output:
+    docx: true
+    epub: true
+    pdf_digital: true
+    pdf_print:
+      trim_size: "6x9in"
+      bleed: "3mm"
+
+  # Distribuição (metadados para futuro)
+  distribution:
+    platforms: ["kdp", "ingramspark"]
+    isbn: ""

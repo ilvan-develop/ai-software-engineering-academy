@@ -1,0 +1,23 @@
+# catalog.yaml — Content Registry
+# TODO item do conhecimento no Knowledge Factory.
+# Populado automaticamente via scripts/registry/populate_catalog.py
+#
+# Schema v1
+# items:
+#   - id: string           # Identificador unico (ex: mod-08-arquitetura)
+#     type: string         # module | book | asset | social | newsletter | certificate
+#     title: string
+#     source: string       # Path relativo ao source original
+#     version: int
+#     taxonomy:
+#       topics: [string]
+#       level: string      # beginner | intermediate | advanced
+#       audience: [string]
+#     relationships:
+#       used_in: [string]  # IDs dos produtos que usam este item
+#       prerequisites: [string]
+#     outputs:
+#       format: path       # Path relativo em products/
+
+version: 1
+items: []

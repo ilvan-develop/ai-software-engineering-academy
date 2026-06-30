@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-06-28T23:24:52.612025",
+  "agent": "template-manager",
+  "action": "gate4-publicacao-outputs",
+  "score": 95.7,
+  "decision": "approved",
+  "metadata": {},
+  "hash": "f50b037c1890293861ebc695dd31652ac743c4a4ddea49e7e8f35365acc17a80",
+  "previous_hash": "f0c530b8f7267506f672ef583a9cc9b72c1ff25b888ca3e315e075ba3b8c5c51"
+}

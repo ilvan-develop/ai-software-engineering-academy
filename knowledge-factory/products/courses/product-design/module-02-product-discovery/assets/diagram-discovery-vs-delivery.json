@@ -1,0 +1,23 @@
+{
+  "engine": "comparison",
+  "title": "Discovery vs Delivery",
+  "left": {
+    "label": "Discovery",
+    "items": [
+      "Alta incerteza, baixo custo",
+      "Perguntas, hipoteses, experimentos",
+      "Falsificavel e iterativo",
+      "Decide O QUE construir"
+    ]
+  },
+  "right": {
+    "label": "Delivery",
+    "items": [
+      "Baixa incerteza, alto custo",
+      "Requisitos, planejamento, codigo",
+      "Definido e incremental",
+      "Decide COMO construir"
+    ]
+  },
+  "center": ["Validacao", "Evidencia", "Aprendizado"]
+}

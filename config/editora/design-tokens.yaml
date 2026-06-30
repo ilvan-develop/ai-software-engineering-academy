@@ -1,0 +1,253 @@
+# Design Tokens — Editora AI Software Engineering Academy
+# Versão: 1.0.0
+# Propósito: Tokens centralizados de identidade visual consumidos por todos os livros/formatos
+# Versionamento: SemVer — MAJOR (quebra compatibilidade), MINOR (novos tokens), PATCH (ajuste de valor)
+
+version: "1.0.0"
+updated: "2026-06-28"
+author: "design-token-manager"
+
+# ─────────────────────────────────────────────
+# CORES
+# ─────────────────────────────────────────────
+colors:
+  brand:
+    primary: "#1A237E"       # Azul royal escuro — cor principal da marca
+    secondary: "#0D47A1"     # Azul médio — suporte
+    accent: "#00BFA5"        # Teal — destaque, links, CTAs
+  neutral:
+    100: "#FFFFFF"
+    200: "#F5F5F5"
+    300: "#E0E0E0"
+    400: "#BDBDBD"
+    500: "#9E9E9E"
+    600: "#757575"
+    700: "#616161"
+    800: "#424242"
+    900: "#212121"
+    1000: "#000000"
+  semantic:
+    success: "#2E7D32"
+    warning: "#F57F17"
+    error: "#C62828"
+    info: "#1565C0"
+  surface:
+    page: "#FFFFFF"
+    card: "#F5F5F5"
+    code_block: "#263238"
+    callout_info: "#E3F2FD"
+    callout_warning: "#FFF8E1"
+    callout_tip: "#E8F5E9"
+    callout_caution: "#FFEBEE"
+  text:
+    body: "#212121"
+    heading: "#1A237E"
+    muted: "#757575"
+    inverse: "#FFFFFF"
+    code: "#E0E0E0"
+    link: "#0D47A1"
+  syntax:
+    keyword: "#F07178"
+    string: "#C3E88D"
+    number: "#F78C6C"
+    function: "#82AAFF"
+    comment: "#546E7A"
+    type: "#FFCB6B"
+    variable: "#EEFFFF"
+    operator: "#89DDFF"
+    punctuation: "#EEFFFF"
+
+# ─────────────────────────────────────────────
+# TIPOGRAFIA
+# ─────────────────────────────────────────────
+typography:
+  families:
+    serif: "Georgia, 'Times New Roman', serif"
+    sans: "'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+    mono: "'Cascadia Code', 'Fira Code', 'JetBrains Mono', Consolas, monospace"
+    display: "'Segoe UI', 'Helvetica Neue', Arial, sans-serif"  # Headings grandes, capa
+
+  scale_px:
+    h1: 28
+    h2: 22
+    h3: 18
+    h4: 15
+    body: 12
+    body_small: 10.5
+    caption: 9
+    code: 10
+
+  scale_pt:
+    h1: 21
+    h2: 17
+    h3: 14
+    h4: 12
+    body: 11
+    body_small: 9.5
+    caption: 8
+    code: 9
+
+  line_height:
+    body: 1.6
+    heading: 1.3
+    code: 1.5
+    caption: 1.3
+
+  letter_spacing:
+    normal: 0
+    wide: 0.5
+    wider: 1
+
+  font_weight:
+    light: 300
+    regular: 400
+    medium: 500
+    semibold: 600
+    bold: 700
+
+# ─────────────────────────────────────────────
+# ESPACAMENTO
+# ─────────────────────────────────────────────
+spacing:
+  stack:
+    none: 0
+    xs: 2      # entre elementos inline próximos
+    sm: 4      # entre parágrafo e lista
+    md: 8      # entre seções no mesmo capítulo
+    lg: 12     # entre capítulos
+    xl: 16     # entre partes do livro
+    xxl: 24    # página de título, dedicatória
+
+  inline:
+    none: 0
+    xs: 2
+    sm: 4
+    md: 8
+
+  paragraph:
+    after: 6
+
+  list:
+    indent: 12
+    item_spacing: 3
+
+  code_block:
+    padding: 8
+    margin_top: 6
+    margin_bottom: 8
+    border_radius: 3
+
+  callout:
+    padding: 8
+    margin_vertical: 6
+    border_radius: 3
+    border_left_width: 4
+
+  table:
+    cell_padding: 4
+    margin_vertical: 6
+
+  image:
+    margin_vertical: 6
+    caption_margin_top: 3
+
+# ─────────────────────────────────────────────
+# ELEVACAO / SOMBRA
+# ─────────────────────────────────────────────
+elevation:
+  card:
+    offset_x: 0
+    offset_y: 1
+    blur: 2
+    color: "rgba(0,0,0,0.12)"
+  popup:
+    offset_x: 0
+    offset_y: 4
+    blur: 8
+    color: "rgba(0,0,0,0.18)"
+  sticky_header:
+    offset_x: 0
+    offset_y: 2
+    blur: 4
+    color: "rgba(0,0,0,0.10)"
+
+# ─────────────────────────────────────────────
+# BORDER RADIUS
+# ─────────────────────────────────────────────
+border_radius:
+  none: 0
+  sm: 2
+  md: 4
+  lg: 8
+  full: 9999
+
+# ─────────────────────────────────────────────
+# BREAKPOINTS
+# ─────────────────────────────────────────────
+breakpoints:
+  print:
+    book_6x9: { width_mm: 152, height_mm: 229, trim: "6x9in" }
+    book_7x10: { width_mm: 178, height_mm: 254, trim: "7x10in" }
+    a4: { width_mm: 210, height_mm: 297, trim: "A4" }
+  digital:
+    tablet: 768
+    desktop: 1024
+    wide: 1440
+
+# ─────────────────────────────────────────────
+# GRID
+# ─────────────────────────────────────────────
+grid:
+  print_6x9:
+    columns: 1
+    margin_top_mm: 18
+    margin_bottom_mm: 18
+    margin_inside_mm: 15
+    margin_outside_mm: 12
+    gutter_mm: 6
+    baseline_grid_mm: 4
+  print_7x10:
+    columns: 1
+    margin_top_mm: 20
+    margin_bottom_mm: 20
+    margin_inside_mm: 17
+    margin_outside_mm: 14
+    gutter_mm: 6
+    baseline_grid_mm: 4.5
+  a4:
+    columns: 2
+    margin_top_mm: 25
+    margin_bottom_mm: 25
+    margin_inside_mm: 20
+    margin_outside_mm: 20
+    gutter_mm: 8
+    column_gap_mm: 10
+    baseline_grid_mm: 5
+  digital:
+    columns: 1
+    margin_horizontal: 16
+    margin_vertical: 16
+    max_content_width_px: 720
+    baseline_grid_px: 8
+
+# ─────────────────────────────────────────────
+# IMAGEM / ILUSTRACAO
+# ─────────────────────────────────────────────
+image:
+  print_max_width_percent: 85
+  digital_max_width_percent: 95
+  caption_font_scale: "caption"
+  caption_style: "italic"
+  border_radius: 2
+  screenshot_shadow: "card"
+  diagram_stroke_color: "#1A237E"
+  diagram_fill_color: "#E3F2FD"
+
+# ─────────────────────────────────────────────
+# MIDIA KIT
+# ─────────────────────────────────────────────
+media_kit:
+  isbn_prefix: "978-65-992345"
+  publisher: "AI Software Engineering Academy"
+  publisher_url: "https://opencode.ai"
+  rights: "CC BY-NC-SA 4.0"

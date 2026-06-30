@@ -1,0 +1,75 @@
+# Critérios do Departamento de Conteúdo
+# BQS categories: 1-estrutura_conteudo, 3-qualidade_tecnica, 5-qualidade_exemplos, 6-exercicios_avaliacoes
+# Gate: conteudo_to_editorial (score ≥95)
+
+department: "conteudo"
+agents:
+  - chief-editor
+  - curriculum-architect
+  - subject-matter-expert
+  - technical-writer
+  - educational-designer
+  - research-agent
+  - fact-checker
+  - example-creator
+  - exercise-creator
+  - quiz-creator
+
+quality_criteria:
+  - id: "conteudo-qc1"
+    name: "Cobertura do escopo"
+    description: "Todo conteúdo prometido no book manifest está presente no capítulo"
+    weight: 15
+
+  - id: "conteudo-qc2"
+    name: "Profundidade adequada"
+    description: "Conteúdo tem profundidade compatível com o nível declarado (iniciante/intermediário/avançado)"
+    weight: 15
+
+  - id: "conteudo-qc3"
+    name: "Exemplos funcionais"
+    description: "Todos os exemplos de código foram testados e funcionam"
+    weight: 20
+
+  - id: "conteudo-qc4"
+    name: "Exercícios progressivos"
+    description: "Exercícios têm 3 níveis de dificuldade com gabarito"
+    weight: 15
+
+  - id: "conteudo-qc5"
+    name: "Quiz cobre o capítulo"
+    description: "Quiz tem 5 perguntas com alternativas plausíveis e explicações"
+    weight: 10
+
+  - id: "conteudo-qc6"
+    name: "Referências verificadas"
+    description: "Todas as referências bibliográficas e links são reais e acessíveis"
+    weight: 10
+
+  - id: "conteudo-qc7"
+    name: "Precisão técnica"
+    description: "Nenhum erro factual, conceitual ou de implementação"
+    weight: 15
+
+outputs:
+  - "content/chapter-{id}.md"
+  - "content/exercises-{id}.md"
+  - "content/quiz-{id}.md"
+  - "content/examples-{id}.md"
+  - "content/glossary-{id}.md"
+
+handoff:
+  to_department: "editorial"
+  artifacts:
+    - chapter.md
+    - exercises.md
+    - quiz.md
+    - examples.md
+    - glossary.md
+  min_score: 95
+  categories_required:
+    - estrutura_conteudo
+    - progressao_pedagogica
+    - qualidade_tecnica
+    - qualidade_exemplos
+    - exercicios_avaliacoes

@@ -1,0 +1,37 @@
+> Prompts para geracao de diagramas do modulo "Design System"
+
+## 1. Design System Ecosystem
+
+**Midjourney:**
+```
+An ecosystem diagram for a design system, central component library connected to tokens, documentation, code repository, Figma files, and consumer products, circular layout, navy and coral colors, clean vector style, white background, no text, --ar 16:9 --style raw --v 6
+```
+
+**DALL-E 3:**
+```
+A design system ecosystem diagram on white background. A central component library hub connects via lines to surrounding nodes: design tokens, documentation site, code repository, Figma library, and consumer products/apps. Circular layout. Navy blue and coral red accents, flat vector style, no readable text, 16:9 aspect ratio.
+```
+
+## 2. Tokens vs Components
+
+**Midjourney:**
+```
+A layered pyramid diagram showing design tokens at the foundation, atoms, molecules, organisms, and templates/components above, illustrating atomic design, navy and coral gradient, clean vector style, white background, no text, --ar 16:9 --style raw --v 6
+```
+
+**DALL-E 3:**
+```
+A layered pyramid diagram on white background showing the relationship between design tokens and components. Base layer: tokens (colors, typography, spacing). Middle layers: atoms, molecules, organisms. Top: templates and pages. Inspired by atomic design. Gradient from navy blue at the base to coral red at the top. Flat vector style, no readable text, 16:9 aspect ratio.
+```
+
+## 3. Governança de Design System
+
+**Midjourney:**
+```
+A governance workflow diagram with decision diamonds, review steps, contribution arrows, and approval badges, showing how components move from proposal to production, navy and coral accents, clean vector style, white background, no text, --ar 16:9 --style raw --v 6
+```
+
+**DALL-E 3:**
+```
+A design system governance workflow diagram on white background. Steps include proposal, design review, code review, documentation, and publish. Decision diamonds and approval badges connect the flow. Navy blue process boxes with coral red approval marks. Flat vector style, no readable text, 16:9 aspect ratio.
+```

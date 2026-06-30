@@ -1,0 +1,470 @@
+metadata:
+  version: 1
+  last_updated: '2026-06-30'
+  schema:
+    status:
+    - raw
+    - em_andamento
+    - revisao
+    - publicado
+    - arquivado
+    output_types:
+    - aula
+    - slides
+    - video
+    - exercicios
+    - quiz
+    - projeto
+    - livro
+modules:
+  fundamentos-enterprise:
+    module-00-introducao:
+      title: Introdução — O Papel do Arquiteto
+      status: publicado
+      last_updated: '2026-06-27'
+      outputs:
+        aula: publicado
+        slides: gerado
+        video: gerado
+        exercicios: gerado
+        quiz: gerado
+        projeto: gerado
+        workshop: gerado
+      book_chapters:
+      - formacao-completa/capitulo-01
+    module-01-mentalidade-enterprise:
+      title: Mentalidade Enterprise
+      status: publicado
+      last_updated: '2026-06-27'
+      outputs:
+        aula: publicado
+        slides: gerado
+        video: gerado
+        exercicios: gerado
+        quiz: gerado
+        projeto: gerado
+        workshop: gerado
+      book_chapters:
+      - formacao-completa/capitulo-02
+    module-09-erro-90-ia:
+      title: O Erro de 90% ao Usar IA para Programar
+      status: publicado
+      last_updated: '2026-06-29'
+      outputs:
+        aula: publicado
+        slides: gerado
+        video: gerado
+        exercicios: gerado
+        quiz: gerado
+        projeto: gerado
+        workshop: gerado
+      book_chapters:
+      - formacao-completa/bonus-ia
+  product-design:
+    module-02-product-discovery:
+      title: Product Discovery
+      status: publicado
+      last_updated: '2026-06-27'
+      outputs:
+        aula: publicado
+        slides: gerado
+        video: gerado
+        exercicios: gerado
+        quiz: gerado
+        projeto: gerado
+        workshop: gerado
+      book_chapters:
+      - formacao-completa/capitulo-03
+    module-03-design-thinking:
+      title: Design Thinking
+      status: publicado
+      last_updated: '2026-06-27'
+      outputs:
+        aula: publicado
+        slides: gerado
+        video: gerado
+        exercicios: gerado
+        quiz: gerado
+        projeto: gerado
+        workshop: gerado
+      book_chapters:
+      - formacao-completa/capitulo-04
+    module-04-ux:
+      title: UX Research & Design
+      status: publicado
+      last_updated: '2026-06-27'
+      outputs:
+        aula: publicado
+        slides: gerado
+        video: gerado
+        exercicios: gerado
+        quiz: gerado
+        projeto: gerado
+        workshop: gerado
+      book_chapters:
+      - formacao-completa/capitulo-05
+    module-05-wireframes:
+      title: Wireframes e Prototipação
+      status: publicado
+      last_updated: '2026-06-27'
+      outputs:
+        aula: publicado
+        slides: gerado
+        video: gerado
+        exercicios: gerado
+        quiz: gerado
+        projeto: gerado
+        workshop: gerado
+      book_chapters:
+      - formacao-completa/capitulo-06
+    module-06-ui-design:
+      title: UI Design
+      status: publicado
+      last_updated: '2026-06-27'
+      outputs:
+        aula: publicado
+        slides: gerado
+        video: gerado
+        exercicios: gerado
+        quiz: gerado
+        projeto: gerado
+        workshop: gerado
+      book_chapters:
+      - formacao-completa/capitulo-07
+    module-07-design-system:
+      title: Design System
+      status: publicado
+      last_updated: '2026-06-27'
+      outputs:
+        aula: publicado
+        slides: gerado
+        video: gerado
+        exercicios: gerado
+        quiz: gerado
+        projeto: gerado
+        workshop: gerado
+      book_chapters:
+      - formacao-completa/capitulo-08
+  arquitetura-backend:
+    module-08-arquitetura:
+      title: Arquitetura de Software
+      status: publicado
+      last_updated: '2026-06-27'
+      outputs:
+        aula: publicado
+        slides: gerado
+        video: gerado
+        exercicios: gerado
+        quiz: gerado
+        projeto: gerado
+        workshop: gerado
+      book_chapters:
+      - formacao-completa/capitulo-09
+    module-09-modelagem:
+      title: Modelagem de Sistemas
+      status: publicado
+      last_updated: '2026-06-27'
+      outputs:
+        aula: publicado
+        slides: gerado
+        video: gerado
+        exercicios: gerado
+        quiz: gerado
+        projeto: gerado
+        workshop: gerado
+      book_chapters:
+      - formacao-completa/capitulo-10
+    module-10-backend:
+      title: Desenvolvimento Backend
+      status: publicado
+      last_updated: '2026-06-27'
+      outputs:
+        aula: publicado
+        slides: gerado
+        video: gerado
+        exercicios: gerado
+        quiz: gerado
+        projeto: gerado
+        workshop: gerado
+      book_chapters:
+      - formacao-completa/capitulo-11
+    module-12-seguranca:
+      title: Segurança
+      status: publicado
+      last_updated: '2026-06-27'
+      outputs:
+        aula: publicado
+        slides: gerado
+        video: gerado
+        exercicios: gerado
+        quiz: gerado
+        projeto: gerado
+        workshop: gerado
+      book_chapters:
+      - formacao-completa/capitulo-12
+    module-13-multi-tenant:
+      title: 'Multi-Tenant: Conceitos e Estratégias de Isolamento'
+      status: publicado
+      last_updated: '2026-06-30'
+      outputs:
+        aula: publicado
+        slides: gerado
+        video: gerado
+        exercicios: gerado
+        quiz: gerado
+        projeto: gerado
+        workshop: gerado
+      book_chapters:
+      - formacao-completa/capitulo-13
+      - backend-architecture/capitulo-05
+    module-13b-multi-tenant-implementacao:
+      title: 'Multi-Tenant: Implementação com NestJS e Prisma'
+      status: publicado
+      last_updated: '2026-06-30'
+      outputs:
+        aula: publicado
+        slides: gerado
+        video: gerado
+        exercicios: gerado
+        quiz: gerado
+        projeto: gerado
+        workshop: gerado
+      book_chapters:
+      - formacao-completa/capitulo-13b
+      - backend-architecture/capitulo-06
+    module-13c-multi-tenant-dados:
+      title: 'Multi-Tenant: Migrations, Dados e Seed'
+      status: publicado
+      last_updated: '2026-06-30'
+      outputs:
+        aula: publicado
+        slides: gerado
+        video: gerado
+        exercicios: gerado
+        quiz: gerado
+        projeto: gerado
+        workshop: gerado
+      book_chapters:
+      - formacao-completa/capitulo-13c
+      - backend-architecture/capitulo-07
+    module-13d-multi-tenant-operacoes:
+      title: 'Multi-Tenant: Operações e Qualidade'
+      status: publicado
+      last_updated: '2026-06-30'
+      outputs:
+        aula: publicado
+        slides: gerado
+        video: gerado
+        exercicios: gerado
+        quiz: gerado
+        projeto: gerado
+        workshop: gerado
+      book_chapters:
+      - formacao-completa/capitulo-13d
+      - backend-architecture/capitulo-08
+  frontend-devops:
+    module-11-frontend:
+      title: Desenvolvimento Frontend
+      status: publicado
+      last_updated: '2026-06-27'
+      outputs:
+        aula: publicado
+        slides: gerado
+        video: gerado
+        exercicios: gerado
+        quiz: gerado
+        projeto: gerado
+        workshop: gerado
+      book_chapters:
+      - formacao-completa/capitulo-14
+    module-14-devops:
+      title: DevOps e Infraestrutura
+      status: publicado
+      last_updated: '2026-06-27'
+      outputs:
+        aula: publicado
+        slides: gerado
+        video: gerado
+        exercicios: gerado
+        quiz: gerado
+        projeto: gerado
+        workshop: gerado
+      book_chapters:
+      - formacao-completa/capitulo-15
+    module-15-qa:
+      title: Qualidade e Testes
+      status: publicado
+      last_updated: '2026-06-27'
+      outputs:
+        aula: publicado
+        slides: gerado
+        video: gerado
+        exercicios: gerado
+        quiz: gerado
+        projeto: gerado
+        workshop: gerado
+      book_chapters:
+      - formacao-completa/capitulo-16
+    module-16-observabilidade:
+      title: Observabilidade
+      status: publicado
+      last_updated: '2026-06-27'
+      outputs:
+        aula: publicado
+        slides: gerado
+        video: gerado
+        exercicios: gerado
+        quiz: gerado
+        projeto: gerado
+        workshop: gerado
+      book_chapters:
+      - formacao-completa/capitulo-17
+  governanca-automacao:
+    module-17-governanca:
+      title: Governança de Software
+      status: publicado
+      last_updated: '2026-06-27'
+      outputs:
+        aula: publicado
+        slides: gerado
+        video: gerado
+        exercicios: gerado
+        quiz: gerado
+        projeto: gerado
+        workshop: gerado
+      book_chapters:
+      - formacao-completa/capitulo-18
+    module-18-agentes-ia:
+      title: Agentes de IA
+      status: publicado
+      last_updated: '2026-06-27'
+      outputs:
+        aula: publicado
+        slides: gerado
+        video: gerado
+        exercicios: gerado
+        quiz: gerado
+        projeto: gerado
+        workshop: gerado
+      book_chapters:
+      - formacao-completa/capitulo-19
+    module-19-auditorias:
+      title: Auditorias
+      status: publicado
+      last_updated: '2026-06-27'
+      outputs:
+        aula: publicado
+        slides: gerado
+        video: gerado
+        exercicios: gerado
+        quiz: gerado
+        projeto: gerado
+        workshop: gerado
+      book_chapters:
+      - formacao-completa/capitulo-20
+    module-20-automacao:
+      title: Automação do Ciclo de Desenvolvimento
+      status: publicado
+      last_updated: '2026-06-27'
+      outputs:
+        aula: publicado
+        slides: gerado
+        video: gerado
+        exercicios: gerado
+        quiz: gerado
+        projeto: gerado
+        workshop: gerado
+      book_chapters:
+      - formacao-completa/capitulo-21
+  capstone:
+    module-21-projeto-final:
+      title: Construindo um SaaS Enterprise
+      status: publicado
+      last_updated: '2026-06-27'
+      outputs:
+        aula: publicado
+        slides: gerado
+        video: gerado
+        exercicios: gerado
+        quiz: gerado
+        projeto: gerado
+        workshop: gerado
+      book_chapters:
+      - formacao-completa/capitulo-22
+books:
+  formacao-completa:
+    title: Arquitetura de Software Enterprise com IA
+    status: publicado
+    chapters: 26
+    formats:
+      docx: publicado
+      epub: publicado
+      pdf_digital: publicado
+      pdf_print: publicado
+      component_pipeline: publicado
+    last_updated: '2026-06-30'
+  backend-architecture:
+    title: Arquitetura Backend Enterprise
+    status: publicado
+    chapters: 8
+    formats:
+      docx: publicado
+      epub: publicado
+      pdf_digital: publicado
+      pdf_print: publicado
+      component_pipeline: publicado
+    last_updated: '2026-06-30'
+  product-design-book:
+    title: Product Design Engineering
+    status: publicado
+    chapters: 6
+    formats:
+      docx: publicado
+      epub: publicado
+      pdf_digital: publicado
+      pdf_print: publicado
+      component_pipeline: publicado
+    last_updated: '2026-06-30'
+  ia-para-devs:
+    title: IA para Desenvolvedores
+    status: publicado
+    chapters: 3
+    formats:
+      docx: publicado
+      epub: publicado
+      pdf_digital: publicado
+      pdf_print: publicado
+      component_pipeline: publicado
+    last_updated: '2026-06-30'
+gates:
+  conteudo_to_editorial:
+    ia-para-devs:
+      approved: true
+      timestamp: '2026-06-28T19:19:36.286481'
+      reviewer: chief-editor
+      producer: technical-writer
+  editorial_to_design:
+    ia-para-devs:
+      approved: true
+      timestamp: '2026-06-28T19:19:41.079356'
+      reviewer: consistency-auditor
+      producer: copy-editor
+  design_to_publicacao:
+    ia-para-devs:
+      approved: true
+      timestamp: '2026-06-28T19:19:49.639512'
+      reviewer: layout-designer
+      producer: book-designer
+  publicacao_to_qa:
+    ia-para-devs:
+      approved: true
+      timestamp: '2026-06-28T19:19:56.497552'
+      reviewer: accessibility-auditor
+      producer: template-manager
+  qa_to_publicado:
+    ia-para-devs:
+      approved: true
+      timestamp: '2026-06-28T19:21:57.779779'
+      reviewer: chief-editor
+      producer: gatekeeper
+projetos_ultima_execucao: '2026-06-29'

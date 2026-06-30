@@ -1,0 +1,468 @@
+# BQS — Book Quality Standard (Core)
+# Versão: 2.0
+# Última atualização: 2026-06-28
+
+# 16 categorias com pesos, rubricas e responsáveis
+# Cada categoria é avaliada de 0 a 100
+# Score geral = soma ponderada de todas as categorias
+# Mínimo para aprovação: ≥95 em TODAS as categorias (não apenas na média)
+
+bqs_version: "2.0"
+last_updated: "2026-06-28"
+author: "AI Software Engineering Academy"
+minimum_score: 95  # score mínimo por categoria (0-100)
+scoring_method: "weighted_average"  # weighted_average | minimum_all
+
+categories:
+
+  - id: estrutura_conteudo
+    name: "Estrutura do Conteúdo"
+    weight: 8
+    description: "Organização, hierarquia, fluxo lógico e completude estrutural"
+    evaluated_by: "chief-editor"
+    gate: "conteudo_to_editorial"
+    criteria:
+      - id: "ec1"
+        name: "Hierarquia de títulos"
+        description: "Títulos H1/H2/H3 seguem hierarquia semântica correta sem saltos"
+        weight_within: 20
+      - id: "ec2"
+        name: "Completude estrutural"
+        description: "Prefácio, introdução, seções numeradas, conclusão, referências estão presentes"
+        weight_within: 20
+      - id: "ec3"
+        name: "Progressão lógica"
+        description: "Conteúdo flui do simples ao complexo sem lacunas na argumentação"
+        weight_within: 25
+      - id: "ec4"
+        name: "Tamanho das seções"
+        description: "Seções têm tamanho equilibrado (±20% da média do capítulo)"
+        weight_within: 15
+      - id: "ec5"
+        name: "Transições"
+        description: "Transições explícitas entre seções preparam o leitor para o próximo tópico"
+        weight_within: 20
+
+  - id: progressao_pedagogica
+    name: "Progressão Pedagógica"
+    weight: 8
+    description: "Sequência didática, carga cognitiva, objetivos de aprendizagem e retenção"
+    evaluated_by: "educational-designer"
+    gate: "conteudo_to_editorial"
+    criteria:
+      - id: "pp1"
+        name: "Objetivos de aprendizagem"
+        description: "Objetivos mensuráveis com verbos de ação (Bloom) no início de cada capítulo"
+        weight_within: 20
+      - id: "pp2"
+        name: "Sequência didática"
+        description: "Conceito → Exemplo → Analogia → Prática em cada seção"
+        weight_within: 25
+      - id: "pp3"
+        name: "Carga cognitiva"
+        description: "Um conceito por vez; sem sobrecarga de informações novas simultâneas"
+        weight_within: 20
+      - id: "pp4"
+        name: "Mecanismos de retenção"
+        description: "Resumo ao final de cada capítulo, revisão espaçada entre capítulos"
+        weight_within: 15
+      - id: "pp5"
+        name: "Adequação ao público"
+        description: "Nível de profundidade compatível com o público-alvo declarado"
+        weight_within: 20
+
+  - id: qualidade_tecnica
+    name: "Qualidade Técnica"
+    weight: 10
+    description: "Precisão factual, código funcional, APIs corretas e exemplos executáveis"
+    evaluated_by: "subject-matter-expert"
+    gate: "conteudo_to_editorial"
+    criteria:
+      - id: "qt1"
+        name: "Precisão factual"
+        description: "Conceitos, dados e afirmações são factualmente corretos e verificáveis"
+        weight_within: 25
+      - id: "qt2"
+        name: "Código funcional"
+        description: "Todo código apresentado compila/executa sem erros"
+        weight_within: 25
+      - id: "qt3"
+        name: "APIs e versões corretas"
+        description: "APIs, bibliotecas e frameworks referenciados existem nas versões citadas"
+        weight_within: 20
+      - id: "qt4"
+        name: "Boas práticas"
+        description: "Código segue boas práticas da linguagem/framework (não apenas 'funciona')"
+        weight_within: 15
+      - id: "qt5"
+        name: "Comandos e configurações"
+        description: "Comandos de terminal, Dockerfiles, YAMLs produzem o resultado esperado"
+        weight_within: 15
+
+  - id: consistencia_terminologica
+    name: "Consistência Terminológica"
+    weight: 4
+    description: "Termos técnicos uniformes, sem traduções inconsistentes ou sinonímia acidental"
+    evaluated_by: "terminology-auditor"
+    gate: "editorial_to_design"
+    criteria:
+      - id: "ct1"
+        name: "Glossário uniforme"
+        description: "Um termo = um significado em todo o livro (sem sinonímia acidental)"
+        weight_within: 30
+      - id: "ct2"
+        name: "Termos em inglês"
+        description: "Termos técnicos em inglês com crases e consistentes (ex: sempre `pipeline`, nunca 'tubulação')"
+        weight_within: 25
+      - id: "ct3"
+        name: "Siglas na primeira menção"
+        description: "Toda sigla é escrita por extenso na primeira ocorrência"
+        weight_within: 20
+      - id: "ct4"
+        name: "STYLE_GUIDE compliance"
+        description: "Terminologia segue o Guia de Estilo (STYLE_GUIDE.md)"
+        weight_within: 25
+
+  - id: qualidade_exemplos
+    name: "Qualidade dos Exemplos"
+    weight: 8
+    description: "Relevância, clareza, completude e didática dos exemplos práticos"
+    evaluated_by: "example-creator"
+    gate: "conteudo_to_editorial"
+    criteria:
+      - id: "qe1"
+        name: "Contexto realista"
+        description: "Exemplos resolvem problemas que o leitor reconhece do dia a dia"
+        weight_within: 25
+      - id: "qe2"
+        name: "Completude"
+        description: "Exemplo tem começo, meio e fim — não é apenas um fragmento sem contexto"
+        weight_within: 20
+      - id: "qe3"
+        name: "Código executável"
+        description: "Exemplo pode ser copiado, colado e executado (ou tem setup claro)"
+        weight_within: 20
+      - id: "qe4"
+        name: "Analogias eficazes"
+        description: "Conceitos abstratos têm analogia do mundo real que o precede"
+        weight_within: 15
+      - id: "qe5"
+        name: "Anti-exemplos"
+        description: "Erros comuns são mostrados (o que NÃO fazer) junto com a correção"
+        weight_within: 20
+
+  - id: exercicios_avaliacoes
+    name: "Exercícios e Avaliações"
+    weight: 8
+    description: "Qualidade, progressão e cobertura dos exercícios e quizzes"
+    evaluated_by: "quiz-creator"
+    gate: "conteudo_to_editorial"
+    criteria:
+      - id: "ea1"
+        name: "Progressão de dificuldade"
+        description: "Exercícios vão do fácil ao difícil (pelo menos 3 níveis)"
+        weight_within: 20
+      - id: "ea2"
+        name: "Cobertura do conteúdo"
+        description: "Exercícios cobrem todos os conceitos principais do capítulo"
+        weight_within: 20
+      - id: "ea3"
+        name: "Gabarito comentado"
+        description: "Respostas com explicação didática (não apenas a solução)"
+        weight_within: 20
+      - id: "ea4"
+        name: "Quiz com alternativas plausíveis"
+        description: "Perguntas de múltipla escolha com distratores que ensinam"
+        weight_within: 20
+      - id: "ea5"
+        name: "Critérios de correção"
+        description: "Exercícios práticos têm rubrica com pesos e critérios objetivos"
+        weight_within: 20
+
+  - id: tom_legibilidade
+    name: "Tom e Legibilidade"
+    weight: 4
+    description: "Fluidez, clareza, tom adequado e uniformidade de voz"
+    evaluated_by: "readability-auditor"
+    gate: "editorial_to_design"
+    criteria:
+      - id: "tl1"
+        name: "Tom técnico-didático"
+        description: "Tom profissional, nem informal demais nem acadêmico em excesso"
+        weight_within: 25
+      - id: "tl2"
+        name: "Frases curtas"
+        description: "Frases com máximo de 25 palavras na média; parágrafos de 3-5 frases"
+        weight_within: 20
+      - id: "tl3"
+        name: "Voz passiva evitada"
+        description: "Preferência por voz ativa ('o algoritmo executa' não 'é executado pelo algoritmo')"
+        weight_within: 20
+      - id: "tl4"
+        name: "Uniformidade de pessoa"
+        description: "3ª pessoa consistente ('o desenvolvedor', não alternar 'você'/'nós'/'o profissional')"
+        weight_within: 20
+      - id: "tl5"
+        name: "Jargões explicados"
+        description: "Termos especializados são explicados na primeira ocorrência"
+        weight_within: 15
+
+  - id: design_hierarquia_visual
+    name: "Design e Hierarquia Visual"
+    weight: 7
+    description: "Layout, tipografia, cores, diagramas e elementos visuais"
+    evaluated_by: "book-designer"
+    gate: "design_to_publicacao"
+    criteria:
+      - id: "dh1"
+        name: "Hierarquia visual"
+        description: "Títulos, subtítulos, corpo, destaques e blocos têm hierarquia clara"
+        weight_within: 20
+      - id: "dh2"
+        name: "Diagramas e ilustrações"
+        description: "Conceitos complexos têm representação visual (diagrama, tabela, gráfico)"
+        weight_within: 20
+      - id: "dh3"
+        name: "Blocos de destaque"
+        description: "Dicas, warnings, notas e exemplos têm formato visual distinto"
+        weight_within: 15
+      - id: "dh4"
+        name: "Tipografia consistente"
+        description: "Fonte de corpo, cabeçalho e código consistentes em todo o livro"
+        weight_within: 15
+      - id: "dh5"
+        name: "Espaçamento e margens"
+        description: "Espaçamento adequado entre elementos; margens de livro comercial"
+        weight_within: 15
+      - id: "dh6"
+        name: "Paleta de cores"
+        description: "Cores seguem o design system editorial (primary, accent, success, warning)"
+        weight_within: 15
+
+  - id: qualidade_markdown
+    name: "Qualidade do Markdown"
+    weight: 4
+    description: "Markdown válido, bem formatado e semanticamente correto"
+    evaluated_by: "markdown-auditor"
+    gate: "publicacao_to_qa"
+    criteria:
+      - id: "qm1"
+        name: "Markdown válido"
+        description: "Sem quebras de sintaxe, fechamento de blocos, código, listas e tabelas"
+        weight_within: 25
+      - id: "qm2"
+        name: "Blocos de código com linguagem"
+        description: "Todo bloco de código tem linguagem especificada (```typescript, ```yaml, etc)"
+        weight_within: 20
+      - id: "qm3"
+        name: "Links válidos"
+        description: "Todos os links internos e externos são válidos e acessíveis"
+        weight_within: 20
+      - id: "qm4"
+        name: "Imagens referenciadas"
+        description: "Todas as imagens referenciadas existem no diretório de assets"
+        weight_within: 15
+      - id: "qm5"
+        name: "Sem HTML bruto"
+        description: "HTML inline substituído por markdown equivalente sempre que possível"
+        weight_within: 20
+
+  - id: qualidade_formatos
+    name: "Qualidade dos Formatos (DOCX/PDF/EPUB)"
+    weight: 10
+    description: "Conversão correta, fidelidade visual, navegação e acessibilidade dos formatos finais"
+    evaluated_by: "publishing-auditor"
+    gate: "publicacao_to_qa"
+    criteria:
+      - id: "qf1"
+        name: "DOCX — estilos corretos"
+        description: "Títulos usam estilos heading, não formatação manual (negrito+tamanho)"
+        weight_within: 20
+      - id: "qf2"
+        name: "DOCX — sumário funcional"
+        description: "TOC gerado automaticamente com hyperlinks para todas as seções"
+        weight_within: 15
+      - id: "qf3"
+        name: "PDF — fidelidade visual"
+        description: "PDF reproduz fielmente o layout especificado (fontes, margens, cores)"
+        weight_within: 20
+      - id: "qf4"
+        name: "PDF — bookmarks e navegação"
+        description: "PDF tem bookmarks por capítulo e hyperlinks no sumário"
+        weight_within: 15
+      - id: "qf5"
+        name: "EPUB — navegação funcional"
+        description: "EPUB tem TOC navegável, metadados e formatação fluida correta"
+        weight_within: 15
+      - id: "qf6"
+        name: "Metadados"
+        description: "Todos os formatos têm metadados preenchidos (título, autor, idioma, ISBN se aplicável)"
+        weight_within: 15
+
+  - id: acessibilidade
+    name: "Acessibilidade"
+    weight: 4
+    description: "Contraste, legibilidade, estrutura semântica e compatibilidade com leitores de tela"
+    evaluated_by: "accessibility-auditor"
+    gate: "qa_to_publicacao"
+    criteria:
+      - id: "ac1"
+        name: "Contraste WCAG AA"
+        description: "Contraste entre texto e fundo ≥ 4.5:1 (texto normal) e ≥ 3:1 (texto grande)"
+        weight_within: 25
+      - id: "ac2"
+        name: "Estrutura semântica"
+        description: "Títulos, listas e tabelas usam marcação semântica (não visual)"
+        weight_within: 20
+      - id: "ac3"
+        name: "Alt text em imagens"
+        description: "Todas as imagens têm texto alternativo descritivo"
+        weight_within: 20
+      - id: "ac4"
+        name: "Código legível"
+        description: "Tamanho de fonte de código ≥ 9pt, contraste adequado, sem apenas cor para significado"
+        weight_within: 20
+      - id: "ac5"
+        name: "EPUB acessível"
+        description: "EPUB passa validação de acessibilidade (WCAG para publicações digitais)"
+        weight_within: 15
+
+  - id: identidade_visual
+    name: "Identidade Visual"
+    weight: 5
+    description: "Consistência com brand book, design tokens e identidade visual da editora"
+    evaluated_by: "brand-book-designer"
+    gate: "design_to_publicacao"
+    criteria:
+      - id: "iv1"
+        name: "Aderência ao brand book"
+        description: "Cores, tipografia e elementos gráficos seguem o brand-book.md"
+        weight_within: 25
+      - id: "iv2"
+        name: "Design tokens aplicados"
+        description: "Todos os tokens de design (cores, espaçamento, tipografia) são aplicados consistentemente"
+        weight_within: 25
+      - id: "iv3"
+        name: "Família visual"
+        description: "Capa e miolo compartilham identidade visual coerente (paleta, fontes, estilo)"
+        weight_within: 20
+      - id: "iv4"
+        name: "Consistência entre formatos"
+        description: "DOCX, PDF e EPUB compartilham a mesma identidade visual base"
+        weight_within: 15
+      - id: "iv5"
+        name: "Originalidade"
+        description: "Design não imita outras editoras; tem identidade própria reconhecível"
+        weight_within: 15
+
+  - id: qualidade_tipografica
+    name: "Qualidade Tipográfica"
+    weight: 5
+    description: "Hierarquia, legibilidade, rhythm vertical e tratamento tipográfico profissional"
+    evaluated_by: "typography-specialist"
+    gate: "design_to_publicacao"
+    criteria:
+      - id: "tp1"
+        name: "Hierarquia tipográfica"
+        description: "H1-H4 têm tamanhos, pesos e estilos distintos e consistentes"
+        weight_within: 25
+      - id: "tp2"
+        name: "Rhythm vertical"
+        description: "Baseline grid consistente entre parágrafos, headings e blocos"
+        weight_within: 20
+      - id: "tp3"
+        name: "Comprimento de linha"
+        description: "Linhas têm 50-75 caracteres (impresso) para legibilidade ideal"
+        weight_within: 20
+      - id: "tp4"
+        name: "Tracking e leading"
+        description: "Espaçamento entre letras e linhas adequado ao corpo do texto"
+        weight_within: 15
+      - id: "tp5"
+        name: "Tratamento de código"
+        description: "Código tem fonte monospace, tamanho adequado, fundo distinto e quebra de linha consciente"
+        weight_within: 20
+
+  - id: design_informacao
+    name: "Design de Informação"
+    weight: 5
+    description: "Clareza e eficácia de diagramas, tabelas, infográficos e representações visuais de dados"
+    evaluated_by: "information-designer"
+    gate: "design_to_publicacao"
+    criteria:
+      - id: "di1"
+        name: "Diagramas claros"
+        description: "Diagramas seguem regras de grid visual com hierarquia legível em 3 segundos"
+        weight_within: 25
+      - id: "di2"
+        name: "Iconografia consistente"
+        description: "Ícones e símbolos são de um mesmo conjunto e têm significado claro"
+        weight_within: 15
+      - id: "di3"
+        name: "Tabelas informativas"
+        description: "Dados em tabelas têm formatação que facilita comparação e leitura"
+        weight_within: 20
+      - id: "di4"
+        name: "Infográficos"
+        description: "Conceitos multi-dimensionais usam infográficos em vez de texto corrido"
+        weight_within: 20
+      - id: "di5"
+        name: "Funciona em P&B"
+        description: "Diagramas e gráficos são compreensíveis em impressão preto e branco"
+        weight_within: 20
+
+  - id: acessibilidade_visual
+    name: "Acessibilidade Visual"
+    weight: 5
+    description: "Contraste, design daltônico-safe, font-size adequado e navegação inclusiva"
+    evaluated_by: "accessible-design-specialist"
+    gate: "design_to_publicacao"
+    criteria:
+      - id: "av1"
+        name: "Contraste WCAG AA+"
+        description: "Todas as combinações cor/texto-fundo ≥4.5:1 (normal) e ≥3:1 (grande)"
+        weight_within: 25
+      - id: "av2"
+        name: "Daltônico-safe"
+        description: "Nenhuma informação depende apenas de cor — ícones, texto ou padrões complementam"
+        weight_within: 20
+      - id: "av3"
+        name: "Font-size mínimo"
+        description: "Corpo ≥11pt, código ≥9pt, notas ≥8pt — ajustável em EPUB"
+        weight_within: 20
+      - id: "av4"
+        name: "Navegação semântica"
+        description: "Landmarks ARIA, heading order sem saltos, TOC navegável em EPUB/PDF"
+        weight_within: 20
+      - id: "av5"
+        name: "Dark mode ready"
+        description: "Cores funcionam em modo escuro (prefers-color-scheme) sem perda de contraste"
+        weight_within: 15
+
+  - id: consistencia_formatos
+    name: "Consistência entre Formatos"
+    weight: 5
+    description: "Experiência visual uniforme entre DOCX, EPUB e PDF"
+    evaluated_by: "template-developer"
+    gate: "qa_to_publicado"
+    criteria:
+      - id: "cf1"
+        name: "Mesma hierarquia visual"
+        description: "Headings têm mesma proporção e peso relativo em todos os formatos"
+        weight_within: 25
+      - id: "cf2"
+        name: "Cores consistentes"
+        description: "Paleta renderiza de forma equivalente em tela e impressão"
+        weight_within: 20
+      - id: "cf3"
+        name: "Tipografia equivalente"
+        description: "Fontes mantêm proporções similares entre formatos (ou fallback adequado)"
+        weight_within: 20
+      - id: "cf4"
+        name: "Elementos visuais preservados"
+        description: "Callouts, tabelas e diagramas mantêm estrutura e destaque em todos os formatos"
+        weight_within: 20
+      - id: "cf5"
+        name: "Metadados uniformes"
+        description: "Título, autor, ISBN e descrição são idênticos em todos os formatos"
+        weight_within: 15

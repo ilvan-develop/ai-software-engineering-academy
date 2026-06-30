@@ -1,0 +1,2 @@
+# Diagramas para DevOps e Infraestrutura
+# Revisar e gerar manualmente

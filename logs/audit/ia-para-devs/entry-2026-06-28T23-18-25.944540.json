@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-06-28T23:18:25.944540",
+  "agent": "copy-editor",
+  "action": "gate2-editorial-review",
+  "score": 95.4,
+  "decision": "approved",
+  "metadata": {},
+  "hash": "24e27a1ded51e6dd6e960488f303322de2d9cf4ee8f32e6538444bfb3c76afa7",
+  "previous_hash": "44cacd0df08c7d104fe1f4fd6f58a47ee643cbf5594bb385fae87650cef64607"
+}

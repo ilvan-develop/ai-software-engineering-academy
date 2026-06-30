@@ -1,0 +1,2 @@
+# Cover prompt para Observabilidade
+# Gerar via DALL-E ou Midjourney

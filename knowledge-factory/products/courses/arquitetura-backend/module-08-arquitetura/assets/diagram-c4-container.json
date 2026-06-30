@@ -1,0 +1,26 @@
+{
+  "engine": "c4_model",
+  "title": "Arquitetura de Referencia Backend - Container",
+  "level": "container",
+  "elements": [
+    {"name": "Usuario", "tech": "Browser/Mobile", "type": "user"},
+    {"name": "Web App", "tech": "Next.js", "type": "web"},
+    {"name": "API Gateway", "tech": "Kong/NestJS", "type": "api"},
+    {"name": "Auth Service", "tech": "NestJS + JWT", "type": "service"},
+    {"name": "Core API", "tech": "NestJS + DDD", "type": "service"},
+    {"name": "Notifications", "tech": "NestJS + WebSocket", "type": "service"},
+    {"name": "PostgreSQL", "tech": "SQL", "type": "database"},
+    {"name": "Redis", "tech": "Cache", "type": "database"},
+    {"name": "S3", "tech": "Object Storage", "type": "external"}
+  ],
+  "connections": [
+    {"from": 0, "to": 1, "label": "acessa"},
+    {"from": 1, "to": 2, "label": "HTTPS"},
+    {"from": 2, "to": 3, "label": "autentica"},
+    {"from": 2, "to": 4, "label": "processa"},
+    {"from": 4, "to": 5, "label": "notifica"},
+    {"from": 4, "to": 6, "label": "SQL"},
+    {"from": 4, "to": 7, "label": "cache"},
+    {"from": 4, "to": 8, "label": "upload"}
+  ]
+}

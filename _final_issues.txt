@@ -1,0 +1,5 @@
+|---|------------|------|-------|---------|
+| 1 | GREEN low | code-style | arquitetura-backend/module-08-arquitetura | Bloco de codigo #21 sem especificacao de linguagem |
+| 2 | GREEN low | code-style | arquitetura-backend/module-12-seguranca | Bloco de codigo #22 sem especificacao de linguagem |
+| 3 | GREEN low | code-style | governanca-automacao/module-19-auditorias | Bloco de codigo #11 sem especificacao de linguagem |
+| 4 | GREEN low | code-style | product-design/module-05-wireframes | Bloco de codigo #31 sem especificacao de linguagem |

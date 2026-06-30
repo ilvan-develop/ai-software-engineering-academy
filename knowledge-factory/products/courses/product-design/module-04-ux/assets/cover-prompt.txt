@@ -1,0 +1,13 @@
+> Prompts para geracao da capa do modulo "UX Research & Design"
+
+## Midjourney
+
+```
+A professional book cover about UX Research, a magnifying glass over a digital user journey map, silhouettes of diverse users with emotion icons, wireframe paths and touchpoints, navy #1a1a2e background with coral #e94560 highlights, clean vector illustration, no text in image, modern tech-educational style, --ar 2:3 --style raw --v 6
+```
+
+## DALL-E 3
+
+```
+Professional book cover illustration for a UX Research and Design course. A large magnifying glass examines a winding digital user journey path with diverse user silhouettes and emotion icons (happy, frustrated, neutral). Wireframe touchpoints along the path. Deep navy blue background (#1a1a2e) with coral red accents (#e94560). Clean modern vector style, no text, vertical 2:3 composition.
+```

@@ -1,0 +1,235 @@
+# formacao-completa.yaml
+# Livro que agrega os 21 módulos da formação completa
+
+book:
+  id: "formacao-completa"
+  title: "Arquitetura de Software Enterprise com IA"
+  subtitle: "Formação completa — do discovery ao deploy assistido por agentes"
+  author: "AI Software Engineering Academy"
+  language: pt-BR
+  edition: 1
+  year: 2026
+
+  cover:
+    style: "enterprise"
+
+  chapters:
+    # ── Front Matter ──
+    - id: prefacio
+      type: frontmatter
+      title: "Prefácio"
+      auto_generate: true
+
+    - id: como-usar
+      type: frontmatter
+      title: "Como usar este livro"
+      auto_generate: true
+
+    # ── PARTE 1: FUNDAMENTOS ENTERPRISE ──
+    - id: parte-1
+      title: "PARTE 1 — Fundamentos Enterprise"
+
+    - id: capitulo-01
+      title: "Introdução — O Papel do Arquiteto"
+      source:
+        course: fundamentos-enterprise
+        modules: [module-00-introducao]
+
+    - id: capitulo-02
+      title: "Mentalidade Enterprise"
+      source:
+        course: fundamentos-enterprise
+        modules: [module-01-mentalidade-enterprise]
+
+    # ── PARTE 2: PRODUCT DESIGN ──
+    - id: parte-2
+      title: "PARTE 2 — Product Design"
+
+    - id: capitulo-03
+      title: "Product Discovery"
+      source:
+        course: product-design
+        modules: [module-02-product-discovery]
+
+    - id: capitulo-04
+      title: "Design Thinking"
+      source:
+        course: product-design
+        modules: [module-03-design-thinking]
+
+    - id: capitulo-05
+      title: "UX Research & Design"
+      source:
+        course: product-design
+        modules: [module-04-ux]
+
+    - id: capitulo-06
+      title: "Wireframes e Prototipação"
+      source:
+        course: product-design
+        modules: [module-05-wireframes]
+
+    - id: capitulo-07
+      title: "UI Design"
+      source:
+        course: product-design
+        modules: [module-06-ui-design]
+
+    - id: capitulo-08
+      title: "Design System"
+      source:
+        course: product-design
+        modules: [module-07-design-system]
+
+    # ── PARTE 3: ARQUITETURA BACKEND ──
+    - id: parte-3
+      title: "PARTE 3 — Arquitetura Backend"
+
+    - id: capitulo-09
+      title: "Arquitetura de Software"
+      source:
+        course: arquitetura-backend
+        modules: [module-08-arquitetura]
+
+    - id: capitulo-10
+      title: "Modelagem de Sistemas"
+      source:
+        course: arquitetura-backend
+        modules: [module-09-modelagem]
+
+    - id: capitulo-11
+      title: "Desenvolvimento Backend"
+      source:
+        course: arquitetura-backend
+        modules: [module-10-backend]
+
+    - id: capitulo-12
+      title: "Segurança"
+      source:
+        course: arquitetura-backend
+        modules: [module-12-seguranca]
+
+    - id: capitulo-13
+      title: "Arquitetura Multi-Tenant: Conceitos e Estratégias de Isolamento"
+      source:
+        course: arquitetura-backend
+        modules: [module-13-multi-tenant]
+
+    - id: capitulo-13b
+      title: "Multi-Tenant: Implementação com NestJS e Prisma"
+      source:
+        course: arquitetura-backend
+        modules: [module-13b-multi-tenant-implementacao]
+
+    - id: capitulo-13c
+      title: "Multi-Tenant: Migrations, Dados e Seed"
+      source:
+        course: arquitetura-backend
+        modules: [module-13c-multi-tenant-dados]
+
+    - id: capitulo-13d
+      title: "Multi-Tenant: Operações e Qualidade"
+      source:
+        course: arquitetura-backend
+        modules: [module-13d-multi-tenant-operacoes]
+
+    # ── PARTE 4: FRONTEND & DEVOPS ──
+    - id: parte-4
+      title: "PARTE 4 — Frontend & DevOps"
+
+    - id: capitulo-14
+      title: "Desenvolvimento Frontend"
+      source:
+        course: frontend-devops
+        modules: [module-11-frontend]
+
+    - id: capitulo-15
+      title: "DevOps e Infraestrutura"
+      source:
+        course: frontend-devops
+        modules: [module-14-devops]
+
+    - id: capitulo-16
+      title: "Qualidade e Testes"
+      source:
+        course: frontend-devops
+        modules: [module-15-qa]
+
+    - id: capitulo-17
+      title: "Observabilidade"
+      source:
+        course: frontend-devops
+        modules: [module-16-observabilidade]
+
+    # ── PARTE 5: GOVERNANÇA & AUTOMAÇÃO ──
+    - id: parte-5
+      title: "PARTE 5 — Governança & Automação"
+
+    - id: capitulo-18
+      title: "Governança de Software"
+      source:
+        course: governanca-automacao
+        modules: [module-17-governanca]
+
+    - id: capitulo-19
+      title: "Agentes de IA"
+      source:
+        course: governanca-automacao
+        modules: [module-18-agentes-ia]
+
+    - id: capitulo-20
+      title: "Auditorias"
+      source:
+        course: governanca-automacao
+        modules: [module-19-auditorias]
+
+    - id: capitulo-21
+      title: "Automação do Ciclo de Desenvolvimento"
+      source:
+        course: governanca-automacao
+        modules: [module-20-automacao]
+
+    # ── PARTE 6: CAPSTONE ──
+    - id: parte-6
+      title: "PARTE 6 — Projeto Final"
+
+    - id: capitulo-22
+      title: "Construindo um SaaS Enterprise"
+      source:
+        course: capstone
+        modules: [module-21-projeto-final]
+
+    # ── BÔNUS: IA para Programação ──
+    - id: bonus-ia
+      title: "Bônus — O Erro de 90% ao Usar IA para Programar"
+      source:
+        course: fundamentos-enterprise
+        modules: [module-09-erro-90-ia]
+
+    # ── Back Matter ──
+    - id: conclusao
+      type: backmatter
+      title: "Conclusão e Próximos Passos"
+      auto_generate: true
+
+    - id: apendice-a
+      type: backmatter
+      title: "Apêndice A — Glossário"
+      auto_generate: true
+
+    - id: apendice-b
+      type: backmatter
+      title: "Apêndice B — Referências"
+      auto_generate: true
+
+  output:
+    docx: true
+    epub: true
+    pdf_digital: true
+    pdf_print:
+      trim_size: "7x10in"
+      bleed: "3mm"
+
+  distribution:
+    platforms: ["kdp"]
+    isbn: "TBD — solicitar ISBN antes da publicacao"

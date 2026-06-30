@@ -1,0 +1,69 @@
+# # ia-para-devs.yaml
+# Livro bonus: IA para Desenvolvedores
+# Extraido do modulo 09 (erro-90-ia) + modulos de agentes
+
+book:
+  id: "ia-para-devs"
+  title: "IA para Desenvolvedores"
+  subtitle: "Como Usar Inteligência Artificial para Programar Melhor — sem Cair nos Erros Comuns"
+  author: "Ilvan Joaquim"
+  language: pt-BR
+  edition: 1
+  year: 2026
+
+  cover:
+    style: "tech-minimalist"
+
+  chapters:
+    # Front Matter
+    - id: prefacio
+      type: frontmatter
+      title: "Prefácio"
+      auto_generate: true
+
+    # Conteúdo
+    - id: capitulo-01
+      title: "O Erro de 90% ao Usar IA para Programar"
+      source:
+        course: fundamentos-enterprise
+        modules: [module-09-erro-90-ia]
+
+    - id: capitulo-02
+      title: "Agentes de IA na Prática"
+      source:
+        course: governanca-automacao
+        modules: [module-18-agentes-ia]
+
+    - id: capitulo-03
+      title: "Automação do Ciclo de Desenvolvimento com IA"
+      source:
+        course: governanca-automacao
+        modules: [module-20-automacao]
+
+    # Back Matter
+    - id: conclusao
+      type: backmatter
+      title: "Conclusão — O Futuro do Desenvolvimento com IA"
+      auto_generate: true
+
+    - id: apendice-a
+      type: backmatter
+      title: "Apêndice A — Glossário de IA"
+      auto_generate: true
+
+    - id: apendice-b
+      type: backmatter
+      title: "Apêndice B — Prompts Recomendados"
+      auto_generate: true
+
+  output:
+    docx: true
+    epub: true
+    pdf_digital: true
+    pdf_print:
+      trim_size: "6x9in"
+      bleed: "3mm"
+
+  distribution:
+    platforms: ["kdp"]
+    isbn: "TBD — solicitar ISBN antes da publicacao"

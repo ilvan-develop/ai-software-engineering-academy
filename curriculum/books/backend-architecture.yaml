@@ -1,0 +1,93 @@
+# backend-architecture.yaml
+# Livro focado em Arquitetura Backend Enterprise
+
+book:
+  id: "backend-architecture"
+  title: "Arquitetura Backend Enterprise"
+  subtitle: "Clean Architecture, DDD, Segurança e Multi-Tenancy com TypeScript"
+  author: "AI Software Engineering Academy"
+  language: pt-BR
+  edition: 1
+  year: 2026
+
+  cover:
+    style: "enterprise"
+
+  chapters:
+    # Front Matter
+    - id: prefacio
+      type: frontmatter
+      title: "Prefácio"
+      auto_generate: true
+
+    # Conteúdo
+    - id: capitulo-01
+      title: "Fundamentos de Arquitetura"
+      source:
+        course: arquitetura-backend
+        modules: [module-08-arquitetura]
+
+    - id: capitulo-02
+      title: "Modelagem de Sistemas"
+      source:
+        course: arquitetura-backend
+        modules: [module-09-modelagem]
+
+    - id: capitulo-03
+      title: "Desenvolvimento Backend"
+      source:
+        course: arquitetura-backend
+        modules: [module-10-backend]
+
+    - id: capitulo-04
+      title: "Segurança"
+      source:
+        course: arquitetura-backend
+        modules: [module-12-seguranca]
+
+    - id: capitulo-05
+      title: "Multi-Tenant: Conceitos e Estratégias de Isolamento"
+      source:
+        course: arquitetura-backend
+        modules: [module-13-multi-tenant]
+
+    - id: capitulo-06
+      title: "Multi-Tenant: Implementação com NestJS e Prisma"
+      source:
+        course: arquitetura-backend
+        modules: [module-13b-multi-tenant-implementacao]
+
+    - id: capitulo-07
+      title: "Multi-Tenant: Migrations, Dados e Seed"
+      source:
+        course: arquitetura-backend
+        modules: [module-13c-multi-tenant-dados]
+
+    - id: capitulo-08
+      title: "Multi-Tenant: Operações e Qualidade"
+      source:
+        course: arquitetura-backend
+        modules: [module-13d-multi-tenant-operacoes]
+
+    # Back Matter
+    - id: conclusao
+      type: backmatter
+      title: "Conclusão"
+      auto_generate: true
+
+    - id: apendice-a
+      type: backmatter
+      title: "Apêndice A — Glossário"
+      auto_generate: true
+
+  output:
+    docx: true
+    epub: true
+    pdf_digital: true
+    pdf_print:
+      trim_size: "7x10in"
+      bleed: "3mm"
+
+  distribution:
+    platforms: ["kdp"]
+    isbn: "TBD — solicitar ISBN antes da publicacao"

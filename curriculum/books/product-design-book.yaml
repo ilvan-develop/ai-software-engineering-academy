@@ -1,0 +1,91 @@
+# product-design-book.yaml
+# Livro focado em Product Design — do discovery ao design system
+
+book:
+  id: "product-design-book"
+  title: "Product Design Engineering"
+  subtitle: "Do Discovery ao Design System — Produtos Digitais que Resolvem Problemas Reais"
+  author: "AI Software Engineering Academy"
+  language: pt-BR
+  edition: 1
+  year: 2026
+
+  cover:
+    style: "design"
+
+  chapters:
+    # Front Matter
+    - id: prefacio
+      type: frontmatter
+      title: "Prefácio"
+      auto_generate: true
+
+    - id: como-usar
+      type: frontmatter
+      title: "Como usar este livro"
+      auto_generate: true
+
+    # Conteúdo
+    - id: capitulo-01
+      title: "Product Discovery"
+      source:
+        course: product-design
+        modules: [module-02-product-discovery]
+
+    - id: capitulo-02
+      title: "Design Thinking"
+      source:
+        course: product-design
+        modules: [module-03-design-thinking]
+
+    - id: capitulo-03
+      title: "UX Research & Design"
+      source:
+        course: product-design
+        modules: [module-04-ux]
+
+    - id: capitulo-04
+      title: "Wireframes e Prototipação"
+      source:
+        course: product-design
+        modules: [module-05-wireframes]
+
+    - id: capitulo-05
+      title: "UI Design"
+      source:
+        course: product-design
+        modules: [module-06-ui-design]
+
+    - id: capitulo-06
+      title: "Design System"
+      source:
+        course: product-design
+        modules: [module-07-design-system]
+
+    # Back Matter
+    - id: conclusao
+      type: backmatter
+      title: "Conclusão e Próximos Passos"
+      auto_generate: true
+
+    - id: apendice-a
+      type: backmatter
+      title: "Apêndice A — Glossário de Product Design"
+      auto_generate: true
+
+    - id: apendice-b
+      type: backmatter
+      title: "Apêndice B — Referências e Ferramentas"
+      auto_generate: true
+
+  output:
+    docx: true
+    epub: true
+    pdf_digital: true
+    pdf_print:
+      trim_size: "7x10in"
+      bleed: "3mm"
+
+  distribution:
+    platforms: ["kdp"]
+    isbn: "TBD — solicitar ISBN antes da publicacao"

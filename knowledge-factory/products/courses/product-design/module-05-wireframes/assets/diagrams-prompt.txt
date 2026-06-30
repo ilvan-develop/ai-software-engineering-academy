@@ -1,0 +1,37 @@
+> Prompts para geracao de diagramas do modulo "Wireframes e Prototipação"
+
+## 1. Níveis de Fidelidade
+
+**Midjourney:**
+```
+A three-step progression diagram showing wireframe fidelity, left rough hand-drawn sketch, middle gray box wireframe, right polished UI screen, arrows pointing right, navy and coral color accents, clean vector style, white background, no text, --ar 16:9 --style raw --v 6
+```
+
+**DALL-E 3:**
+```
+A three-step horizontal progression diagram on white background showing wireframe fidelity levels. Left: rough hand-drawn paper sketch. Middle: gray box wireframe with placeholders. Right: polished high-fidelity UI screen with colors. Arrows connect the steps. Navy blue and coral red accents, flat vector style, no readable text, 16:9 aspect ratio.
+```
+
+## 2. Fluxo de Navegação
+
+**Midjourney:**
+```
+A clean user flow diagram with rounded rectangles connected by arrows, decision diamond, start and end nodes, navy lines and coral highlights, minimalist flat vector style, white background, no text, --ar 16:9 --style raw --v 6
+```
+
+**DALL-E 3:**
+```
+A clean user flow diagram on white background. Rounded rectangle screen nodes connected by arrows, a diamond decision node, and start/end circles. Navy blue lines with coral red highlight on the active path. Minimalist flat vector style, no readable text, 16:9 aspect ratio.
+```
+
+## 3. Teste de Usabilidade em Protótipo
+
+**Midjourney:**
+```
+A usability testing scene, one person observing through a screen while another user clicks a prototype, thought bubbles and emotion icons, clean vector illustration, white background, no text, --ar 16:9 --style raw --v 6
+```
+
+**DALL-E 3:**
+```
+A flat vector illustration of a usability test session on white background. A facilitator observes through a laptop screen while a participant interacts with a prototype. Small thought bubbles show confusion and satisfaction icons. Navy blue and coral red accents, modern professional style, no readable text, 16:9 aspect ratio.
+```

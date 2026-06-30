@@ -1,0 +1,734 @@
+# Diagram Specification — IA para Desenvolvedores
+# Versao: 1.0.1
+# Proposito: Especificacao de diagramas Mermaid funcionais e renderizaveis
+# Consome: design-tokens.yaml, icons.yaml, brand-book.md, visual-format-spec.yaml
+
+version: "1.0.1"
+updated: "2026-06-28"
+author: "infographic-designer"
+
+# Tema global Mermaid
+mermaid_theme: |
+  %%{
+    init: {
+      'theme': 'base',
+      'themeVariables': {
+        'primaryColor': '#1A237E',
+        'primaryTextColor': '#FFFFFF',
+        'primaryBorderColor': '#0D47A1',
+        'lineColor': '#0D47A1',
+        'secondaryColor': '#E3F2FD',
+        'tertiaryColor': '#F5F5F5',
+        'fontSize': '12px',
+        'fontFamily': '"Segoe UI", sans-serif'
+      }
+    }
+  }%%
+
+# ─────────────────────────────────────────────
+# DIAGRAMA 1: Dados da Industria (Infographic)
+# ─────────────────────────────────────────────
+# Substitui a tabela de dados na introducao do Cap 1
+# Local: book.md linhas 32-38
+diagrams:
+  - id: "industry-data-chart"
+    title: "O Custo da Confianca Cega em IA"
+    chapter: 1
+    replaces: "table (linhas 32-38)"
+    type: "xychart"
+
+    mermaid: |
+      ---
+      title: O Custo da Confianca Cega em IA
+      ---
+      xychart-beta
+        title "Impacto da Configuracao de IA na Taxa de Erro"
+        x-axis "Cenario" [ "Sem Regras", "Com 4 Regras", "Com 12 Regras", "Devs que Erraram" ]
+        y-axis "Percentual (%)" 0 --> 100
+        bar [ 40, 11, 3, 63 ]
+        line [ 40, 11, 3, 63 ]
+
+    caption: "Dados do Claude Code Pro Pack e Stack Overflow Survey 2025. A configuracao de 12 regras reduz a taxa de erro de 40% para 3% — melhoria de 13,3x."
+
+  # ─────────────────────────────────────────────
+  # DIAGRAMA 2: Tipos de Bug (4 Quadrantes)
+  # ─────────────────────────────────────────────
+  # Substitui a tabela de tipos de bug na secao 2 do Cap 1
+  # Local: book.md linhas 73-78
+  - id: "bug-types-quadrants"
+    title: "Os 4 Tipos de Bug em Codigo Gerado por IA"
+    chapter: 1
+    replaces: "table (linhas 73-78)"
+    type: "quadrant"
+
+    mermaid: |
+      %%{init: {"quadrant": {"quadrantPadding": 10, "xAxisLabelPadding": 15, "yAxisLabelPadding": 15, "pointTextMaxWidth": 20} } }%%
+      quadrantChart
+        title Os 4 Tipos de Bug em Codigo Gerado por IA
+        x-axis "Menos Critico" --> "Mais Critico"
+        y-axis "Menos Frequente" --> "Mais Frequente"
+        quadrant-1 "Logica"
+        quadrant-2 "Seguranca"
+        quadrant-3 "Performance"
+        quadrant-4 "Compatibilidade"
+        "Validacao email so com @" [0.3, 0.8]
+        "SQL injection" [0.8, 0.6]
+        "Loop aninhado N+1" [0.4, 0.5]
+        "Import lib inexistente" [0.2, 0.3]
+
+    caption: "Distribuicao dos 4 tipos de bug. Logica e o mais frequente; Seguranca e o mais critico."
+
+  # ─────────────────────────────────────────────
+  # DIAGRAMA 3: Anatomia de um Prompt Estruturado
+  # ─────────────────────────────────────────────
+  # Substitui a tabela de 3 elementos + exemplo na secao 3 do Cap 1
+  # Local: book.md linhas 156-163
+  - id: "prompt-anatomy-flow"
+    title: "Anatomia de um Prompt Estruturado"
+    chapter: 1
+    replaces: "table (linhas 156-163)"
+    type: "flowchart"
+
+    mermaid: |
+      graph LR
+        A["fa:fa-message Contexto"] --> B["fa:fa-bullseye Intencao"]
+        B --> C["fa:fa-file-lines Formato"]
+        C --> D["fa:fa-check Resultado"]
+
+        A -.-> A1["Ex: 'No arquivo login.ts, funcao authenticateUser...'"]
+        B -.-> B1["Ex: '...precisa validar token JWT antes de consultar o banco'"]
+        C -.-> C1["Ex: '...retorne Result<T,E>, sem throw, com testes em Vitest'"]
+
+        style A fill:#E3F2FD,stroke:#1565C0
+        style B fill:#E3F2FD,stroke:#1565C0
+        style C fill:#E3F2FD,stroke:#1565C0
+        style D fill:#E8F5E9,stroke:#2E7D32
+        style A1 fill:#F5F5F5,stroke:#BDBDBD,stroke-dasharray: 3
+        style B1 fill:#F5F5F5,stroke:#BDBDBD,stroke-dasharray: 3
+        style C1 fill:#F5F5F5,stroke:#BDBDBD,stroke-dasharray: 3
+
+    caption: "Os 3 elementos essenciais de todo prompt. Contexto ancora, Intencao direciona, Formato organiza. O resultado e previsivel e reutilizavel."
+
+  # ─────────────────────────────────────────────
+  # DIAGRAMA 4: Fluxo Iterativo de Uso de IA
+  # ─────────────────────────────────────────────
+  # Ja existe, mas com redundancia ASCII. Refinamento.
+  # Local: book.md linhas 335-359
+  - id: "ia-iterative-flow"
+    title: "Fluxo Ideal de Uso de IA para Programar"
+    chapter: 1
+    replaces: "mermaid + ascii (linhas 335-359)"
+    type: "flowchart"
+
+    mermaid: |
+      graph LR
+        A["fa:fa-message Prompt Estruturado"] --> B["fa:fa-robot IA gera rascunho"]
+        B --> C["fa:fa-eye Code Review"]
+        C --> D["fa:fa-flask Testes"]
+        D --> E["fa:fa-pen Refinamento"]
+        E --> F["fa:fa-check Commit"]
+        F -.->|"fa:fa-rotate-left Feedback Loop"| B
+
+        style A fill:#E3F2FD,stroke:#1A237E
+        style B fill:#F3E5F5,stroke:#7B1FA2
+        style C fill:#E8F5E9,stroke:#2E7D32
+        style D fill:#FFF8E1,stroke:#F57F17
+        style E fill:#E3F2FD,stroke:#1A237E
+        style F fill:#E8F5E9,stroke:#2E7D32
+
+    caption: "Fluxo iterativo: a IA gera um rascunho, voce revisa, testa, refina e so entao faz o commit. O feedback loop entre 'Commit' e 'IA gera rascunho' representa o refinamento continuo."
+
+  # ─────────────────────────────────────────────
+  # DIAGRAMA 5: Agente Generico vs. Especializado
+  # ─────────────────────────────────────────────
+  # Substitui 2 diagramas + ASCII no Cap 2
+  # Local: book.md linhas 498-553
+  - id: "generic-vs-specialized"
+    title: "Agente Generico vs. Agentes Especializados"
+    chapter: 2
+    replaces: "2 mermaids + 2 ASCII (linhas 498-553)"
+    type: "flowchart"
+
+    mermaid: |
+      graph TB
+        subgraph AG["Agente Generico"]
+            direction TB
+            G1["Frontend: 2/5<br/>React basico"] --> G2["Backend: 3/5<br/>API basica"]
+            G2 --> G3["Seguranca: 1/5<br/>Esquece CSRF"]
+            G3 --> G4["Banco: 2/5<br/>Faz N+1"]
+            G4 --> G5["DevOps: 1/5<br/>Sem multi-stage"]
+        end
+
+        subgraph AE["Agente Frontend Especializado"]
+            direction TB
+            E1["Performance: 5/5<br/>Lazy loading, Suspense"] --> E2["Acessibilidade: 5/5<br/>ARIA, WCAG"]
+            E2 --> E3["SEO: 5/5<br/>Metadata API"]
+            E3 --> E4["TypeScript: 5/5<br/>Strict mode"]
+        end
+
+        AG -->|"Resultado: divida tecnica"| RES1["Codigo 'funciona'<br/>mas fragil"]
+        AE -->|"Resultado: qualidade"| RES2["Codigo de producao<br/>pronto para review"]
+
+        style AG fill:#FFEBEE,stroke:#C62828
+        style AE fill:#E8F5E9,stroke:#2E7D32
+        style G1 fill:#FFCDD2,stroke:#C62828
+        style G2 fill:#FFCDD2,stroke:#C62828
+        style G3 fill:#FFCDD2,stroke:#C62828
+        style G4 fill:#FFCDD2,stroke:#C62828
+        style G5 fill:#FFCDD2,stroke:#C62828
+        style E1 fill:#C8E6C9,stroke:#2E7D32
+        style E2 fill:#C8E6C9,stroke:#2E7D32
+        style E3 fill:#C8E6C9,stroke:#2E7D32
+        style E4 fill:#C8E6C9,stroke:#2E7D32
+        style RES1 fill:#FFEBEE,stroke:#C62828
+        style RES2 fill:#E8F5E9,stroke:#2E7D32
+
+    caption: "Comparacao visual: um agente generico sabe de tudo um pouco mas e mediano em tudo. Um ecossistema de agentes especializados produz resultados excelentes em cada area."
+
+  # ─────────────────────────────────────────────
+  # DIAGRAMA 6: Anatomia de um Agente
+  # ─────────────────────────────────────────────
+  # Substitui o ASCII box diagram no Cap 2
+  # Local: book.md linhas 573-599
+  - id: "agent-anatomy"
+    title: "Anatomia de um Agente de IA"
+    chapter: 2
+    replaces: "ascii box diagram (linhas 573-599)"
+    type: "flowchart"
+
+    mermaid: |
+      graph TB
+        subgraph ID["IDENTIDADE"]
+            ID1["Quem e este agente?"]
+            ID2["O que sabe fazer?"]
+            ID3["O que NAO faz?"]
+        end
+
+        subgraph CN["CONHECIMENTO"]
+            CN1["Stack tecnologica"]
+            CN2["Padroes e praticas"]
+            CN3["Referencias externas"]
+        end
+
+        subgraph PR["PROCESSO"]
+            PR1["Fluxo de trabalho"]
+            PR2["Entrada -> Transformacao -> Saida"]
+        end
+
+        subgraph QL["QUALIDADE"]
+            QL1["Checklist de validacao"]
+            QL2["Criterios de aceite"]
+            QL3["Anti-padroes a evitar"]
+        end
+
+        subgraph CM["COMUNICACAO"]
+            CM1["Formato de entrada"]
+            CM2["Formato de saida"]
+            CM3["Como reportar problemas"]
+        end
+
+        ID --> PR
+        CN --> PR
+        PR --> QL
+        QL --> CM
+
+        style ID fill:#E3F2FD,stroke:#1565C0
+        style CN fill:#E8F5E9,stroke:#2E7D32
+        style PR fill:#FFF8E1,stroke:#F57F17
+        style QL fill:#FFEBEE,stroke:#C62828
+        style CM fill:#F3E5F5,stroke:#7B1FA2
+
+    caption: "Os 5 componentes essenciais de um agente de IA eficaz. Cada componente tem funcao especifica na definicao do comportamento do agente."
+
+  # ─────────────────────────────────────────────
+  # DIAGRAMA 7: Organizacao de Agentes (Org Chart)
+  # ─────────────────────────────────────────────
+  # Substitui a tabela de 17 agentes + diagramas no Cap 2
+  # Local: book.md linhas 604-655
+  - id: "agent-org-full"
+    title: "As 7 Categorias de Agentes"
+    chapter: 2
+    replaces: "table (linhas 604-655)"
+    type: "flowchart"
+
+    mermaid: |
+      graph TB
+        ORC["Book Factory<br/>Orquestrador"] --> PROD["Produto"]
+        ORC --> DSG["Design"]
+        ORC --> ARQ["Arquitetura"]
+        ORC --> DEV["Desenvolvimento"]
+        ORC --> INF["Infraestrutura"]
+        ORC --> QUAL["Qualidade"]
+        ORC --> GOV["Governanca"]
+
+        PROD --> PD["Product Discovery"]
+        PROD --> UXR["UX Research"]
+
+        DSG --> UX["UX Designer"]
+        DSG --> UI["UI Designer"]
+
+        ARQ --> EA["Enterprise Architect"]
+        ARQ --> DBA["Database Architect"]
+
+        DEV --> BE["Backend Expert"]
+        DEV --> FE["Frontend Expert"]
+        DEV --> PRE["Prisma Expert"]
+
+        INF --> DO["DevOps Expert"]
+        INF --> SEC["Security Expert"]
+
+        QUAL --> QA["QA Expert"]
+        QUAL --> PERF["Performance Expert"]
+
+        GOV --> AUD["Auditor"]
+        GOV --> DOC["Documentation"]
+        GOV --> REF["Refactoring"]
+
+        style ORC fill:#1A237E,color:#FFFFFF
+        style PROD fill:#E3F2FD,stroke:#1565C0
+        style DSG fill:#E3F2FD,stroke:#1565C0
+        style ARQ fill:#F3E5F5,stroke:#7B1FA2
+        style DEV fill:#E8F5E9,stroke:#2E7D32
+        style INF fill:#FFF8E1,stroke:#F57F17
+        style QUAL fill:#E8F5E9,stroke:#2E7D32
+        style GOV fill:#FFEBEE,stroke:#C62828
+
+    caption: "Arvore de agentes da Book Factory. Cada categoria tem agentes especializados que podem ser combinados em pipelines de acordo com a necessidade do projeto."
+
+  # ─────────────────────────────────────────────
+  # DIAGRAMA 8: Pipeline de Features
+  # ─────────────────────────────────────────────
+  # Refinamento do diagrama existente, removendo ASCII
+  # Local: book.md linhas 725-779
+  - id: "feature-pipeline"
+    title: "Pipeline de Desenvolvimento de Features com IA"
+    chapter: 2
+    replaces: "mermaid + ascii (linhas 725-779)"
+    type: "flowchart"
+
+    mermaid: |
+      graph TB
+        PD["fa:fa-chart-line Product Discovery"] --> UX["fa:fa-user-gear UX Designer"]
+        UX --> UI["fa:fa-pen UI Designer"]
+        EA["fa:fa-sitemap Enterprise Architect"] -.-> PD
+        EA -.-> UX
+        EA -.-> UI
+
+        subgraph IMPL["Implementacao"]
+            BE["fa:fa-server Backend Expert"]
+            FE["fa:fa-code Frontend Expert"]
+            PE["fa:fa-database Prisma Expert"]
+            SE["fa:fa-lock Security Expert"]
+        end
+
+        UI --> BE
+        UI --> FE
+        UI --> PE
+        UI --> SE
+
+        BE --> QA["fa:fa-check-double QA Expert"]
+        FE --> QA
+        PE --> QA
+        SE --> QA
+
+        QA --> DO["fa:fa-rocket DevOps Expert"]
+        DO --> AUD["fa:fa-eye Auditor Agent"]
+        AUD --> DOCS["fa:fa-book-open Documentation Agent"]
+
+        style PD fill:#E3F2FD,stroke:#1A237E
+        style UX fill:#E3F2FD,stroke:#1A237E
+        style UI fill:#E3F2FD,stroke:#1A237E
+        style EA fill:#F3E5F5,stroke:#1A237E
+        style QA fill:#FFF8E1,stroke:#1A237E
+        style DO fill:#E8F5E9,stroke:#1A237E
+        style DOCS fill:#E8F5E9,stroke:#1A237E
+
+    caption: "Pipeline completo de desenvolvimento de features. O Enterprise Architect fornece diretrizes arquiteturais para os passos iniciais. QA valida antes do deploy."
+
+  # ─────────────────────────────────────────────
+  # DIAGRAMA 9: Pipeline de Auditoria
+  # ─────────────────────────────────────────────
+  # Refinamento do existente
+  # Local: book.md linhas 783-822
+  - id: "audit-pipeline"
+    title: "Pipeline de Auditoria de Codigo com IA"
+    chapter: 2
+    replaces: "mermaid + ascii (linhas 783-822)"
+    type: "flowchart"
+
+    mermaid: |
+      graph TB
+        FI["fa:fa-code Feature Implementada"] --> SA["fa:fa-lock Security Auditor"]
+        SA -->|"Blocker/Critical"| BE["fa:fa-server Backend Expert<br/>corrige"]
+        SA -->|"OK"| AA["fa:fa-sitemap Architecture Auditor"]
+        AA -->|"Problema"| EA["fa:fa-sitemap Enterprise Architect<br/>revisa"]
+        AA -->|"OK"| PA["fa:fa-gauge-high Performance Auditor"]
+        PA -->|"Lento"| PX["fa:fa-gauge-high Performance Expert<br/>otimiza"]
+        PA -->|"OK"| CQA["fa:fa-check-double Code Quality Auditor"]
+        CQA -->|"Abaixo padrao"| RA["fa:fa-rotate Refactoring Agent"]
+        CQA -->|"OK"| RPT["fa:fa-file-lines Relatorio Consolidado"]
+
+        style FI fill:#E8F5E9,stroke:#2E7D32
+        style SA fill:#FFEBEE,stroke:#C62828
+        style AA fill:#FFF8E1,stroke:#F57F17
+        style PA fill:#FFF8E1,stroke:#F57F17
+        style CQA fill:#E3F2FD,stroke:#1A237E
+        style RPT fill:#E8F5E9,stroke:#2E7D32
+
+    caption: "Pipeline de auditoria em 4 etapas. Cada auditor especializado verifica um aspecto diferente. Se encontrar problemas, o agente especialista correspondente corrige."
+
+  # ─────────────────────────────────────────────
+  # DIAGRAMA 10: Pipeline CI/CD
+  # ─────────────────────────────────────────────
+  # NOVO — diagrama que precede o YAML do GitHub Actions
+  # Local: book.md antes da secao 2 do Cap 3
+  - id: "cicd-flow"
+    title: "Fluxo de uma Pipeline CI/CD"
+    chapter: 3
+    replaces: "none (novo — precede o codigo YAML)"
+    type: "flowchart"
+
+    mermaid: |
+      graph LR
+        GIT["fa:fa-code-branch Git Push"] --> LINT["fa:fa-code Lint & Format"]
+        LINT --> TEST["fa:fa-flask Testes Unitarios"]
+        TEST --> INTEG["fa:fa-flask Testes Integracao"]
+        INTEG --> BUILD["fa:fa-box Build"]
+        BUILD --> SEC["fa:fa-lock Seguranca"]
+        SEC -->|"Falha"| FIX["fa:fa-bug Corrigir"]
+        SEC -->|"Passou"| DEPLOY["fa:fa-rocket Deploy"]
+        DEPLOY --> HEALTH["fa:fa-heart-pulse Health Check"]
+        HEALTH -->|"OK"| DONE["fa:fa-check Concluido"]
+        HEALTH -->|"Falha"| ROLLBACK["fa:fa-rotate-left Rollback"]
+        FIX --> GIT
+        ROLLBACK --> DEPLOY
+
+        style GIT fill:#E3F2FD,stroke:#1A237E
+        style LINT fill:#E3F2FD,stroke:#1A237E
+        style TEST fill:#E3F2FD,stroke:#1A237E
+        style INTEG fill:#E3F2FD,stroke:#1A237E
+        style BUILD fill:#F3E5F5,stroke:#7B1FA2
+        style SEC fill:#FFF8E1,stroke:#F57F17
+        style DEPLOY fill:#E8F5E9,stroke:#2E7D32
+        style HEALTH fill:#E8F5E9,stroke:#2E7D32
+        style DONE fill:#E8F5E9,stroke:#2E7D32
+        style FIX fill:#FFEBEE,stroke:#C62828
+        style ROLLBACK fill:#FFEBEE,stroke:#C62828
+
+    caption: "Fluxo de CI/CD completo. Cada estagio so avanca se o anterior passar. Seguranca e health check tem gates de aprovacao. Rollback automatico em caso de falha."
+
+  # ─────────────────────────────────────────────
+  # DIAGRAMA 11: Piramide de Testes
+  # ─────────────────────────────────────────────
+  # NOVO — atualmente so texto
+  # Local: book.md linha 1229
+  - id: "testing-pyramid"
+    title: "Piramide de Testes Automatizados"
+    chapter: 3
+    replaces: "text (linha 1229)"
+    type: "flowchart"
+
+    mermaid: |
+      graph TB
+        subgraph PI[" "]
+            direction TB
+            E2E["E2E Tests<br/>Poucos | Lentos | Alto custo"]
+            INTG["Integration Tests<br/>Alguns | Medios | Custo medio"]
+            UNIT["Unit Tests<br/>Muitos | Rapidos | Baixo custo"]
+        end
+
+        E2E --> INTG
+        INTG --> UNIT
+
+        style E2E fill:#E3F2FD,stroke:#1A237E,color:#1A237E
+        style INTG fill:#E8F5E9,stroke:#2E7D32
+        style UNIT fill:#FFF8E1,stroke:#F57F17
+
+    caption: "Piramide de testes: muitos testes unitarios na base, poucos testes E2E no topo. Respeitar essa proporcao maximiza a velocidade e confianca da suíte de testes."
+
+  # ─────────────────────────────────────────────
+  # DIAGRAMA 12: Blue-Green Deployment
+  # ─────────────────────────────────────────────
+  # Refinamento do existente
+  # Local: book.md linhas 1500-1523
+  - id: "blue-green-deploy"
+    title: "Blue-Green Deployment"
+    chapter: 3
+    replaces: "mermaid + ascii (linhas 1500-1523)"
+    type: "flowchart"
+
+    mermaid: |
+      graph LR
+        USERS["fa:fa-users Usuarios"] --> LB["fa:fa-arrow-trend-up Load Balancer"]
+        LB -->|"Atual (100%)"| BLUE["Blue v1.0<br/>(Atual)"]
+        LB -.->|"DNS Switch"| GREEN["Green v1.1<br/>(Nova)"]
+
+        BLUE -->|"Rollback: reverter DNS"| GREEN
+
+        style USERS fill:#E3F2FD,stroke:#1A237E
+        style LB fill:#F3E5F5,stroke:#7B1FA2
+        style BLUE fill:#E3F2FD,stroke:#1565C0
+        style GREEN fill:#E8F5E9,stroke:#2E7D32
+
+    caption: "Blue-Green: duas versoes completas do ambiente. O load balancer direciona o trafego. Rollback e instantaneo — basta reverter o DNS/ALB para a versao anterior."
+
+  # ─────────────────────────────────────────────
+  # DIAGRAMA 13: Canary Deployment Steps
+  # ─────────────────────────────────────────────
+  # NOVO — precede o YAML do Argo Rollouts
+  # Local: book.md antes da secao 5 do Cap 3
+  - id: "canary-deploy"
+    title: "Deploy Canary com Aumento Gradual"
+    chapter: 3
+    replaces: "none (novo — precede YAML do Argo)"
+    type: "flowchart"
+
+    mermaid: |
+      graph LR
+        START["Inicio"] --> C10["10% trafego<br/>5 min pausa"]
+        C10 --> MON1["Monitorar"]
+        MON1 -->|"OK"| C50["50% trafego<br/>5 min pausa"]
+        MON1 -->|"Erro"| RB1["Rollback"]
+        C50 --> MON2["Monitorar"]
+        MON2 -->|"OK"| C100["100% trafego"]
+        MON2 -->|"Erro"| RB2["Rollback"]
+        C100 --> DONE["Completo"]
+
+        style C10 fill:#FFF8E1,stroke:#F57F17
+        style C50 fill:#FFF8E1,stroke:#F57F17
+        style C100 fill:#E8F5E9,stroke:#2E7D32
+        style RB1 fill:#FFEBEE,stroke:#C62828
+        style RB2 fill:#FFEBEE,stroke:#C62828
+        style DONE fill:#E8F5E9,stroke:#2E7D32
+
+    caption: "Canary: aumento gradual de trafego para a nova versao (10% -> 50% -> 100%). A cada passo, monitoramento e decisao: continuar ou reverter. Risco minimizado."
+
+  # ─────────────────────────────────────────────
+  # DIAGRAMA 14: Migration com Rollback
+  # ─────────────────────────────────────────────
+  # NOVO — precede o YAML de rollback
+  # Local: book.md antes da secao 6 do Cap 3
+  - id: "migration-rollback"
+    title: "Estrategia de Rollback para Migrations"
+    chapter: 3
+    replaces: "none (novo)"
+    type: "flowchart"
+
+    mermaid: |
+      graph TB
+        BACKUP["fa:fa-database Backup pre-migration"]
+        MIGRATE["fa:fa-gear Rodar Migration"]
+        CHECK["fa:fa-check Verificar Saude"]
+        ROLLBACK["fa:fa-rotate-left Rollback (Restaurar Backup)"]
+        CONTINUE["fa:fa-check Continuar Deploy"]
+        NOTIFY["fa:fa-bell Notificar Time"]
+
+        BACKUP --> MIGRATE
+        MIGRATE --> CHECK
+        CHECK -->|"Sucesso"| CONTINUE
+        CHECK -->|"Falha"| ROLLBACK
+        ROLLBACK --> NOTIFY
+        CONTINUE --> NOTIFY
+
+        style BACKUP fill:#E3F2FD,stroke:#1A237E
+        style MIGRATE fill:#FFF8E1,stroke:#F57F17
+        style CHECK fill:#F3E5F5,stroke:#7B1FA2
+        style CONTINUE fill:#E8F5E9,stroke:#2E7D32
+        style ROLLBACK fill:#FFEBEE,stroke:#C62828
+        style NOTIFY fill:#E3F2FD,stroke:#1A237E
+
+    caption: "Estrategia segura de migration: backup antes, execucao, verificacao e rollback automatico em caso de falha. Sempre notificar o time sobre o resultado."
+
+  # ─────────────────────────────────────────────
+  # DIAGRAMA 15: Security Pipeline (SAST + DAST + Dependency)
+  # ─────────────────────────────────────────────
+  # NOVO — precede os YAMLs de seguranca
+  # Local: book.md antes da secao 7 do Cap 3
+  - id: "security-pipeline"
+    title: "Pipeline de Seguranca em 3 Camadas"
+    chapter: 3
+    replaces: "none (novo)"
+    type: "flowchart"
+
+    mermaid: |
+      graph LR
+        CODE["fa:fa-code Codigo"] --> SAST["fa:fa-lock SAST<br/>Analise Estatica"]
+        SAST -->|"Vulnerabilidades"| FIX1["fa:fa-bug Corrigir"]
+        SAST -->|"OK"| DEP["fa:fa-magnifying-glass Dependency Scan"]
+        DEP -->|"Vulnerabilidades"| UPDATE["fa:fa-rotate Atualizar Deps"]
+        DEP -->|"OK"| BUILD["fa:fa-box Build Imagem"]
+        BUILD -->|"Imagem"| TRIVY["fa:fa-search Trivy Scan"]
+        TRIVY -->|"Vulnerabilidades"| FIX2["fa:fa-bug Rebuild"]
+        TRIVY -->|"OK"| DAST["fa:fa-robot DAST<br/>Teste Dinamico"]
+        DAST -->|"Ataques simulados"| FIX3["fa:fa-bug Corrigir"]
+        DAST -->|"OK"| DONE["fa:fa-check Seguro"]
+        FIX1 --> CODE
+        UPDATE --> BUILD
+        FIX2 --> BUILD
+        FIX3 --> CODE
+
+        style SAST fill:#E3F2FD,stroke:#1A237E
+        style DEP fill:#FFF8E1,stroke:#F57F17
+        style TRIVY fill:#FFF8E1,stroke:#F57F17
+        style DAST fill:#FFEBEE,stroke:#C62828
+        style DONE fill:#E8F5E9,stroke:#2E7D32
+
+    caption: "Seguranca em 3 camadas: SAST (codigo), Dependency Scan (bibliotecas), Trivy (imagem), DAST (runtime). Cada camada pega um tipo diferente de vulnerabilidade."
+
+  # ─────────────────────────────────────────────
+  # DIAGRAMA 16: Self-Healing Flow
+  # ─────────────────────────────────────────────
+  # NOVO — precede o codigo TypeScript
+  # Local: book.md antes da secao 11 do Cap 3
+  - id: "self-healing"
+    title: "Fluxo de Auto-Cura (Self-Healing)"
+    chapter: 3
+    replaces: "none (novo)"
+    type: "flowchart"
+
+    mermaid: |
+      graph TB
+        MON["fa:fa-gauge-high Monitoramento Continuo"]
+        CHECK["fa:fa-heart-pulse runningCount >= desiredCount?"]
+        HEALTHY["fa:fa-check Saudavel<br/>Nenhuma acao"]
+        UNHEALTHY["fa:fa-bug runningCount < desiredCount"]
+        DEPLOY["fa:fa-rocket Forcar Novo Deploy"]
+        NOTIFY["fa:fa-bell Notificar Time"]
+        LOG["fa:fa-list Registrar no Log"]
+
+        MON --> CHECK
+        CHECK -->|"Sim"| HEALTHY
+        CHECK -->|"Nao"| UNHEALTHY
+        UNHEALTHY --> DEPLOY
+        DEPLOY --> NOTIFY
+        NOTIFY --> LOG
+        LOG --> MON
+
+        style MON fill:#E3F2FD,stroke:#1A237E
+        style CHECK fill:#F3E5F5,stroke:#7B1FA2
+        style HEALTHY fill:#E8F5E9,stroke:#2E7D32
+        style UNHEALTHY fill:#FFEBEE,stroke:#C62828
+        style DEPLOY fill:#FFF8E1,stroke:#F57F17
+        style NOTIFY fill:#E3F2FD,stroke:#1A237E
+
+    caption: "Self-healing: o sistema monitora continuamente sua propria saude. Se o numero de instancias saudaveis cai abaixo do desejado, um novo deploy e forcado automaticamente."
+
+  # ─────────────────────────────────────────────
+  # DIAGRAMA 17: Mind Map Resumo (Tabela Final)
+  # ─────────────────────────────────────────────
+  # Substitui a tabela de resumo final
+  # Local: book.md linhas 2342-2353
+  - id: "summary-mindmap"
+    title: "Mapa Mental: Automacao do Ciclo de Desenvolvimento"
+    chapter: 3
+    replaces: "table (linhas 2342-2353)"
+    type: "mindmap"
+
+    mermaid: |
+      mindmap
+        root((Automacao))
+          CI/CD
+            GitHub Actions
+            GitLab CI
+            Jenkins
+          Testes
+            Unitarios (Vitest)
+            Integracao
+            E2E (Playwright)
+          IaC
+            Terraform
+            Pulumi
+            CloudFormation
+          Deploy
+            Blue-Green
+            Canary (Argo)
+            Rolling
+          Banco
+            Prisma Migrate
+            Flyway
+            Rollback
+          Seguranca
+            SAST (SonarQube)
+            DAST (ZAP)
+            Dependencies (Snyk)
+          Code Review
+            Dependabot
+            CodeQL
+            ESLint
+          Release
+            Semantic Release
+            Conventional Commits
+            Changelog
+          Ambientes
+            Preview (Ephemeral)
+            Vercel
+            ECS
+          Monitoramento
+            Datadog
+            Self-Healing
+            Runbooks
+
+    caption: "Mapa mental dos 10 dominios da automacao. Cada ramo representa uma area com suas ferramentas principais. Use como referencia rapida."
+
+# ─────────────────────────────────────────────
+# LISTA DE DIAGRAMAS A REMOVER (redundancia)
+# ─────────────────────────────────────────────
+remove_redundant:
+  - id: "ascii-textual-flow-cap1-conclusao"
+    location: "book.md:353-359"
+    reason: "Redundante com Mermaid (fluxo ideal)"
+  - id: "ascii-textual-agent-generico"
+    location: "book.md:515-525"
+    reason: "Redundante com Mermaid (agente generico)"
+  - id: "ascii-textual-agent-especializado"
+    location: "book.md:544-553"
+    reason: "Redundante com Mermaid (agente especializado)"
+  - id: "ascii-textual-pipeline-features"
+    location: "book.md:763-779"
+    reason: "Redundante com Mermaid (pipeline features)"
+  - id: "ascii-textual-pipeline-auditoria"
+    location: "book.md:803-822"
+    reason: "Redundante com Mermaid (pipeline auditoria)"
+  - id: "ascii-textual-pipeline-onboarding"
+    location: "book.md:826-856"
+    reason: "Redundante com Mermaid (pipeline onboarding) — CONVERTER"
+  - id: "ascii-textual-blue-green"
+    location: "book.md:1516-1523"
+    reason: "Redundante com Mermaid (blue-green)"
+
+# ─────────────────────────────────────────────
+# REGRAS DE RENDERIZACAO
+# ─────────────────────────────────────────────
+rendering_rules:
+  - "Todos os diagramas Mermaid DEVEM usar o tema base definido acima"
+  - "Icones Font Awesome via prefixo 'fa:' — apenas icons.yaml definidos"
+  - "Cores semanticas: info (#E3F2FD), warning (#FFF8E1), success (#E8F5E9), error (#FFEBEE)"
+  - "Diagramas DEVEM funcionar em P/B (preto e branco) — forma do no diferencia conteudo"
+  - "Captions DEVEM acompanhar cada diagrama com texto alternativo"
+  - "Maximo 15 nos por diagrama para legibilidade em impressao 6x9"
+  - "Substituir diagramas ASCII por estes Mermaid — remover ASCII apos insercao"
+
+# ─────────────────────────────────────────────
+# PRIORIDADE DE IMPLEMENTACAO
+# ─────────────────────────────────────────────
+priority_order:
+  - id: "industry-data-chart"
+    priority: "P0 - tabela chave na introducao"
+  - id: "cicd-flow"
+    priority: "P0 - precede codigo YAML essencial"
+  - id: "testing-pyramid"
+    priority: "P0 - conceito visual sem representacao"
+  - id: "migration-rollback"
+    priority: "P1 - fluxo critico de seguranca"
+  - id: "canary-deploy"
+    priority: "P1 - diagrama necessario para YAML"
+  - id: "security-pipeline"
+    priority: "P1 - 3 camadas visuais"
+  - id: "generic-vs-specialized"
+    priority: "P1 - substitui 2 diagramas + 2 ASCII"
+  - id: "agent-anatomy"
+    priority: "P2 - substitui ASCII box"
+  - id: "summary-mindmap"
+    priority: "P2 - substitui tabela final"
+  - id: "self-healing"
+    priority: "P2 - fluxo novo"

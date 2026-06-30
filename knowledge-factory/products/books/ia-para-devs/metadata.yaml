@@ -1,0 +1,25 @@
+book_id: ia-para-devs
+title: "IA para Desenvolvedores"
+subtitle: "Como Usar Inteligência Artificial para Programar Melhor — sem Cair nos Erros Comuns"
+author: "AI Software Engineering Academy"
+language: pt-BR
+edition: 1
+year: 2026
+isbn: "978-65-00-00000-0"
+isbn_ebook: "978-65-00-00001-7"
+publisher: "AI Software Engineering Academy"
+rights: "© 2026 AI Software Engineering Academy. Todos os direitos reservados."
+categories:
+  - Tecnologia
+  - Inteligência Artificial
+  - Desenvolvimento de Software
+tags:
+  - ai
+  - programação
+  - desenvolvimento
+  - prompt-engineering
+  - automação
+description: "Guia prático para desenvolvedores usarem inteligência artificial de forma produtiva, evitando os erros mais comuns. Cobre desde fundamentos de prompt engineering até automação de pipelines com CI/CD, agentes especializados e infraestrutura como código."
+pages_estimate: 200
+cover_image: assets/capa.png
+cover_alt_text: "Capa do livro IA para Desenvolvedores: fundo gradiente azul escuro com linhas abstratas de circuito em coral, título em branco e subtítulo em coral"

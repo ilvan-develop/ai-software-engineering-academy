@@ -1,0 +1,2 @@
+# Cover prompt para Qualidade e Testes
+# Gerar via DALL-E ou Midjourney

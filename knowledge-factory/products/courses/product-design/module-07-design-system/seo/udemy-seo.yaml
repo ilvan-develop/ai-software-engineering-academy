@@ -1,0 +1,18 @@
+title: "Design System: Consistência em Escala"
+subtitle: "Construa e mantenha sistemas de design que padronizam interfaces e aceleram entregas em times enterprise."
+description: "Aprenda a construir e escalar Design Systems: tokens, componentes, documentacao, governanca, versionamento, integracao com codigo e colaboracao entre design e desenvolvimento."
+tags:
+  - Design System
+  - Componentes Reutilizaveis
+  - Tokens de Design
+  - Design Tokens
+  - Storybook
+  - Governanca de Design
+  - Consistencia Visual
+  - Escalabilidade
+  - Design Ops
+  - Product Design
+category: "Desenvolvimento de Software"
+level: "Avancado"
+language: "Portugues (Brasil)"
+target_audience: "Arquitetos, tech leads e designers que precisam escalar consistência visual em grandes times"

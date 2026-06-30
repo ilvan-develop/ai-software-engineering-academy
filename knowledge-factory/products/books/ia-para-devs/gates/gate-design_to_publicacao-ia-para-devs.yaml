@@ -1,0 +1,20 @@
+gate_id: design_to_publicacao
+gate_name: Gate Design → Publicação
+approved: false
+results:
+- rule: no-self-approval
+  passed: true
+  message: layout-designer ≠ book-designer
+- rule: handoff-artifacts
+  artifact: layout-book.yaml
+  exists: false
+  passed: false
+- rule: handoff-artifacts
+  artifact: cover-spec.md
+  exists: false
+  passed: false
+- rule: handoff-artifacts
+  artifact: slide-template.md
+  exists: false
+  passed: false
+timestamp: '2026-06-28T19:19:49.639512'

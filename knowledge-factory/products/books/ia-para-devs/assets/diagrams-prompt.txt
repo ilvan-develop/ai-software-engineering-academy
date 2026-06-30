@@ -1,0 +1,24 @@
+# Diagramas para IA para Desenvolvedores
+# Prompts especificos para geracao de diagramas internos
+
+## Diagrama 1: Os 5 Erros ao Usar IA (Capitulo 1)
+MidJourney: Infographic-style diagram showing 5 interconnected error nodes
+in a pentagon layout. Clean flat design, dark blue background, coral accent
+connectors. Flowchart style, minimalist, professional. --ar 16:9 --v 6.1
+
+## Diagrama 2: Prompt Estruturado (Capitulo 1)
+MidJourney: Three-column comparison infographic showing Context / Intent / Format
+as labeled columns. Clean corporate style, dark blue header row, coral accents. --ar 16:9
+
+## Diagrama 3: Anatomia de um Agente (Capitulo 2)
+MidJourney: Technical diagram showing agent structure as folder tree.
+Central "Agent" node with branches: README, workflow, checklist, prompts.
+Clean dark theme, isometric folder style. --ar 16:9 --v 6.1
+
+## Diagrama 4: CI/CD Pipeline (Capitulo 3)
+MidJourney: Horizontal flowchart: Code Commit -> Build -> Test -> Deploy -> Monitor.
+Rounded rectangles with icons, coral arrows, dark theme. --ar 16:9
+
+## Diagrama 5: Custo vs Beneficio (Capitulo 3)
+MidJourney: Line chart with break-even point at 2 executions.
+Clean chart style, dark background, coral line. --ar 16:9

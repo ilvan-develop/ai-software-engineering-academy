@@ -1,0 +1,382 @@
+# Visual Format Specification — IA para Desenvolvedores
+# Versao: 1.0.0
+# Propósito: Mapeia cada conceito do livro ao formato visual mais adequado
+# Consome: compiled/book.md, design-tokens.yaml, icons.yaml, brand-book.md
+
+version: "1.0.0"
+updated: "2026-06-28"
+author: "visual-comm-designer"
+
+# ─────────────────────────────────────────────
+# FORMATOS VISUAIS DISPONIVEIS
+# ─────────────────────────────────────────────
+formats:
+  flowchart:
+    description: "Diagrama de fluxo sequencial (Mermaid graph LR/TB)"
+    best_for: ["processos", "pipelines", "sequencias", "decisoes"]
+    icon_prefix: "fa:"
+    color_scheme: "brand"
+
+  org_chart:
+    description: "Diagrama hierarquico (Mermaid graph TB)"
+    best_for: ["hierarquias", "equipes", "componentes", "estruturas"]
+    icon_prefix: "fa:"
+    color_scheme: "hierarchical"
+
+  comparison_table:
+    description: "Tabela de comparacao lado a lado"
+    best_for: ["antes vs. depois", "ferramentas", "versoes", "pros e contras"]
+    icon_prefix: "icon:"
+    color_scheme: "neutral"
+
+  annotated_diagram:
+    description: "Diagrama com anotacoes numeradas"
+    best_for: ["anatomia de conceito", "partes de um sistema", "decomposicao"]
+    icon_prefix: "fa:"
+    color_scheme: "callout"
+
+  infographic:
+    description: "Infografico com dados, icones e hierarquia visual"
+    best_for: ["estatisticas", "comparacoes multidimensionais", "linha do tempo"]
+    icon_prefix: "fa:"
+    color_scheme: "mixed"
+
+  code_comparison:
+    description: "Bloco de codigo lado a lado (RUIM vs. BOM)"
+    best_for: ["exemplos de codigo", "refatoracao", "antes e depois"]
+    icon_prefix: "none"
+    color_scheme: "code"
+
+  callout:
+    description: "Caixa de destaque com icone e cor semantica"
+    best_for: ["dicas", "avisos", "definicoes", "recapitulacao"]
+    icon_prefix: "fa:"
+    color_scheme: "semantic"
+
+  checklist:
+    description: "Lista de verificacao com checkboxes"
+    best_for: ["passos", "requisitos", "criterios de aceite", "boas praticas"]
+    icon_prefix: "fa:check"
+    color_scheme: "success"
+
+  mind_map:
+    description: "Mapa mental radial (Mermaid mindmap)"
+    best_for: ["visao geral", "sumario visual", "conceitos relacionados"]
+    icon_prefix: "fa:"
+    color_scheme: "brand"
+
+  timeline:
+    description: "Linha do tempo horizontal (Mermaid timeline)"
+    best_for: ["historicos", "evolucao", "roadmap", "sequencias temporais"]
+    icon_prefix: "fa:"
+    color_scheme: "neutral"
+
+# ─────────────────────────────────────────────
+# MAPEAMENTO CONCEITO → FORMATO
+# ─────────────────────────────────────────────
+mappings:
+
+  # ── CAPITULO 1: O Erro de 90% ──
+
+  - concept: "Dados de erro da industria (63%, 68%, 40%, 3%)"
+    location: "cap1, secao 1"
+    current_format: "table"
+    recommended_format: "infographic"
+    reason: "Dados comparativos ganham impacto visual com grafico de barras + icones"
+    mermaid_spec:
+      type: "xychart"
+      config:
+        x_title: "Metrica"
+        y_title: "Percentual"
+        bars:
+          - label: "Erro sem config (40%)"
+            height: 40
+            color: "#C62828"
+          - label: "Erro com 12 regras (3%)"
+            height: 3
+            color: "#2E7D32"
+          - label: "Devs que encontraram bugs (63%)"
+            height: 63
+            color: "#F57F17"
+
+  - concept: "Tipos de bug em codigo IA (Logica, Seguranca, Performance, Compatibilidade)"
+    location: "cap1, secao 2"
+    current_format: "table"
+    recommended_format: "annotated_diagram"  # 4 quadrantes com iconografia
+    icon_map:
+      Logica: "fa-brain"
+      Seguranca: "fa-lock"
+      Performance: "fa-gauge-high"
+      Compatibilidade: "fa-cubes"
+    notes: "Cada quadrante mostra o tipo, exemplo e consequencia"
+
+  - concept: "Como corrigir (4 passos)"
+    location: "cap1, secao 2"
+    current_format: "numbered_list"
+    recommended_format: "checklist"
+    notes: "Transformar em checklist acionavel com icones de conclusao"
+
+  - concept: "Prompt vago vs. Prompt estruturado"
+    location: "cap1, secao 3"
+    current_format: "html_table_side_by_side"
+    recommended_format: "code_comparison"
+    notes: "HTML table atrapalha EPUB/Markdown. Usar blocos lado a lado com marcacao visual de RUIM (vermelho) e BOM (verde)"
+
+  - concept: "Tres elementos do prompt (Contexto, Intencao, Formato)"
+    location: "cap1, secao 3"
+    current_format: "table"
+    recommended_format: "annotated_diagram"
+    notes: "Diagrama de 3 blocos interligados com exemplos dentro de cada um"
+
+  - concept: "Fluxo ideal de uso de IA"
+    location: "cap1, secao 7"
+    current_format: "mermaid_flowchart + ascii"
+    recommended_format: "flowchart"
+    notes: "Manter Mermaid, remover ASCII redundante. Adicionar cores semanticas (verde = aceito, vermelho = feedback)"
+
+  - concept: "Analogia do estagiario brilhante"
+    location: "cap1, secao 7"
+    current_format: "text"
+    recommended_format: "callout_tip"
+    notes: "Essa analogia merece destaque visual — e o principal takeaway do capitulo"
+
+  # ── CAPITULO 2: Agentes de IA na Pratica ──
+
+  - concept: "Agente generico vs. especializado"
+    location: "cap2, secao 1"
+    current_format: "mermaid_flowchart + ascii"
+    recommended_format: "comparison_table"
+    notes: "Duas colunas (Generico vs. Especializado) com metricas 1-5 e iconografia"
+
+  - concept: "Anatomia de um agente"
+    location: "cap2, secao 2"
+    current_format: "ascii_box_diagram"
+    recommended_format: "annotated_diagram"
+    notes: "5 blocos (Identidade, Conhecimento, Processo, Qualidade, Comunicacao) em grid 2+2+1 com icones"
+
+  - concept: "17 agentes da formacao"
+    location: "cap2, secao 3"
+    current_format: "tables"
+    recommended_format: "org_chart"
+    notes: "Hierarquia visual de 7 categorias com 17 agentes. Mermaid graph TB com cores por categoria"
+    mermaid_code: |
+      graph TB
+        subgraph Produto
+          PD["Product Discovery"]
+          UX["UX Research"]
+        end
+        subgraph Design
+          UXD["UX Designer"]
+          UID["UI Designer"]
+        end
+        subgraph Arquitetura
+          EA["Enterprise Architect"]
+          DA["Database Architect"]
+        end
+        subgraph Desenvolvimento
+          BE["Backend Expert"]
+          FE["Frontend Expert"]
+          PE["Prisma Expert"]
+        end
+        subgraph Infraestrutura
+          DEVOPS["DevOps Expert"]
+          SEC["Security Expert"]
+        end
+        subgraph Qualidade
+          QA["QA Expert"]
+          PERF["Performance Expert"]
+        end
+        subgraph Governanca
+          AUD["Auditor"]
+          DOC["Documentation"]
+          REF["Refactoring"]
+        end
+
+  - concept: "Como criar novo agente (6 passos)"
+    location: "cap2, secao 4"
+    current_format: "numbered_list + ascii"
+    recommended_format: "flowchart"
+    notes: "6 passos em fluxo horizontal com submaps para exemplos"
+
+  - concept: "Pipeline de features"
+    location: "cap2, secao 5"
+    current_format: "mermaid + ascii"
+    recommended_format: "flowchart"
+    notes: "Ja tem Mermaid — remover ASCII duplicado. Adicionar cores de job sequence"
+
+  - concept: "Pipeline de auditoria"
+    location: "cap2, secao 5"
+    current_format: "mermaid + ascii"
+    recommended_format: "flowchart"
+    notes: "Ja tem Mermaid com decisoes — bom. Remover ASCII duplicado"
+
+  - concept: "Pipeline de onboarding"
+    location: "cap2, secao 5"
+    current_format: "ascii_flow"
+    recommended_format: "flowchart"
+    notes: "Converter para Mermaid — unico pipeline sem diagrama visual"
+
+  - concept: "Integracao com OpenCode"
+    location: "cap2, secao 6"
+    current_format: "code_blocks"
+    recommended_format: "code_comparison"
+    notes: "Manter codigo mas adicionar chamadas visuais explicando cada parte"
+
+  # ── CAPITULO 3: Automacao do Ciclo de Desenvolvimento ──
+
+  - concept: "Custo vs. Beneficio da automacao"
+    location: "cap3, secao 1"
+    current_format: "formula_text"
+    recommended_format: "callout_tip"
+    notes: "Formula de custo-beneficio merece destaque visual em Tip callout"
+
+  - concept: "CI/CD Pipeline completa"
+    location: "cap3, secao 2"
+    current_format: "yaml_code"
+    recommended_format: "flowchart + code_comparison"
+    notes: "Diagrama de fluxo do CI (lint -> test -> build) seguido pelo codigo YAML. Atualmente so tem YAML"
+
+  - concept: "Pirâmide de testes"
+    location: "cap3, secao 3"
+    current_format: "text"
+    recommended_format: "infographic"
+    notes: "Conceito visual por natureza — deveria ser diagrama, nao texto"
+    mermaid_spec:
+      type: "pyramid"
+      layers:
+        - name: "E2E"
+          count: "poucos"
+          color: "#E3F2FD"
+        - name: "Integracao"
+          count: "alguns"
+          color: "#E8F5E9"
+        - name: "Unitarios"
+          count: "muitos"
+          color: "#FFF8E1"
+
+  - concept: "Blue-green deployment"
+    location: "cap3, secao 5"
+    current_format: "mermaid + ascii"
+    recommended_format: "flowchart"
+    notes: "Ja tem Mermaid — remover ASCII duplicado"
+
+  - concept: "Canary deployment com Argo"
+    location: "cap3, secao 5"
+    current_format: "yaml_code"
+    recommended_format: "flowchart + yaml"
+    notes: "Adicionar diagrama de como funciona canary (10% -> 50% -> 100%) antes do YAML"
+
+  - concept: "Rolling update"
+    location: "cap3, secao 5"
+    current_format: "yaml_code"
+    recommended_format: "timeline"
+    notes: "Timeline visual de instancias sendo substituidas gradativamente"
+
+  - concept: "Estrategia de rollback em migrations"
+    location: "cap3, secao 6"
+    current_format: "yaml_code"
+    recommended_format: "flowchart"
+    notes: "Diagrama de decisao: Migration -> Sucesso? -> Continua / Falha? -> Rollback"
+
+  - concept: "SAST + DAST Security pipeline"
+    location: "cap3, secao 7"
+    current_format: "yaml_code"
+    recommended_format: "flowchart"
+    notes: "Pipeline de seguranca como diagrama de fluxo com gates de aprovacao"
+
+  - concept: "Self-healing script"
+    location: "cap3, secao 11"
+    current_format: "typescript_code"
+    recommended_format: "flowchart + code"
+    notes: "Diagrama de decisao (running < desired? -> heal) seguido do codigo"
+
+  - concept: "Pipeline as Code boas praticas"
+    location: "cap3, secao 12"
+    current_format: "checklist"
+    recommended_format: "checklist"
+    notes: "Bom formato, adicionar iconografia e numeracao visual"
+
+  - concept: "Tabela resumo de ferramentas"
+    location: "cap3, final"
+    current_format: "table"
+    recommended_format: "mind_map"
+    notes: "Transformar tabela em mapa mental visual com categorias e ferramentas"
+    mermaid_code: |
+      mindmap
+        root((Automacao))
+          CI/CD
+            GitHub Actions
+            GitLab CI
+          Deploy
+            Blue-Green
+            Canary
+            Rolling
+          IaC
+            Terraform
+            Pulumi
+            CloudFormation
+          Seguranca
+            SAST
+            DAST
+            Dependency
+          Monitoramento
+            Datadog
+            Self-healing
+            Runbooks
+
+# ─────────────────────────────────────────────
+# REGRAS GLOBAIS DE FORMATACAO VISUAL
+# ─────────────────────────────────────────────
+rules:
+  # Regra 1: NUNCA duplicar diagrama em Mermaid + ASCII
+  - id: "no_ascii_dedup"
+    description: "Remover todos os diagramas ASCII que tem equivalente Mermaid"
+    applies_to: ["book.md:353-359", "book.md:515-525", "book.md:544-553", "book.md:763-779", "book.md:803-822", "book.md:826-856", "book.md:1516-1523"]
+
+  # Regra 2: Toda tabela > 3 colunas vira infografico ou diagrama
+  - id: "table_to_visual"
+    description: "Tabelas com mais de 3 colunas devem ser convertidas para formato visual"
+    threshold_columns: 3
+
+  # Regra 3: Todo bloco de codigo > 30 linhas deve ser precedido por diagrama explicativo
+  - id: "code_prefix_diagram"
+    description: "Codigos longos precisam de contexto visual antes"
+    threshold_lines: 30
+
+  # Regra 4: Callouts a cada 2-3 paginas (4-6 por capitulo)
+  - id: "callout_frequency"
+    description: "Distribuir callouts uniformemente"
+    target_per_chapter: 5
+
+  # Regra 5: Cada capitulo deve ter pelo menos 1 diagrama Mermaid renderizavel
+  - id: "min_diagram_per_chapter"
+    description: "Garantir representacao visual em cada capitulo"
+    target: 3
+
+  # Regra 6: Formato deve ser consistente entre conteudos similares
+  - id: "format_consistency"
+    description: "Mesmo tipo de conteudo deve usar mesmo formato visual"
+    examples:
+      - "Todos os 'Como corrigir' devem ser checklist"
+      - "Todas as consequencias devem ser callout_warning"
+      - "Todas as definicoes devem ser callout_info"
+
+# ─────────────────────────────────────────────
+# PRIORIDADES DE IMPLEMENTACAO
+# ─────────────────────────────────────────────
+priorities:
+  immediate:
+    - "Converter tabela de dados da industria para infographic"
+    - "Adicionar diagrama de piramide de testes no Cap 3"
+    - "Criar flowchart de estrategia de rollback"
+    - "Converter tabela de agentes para org_chart"
+    - "Adicionar flowchart de pipeline CI/CD antes do YAML"
+  short_term:
+    - "Converter todas as comparacoes para formato code_comparison"
+    - "Criar mind_map da tabela resumo"
+    - "Remover ASCII duplicados"
+    - "Adicionar diagrama de decisao de seguranca"
+  long_term:
+    - "Criar timeline de rolling update"
+    - "Criar infographic de tipos de bug (4 quadrante)"
+    - "Converter anatomia de agente para annotated_diagram"

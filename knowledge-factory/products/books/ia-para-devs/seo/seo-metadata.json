@@ -1,0 +1,149 @@
+# SEO & Indexação — IA para Desenvolvedores
+# Gerado por indexador-seo em 2026-06-27
+
+============================================================
+## METADADOS GLOBAIS
+============================================================
+
+### HTML/Rich Snippets
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "IA para Desenvolvedores",
+  "alternateName": "Como Usar Inteligência Artificial para Programar Melhor — sem Cair nos Erros Comuns",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Software Engineering Academy"
+  },
+  "datePublished": "2026",
+  "inLanguage": "pt-BR",
+  "bookEdition": "1",
+  "educationalLevel": "Intermediate",
+  "teaches": [
+    "Prompt engineering aplicado à programação",
+    "Criação de agentes de IA especializados",
+    "Automação de pipelines CI/CD",
+    "Code review de código gerado por IA",
+    "Infraestrutura como código"
+  ],
+  "about": [
+    "Inteligência Artificial",
+    "Desenvolvimento de Software",
+    "Automação",
+    "Agentes de IA",
+    "CI/CD",
+    "DevOps"
+  ]
+}
+```
+
+### Open Graph / Twitter Card
+
+```html
+<meta property="og:title" content="IA para Desenvolvedores" />
+<meta property="og:description" content="Aprenda a usar Inteligência Artificial para programar melhor. Domine prompts, agentes especializados e automação de pipelines." />
+<meta property="og:type" content="book" />
+<meta property="og:locale" content="pt_BR" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="IA para Desenvolvedores" />
+<meta name="twitter:description" content="Como usar IA para programar melhor — sem cair nos erros comuns." />
+```
+
+============================================================
+## PALAVRAS-CHAVE
+============================================================
+
+### Primárias (alta prioridade)
+- IA para desenvolvedores
+- Inteligência Artificial programação
+- Agentes de IA especializados
+- Prompt engineering
+- Automação CI/CD
+- Code review com IA
+- Como usar IA para programar
+
+### Secundárias (média prioridade)
+- Erros ao usar IA
+- GitHub Copilot boas práticas
+- Claude Code agentes
+- OpenCode
+- Infraestrutura como código
+- Pipelines automatizados
+- DevOps com IA
+
+### Long tail (cauda longa)
+- Como evitar erros ao programar com IA
+- Agente de IA especializado vs genérico
+- Anatomia de um agente de IA
+- Pipeline de automação para desenvolvedores
+- Como configurar AGENTS.md no projeto
+- Automação de code review com IA
+- Boas práticas de prompt engineering
+
+============================================================
+## METADADOS POR CAPÍTULO
+============================================================
+
+### Módulo 1 — Os 5 Erros ao Usar IA para Programar
+**Título SEO:** Os 5 Erros Mais Comuns ao Usar IA para Programar
+**Meta description:** Descubra os 5 erros que 90% dos desenvolvedores cometem ao usar IA: confiar cegamente, prompts vagos, pular code review, ignorar AGENTS.md e tratar IA como resposta final.
+**Slug:** erros-ao-usar-ia-programar
+**Tags:** erros IA, prompt engineering, code review, AGENTS.md, validação
+**Palavras-chave foco:** erros ao usar IA, programar com IA, prompts estruturados
+
+### Módulo 2 — Agentes de IA Especializados
+**Título SEO:** Agentes de IA Especializados para Desenvolvedores
+**Meta description:** Aprenda a criar agentes de IA especializados com README, workflow, checklist e prompts. Conheça 17 agentes prontos para frontend, backend, DevOps e mais.
+**Slug:** agentes-ia-especializados
+**Tags:** agentes IA, OpenCode, agentes especializados, automação dev
+**Palavras-chave foco:** agentes de IA, agente especializado, agente frontend, agente backend
+
+### Módulo 3 — Automação com Inteligência Artificial
+**Título SEO:** Automação de Pipelines e Infraestrutura com IA
+**Meta description:** Domine 12 áreas de automação: CI/CD, testes, infraestrutura como código, deploys, banco de dados, segurança, code review e monitoramento com IA.
+**Slug:** automacao-pipelines-ia
+**Tags:** CI/CD, IaC, automação, pipelines, DevOps, segurança, monitoramento
+**Palavras-chave foco:** automação CI/CD, infraestrutura como código, deploy automatizado
+
+============================================================
+## ESTRATÉGIA DE DISTRIBUIÇÃO
+============================================================
+
+### Plataformas e Formatos
+
+| Plataforma | Formato | Tags sugeridas |
+|------------|---------|----------------|
+| Amazon KDP | EPUB, PDF | IA, Programação, DevOps, Automação, Tecnologia |
+| Hotmart/Udemy | Curso online | Desenvolvimento, Inteligência Artificial, Agentes |
+| LinkedIn (artigos) | Posts seriados | #IA #Desenvolvimento #DevOps #Automação #Agentes |
+| Medium/Dev.to | Artigos técnicos | AI, Software Development, Automation, Agents |
+| YouTube (vídeos) | Roteiros curtos | IA para Devs, Agentes de IA, Prompt Engineering |
+
+### Sugestão de URL
+```
+/books/ia-para-desenvolvedores
+```
+
+### Sitemap XML entry
+```xml
+<url>
+  <loc>https://aisoftwareengineering.academy/books/ia-para-desenvolvedores</loc>
+  <lastmod>2026-06-27</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+```
+
+============================================================
+## RELATÓRIO DE INDEXAÇÃO
+============================================================
+
+**Status deste artefato:** ✅ Gerado com sucesso
+**Arquivos relacionados:**
+- `curriculum/books/book-ia-para-devs.yaml` (Book Manifest)
+- `knowledge-factory/livros/ia-para-devs/compiled/book.md` (conteúdo)
+- `knowledge-factory/livros/ia-para-devs/output/livro-digital.pdf` (PDF)
+- `knowledge-factory/livros/ia-para-devs/output/livro.epub` (EPUB)
+- `knowledge-factory/livros/ia-para-devs/output/livro.docx` (DOCX)

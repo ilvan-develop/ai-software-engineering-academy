@@ -1,0 +1,2 @@
+# Diagramas para Introdução — O Papel do Arquiteto
+# Revisar e gerar manualmente

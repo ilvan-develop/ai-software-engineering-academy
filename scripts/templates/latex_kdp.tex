@@ -1,0 +1,104 @@
+\documentclass[{$trimsize$},twoside]{memoir}
+
+% --- Geometry ---
+\usepackage[paperwidth={$trimsize$}, paperheight={$trimsize$},
+            top=0.75in, bottom=0.75in, inner=0.85in, outer=0.6in,
+            includefoot]{geometry}
+
+% --- Fonts ---
+\usepackage{fontspec}
+\setmainfont{Calibri}
+\setsansfont{Calibri}
+\setmonofont{Consolas}[Scale=0.85]
+
+% --- Colors ---
+\usepackage{xcolor}
+\definecolor{primary}{HTML}{1a1a2e}
+\definecolor{accent}{HTML}{e94560}
+\definecolor{codebg}{HTML}{f5f5f5}
+
+% --- Headers & Footers ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\leftmark}
+\fancyhead[LO]{\rightmark}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% --- Chapter style ---
+\usepackage{titling}
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\color{primary}}
+  {\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{50pt}{40pt}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{primary}}
+  {\thesection}{1em}{}
+
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\color{primary!80!black}}
+  {\thesubsection}{1em}{}
+
+% --- Code listings ---
+\usepackage{listings}
+\lstset{
+  backgroundcolor=\color{codebg},
+  basicstyle=\ttfamily\footnotesize,
+  breaklines=true,
+  frame=single,
+  framesep=5pt,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{green!60!black},
+  stringstyle=\color{accent},
+  language=Python,
+  tabsize=2,
+}
+
+% --- Tables ---
+\usepackage{booktabs}
+\usepackage{array}
+
+% --- Links ---
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=primary,
+  urlcolor=accent,
+  bookmarks=true,
+}
+
+% --- Title page ---
+\pretitle{\begin{center}\Huge\bfseries\color{primary}}
+\posttitle{\par\end{center}\vspace{0.5em}}
+\preauthor{\begin{center}\large}
+\postauthor{\end{center}}
+\predate{\begin{center}\large}
+\postdate{\end{center}}
+
+% --- Metadata ---
+\title{$title$}
+\author{$author$}
+\date{$year$}
+
+\begin{document}
+
+% --- Front matter ---
+\frontmatter
+\maketitle
+\clearpage
+
+% --- Table of Contents ---
+\tableofcontents
+\clearpage
+
+% --- Main content ---
+\mainmatter
+
+$body$
+
+\end{document}

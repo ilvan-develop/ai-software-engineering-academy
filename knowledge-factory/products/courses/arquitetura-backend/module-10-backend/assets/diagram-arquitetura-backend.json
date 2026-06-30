@@ -1,0 +1,36 @@
+{
+  "engine": "architecture",
+  "title": "Arquitetura de Referencia Backend",
+  "layers": [
+    {
+      "label": "Cliente",
+      "nodes": ["Web App", "Mobile App"],
+      "y": 80
+    },
+    {
+      "label": "Gateway",
+      "nodes": ["API Gateway", "Load Balancer"],
+      "y": 200
+    },
+    {
+      "label": "Servicos",
+      "nodes": ["Auth", "Core API", "Notifications"],
+      "y": 320
+    },
+    {
+      "label": "Dados",
+      "nodes": ["PostgreSQL", "Redis", "S3"],
+      "y": 440
+    }
+  ],
+  "connections": [
+    {"from": "Web App", "to": "API Gateway"},
+    {"from": "Mobile App", "to": "API Gateway"},
+    {"from": "API Gateway", "to": "Auth"},
+    {"from": "API Gateway", "to": "Core API"},
+    {"from": "Core API", "to": "Notifications"},
+    {"from": "Core API", "to": "PostgreSQL"},
+    {"from": "Core API", "to": "Redis"},
+    {"from": "Core API", "to": "S3"}
+  ]
+}

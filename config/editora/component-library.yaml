@@ -1,0 +1,306 @@
+# Component Library — Editorial Design System
+# Versão: 1.0.0
+# Propósito: Define os componentes semânticos que podem existir em um livro.
+# Cada componente mapeia para tokens de design-tokens.yaml e regras de layout.
+
+version: "1.0.0"
+updated: "2026-06-29"
+author: "editorial-design-system"
+
+components:
+  Book:
+    description: Raiz do livro. Contém metadados, front matter, capítulos e back matter.
+    children: [Cover, TitlePage, TOC, Preface, Chapter, Appendix, Glossary, Bibliography]
+    tokens:
+      page: page
+      text: body
+
+  Cover:
+    description: Capa do livro (frente, lombada, verso).
+    tokens:
+      background: brand.primary
+      title: inverse
+      accent: brand.accent
+
+  TitlePage:
+    description: Página de rosto com título, subtítulo, autor e editora.
+    tokens:
+      title: heading
+      subtitle: muted
+
+  TOC:
+    description: Sumário navegável com bookmarks.
+    tokens:
+      text: body
+      link: link
+
+  Preface:
+    description: Texto introdutório antes do primeiro capítulo.
+    tokens:
+      text: body
+
+  Chapter:
+    description: Capítulo principal do livro.
+    children: [ChapterTitle, Section, Subsection, Paragraph, Callout, Code, Table, Figure, Diagram, Exercise, Quiz, Summary]
+    layout:
+      start_recto: true
+      drop_before_title: 40mm
+      page_break_before: true
+
+  ChapterTitle:
+    description: Título de capítulo. Sempre H1 em Markdown.
+    source_markdown: h1
+    tokens:
+      text: heading
+      number: brand.accent
+      decoration: brand.primary
+    typography:
+      scale: h1
+      weight: bold
+      letter_spacing: wide
+      line_height: heading
+      uppercase: false
+    layout:
+      margin_top: xl
+      margin_bottom: lg
+      page_break_before: true
+
+  Section:
+    description: Seção dentro de um capítulo. Sempre H2 em Markdown.
+    source_markdown: h2
+    tokens:
+      text: heading
+      number: brand.secondary
+    typography:
+      scale: h2
+      weight: semibold
+    layout:
+      margin_top: lg
+      margin_bottom: md
+
+  Subsection:
+    description: Subseção. H3 em Markdown.
+    source_markdown: h3
+    tokens:
+      text: heading
+    typography:
+      scale: h3
+      weight: semibold
+    layout:
+      margin_top: md
+      margin_bottom: sm
+
+  Paragraph:
+    description: Bloco de texto corrido.
+    source_markdown: para
+    tokens:
+      text: body
+    typography:
+      scale: body
+      line_height: body
+    layout:
+      indent_first_line: true
+      margin_bottom: sm
+
+  Callout:
+    description: Caixa de destaque com variações.
+    variants:
+      info:
+        icon: info-circle
+        surface: callout_info
+        border: semantic.info
+      warning:
+        icon: exclamation-triangle
+        surface: callout_warning
+        border: semantic.warning
+      tip:
+        icon: lightbulb
+        surface: callout_tip
+        border: semantic.success
+      caution:
+        icon: xmark-circle
+        surface: callout_caution
+        border: semantic.error
+      best-practice:
+        icon: check-circle
+        surface: callout_tip
+        border: semantic.success
+    tokens:
+      text: body
+      title: heading
+    layout:
+      padding: md
+      border_left: sm
+      margin_vertical: md
+      border_radius: xs
+
+  Code:
+    description: Bloco de código com syntax highlight.
+    source_markdown: code_block
+    tokens:
+      background: surface.code_block
+      text: surface.code
+      keyword: syntax.keyword
+      string: syntax.string
+      number: syntax.number
+      function: syntax.function
+      comment: syntax.comment
+      type: syntax.type
+    typography:
+      scale: code
+      family: mono
+    layout:
+      padding: md
+      border_radius: xs
+      margin_vertical: md
+      keep_together: true
+
+  Table:
+    description: Tabela com estilo editorial.
+    source_markdown: table
+    tokens:
+      header: brand.primary
+      header_text: inverse
+      row_even: neutral.200
+      row_odd: neutral.100
+      border: neutral.400
+    layout:
+      margin_vertical: md
+      header_repeat: true
+
+  Figure:
+    description: Imagem com legenda.
+    source_markdown: image
+    children: [Image, Caption]
+    layout:
+      margin_vertical: md
+      caption_position: bottom
+
+  Image:
+    description: Asset visual (SVG preferencialmente).
+    tokens:
+      border: neutral.300
+    layout:
+      max_width: 100%
+
+  Caption:
+    description: Legenda de figura ou tabela.
+    tokens:
+      text: muted
+    typography:
+      scale: caption
+    layout:
+      margin_top: xs
+
+  Diagram:
+    description: Diagrama gerado a partir de código (Mermaid, D2, Graphviz, PlantUML).
+    source_formats: [mermaid, d2, graphviz, plantuml, structurizr]
+    output_format: svg
+    tokens:
+      background: neutral.100
+    layout:
+      margin_vertical: md
+      align: center
+
+  Chart:
+    description: Gráfico gerado a partir de dados.
+    source_formats: [chartjs, echarts, plotly, vega, matplotlib]
+    output_format: svg
+    layout:
+      margin_vertical: md
+      align: center
+
+  Infographic:
+    description: Infográfico visual (comparação, timeline, mapa mental).
+    source_markdown: comparison | timeline | mindmap
+    output_format: svg
+    layout:
+      margin_vertical: lg
+      align: center
+
+  Comparison:
+    description: Comparação visual entre itens (ex: React vs Vue vs Angular).
+    layout:
+      columns: 3
+      style: cards
+
+  Timeline:
+    description: Linha do tempo visual.
+    layout:
+      orientation: horizontal
+      style: connected-dots
+
+  Exercise:
+    description: Bloco de exercício prático.
+    source_markdown: blockquote + heading "Exercício"
+    tokens:
+      surface: neutral.200
+      border: brand.accent
+    layout:
+      padding: md
+      margin_vertical: md
+
+  Quiz:
+    description: Pergunta de múltipla escolha.
+    tokens:
+      surface: neutral.100
+      border: brand.secondary
+    layout:
+      padding: md
+      margin_vertical: md
+
+  Summary:
+    description: Caixa de resumo ao final de seção/capítulo.
+    tokens:
+      surface: neutral.200
+      title: heading
+    layout:
+      padding: md
+      margin_vertical: md
+      border_radius: xs
+
+  Checklist:
+    description: Lista de verificação acionável.
+    source_markdown: task_list
+    tokens:
+      checked: semantic.success
+      unchecked: neutral.500
+    layout:
+      margin_vertical: sm
+
+  Quote:
+    description: Citação em destaque.
+    source_markdown: blockquote
+    tokens:
+      text: muted
+      border: brand.accent
+      background: neutral.200
+    typography:
+      scale: h3
+      style: italic
+    layout:
+      padding_left: md
+      border_left: sm
+      margin_vertical: md
+
+  Footnote:
+    description: Nota de rodapé.
+    tokens:
+      text: muted
+    typography:
+      scale: body_small
+
+  Reference:
+    description: Referência bibliográfica.
+    tokens:
+      text: body
+    typography:
+      scale: body_small
+
+  GlossaryTerm:
+    description: Termo do glossário.
+    tokens:
+      term: heading
+      definition: body
+    layout:
+      margin_vertical: sm

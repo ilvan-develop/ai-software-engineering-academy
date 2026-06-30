@@ -1,0 +1,13 @@
+> Prompts para geracao da capa do modulo "Design Thinking"
+
+## Midjourney
+
+```
+A vibrant yet professional book cover about Design Thinking, diverse team of stylized figures collaborating around a large lightbulb, sticky notes and sketches floating, hands building a paper prototype, warm coral #e94560 and deep navy #1a1a2e color palette, clean vector illustration, no text in the image, modern educational style, --ar 2:3 --style raw --v 6
+```
+
+## DALL-E 3
+
+```
+Professional book cover illustration for a Design Thinking course. A diverse group of stylized professionals collaborates around a glowing lightbulb, with sticky notes, sketches, and a paper prototype. Deep navy blue background (#1a1a2e) with coral red accents (#e94560). Clean modern vector style, no text in the illustration, human-centered innovation theme, vertical 2:3 composition.
+```

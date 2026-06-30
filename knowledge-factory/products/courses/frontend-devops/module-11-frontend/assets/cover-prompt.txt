@@ -1,0 +1,2 @@
+# Cover prompt para Desenvolvimento Frontend
+# Gerar via DALL-E ou Midjourney

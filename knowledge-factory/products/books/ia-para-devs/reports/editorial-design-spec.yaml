@@ -1,0 +1,485 @@
+# Editorial Design Specification — IA para Desenvolvedores
+# Versao: 1.0.0
+# Proposito: Especificacao completa de callouts, boxes, hierarquia e elementos editoriais
+# Consome: design-tokens.yaml, brand-book.md, icons.yaml, visual-format-spec.yaml
+
+version: "1.0.0"
+updated: "2026-06-28"
+author: "editorial-designer"
+
+# ─────────────────────────────────────────────
+# SISTEMA DE CALLOUTS
+# ─────────────────────────────────────────────
+callouts:
+
+  # --- TIPO: DICA (Tip) ---
+  - type: "tip"
+    purpose: "Dicas praticas, atalhos, recomendacoes"
+    icon: "fa-lightbulb"
+    icon_color: "#2E7D32"
+    border_color: "#2E7D32"
+    background: "#E8F5E9"
+    text_color: "#212121"
+    title_prefix: "DICA"
+    placement_rules:
+      - "Apos exemplo de codigo (explicar melhoria pratica)"
+      - "Em 'Como corrigir' (destacar acao chave)"
+      - "Para atalhos ou alternativas mais eficientes"
+    current_gap:
+      - "Nenhum callout tip no livro atual"
+      - "Exemplo onde inserir: apos 'Leia cada linha antes de implementar' (Cap 1, Erro 1)"
+
+  # --- TIPO: ATENCAO (Warning) ---
+  - type: "warning"
+    purpose: "Cuidados, riscos, armadilhas comuns"
+    icon: "fa-triangle-exclamation"
+    icon_color: "#F57F17"
+    border_color: "#F57F17"
+    background: "#FFF8E1"
+    text_color: "#212121"
+    title_prefix: "ATENCAO"
+    placement_rules:
+      - "Em 'Consequencia' de cada erro (destacar o risco)"
+      - "Antes de comando perigoso (ex: `DROP TABLE`)"
+      - "Quando ferramenta requer privilegios elevados"
+    current_gap:
+      - "Nenhum callout warning no livro atual"
+      - "Exemplo onde inserir: antes do comando de rollback (Cap 3, Secao 6)"
+
+  # --- TIPO: INFORMACAO (Info) ---
+  - type: "info"
+    purpose: "Definicoes, contexto adicional, curiosidades"
+    icon: "fa-circle-info"
+    icon_color: "#1565C0"
+    border_color: "#1565C0"
+    background: "#E3F2FD"
+    text_color: "#212121"
+    title_prefix: "INFO"
+    placement_rules:
+      - "Na primeira aparicao de conceito novo (definicao)"
+      - "Para contextualizar ferramenta ou tecnologia"
+      - "Para estatisticas e dados de pesquisa"
+    current_gap:
+      - "Nenhum callout info no livro atual"
+      - "Exemplo onde inserir: ao apresentar CI/CD pela primeira vez (Cap 3)"
+
+  # --- TIPO: CUIDADO (Caution) ---
+  - type: "caution"
+    purpose: "Erros graves, situacoes de risco, questoes legais"
+    icon: "fa-hand"
+    icon_color: "#C62828"
+    border_color: "#C62828"
+    background: "#FFEBEE"
+    text_color: "#212121"
+    title_prefix: "CUIDADO"
+    placement_rules:
+      - "Em exemplos de codigo RUIM (mostrar o perigo)"
+      - "Antes de acao irreversivel (ex: delete sem WHERE)"
+      - "Para questoes de seguranca critica"
+    current_gap:
+      - "Nenhum callout caution no livro atual"
+      - "Exemplo onde inserir: no exemplo MD5 para senhas (Cap 1, Desafio final)"
+
+  # --- TIPO: RECAPITULACAO (Recap) ---
+  - type: "recap"
+    purpose: "Resumo do que foi aprendido na secao"
+    icon: "fa-list-check"
+    icon_color: "#1A237E"
+    border_color: "#1A237E"
+    background: "#F5F5F5"
+    text_color: "#212121"
+    title_prefix: "RECAPITULANDO"
+    placement_rules:
+      - "Ao final de cada secao principal (checkpoint)"
+      - "Antes de transicao para proximo topico"
+      - "No final de cada capitulo (resumo)"
+    current_gap:
+      - "Nenhum callout recap no livro atual"
+      - "Exemplo onde inserir: apos os 5 erros no final do Cap 1"
+
+  # --- TIPO: EXEMPLO (Example) ---
+  - type: "example"
+    purpose: "Exemplos concretos, casos de uso, cenarios"
+    icon: "fa-flask"
+    icon_color: "#7B1FA2"
+    border_color: "#7B1FA2"
+    background: "#F3E5F5"
+    text_color: "#212121"
+    title_prefix: "EXEMPLO"
+    placement_rules:
+      - "Para mostrar aplicacao pratica de conceito"
+      - "Para cenarios de uso real"
+      - "Para comparacao entre abordagens"
+    current_gap:
+      - "Nenhum callout example explicito (exemplos existentes sao inline)"
+      - "Exemplo onde inserir: ao mostrar prompt vago vs. estruturado"
+
+  # --- TIPO: DEFINICAO (Definition) ---
+  - type: "definition"
+    purpose: "Definicao formal de termos tecnicos"
+    icon: "fa-book-open"
+    icon_color: "#0D47A1"
+    border_color: "#0D47A1"
+    background: "#E3F2FD"
+    text_color: "#212121"
+    title_prefix: "DEFINICAO"
+    placement_rules:
+      - "Na primeira aparicao de cada termo tecnico"
+      - "Separada do texto principal para referencia rapida"
+    current_gap:
+      - "Nenhum callout definition no livro atual"
+      - "Onde inserir: 'Continuous Integration', 'Continuous Delivery', 'IaC', 'SAST'"
+
+# ─────────────────────────────────────────────
+# HIERARQUIA VISUAL — MAPEAMENTO COMPLETO
+# ─────────────────────────────────────────────
+hierarchy:
+
+  # Nivel 0: Titulo do Livro
+  - level: 0
+    element: "book_title"
+    format: "H1"
+    typography:
+      font: "Segoe UI Bold"
+      size_pt: 21
+      color: "#1A237E"
+      page_break: true
+    rules:
+      - "Usado apenas no inicio de cada capitulo"
+      - "Sempre em pagina recto (impar)"
+
+  # Nivel 1: Titulo de Capitulo
+  - level: 1
+    element: "chapter_title"
+    format: "H1"
+    typography:
+      font: "Segoe UI Bold"
+      size_pt: 21
+      color: "#1A237E"
+      letter_spacing: "0.5px"
+      page_break_before: true
+      after_spacing: "6pt"
+    rules:
+      - "Drop de 40mm do topo na pagina de abertura"
+      - "Prefixo numerado: '# 1.', '# 2.' etc."
+      - "Acompanhado de subtitulo em Georgia Italic 11pt"
+
+  # Nivel 2: Secao Principal
+  - level: 2
+    element: "section_title"
+    format: "H2"
+    typography:
+      font: "Segoe UI Bold"
+      size_pt: 17
+      color: "#1A237E"
+      letter_spacing: "0.5px"
+      before_spacing: "12pt"
+      after_spacing: "6pt"
+    rules:
+      - "Minimo 1 linha de texto apos antes de quebra de pagina"
+
+  # Nivel 3: Subsecao
+  - level: 3
+    element: "subsection_title"
+    format: "H3"
+    typography:
+      font: "Segoe UI Semibold"
+      size_pt: 14
+      color: "#0D47A1"
+      before_spacing: "8pt"
+      after_spacing: "4pt"
+    rules:
+      - "Usado para dividir secoes longas (> 30 linhas)"
+      - "Nao usar mais de 3 niveis de aninhamento"
+
+  # Nivel 4: Sub-subsecao
+  - level: 4
+    element: "subsubsection_title"
+    format: "H4"
+    typography:
+      font: "Segoe UI Semibold"
+      size_pt: 12
+      color: "#212121"
+      before_spacing: "6pt"
+      after_spacing: "3pt"
+
+  # Nivel 5: Corpo do texto
+  - level: 5
+    element: "body_text"
+    format: "paragraph"
+    typography:
+      font: "Georgia Regular"
+      size_pt: 11
+      color: "#212121"
+      line_height: 1.6
+      after_spacing: "6pt"
+    rules:
+      - "Largura de linha: 50-75 caracteres"
+      - "Maximo 3 paragrafos consecutivos sem elemento visual"
+
+  # Nivel 6: Codigo
+  - level: 6
+    element: "code_block"
+    format: "code"
+    typography:
+      font: "Cascadia Code"
+      size_pt: 9
+      color: "#E0E0E0"
+      background: "#263238"
+      line_height: 1.5
+      padding: "8px"
+      border_radius: "3px"
+    rules:
+      - "Sempre especificar linguagem (```typescript, ```yaml, etc.)"
+      - "Maximo 30 linhas por bloco (mais que isso, dividir)"
+      - "Adicionar comentario visual [RUIM] ou [BOM] quando comparacao"
+
+  # Nivel 7: Callouts
+  - level: 7
+    element: "callout"
+    format: "callout box with icon and border"
+    rules:
+      - "Nunca mais de 1 callout por 2 paragrafos"
+      - "Callout nao quebra entre paginas"
+      - "Icone sempre a esquerda, alinhado ao topo"
+      - "Texto em body size (11pt), com optional italic para citacao"
+
+  # Nivel 8: Tabelas
+  - level: 8
+    element: "table"
+    format: "table"
+    typography:
+      header:
+        font: "Segoe UI Bold"
+        size_pt: 10
+        color: "#FFFFFF"
+        background: "#1A237E"
+      body:
+        font: "Georgia Regular"
+        size_pt: 10
+        color: "#212121"
+      alt_row: "#F5F5F5"
+      border: "#E0E0E0"
+      cell_padding: "4px"
+    rules:
+      - "Maximo 7 colunas"
+      - "Header deve estar presente em todas as tabelas"
+      - "Tabelas > 10 linhas devem ser divididas ou convertidas para diagrama"
+
+  # Nivel 9: Diagramas
+  - level: 9
+    element: "diagram"
+    format: "mermaid block"
+    rules:
+      - "Sempre acompanhado de caption em italico"
+      - "Maximo 15 nos por diagrama (legibilidade)"
+      - "Cores semanticas para tipos de no (decisao, processo, terminal)"
+
+  # Nivel 10: Listas
+  - level: 10
+    element: "list"
+    format: "bullet_list or numbered_list"
+    typography:
+      font: "Georgia Regular"
+      size_pt: 11
+      indent: "12pt"
+      item_spacing: "3pt"
+    rules:
+      - "Maximo 7 itens por lista (mais que isso, agrupar ou dividir)"
+      - "Listas numeradas para passos sequenciais"
+      - "Listas com bullets para itens nao ordenados"
+
+# ─────────────────────────────────────────────
+# ELEMENTOS EDITORIAIS ADICIONAIS
+# ─────────────────────────────────────────────
+editorial_elements:
+
+  # Paragrafo de abertura de capitulo (drop cap opcional)
+  chapter_opening:
+    first_paragraph_style: "no_indent"
+    drop_cap: false  # evitar em livros tecnicos
+    opening_phrase: "gancho narrativo nas primeiras 3 linhas"
+
+  # Separador visual entre secoes
+  section_divider:
+    type: "line"
+    style: "0.5pt solid #E0E0E0"
+    width: "30mm"
+    alignment: "center"
+    spacing_before: "12pt"
+    spacing_after: "12pt"
+
+  # Citacoes em destaque (blockquote)
+  blockquote:
+    style: "italic, Georgia 11pt, left border 2px #1A237E"
+    indent: "0.5cm from left"
+    spacing_before: "6pt"
+    spacing_after: "6pt"
+    usage: "citacoes de fontes externas (docs, artigos, pesquisas)"
+
+  # Notas de rodape
+  footnotes:
+    style: "Georgia 8pt, #757575"
+    separator: "30mm line, 0.5pt, #E0E0E0"
+    marker: "superscript, #1A237E"
+
+  # Destaque inline (enfase)
+  inline_emphasis:
+    bold: "tecnica/ferramenta na primeira mencao"
+    italic: "termos em ingles, citacoes"
+    code_inline: "nomes de arquivo, comandos, variaveis"
+
+  # Box de exercicio
+  exercise_box:
+    border: "1pt solid #1A237E"
+    background: "#F5F5F5"
+    padding: "8pt"
+    icon: "fa-pen-ruler"
+    title: "EXERCICIO"
+    title_color: "#1A237E"
+    duration_label: "Duracao estimada:"
+
+  # Box de desafio
+  challenge_box:
+    border: "2pt solid #00BFA5"
+    background: "#F5F5F5"
+    padding: "8pt"
+    icon: "fa-screwdriver-wrench"
+    title: "DESAFIO"
+    title_color: "#00BFA5"
+    duration_label: "Tempo estimado:"
+
+  # Sumario executivo (no inicio de cada secao longa)
+  executive_summary:
+    type: "info callout"
+    icon: "fa-list"
+    title: "NESTA SECAO"
+    placement: "inicio de capitulo ou secao > 50 linhas"
+    content: "3-5 bullets do que sera abordado"
+
+# ─────────────────────────────────────────────
+# MAPEAMENTO DE INSERCAO — ONDE CADA ELEMENTO VAI
+# ─────────────────────────────────────────────
+placement_map:
+
+  # Capitulo 1
+  cap1:
+    - element: "callout.info"
+      location: "Secao 1 — introducao de CI/CD como conceito"
+      content: "CI/CD (Continuous Integration/Continuous Delivery) e a pratica de automatizar a integracao e entrega de codigo."
+    - element: "callout.warning"
+      location: "Secao 2 — apos 'NaN em producao geralmente vira preco zero'"
+      content: "Sempre valide tipos de entrada em funcoes que processam valores monetarios. Um NaN pode custar dinheiro real."
+    - element: "callout.tip"
+      location: "Secao 2 — apos 'Leia cada linha antes de implementar'"
+      content: "Se voce nao entendeu o codigo gerado pela IA, nao use. Pec,a a ela que explique linha por linha."
+    - element: "callout.caution"
+      location: "Secao 3 — apos exemplo de prompt vago"
+      content: "Prompt vago nao economiza tempo — ele terceiriza a decisao para a IA, que vai chutar o que voce nao especificou."
+    - element: "callout.tip"
+      location: "Secao 3 — tabela de 3 elementos"
+      content: "Memorize a sigla CIF: Contexto, Intencao, Formato. Todo prompt precisa desses 3 elementos."
+    - element: "callout.recap"
+      location: "Final do Cap 1, antes dos exercicios"
+      content: "Voce aprendeu os 5 erros: Confiar cegamente, Prompts vagos, Pular review, Ignorar config, Tratar como final."
+
+  # Capitulo 2
+  cap2:
+    - element: "callout.definition"
+      location: "Secao 1 — primeira mencao de 'agente de IA'"
+      content: "Um agente de IA e um prompt especializado com identidade, conhecimento, processo e criterios de qualidade definidos."
+    - element: "callout.tip"
+      location: "Secao 2 — apos anatomia do agente"
+      content: "Comece com 3 agentes: Code Reviewer, Test Writer e Doc Generator. Expanda conforme necessidade."
+    - element: "callout.info"
+      location: "Secao 3 — tabela de 17 agentes"
+      content: "Nem todo projeto precisa de todos os 17 agentes. Selecione os que resolvem seus problemas mais frequentes."
+    - element: "callout.recap"
+      location: "Final do Cap 2"
+      content: "Agentes especializados > genericos. Use a estrutura padrao (README, workflow, checklist, prompts). Combine em pipelines."
+
+  # Capitulo 3
+  cap3:
+    - element: "callout.definition"
+      location: "Secao 1 — primeira mencao de CI/CD"
+      content: "CI/CD: Continuous Integration (integracao continua de codigo) + Continuous Delivery/Deployment (entrega/deploy continuo)."
+    - element: "callout.tip"
+      location: "Secao 1 — regra pratica de automacao"
+      content: "Automatize tudo que for executado mais de 2 vezes. Se fez manualmente 3x, ja deveria ter automatizado."
+    - element: "callout.caution"
+      location: "Secao 6 — antes do exemplo de rollback"
+      content: "NUNCA rode migrations em producao sem backup testado antes. Um `DROP TABLE` sem WHERE nao tem Ctrl+Z."
+    - element: "callout.warning"
+      location: "Secao 7 — apos exemplo MD5 (se persistir)"
+      content: "MD5 para senhas e considerado quebrado desde 2005. Use bcrypt, argon2 ou scrypt. Sempre."
+    - element: "callout.info"
+      location: "Secao 10 — preview environments"
+      content: "Ambientes efemeros sao especialmente uteis para revisar mudancas de IA — veja o resultado antes de aprovar."
+    - element: "callout.recap"
+      location: "Final do Cap 3, antes do Resumo"
+      content: "Automacao cobre: CI/CD, testes, IaC, deploy, banco, seguranca, code review, releases, ambientes e monitoramento."
+    - element: "callout.tip"
+      location: "Secao 12 — checklist de boas praticas"
+      content: "A pipeline e codigo — trate como tal. Versionamento, revisao, testes e documentacao se aplicam a ela tambem."
+
+# ─────────────────────────────────────────────
+# SUMARIO DE GAPS
+# ─────────────────────────────────────────────
+gaps_summary:
+  total_callouts_current: 3  # citacoes em formato blockquote, mas sem callouts visuais
+  total_callouts_recommended: 20
+  callouts_per_chapter:
+    cap1: 0 current -> 6 recommended
+    cap2: 0 current -> 4 recommended
+    cap3: 0 current -> 7 recommended
+  exercise_boxes_current: 1 (Cap 1)
+  exercise_boxes_recommended: 4 (Cap 1, Cap 2, Cap 3a, Cap 3b)
+  recap_callouts_current: 0
+  recap_callouts_recommended: 3 (1 por capitulo)
+  definition_callouts_current: 0
+  definition_callouts_recommended: 5
+
+# ─────────────────────────────────────────────
+# REGRAS DE COMPOSICAO VISUAL DA PAGINA
+# ─────────────────────────────────────────────
+page_composition:
+  # Proporcao ideal de elementos por pagina (media)
+  elements_per_page:
+    text_percent: 60-70
+    code_percent: 10-15
+    diagrams_percent: 5-10
+    callouts_percent: 5-10
+    tables_percent: 5-10
+    white_space_percent: 10-15
+
+  # Regra dos 3 tipos
+  rule_of_3_types:
+    description: "Em qualquer pagina, nao usar mais de 3 tipos diferentes de elementos alem do texto"
+    exception: "paginas de sumario ou referencia"
+
+  # Regra do respiro visual
+  visual_breathing:
+    description: "A cada 30 linhas de texto corrido, inserir pausa visual (callout, diagrama, tabela, lista, heading)"
+    max_lines_without_break: 30
+
+# ─────────────────────────────────────────────
+# COMPONENTES DE SUPORTE
+# ─────────────────────────────────────────────
+support_components:
+  # Indicador de progresso no EPUB/digital
+  progress_indicator:
+    type: "CSS progress bar no topo"
+    style: "2px solid #1A237E, fill gradual"
+    position: "fixed top"
+
+  # Navegacao entre capitulos no digital
+  chapter_nav:
+    type: "anterior | indice | proximo"
+    style: "Georgia 9pt, #0D47A1"
+    position: "fim de cada capitulo"
+
+  # Tooltips para glossario (EPUB)
+  glossary_tooltip:
+    type: "abbr element com titulo"
+    style: "border-bottom: 1px dotted #757575"
+    usage: "primeira aparicao de cada termo tecnico"

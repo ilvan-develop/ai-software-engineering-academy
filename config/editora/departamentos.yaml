@@ -1,0 +1,405 @@
+# Departamentos e Agentes — Editorial Enterprise Pipeline
+# 5 departamentos, 42 agentes especializados
+# Cada agente tem: responsabilidade única, inputs, outputs, quality gates
+
+departments:
+
+  - id: conteudo
+    name: "Departamento de Conteúdo"
+    description: "Produz conteúdo tecnicamente correto com progressão pedagógica"
+    sort_order: 1
+    gate_exit: "conteudo_to_editorial"
+    agents:
+      - id: chief-editor
+        name: "Chief Editor"
+        description: "Define estrutura, tom e visão geral do conteúdo. Aprova handoff para Editorial."
+        input: "book-manifest + raw-content"
+        output: "content-structure.yaml"
+        quality_gate: "estrutura_conteudo ≥95"
+
+      - id: curriculum-architect
+        name: "Curriculum Architect"
+        description: "Estrutura pré-requisitos, objetivos e competências por módulo"
+        input: "content-structure.yaml"
+        output: "curriculum-plan.md"
+        quality_gate: "progressao_pedagogica ≥95"
+
+      - id: subject-matter-expert
+        name: "Subject Matter Expert (SME)"
+        description: "Valida precisão técnica, profundidade e relevância do conteúdo"
+        input: "chapter-draft.md"
+        output: "sme-validation-report.md"
+        quality_gate: "qualidade_tecnica ≥95"
+
+      - id: technical-writer
+        name: "Technical Writer"
+        description: "Transforma conhecimento bruto em narrativa didática progressiva"
+        input: "raw-content + curriculum-plan.md"
+        output: "chapter-draft.md"
+        quality_gate: "tom_legibilidade + estrutura_conteudo ≥95"
+
+      - id: educational-designer
+        name: "Educational Designer"
+        description: "Garante sequência didática, carga cognitiva e objetivos mensuráveis"
+        input: "chapter-draft.md"
+        output: "educational-review.md"
+        quality_gate: "progressao_pedagogica ≥95"
+
+      - id: research-agent
+        name: "Research Agent"
+        description: "Levanta fontes, dados, estatísticas e referências atualizadas"
+        input: "content-topics.md"
+        output: "research-sources.md"
+        quality_gate: "qualidade_tecnica (referências) ≥95"
+
+      - id: fact-checker
+        name: "Fact Checker"
+        description: "Verifica dados, estatísticas, citações e afirmações factuais"
+        input: "chapter-draft.md + research-sources.md"
+        output: "fact-check-report.md"
+        quality_gate: "qualidade_tecnica ≥95"
+
+      - id: example-creator
+        name: "Example Creator"
+        description: "Cria exemplos práticos, contextos realistas e anti-exemplos"
+        input: "chapter-draft.md"
+        output: "examples-section.md"
+        quality_gate: "qualidade_exemplos ≥95"
+
+      - id: exercise-creator
+        name: "Exercise Creator"
+        description: "Cria atividades práticas com 3 níveis de dificuldade"
+        input: "chapter-draft.md + examples-section.md"
+        output: "exercises.md"
+        quality_gate: "exercicios_avaliacoes ≥95"
+
+      - id: quiz-creator
+        name: "Quiz Creator"
+        description: "Cria perguntas de múltipla escolha com alternativas e explicações"
+        input: "chapter-draft.md"
+        output: "quiz.md"
+        quality_gate: "exercicios_avaliacoes ≥95"
+
+  - id: editorial
+    name: "Departamento Editorial"
+    description: "Garante qualidade do texto, consistência terminológica e fluidez de leitura"
+    sort_order: 2
+    gate_exit: "editorial_to_design"
+    agents:
+      - id: copy-editor
+        name: "Copy Editor"
+        description: "Revisa estrutura frasal, clareza, concisão e flow do texto"
+        input: "chapter.md (do Conteúdo)"
+        output: "copy-edit-report.md"
+        quality_gate: "tom_legibilidade ≥95"
+
+      - id: grammar-reviewer
+        name: "Grammar Reviewer"
+        description: "Corrige ortografia, acentos, pontuação e concordância (pt-BR)"
+        input: "chapter.md"
+        output: "grammar-review-report.md"
+        quality_gate: "tom_legibilidade ≥95"
+
+      - id: style-reviewer
+        name: "Style Reviewer"
+        description: "Garante aderência ao STYLE_GUIDE.md (tom, voz, formatação)"
+        input: "chapter.md + STYLE_GUIDE.md"
+        output: "style-review-report.md"
+        quality_gate: "tom_legibilidade + STYLE_GUIDE compliance 100%"
+
+      - id: consistency-auditor
+        name: "Consistency Auditor"
+        description: "Verifica consistência entre capítulos (tom, profundidade, nomenclatura)"
+        input: "chapter.md + previous-chapters.md"
+        output: "consistency-report.md"
+        quality_gate: "consistencia_terminologica ≥95"
+
+      - id: terminology-auditor
+        name: "Terminology Auditor"
+        description: "Garante que um termo = um significado em todo o livro"
+        input: "chapter.md + glossary.md"
+        output: "terminology-report.md"
+        quality_gate: "consistencia_terminologica ≥95"
+
+      - id: readability-auditor
+        name: "Readability Auditor"
+        description: "Avalia fluidez, tamanho de frases, parágrafos e complexidade textual"
+        input: "chapter.md"
+        output: "readability-report.md"
+        quality_gate: "tom_legibilidade ≥95"
+
+      - id: technical-accuracy-reviewer
+        name: "Technical Accuracy Reviewer"
+        description: "Valida terminologia técnica, nomes de APIs, versões de frameworks"
+        input: "chapter.md"
+        output: "technical-accuracy-report.md"
+        quality_gate: "qualidade_tecnica ≥95"
+
+  - id: design
+    name: "Departamento de Design"
+    description: "Cuida da apresentação visual, diagramas e hierarquia visual do livro"
+    sort_order: 3
+    gate_exit: "design_to_publicacao"
+    agents:
+      - id: book-designer
+        name: "Book Designer"
+        description: "Define layout, grid, hierarquia visual e especificações de página"
+        input: "chapter.reviewed.md"
+        output: "layout-book.yaml"
+        quality_gate: "design_hierarquia_visual ≥95"
+
+      - id: layout-designer
+        name: "Layout Designer"
+        description: "Aplica o layout ao conteúdo (margens, espaçamentos, quebras)"
+        input: "chapter.reviewed.md + layout-book.yaml"
+        output: "formatted-content.md"
+        quality_gate: "design_hierarquia_visual ≥95"
+
+      - id: typography-specialist
+        name: "Typography Specialist"
+        description: "Define e aplica hierarquia tipográfica (tamanhos, pesos, estilos)"
+        input: "layout-book.yaml"
+        output: "typography-spec.md"
+        quality_gate: "design_hierarquia_visual ≥95"
+
+      - id: color-specialist
+        name: "Color Specialist"
+        description: "Define e aplica paleta de cores consistente com design system"
+        input: "layout-book.yaml"
+        output: "color-palette.md"
+        quality_gate: "design_hierarquia_visual + acessibilidade (contraste) ≥95"
+
+      - id: diagram-designer
+        name: "Diagram Designer"
+        description: "Cria especificações de diagramas para conceitos complexos"
+        input: "chapter.reviewed.md"
+        output: "diagrams-spec.md + diagrams-prompt.txt"
+        quality_gate: "design_hierarquia_visual ≥95"
+
+      - id: illustration-planner
+        name: "Illustration Planner"
+        description: "Planeja ilustrações, ícones e elementos gráficos por capítulo"
+        input: "chapter.reviewed.md"
+        output: "illustration-plan.md"
+        quality_gate: "design_hierarquia_visual ≥95"
+
+      - id: table-designer
+        name: "Table Designer"
+        description: "Formata e padroniza tabelas (largura, alinhamento, cabeçalhos)"
+        input: "chapter.reviewed.md"
+        output: "tables-formatted.md"
+        quality_gate: "design_hierarquia_visual ≥95"
+
+      - id: callout-designer
+        name: "Callout Designer"
+        description: "Padroniza dicas, warnings, notas e exemplos visuais"
+        input: "chapter.reviewed.md"
+        output: "callouts-spec.md"
+        quality_gate: "design_hierarquia_visual ≥95"
+
+      - id: cover-designer
+        name: "Cover Designer"
+        description: "Especifica capa (frente, lombada, quarta capa) do livro"
+        input: "book-metadata.yaml + layout-book.yaml"
+        output: "cover-spec.md + cover-prompt.txt"
+        quality_gate: "design_hierarquia_visual ≥95"
+
+      ## --- NOVOS AGENTES DE DESIGN AVANÇADO ---
+
+      - id: brand-book-designer
+        name: "Brand Book Designer"
+        description: "Cria manual de identidade visual completo da editora com logotipo, paleta, tipografia, grid e aplicações"
+        input: "layout-book.yaml + design-tokens.yaml"
+        output: "brand-book.md"
+        quality_gate: "identidade_visual ≥95"
+
+      - id: information-designer
+        name: "Information Designer"
+        description: "Transforma conceitos técnicos complexos em diagramas, infográficos e fluxogramas visualmente claros"
+        input: "chapter.reviewed.md + design-tokens.yaml + layout-grid.yaml"
+        output: "information-design-spec.md"
+        quality_gate: "design_informacao ≥95"
+
+      - id: epub-css-architect
+        name: "EPUB CSS Architect"
+        description: "Cria folhas de estilo CSS profissionais para EPUB com tipografia responsiva, variáveis, media queries e acessibilidade"
+        input: "design-tokens.yaml + layout-grid.yaml + typography-spec.md"
+        output: "epub-stylesheet.css"
+        quality_gate: "qualidade_formatos ≥95"
+
+      - id: print-production-specialist
+        name: "Print Production Specialist"
+        description: "Prepara arquivos para impressão gráfica com especificações CMYK, sangria, lombada e acabamento"
+        input: "layout-book.yaml + brand-book.md"
+        output: "print-spec.md"
+        quality_gate: "qualidade_formatos ≥95"
+
+      - id: accessible-design-specialist
+        name: "Accessible Design Specialist"
+        description: "Torna o design visual acessível sem comprometer estética — contraste, tipografia, daltônico-safe e hierarquia semântica"
+        input: "book.md + design-tokens.yaml + epub-stylesheet.css + brand-book.md"
+        output: "accessibility-design-report.md"
+        quality_gate: "acessibilidade_visual ≥95"
+
+      - id: visual-hierarchy-auditor
+        name: "Visual Hierarchy Auditor"
+        description: "Avalia equilíbrio visual, proporção heading/corpo, densidade textual e consistência entre capítulos nos formatos finais"
+        input: "book.md + layout-book.yaml + design-tokens.yaml + brand-book.md + livro.docx + livro-digital.pdf + livro.epub"
+        output: "visual-hierarchy-report.md"
+        quality_gate: "design_hierarquia_visual ≥95"
+
+      - id: design-token-manager
+        name: "Design Token Manager"
+        description: "Mantém o sistema global de design tokens (cores, tipografia, espaçamento, elevação, breakpoints)"
+        input: "brand-book.md + layout-book.yaml + epub-stylesheet.css"
+        output: "design-tokens.yaml"
+        quality_gate: "identidade_visual + qualidade_formatos ≥95"
+
+      - id: template-developer
+        name: "Template Developer"
+        description: "Gera templates profissionais DOCX, ODT e LaTeX com estilos pré-definidos consumindo design tokens"
+        input: "design-tokens.yaml + layout-grid.yaml + typography-spec.md + brand-book.md"
+        output: "templates/template.docx + templates/template.odt + templates/template-latex.tex"
+        quality_gate: "qualidade_formatos + identidade_visual ≥95"
+
+      - id: cover-illustration-director
+        name: "Cover Illustration Director"
+        description: "Direção de arte de capas — define família visual da coleção, conceito, composição e prompts de geração"
+        input: "book-metadata.yaml + brand-book.md + design-tokens.yaml"
+        output: "cover-brief.md"
+        quality_gate: "identidade_visual + design_hierarquia_visual ≥95"
+
+      - id: layout-system-architect
+        name: "Layout System Architect"
+        description: "Arquiteta sistemas de grid modulares para múltiplos formatos (6x9, 7x10, A4, digital) com zonas de conteúdo e baseline grid"
+        input: "brand-book.md + design-tokens.yaml + typography-spec.md + print-spec.md"
+        output: "layout-grid.yaml"
+        quality_gate: "design_hierarquia_visual + qualidade_formatos ≥95"
+
+  - id: publicacao
+    name: "Departamento de Publicação"
+    description: "Transforma Markdown em formatos de livro profissional"
+    sort_order: 4
+    gate_exit: "publicacao_to_qa"
+    agents:
+      - id: markdown-auditor
+        name: "Markdown Auditor"
+        description: "Valida markdown sintático, blocos de código, links e tabelas"
+        input: "chapter.md + assets/"
+        output: "markdown-validation-report.md"
+        quality_gate: "qualidade_markdown ≥95"
+
+      - id: docx-generator
+        name: "DOCX Generator"
+        description: "Converte markdown para DOCX com estilos, sumário e formatação"
+        input: "chapter.md + layout-book.yaml"
+        output: "livro.docx"
+        quality_gate: "qualidade_formatos ≥95"
+
+      - id: pdf-generator
+        name: "PDF Generator"
+        description: "Gera PDF digital (fpdf2) e PDF gráfica (Pandoc/LaTeX)"
+        input: "chapter.md + layout-book.yaml"
+        output: "livro-digital.pdf + livro-grafica.pdf"
+        quality_gate: "qualidade_formatos ≥95"
+
+      - id: epub-generator
+        name: "EPUB Generator"
+        description: "Gera EPUB navegável com metadados, TOC e formatação fluida"
+        input: "chapter.md"
+        output: "livro.epub"
+        quality_gate: "qualidade_formatos ≥95"
+
+      - id: template-manager
+        name: "Template Manager"
+        description: "Aplica templates de formatação (latex, docx styles, epub css)"
+        input: "layout-book.yaml + book.md"
+        output: "templates-applied/"
+        quality_gate: "qualidade_formatos + marca consistente ≥95"
+
+      - id: brand-consistency-agent
+        name: "Brand Consistency Agent"
+        description: "Verifica cabeçalhos, rodapés, cores e identidade visual nos formatos"
+        input: "livro.docx + livro.pdf + layout-book.yaml"
+        output: "brand-consistency-report.md"
+        quality_gate: "qualidade_formatos (marca) ≥95"
+
+      - id: accessibility-auditor
+        name: "Accessibility Auditor"
+        description: "Valida contraste WCAG AA, alt text, estrutura semântica e EPUB acessível"
+        input: "livro.docx + livro.pdf + livro.epub"
+        output: "accessibility-report.md"
+        quality_gate: "acessibilidade ≥95"
+
+  - id: qa
+    name: "Departamento de QA Editorial"
+    description: "Audita, pontua e aprova/rejeita o livro para publicação"
+    sort_order: 5
+    gate_exit: "qa_to_publicado"
+    agents:
+      - id: book-quality-auditor
+        name: "Book Quality Auditor"
+        description: "Avalia estrutura, organização, progressão e coerência geral do livro"
+        input: "book.md + reports-dos-departamentos/"
+        output: "book-quality-report.md"
+        quality_gate: "estrutura_conteudo + progressao_pedagogica ≥95"
+
+      - id: pedagogical-auditor
+        name: "Pedagogical Auditor"
+        description: "Verifica objetivos de aprendizagem, sequência didática e carga cognitiva"
+        input: "book.md"
+        output: "pedagogical-audit-report.md"
+        quality_gate: "progressao_pedagogica ≥95"
+
+      - id: technical-auditor
+        name: "Technical Auditor"
+        description: "Valida código, comandos, APIs e exemplos executáveis"
+        input: "book.md"
+        output: "technical-audit-report.md"
+        quality_gate: "qualidade_tecnica ≥95"
+
+      - id: visual-auditor
+        name: "Visual Auditor"
+        description: "Avalia equilíbrio visual, diagramas, excesso de texto e legibilidade"
+        input: "book.md + layout-book.yaml"
+        output: "visual-audit-report.md"
+        quality_gate: "design_hierarquia_visual ≥95"
+
+      - id: publishing-auditor
+        name: "Publishing Auditor"
+        description: "Valida DOCX, PDF, EPUB — TOC, links, cabeçalhos, rodapés, paginação"
+        input: "livro.docx + livro.pdf + livro.epub"
+        output: "publishing-audit-report.md"
+        quality_gate: "qualidade_formatos ≥95"
+
+      - id: gatekeeper
+        name: "Gatekeeper"
+        description: "Decisão final: aprova ou rejeita o livro com base em todos os scores"
+        input: "score-card.yaml + qa-reports/*"
+        output: "gatekeeper-decision.md"
+        quality_gate: "score geral ≥95 AND score mínimo por categoria ≥95"
+        approval_rules:
+          - "Não pode ser o mesmo agente que produziu qualquer parte do conteúdo"
+          - "Não pode ser o mesmo agente que auditou qualquer categoria"
+          - "Decisão final documentada com justificativa"
+
+      - id: audit-trail-recorder
+        name: "Audit Trail Recorder"
+        description: "Registra cada execução do pipeline com data, agente, score e decisão"
+        input: "pipeline-execution-log/"
+        output: "audit-trail-{book-id}.log"
+        quality_gate: "rastreabilidade completa"
+
+      - id: score-aggregator
+        name: "Score Aggregator"
+        description: "Consolida scores de todos os auditores em score-card único"
+        input: "qa-reports/*"
+        output: "score-card-{book-id}.yaml"
+        quality_gate: "cálculo correto da média ponderada"
+
+      - id: compliance-reporter
+        name: "Compliance Reporter"
+        description: "Gera relatório de conformidade com BQS e gate policy"
+        input: "score-card.yaml + audit-trail.log"
+        output: "compliance-report.md"
+        quality_gate: "100% de conformidade com gate-policy.yaml"

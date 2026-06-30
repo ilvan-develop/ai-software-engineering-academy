@@ -1,0 +1,220 @@
+# Layout Grid System — Editora AI Software Engineering Academy
+# Versão: 1.0.0
+# Propósito: Sistema de grid modular multi-formato para impressão e digital
+# Consome: design-tokens.yaml (breakpoints, spacing, typography)
+
+version: "1.0.0"
+updated: "2026-06-28"
+author: "layout-system-architect"
+
+# ─────────────────────────────────────────────
+# GRID PRINCIPAL — IMPRESSO 6×9
+# ─────────────────────────────────────────────
+print_6x9:
+  page_size_mm: [152, 229]  # largura × altura
+  orientation: portrait
+  columns: 1
+  margins_mm:
+    top: 18
+    bottom: 18
+    inside: 15   # encadernação
+    outside: 12
+  gutter_mm: 6    # entre colunas (futuro uso com 2 colunas)
+  baseline_grid_mm: 4
+  lines_per_page: 45  # (229 - 18 - 18) / 4.5 ≈ 43 -> rounding to 45
+  text_width_mm: 125   # 152 - 15 - 12
+  text_height_mm: 193  # 229 - 18 - 18
+
+  regions:
+    header:
+      from_top_mm: 10
+      height_mm: 6
+      font_scale: "caption"
+    footer:
+      from_bottom_mm: 10
+      height_mm: 6
+      font_scale: "caption"
+    running_title:
+      align: "alternate"  # verso: chapter title, frente: book title
+    page_number:
+      align: "outside"  # verso: esquerda, frente: direita
+
+  chapter_start:
+    recto_only: true     # capítulo começa sempre em página ímpar
+    drop_mm: 40          # espaço extra do topo na primeira página do capítulo
+    first_paragraph_no_indent: true
+
+# ─────────────────────────────────────────────
+# GRID — IMPRESSO 7×10
+# ─────────────────────────────────────────────
+print_7x10:
+  page_size_mm: [178, 254]
+  orientation: portrait
+  columns: 1
+  margins_mm:
+    top: 20
+    bottom: 20
+    inside: 17
+    outside: 14
+  gutter_mm: 6
+  baseline_grid_mm: 4.5
+  lines_per_page: 47
+  text_width_mm: 147   # 178 - 17 - 14
+  text_height_mm: 214  # 254 - 20 - 20
+
+  regions:
+    header:
+      from_top_mm: 12
+      height_mm: 6
+      font_scale: "caption"
+    footer:
+      from_bottom_mm: 12
+      height_mm: 6
+      font_scale: "caption"
+    running_title:
+      align: "alternate"
+    page_number:
+      align: "outside"
+
+  chapter_start:
+    recto_only: true
+    drop_mm: 45
+    first_paragraph_no_indent: true
+
+# ─────────────────────────────────────────────
+# GRID — A4 (material de apoio, caderno de exercícios)
+# ─────────────────────────────────────────────
+a4:
+  page_size_mm: [210, 297]
+  orientation: portrait
+  columns: 2
+  margins_mm:
+    top: 25
+    bottom: 25
+    inside: 20
+    outside: 20
+  gutter_mm: 8
+  column_gap_mm: 10
+  baseline_grid_mm: 5
+  lines_per_page: 49
+  column_width_mm: 80  # (210 - 20 - 20 - 10) / 2
+  text_height_mm: 247  # 297 - 25 - 25
+
+  regions:
+    header:
+      from_top_mm: 15
+      height_mm: 7
+      font_scale: "caption"
+    footer:
+      from_bottom_mm: 15
+      height_mm: 7
+      font_scale: "caption"
+
+  chapter_start:
+    recto_only: false  # A4 é frente e verso sem capítulo fixo
+    drop_mm: 30
+    first_paragraph_no_indent: false
+
+  column_rules:
+    # Regras para conteúdo em 2 colunas
+    body_text:
+      column_span: 1
+    headings_h1:
+      column_span: 2  # H1 atravessa as 2 colunas
+    headings_h2:
+      column_span: 2
+    headings_h3:
+      column_span: 1
+    code_blocks:
+      column_span: 2  # Código sempre em largura total
+    tables:
+      column_span: 2
+    images:
+      column_span: 2
+    callouts:
+      column_span: 2
+
+# ─────────────────────────────────────────────
+# GRID — DIGITAL (EPUB, PDF digital, DOCX)
+# ─────────────────────────────────────────────
+digital:
+  layout: "responsive"
+  max_content_width_px: 720
+  min_content_width_px: 320
+  margins_horizontal_px: 16
+  margins_vertical_px: 16
+  baseline_grid_px: 8
+
+  breakpoints:
+    tablet:
+      min_width_px: 768
+      content_width_px: 720
+      body_font_size_px: 16  # base para rem
+    desktop:
+      min_width_px: 1024
+      content_width_px: 720
+      body_font_size_px: 17
+    wide:
+      min_width_px: 1440
+      content_width_px: 800
+      body_font_size_px: 18
+
+  # EPUB reflowable — sem grid fixo; usamos variáveis CSS
+  variables_css:
+    "--content-max-width": "720px"
+    "--body-font-size": "16px"
+    "--baseline-grid": "8px"
+    "--margin-page": "16px"
+    "--color-brand-primary": "#1A237E"
+
+# ─────────────────────────────────────────────
+# ELEMENTOS ESPECIAIS — POSICIONAMENTO
+# ─────────────────────────────────────────────
+special_elements:
+  callout:
+    print_span: "full"  # callouts ocupam largura total do texto
+    digital_span: "full"
+    float: "none"
+
+  code_block:
+    print_span: "full"
+    digital_span: "full"
+    break_before: "auto"
+    max_lines_per_page: 30  # evitar quebra feia
+
+  figure:
+    print_span: "full"
+    digital_span: "full"
+    max_width_percent: 85
+    caption_position: "below"
+
+  table:
+    print_span: "full"
+    digital_span: "auto"   # pode quebrar em digital
+    font_scale: "body_small"
+    horizontal_align: "center"
+
+  footnotes:
+    print_position: "bottom_of_page"
+    digital_position: "popup"  # tooltip/footnote popup
+    separator: "0.5pt solid neutral.300"
+
+# ─────────────────────────────────────────────
+# NÚMERO DE PÁGINAS — ESTIMATIVA
+# ─────────────────────────────────────────────
+estimates:
+  # palavras por página em cada formato
+  words_per_page:
+    print_6x9: 380
+    print_7x10: 450
+    a4_2col: 600
+    digital: 400
+
+  # páginas ocupadas por elementos especiais
+  element_page_equivalents:
+    code_block_30_lines: 1.0
+    figure_half_page: 0.6
+    figure_full_page: 1.0
+    table_10_rows: 0.5
+    callout: 0.2
+    chapter_start_blank: 0.3

@@ -1,0 +1,2 @@
+# Diagramas para Arquitetura Multi-Tenant
+# Revisar e gerar manualmente

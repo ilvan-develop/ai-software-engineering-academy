@@ -1,0 +1,12 @@
+{
+  "engine": "comparison_matrix",
+  "title": "Comparacao de Frameworks Frontend",
+  "rows": ["React", "Vue", "Angular", "Svelte"],
+  "columns": ["Curva de Aprendizado", "Performance", "Ecossistema", "Empresas"],
+  "scores": {
+    "React": {"Curva de Aprendizado": 3, "Performance": 4, "Ecossistema": 5, "Empresas": 5},
+    "Vue": {"Curva de Aprendizado": 4, "Performance": 4, "Ecossistema": 4, "Empresas": 3},
+    "Angular": {"Curva de Aprendizado": 2, "Performance": 3, "Ecossistema": 5, "Empresas": 5},
+    "Svelte": {"Curva de Aprendizado": 4, "Performance": 5, "Ecossistema": 2, "Empresas": 2}
+  }
+}

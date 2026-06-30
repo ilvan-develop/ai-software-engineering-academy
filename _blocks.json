@@ -1,0 +1,512 @@
+{
+  "arquitetura-backend/module-08-arquitetura": [
+    {
+      "num": 1,
+      "line": 13,
+      "lang": "text",
+      "first": "Arquitetura Ruim:"
+    },
+    {
+      "num": 2,
+      "line": 33,
+      "lang": "text",
+      "first": "Componentes:      Em quais partes o sistema se divide?"
+    },
+    {
+      "num": 3,
+      "line": 51,
+      "lang": "typescript",
+      "first": "// ❌ Ruim: Service faz tudo"
+    },
+    {
+      "num": 4,
+      "line": 100,
+      "lang": "typescript",
+      "first": "// ❌ Ruim: Quebra a expectativa"
+    },
+    {
+      "num": 5,
+      "line": 141,
+      "lang": "typescript",
+      "first": "// ❌ Ruim: Dependência concreta"
+    },
+    {
+      "num": 6,
+      "line": 192,
+      "lang": "text",
+      "first": "❌ ERRADO: Use Case importa Prisma"
+    },
+    {
+      "num": 7,
+      "line": 220,
+      "lang": "text",
+      "first": "Negócio: \"Um cliente pode abrir um chamado\""
+    },
+    {
+      "num": 8,
+      "line": 232,
+      "lang": "text",
+      "first": "Contexto de Vendas:         Contexto de Logística:"
+    },
+    {
+      "num": 9,
+      "line": 243,
+      "lang": "text",
+      "first": "┌──────────────────────────────────────────┐"
+    },
+    {
+      "num": 10,
+      "line": 273,
+      "lang": "typescript",
+      "first": "// Entidade"
+    },
+    {
+      "num": 11,
+      "line": 343,
+      "lang": "text",
+      "first": "                    ┌───────────────────────┐"
+    },
+    {
+      "num": 12,
+      "line": 377,
+      "lang": "typescript",
+      "first": "// Porta de saída (interface no domínio)"
+    },
+    {
+      "num": 13,
+      "line": 430,
+      "lang": "text",
+      "first": "Prós:                     Contras:"
+    },
+    {
+      "num": 14,
+      "line": 449,
+      "lang": "text",
+      "first": "Prós:                     Contras:"
+    },
+    {
+      "num": 15,
+      "line": 478,
+      "lang": "text",
+      "first": "Evento:           \"Algo aconteceu\""
+    },
+    {
+      "num": 16,
+      "line": 494,
+      "lang": "typescript",
+      "first": "// Evento"
+    },
+    {
+      "total": 16,
+      "unlabeled": 0
+    }
+  ],
+  "arquitetura-backend/module-12-seguranca": [
+    {
+      "num": 1,
+      "line": 13,
+      "lang": "text",
+      "first": "Falha de segurança típica:"
+    },
+    {
+      "num": 2,
+      "line": 33,
+      "lang": "text",
+      "first": "❌ \"Segurança é problema do DevOps\""
+    },
+    {
+      "num": 3,
+      "line": 53,
+      "lang": "typescript",
+      "first": "// ❌ Ruim: Não verifica se o recurso pertence ao usuário"
+    },
+    {
+      "num": 4,
+      "line": 92,
+      "lang": "typescript",
+      "first": "// ❌ Ruim: Query concatenada (SQL injection!)"
+    },
+    {
+      "num": 5,
+      "line": 127,
+      "lang": "typescript",
+      "first": "// ❌ Ruim: CORS aberto"
+    },
+    {
+      "num": 6,
+      "line": 165,
+      "lang": "typescript",
+      "first": "// auth.service.ts"
+    },
+    {
+      "num": 7,
+      "line": 253,
+      "lang": "typescript",
+      "first": "// abilities.ts"
+    },
+    {
+      "num": 8,
+      "line": 310,
+      "lang": "typescript",
+      "first": "// app.module.ts"
+    },
+    {
+      "num": 9,
+      "line": 355,
+      "lang": "typescript",
+      "first": "import helmet from 'helmet';"
+    },
+    {
+      "num": 10,
+      "line": 371,
+      "lang": "typescript",
+      "first": "app.use(helmet.contentSecurityPolicy({"
+    },
+    {
+      "num": 11,
+      "line": 405,
+      "lang": "typescript",
+      "first": "// ❌ Renderizar HTML sem sanitizar"
+    },
+    {
+      "num": 12,
+      "line": 436,
+      "lang": "typescript",
+      "first": "// ❌ Hardcoded no código"
+    },
+    {
+      "num": 13,
+      "line": 478,
+      "lang": "typescript",
+      "first": "// Log de ações sensíveis"
+    },
+    {
+      "total": 13,
+      "unlabeled": 0
+    }
+  ],
+  "governanca-automacao/module-18-agentes-ia": [
+    {
+      "num": 1,
+      "line": 15,
+      "lang": "text",
+      "first": "Agente Genérico:"
+    },
+    {
+      "num": 2,
+      "line": 29,
+      "lang": "text",
+      "first": "Agente Frontend:"
+    },
+    {
+      "num": 3,
+      "line": 46,
+      "lang": "text",
+      "first": "agente/"
+    },
+    {
+      "num": 4,
+      "line": 58,
+      "lang": "text",
+      "first": "┌──────────────────────────────────────┐"
+    },
+    {
+      "num": 5,
+      "line": 147,
+      "lang": "text",
+      "first": "1. Definir o DOMÍNIO do agente"
+    },
+    {
+      "num": 6,
+      "line": 192,
+      "lang": "text",
+      "first": "- [ ] Senhas com hash bcrypt/argon2"
+    },
+    {
+      "num": 7,
+      "line": 210,
+      "lang": "text",
+      "first": "Product Discovery  ──→  UX Designer  ──→  UI Designer"
+    },
+    {
+      "num": 8,
+      "line": 233,
+      "lang": "text",
+      "first": "Feature implementada"
+    },
+    {
+      "num": 9,
+      "line": 254,
+      "lang": "text",
+      "first": "PO descreve problema em linguagem natural"
+    },
+    {
+      "num": 10,
+      "line": 291,
+      "lang": "json",
+      "first": "{"
+    },
+    {
+      "num": 11,
+      "line": 330,
+      "lang": "text",
+      "first": "@auditor Revise a segurança deste endpoint."
+    },
+    {
+      "num": 12,
+      "line": 357,
+      "lang": "text",
+      "first": "Ruim:"
+    },
+    {
+      "num": 13,
+      "line": 391,
+      "lang": "(none)",
+      "first": ""
+    },
+    {
+      "total": 13,
+      "unlabeled": 1
+    }
+  ],
+  "governanca-automacao/module-19-auditorias": [
+    {
+      "num": 1,
+      "line": 11,
+      "lang": "text",
+      "first": "Cursos tradicionais:"
+    },
+    {
+      "num": 2,
+      "line": 51,
+      "lang": "text",
+      "first": "Score = (∑ scores por dimensão) / número de dimensões"
+    },
+    {
+      "num": 3,
+      "line": 62,
+      "lang": "text",
+      "first": "Dimensões avaliadas:"
+    },
+    {
+      "num": 4,
+      "line": 79,
+      "lang": "text",
+      "first": "┌───────────────────────────────────────────────────────────"
+    },
+    {
+      "num": 5,
+      "line": 123,
+      "lang": "markdown",
+      "first": "# Auditoria: [Tipo] — [Sistema/Componente]"
+    },
+    {
+      "num": 6,
+      "line": 215,
+      "lang": "text",
+      "first": "Não: Auditar uma vez no final do projeto"
+    },
+    {
+      "num": 7,
+      "line": 261,
+      "lang": "text",
+      "first": "Score 0-4 (Crítico/Ruim):"
+    },
+    {
+      "num": 8,
+      "line": 285,
+      "lang": "text",
+      "first": "Relatório executivo deve conter apenas:"
+    },
+    {
+      "num": 9,
+      "line": 300,
+      "lang": "bash",
+      "first": "# Auditar segurança de um módulo"
+    },
+    {
+      "total": 9,
+      "unlabeled": 0
+    }
+  ],
+  "product-design/module-05-wireframes": [
+    {
+      "num": 1,
+      "line": 13,
+      "lang": "text",
+      "first": "Wireframe serve para:"
+    },
+    {
+      "num": 2,
+      "line": 32,
+      "lang": "typescript",
+      "first": "// Representação de níveis de fidelidade"
+    },
+    {
+      "num": 3,
+      "line": 81,
+      "lang": "typescript",
+      "first": "interface DesignStage {"
+    },
+    {
+      "num": 4,
+      "line": 125,
+      "lang": "typescript",
+      "first": "interface Grid {"
+    },
+    {
+      "num": 5,
+      "line": 149,
+      "lang": "text",
+      "first": "Wireframe com grid de 12 colunas:"
+    },
+    {
+      "num": 6,
+      "line": 166,
+      "lang": "text",
+      "first": "Hierarquia no wireframe:"
+    },
+    {
+      "num": 7,
+      "line": 178,
+      "lang": "typescript",
+      "first": "// Sistema de espaçamento (8px grid)"
+    },
+    {
+      "num": 8,
+      "line": 198,
+      "lang": "text",
+      "first": "╔══════════════════════════════════════╗"
+    },
+    {
+      "num": 9,
+      "line": 225,
+      "lang": "text",
+      "first": "📝 Papel e caneta"
+    },
+    {
+      "num": 10,
+      "line": 247,
+      "lang": "typescript",
+      "first": "// Representação de um wireframe no Excalidraw"
+    },
+    {
+      "num": 11,
+      "line": 289,
+      "lang": "text",
+      "first": "Exemplo de Grey Box:"
+    },
+    {
+      "num": 12,
+      "line": 314,
+      "lang": "text",
+      "first": "Wireflow de cadastro:"
+    },
+    {
+      "num": 13,
+      "line": 329,
+      "lang": "typescript",
+      "first": "interface Wireflow {"
+    },
+    {
+      "num": 14,
+      "line": 348,
+      "lang": "text",
+      "first": "Vantagens do sketching:"
+    },
+    {
+      "num": 15,
+      "line": 363,
+      "lang": "text",
+      "first": "Anatomia padrão de uma página:"
+    },
+    {
+      "num": 16,
+      "line": 415,
+      "lang": "typescript",
+      "first": "// Definição programática de uma tela"
+    },
+    {
+      "num": 17,
+      "line": 470,
+      "lang": "typescript",
+      "first": "type ComponentState = 'loading' | 'empty' | 'error' | 'succe"
+    },
+    {
+      "num": 18,
+      "line": 492,
+      "lang": "typescript",
+      "first": "// Componente de skeleton para wireframe"
+    },
+    {
+      "num": 19,
+      "line": 502,
+      "lang": "text",
+      "first": "Wireframe de estado loading (skeleton):"
+    },
+    {
+      "num": 20,
+      "line": 519,
+      "lang": "text",
+      "first": "Wireframe de estado vazio (empty):"
+    },
+    {
+      "num": 21,
+      "line": 541,
+      "lang": "typescript",
+      "first": "interface Transition {"
+    },
+    {
+      "num": 22,
+      "line": 549,
+      "lang": "text",
+      "first": "Representação de transição no wireframe:"
+    },
+    {
+      "num": 23,
+      "line": 578,
+      "lang": "typescript",
+      "first": "interface ClickableWireframe {"
+    },
+    {
+      "num": 24,
+      "line": 625,
+      "lang": "typescript",
+      "first": "Esboçar → Validar → Aprender → Refinar → (repetir)"
+    },
+    {
+      "num": 25,
+      "line": 629,
+      "lang": "typescript",
+      "first": "interface IterationCycle {"
+    },
+    {
+      "num": 26,
+      "line": 665,
+      "lang": "typescript",
+      "first": "interface WireframeDocumentation {"
+    },
+    {
+      "num": 27,
+      "line": 714,
+      "lang": "text",
+      "first": ""
+    },
+    {
+      "num": 28,
+      "line": 741,
+      "lang": "text",
+      "first": "Estratégia de versionamento:"
+    },
+    {
+      "num": 29,
+      "line": 766,
+      "lang": "typescript",
+      "first": ""
+    },
+    {
+      "total": 29,
+      "unlabeled": 0
+    }
+  ]
+}

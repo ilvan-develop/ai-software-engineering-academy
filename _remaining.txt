@@ -1,0 +1,81 @@
+=== governanca-automacao/module-18-agentes-ia ===
+--- Block #1 (500 chars) ---
+  Feature implementada
+          │
+          ▼
+  Security Auditor ──→ Se Bloquer/Critical → Backend Expert (corrige)
+          │                                     │
+  ... (11 more lines)
+
+--- Block #2 (600 chars) ---
+  PO descreve problema em linguagem natural
+          │
+          ▼
+  Product Discovery Agent → User Stories + Acceptance Criteria
+          │
+  ... (23 more lines)
+
+--- Block #3 (0 chars) ---
+  
+
+=== product-design/module-02-product-discovery ===
+--- Block #1 (743 chars) ---
+  Métricas de Discovery:
+  
+  | Métrica                  | O que indica                             |
+  |--------------------------|------------------------------------------|
+  | Page views               | Interesse bruto                          |
+  ... (7 more lines)
+
+=== product-design/module-03-design-thinking ===
+--- Block #1 (261 chars) ---
+  TRADICIONAL:                                   DESIGN THINKING:
+  Problema → Análise → Solução → Entrega        Problema → Empatia → Definir → Ideias → Protótipo → Te
+                                                                                              ↻
+
+--- Block #2 (51 chars) ---
+  [USUÁRIO] precisa de [NECESSIDADE] porque [INSIGHT]
+
+=== product-design/module-04-ux ===
+--- Block #1 (261 chars) ---
+  CLIENTE         Ações visíveis ao usuário
+                      ↓
+  FRONTSTAGE      Interações com o sistema (UI, API calls)
+                      ↓
+  BACKSTAGE       Ações internas invisíveis ao usuário
+  ... (2 more lines)
+
+--- Block #2 (308 chars) ---
+  ✅ Bom contraste (AA):
+     #333333 sobre #FFFFFF   — texto normal
+     #000000 sobre #FFFFFF   — texto grande
+     #FFFFFF sobre #0055CC   — botões
+  
+  ... (4 more lines)
+
+=== product-design/module-05-wireframes ===
+--- Block #1 (435 chars) ---
+  ```typescript
+  // Especificação de handoff
+  interface HandoffSpec {
+    screen: WireframeDocumentation;
+    responsiveBreakpoints: {
+  ... (14 more lines)
+
+=== product-design/module-06-ui-design ===
+--- Block #1 (234 chars) ---
+  ❌ Agrupamento confuso:
+    [Nome] [Email] [Telefone]
+    [Senha] [Confirmar Senha]
+  
+  ✅ Agrupamento lógico por proximidade:
+  ... (3 more lines)
+
+=== frontend-devops/module-14-devops ===
+--- Block #1 (52 chars) ---
+  node_modules
+  .git
+  .env
+  dist
+  .gitignore
+  ... (2 more lines)

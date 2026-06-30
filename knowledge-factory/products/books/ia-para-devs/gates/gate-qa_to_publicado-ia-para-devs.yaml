@@ -1,0 +1,91 @@
+gate_id: qa_to_publicado
+gate_name: Gate Final — QA → Publicado
+approved: true
+results:
+- rule: no-self-approval
+  passed: true
+  message: chief-editor ≠ gatekeeper
+- rule: score-minimum
+  category: Estrutura do Conteúdo
+  score: 95.95
+  minimum: 95
+  passed: true
+- rule: score-minimum
+  category: Progressão Pedagógica
+  score: 95.45
+  minimum: 95
+  passed: true
+- rule: score-minimum
+  category: Qualidade Técnica
+  score: 95.1
+  minimum: 95
+  passed: true
+- rule: score-minimum
+  category: Consistência Terminológica
+  score: 97.25
+  minimum: 95
+  passed: true
+- rule: score-minimum
+  category: Qualidade dos Exemplos
+  score: 95.15
+  minimum: 95
+  passed: true
+- rule: score-minimum
+  category: Exercícios e Avaliações
+  score: 95.8
+  minimum: 95
+  passed: true
+- rule: score-minimum
+  category: Tom e Legibilidade
+  score: 95.4
+  minimum: 95
+  passed: true
+- rule: score-minimum
+  category: Design e Hierarquia Visual
+  score: 95.5
+  minimum: 95
+  passed: true
+- rule: score-minimum
+  category: Qualidade do Markdown
+  score: 98.0
+  minimum: 95
+  passed: true
+- rule: score-minimum
+  category: Qualidade dos Formatos (DOCX/PDF/EPUB)
+  score: 96.05
+  minimum: 95
+  passed: true
+- rule: score-minimum
+  category: Acessibilidade
+  score: 95.2
+  minimum: 95
+  passed: true
+- rule: handoff-artifacts
+  artifact: livro.docx
+  exists: true
+  passed: true
+- rule: handoff-artifacts
+  artifact: livro-digital.pdf
+  exists: true
+  passed: true
+- rule: handoff-artifacts
+  artifact: livro-grafica.pdf
+  exists: true
+  passed: true
+- rule: handoff-artifacts
+  artifact: livro.epub
+  exists: true
+  passed: true
+- rule: handoff-artifacts
+  artifact: qa-report.md
+  exists: true
+  passed: true
+- rule: handoff-artifacts
+  artifact: score-card.yaml
+  exists: true
+  passed: true
+- rule: handoff-artifacts
+  artifact: audit-trail.log
+  exists: true
+  passed: true
+timestamp: '2026-06-28T19:21:57.779779'

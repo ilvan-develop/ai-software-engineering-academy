@@ -1,0 +1,2 @@
+# Cover prompt para Arquitetura Multi-Tenant
+# Gerar via DALL-E ou Midjourney

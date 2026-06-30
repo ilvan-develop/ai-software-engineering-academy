@@ -1,0 +1,2 @@
+# Diagramas para Automação do Ciclo de Desenvolvimento
+# Revisar e gerar manualmente

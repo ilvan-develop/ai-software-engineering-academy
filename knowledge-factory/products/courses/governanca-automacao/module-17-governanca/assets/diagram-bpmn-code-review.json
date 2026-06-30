@@ -1,0 +1,25 @@
+{
+  "engine": "bpmn",
+  "title": "Fluxo de Code Review",
+  "steps": [
+    {"type": "start", "label": "PR aberto"},
+    {"type": "task", "label": "CI executa"},
+    {"type": "gateway", "label": "CI passou?"},
+    {"type": "task", "label": "Code review"},
+    {"type": "task", "label": "Aprovacao arquitetura"},
+    {"type": "gateway", "label": "Aprovado?"},
+    {"type": "task", "label": "Merge na main"},
+    {"type": "end", "label": "Concluido"}
+  ],
+  "connections": [
+    {"from": 0, "to": 1},
+    {"from": 1, "to": 2},
+    {"from": 2, "to": 3, "label": "Sim"},
+    {"from": 2, "to": 7, "label": "Nao"},
+    {"from": 3, "to": 4},
+    {"from": 4, "to": 5},
+    {"from": 5, "to": 6, "label": "Sim"},
+    {"from": 5, "to": 1, "label": "Corrigir"},
+    {"from": 6, "to": 7}
+  ]
+}

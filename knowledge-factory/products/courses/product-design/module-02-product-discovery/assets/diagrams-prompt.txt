@@ -1,0 +1,37 @@
+> Prompts para geracao de diagramas do modulo "Product Discovery"
+
+## 1. Discovery vs Delivery
+
+**Midjourney:**
+```
+Clean split-screen diagram comparing Discovery and Delivery, left side blue "Discovery" with question marks, magnifying glass, sticky notes, right side green "Delivery" with code brackets, gears, deploy rocket, white background, flat vector illustration, professional tech style, no text, --ar 16:9 --style raw --v 6
+```
+
+**DALL-E 3:**
+```
+A clean horizontal split-screen diagram on white background. Left half labeled "Discovery" with a magnifying glass, question marks, and sticky notes in blue tones. Right half labeled "Delivery" with code brackets, gears, and a small rocket in green tones. Flat vector illustration, no small text, professional corporate tech style, 16:9 aspect ratio.
+```
+
+## 2. Opportunity Solution Tree
+
+**Midjourney:**
+```
+A tree diagram for product discovery, thick trunk labeled with a business outcome, branches splitting into opportunities, smaller branches into solutions, tiny leaves as experiment icons, navy and coral color scheme, minimalist vector style, white background, no text, --ar 16:9 --style raw --v 6
+```
+
+**DALL-E 3:**
+```
+A stylized tree diagram for Opportunity Solution Tree on white background. Thick central trunk, branches representing opportunities and solutions, small circular experiment icons at the leaves. Color palette navy blue (#1a1a2e) and coral red (#e94560). Minimalist flat vector illustration, no readable text, 16:9.
+```
+
+## 3. Value Proposition Canvas
+
+**Midjourney:**
+```
+A two-column canvas diagram, left side customer profile with stick figures, pains and gains icons, right side value map with product features icons, arrows connecting pain relievers and gain creators, clean vector style, white background, no text, --ar 4:3 --style raw --v 6
+```
+
+**DALL-E 3:**
+```
+A clean two-column business canvas diagram on white background. Left column shows customer profile icons: jobs, pains (thunderbolt icons), and gains (star icons). Right column shows value map icons: products, pain relievers, and gain creators. Subtle arrows connect matching elements. Flat vector illustration, navy and coral accents, no readable text, 4:3 aspect ratio.
+```

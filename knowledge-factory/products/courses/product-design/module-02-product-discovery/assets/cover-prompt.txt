@@ -1,0 +1,13 @@
+> Prompts para geracao da capa do modulo "Product Discovery"
+
+## Midjourney
+
+```
+A minimalist tech-educational book cover about product discovery, clean vector illustration, a magnifying glass hovering over a glowing digital product prototype, connected user avatars and data points floating around, deep navy blue primary #1a1a2e background, coral accent #e94560 highlights, abstract geometric shapes, modern sans-serif typography placeholder space at top, no text in the illustration, professional, premium, 8k, --ar 2:3 --style raw --v 6
+```
+
+## DALL-E 3
+
+```
+Minimalist professional book cover illustration for a software engineering course titled "Product Discovery". A stylized magnifying glass examines a glowing wireframe digital product, surrounded by small icons representing users, data charts, and lightbulbs. Deep navy blue background (#1a1a2e) with coral red accents (#e94560). Clean vector style, no text in the image, modern tech-educational aesthetic, vertical 2:3 composition.
+```

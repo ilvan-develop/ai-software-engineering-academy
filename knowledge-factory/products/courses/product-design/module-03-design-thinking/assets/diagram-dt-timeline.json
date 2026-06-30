@@ -1,0 +1,11 @@
+{
+  "engine": "timeline",
+  "title": "Evolucao do Design Thinking",
+  "events": [
+    {"year": "1969", "label": "Herbert Simon: bases cognitivas"},
+    {"year": "1987", "label": "Peter Rowe: termo Design Thinking"},
+    {"year": "1991", "label": "IDEO: popularizacao do metodo"},
+    {"year": "2005", "label": "d.school Stanford: 5 fases"},
+    {"year": "2010+", "label": "Adocao em Apple, Google, IBM"}
+  ]
+}

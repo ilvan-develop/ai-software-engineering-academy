@@ -1,0 +1,6 @@
+empty: NO MATCH
+bracket text: NO MATCH
+checkmark: MATCH
+x mark: MATCH
+npm dir: MATCH
+color hex: NO MATCH

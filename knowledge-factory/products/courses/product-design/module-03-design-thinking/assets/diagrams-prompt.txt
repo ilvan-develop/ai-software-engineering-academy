@@ -1,0 +1,37 @@
+> Prompts para geracao de diagramas do modulo "Design Thinking"
+
+## 1. As 5 Fases do Design Thinking
+
+**Midjourney:**
+```
+A clean 5-step cycle diagram for Design Thinking, circular flow with icons for empathy, define, ideate, prototype, test, arrows connecting each phase, navy and coral colors, modern flat vector style, white background, no text, --ar 16:9 --style raw --v 6
+```
+
+**DALL-E 3:**
+```
+A clean circular cycle diagram showing 5 connected steps of Design Thinking on white background. Each step has a simple icon: empathy (magnifying glass over people), define (target), ideate (lightbulb), prototype (paper model), test (checkmark). Navy blue (#1a1a2e) and coral red (#e94560) accents. Flat vector illustration, no readable text, 16:9 aspect ratio.
+```
+
+## 2. Mindset do Design Thinking
+
+**Midjourney:**
+```
+An abstract human-centered mindset diagram, a large heart symbol surrounded by icons of collaboration, experimentation, empathy, and iteration, minimalist geometric style, white background, no text, --ar 16:9 --style raw --v 6
+```
+
+**DALL-E 3:**
+```
+An abstract mindset diagram on white background. A central heart icon surrounded by smaller icons representing collaboration (connected people), experimentation (test tube), empathy (hand holding heart), and iteration (circular arrows). Color palette navy blue and coral red, flat minimalist vector style, no readable text, 16:9.
+```
+
+## 3. Prototipação Rápida
+
+**Midjourney:**
+```
+A workspace scene showing rapid prototyping, paper sketches, wireframes, and a digital mockup layered on a desk, hands arranging elements, clean vector illustration, white background, no text, --ar 16:9 --style raw --v 6
+```
+
+**DALL-E 3:**
+```
+A flat vector illustration of a rapid prototyping workspace on white background. Layered paper sketches, simple wireframes, and a digital mockup arranged on a desk with stylized hands moving elements. Navy blue and coral red accents, modern professional style, no readable text, 16:9 aspect ratio.
+```

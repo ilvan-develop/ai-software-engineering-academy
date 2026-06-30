@@ -1,0 +1,63 @@
+# Critérios do Departamento Editorial
+# BQS categories: 4-consistencia_terminologica, 7-tom_legibilidade
+# Gate: editorial_to_design (score ≥95)
+
+department: "editorial"
+agents:
+  - copy-editor
+  - grammar-reviewer
+  - style-reviewer
+  - consistency-auditor
+  - terminology-auditor
+  - readability-auditor
+  - technical-accuracy-reviewer
+
+quality_criteria:
+  - id: "editorial-qc1"
+    name: "Ortografia e acentos"
+    description: "Zero erros ortográficos ou de acentuação (pt-BR)"
+    weight: 15
+
+  - id: "editorial-qc2"
+    name: "Gramática e pontuação"
+    description: "Concordância verbal e nominal corretas; pontuação adequada"
+    weight: 15
+
+  - id: "editorial-qc3"
+    name: "Tom uniforme"
+    description: "Tom técnico-didático consistente em todo o capítulo"
+    weight: 15
+
+  - id: "editorial-qc4"
+    name: "Terminologia consistente"
+    description: "Mesmo termo para mesmo conceito em todo o livro"
+    weight: 15
+
+  - id: "editorial-qc5"
+    name: "Repetições eliminadas"
+    description: "Sem repetições desnecessárias de palavras, ideias ou exemplos"
+    weight: 10
+
+  - id: "editorial-qc6"
+    name: "Fluidez de leitura"
+    description: "Parágrafos coesos, transições suaves, ritmo adequado"
+    weight: 15
+
+  - id: "editorial-qc7"
+    name: "STYLE_GUIDE compliance"
+    description: "100% de aderência ao STYLE_GUIDE.md"
+    weight: 15
+
+outputs:
+  - "content/chapter-{id}.reviewed.md"
+  - "content/revision-report-{id}.md"
+
+handoff:
+  to_department: "design"
+  artifacts:
+    - chapter.reviewed.md
+    - revision-report.md
+  min_score: 95
+  categories_required:
+    - consistencia_terminologica
+    - tom_legibilidade

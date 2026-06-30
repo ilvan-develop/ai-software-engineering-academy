@@ -1,0 +1,91 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://ai-software-engineering.academy/schemas/book-manifest",
+  "title": "Book Manifest",
+  "description": "Schema for curriculum/books/*.yaml manifests",
+  "type": "object",
+  "required": ["book"],
+  "properties": {
+    "book": {
+      "type": "object",
+      "required": ["id", "title", "author", "language", "edition", "year", "chapters"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "title": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "author": { "type": "string" },
+        "language": { "type": "string", "pattern": "^[a-z]{2}(-[A-Z]{2})?$" },
+        "edition": { "type": "integer", "minimum": 1 },
+        "year": { "type": "integer", "minimum": 2024 },
+        "cover": {
+          "type": "object",
+          "properties": {
+            "style": { "type": "string" }
+          }
+        },
+        "chapters": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "title"],
+            "oneOf": [
+              {
+                "properties": {
+                  "id": { "type": "string" },
+                  "type": { "enum": ["frontmatter", "backmatter"] },
+                  "title": { "type": "string" },
+                  "auto_generate": { "type": "boolean" }
+                },
+                "required": ["type"]
+              },
+              {
+                "properties": {
+                  "id": { "type": "string" },
+                  "title": { "type": "string" },
+                  "source": {
+                    "type": "object",
+                    "required": ["course", "modules"],
+                    "properties": {
+                      "course": { "type": "string" },
+                      "modules": {
+                        "type": "array",
+                        "items": { "type": "string" },
+                        "minItems": 1
+                      }
+                    }
+                  }
+                },
+                "not": { "required": ["type"] }
+              }
+            ]
+          }
+        },
+        "output": {
+          "type": "object",
+          "properties": {
+            "docx": { "type": "boolean" },
+            "epub": { "type": "boolean" },
+            "pdf_digital": { "type": "boolean" },
+            "pdf_print": {
+              "type": "object",
+              "properties": {
+                "trim_size": { "type": "string" },
+                "bleed": { "type": "string" }
+              }
+            }
+          }
+        },
+        "distribution": {
+          "type": "object",
+          "properties": {
+            "platforms": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "isbn": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

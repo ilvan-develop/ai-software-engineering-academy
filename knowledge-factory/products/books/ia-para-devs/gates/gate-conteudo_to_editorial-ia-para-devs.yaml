@@ -1,0 +1,20 @@
+gate_id: conteudo_to_editorial
+gate_name: Gate Conteúdo → Editorial
+approved: false
+results:
+- rule: no-self-approval
+  passed: true
+  message: chief-editor ≠ technical-writer
+- rule: handoff-artifacts
+  artifact: chapter.md
+  exists: false
+  passed: false
+- rule: handoff-artifacts
+  artifact: exercises.md
+  exists: false
+  passed: false
+- rule: handoff-artifacts
+  artifact: quiz.md
+  exists: false
+  passed: false
+timestamp: '2026-06-28T19:19:36.286481'

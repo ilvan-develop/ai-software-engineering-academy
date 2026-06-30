@@ -1,0 +1,16 @@
+gate_id: editorial_to_design
+gate_name: Gate Editorial → Design
+approved: false
+results:
+- rule: no-self-approval
+  passed: true
+  message: consistency-auditor ≠ copy-editor
+- rule: handoff-artifacts
+  artifact: chapter.reviewed.md
+  exists: false
+  passed: false
+- rule: handoff-artifacts
+  artifact: revision-report.md
+  exists: false
+  passed: false
+timestamp: '2026-06-28T19:19:41.079356'

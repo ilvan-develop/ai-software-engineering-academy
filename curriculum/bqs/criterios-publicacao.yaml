@@ -1,0 +1,69 @@
+# Critérios do Departamento de Publicação
+# BQS categories: 9-qualidade_markdown, 10-qualidade_formatos
+# Gate: publicacao_to_qa (score ≥95)
+
+department: "publicacao"
+agents:
+  - markdown-auditor
+  - docx-generator
+  - pdf-generator
+  - epub-generator
+  - template-manager
+  - brand-consistency-agent
+  - accessibility-auditor
+
+quality_criteria:
+  - id: "publicacao-qc1"
+    name: "Markdown válido"
+    description: "Markdown semanticamente correto sem quebras de sintaxe"
+    weight: 15
+
+  - id: "publicacao-qc2"
+    name: "DOCX formatado"
+    description: "DOCX com estilos heading, sumário automático, numeração de páginas"
+    weight: 20
+
+  - id: "publicacao-qc3"
+    name: "PDF digital funcional"
+    description: "PDF com bookmarks, hyperlinks, sumário navegável"
+    weight: 20
+
+  - id: "publicacao-qc4"
+    name: "EPUB navegável"
+    description: "EPUB com TOC, metadados, formatação fluida correta"
+    weight: 15
+
+  - id: "publicacao-qc5"
+    name: "Marca consistente"
+    description: "Cabeçalhos, rodapés, capa e contracapa seguem identidade visual"
+    weight: 10
+
+  - id: "publicacao-qc6"
+    name: "PDF gráfica pronto"
+    description: "PDF para impressão com sangria, marcas de corte, CMYK"
+    weight: 10
+
+  - id: "publicacao-qc7"
+    name: "Acessibilidade"
+    description: "Formatos acessíveis (contraste WCAG AA, alt text, estrutura semântica)"
+    weight: 10
+
+outputs:
+  - "output/livro.docx"
+  - "output/livro-digital.pdf"
+  - "output/livro-grafica.pdf"
+  - "output/livro.epub"
+
+handoff:
+  to_department: "qa"
+  artifacts:
+    - livro.docx
+    - livro-digital.pdf
+    - livro-grafica.pdf
+    - livro.epub
+    - book.md
+  min_score: 95
+  categories_required:
+    - qualidade_markdown
+    - qualidade_formatos
+    - acessibilidade

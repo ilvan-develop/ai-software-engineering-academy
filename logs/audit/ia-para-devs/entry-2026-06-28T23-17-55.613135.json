@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-06-28T23:17:55.613135",
+  "agent": "chief-editor",
+  "action": "gate1-conteudo-review",
+  "score": 94.5,
+  "decision": "approved",
+  "metadata": {},
+  "hash": "44cacd0df08c7d104fe1f4fd6f58a47ee643cbf5594bb385fae87650cef64607",
+  "previous_hash": "523a82cdf1e0f2182072f1e1300347b8d6ddf9358ec8061a95e2831d18572d4a"
+}

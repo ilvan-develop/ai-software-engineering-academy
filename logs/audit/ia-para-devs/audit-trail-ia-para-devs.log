@@ -1,0 +1,16 @@
+# Audit Trail — Book: ia-para-devs
+# Created: 2026-06-28T19:28:21.796340
+# Format: [timestamp] [agent] [action] [score] [decision] [hash]
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2026-06-28T19:28:21.796515 | technical-writer          | producao-conteudo    |   95.8 | aprovado | d87b043c8148107ca0df706109af921ef8ee685702a16dd078309cdc8456d5e4
+2026-06-28T19:28:21.798574 | copy-editor               | revisao-editorial    |   95.8 | aprovado | da2c62e3c2507916aed52432849ba7e5b7cf9ff24a4c1f549e661aff1bf76b22
+2026-06-28T19:28:21.799778 | book-designer             | design-diagramacao   |   95.8 | aprovado | 77303c42c1810fb929f0aab7270d7fe45a7af8e0f5d0fbe34357fd736c3ae0c6
+2026-06-28T19:28:21.800812 | template-manager          | publicacao-formatos  |   95.8 | aprovado | 39603ae3ce1c1e39582a128746b892619abd9624470b34a9a815a8cd40982873
+2026-06-28T19:28:21.801688 | chief-editor              | certificacao-final   |   95.8 | publicado | 98104678ab1e84269cba31af3a949f07b7ec84a3ffccbb5c8c5e2ff5cf5cd0d4
+2026-06-28T23:17:42.192249 | chief-editor              | gate1-conteudo-review |   94.5 | approved | 523a82cdf1e0f2182072f1e1300347b8d6ddf9358ec8061a95e2831d18572d4a
+2026-06-28T23:17:55.613135 | chief-editor              | gate1-conteudo-review |   94.5 | approved | 44cacd0df08c7d104fe1f4fd6f58a47ee643cbf5594bb385fae87650cef64607
+2026-06-28T23:18:25.944540 | copy-editor               | gate2-editorial-review |   95.4 | approved | 24e27a1ded51e6dd6e960488f303322de2d9cf4ee8f32e6538444bfb3c76afa7
+2026-06-28T23:24:05.411335 | book-designer             | gate3-design-review  |   95.7 | approved | f0c530b8f7267506f672ef583a9cc9b72c1ff25b888ca3e315e075ba3b8c5c51
+2026-06-28T23:24:52.612025 | template-manager          | gate4-publicacao-outputs |   95.7 | approved | f50b037c1890293861ebc695dd31652ac743c4a4ddea49e7e8f35365acc17a80
+2026-06-28T23:25:24.294294 | gatekeeper                | gate5-qa-final-approval |   95.7 | approved | 0ced5df7e6da2fbfd3cf2b62a5fa23418182dc76dcc866dc42c57385a769de9a
+2026-06-28T23:25:24.296010 | chief-editor              | certificacao-final-publicado |   95.7 | approved | f500c6fab4a26a5e556c82d2a19290f047043cd0e2db1ed79f7589fc9a2c2544

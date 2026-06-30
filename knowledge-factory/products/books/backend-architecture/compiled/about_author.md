@@ -1,0 +1,9 @@
+## Sobre o Autor
+
+**Ilvan Joaquim** é engenheiro de software com mais de 15 anos de experiência em arquitetura de sistemas, desenvolvimento full stack e liderança técnica. Especializou-se em integração de inteligência artificial em pipelines de desenvolvimento — área que explora desde os primórdios dos modelos de linguagem.
+
+Fundador da AI Software Engineering Academy, já formou mais de 2.000 desenvolvedores em todo o Brasil, combinando princípios consagrados de engenharia de software com o poder dos agentes de IA. Sua abordagem prática prioriza código que funciona em produção, não teoria rebuscada.
+
+Antes da Academia, liderou times de engenharia em fintechs e marketplaces brasileiros, onde aprendeu na prática que o maior risco da IA não é ela ser inteligente demais — é nós confiarmos demais nela.
+
+Ilvan escreve regularmente sobre engenharia de software, IA e carreira técnica em seu blog e no LinkedIn.

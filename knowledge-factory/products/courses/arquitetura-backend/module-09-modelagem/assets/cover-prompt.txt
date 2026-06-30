@@ -1,0 +1,2 @@
+# Cover prompt para Modelagem de Sistemas
+# Gerar via DALL-E ou Midjourney

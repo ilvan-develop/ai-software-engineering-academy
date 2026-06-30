@@ -1,0 +1,2 @@
+# Diagramas para Observabilidade
+# Revisar e gerar manualmente

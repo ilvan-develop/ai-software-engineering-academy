@@ -1,0 +1,25 @@
+{
+  "engine": "er_diagram",
+  "title": "Modelo Entidade-Relacionamento Enterprise",
+  "entities": [
+    {"name": "Tenant", "attrs": ["id (PK)", "slug (UQ)", "name", "plan", "createdAt"]},
+    {"name": "User", "attrs": ["id (PK)", "email", "name", "role", "tenantId (FK)", "deletedAt"]},
+    {"name": "Profile", "attrs": ["id (PK)", "bio", "avatarUrl", "userId (FK UQ)"]},
+    {"name": "Product", "attrs": ["id (PK)", "sku (UQ)", "name", "price", "stock", "tenantId (FK)", "deletedAt"]},
+    {"name": "Category", "attrs": ["id (PK)", "name"]},
+    {"name": "ProductCategory", "attrs": ["productId (FK)", "categoryId (FK)"]},
+    {"name": "Order", "attrs": ["id (PK)", "status", "total", "userId (FK)", "createdAt"]},
+    {"name": "OrderItem", "attrs": ["orderId (FK)", "productId (FK)", "quantity", "price"]},
+    {"name": "AuditLog", "attrs": ["id (PK)", "entity", "entityId", "action", "changes", "userId (FK)", "ip", "createdAt"]}
+  ],
+  "relationships": [
+    {"from": 0, "to": 1, "label": "1:N"},
+    {"from": 1, "to": 2, "label": "1:1"},
+    {"from": 1, "to": 6, "label": "1:N"},
+    {"from": 3, "to": 7, "label": "1:N"},
+    {"from": 6, "to": 7, "label": "1:N"},
+    {"from": 3, "to": 5, "label": "N:M"},
+    {"from": 4, "to": 5, "label": "N:M"},
+    {"from": 1, "to": 8, "label": "1:N"}
+  ]
+}

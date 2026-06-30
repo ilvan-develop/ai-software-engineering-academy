@@ -1,0 +1,2 @@
+# Cover prompt para Agentes de IA
+# Gerar via DALL-E ou Midjourney

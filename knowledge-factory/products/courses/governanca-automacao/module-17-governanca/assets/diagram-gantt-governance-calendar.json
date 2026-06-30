@@ -1,0 +1,14 @@
+{
+  "engine": "gantt",
+  "title": "Calendario de Governanca e Operacao",
+  "tasks": [
+    {"label": "Dependency Patches", "start": 0, "duration": 1, "group": "Fase 1"},
+    {"label": "Dependency Minors", "start": 1, "duration": 7, "group": "Fase 1"},
+    {"label": "Dependency Majors", "start": 14, "duration": 14, "group": "Fase 1"},
+    {"label": "Daily Full Backup", "start": 0, "duration": 30, "group": "Fase 2"},
+    {"label": "Key Rotation", "start": 0, "duration": 90, "group": "Fase 2"},
+    {"label": "SLO Latency Window", "start": 0, "duration": 28, "group": "Fase 3"},
+    {"label": "SLO Availability Window", "start": 0, "duration": 30, "group": "Fase 3"},
+    {"label": "Quarterly Report", "start": 75, "duration": 15, "group": "Fase 3"}
+  ]
+}

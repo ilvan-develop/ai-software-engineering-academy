@@ -1,0 +1,2 @@
+# Cover prompt para Auditorias
+# Gerar via DALL-E ou Midjourney

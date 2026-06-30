@@ -1,0 +1,647 @@
+# Component Library — IA para Desenvolvedores
+# Versao: 1.0.0
+# Proposito: Catalogo de componentes reutilizaveis para todos os formatos
+# Consome: design-tokens.yaml, brand-book.md, layout-grid.yaml, icons.yaml, editorial-design-spec.yaml
+
+version: "1.0.0"
+updated: "2026-06-28"
+author: "design-system-manager"
+
+# ─────────────────────────────────────────────
+# COMPONENTES CALLOUT
+# ─────────────────────────────────────────────
+components:
+
+  # --- CALLOUT PADRAO ---
+  - id: "callout"
+    name: "Callout Padrao"
+    category: "editorial"
+    description: "Caixa de destaque com icone, borda esquerda e cor semantica"
+    usage: "destacar informacao importante sem quebrar o fluxo de leitura"
+
+    variants:
+      - id: "callout-tip"
+        name: "Callout Dica"
+        icon: "fa:fa-lightbulb"
+        border_color: "#2E7D32"
+        bg_color: "#E8F5E9"
+        title: "DICA"
+        title_color: "#2E7D32"
+      - id: "callout-warning"
+        name: "Callout Atencao"
+        icon: "fa:fa-triangle-exclamation"
+        border_color: "#F57F17"
+        bg_color: "#FFF8E1"
+        title: "ATENCAO"
+        title_color: "#F57F17"
+      - id: "callout-info"
+        name: "Callout Informacao"
+        icon: "fa:fa-circle-info"
+        border_color: "#1565C0"
+        bg_color: "#E3F2FD"
+        title: "INFO"
+        title_color: "#1565C0"
+      - id: "callout-caution"
+        name: "Callout Cuidado"
+        icon: "fa:fa-hand"
+        border_color: "#C62828"
+        bg_color: "#FFEBEE"
+        title: "CUIDADO"
+        title_color: "#C62828"
+      - id: "callout-recap"
+        name: "Callout Recapitulacao"
+        icon: "fa:fa-list-check"
+        border_color: "#1A237E"
+        bg_color: "#F5F5F5"
+        title: "RECAPITULANDO"
+        title_color: "#1A237E"
+      - id: "callout-example"
+        name: "Callout Exemplo"
+        icon: "fa:fa-flask"
+        border_color: "#7B1FA2"
+        bg_color: "#F3E5F5"
+        title: "EXEMPLO"
+        title_color: "#7B1FA2"
+      - id: "callout-definition"
+        name: "Callout Definicao"
+        icon: "fa:fa-book-open"
+        border_color: "#0D47A1"
+        bg_color: "#E3F2FD"
+        title: "DEFINICAO"
+        title_color: "#0D47A1"
+
+    html_template: |
+      <div class="callout callout-{variant}">
+        <div class="callout-icon">
+          <i class="{icon}"></i>
+        </div>
+        <div class="callout-content">
+          <strong class="callout-title">{title}:</strong>
+          <span class="callout-text">{content}</span>
+        </div>
+      </div>
+
+    css_rules:
+      - ".callout { display: flex; gap: 8px; padding: 8px; border-radius: 3px; border-left: 4px solid; margin: 6px 0; }"
+      - ".callout-icon { flex: 0 0 24px; font-size: 1.2em; }"
+      - ".callout-title { font-weight: bold; margin-right: 4px; }"
+      - ".callout-tip { border-left-color: #2E7D32; background: #E8F5E9; }"
+      - ".callout-warning { border-left-color: #F57F17; background: #FFF8E1; }"
+      - ".callout-info { border-left-color: #1565C0; background: #E3F2FD; }"
+      - ".callout-caution { border-left-color: #C62828; background: #FFEBEE; }"
+
+    mermaid_equivalent: |
+      graph RL
+        A["{icon} {title}: {content}"]
+        style A fill:{bg_color},stroke:{border_color}
+
+  # --- EXERCISE BOX ---
+  - id: "exercise-box"
+    name: "Box de Exercicio"
+    category: "pedagogical"
+    description: "Caixa estruturada para exercicios praticos com duracao e instrucoes"
+
+    properties:
+      icon: "fa:fa-pen-ruler"
+      border: "1px solid #1A237E"
+      background: "#F5F5F5"
+      padding: "8pt"
+      title: "EXERCICIO"
+      title_color: "#1A237E"
+
+    slots:
+      - name: "duration"
+        label: "Duracao estimada"
+        type: "text"
+        example: "5 minutos"
+      - name: "instructions"
+        label: "Instrucoes"
+        type: "markdown_list"
+      - name: "success_criteria"
+        label: "Criterios de sucesso"
+        type: "checklist"
+      - name: "answer_key"
+        label: "Gabarito (opcional)"
+        type: "markdown"
+
+    html_template: |
+      <div class="exercise-box">
+        <div class="exercise-header">
+          <i class="fa-regular fa-pen-ruler"></i>
+          <strong>EXERCICIO</strong>
+          <span class="exercise-duration">Duracao: {duration}</span>
+        </div>
+        <div class="exercise-body">
+          {instructions}
+        </div>
+        {success_criteria}
+        {answer_key}
+      </div>
+
+  # --- CHALLENGE BOX ---
+  - id: "challenge-box"
+    name: "Box de Desafio"
+    category: "pedagogical"
+    description: "Box para desafios finais com complexidade maior"
+
+    properties:
+      icon: "fa:fa-screwdriver-wrench"
+      border: "2px solid #00BFA5"
+      background: "#F5F5F5"
+      padding: "8pt"
+      title: "DESAFIO"
+      title_color: "#00BFA5"
+
+    usage: "Final de capitulo, apos exercicios, requer sintese de multiplos conceitos"
+
+  # --- EXECUTIVE SUMMARY BOX ---
+  - id: "executive-summary"
+    name: "Sumario Executivo"
+    category: "navigation"
+    description: "Preview do que sera abordado em uma secao longa"
+
+    properties:
+      icon: "fa:fa-list"
+      type: "callout-info"
+      title: "NESTA SECAO"
+      placement: "inicio de capitulo ou secao > 50 linhas"
+
+  # --- PARE E PENSE BOX ---
+  - id: "pause-and-reflect"
+    name: "Pare e Pense"
+    category: "pedagogical"
+    description: "Momento de reflexao para o leitor, com pergunta provocativa"
+
+    properties:
+      icon: "fa:fa-question-circle"
+      border: "1px dashed #1A237E"
+      background: "#F5F5F5"
+      border_left: "3px solid #1A237E"
+      padding: "6pt"
+      title: "PARE E PENSE"
+      title_color: "#1A237E"
+
+# ─────────────────────────────────────────────
+# COMPONENTES DE CODIGO
+# ─────────────────────────────────────────────
+
+  # --- CODE BLOCK ---
+  - id: "code-block"
+    name: "Bloco de Codigo"
+    category: "code"
+    description: "Bloco de codigo formatado com linguagem e destaque"
+
+    properties:
+      font_family: "'Cascadia Code', 'Fira Code', 'JetBrains Mono', Consolas, monospace"
+      font_size_pt: 9
+      line_height: 1.5
+      color: "#E0E0E0"
+      background: "#263238"
+      padding: "8px"
+      border_radius: "3px"
+      line_numbers: false
+
+    variants:
+      - id: "code-good"
+        name: "Codigo Bom"
+        prefix: "[BOM]"
+        border_left: "2px solid #2E7D32"
+      - id: "code-bad"
+        name: "Codigo Ruim"
+        prefix: "[RUIM]"
+        border_left: "2px solid #C62828"
+      - id: "code-neutral"
+        name: "Codigo Neutro"
+        prefix: null
+        border_left: "none"
+
+    rules:
+      - "Sempre especificar linguagem no delimitador ```"
+      - "Maximo 30 linhas por bloco"
+      - "Blocos > 30 linhas: dividir em 2+ com contexto textual entre eles"
+
+  # --- COMPARACAO LADO A LADO ---
+  - id: "code-comparison"
+    name: "Comparacao de Codigo Lado a Lado"
+    category: "code"
+    description: "Dois blocos de codigo lado a lado para comparacao RUIM vs BOM"
+
+    properties:
+      layout: "2-column grid, 50% each"
+      left:
+        title: "RUIM"
+        title_color: "#C62828"
+        background: "#FFEBEE"
+      right:
+        title: "BOM"
+        title_color: "#2E7D32"
+        background: "#E8F5E9"
+
+    html_template: |
+      <div class="code-comparison">
+        <div class="code-column bad">
+          <div class="code-header">RUIM</div>
+          <pre><code>{left_code}</code></pre>
+        </div>
+        <div class="code-column good">
+          <div class="code-header">BOM</div>
+          <pre><code>{right_code}</code></pre>
+        </div>
+      </div>
+
+# ─────────────────────────────────────────────
+# COMPONENTES DE TABELA
+# ─────────────────────────────────────────────
+
+  # --- TABLE ---
+  - id: "table"
+    name: "Tabela"
+    category: "data"
+    description: "Tabela formatada com header estilizado e linhas alternadas"
+
+    properties:
+      header_bg: "#1A237E"
+      header_color: "#FFFFFF"
+      header_font: "Segoe UI Bold, 10pt"
+      body_font: "Georgia Regular, 10pt"
+      body_color: "#212121"
+      alt_row: "#F5F5F5"
+      border: "#E0E0E0, 0.5pt"
+      cell_padding: "4px"
+
+    variants:
+      - id: "table-simple"
+        name: "Tabela Simples"
+        columns: "2-3"
+        usage: "comparacoes diretas, pares chave-valor"
+      - id: "table-complex"
+        name: "Tabela Complexa"
+        columns: "4-7"
+        usage: "dados multidimensionais, especificacoes"
+      - id: "table-comparison"
+        name: "Tabela de Comparacao"
+        columns: "3-4"
+        usage: "antes/depois, ferramentas vs. caracteristicas"
+
+    rules:
+      - "Sempre ter cabecalho"
+      - "Maximo 7 colunas"
+      - "Celulas com texto longo (> 15 palavras): abreviar ou converter para lista"
+      - "Tabelas > 10 linhas: considerar conversao para diagrama"
+
+  # --- COMPARISON TABLE ---
+  - id: "comparison-table"
+    name: "Tabela de Comparacao Visual"
+    category: "data"
+    description: "Tabela com icones e cores para comparacao visual rapida"
+
+    properties:
+      columns:
+        - name: "Criterio"
+          width: "25%"
+        - name: "Opcao A"
+          width: "25%"
+        - name: "Opcao B"
+          width: "25%"
+        - name: "Veredito"
+          width: "25%"
+      colors:
+        winner: "#E8F5E9"  # verde claro
+        loser: "#FFEBEE"    # vermelho claro
+        tie: "#FFF8E1"      # amarelo claro
+
+# ─────────────────────────────────────────────
+# COMPONENTES DE DIAGRAMA
+# ─────────────────────────────────────────────
+
+  # --- MERMAID DIAGRAM ---
+  - id: "mermaid-diagram"
+    name: "Diagrama Mermaid"
+    category: "visual"
+    description: "Diagrama gerado por Mermaid com tema padrao da editora"
+
+    properties:
+      theme: "base"
+      theme_variables:
+        primaryColor: "#1A237E"
+        primaryTextColor: "#FFFFFF"
+        primaryBorderColor: "#0D47A1"
+        lineColor: "#0D47A1"
+        secondaryColor: "#E3F2FD"
+        tertiaryColor: "#F5F5F5"
+        fontSize: "12px"
+        fontFamily: '"Segoe UI", sans-serif'
+
+    variants:
+      - id: "flowchart"
+        name: "Flowchart"
+        type: "graph LR | graph TB"
+        max_nodes: 15
+        usage: "processos, pipelines, fluxos"
+      - id: "mindmap"
+        name: "Mind Map"
+        type: "mindmap"
+        max_nodes: 30
+        usage: "visao geral, categorizacao"
+      - id: "quadrant"
+        name: "Quadrant Chart"
+        type: "quadrantChart"
+        usage: "matriz 2x2, priorizacao"
+      - id: "xychart"
+        name: "XY Chart"
+        type: "xychart-beta"
+        usage: "graficos de barra/linha"
+
+    rules:
+      - "Sempre acompanhado de caption em italico (acessibilidade)"
+      - "Maximo 15 nos para flowchart (legibilidade em 6x9)"
+      - "Cores semanticas para tipos de no (decisao, processo, terminal)"
+      - "Funcionar em P&B (forma do no diferencia conteudo, nao cor)"
+
+  # --- INFOGRAPHIC ---
+  - id: "infographic"
+    name: "Infografico"
+    category: "visual"
+    description: "Combinacao de dados, icones e hierarquia visual para informacoes complexas"
+
+    properties:
+      format: "mermaid xychart ou imagem externa"
+      min_width_px: 600
+      caption_required: true
+      alt_text_required: true
+
+# ─────────────────────────────────────────────
+# COMPONENTES DE TIPOGRAFIA
+# ─────────────────────────────────────────────
+
+  # --- HEADING SYSTEM ---
+  - id: "heading-system"
+    name: "Sistema de Titulos"
+    category: "typography"
+    description: "Hierarquia completa de titulos H1-H4"
+
+    properties:
+      levels:
+        h1:
+          font: "Segoe UI Bold"
+          size_pt: 21
+          color: "#1A237E"
+          letter_spacing: "0.5px"
+          page_break_before: true
+          before_spacing: "18pt"
+          after_spacing: "6pt"
+        h2:
+          font: "Segoe UI Bold"
+          size_pt: 17
+          color: "#1A237E"
+          letter_spacing: "0.5px"
+          before_spacing: "12pt"
+          after_spacing: "6pt"
+        h3:
+          font: "Segoe UI Semibold"
+          size_pt: 14
+          color: "#0D47A1"
+          before_spacing: "8pt"
+          after_spacing: "4pt"
+        h4:
+          font: "Segoe UI Semibold"
+          size_pt: 12
+          color: "#212121"
+          before_spacing: "6pt"
+          after_spacing: "3pt"
+
+  # --- BODY TEXT ---
+  - id: "body-text"
+    name: "Texto Corrido"
+    category: "typography"
+    description: "Estilo padrao de paragrafo"
+
+    properties:
+      font: "Georgia Regular"
+      size_pt: 11
+      color: "#212121"
+      line_height: 1.6
+      after_spacing: "6pt"
+      max_line_length: "75 caracteres"
+
+  # --- LIST ---
+  - id: "list"
+    name: "Lista"
+    category: "typography"
+    description: "Lista ordenada ou nao ordenada"
+
+    properties:
+      font: "Georgia Regular"
+      size_pt: 11
+      color: "#212121"
+      indent: "12pt"
+      item_spacing: "3pt"
+      max_items: 7
+
+    variants:
+      - id: "list-bullet"
+        name: "Lista com Bullets"
+        marker: "•"
+        usage: "itens nao ordenados"
+      - id: "list-numbered"
+        name: "Lista Numerada"
+        marker: "1."
+        usage: "passos sequenciais"
+      - id: "list-checklist"
+        name: "Checklist"
+        marker: "[ ]"
+        usage: "itens de verificacao"
+
+# ─────────────────────────────────────────────
+# COMPONENTES DE ESTRUTURA DO LIVRO
+# ─────────────────────────────────────────────
+
+  # --- CHAPTER OPENER ---
+  - id: "chapter-opener"
+    name: "Abertura de Capitulo"
+    category: "structure"
+    description: "Pagina de abertura de capitulo com numero, titulo e subtitulo"
+
+    properties:
+      recto_only: true
+      drop_mm: 40
+      left_rail_width_mm: 15
+      left_rail_color: "#1A237E"
+      first_paragraph_no_indent: true
+      elements:
+        - "Numero do capitulo (faixa lateral esquerda)"
+        - "Titulo do capitulo (H1)"
+        - "Subtitulo descritivo (Georgia Italic 11pt)"
+        - "Linha decorativa (30mm, 0.5pt, brand.accent)"
+        - "Icone representativo do tema"
+
+  # --- PAGE HEADER/FOOTER ---
+  - id: "page-header-footer"
+    name: "Cabecalho e Rodape"
+    category: "structure"
+    description: "Cabecalho e rodape das paginas do livro"
+
+    properties:
+      header:
+        font: "Georgia Italic 8pt"
+        color: "#9E9E9E"
+        content_left: "titulo do capitulo (verso)"
+        content_right: "IA para Desenvolvedores (frente)"
+        align: "alternate"
+        separator: "0.5pt, #E0E0E0, 30mm width"
+      footer:
+        font: "Georgia 9pt"
+        color: "#1A237E"
+        content: "numero da pagina"
+        align: "outside"
+        height_mm: 6
+        from_bottom_mm: 10
+
+  # --- SECTION DIVIDER ---
+  - id: "section-divider"
+    name: "Separador de Secao"
+    category: "structure"
+    description: "Linha horizontal para separar secoes dentro do capitulo"
+
+    properties:
+      style: "0.5pt solid #E0E0E0"
+      width: "30mm"
+      alignment: "center"
+      spacing_before: "12pt"
+      spacing_after: "12pt"
+      usage: "entre secoes principais, nao entre subsecoes"
+
+# ─────────────────────────────────────────────
+# COMPONENTES DE NAVEGACAO
+# ─────────────────────────────────────────────
+
+  # --- TABLE OF CONTENTS ---
+  - id: "table-of-contents"
+    name: "Sumario"
+    category: "navigation"
+    description: "Sumario navegavel com 2 niveis de profundidade"
+
+    properties:
+      levels: 2
+      format: "numbered"
+      include_page_numbers: true
+      style:
+        level1: "Segoe UI Bold 12pt, #1A237E"
+        level2: "Georgia Regular 11pt, #424242, indent 12pt"
+      page_number_style: "Georgia 11pt, #757575"
+
+  # --- CHAPTER NAVIGATION ---
+  - id: "chapter-nav"
+    name: "Navegacao entre Capitulos"
+    category: "navigation"
+    description: "Links de navegacao no final de cada capitulo"
+
+    properties:
+      format: "anterior | indice | proximo"
+      font: "Georgia 9pt"
+      color: "#0D47A1"
+      position: "final de cada capitulo"
+
+  # --- GLOSSARY TOOLTIP ---
+  - id: "glossary-tooltip"
+    name: "Tooltip de Glossario"
+    category: "navigation"
+    description: "Tooltip interativo para definicao de termos na primeira aparicao"
+
+    properties:
+      format: "abbr element"
+      style: "border-bottom: 1px dotted #757575"
+      cursor: "help"
+      usage: "primeira aparicao de cada termo tecnico"
+
+# ─────────────────────────────────────────────
+# COMPONENTES DE SUPORTE
+# ─────────────────────────────────────────────
+
+  # --- BLOCKQUOTE ---
+  - id: "blockquote"
+    name: "Citacao em Destaque"
+    category: "support"
+    description: "Citacao de fonte externa com estilo destacado"
+
+    properties:
+      font: "Georgia Italic 11pt"
+      color: "#424242"
+      border_left: "2px solid #1A237E"
+      indent: "0.5cm from left"
+      spacing_before: "6pt"
+      spacing_after: "6pt"
+      source: "Georgia Regular 9pt, #757575, align right"
+
+  # --- FOOTNOTE ---
+  - id: "footnote"
+    name: "Nota de Rodape"
+    category: "support"
+    description: "Nota explicativa no rodape da pagina"
+
+    properties:
+      font: "Georgia 8pt"
+      color: "#757575"
+      marker: "superscript, #1A237E"
+      separator: "30mm line, 0.5pt, #E0E0E0"
+
+# ─────────────────────────────────────────────
+# COMPOSICAO — EXEMPLOS DE PAGINA COMPLETA
+# ─────────────────────────────────────────────
+page_examples:
+
+  # Pagina tipica de inicio de secao
+  - id: "page-section-start"
+    name: "Inicio de Secao"
+    composition:
+      - component: "heading-system.h2"
+        content: "Titulo da Secao"
+      - component: "body-text"
+        content: "Paragrafo de abertura (gancho narrativo)"
+      - component: "callout-info"
+        content: "Definicao do conceito"
+      - component: "body-text"
+        content: "Explicacao detalhada"
+      - component: "code-block"
+        content: "Exemplo de codigo"
+
+  # Pagina de meio de secao com exemplo
+  - id: "page-example-heavy"
+    name: "Pagina com Exemplos"
+    composition:
+      - component: "heading-system.h3"
+        content: "Subsecao"
+      - component: "body-text"
+        content: "Contexto do exemplo"
+      - component: "code-comparison"
+        content: "RUIM vs BOM"
+      - component: "callout-tip"
+        content: "Melhoria pratica"
+      - component: "list-bullet"
+        content: "Pontos-chave"
+
+  # Pagina de final de secao com exercicio
+  - id: "page-section-end"
+    name: "Final de Secao"
+    composition:
+      - component: "callout-recap"
+        content: "Resumo do que foi visto"
+      - component: "exercise-box"
+        content: "Exercicio pratico"
+      - component: "chapter-nav"
+        content: "Links para proximo capitulo"
+
+# ─────────────────────────────────────────────
+# CHECKLIST DE USO DO DESIGN SYSTEM
+# ─────────────────────────────────────────────
+design_system_checklist:
+  - "Use componentes do catalogo em vez de criar novos estilos inline"
+  - "Nao misture variantes de callout na mesma pagina"
+  - "Sempre inclua caption em diagramas e tabelas"
+  - "Maximo 3 niveis de heading em qualquer pagina"
+  - "Codigo sempre com linguagem especificada"
+  - "Listas com maximo 7 itens"
+  - "Tabelas com header sempre presente"
+  - "Callouts com icone sempre visivel"
+  - "Respeite a regra dos 3 tipos por pagina"
+  - "Nao use emoji como substituto de icone"

@@ -1,0 +1,226 @@
+# Infographic Specification — IA para Desenvolvedores
+# Versão: 1.0.0
+# Propósito: Especifica infográficos para conceitos multi-dimensionais no livro
+# Consome: design-tokens.yaml, brand-book.md, icons.yaml
+
+updated: "2026-06-28"
+author: "information-designer"
+
+infographics:
+
+  # ─────────────────────────────────────────────
+  # INFOGRÁFICO 1: Pipeline de Desenvolvimento com IA
+  # ─────────────────────────────────────────────
+  - id: "pipeline-ia-flow"
+    title: "Pipeline de Desenvolvimento Assistido por IA"
+    chapter: 3  # Automação e Pipeline com IA
+    description: "Fluxo completo de um pipeline CI/CD integrado com agentes de IA — do commit ao deploy com revisão automatizada"
+
+    format: "horizontal-flow"
+    style: "mermaid-flowchart"
+
+    # Cores (referência design-tokens.yaml)
+    colors:
+      node_bg: "#E3F2FD"
+      node_stroke: "#1A237E"
+      edge: "#0D47A1"
+      decision: "#FFF8E1"
+      terminal: "#E8F5E9"
+      agent: "#F3E5F5"
+
+    nodes:
+      - id: "commit"
+        label: "Git Push / PR"
+        icon: "dev.git"
+        color: "terminal"
+      - id: "lint"
+        label: "Lint & Format"
+        icon: "dev.code"
+        color: "node_bg"
+      - id: "test"
+        label: "Test Suite"
+        icon: "dev.test"
+        color: "node_bg"
+      - id: "review"
+        label: "Code Review (IA)"
+        icon: "dev.review"
+        color: "agent"
+      - id: "decide"
+        label: "Aprovação?"
+        icon: "actions.check"
+        color: "decision"
+      - id: "build"
+        label: "Build & Package"
+        icon: "infra.container"
+        color: "node_bg"
+      - id: "deploy"
+        label: "Deploy (Staging)"
+        icon: "dev.deploy"
+        color: "node_bg"
+      - id: "e2e"
+        label: "E2E Tests"
+        icon: "dev.test"
+        color: "node_bg"
+      - id: "prod"
+        label: "Deploy (Produção)"
+        icon: "actions.check"
+        color: "terminal"
+      - id: "monitor"
+        label: "Monitoramento"
+        icon: "infra.monitor"
+        color: "agent"
+
+    edges:
+      - from: "commit"
+        to: "lint"
+      - from: "lint"
+        to: "test"
+      - from: "test"
+        to: "review"
+      - from: "review"
+        to: "decide"
+      - from: "decide"
+        to: "build"
+        label: "Sim"
+      - from: "decide"
+        to: "commit"
+        label: "Não"
+        style: "dashed"
+      - from: "build"
+        to: "deploy"
+      - from: "deploy"
+        to: "e2e"
+      - from: "e2e"
+        to: "prod"
+      - from: "prod"
+        to: "monitor"
+
+    mermaid_code: |
+      graph LR
+        A["fa:fa-code-branch Git Push"] --> B["fa:fa-code Lint"]
+        B --> C["fa:fa-flask Tests"]
+        C --> D["fa:fa-eye Code Review (IA)"]
+        D --> E{"fa:fa-check Aprovado?"}
+        E -->|"fa:fa-check Sim"| F["fa:fa-box Build"]
+        E -->|"fa:fa-xmark Não"| A
+        F --> G["fa:fa-rocket Deploy Staging"]
+        G --> H["fa:fa-flask E2E"]
+        H --> I["fa:fa-check Deploy Prod"]
+        I --> J["fa:fa-gauge-high Monitor"]
+
+    caption: |
+      Pipeline CI/CD integrado com revisão de código por IA. 
+      O agente de IA atua como Code Reviewer automático entre os estágios de teste e build.
+      Ideal para fluxos com GitHub Actions + Claude Code ou similar.
+
+  # ─────────────────────────────────────────────
+  # INFOGRÁFICO 2: Prompt Engineering — Anatomia
+  # ─────────────────────────────────────────────
+  - id: "prompt-anatomy"
+    title: "Anatomia de um Prompt Estruturado"
+    chapter: 1  # O Erro de 90%
+    description: "Decomposição visual de um prompt eficaz em 5 partes"
+
+    format: "annotated-diagram"
+    style: "mermaid-block"
+
+    sections:
+      - name: "Contexto"
+        description: "Define o cenário, ferramentas e limitações"
+        icon: "ai.brain"
+        color: "node_bg"
+        example: "Você é um sênior TypeScript em um projeto Next.js 14 com Prisma..."
+      - name: "Tarefa"
+        description: "O que exatamente deve ser feito"
+        icon: "dev.code"
+        color: "node_bg"
+        example: "Crie um middleware de autenticação que valide JWT..."
+      - name: "Formato"
+        description: "Estrutura esperada da resposta"
+        icon: "dev.pr"
+        color: "node_bg"
+        example: "Retorne o código em TS + testes jest + explicação em 3 bullet points"
+      - name: "Restrições"
+        description: "O que NÃO fazer"
+        icon: "actions.warning"
+        color: "decision"
+        example: "Não use bibliotecas externas além de jsonwebtoken e NextAuth"
+      - name: "Exemplo"
+        description: "Exemplo concreto (few-shot)"
+        icon: "callouts.example"
+        color: "agent"
+        example: "Aqui está um middleware de rate-limit como referência..."
+
+    mermaid_code: |
+      graph TD
+        subgraph "Prompt Completo"
+          A["Contexto"] --> B["Tarefa"]
+          B --> C["Formato"]
+          C --> D["Restrições"]
+          D --> E["Exemplo"]
+        end
+
+    caption: |
+      Prompt estruturado com 5 partes. Cada parte tem função específica na comunicação com o modelo.
+      O Contexto ancora o modelo, a Tarefa direciona, o Formato organiza a saída,
+      as Restrições previnem desvios e o Exemplo calibra o estilo.
+
+  # ─────────────────────────────────────────────
+  # INFOGRÁFICO 3: Agentes Especializados em Time
+  # ─────────────────────────────────────────────
+  - id: "agent-org-chart"
+    title: "Organização de Agentes de IA em um Projeto"
+    chapter: 3  # Automação e Pipeline
+    description: "Estrutura de times de agentes de IA para diferentes responsabilidades no desenvolvimento"
+
+    format: "org-chart"
+    style: "mermaid-graph"
+
+    levels:
+      - name: "Orquestrador"
+        role: "Coordenador"
+        icon: "people.architect"
+        agent: "book-factory"
+        color: "agent"
+      - name: "Agentes Especialistas"
+        role: "Equipe de agentes"
+        items:
+          - name: "Code Reviewer"
+            icon: "dev.review"
+            color: "node_bg"
+          - name: "Test Writer"
+            icon: "dev.test"
+            color: "node_bg"
+          - name: "Doc Generator"
+            icon: "dev.code"
+            color: "node_bg"
+          - name: "Security Auditor"
+            icon: "infra.lock"
+            color: "node_bg"
+      - name: "Agentes Operacionais"
+        role: "Execução"
+        items:
+          - name: "Git Manager"
+            icon: "dev.branch"
+            color: "terminal"
+          - name: "Deploy Agent"
+            icon: "dev.deploy"
+            color: "terminal"
+          - name: "Monitor Agent"
+            icon: "infra.monitor"
+            color: "terminal"
+
+    mermaid_code: |
+      graph TB
+        O[Orquestrador] --> CR[Code Reviewer]
+        O --> TW[Test Writer]
+        O --> DG[Doc Generator]
+        O --> SA[Security Auditor]
+        O --> GM[Git Manager]
+        O --> DA[Deploy Agent]
+        O --> MA[Monitor Agent]
+
+    caption: |
+      Arquitetura de agentes em um projeto de software. Um orquestrador coordena
+      agentes especialistas (revisão, testes, docs, segurança) e operacionais
+      (git, deploy, monitoramento). Cada agente tem escopo restrito e ferramentas específicas.

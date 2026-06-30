@@ -1,0 +1,16 @@
+{
+  "engine": "sequence",
+  "title": "Onboarding de Tenant - Auth e Convite",
+  "participants": ["Owner", "Frontend", "Auth Service", "Tenant Service", "Email Provider", "DB"],
+  "messages": [
+    {"from": 0, "to": 1, "label": "preenche cadastro"},
+    {"from": 1, "to": 2, "label": "POST /register"},
+    {"from": 2, "to": 3, "label": "createTenant()"},
+    {"from": 3, "to": 5, "label": "INSERT Tenant"},
+    {"from": 5, "to": 3, "label": "tenant criado"},
+    {"from": 3, "to": 2, "label": "tenant vinculado"},
+    {"from": 2, "to": 4, "label": "sendWelcomeEmail()"},
+    {"from": 2, "to": 1, "label": "201 + JWT"},
+    {"from": 1, "to": 0, "label": "redirect dashboard"}
+  ]
+}

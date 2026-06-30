@@ -1,0 +1,5 @@
+{
+  "engine": "flowchart",
+  "title": "Processo de Product Discovery",
+  "steps": ["Oportunidade", "Pesquisa", "Ideacao", "Prototipacao", "Validacao"]
+}

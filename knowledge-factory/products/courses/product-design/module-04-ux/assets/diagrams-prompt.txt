@@ -1,0 +1,37 @@
+> Prompts para geracao de diagramas do modulo "UX Research & Design"
+
+## 1. UX vs UI
+
+**Midjourney:**
+```
+A Venn diagram showing UX and UI overlap, left circle with user journey and research icons, right circle with colors and typography icons, center with usable and beautiful interface, flat vector style, white background, no text, --ar 16:9 --style raw --v 6
+```
+
+**DALL-E 3:**
+```
+A clean Venn diagram on white background with two overlapping circles. Left circle labeled UX contains icons of user journey, research, and emotions. Right circle labeled UI contains icons of colors, typography, and buttons. Overlap shows a beautiful and functional interface icon. Navy blue and coral red accents, flat vector style, no readable text, 16:9 aspect ratio.
+```
+
+## 2. Os 5 Planos de Garrett
+
+**Midjourney:**
+```
+A stacked pyramid diagram with 5 horizontal layers, bottom layer strategy, moving up to scope, structure, skeleton, surface, each layer with subtle icons, navy to coral gradient, clean vector style, white background, no text, --ar 4:3 --style raw --v 6
+```
+
+**DALL-E 3:**
+```
+A five-layer pyramid diagram on white background representing the 5 planes of user experience: strategy at the base, then scope, structure, skeleton, and surface at the top. Each layer has subtle icons. Gradient from navy blue at the bottom to coral red at the top. Flat vector illustration, no readable text, 4:3 aspect ratio.
+```
+
+## 3. Mapa de Jornada do Usuário
+
+**Midjourney:**
+```
+A horizontal user journey map with phases, touchpoints, emotion curve, and pain points, stylized user walking along a timeline, navy and coral color scheme, clean vector illustration, white background, no text, --ar 16:9 --style raw --v 6
+```
+
+**DALL-E 3:**
+```
+A horizontal user journey map on white background. A timeline with phases, touchpoint icons (website, phone, support), an emotion curve line going up and down, and pain point markers. A stylized user figure walks along the path. Navy blue and coral red color scheme, flat vector illustration, no readable text, 16:9 aspect ratio.
+```

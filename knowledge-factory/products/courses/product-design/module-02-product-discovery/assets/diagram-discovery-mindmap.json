@@ -1,0 +1,27 @@
+{
+  "engine": "mindmap",
+  "title": "Product Discovery",
+  "center": "Discovery",
+  "branches": [
+    {
+      "label": "Pesquisa",
+      "color": "#1A237E",
+      "leaves": ["Entrevistas", "Surveys", "Analytics", "Concorrencia"]
+    },
+    {
+      "label": "Frameworks",
+      "color": "#00BFA5",
+      "leaves": ["JTBD", "Value Proposition", "Lean Canvas", "Opportunity Tree"]
+    },
+    {
+      "label": "Validacao",
+      "color": "#F57F17",
+      "leaves": ["MVP", "Landing Page", "Teste A/B", "Entrevista"]
+    },
+    {
+      "label": "Saidas",
+      "color": "#2E7D32",
+      "leaves": ["Backlog", "Personas", "User Stories", "Métricas"]
+    }
+  ]
+}

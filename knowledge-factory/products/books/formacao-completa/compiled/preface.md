@@ -1,0 +1,30 @@
+# Prefácio
+
+Conheci a inteligência artificial generativa em 2022, quando o ChatGPT ainda engatinhava. Lembro de pedir um código de validação de CPF — ele gerou algo que parecia certo, compilava, mas ignorava dígitos verificadores. Na hora, pensei: "útil, mas perigoso". Anos depois, esse momento define minha abordagem: IA não é resposta final, é ponto de partida que exige crítica.
+
+Este livro nasce dessa experiência. Não é uma celebração cega da IA, nem um manual de alarmismo. É um guia prático para desenvolvedores que querem usar IA no dia a dia sem cair nas armadilhas que eu mesmo já caí — e vi centenas de colegas caírem.
+
+## Para quem é este livro
+
+- Desenvolvedores que já usam (ou querem usar) IA e sentem que poderiam extrair mais
+- Arquitetos que precisam integrar agentes sem comprometer qualidade
+- Líderes técnicos cansados de código gerado por IA que "funciona" mas ninguém entende
+
+## Como usar
+
+Cada capítulo é autônomo. Se você só quer entender por que a IA gera código bugado, vá direto ao capítulo 1. Se quer montar um time de agentes, pule para o capítulo 2. Se precisa automatizar pipelines, capítulo 3 é seu ponto de partida.
+
+O que você vai encontrar:
+
+- **Código real** — os exemplos são de projetos que coloquei em produção, não teóricos
+- **Diagramas** — porque arquitetura se entende melhor visualmente
+- **Exercícios** — no final de cada capítulo, para fixar o que foi visto
+
+## Minha promessa
+
+Nenhuma seção deste livro foi escrita por IA. Usei IA para revisar, testar hipóteses e gerar exemplos iniciais — mas cada parágrafo, cada opinião e cada "isso não funciona na prática" veio de experiência vivida.
+
+Boa leitura. E lembre-se: o código é seu. A responsabilidade também.
+
+*Ilvan Joaquim*
+2026

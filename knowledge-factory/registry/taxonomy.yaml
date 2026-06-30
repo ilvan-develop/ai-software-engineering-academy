@@ -1,0 +1,62 @@
+# taxonomy.yaml — Taxonomia de Conteudo
+# Define os topicos, niveis e audiencias usados no catalog.yaml.
+# Populado e mantido pelo curador de conteudo.
+
+topics:
+  - id: fundamentos
+    label: "Fundamentos Enterprise"
+    description: "Introducao a arquitetura de software, mentalidade enterprise, papel do arquiteto"
+    subtopics: [introducao, mentalidade, carreira]
+
+  - id: product-design
+    label: "Product Design"
+    description: "Discovery, UX research, UI design, design systems, prototipacao"
+    subtopics: [discovery, design-thinking, ux, wireframes, ui, design-system]
+
+  - id: arquitetura-backend
+    label: "Arquitetura Backend"
+    description: "Clean Architecture, DDD, seguranca, multi-tenancy, modelagem"
+    subtopics: [clean-architecture, ddd, modelagem, seguranca, multi-tenant]
+
+  - id: frontend
+    label: "Frontend & DevOps"
+    description: "Desenvolvimento frontend, DevOps, QA, observabilidade"
+    subtopics: [frontend, devops, qualidade, observabilidade]
+
+  - id: governanca
+    label: "Governanca & Automacao"
+    description: "Governanca de software, agentes de IA, auditorias, automacao"
+    subtopics: [governanca, agentes-ia, auditorias, automacao]
+
+  - id: ia-programacao
+    label: "IA para Programacao"
+    description: "Uso de inteligencia artificial no ciclo de desenvolvimento"
+    subtopics: [erro-90, copilot, prompts]
+
+levels:
+  - id: beginner
+    label: "Iniciante"
+    description: "Nenhum conhecimento previo necessario"
+  - id: intermediate
+    label: "Intermediario"
+    description: "Requer conhecimento basico da area"
+  - id: advanced
+    label: "Avancado"
+    description: "Requer experiencia pratica na area"
+
+audiences:
+  - id: devs
+    label: "Desenvolvedores"
+    description: "Profissionais que escrevem codigo"
+  - id: architects
+    label: "Arquitetos"
+    description: "Profissionais que projetam sistemas"
+  - id: designers
+    label: "Designers"
+    description: "Profissionais de UX/UI"
+  - id: managers
+    label: "Gestores"
+    description: "Lideres tecnicos e gerentes de produto"
+  - id: students
+    label: "Estudantes"
+    description: "Pessoas em formacao na area de tecnologia"

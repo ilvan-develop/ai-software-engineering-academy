@@ -1,0 +1,149 @@
+# Icon Set — Editora AI Software Engineering Academy
+# Versão: 1.0.0
+# Propósito: Conjunto único de ícones para diagramas, callouts e elementos visuais
+# Consome: design-tokens.yaml (cores, tipografia)
+# Renderização: Mermaid, SVG inline ou Font Awesome
+
+version: "1.0.0"
+updated: "2026-06-28"
+author: "information-designer"
+icon_library: "Font Awesome 6 (Free)"  # Alternativas: Material Icons, Lucide
+
+# ─────────────────────────────────────────────
+# ÍCONES POR CATEGORIA
+# ─────────────────────────────────────────────
+icons:
+  # --- Conceitos de IA/ML ---
+  ai:
+    brain: "fa-brain"
+    robot: "fa-robot"
+    sparkles: "fa-wand-sparkles"
+    neural: "fa-circle-nodes"
+    model: "fa-cube"
+    training: "fa-gear"
+    inference: "fa-play"
+    prompt: "fa-message"
+    token: "fa-cubes"
+
+  # --- Desenvolvimento ---
+  dev:
+    code: "fa-code"
+    branch: "fa-code-branch"
+    commit: "fa-circle-check"
+    deploy: "fa-rocket"
+    pipeline: "fa-arrow-trend-up"
+    test: "fa-flask"
+    debug: "fa-bug"
+    terminal: "fa-terminal"
+    pr: "fa-code-pull-request"
+    review: "fa-eye"
+    database: "fa-database"
+    api: "fa-plug"
+    git: "fa-code-fork"
+
+  # --- Infraestrutura ---
+  infra:
+    cloud: "fa-cloud"
+    server: "fa-server"
+    container: "fa-box"
+    docker: "fa-cubes"  # ou fa-docker (pro)
+    network: "fa-network-wired"
+    lock: "fa-lock"
+    config: "fa-file-code"
+    log: "fa-list"
+    monitor: "fa-gauge-high"
+
+  # --- Pessoas e processos ---
+  people:
+    user: "fa-user"
+    team: "fa-users"
+    dev: "fa-user-gear"
+    architect: "fa-sitemap"
+    qa: "fa-check-double"
+    pm: "fa-chart-line"
+    learning: "fa-graduation-cap"
+
+  # --- Ações ---
+  actions:
+    add: "fa-plus-circle"
+    edit: "fa-pen"
+    delete: "fa-trash"
+    search: "fa-magnifying-glass"
+    filter: "fa-filter"
+    sort: "fa-arrow-down-wide-short"
+    download: "fa-download"
+    upload: "fa-upload"
+    settings: "fa-sliders"
+    notification: "fa-bell"
+    warning: "fa-triangle-exclamation"
+    info: "fa-circle-info"
+    check: "fa-check"
+    error: "fa-xmark"
+    refresh: "fa-rotate"
+    copy: "fa-copy"
+
+  # --- Callouts ---
+  callouts:
+    tip: "fa-lightbulb"
+    warning: "fa-triangle-exclamation"
+    info: "fa-circle-info"
+    caution: "fa-hand"
+    question: "fa-question-circle"
+    example: "fa-flask"
+    definition: "fa-book-open"
+    recap: "fa-list-check"
+    exercise: "fa-pen-ruler"
+    project: "fa-screwdriver-wrench"
+
+  # --- Interface do livro ---
+  book:
+    chapter: "fa-book"
+    section: "fa-file-lines"
+    toc: "fa-list"
+    index: "fa-magnifying-glass"
+    glossary: "fa-book-open"
+    appendix: "fa-paperclip"
+    reference: "fa-link"
+    figure: "fa-image"
+    table: "fa-table"
+    code: "fa-terminal"
+    note: "fa-sticky-note"
+    bookmark: "fa-bookmark"
+    tag: "fa-tags"
+
+# ─────────────────────────────────────────────
+# MAPEAMENTO CONCEITO → ÍCONE
+# ─────────────────────────────────────────────
+# Para uso em diagramas Mermaid, mapeie conceito do domínio para ícone
+concept_mapping:
+  # IA para Desenvolvedores
+  "LLM": "ai.brain"
+  "Prompt Engineering": "ai.prompt"
+  "RAG": "ai.cube"
+  "Fine-tuning": "ai.gear"
+  "Token": "ai.token"
+  "Context Window": "ai.cubes"
+  "Embedding": "ai.neural"
+  "API Key": "infra.lock"
+  "CI/CD Pipeline": "dev.pipeline"
+  "Code Review": "dev.review"
+  "Pull Request": "dev.pr"
+  "Deploy": "dev.deploy"
+  "Test Suite": "dev.test"
+  "Agent": "ai.robot"
+  "Tool Calling": "infra.api"
+  "Vector Database": "dev.database"
+  "Monitoring": "infra.monitor"
+  "Logging": "infra.log"
+  "Configuration": "infra.config"
+
+# ─────────────────────────────────────────────
+# REGRAS DE USO
+# ─────────────────────────────────────────────
+rules:
+  - "NUNCA use emoji (⚠️, ✅, ❌) como substituto de ícone — use o ícone correspondente do Font Awesome"
+  - "Cor do ícone: brand.secondary (#0D47A1) para destaque, text.muted (#757575) para decorativo"
+  - "Tamanho: 1em inline, 1.5em em callouts, 2em em diagramas"
+  - "Callout ícones sempre à esquerda, cor semântica (ver seção de callouts no brand-book)"
+  - "Diagramas Mermaid: use fontawesome icons via fa: prefix"
+  - "EPUB: ícones em SVG inline ou Font Awesome via CDN"

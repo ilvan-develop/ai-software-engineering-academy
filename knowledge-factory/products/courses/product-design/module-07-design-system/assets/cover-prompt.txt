@@ -1,0 +1,13 @@
+> Prompts para geracao da capa do modulo "Design System"
+
+## Midjourney
+
+```
+A sophisticated book cover about Design Systems, a modular grid of reusable UI components floating in space, connected by thin lines representing tokens and documentation, a central atom or building-block symbol, deep navy #1a1a2e background, coral #e94560 highlights, clean vector illustration, no text in image, --ar 2:3 --style raw --v 6
+```
+
+## DALL-E 3
+
+```
+Professional book cover illustration for a Design System course. A modular grid of reusable UI components (buttons, inputs, cards, icons) floating in space and connected by thin lines representing design tokens and documentation. A central atom/building-block symbol emphasizes the system concept. Deep navy blue background (#1a1a2e) with coral red highlights (#e94560). Clean vector style, no text, vertical 2:3 composition.
+```

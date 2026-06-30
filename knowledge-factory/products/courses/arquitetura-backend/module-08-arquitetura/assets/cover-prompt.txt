@@ -1,0 +1,2 @@
+# Cover prompt para Arquitetura de Software
+# Gerar via DALL-E ou Midjourney

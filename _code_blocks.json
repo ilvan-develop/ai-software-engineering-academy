@@ -1,0 +1,44 @@
+{
+  "governanca-automacao/module-17-governanca": {
+    "1": "Governança não é burocracia — é responsabilidade.\n\nO que levar para o dia a dia:\n  → Code review com checklist e approval gates\n  → ESLint + Prettier + Husky (automação > memorando)\n  → .env.example e git secrets (segurança por padrão)\n  → ADRs para decisões importantes\n  → Dependências sempre atualizadas\n  → Deploy com rollback testado\n  → Compliance integrada ao processo (não depois)\n  → SLOs que todo time conhece\n  → Cultura de qualidade, não de culpa\n"
+  },
+  "governanca-automacao/module-18-agentes-ia": {
+    "1": "PO descreve problema em linguagem natural\n        │\n        ▼\nProduct Discovery Agent → User Stories + Acceptance Criteria\n        │\n        ▼\nUX Researcher Agent → Valida com usuários → Personas + Jornada\n        │\n        ▼\nUX Designer Agent → Wireframes + User Flows\n        │\n        ▼\nUI Designer Agent → Mockups com Design System\n        │\n        ▼\nEnterprise Architect → Arquitetura + ADRs\n        │\n        ▼\nBackend + Frontend + Prisma + Security → Implementação\n        │\n        ▼\nQA Agent → Testes\n        │\n        ▼\nDevOps Agent → Deploy\n        │\n        ▼\nAuditor Agent → Score final\n"
+  },
+  "governanca-automacao/module-19-auditorias": {
+    "1": "Relatório executivo deve conter apenas:\n  1. Score geral (0-10)\n  2. Comparação com auditoria anterior (melhorou/piorou)\n  3. Top 3 riscos que precisam de atenção\n  4. Prazo estimado para correções\n  5. Impacto nos prazos do projeto\n"
+  },
+  "product-design/module-02-product-discovery": {
+    "1": "OKR da empresa: \"Aumentar receita recorrente em 25%\"\n\n→ Opportunity: churn de 15% ao mês\n→ Discovery: por que os clientes estão cancelando?\n→ Outcome: reduzir churn pela metade\n→ Backlog: funcionalidades que endereçam as causas\n"
+  },
+  "product-design/module-03-design-thinking": {
+    "1": "❌ Pular a fase de empatia\n   \"Já conhecemos nossos usuários\" — Não, você não conhece.\n   Consequência: Solução para o problema errado.\n\n❌ Brainstorming sem regras\n   Sem moderação, líderes dominam e ideias tímidas morrem.\n   Consequência: Mesmas soluções de sempre.\n\n❌ Protótipo fotorrealista antes da hora\n   Gastar dias no Figma antes de validar a ideia com papel.\n   Consequência: Apego à solução, resistência a mudanças.\n\n❌ Testar com amigos e familiares\n   Eles querem te agradar, não vão criticar.\n   Consequência: Feedback enviesado, falsa validação.\n\n❌ Design Thinking como caixa preta\n   \"Vamos fazer um workshop de DT e sai uma solução mágica\"\n   Consequência: Falta de engajamento, resultados superficiais.\n\n❌ Tratar DT como processo linear\n   \"Já testamos, passamos para a próxima fase\"\n   Consequência: Perde-se o principal benefício: a iteração.\n"
+  },
+  "product-design/module-04-ux": {
+    "1": "1. \"Qual o objetivo do usuário nesta tela?\"\n2. \"O que acontece se der erro?\"\n3. \"Como um usuário novato se sentiria aqui?\"\n4. \"Isso funciona sem JavaScript?\"\n5. \"O usuário consegue desfazer essa ação?\"\n6. \"Onde o usuário vai procurar essa funcionalidade?\"\n7. \"Em quanto tempo isso carrega no 3G?\"\n"
+  },
+  "product-design/module-05-wireframes": {
+    "1": "\n```typescript\n// Especificação de handoff\ninterface HandoffSpec {\n  screen: WireframeDocumentation;\n  responsiveBreakpoints: {\n    mobile: WireframeSpec;\n    tablet: WireframeSpec;\n    desktop: WireframeSpec;\n  };\n  componentReferences: {\n    [componentName: string]: string; // \"Button\" → \"ds-button\"\n  };\n  apiContracts: {\n    endpoint: string;\n    method: string;\n    requestFields: string[];\n    responseFields: string[];\n  }[];\n}\n"
+  },
+  "product-design/module-06-ui-design": {
+    "1": "Escala 1.25 (Major Second):\n11 → 14 → 16 → 20 → 24 → 32 → 40\n\nEscala 1.333 (Major Third):\n12 → 16 → 20 → 24 → 32 → 40 → 48\n"
+  },
+  "arquitetura-backend/module-08-arquitetura": {
+    "1": "Evento:           \"Algo aconteceu\"\n  → PedidoCriado, UsuarioCadastrado, PagamentoConfirmado\n\nProdutor:         Quem gera o evento\n  → Serviço de pedidos publica \"PedidoCriado\"\n\nConsumidor:       Quem reage ao evento\n  → Serviço de email escuta \"PedidoCriado\" e envia confirmação\n\nBarramento:       Meio de transporte\n  → RabbitMQ, Kafka, Redis Pub/Sub\n"
+  },
+  "arquitetura-backend/module-09-modelagem": {
+    "1": "1:1  — Um usuário tem um perfil\n1:N  — Um usuário tem muitos pedidos\nN:M  — Um produto está em muitas categorias\n"
+  },
+  "arquitetura-backend/module-12-seguranca": {
+    "1": "❌ \"Segurança é problema do DevOps\"\n❌ \"Depois a gente adiciona segurança\"\n❌ \"Ninguém vai atacar nosso sistema\"\n\n✅ \"Segurança é responsabilidade de todos\"\n✅ \"Segurança é parte da definição de 'pronto'\"\n✅ \"Se tem valor, vai ser atacado\"\n"
+  },
+  "capstone/module-21-projeto-final": {
+    "1": "push / PR → main:\n  1. Lint (ESLint + Prettier)\n  2. Type check (tsc --noEmit)\n  3. Testes unitários + integração\n  4. Build (Docker image)\n  5. Push para container registry\n  6. Deploy para staging (automatizado)\n  7. Smoke tests\n  8. Deploy para produção (manual)\n"
+  },
+  "frontend-devops/module-14-devops": {
+    "1": "node_modules\n.git\n.env\ndist\n.gitignore\n*.md\ncoverage\n"
+  },
+  "fundamentos-enterprise/module-01-mentalidade-enterprise": {
+    "1": "Disponibilidade     Downtime/ano       Exemplo\n99% (1 nove)       3.65 dias           Sistemas internos\n99.9% (2 noves)    8.76 horas          SaaS padrão\n99.99% (3 noves)   52.56 minutos       Enterprise crítico\n99.999% (4 noves)  5.26 minutos        Missão crítica\n"
+  }
+}

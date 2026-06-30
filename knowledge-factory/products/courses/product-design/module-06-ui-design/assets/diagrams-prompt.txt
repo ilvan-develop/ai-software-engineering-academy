@@ -1,0 +1,37 @@
+> Prompts para geracao de diagramas do modulo "UI Design"
+
+## 1. Hierarquia Visual
+
+**Midjourney:**
+```
+A visual hierarchy diagram showing text blocks in different sizes, a large headline at top, medium subheading, small body text, a highlighted CTA button standing out, navy and coral colors, clean vector style, white background, no text, --ar 16:9 --style raw --v 6
+```
+
+**DALL-E 3:**
+```
+A visual hierarchy diagram on white background. Blocks of placeholder text in descending sizes: large headline at top, medium subheading, small body text. A prominent coral red CTA button stands out at the bottom. Navy blue text blocks. Flat vector style, no readable text, 16:9 aspect ratio.
+```
+
+## 2. Sistema de Cores
+
+**Midjourney:**
+```
+A color system diagram showing primary color swatch, secondary colors, neutral grays, semantic colors for success, warning, error, info, with example usage chips, flat vector style, white background, no text, --ar 16:9 --style raw --v 6
+```
+
+**DALL-E 3:**
+```
+A color system diagram on white background. Rows of color swatches: primary, secondary, neutrals, and semantic colors (success green, warning yellow, error red, info blue). Small example chips show how colors apply to buttons and badges. Navy blue primary, coral red secondary accents, flat vector style, no readable text, 16:9 aspect ratio.
+```
+
+## 3. Tipografia e Escala
+
+**Midjourney:**
+```
+A typography scale diagram with text samples from large H1 down to small caption, showing font sizes in descending order, clean alignment lines, navy and coral accents, flat vector style, white background, no text, --ar 16:9 --style raw --v 6
+```
+
+**DALL-E 3:**
+```
+A typography scale diagram on white background. Horizontal lines of placeholder text in descending sizes from large display/H1 down through H2, H3, body, and caption. Alignment guides and a coral red accent mark the modular scale. Clean flat vector style, no readable text, 16:9 aspect ratio.
+```

@@ -1,0 +1,187 @@
+# Pipeline de Gates — Editorial Enterprise Pipeline
+# Define a ordem de execução, dependências e regras de transição entre departamentos
+
+pipeline:
+  name: "Editorial Enterprise Pipeline v1"
+  description: "Pipeline completo de produção editorial com 5 estágios e gates de qualidade"
+  version: "1.0"
+
+  stages:
+    - id: conteudo
+      name: "Produção de Conteúdo"
+      department: "conteudo"
+      order: 1
+      parallel_agents: true  # agentes dentro do departamento rodam em paralelo quando possível
+      agents:
+        - chief-editor
+        - curriculum-architect
+        - subject-matter-expert
+        - technical-writer
+        - educational-designer
+        - research-agent
+        - fact-checker
+        - example-creator
+        - exercise-creator
+        - quiz-creator
+      sequential_requirements:
+        # Ordem dentro do departamento:
+        - step: 1
+          agents: [chief-editor]
+          description: "Chief Editor define estrutura geral"
+        - step: 2
+          agents: [curriculum-architect, research-agent]
+          description: "Curriculum Architect + Research Agent em paralelo"
+        - step: 3
+          agents: [technical-writer, subject-matter-expert]
+          description: "Technical Writer escreve, SME valida"
+        - step: 4
+          agents: [educational-designer, fact-checker, example-creator]
+          description: "Design educacional + fact check + exemplos em paralelo"
+        - step: 5
+          agents: [exercise-creator, quiz-creator]
+          description: "Exercícios e quizzes em paralelo"
+      gate: "conteudo_to_editorial"
+
+    - id: editorial
+      name: "Revisão Editorial"
+      department: "editorial"
+      order: 2
+      parallel_agents: true
+      agents:
+        - copy-editor
+        - grammar-reviewer
+        - style-reviewer
+        - consistency-auditor
+        - terminology-auditor
+        - readability-auditor
+        - technical-accuracy-reviewer
+      sequential_requirements:
+        - step: 1
+          agents: [grammar-reviewer, style-reviewer]
+          description: "Gramática + Estilo em paralelo"
+        - step: 2
+          agents: [copy-editor, terminology-auditor, readability-auditor]
+          description: "Copy edit + Terminologia + Legibilidade em paralelo"
+        - step: 3
+          agents: [consistency-auditor, technical-accuracy-reviewer]
+          description: "Consistência + Precisão técnica em paralelo"
+      gate: "editorial_to_design"
+
+    - id: design
+      name: "Design e Diagramação"
+      department: "design"
+      order: 3
+      parallel_agents: true
+      agents:
+        - book-designer
+        - layout-designer
+        - typography-specialist
+        - color-specialist
+        - diagram-designer
+        - illustration-planner
+        - table-designer
+        - callout-designer
+        - cover-designer
+        - brand-book-designer
+        - information-designer
+        - epub-css-architect
+        - print-production-specialist
+        - accessible-design-specialist
+        - visual-hierarchy-auditor
+        - design-token-manager
+        - template-developer
+        - cover-illustration-director
+        - layout-system-architect
+      sequential_requirements:
+        - step: 1
+          agents: [book-designer, layout-system-architect, design-token-manager]
+          description: "Book Designer + Layout System Architect + Design Token Manager definem base"
+        - step: 2
+          agents: [typography-specialist, color-specialist, brand-book-designer]
+          description: "Tipografia + Cores + Brand Book em paralelo"
+        - step: 3
+          agents: [layout-designer, table-designer, callout-designer, template-developer, epub-css-architect]
+          description: "Layout + Tabelas + Callouts + Templates + CSS em paralelo"
+        - step: 4
+          agents: [diagram-designer, illustration-planner, information-designer, print-production-specialist]
+          description: "Diagramas + Ilustrações + Design Info + Produção Gráfica em paralelo"
+        - step: 5
+          agents: [cover-designer, cover-illustration-director]
+          description: "Capa + Direção de Arte em paralelo"
+        - step: 6
+          agents: [accessible-design-specialist, visual-hierarchy-auditor]
+          description: "Acessibilidade Visual + Auditoria de Hierarquia em paralelo (design review final)"
+      gate: "design_to_publicacao"
+
+    - id: publicacao
+      name: "Publicação e Formatos"
+      department: "publicacao"
+      order: 4
+      parallel_agents: false  # publishing agents run sequentially due to dependencies
+      agents:
+        - markdown-auditor
+        - docx-generator
+        - pdf-generator
+        - epub-generator
+        - template-manager
+        - brand-consistency-agent
+        - accessibility-auditor
+      sequential_requirements:
+        - step: 1
+          agents: [markdown-auditor]
+          description: "Markdown Auditor valida antes da conversão"
+        - step: 2
+          agents: [template-manager]
+          description: "Template Manager aplica templates"
+        - step: 3
+          agents: [docx-generator, pdf-generator, epub-generator]
+          description: "DOCX + PDF + EPUB em paralelo"
+        - step: 4
+          agents: [brand-consistency-agent]
+          description: "Brand Consistency Agent valida identidade visual"
+        - step: 5
+          agents: [accessibility-auditor]
+          description: "Accessibility Auditor valida formatos finais"
+      gate: "publicacao_to_qa"
+
+    - id: qa
+      name: "QA Editorial e Aprovação Final"
+      department: "qa"
+      order: 5
+      parallel_agents: true
+      agents:
+        - book-quality-auditor
+        - pedagogical-auditor
+        - technical-auditor
+        - visual-auditor
+        - publishing-auditor
+        - score-aggregator
+        - compliance-reporter
+        - gatekeeper
+        - audit-trail-recorder
+      sequential_requirements:
+        - step: 1
+          agents: [book-quality-auditor, pedagogical-auditor, technical-auditor, visual-auditor, publishing-auditor]
+          description: "Todos os 5 auditores em paralelo"
+        - step: 2
+          agents: [score-aggregator]
+          description: "Score Aggregator consolida notas"
+        - step: 3
+          agents: [compliance-reporter]
+          description: "Compliance Reporter valida conformidade"
+        - step: 4
+          agents: [gatekeeper, audit-trail-recorder]
+          description: "Gatekeeper decide + Audit Trail registra"
+      gate: "qa_to_publicado"
+
+  error_handling:
+    max_retries_per_gate: 3
+    retry_delay: "1h"  # tempo mínimo entre retry
+    escalation:
+      after_retries: 3
+      notify: "chief-editor"
+      action: "revisão manual do pipeline"
+
+  parallel_execution:
+    max_concurrent_agents_per_stage: 5
+    timeout_per_agent: "30min"

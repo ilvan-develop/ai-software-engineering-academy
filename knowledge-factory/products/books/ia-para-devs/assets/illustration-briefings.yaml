@@ -1,0 +1,560 @@
+# Illustration Briefings — IA para Desenvolvedores
+# Versao: 1.0.0
+# Proposito: Briefings para geracao de imagens, screenshots e ilustracoes
+# Consome: design-tokens.yaml, brand-book.md, assets/layout-book.yaml, icons.yaml
+
+version: "1.0.0"
+updated: "2026-06-28"
+author: "illustration-director"
+
+# ─────────────────────────────────────────────
+# ESTILO GERAL DE ILUSTRACAO
+# ─────────────────────────────────────────────
+global_style:
+  technique: "vector illustration with flat colors and geometric accents"
+  color_palette:
+    primary: "#1A237E"    # Azul royal escuro
+    secondary: "#0D47A1"  # Azul medio
+    accent: "#00BFA5"     # Teal
+    neutral: ["#212121", "#616161", "#9E9E9E", "#E0E0E0", "#F5F5F5"]
+    semantic: ["#2E7D32", "#F57F17", "#C62828", "#1565C0"]
+  mood: "professional, technical, clean, modern"
+  references: "O'Reilly cover style, Manning book illustrations, avoid 3D realism"
+  output_format: "PNG, 300 DPI, minimum 1200px width"
+  usage: "book interior (grayscale print), book cover (CMYK), digital (RGB)"
+
+# ─────────────────────────────────────────────
+# ILUSTRACAO 1: Capa do Livro (Cover Art)
+# ─────────────────────────────────────────────
+illustrations:
+  - id: "cover-art"
+    title: "Capa — IA para Desenvolvedores"
+    type: "full_cover"
+    location: "cover"
+    format: "full-bleed, 6x9in (152x229mm) + 3mm bleed"
+    orientation: "portrait"
+
+    description: >
+      Ilustracao abstrata que representa a sinergia entre inteligencia artificial
+      e desenvolvimento de software. Um cerebro humano estilizado (lado esquerdo)
+      se conecta a circuitos eletronicos (lado direito) atraves de linhas de
+      codigo que fluem como pontes. O estilo e minimalista, com linhas finas
+      e formas geometricas.
+
+    composition:
+      background: "gradiente de #1A237E (topo) para #0D47A1 (base)"
+      foreground:
+        - "Lado esquerdo: silhueta de cerebro em linhas finas brancas, estilo wireframe"
+        - "Centro: linhas de codigo estilizadas (<> { } / ) conectando cerebro a circuitos"
+        - "Lado direito: circuitos eletronicos abstratos em teal (#00BFA5)"
+        - "Elementos flutuantes: '@' , '{ }' , '=>' , '</>' em teal claro, opacidade 30%"
+      typography:
+        title: '"IA para Desenvolvedores" em branco, Segoe UI Bold, centralizado'
+        subtitle: '"Como Usar Inteligencia Artificial para Programar Melhor" em teal'
+        author: '"Ilvan Joaquim" em branco, Segoe UI Regular, parte inferior'
+
+    prompt_dalle: >
+      Book cover, vertical portrait orientation 6x9 inches. Abstract representation
+      of artificial intelligence merging with software development. Left side:
+      stylized human brain in thin white wireframe lines on deep navy blue background
+      (#1A237E). Right side: electronic circuit board patterns in teal (#00BFA5).
+      Center: bridge of floating code symbols (angle brackets, curly braces, slashes)
+      connecting brain to circuits. Minimalist, clean, professional tech aesthetic.
+      O'Reilly style. No 3D, no photorealism. Flat vector style with geometric precision.
+      Title area in center: "IA para Desenvolvedores" in white bold sans-serif.
+
+    prompt_midjourney: >
+      Book cover design, minimalist vector illustration, abstract fusion of human brain
+      and digital circuitry, deep navy blue gradient background (#1A237E to #0D47A1),
+      thin white wireframe brain on left, teal circuit patterns on right (#00BFA5),
+      floating code symbols connecting both sides, clean geometric shapes,
+      professional tech aesthetic, editorial style --ar 6:9 --style raw --v 6
+
+  # ─────────────────────────────────────────────
+  # ILUSTRACAO 2: Screenshot — Prompt Vago vs Estruturado
+  # ─────────────────────────────────────────────
+  - id: "screenshot-prompt-comparison"
+    title: "Comparacao de Prompts — Vago vs. Estruturado"
+    type: "screenshot_mockup"
+    chapter: 1
+    section: "Erro 2: Prompts vagos"
+    location: "book.md:123-152"
+
+    description: >
+      Mockup de duas janelas de chat lado a lado mostrando a diferenca entre
+      um prompt vago ("Faz ai uma funcao de login pra mim") e um prompt
+      estruturado (com contexto, intencao e formato esperado). A janela do prompt
+      vago tem borda vermelha sutil, a do estruturado tem borda verde.
+
+    composition:
+      layout: "two panels side by side, 50% width each"
+      left_panel:
+        title: "Prompt Vago [RUIM]"
+        border_color: "#C62828"  # error
+        bg_color: "#FFEBEE"      # callout_caution
+        content: |
+          User: "Faz ai uma funcao de login pra mim"
+          AI: [codigo PHP generico com sessoes]
+      right_panel:
+        title: "Prompt Estruturado [BOM]"
+        border_color: "#2E7D32"  # success
+        bg_color: "#E8F5E9"      # callout_tip
+        content: |
+          User: "Crie uma funcao de login em Node.js com Express.
+                 Valide email, compare senha com bcrypt,
+                 retorne JWT com 24h de expiracao."
+          AI: [codigo TypeScript especifico e funcional]
+
+    prompt_dalle: >
+      Side by side comparison of two AI chat interfaces. Left side labeled
+      "Prompt Vago" with red border, showing brief vague user message and
+      generic AI response. Right side labeled "Prompt Estruturado" with green
+      border, showing detailed structured user prompt and specific TypeScript code
+      response. Clean UI design, dark code blocks. Educational screenshot mockup style.
+
+    notes: "Gerar como screenshot mockup, nao screenshot real. Usar tema escuro para bloco de codigo."
+
+  # ─────────────────────────────────────────────
+  # ILUSTRACAO 3: Diagrama — Antes e Depois do AGENTS.md
+  # ─────────────────────────────────────────────
+  - id: "illustration-agentsmd-impact"
+    title: "Impacto do AGENTS.md na Qualidade do Codigo IA"
+    type: "informational_graphic"
+    chapter: 1
+    section: "Erro 4: Ignorar configuracao"
+    location: "book.md:210-218"
+
+    description: >
+      Visualizacao do impacto da configuracao de regras na taxa de erro do
+      codigo gerado por IA. Tres barras verticais: Sem regras (40% erro),
+      Com 4 regras (11% erro), Com 12 regras (3% erro). Uma linha de
+      tendencia decrescente conecta as barras. Icones de configuracao
+      (engrenagem) abaixo de cada barra que aumentam de tamanho.
+
+    composition:
+      layout: "3 vertical bars on horizontal axis"
+      bars:
+        - label: "Sem regras"
+          height_percent: 100
+          value: "~40%"
+          color: "#C62828"
+          icon: "fa:fa-times-circle"
+        - label: "4 regras"
+          height_percent: 27.5
+          value: "~11%"
+          color: "#F57F17"
+          icon: "fa:fa-gear"
+        - label: "12 regras"
+          height_percent: 7.5
+          value: "~3%"
+          color: "#2E7D32"
+          icon: "fa:fa-cogs"
+      trend_line:
+        direction: "descending"
+        color: "#1A237E"
+        label: "13,3x de melhoria"
+      annotations:
+        - text: "5 minutos de configuracao economizam horas de retrabalho"
+          position: "below chart"
+
+    prompt_midjourney: >
+      Informational bar chart graphic, 3 bars showing error rate reduction,
+      first bar red 40%, second bar orange 11%, third bar green 3%,
+      descending trend line, gear icons below each bar getting larger,
+      clean minimalist style, blue and teal color scheme, educational data
+      visualization, flat vector style --ar 16:9 --style raw --v 6
+
+  # ─────────────────────────────────────────────
+  # ILUSTRACAO 4: Fluxo de Trabalho com Agentes
+  # ─────────────────────────────────────────────
+  - id: "illustration-agent-workflow"
+    title: "Fluxo de Trabalho com Multiplos Agentes de IA"
+    type: "conceptual_diagram"
+    chapter: 2
+    section: "Como combinar agentes em pipeline"
+    location: "book.md:720-856"
+
+    description: >
+      Ilustracao conceitual mostrando um desenvolvedor (centro) orquestrando
+      varios agentes de IA especializados em torno dele. Cada agente e
+      representado por um icone em um circulo colorido: Code Reviewer (verde),
+      Test Writer (azul), Security Auditor (vermelho), Doc Generator (roxo),
+      DevOps (laranja). Linhas pontilhadas conectam o desenvolvedor aos agentes,
+      e linhas solidas conectam os agentes entre si em sequencia.
+
+    composition:
+      layout: "hub-and-spoke with central developer"
+      center: "Developer avatar (silhouette) in #1A237E circle"
+      spokes:
+        - agent: "Code Reviewer"
+          icon: "fa:fa-eye"
+          color: "#2E7D32"
+          position: "top-right"
+        - agent: "Test Writer"
+          icon: "fa:fa-flask"
+          color: "#1565C0"
+          position: "top-left"
+        - agent: "Security Auditor"
+          icon: "fa:fa-lock"
+          color: "#C62828"
+          position: "bottom-right"
+        - agent: "Doc Generator"
+          icon: "fa:fa-file-lines"
+          color: "#7B1FA2"
+          position: "bottom-left"
+        - agent: "DevOps"
+          icon: "fa:fa-rocket"
+          color: "#F57F17"
+          position: "bottom-center"
+      connections:
+        style: "dashed lines from center to agents, solid arrows between agents forming pipeline sequence"
+
+    prompt_dalle: >
+      Conceptual diagram showing a developer at center orchestrating multiple
+      AI agent icons around them. Hub and spoke layout. Central figure in dark
+      blue circle. Surrounding circles in green (Code Reviewer), blue (Test Writer),
+      red (Security Auditor), purple (Doc Generator), orange (DevOps). Each circle
+      contains a relevant icon. Connected by dashed and solid lines. Clean flat
+      vector style, professional tech illustration, blue and teal color scheme.
+      Educational diagram style, no photorealism.
+
+  # ─────────────────────────────────────────────
+  # ILUSTRACAO 5: Screenshot — GitHub Actions Pipeline
+  # ─────────────────────────────────────────────
+  - id: "screenshot-github-actions"
+    title: "Pipeline do GitHub Actions em Execucao"
+    type: "screenshot_mockup"
+    chapter: 3
+    section: "CI/CD — Pipelines de Integracao e Deploy Continuo"
+    location: "book.md:1067-1152"
+
+    description: >
+      Mockup da interface do GitHub Actions mostrando uma pipeline CI em execucao.
+      Jobs organizados em colunas: Lint (verde), Test (verde), Build (verde com
+      spinner), Deploy (cinza aguardando). Cada job tem steps expansiveis.
+      Interface limpa com o header padrao do GitHub. O repositorio mostrado
+      e "meu-projeto/meu-app".
+
+    composition:
+      layout: "full page mockup of GitHub Actions UI"
+      header:
+        repo: "meu-projeto/meu-app"
+        branch: "main"
+        commit_message: "feat: adiciona pipeline CI/CD"
+        status: "in_progress"
+      jobs:
+        - name: "Lint"
+          status: "completed"
+          time: "1m 12s"
+        - name: "Test (unit)"
+          status: "completed"
+          time: "2m 45s"
+        - name: "Test (integration)"
+          status: "completed"
+          time: "4m 30s"
+        - name: "Build"
+          status: "in_progress"
+          time: "3m 10s"
+        - name: "Deploy"
+          status: "pending"
+
+    prompt_dalle: >
+      Mockup of GitHub Actions CI pipeline interface. Clean UI showing a workflow
+      run in progress. Jobs displayed as columns: Lint (green checkmark), Test
+      (green checkmark), Build (yellow spinner in progress), Deploy (gray pending).
+      Header shows repository name, branch, and commit message. Professional,
+      clean screenshot style. Educational purpose. Light mode interface.
+
+    notes: "Usar como referencia visual para a secao de CI/CD. Nao substitui o codigo YAML."
+
+  # ─────────────────────────────────────────────
+  # ILUSTRACAO 6: Visual — Erro 3 (Pular Code Review)
+  # ─────────────────────────────────────────────
+  - id: "illustration-skip-review-consequence"
+    title: "A Consequencia de Pular Code Review em Codigo IA"
+    type: "conceptual_illustration"
+    chapter: 1
+    section: "Erro 3: Pular code review e testes"
+    location: "book.md:168-203"
+
+    description: >
+      Ilustracao conceitual em duas partes. Parte 1 (esquerda, tons de vermelho):
+      um commit sendo feito diretamente para a branch main, com um icone de IA
+      ao lado, sem passar por revisao. Uma linha do tempo abaixo mostra bugs
+      aparecendo em producao. Parte 2 (direita, tons de verde): o mesmo commit
+      passando por uma esteira de revisao (Code Review -> Tests -> CI) antes
+      de chegar na main. Uma linha do tempo abaixo mostra deploy estavel.
+
+    composition:
+      layout: "before/after split vertical"
+      before:
+        title: "Sem Revisao"
+        color: "#FFEBEE"
+        border: "#C62828"
+        elements:
+          - "Commit direto para main com icone IA"
+          - "Bug em producao"
+          - "Nome do dev no commit"
+      after:
+        title: "Com Revisao"
+        color: "#E8F5E9"
+        border: "#2E7D32"
+        elements:
+          - "Commit -> Code Review -> CI -> main"
+          - "Deploy estavel"
+          - "Qualidade garantida"
+      connect: "seta curva mostrando a transformacao"
+
+    prompt_midjourney: >
+      Split illustration before/after concept, left side red tones showing
+      direct commit to main branch without review leading to bugs in production,
+      right side green tones showing commit flowing through code review and
+      CI pipeline before reaching main, clean vector style, flat colors,
+      educational technical illustration --ar 16:9 --style raw --v 6
+
+  # ─────────────────────────────────────────────
+  # ILUSTRACAO 7: Visual — Blue-Green Deployment
+  # ─────────────────────────────────────────────
+  - id: "illustration-blue-green"
+    title: "Blue-Green: Troca de Ambiente sem Downtime"
+    type: "conceptual_diagram"
+    chapter: 3
+    section: "Automacao de Deploys"
+    location: "book.md:1496-1523"
+
+    description: >
+      Ilustracao mostrando dois servidores identicos lado a lado. O servidor
+      azul (esquerda) esta com o label "v1.0 (Atual)" e tem um icone de check
+      verde indicando que esta rodando. O servidor verde (direita) esta com o
+      label "v1.1 (Nova)" e tem um icone de deploy recente. Acima, um load
+      balancer com uma seta apontando para o servidor azul e uma seta
+      pontilhada para o verde. Uma chave DNS entre os dois.
+
+    composition:
+      layout: "three layers: load balancer (top), servers (middle), DNS switch (bottom)"
+      top: "Load balancer icon with arrows to both servers"
+      middle:
+        left: "Blue server (#E3F2FD) with checkmark"
+        right: "Green server (#E8F5E9) with deploy icon"
+      bottom: "DNS switch icon with curved arrow"
+      annotations:
+        - "Atual: 100% trafego no Blue"
+        - "Novo: 0% trafego no Green (preparando)"
+        - "Switch: DNS aponta para Green"
+        - "Rollback: reverter DNS para Blue"
+
+    prompt_dalle: >
+      Conceptual diagram of blue-green deployment. Two server boxes side by side.
+      Left blue server labeled "v1.0 (Current)" with green checkmark showing it
+      serves all traffic. Right green server labeled "v1.1 (New)" with deploy
+      icon. Load balancer above with arrows. DNS switch icon below with curved
+      rollback arrow. Clean flat vector style, blue and teal color scheme,
+      professional technical illustration, educational.
+
+  # ─────────────────────────────────────────────
+  # ILUSTRACAO 8: Pagina de Abertura de Capitulo
+  # ─────────────────────────────────────────────
+  - id: "chapter-opener-design"
+    title: "Pagina de Abertura de Capitulo — Template"
+    type: "layout_template"
+    chapter: "1, 2, 3"
+    location: "book.md: inicio de cada capitulo"
+
+    description: >
+      Template de pagina de abertura de capitulo. Fundo com faixa lateral
+      esquerda em brand.primary (#1A237E) com 15mm de largura contendo o
+      numero do capitulo em branco, vertical. Area principal com o titulo
+      do capitulo em H1, um subtitulo descritivo de uma linha, e um icone
+      representativo do tema do capitulo no canto inferior direito.
+
+    composition:
+      left_rail:
+        width_mm: 15
+        bg_color: "#1A237E"
+        content: "CAP. [NUMERO]" vertical, white, rotated 90 degrees
+      main_area:
+        title: "Titulo do Capitulo" em Segoe UI Bold 28pt
+        subtitle: "Descricao de uma linha" em Georgia Italic 11pt
+        icon: "Icone representativo no canto inferior direito"
+        icon_size: "48px"
+      decorative:
+        - "Linha horizontal de 30mm, 0.5pt, brand.accent, abaixo do subtitulo"
+
+    prompt_dalle: >
+      Book chapter opening page layout template. Left side has a dark blue
+      vertical band (#1A237E) with white rotated chapter number. Main area
+      has chapter title in large bold sans-serif font, subtitle below in
+      italic serif, with a thin teal decorative line. Corner has a relevant
+      icon. Minimalist, professional, editorial style. O'Reilly book style.
+
+  # ─────────────────────────────────────────────
+  # ILUSTRACAO 9: Infografico — Os 5 Erros (Resumo Visual)
+  # ─────────────────────────────────────────────
+  - id: "infographic-5-erros"
+    title: "Os 5 Erros ao Usar IA para Programar — Resumo Visual"
+    type: "infographic"
+    chapter: 1
+    section: "Conclusao"
+    location: "book.md:321-331"
+
+    description: >
+      Infografico em formato de pentagono ou circulo com 5 segmentos. Cada
+      segmento representa um erro com: numero, nome, icone, cor, e uma
+      estatistica chave. O circulo tem o titulo "5 Erros" no centro.
+      Cada erro conecta a uma acao corretiva no anel externo.
+
+    composition:
+      layout: "concentric circles or pentagon with 5 segments"
+      center: "CIRCLE: '5 Erros' em #1A237E"
+      inner_ring:
+        - error: 1
+          name: "Confiar cegamente"
+          icon: "fa:fa-brain"
+          color: "#C62828"
+          stat: "63% bugs"
+        - error: 2
+          name: "Prompts vagos"
+          icon: "fa:fa-message"
+          color: "#F57F17"
+          stat: "3h perdidas"
+        - error: 3
+          name: "Pular review"
+          icon: "fa:fa-eye-slash"
+          color: "#C62828"
+          stat: "Divida tecnica"
+        - error: 4
+          name: "Ignorar config"
+          icon: "fa:fa-gear"
+          color: "#F57F17"
+          stat: "40% -> 3% erro"
+        - error: 5
+          name: "Resposta final"
+          icon: "fa:fa-check-double"
+          color: "#1565C0"
+          stat: "~35% ganho"
+      outer_ring:
+        - action: "Valide toda saida"
+        - action: "Estruture prompts"
+        - action: "Revise e teste"
+        - action: "Configure o projeto"
+        - action: "Itere com feedback"
+
+    prompt_midjourney: >
+      Circular infographic with 5 segments, each representing a common AI
+      coding mistake, pentagon or wheel layout, center title "5 Erros",
+      inner ring has error names with icons and statistics, outer ring has
+      corrective actions, color coded red for critical, orange for moderate,
+      blue for process, clean flat vector style, educational infographic,
+      professional data visualization --ar 1:1 --style raw --v 6
+
+  # ─────────────────────────────────────────────
+  # ILUSTRACAO 10: Screenshot — Configuracao AGENTS.md
+  # ─────────────────────────────────────────────
+  - id: "screenshot-agentsmd"
+    title: "Exemplo de Arquivo AGENTS.md"
+    type: "screenshot_mockup"
+    chapter: 1
+    section: "Erro 4: Ignorar configuracao"
+    location: "book.md:242-255"
+
+    description: >
+      Mockup de um editor de codigo (VS Code) mostrando o arquivo AGENTS.md
+      aberto. O arquivo mostra a configuracao de exemplo: stack (React 18 +
+      TypeScript + Tailwind), regras (arrow functions, Result<T,E>, kebab-case).
+      O nome do arquivo esta na aba do editor. Destaque visual para a estrutura
+      clara e comentarios. Tema escuro do editor (Dracula ou similar).
+
+    composition:
+      layout: "VS Code window mockup"
+      window_title: "AGENTS.md — meu-projeto"
+      editor_theme: "dark (background #1E1E1E)"
+      language: "Markdown"
+      content_highlight:
+        - "Stack: React 18 + TypeScript + Tailwind CSS" em destaque
+        - "Regras:" com bullets
+        - "Use arrow functions" como regra destacada
+      sidebar: "File explorer minimizado com AGENTS.md selecionado"
+
+    prompt_dalle: >
+      VS Code editor window mockup showing AGENTS.md configuration file.
+      Dark theme editor, markdown syntax highlighting. File shows project
+      configuration for AI agent: stack info, coding rules, naming conventions.
+      Clean UI, professional screenshot style. Educational purpose.
+      File explorer minimizado on the left with AGENTS.md selected.
+
+# ─────────────────────────────────────────────
+# TABELA COMPLETA DE ILUSTRACOES
+# ─────────────────────────────────────────────
+illustration_table:
+  - id: "cover-art"
+    chapter: "Cover"
+    type: "full_cover"
+    priority: "P0"
+    prompt: "dalle+midjourney"
+
+  - id: "screenshot-prompt-comparison"
+    chapter: 1
+    type: "screenshot_mockup"
+    priority: "P0"
+    prompt: "dalle"
+
+  - id: "infographic-5-erros"
+    chapter: 1
+    type: "infographic"
+    priority: "P0"
+    prompt: "midjourney"
+
+  - id: "illustration-agentsmd-impact"
+    chapter: 1
+    type: "informational_graphic"
+    priority: "P1"
+    prompt: "midjourney"
+
+  - id: "illustration-skip-review-consequence"
+    chapter: 1
+    type: "conceptual_illustration"
+    priority: "P2"
+    prompt: "midjourney"
+
+  - id: "illustration-agent-workflow"
+    chapter: 2
+    type: "conceptual_diagram"
+    priority: "P1"
+    prompt: "dalle"
+
+  - id: "screenshot-github-actions"
+    chapter: 3
+    type: "screenshot_mockup"
+    priority: "P1"
+    prompt: "dalle"
+
+  - id: "illustration-blue-green"
+    chapter: 3
+    type: "conceptual_diagram"
+    priority: "P1"
+    prompt: "dalle"
+
+  - id: "chapter-opener-design"
+    chapter: "1,2,3"
+    type: "layout_template"
+    priority: "P2"
+    prompt: "dalle"
+
+  - id: "screenshot-agentsmd"
+    chapter: 1
+    type: "screenshot_mockup"
+    priority: "P2"
+    prompt: "dalle"
+
+# ─────────────────────────────────────────────
+# REGRAS DE PRODUCAO DE IMAGENS
+# ─────────────────────────────────────────────
+production_rules:
+  - "Screenshots DEVEM ser mockups, nao screenshots reais (evitar direitos autorais de UI)"
+  - "Ilustracoes conceituais DEVEM usar flat vector, nao 3D ou fotorealismo"
+  - "Cores DEVEM seguir design-tokens.yaml — #1A237E primaria, #00BFA5 destaque"
+  - "Todas as imagens DEVEM ter alt text descritivo acessivel"
+  - "Diagramas conceituais DEVEM funcionar em P/B (preto e branco)"
+  - "Icones nas ilustracoes DEVEM corresponder ao icons.yaml"
+  - "Dimensoes: 1200px de largura minima, 300 DPI, PNG"
+  - "Nao usar emojis como icones — usar Font Awesome ou SVG equivalentes"

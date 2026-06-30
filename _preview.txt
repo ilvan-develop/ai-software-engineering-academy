@@ -1,0 +1,42 @@
+
+=== governanca-automacao/module-17-governanca ===
+  Block #1: 459 chars, first: Governança não é burocracia — é responsabilidade.
+
+=== governanca-automacao/module-18-agentes-ia ===
+  Block #1: 601 chars, first: PO descreve problema em linguagem natural
+
+=== governanca-automacao/module-19-auditorias ===
+  Block #1: 233 chars, first: Relatório executivo deve conter apenas:
+
+=== product-design/module-02-product-discovery ===
+  Block #1: 228 chars, first: OKR da empresa: "Aumentar receita recorrente em 25%"
+
+=== product-design/module-03-design-thinking ===
+  Block #1: 860 chars, first: ❌ Pular a fase de empatia
+
+=== product-design/module-04-ux ===
+  Block #1: 297 chars, first: 1. "Qual o objetivo do usuário nesta tela?"
+
+=== product-design/module-05-wireframes ===
+  Block #1: 436 chars, first: ```typescript
+
+=== product-design/module-06-ui-design ===
+  Block #1: 123 chars, first: Escala 1.25 (Major Second):
+
+=== arquitetura-backend/module-08-arquitetura ===
+  Block #1: 352 chars, first: Evento:           "Algo aconteceu"
+
+=== arquitetura-backend/module-09-modelagem ===
+  Block #1: 113 chars, first: 1:1  — Um usuário tem um perfil
+
+=== arquitetura-backend/module-12-seguranca ===
+  Block #1: 234 chars, first: ❌ "Segurança é problema do DevOps"
+
+=== capstone/module-21-projeto-final ===
+  Block #1: 266 chars, first: push / PR → main:
+
+=== frontend-devops/module-14-devops ===
+  Block #1: 53 chars, first: node_modules
+
+=== fundamentos-enterprise/module-01-mentalidade-enterprise ===
+  Block #1: 267 chars, first: Disponibilidade     Downtime/ano       Exemplo

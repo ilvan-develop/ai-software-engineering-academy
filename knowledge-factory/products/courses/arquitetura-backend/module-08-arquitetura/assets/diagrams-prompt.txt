@@ -1,0 +1,2 @@
+# Diagramas para Arquitetura de Software
+# Revisar e gerar manualmente

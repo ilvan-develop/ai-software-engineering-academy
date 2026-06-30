@@ -1,0 +1,13 @@
+> Prompts para geracao da capa do modulo "Wireframes e Prototipação"
+
+## Midjourney
+
+```
+A professional book cover about wireframing and prototyping, layered wireframe screens transforming from rough pencil sketch to polished digital mockup, cursor pointer clicking a button, grid and rulers, navy #1a1a2e background with coral #e94560 highlights, clean vector illustration, no text in image, --ar 2:3 --style raw --v 6
+```
+
+## DALL-E 3
+
+```
+Professional book cover illustration for a Wireframes and Prototyping course. Multiple layered screen frames showing evolution from rough hand-drawn sketch to clean digital wireframe to polished UI mockup. A cursor pointer clicks a button on the top screen. Deep navy blue background (#1a1a2e) with coral red accents (#e94560). Clean vector style, no text, vertical 2:3 composition.
+```

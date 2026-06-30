@@ -1,0 +1,159 @@
+# Gate Policy — Editorial Pipeline
+# Define as regras de transição entre departamentos
+# Princípio fundamental: NINGUÉM aprova o próprio trabalho
+
+gate_policy_version: "1.0"
+last_updated: "2026-06-27"
+enforcement: "strict"  # strict | warning | disabled
+
+global_rules:
+  - id: "no-self-approval"
+    description: "Nenhum agente pode auditar ou aprovar conteúdo que ele mesmo produziu"
+    severity: "blocker"
+    auto_enforced: true
+
+  - id: "score-95-minimum"
+    description: "Todas as categorias BQS devem ter score ≥95 para aprovação"
+    severity: "blocker"
+    auto_enforced: true
+
+  - id: "audit-trail-mandatory"
+    description: "Toda execução de gate deve gerar entrada no audit trail"
+    severity: "critical"
+    auto_enforced: true
+
+  - id: "handoff-artifacts"
+    description: "Todos os artefatos definidos no handoff devem estar presentes"
+    severity: "blocker"
+    auto_enforced: true
+
+gates:
+
+  - id: "conteudo_to_editorial"
+    name: "Gate Conteúdo → Editorial"
+    from_department: "conteudo"
+    to_department: "editorial"
+    description: "Conteúdo técnico e pedagógico completo antes da revisão editorial"
+    evaluated_by: "book-quality-auditor"
+    requires_approval_from: "chief-editor"  # diferente de quem produziu
+    min_score: 95
+    categories_checked:
+      - estrutura_conteudo
+      - progressao_pedagogica
+      - qualidade_tecnica
+      - qualidade_exemplos
+      - exercicios_avaliacoes
+    artifacts_required:
+      - chapter.md
+      - exercises.md
+      - quiz.md
+    actions_on_fail:
+      - "Gerar relatório de gaps por categoria"
+      - "Encaminhar ao Departamento de Conteúdo para correção"
+      - "Reagendar auditoria após correção"
+
+  - id: "editorial_to_design"
+    name: "Gate Editorial → Design"
+    from_department: "editorial"
+    to_department: "design"
+    description: "Texto revisado e consistente antes do trabalho de design"
+    evaluated_by: "book-quality-auditor"
+    requires_approval_from: "copy-editor"  # diferente de quem revisou
+    min_score: 95
+    categories_checked:
+      - consistencia_terminologica
+      - tom_legibilidade
+    artifacts_required:
+      - chapter.reviewed.md
+      - revision-report.md
+    actions_on_fail:
+      - "Gerar relatório de gaps editoriais"
+      - "Encaminhar ao Departamento Editorial para correção"
+      - "Reagendar após correção"
+
+  - id: "design_to_publicacao"
+    name: "Gate Design → Publicação"
+    from_department: "design"
+    to_department: "publicacao"
+    description: "Design completo e assets prontos antes da conversão para formatos finais"
+    evaluated_by: "visual-auditor"
+    requires_approval_from: "book-designer"  # diferente de quem projetou
+    min_score: 95
+    categories_checked:
+      - design_hierarquia_visual
+    artifacts_required:
+      - layout-book.yaml
+      - cover-spec.md
+      - slide-template.md
+    actions_on_fail:
+      - "Gerar relatório de gaps de design"
+      - "Encaminhar ao Departamento de Design para correção"
+      - "Reagendar após correção"
+
+  - id: "publicacao_to_qa"
+    name: "Gate Publicação → QA"
+    from_department: "publicacao"
+    to_department: "qa"
+    description: "Formatos finais gerados e válidos antes da auditoria de qualidade"
+    evaluated_by: "publishing-auditor"
+    requires_approval_from: "template-manager"  # diferente de quem gerou
+    min_score: 95
+    categories_checked:
+      - qualidade_markdown
+      - qualidade_formatos
+      - acessibilidade
+    artifacts_required:
+      - livro.docx
+      - livro-digital.pdf
+      - livro.epub
+    actions_on_fail:
+      - "Gerar relatório de gaps de publicação"
+      - "Encaminhar ao Departamento de Publicação para correção"
+      - "Reagendar após correção"
+
+  - id: "qa_to_publicado"
+    name: "Gate Final — QA → Publicado"
+    from_department: "qa"
+    to_department: "publicado"
+    description: "Auditoria final completa. Livro aprovado para publicação."
+    evaluated_by: "gatekeeper"
+    requires_approval_from:
+      - "chief-editor"     # departamento de conteúdo
+      - "copy-editor"      # departamento editorial
+      - "book-designer"    # departamento de design
+      - "template-manager" # departamento de publicação
+    min_score: 95
+    categories_checked: "*"  # todas as 11 categorias
+    artifacts_required:
+      - livro.docx
+      - livro-digital.pdf
+      - livro-grafica.pdf
+      - livro.epub
+      - qa-report.md
+      - score-card.yaml
+      - audit-trail.log
+    actions_on_fail:
+      - "Gerar relatório consolidado de todas as categorias abaixo de 95"
+      - "Priorizar correções por categoria mais distante do mínimo"
+      - "Encaminhar aos departamentos responsáveis"
+      - "Agendar reavaliação completa do pipeline"
+    actions_on_pass:
+      - "Emitir certificado de qualidade editorial"
+      - "Registrar publicação no audit trail"
+      - "Atualizar curriculum/status.yaml para 'publicado'"
+      - "Notificar equipe de distribuição (social-media, newsletter, etc.)"
+
+  - id: "hotfix"
+    name: "Hotfix — Correção Rápida Pós-Publicação"
+    description: "Correções emergenciais que não exigem pipeline completo"
+    severity: "minor"
+    rules:
+      - "Apenas correções de typo, link quebrado ou formatação"
+      - "Não altera conteúdo técnico ou pedagógico"
+      - "Aprovado por 2 departamentos diferentes"
+      - "Registrado no audit trail como hotfix"
+    actions_on_fail:
+      - "Se a correção for maior que typo/link/formatação, pipeline completo é obrigatório"
+    artifacts_required:
+      - hotfix-request.md
+      - approval-from-2-depts.md

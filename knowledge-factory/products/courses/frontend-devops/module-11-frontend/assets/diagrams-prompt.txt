@@ -1,0 +1,2 @@
+# Diagramas para Desenvolvimento Frontend
+# Revisar e gerar manualmente

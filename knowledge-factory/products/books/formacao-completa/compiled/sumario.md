@@ -1,0 +1,40 @@
+# Sumário
+
+
+- Prefácio
+- Como usar este livro
+- **3. PARTE 1 — Fundamentos Enterprise**
+- **4. Introdução — O Papel do Arquiteto**
+- **5. Mentalidade Enterprise**
+- **6. PARTE 2 — Product Design**
+- **7. Product Discovery**
+- **8. Design Thinking**
+- **9. UX Research & Design**
+- **10. Wireframes e Prototipação**
+- **11. UI Design**
+- **12. Design System**
+- **13. PARTE 3 — Arquitetura Backend**
+- **14. Arquitetura de Software**
+- **15. Modelagem de Sistemas**
+- **16. Desenvolvimento Backend**
+- **17. Segurança**
+- **18. Arquitetura Multi-Tenant: Conceitos e Estratégias de Isolamento**
+- **19. Multi-Tenant: Implementação com NestJS e Prisma**
+- **20. Multi-Tenant: Migrations, Dados e Seed**
+- **21. Multi-Tenant: Operações e Qualidade**
+- **22. PARTE 4 — Frontend & DevOps**
+- **23. Desenvolvimento Frontend**
+- **24. DevOps e Infraestrutura**
+- **25. Qualidade e Testes**
+- **26. Observabilidade**
+- **27. PARTE 5 — Governança & Automação**
+- **28. Governança de Software**
+- **29. Agentes de IA**
+- **30. Auditorias**
+- **31. Automação do Ciclo de Desenvolvimento**
+- **32. PARTE 6 — Projeto Final**
+- **33. Construindo um SaaS Enterprise**
+- **34. Bônus — O Erro de 90% ao Usar IA para Programar**
+- **35. Conclusão e Próximos Passos**
+- **36. Apêndice A — Glossário**
+- **37. Apêndice B — Referências**
