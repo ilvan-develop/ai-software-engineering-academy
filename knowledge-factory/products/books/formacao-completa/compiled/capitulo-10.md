@@ -38,7 +38,7 @@ Modelagem boa:
 
 ### Tipos de Relacionamento
 
-```
+```text
 1:1  — Um usuário tem um perfil
 1:N  — Um usuário tem muitos pedidos
 N:M  — Um produto está em muitas categorias

@@ -325,7 +325,7 @@ Permissões granulares por recurso (projeto, tarefa, relatório, configuração)
 
 ### 5.2 Por que essa stack?
 
-```
+```text
 Empresas usam:     NestJS + Next.js + PostgreSQL + Redis + Docker + AWS
 Não usam:          PHP puro, jQuery, MySQL sem ORM, servidor único
 
@@ -797,7 +797,7 @@ docker compose up
 ### 9.5 CI/CD
 
 Pipeline de GitHub Actions:
-```
+```text
 push / PR → main:
   1. Lint (ESLint + Prettier)
   2. Type check (tsc --noEmit)

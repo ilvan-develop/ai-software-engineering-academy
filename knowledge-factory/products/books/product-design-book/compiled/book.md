@@ -46,7 +46,7 @@ Falsificável, iterativo               Definido, incremental
 
 ### Por que Discovery é importante?
 
-```
+```text
 Sem Discovery:
   "O cliente pediu uma tela de relatório"
   → 3 sprints de desenvolvimento
@@ -116,7 +116,7 @@ Gere múltiplas opções de solução, não apenas uma. Técnicas:
 - **Design Sprint** — Google Ventures, 5 dias
 - **How Might We** — reformular problema como pergunta
 
-```
+```text
 Problema: "Usuários não completam o cadastro"
 HMW: "Como poderíamos reduzir o atrito no cadastro?"
      → "Como poderíamos deixar o cadastro opcional?"
@@ -183,7 +183,7 @@ A ferramenta mais poderosa de discovery.
 
 Bom para validar achados qualitativos com escala.
 
-```
+```text
 ❌ "Você usaria uma funcionalidade de exportar relatórios?"
    (todo mundo diz sim — viés de cortesia)
 
@@ -221,7 +221,7 @@ Oportunidade: X + W simples + preço acessível
 
 Dados quantitativos não mentem — mas precisam de interpretação.
 
-```
+```text
 Métricas de Discovery:
 
 | Métrica                  | O que indica                             |
@@ -421,7 +421,7 @@ Piecemeal MVP       | Baixo   | Média     | Validar sem construir
 
 ### Exemplo: Landing page fake
 
-```
+```text
 Ideia: "App que agenda reuniões automaticamente"
 
 1. Criar landing page:
@@ -472,7 +472,7 @@ Orçamento anual fixo       Discovery não é orçado → não existe
 
 **1. Alinhe com OKRs**
 
-```
+```text
 OKR da empresa: "Aumentar receita recorrente em 25%"
 
 → Opportunity: churn de 15% ao mês
@@ -672,7 +672,7 @@ Design Thinking é uma abordagem **centrada no ser humano** para solução de pr
 
 ### Abordagem tradicional vs Design Thinking
 
-```
+```text
 TRADICIONAL:                                   DESIGN THINKING:
 Problema → Análise → Solução → Entrega        Problema → Empatia → Definir → Ideias → Protótipo → Teste
                                                                                             ↻
@@ -794,7 +794,7 @@ interface Observacao {
 
 **Exemplo de observação:**
 
-```
+```text
 Usuário: Maria (Analista de BI)
 Tarefa: Gerar relatório mensal de vendas
 
@@ -858,7 +858,7 @@ Na fase de Definir, você sintetiza tudo que aprendeu na empatia para criar um *
 
 Uma boa declaração de problema segue esta estrutura:
 
-```
+```text
 [USUÁRIO] precisa de [NECESSIDADE] porque [INSIGHT]
 ```
 
@@ -1347,7 +1347,7 @@ DEPOIS:
 
 A IBM criou uma adaptação própria chamada **Enterprise Design Thinking**, que adiciona:
 
-```
+```text
 Princípios IBM:
 1. Foco no resultado do usuário (não nas funcionalidades)
 2. Times multidisciplinares (não silos)
@@ -1367,7 +1367,7 @@ Hills (Metas):
 
 ## 10. Anti-padrões em Design Thinking
 
-```
+```text
 ❌ Pular a fase de empatia
    "Já conhecemos nossos usuários" — Não, você não conhece.
    Consequência: Solução para o problema errado.
@@ -1472,14 +1472,14 @@ Pesquisa não é opcional — é o que impede você de construir a feature errad
 
 ### Entrevistas
 
-```
+```text
 ❌ "Você usaria um botão de exportar CSV?"
 ✅ "Me conta como você faz para gerar relatórios hoje."
 ```
 
 **Estrutura de uma entrevista:**
 
-```
+```text
 1. Abertura (5min) — "Não estamos testando você, queremos aprender"
 2. Contexto (10min) — "Me conta seu dia a dia com..."
 3. Tarefa (15min) — "Você pode tentar fazer X enquanto pensa em voz alta?"
@@ -1623,7 +1623,7 @@ RETENÇÃO      "Uso semanal"           😊 Satisf.  Notificações
 
 Vai além do User Journey Map: **inclui a visão do backstage** (o que o sistema e o time fazem).
 
-```
+```text
 CLIENTE         Ações visíveis ao usuário
                     ↓
 FRONTSTAGE      Interações com o sistema (UI, API calls)
@@ -1772,7 +1772,7 @@ R
 
 ### Contraste
 
-```
+```text
 ✅ Bom contraste (AA):
    #333333 sobre #FFFFFF   — texto normal
    #000000 sobre #FFFFFF   — texto grande
@@ -1879,7 +1879,7 @@ UX Writing é a **criação de textos para interfaces** que guiam o usuário de 
 
 ### Mensagens de erro
 
-```
+```text
 ❌ "Falha ao processar requisição"
 ❌ "Ocorreu um erro inesperado"
 ❌ "Campos inválidos"
@@ -2104,7 +2104,7 @@ function TelaRelatorios() {
 
 ### Perguntas que todo dev deveria fazer
 
-```
+```text
 1. "Qual o objetivo do usuário nesta tela?"
 2. "O que acontece se der erro?"
 3. "Como um usuário novato se sentiria aqui?"
@@ -2360,7 +2360,7 @@ Use proporções familiares para criar harmonia visual:
 
 ### Quando usar qual
 
-```
+```text
 📝 Papel e caneta
   → Brainstorming individual ou em dupla
   → Sprint de design (Google Design Sprint)
@@ -2483,7 +2483,7 @@ interface Transition {
 
 Desenhar à mão força o **foco na estrutura** e elimina a tentação de polir visualmente. Além disso:
 
-```
+```text
 Vantagens do sketching:
 ├── Velocidade: 10x mais rápido que digital
 ├── Baixo comprometimento: fácil descartar e recomeçar
@@ -2849,7 +2849,7 @@ Checklist de handoff (wireframe → dev):
 [ ] Fluxo de navegação diagramado (wireflow)
 [ ] Anotações em elementos não óbvios
 [ ] Nomes de componentes consistentes com o design system
-```
+```text
 
 ```typescript
 // Especificação de handoff
@@ -2902,44 +2902,6 @@ Boas práticas:
 ### Exemplo de Changelog de Wireframe
 
 ```typescript
-interface WireframeChangelog {
-  version: string;
-  date: string;
-  author: string;
-  changes: string[];
-  reason: string;
-}
-
-const changelog: WireframeChangelog[] = [
-  {
-    version: '1.0',
-    date: '2025-06-01',
-    author: 'Maria Silva',
-    changes: ['Criação inicial do wireframe'],
-    reason: 'Primeira versão para alinhamento com PO',
-  },
-  {
-    version: '1.1',
-    date: '2025-06-03',
-    author: 'Maria Silva',
-    changes: [
-      'Adicionado campo de busca no header',
-      'Reduzido hero de 800px para 600px',
-    ],
-    reason: 'Feedback do PO: buscar é prioridade',
-  },
-  {
-    version: '2.0',
-    date: '2025-06-10',
-    author: 'Carlos Lima',
-    changes: [
-      'Reestruturado layout para sidebar + content',
-      'Adicionada seção de relatórios',
-      'Removido carrossel do hero',
-    ],
-    reason: 'Mudança de escopo: nova feature de relatórios',
-  },
-];
 
 
 
@@ -3037,7 +2999,7 @@ const aligned = {
 
 Itens relacionados devem ficar **próximos** visualmente. Itens não relacionados, separados.
 
-```
+```text
 ❌ Agrupamento confuso:
   [Nome] [Email] [Telefone]
   [Senha] [Confirmar Senha]
@@ -3203,7 +3165,7 @@ const enterpriseTypography: TypographyScale = {
 
 Use uma escala modular (ex: 1.25 ou 1.333) para garantir proporções harmônicas.
 
-```
+```text
 Escala 1.25 (Major Second):
 11 → 14 → 16 → 20 → 24 → 32 → 40
 
@@ -3898,26 +3860,6 @@ function checkFidelity(inspection: UIInspectionChecklist): number {
 Produtos enterprise geralmente precisam de mais densidade que produtos B2C.
 
 ```typescript
-// B2C — mais espaçado
-const consumerTable = {
-  padding: 16,
-  fontSize: 14,
-  rowHeight: 48,
-};
-
-// Enterprise — mais denso
-const enterpriseTable = {
-  padding: 12,
-  fontSize: 13,
-  rowHeight: 40,
-};
-
-// Tools/dashboard — alta densidade
-const denseTable = {
-  padding: 8,
-  fontSize: 12,
-  rowHeight: 32,
-};
 
 
 

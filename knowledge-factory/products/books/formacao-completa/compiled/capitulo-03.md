@@ -26,7 +26,7 @@ Falsificável, iterativo               Definido, incremental
 
 ### Por que Discovery é importante?
 
-```
+```text
 Sem Discovery:
   "O cliente pediu uma tela de relatório"
   → 3 sprints de desenvolvimento
@@ -96,7 +96,7 @@ Gere múltiplas opções de solução, não apenas uma. Técnicas:
 - **Design Sprint** — Google Ventures, 5 dias
 - **How Might We** — reformular problema como pergunta
 
-```
+```text
 Problema: "Usuários não completam o cadastro"
 HMW: "Como poderíamos reduzir o atrito no cadastro?"
      → "Como poderíamos deixar o cadastro opcional?"
@@ -163,7 +163,7 @@ A ferramenta mais poderosa de discovery.
 
 Bom para validar achados qualitativos com escala.
 
-```
+```text
 ❌ "Você usaria uma funcionalidade de exportar relatórios?"
    (todo mundo diz sim — viés de cortesia)
 
@@ -201,7 +201,7 @@ Oportunidade: X + W simples + preço acessível
 
 Dados quantitativos não mentem — mas precisam de interpretação.
 
-```
+```text
 Métricas de Discovery:
 
 | Métrica                  | O que indica                             |
@@ -401,7 +401,7 @@ Piecemeal MVP       | Baixo   | Média     | Validar sem construir
 
 ### Exemplo: Landing page fake
 
-```
+```text
 Ideia: "App que agenda reuniões automaticamente"
 
 1. Criar landing page:
@@ -452,7 +452,7 @@ Orçamento anual fixo       Discovery não é orçado → não existe
 
 **1. Alinhe com OKRs**
 
-```
+```text
 OKR da empresa: "Aumentar receita recorrente em 25%"
 
 → Opportunity: churn de 15% ao mês

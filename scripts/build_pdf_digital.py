@@ -17,6 +17,35 @@ MM_PER_INCH = 25.4
 BLEED_MM = 3
 
 
+_EMOJI_MAP = {
+    "\U0001f30a": "[wave]", "\U0001f331": "[seedling]",
+    "\U0001f389": "[party]", "\U0001f3a8": "[art]",
+    "\U0001f3af": "[target]", "\U0001f3c6": "[trophy]",
+    "\U0001f3e0": "[home]", "\U0001f41b": "[bug]",
+    "\U0001f45f": "[shoe]", "\U0001f464": "[user]",
+    "\U0001f4a1": "[idea]", "\U0001f4a5": "[boom]",
+    "\U0001f4bb": "[computer]", "\U0001f4cb": "[clipboard]",
+    "\U0001f4d6": "[book]", "\U0001f4da": "[books]",
+    "\U0001f4dd": "[memo]", "\U0001f4e6": "[package]",
+    "\U0001f4f1": "[phone]", "\U0001f504": "[refresh]",
+    "\U0001f50d": "[search]", "\U0001f527": "[wrench]",
+    "\U0001f534": "[red]", "\U0001f58c": "[brush]",
+    "\U0001f5c2": "[folder]", "\U0001f603": "[smile]",
+    "\U0001f60a": "[blush]", "\U0001f60d": "[heart_eyes]",
+    "\U0001f610": "[neutral]", "\U0001f615": "[confused]",
+    "\U0001f620": "[angry]", "\U0001f624": "[triumph]",
+    "\U0001f629": "[weary]", "\U0001f630": "[anxious]",
+    "\U0001f642": "[slight_smile]", "\U0001f680": "[rocket]",
+    "\U0001f6a8": "[alarm]", "\U0001f6ab": "[prohibited]",
+    "\U0001f6d2": "[cart]", "\U0001f7e1": "[yellow]",
+    "\U0001f7e2": "[green]", "\U0001f914": "[thinking]",
+}
+
+
+def _emoji_to_text(ch: str) -> str:
+    return _EMOJI_MAP.get(ch, "[?]")
+
+
 class BookPDF(FPDF):
     def __init__(self, engine: LayoutEngine, title="", subtitle="", author="",
                  print_mode=False, trim_size="6x9in"):
@@ -149,15 +178,42 @@ class BookPDF(FPDF):
         return self._font_map.get(yaml_family, yaml_family)
 
     def _normalize_text(self, text: str) -> str:
+        # Strip variation selector (U+FE0F) — invisible emoji modifier
+        text = text.replace("\ufe0f", "")
+        # Strip backspace control char (formatting artifact)
+        text = text.replace("\x08", "")
+
         replacements = {
             "\u2014": "--", "\u2013": "-",
             "\u2018": "'", "\u2019": "'",
             "\u201c": '"', "\u201d": '"',
             "\u2026": "...", "\u00a0": " ",
-            "\u2192": "->",
+            "\u2192": "->", "\u2190": "<-",
+            "\u2191": "^", "\u2193": "v",
+            "\u21bb": "~",  # ↻ refresh
+            "\u23f1": "[timer]",
+            "\u25b2": "^",  # ▲ triangle up
+            "\u25b6": ">",  # ▶ play
+            "\u25bc": "v",  # ▼ triangle down
+            "\u2606": "*",  # ☆ star
+            "\u267f": "[wheelchair]",
+            "\u26a0": "[warning]",
+            "\u2705": "[OK]",
+            "\u270f": "[pencil]",
+            "\u2713": "[check]",
+            "\u2728": "[sparkle]",
+            "\u274c": "[X]",
+            "\u2b50": "[star]",
         }
         for old, new in replacements.items():
             text = text.replace(old, new)
+
+        # Replace all Supplementary Multilingual Plane chars (emoji U+1F000+)
+        text = re.sub(
+            r"[\U00010000-\U0010FFFF]",
+            lambda m: _emoji_to_text(m.group(0)),
+            text,
+        )
         return text
 
     def header(self):
@@ -165,9 +221,9 @@ class BookPDF(FPDF):
             return
         self.set_font(self._family, "I", 7)
         self.set_text_color(158, 158, 158)
-        text = self.book_title
-        if self._chapter_title:
-            text = f"{self._chapter_title} | {text}"
+        title = self._normalize_text(self.book_title)
+        chapter = self._normalize_text(self._chapter_title) if self._chapter_title else ""
+        text = f"{chapter} | {title}" if chapter else title
         self.cell(0, 5, text, align="C")
         self.ln(8)
 
@@ -217,10 +273,18 @@ class BookPDF(FPDF):
 
     # ── Render methods ─────────────────────────────────────
 
+    def _ensure_space(self, needed_h: float):
+        """Adiciona quebra de pagina se o bloco nao couber no espaco restante."""
+        threshold = self.b_margin + 5
+        if self.get_y() + needed_h > self.h - threshold:
+            self.add_page()
+            if self.print_mode:
+                self._add_crop_marks()
+
     def render_heading(self, text, level):
         if level == 1:
             self._chapter_number += 1
-            self._chapter_title = text
+            self._chapter_title = self._normalize_text(text)
             self.add_page()
 
         self.ln(self.engine.spacing_before_heading(level))
@@ -249,10 +313,27 @@ class BookPDF(FPDF):
         family, _, size = self.engine.font_for("body")
         lh = self.engine.line_height_mm("body")
         self.set_text_color(*self.engine.color_for("body"))
+        body_color = self.engine.color_for("body")
+        code_bg = self.engine.color_from_palette("code_bg", "#263238")
 
         for seg in segments:
+            txt = self._normalize_text(seg.text)
+            if not txt:
+                continue
             if seg.code:
+                # Fundo leve para inline code (igual tom do block code, 15% opaco via mix)
+                code_bg_light = tuple(min(255, int(c + (255 - c) * 0.88)) for c in code_bg)
+                x0, y0 = self.get_x(), self.get_y()
                 self.set_font(self._mono_family, "", self.engine.font_size_pt("code"))
+                w_text = self.get_string_width(txt)
+                h_text = self.font_size_pt * 0.352778
+                # so destaca se o trecho nao for apenas espacos
+                if txt.strip():
+                    self.set_fill_color(*code_bg_light)
+                    pad = 0.8
+                    self.rect(x0, y0 - 0.5, w_text + 2 * pad, h_text + 1.0, style="F")
+                self.set_text_color(*body_color)
+                self.write(lh, txt)
             else:
                 style = ""
                 if seg.bold:
@@ -260,84 +341,134 @@ class BookPDF(FPDF):
                 if seg.italic:
                     style += "I"
                 self.set_font(self._resolve_family(family), style, size)
-            self.write(lh, self._normalize_text(seg.text))
+                self.set_text_color(*body_color)
+                self.write(lh, txt)
 
     def render_code_block(self, code, language=""):
         lines = code.split("\n")
-        x = self.l_margin + 3
-        w = self.w - x - self.r_margin - 3
-        line_h = 4.5
-        y0 = self.get_y()
-        badge_h = 3.5 if language else 0
-        total_h = len(lines) * line_h + 3 + badge_h
+        # Limita numero de linhas visiveis para evitar blocos gigantes (trunca com elipse)
+        max_lines = 80
+        truncated = len(lines) > max_lines
+        display_lines = lines[:max_lines]
+        if truncated:
+            display_lines.append("...")
+
+        padding_x = 3.0
+        padding_y = 2.5
+        line_h = self.engine.line_height_mm("code")
+        x = self.l_margin + padding_x
+        w = self.w - self.l_margin - self.r_margin - 2 * padding_x
+        badge_h = 5.0 if language else 0
+        content_h = len(display_lines) * line_h + 2 * padding_y
+        total_h = content_h + badge_h
+
+        self._ensure_space(total_h + 3)
 
         bg, txt_c, bdr_c = self.engine.code_colors()
+        y0 = self.get_y()
+
+        # Fundo do bloco de codigo preenche toda a largete util
         self.set_fill_color(*bg)
         self.set_draw_color(*bdr_c)
-        self.rect(x - 1, y0, w + 2, total_h, style="F")
+        rect_x = self.l_margin + 1
+        rect_w = self.w - self.l_margin - self.r_margin - 2
+        self.rect(rect_x, y0, rect_w, total_h, style="DF")
 
+        # Badge da linguagem
         if language:
-            self.set_xy(x, y0 + 0.5)
-            self.set_font(self._family, "B", 6.5)
+            self.set_xy(x, y0 + 1.5)
+            self.set_font(self._heading_family, "B", 6.5)
             self.set_text_color(158, 158, 158)
-            self.cell(w, 3, f"[{language}]")
-            y0 += 3.5
+            self.cell(rect_w - 2 * padding_x, 3, f"[{language}]")
+            y0 += badge_h
 
         self.set_font(self._mono_family, "", self.engine.font_size_pt("code"))
         self.set_text_color(*txt_c)
-        y = y0 + 1.5
-        for line in lines:
+        y = y0 + padding_y
+        for line in display_lines:
             self.set_xy(x, y)
-            self.cell(w, line_h, self._normalize_text(line))
+            norm = self._normalize_text(line)
+            # Trunca linhas muito longas para nao vazarem
+            cw = self.get_string_width("W") or 2.5
+            max_chars = max(1, int(w / cw))
+            if len(norm) > max_chars:
+                norm = norm[:max_chars - 1] + "…"
+            self.cell(w, line_h, norm)
             y += line_h
-        self.set_y(y)
+        self.set_y(self.get_y() + padding_y)
 
     def render_mermaid(self, code):
         lines = [l for l in code.split("\n") if l.strip()]
         if not lines:
             return
-        x = self.l_margin
-        w = self.w - x - self.r_margin
-        line_h = 4.5
-        y0 = self.get_y()
-        badge_h = 4
-        total_h = len(lines) * line_h + 3 + badge_h
+        padding_x = 3.0
+        padding_y = 2.5
+        line_h = 4.2
+        max_lines = 40
+        if len(lines) > max_lines:
+            lines = lines[:max_lines]
+            lines.append("...")
 
+        x = self.l_margin + padding_x
+        w = self.w - self.l_margin - self.r_margin - 2 * padding_x
+        badge_h = 5.0
+        content_h = len(lines) * line_h + 2 * padding_y
+        total_h = content_h + badge_h
+
+        self._ensure_space(total_h + 3)
+
+        y0 = self.get_y()
         self.set_fill_color(227, 242, 253)
         self.set_draw_color(21, 101, 192)
-        self.rect(x, y0, w, total_h, style="DF")
+        rect_x = self.l_margin + 1
+        rect_w = self.w - self.l_margin - self.r_margin - 2
+        self.rect(rect_x, y0, rect_w, total_h, style="DF")
 
-        self.set_xy(x + 2, y0 + 1)
+        self.set_xy(x, y0 + 1.5)
         self.set_font(self._heading_family, "B", 7)
         self.set_text_color(21, 101, 192)
-        self.cell(0, 3, "[Diagrama] Mermaid")
+        self.cell(rect_w - 2 * padding_x, 3, "[Diagrama] Mermaid")
 
         self.set_font(self._mono_family, "", 8)
         self.set_text_color(33, 33, 33)
-        y = y0 + 6
+        y = y0 + badge_h + padding_y
         for line in lines:
-            self.set_xy(x + 2, y)
-            self.cell(w - 4, line_h, self._normalize_text(line))
+            self.set_xy(x, y)
+            norm = self._normalize_text(line)
+            cw = self.get_string_width("W") or 2.5
+            max_chars = max(1, int(w / cw))
+            if len(norm) > max_chars:
+                norm = norm[:max_chars - 1] + "…"
+            self.cell(w, line_h, norm)
             y += line_h
-        self.set_y(y + 1)
+        self.set_y(self.get_y() + padding_y)
 
     def render_bullet_list(self, items):
-        self.set_font(self._family, "", self.engine.font_size_pt("body"))
+        family, _, size = self.engine.font_for("body")
+        lh = self.engine.line_height_mm("body")
+        self.set_font(self._resolve_family(family), "", size)
         self.set_text_color(*self.engine.color_for("body"))
         for item in items:
+            # Estimativa de altura simples
+            est_lines = max(1, -(-len(item) // 60))
+            self._ensure_space(est_lines * lh + 2)
             self.set_x(self.l_margin + 5)
-            self.cell(5, 5.5, "\u2022")
-            self.multi_cell(0, 5.5, self._normalize_text(item))
-            self.ln(1)
+            self.cell(5, lh, "\u2022")
+            self.multi_cell(0, lh, self._normalize_text(item))
+            self.ln(1.5)
 
     def render_numbered_list(self, items):
-        self.set_font(self._family, "", self.engine.font_size_pt("body"))
+        family, _, size = self.engine.font_for("body")
+        lh = self.engine.line_height_mm("body")
+        self.set_font(self._resolve_family(family), "", size)
         self.set_text_color(*self.engine.color_for("body"))
         for i, item in enumerate(items, 1):
+            est_lines = max(1, -(-len(item) // 55))
+            self._ensure_space(est_lines * lh + 2)
             self.set_x(self.l_margin + 5)
-            self.cell(8, 5.5, f"{i}.")
-            self.multi_cell(0, 5.5, self._normalize_text(item))
-            self.ln(1)
+            self.cell(8, lh, f"{i}.")
+            self.multi_cell(0, lh, self._normalize_text(item))
+            self.ln(1.5)
 
     def render_callout(self, block):
         ct_map = {
@@ -355,6 +486,10 @@ class BookPDF(FPDF):
         segments = parse_inline(text)
         x = self.l_margin
         w = self.w - x - self.r_margin
+
+        # Estimativa de altura para quebra de pagina
+        est_h = max(15, len(text) / 80 * 5.5 + 6)
+        self._ensure_space(est_h)
         y0 = self.get_y()
 
         first_pass = True
@@ -405,6 +540,8 @@ class BookPDF(FPDF):
         usable = self.w - self.l_margin - self.r_margin
         col_width = usable / col_count
         line_h = 5
+        est_h = (len(data) + 1) * line_h + 4
+        self._ensure_space(est_h)
         tc = self.engine.table_colors()
 
         for i, row_data in enumerate(data):
@@ -441,6 +578,9 @@ class BookPDF(FPDF):
         x = self.l_margin + 5
         w = self.w - x - self.r_margin - 5
         text = self._normalize_text(text)
+        est_lines = max(1, -(-len(text) // 60))
+        est_h = est_lines * self.engine.line_height_mm("body") + 4
+        self._ensure_space(est_h)
         y0 = self.get_y()
         self.set_font(self._family, "I", self.engine.font_size_pt("body"))
         self.set_text_color(66, 66, 66)

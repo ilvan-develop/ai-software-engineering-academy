@@ -60,14 +60,14 @@ Pesquisa não é opcional — é o que impede você de construir a feature errad
 
 ### Entrevistas
 
-```
+```text
 ❌ "Você usaria um botão de exportar CSV?"
 ✅ "Me conta como você faz para gerar relatórios hoje."
 ```
 
 **Estrutura de uma entrevista:**
 
-```
+```text
 1. Abertura (5min) — "Não estamos testando você, queremos aprender"
 2. Contexto (10min) — "Me conta seu dia a dia com..."
 3. Tarefa (15min) — "Você pode tentar fazer X enquanto pensa em voz alta?"
@@ -211,7 +211,7 @@ RETENÇÃO      "Uso semanal"           😊 Satisf.  Notificações
 
 Vai além do User Journey Map: **inclui a visão do backstage** (o que o sistema e o time fazem).
 
-```
+```text
 CLIENTE         Ações visíveis ao usuário
                     ↓
 FRONTSTAGE      Interações com o sistema (UI, API calls)
@@ -360,7 +360,7 @@ R
 
 ### Contraste
 
-```
+```text
 ✅ Bom contraste (AA):
    #333333 sobre #FFFFFF   — texto normal
    #000000 sobre #FFFFFF   — texto grande
@@ -467,7 +467,7 @@ UX Writing é a **criação de textos para interfaces** que guiam o usuário de 
 
 ### Mensagens de erro
 
-```
+```text
 ❌ "Falha ao processar requisição"
 ❌ "Ocorreu um erro inesperado"
 ❌ "Campos inválidos"
@@ -692,7 +692,7 @@ function TelaRelatorios() {
 
 ### Perguntas que todo dev deveria fazer
 
-```
+```text
 1. "Qual o objetivo do usuário nesta tela?"
 2. "O que acontece se der erro?"
 3. "Como um usuário novato se sentiria aqui?"

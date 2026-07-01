@@ -478,7 +478,7 @@ Event-Driven Architecture usa **eventos** para comunicação entre componentes.
 
 ### Conceitos
 
-```
+```text
 Evento:           "Algo aconteceu"
   → PedidoCriado, UsuarioCadastrado, PagamentoConfirmado
 

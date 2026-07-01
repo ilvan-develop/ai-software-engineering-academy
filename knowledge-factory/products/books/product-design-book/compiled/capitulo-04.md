@@ -225,7 +225,7 @@ Use proporções familiares para criar harmonia visual:
 
 ### Quando usar qual
 
-```
+```text
 📝 Papel e caneta
   → Brainstorming individual ou em dupla
   → Sprint de design (Google Design Sprint)
@@ -348,7 +348,7 @@ interface Transition {
 
 Desenhar à mão força o **foco na estrutura** e elimina a tentação de polir visualmente. Além disso:
 
-```
+```text
 Vantagens do sketching:
 ├── Velocidade: 10x mais rápido que digital
 ├── Baixo comprometimento: fácil descartar e recomeçar
@@ -714,7 +714,7 @@ Checklist de handoff (wireframe → dev):
 [ ] Fluxo de navegação diagramado (wireflow)
 [ ] Anotações em elementos não óbvios
 [ ] Nomes de componentes consistentes com o design system
-```
+```text
 
 ```typescript
 // Especificação de handoff
@@ -767,42 +767,4 @@ Boas práticas:
 ### Exemplo de Changelog de Wireframe
 
 ```typescript
-interface WireframeChangelog {
-  version: string;
-  date: string;
-  author: string;
-  changes: string[];
-  reason: string;
-}
-
-const changelog: WireframeChangelog[] = [
-  {
-    version: '1.0',
-    date: '2025-06-01',
-    author: 'Maria Silva',
-    changes: ['Criação inicial do wireframe'],
-    reason: 'Primeira versão para alinhamento com PO',
-  },
-  {
-    version: '1.1',
-    date: '2025-06-03',
-    author: 'Maria Silva',
-    changes: [
-      'Adicionado campo de busca no header',
-      'Reduzido hero de 800px para 600px',
-    ],
-    reason: 'Feedback do PO: buscar é prioridade',
-  },
-  {
-    version: '2.0',
-    date: '2025-06-10',
-    author: 'Carlos Lima',
-    changes: [
-      'Reestruturado layout para sidebar + content',
-      'Adicionada seção de relatórios',
-      'Removido carrossel do hero',
-    ],
-    reason: 'Mudança de escopo: nova feature de relatórios',
-  },
-];
 

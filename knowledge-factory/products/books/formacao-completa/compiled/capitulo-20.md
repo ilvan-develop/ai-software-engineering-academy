@@ -51,7 +51,7 @@ Cada auditoria produz um **score quantitativo** que permite comparar qualidade e
 
 ### Como o score é calculado
 
-```
+```text
 Score = (∑ scores por dimensão) / número de dimensões
 
 Cada dimensão = 0-10 baseado em:
@@ -261,7 +261,7 @@ Sim:
 
 ### Para o time técnico
 
-```
+```text
 Score 0-4 (Crítico/Ruim):
   ⚠️ Pare o que está fazendo
   ⚠️ Corrija riscos Blocker e Critical primeiro
@@ -285,7 +285,7 @@ Score 9-10 (Excelente):
 
 ### Para o gestor
 
-```
+```text
 Relatório executivo deve conter apenas:
   1. Score geral (0-10)
   2. Comparação com auditoria anterior (melhorou/piorou)

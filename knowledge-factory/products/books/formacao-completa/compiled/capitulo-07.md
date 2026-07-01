@@ -92,7 +92,7 @@ const aligned = {
 
 Itens relacionados devem ficar **próximos** visualmente. Itens não relacionados, separados.
 
-```
+```text
 ❌ Agrupamento confuso:
   [Nome] [Email] [Telefone]
   [Senha] [Confirmar Senha]
@@ -258,7 +258,7 @@ const enterpriseTypography: TypographyScale = {
 
 Use uma escala modular (ex: 1.25 ou 1.333) para garantir proporções harmônicas.
 
-```
+```text
 Escala 1.25 (Major Second):
 11 → 14 → 16 → 20 → 24 → 32 → 40
 
@@ -953,24 +953,4 @@ function checkFidelity(inspection: UIInspectionChecklist): number {
 Produtos enterprise geralmente precisam de mais densidade que produtos B2C.
 
 ```typescript
-// B2C — mais espaçado
-const consumerTable = {
-  padding: 16,
-  fontSize: 14,
-  rowHeight: 48,
-};
-
-// Enterprise — mais denso
-const enterpriseTable = {
-  padding: 12,
-  fontSize: 13,
-  rowHeight: 40,
-};
-
-// Tools/dashboard — alta densidade
-const denseTable = {
-  padding: 8,
-  fontSize: 12,
-  rowHeight: 32,
-};
 

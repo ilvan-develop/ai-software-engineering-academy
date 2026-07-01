@@ -634,7 +634,7 @@ Alta disponibilidade (HA) é a capacidade do sistema de **permanecer acessível*
 
 ### Métricas de disponibilidade
 
-```
+```text
 Disponibilidade     Downtime/ano       Exemplo
 99% (1 nove)       3.65 dias           Sistemas internos
 99.9% (2 noves)    8.76 horas          SaaS padrão
@@ -705,7 +705,7 @@ Falsificável, iterativo               Definido, incremental
 
 ### Por que Discovery é importante?
 
-```
+```text
 Sem Discovery:
   "O cliente pediu uma tela de relatório"
   → 3 sprints de desenvolvimento
@@ -775,7 +775,7 @@ Gere múltiplas opções de solução, não apenas uma. Técnicas:
 - **Design Sprint** — Google Ventures, 5 dias
 - **How Might We** — reformular problema como pergunta
 
-```
+```text
 Problema: "Usuários não completam o cadastro"
 HMW: "Como poderíamos reduzir o atrito no cadastro?"
      → "Como poderíamos deixar o cadastro opcional?"
@@ -842,7 +842,7 @@ A ferramenta mais poderosa de discovery.
 
 Bom para validar achados qualitativos com escala.
 
-```
+```text
 ❌ "Você usaria uma funcionalidade de exportar relatórios?"
    (todo mundo diz sim — viés de cortesia)
 
@@ -880,7 +880,7 @@ Oportunidade: X + W simples + preço acessível
 
 Dados quantitativos não mentem — mas precisam de interpretação.
 
-```
+```text
 Métricas de Discovery:
 
 | Métrica                  | O que indica                             |
@@ -1080,7 +1080,7 @@ Piecemeal MVP       | Baixo   | Média     | Validar sem construir
 
 ### Exemplo: Landing page fake
 
-```
+```text
 Ideia: "App que agenda reuniões automaticamente"
 
 1. Criar landing page:
@@ -1131,7 +1131,7 @@ Orçamento anual fixo       Discovery não é orçado → não existe
 
 **1. Alinhe com OKRs**
 
-```
+```text
 OKR da empresa: "Aumentar receita recorrente em 25%"
 
 → Opportunity: churn de 15% ao mês
@@ -1331,7 +1331,7 @@ Design Thinking é uma abordagem **centrada no ser humano** para solução de pr
 
 ### Abordagem tradicional vs Design Thinking
 
-```
+```text
 TRADICIONAL:                                   DESIGN THINKING:
 Problema → Análise → Solução → Entrega        Problema → Empatia → Definir → Ideias → Protótipo → Teste
                                                                                             ↻
@@ -1453,7 +1453,7 @@ interface Observacao {
 
 **Exemplo de observação:**
 
-```
+```text
 Usuário: Maria (Analista de BI)
 Tarefa: Gerar relatório mensal de vendas
 
@@ -1517,7 +1517,7 @@ Na fase de Definir, você sintetiza tudo que aprendeu na empatia para criar um *
 
 Uma boa declaração de problema segue esta estrutura:
 
-```
+```text
 [USUÁRIO] precisa de [NECESSIDADE] porque [INSIGHT]
 ```
 
@@ -2006,7 +2006,7 @@ DEPOIS:
 
 A IBM criou uma adaptação própria chamada **Enterprise Design Thinking**, que adiciona:
 
-```
+```text
 Princípios IBM:
 1. Foco no resultado do usuário (não nas funcionalidades)
 2. Times multidisciplinares (não silos)
@@ -2026,7 +2026,7 @@ Hills (Metas):
 
 ## 10. Anti-padrões em Design Thinking
 
-```
+```text
 ❌ Pular a fase de empatia
    "Já conhecemos nossos usuários" — Não, você não conhece.
    Consequência: Solução para o problema errado.
@@ -2131,14 +2131,14 @@ Pesquisa não é opcional — é o que impede você de construir a feature errad
 
 ### Entrevistas
 
-```
+```text
 ❌ "Você usaria um botão de exportar CSV?"
 ✅ "Me conta como você faz para gerar relatórios hoje."
 ```
 
 **Estrutura de uma entrevista:**
 
-```
+```text
 1. Abertura (5min) — "Não estamos testando você, queremos aprender"
 2. Contexto (10min) — "Me conta seu dia a dia com..."
 3. Tarefa (15min) — "Você pode tentar fazer X enquanto pensa em voz alta?"
@@ -2282,7 +2282,7 @@ RETENÇÃO      "Uso semanal"           😊 Satisf.  Notificações
 
 Vai além do User Journey Map: **inclui a visão do backstage** (o que o sistema e o time fazem).
 
-```
+```text
 CLIENTE         Ações visíveis ao usuário
                     ↓
 FRONTSTAGE      Interações com o sistema (UI, API calls)
@@ -2431,7 +2431,7 @@ R
 
 ### Contraste
 
-```
+```text
 ✅ Bom contraste (AA):
    #333333 sobre #FFFFFF   — texto normal
    #000000 sobre #FFFFFF   — texto grande
@@ -2538,7 +2538,7 @@ UX Writing é a **criação de textos para interfaces** que guiam o usuário de 
 
 ### Mensagens de erro
 
-```
+```text
 ❌ "Falha ao processar requisição"
 ❌ "Ocorreu um erro inesperado"
 ❌ "Campos inválidos"
@@ -2763,7 +2763,7 @@ function TelaRelatorios() {
 
 ### Perguntas que todo dev deveria fazer
 
-```
+```text
 1. "Qual o objetivo do usuário nesta tela?"
 2. "O que acontece se der erro?"
 3. "Como um usuário novato se sentiria aqui?"
@@ -3019,7 +3019,7 @@ Use proporções familiares para criar harmonia visual:
 
 ### Quando usar qual
 
-```
+```text
 📝 Papel e caneta
   → Brainstorming individual ou em dupla
   → Sprint de design (Google Design Sprint)
@@ -3142,7 +3142,7 @@ interface Transition {
 
 Desenhar à mão força o **foco na estrutura** e elimina a tentação de polir visualmente. Além disso:
 
-```
+```text
 Vantagens do sketching:
 ├── Velocidade: 10x mais rápido que digital
 ├── Baixo comprometimento: fácil descartar e recomeçar
@@ -3508,7 +3508,7 @@ Checklist de handoff (wireframe → dev):
 [ ] Fluxo de navegação diagramado (wireflow)
 [ ] Anotações em elementos não óbvios
 [ ] Nomes de componentes consistentes com o design system
-```
+```text
 
 ```typescript
 // Especificação de handoff
@@ -3561,44 +3561,6 @@ Boas práticas:
 ### Exemplo de Changelog de Wireframe
 
 ```typescript
-interface WireframeChangelog {
-  version: string;
-  date: string;
-  author: string;
-  changes: string[];
-  reason: string;
-}
-
-const changelog: WireframeChangelog[] = [
-  {
-    version: '1.0',
-    date: '2025-06-01',
-    author: 'Maria Silva',
-    changes: ['Criação inicial do wireframe'],
-    reason: 'Primeira versão para alinhamento com PO',
-  },
-  {
-    version: '1.1',
-    date: '2025-06-03',
-    author: 'Maria Silva',
-    changes: [
-      'Adicionado campo de busca no header',
-      'Reduzido hero de 800px para 600px',
-    ],
-    reason: 'Feedback do PO: buscar é prioridade',
-  },
-  {
-    version: '2.0',
-    date: '2025-06-10',
-    author: 'Carlos Lima',
-    changes: [
-      'Reestruturado layout para sidebar + content',
-      'Adicionada seção de relatórios',
-      'Removido carrossel do hero',
-    ],
-    reason: 'Mudança de escopo: nova feature de relatórios',
-  },
-];
 
 
 
@@ -3696,7 +3658,7 @@ const aligned = {
 
 Itens relacionados devem ficar **próximos** visualmente. Itens não relacionados, separados.
 
-```
+```text
 ❌ Agrupamento confuso:
   [Nome] [Email] [Telefone]
   [Senha] [Confirmar Senha]
@@ -3862,7 +3824,7 @@ const enterpriseTypography: TypographyScale = {
 
 Use uma escala modular (ex: 1.25 ou 1.333) para garantir proporções harmônicas.
 
-```
+```text
 Escala 1.25 (Major Second):
 11 → 14 → 16 → 20 → 24 → 32 → 40
 
@@ -4557,26 +4519,6 @@ function checkFidelity(inspection: UIInspectionChecklist): number {
 Produtos enterprise geralmente precisam de mais densidade que produtos B2C.
 
 ```typescript
-// B2C — mais espaçado
-const consumerTable = {
-  padding: 16,
-  fontSize: 14,
-  rowHeight: 48,
-};
-
-// Enterprise — mais denso
-const enterpriseTable = {
-  padding: 12,
-  fontSize: 13,
-  rowHeight: 40,
-};
-
-// Tools/dashboard — alta densidade
-const denseTable = {
-  padding: 8,
-  fontSize: 12,
-  rowHeight: 32,
-};
 
 
 
@@ -6508,7 +6450,7 @@ Event-Driven Architecture usa **eventos** para comunicação entre componentes.
 
 ### Conceitos
 
-```
+```text
 Evento:           "Algo aconteceu"
   → PedidoCriado, UsuarioCadastrado, PagamentoConfirmado
 
@@ -6650,7 +6592,7 @@ Modelagem boa:
 
 ### Tipos de Relacionamento
 
-```
+```text
 1:1  — Um usuário tem um perfil
 1:N  — Um usuário tem muitos pedidos
 N:M  — Um produto está em muitas categorias
@@ -7739,7 +7681,7 @@ Custo de prevenir:
 
 ### Mindset de segurança
 
-```
+```text
 ❌ "Segurança é problema do DevOps"
 ❌ "Depois a gente adiciona segurança"
 ❌ "Ninguém vai atacar nosso sistema"
@@ -11068,7 +11010,7 @@ Causas:
 
 ### A solução DevOps
 
-```
+```text
 Containerização (Docker):
   → Mesmo ambiente em dev, staging e produção
   → Dependências isoladas
@@ -11195,7 +11137,7 @@ volumes:
 
 ### .dockerignore
 
-```
+```text
 node_modules
 .git
 .env
@@ -11580,16 +11522,6 @@ app.useLogger(
 ### Exemplo de log estruturado
 
 ```json
-{
-  "timestamp": "2026-06-01T10:30:00.000Z",
-  "level": "error",
-  "message": "Falha na autenticação",
-  "context": "AuthService",
-  "userId": "abc123",
-  "ip": "192.168.1.1",
-  "attempt": 3,
-  "stack": "..."
-}
 
 
 
@@ -12527,7 +12459,7 @@ Governança de TI é o **sistema de regras, processos e práticas** que garante 
 
 ### Por que governança importa
 
-```
+```text
 Sem governança:
   → Cada time faz do seu jeito
   → Código sem padrão, difícil de manter
@@ -12592,7 +12524,7 @@ Code review é a **prática mais impactante** de governança de código. Mais do
 
 ### Políticas de Code Review
 
-```
+```text
 Obrigatório para todo PR que:
   → Altere lógica de negócio
   → Adicione ou remova dependências
@@ -12609,7 +12541,7 @@ Pode pular code review:
 
 ### Checklist de Code Review
 
-```
+```text
 □ A solução resolve o problema proposto?
 □ Existem testes para a mudança?
 □ Testes passam?
@@ -12625,7 +12557,7 @@ Pode pular code review:
 
 ### Approval Gates
 
-```
+```text
 PR aberto
 
   → Gate 1: CI passa (lint + testes + build)
@@ -12821,7 +12753,7 @@ Dependências desatualizadas são uma das **maiores fontes de vulnerabilidade** 
 
 ### Políticas de atualização
 
-```
+```text
 Dependabot/Renovate:
   → Diário: patches (1.x.x → 1.x.x)
   → Semanal: minor (1.x → 1.y)
@@ -12927,7 +12859,7 @@ repos:
 
 ### Se vazar — plano de ação
 
-```
+```text
 1. ROTACIONAR a chave IMEDIATAMENTE (não esperar)
 2. Revogar a chave vazada
 3. Verificar logs de acesso (a chave foi usada por terceiros?)
@@ -12968,7 +12900,7 @@ Trunk-based (deploy contínuo):
 
 ### Rollback Plan
 
-```
+```text
 Pré-deploy:
   → Tag da imagem Docker atual (sempre manter última N)
   → Backup de banco antes de migration destrutiva
@@ -13048,7 +12980,7 @@ Adotar PostgreSQL 16 como banco de dados principal.
 
 ### RFCs vs ADRs
 
-```
+```text
 ADR: Documenta uma decisão já tomada (ou em votação)
   → Tamanho: 1 página
   → Quando: após a decisão
@@ -13069,7 +13001,7 @@ Compliance não é só coisa do jurídico — **impacta diretamente o time de de
 
 ### LGPD (Lei Geral de Proteção de Dados)
 
-```
+```text
 O que o time de dev precisa saber:
   → Dados pessoais não podem ser logados
   → Exclusão lógica não é suficiente: usuário pode solicitar exclusão real
@@ -13086,7 +13018,7 @@ Na prática:
 
 ### SOC2
 
-```
+```text
 O que o time de dev precisa saber:
   → Controles de acesso (quem fez o quê, quando)
   → Monitoramento contínuo de segurança
@@ -13103,7 +13035,7 @@ Na prática:
 
 ### ISO 27001
 
-```
+```text
 O que o time de dev precisa saber:
   → Política de segurança da informação documentada
   → Gestão de ativos (inventário de sistemas)
@@ -13126,7 +13058,7 @@ Métricas que **traduzem qualidade técnica em linguagem de negócio**.
 
 ### Definições
 
-```
+```text
 SLI (Service Level Indicator): métrica técnica
   → Latência p99 < 200ms
   → Error rate < 0.1%
@@ -13224,7 +13156,7 @@ await createAuditLog({
 
 ### Changelogs automatizados
 
-```
+```text
 Mantido com Conventional Commits + semantic-release:
   → feat → nova entrada em "Features"
   → fix → nova entrada em "Bug Fixes"
@@ -13234,7 +13166,7 @@ Mantido com Conventional Commits + semantic-release:
 
 ### Rastreamento de decisões
 
-```
+```text
 Toda decisão técnica relevante deve ter:
   → Issue ou ADR associado
   → PR que implementa a decisão
@@ -13263,7 +13195,7 @@ O maior erro de governança é criar **burocracia que paralisa o time**. Governa
 
 ### Princípios de governança leve
 
-```
+```text
 1. Automatize antes de burocratizar
    → Code review manual é caro; lint/pre-commit é grátis
    → Se pode ser automatizado, automatize
@@ -13287,7 +13219,7 @@ O maior erro de governança é criar **burocracia que paralisa o time**. Governa
 
 ### Cultura de qualidade
 
-```
+```text
 Como construir:
 
   → Code review é ensinamento, não portaria
@@ -13309,7 +13241,7 @@ Como construir:
 
 ### Métricas de saúde da governança
 
-```
+```text
 Métrica                | Como medir                        | Alvo
 ----------------------|-----------------------------------|-------------------
 Tempo de code review  | Tempo entre PR e primeiro review  | < 4h úteis
@@ -13330,7 +13262,7 @@ Ferramentas de medição:
 
 ## Resumo
 
-```
+```text
 Governança não é burocracia — é responsabilidade.
 
 O que levar para o dia a dia:
@@ -13364,7 +13296,7 @@ Um ecossistema de agentes especializados produz **resultados excelentes em cada 
 
 ### O problema do agente genérico
 
-```
+```text
 Agente Genérico:
   Conhecimento: "sabe de tudo um pouco"
   ├── Frontend: ⭐⭐☆☆☆  (sabe React, mas não Next.js App Router)
@@ -13378,7 +13310,7 @@ Resultado: código "funciona", mas cheio de dívida técnica
 
 ### A solução dos agentes especializados
 
-```
+```text
 Agente Frontend:
   Conhecimento: Next.js 14, RSC, Tailwind, shadcn/ui
   ├── Performance: ⭐⭐⭐⭐⭐ (Lazy loading, Suspense, Image optimization)
@@ -13496,7 +13428,7 @@ agente/
 
 ### Passo a passo
 
-```
+```text
 1. Definir o DOMÍNIO do agente
    → Qual área ele cobre? (ex: "segurança de aplicações web")
 
@@ -13582,7 +13514,7 @@ Product Discovery  ──→  UX Designer  ──→  UI Designer
 
 ### Pipeline de auditoria
 
-```
+```text
 Feature implementada
         │
         ▼
@@ -13603,7 +13535,7 @@ Relatório consolidado com score geral
 
 ### Pipeline de onboarding
 
-```
+```text
 PO descreve problema em linguagem natural
         │
         ▼
@@ -13740,14 +13672,7 @@ O próximo passo natural: um **Meta-Agent** que cria agentes especializados sob 
 
 ### Como funcionaria
 
-```
-1. Meta-Agent analisa o problema
-2. Identifica os domínios necessários
-3. Cria um agente especializado para cada domínio
-4. Define os limites e responsabilidades
-5. Testa e ajusta cada agente
-6. Combina em pipeline
-7. Executa o pipeline completo
+```text
 
 
 
@@ -13804,7 +13729,7 @@ Cada auditoria produz um **score quantitativo** que permite comparar qualidade e
 
 ### Como o score é calculado
 
-```
+```text
 Score = (∑ scores por dimensão) / número de dimensões
 
 Cada dimensão = 0-10 baseado em:
@@ -14014,7 +13939,7 @@ Sim:
 
 ### Para o time técnico
 
-```
+```text
 Score 0-4 (Crítico/Ruim):
   ⚠️ Pare o que está fazendo
   ⚠️ Corrija riscos Blocker e Critical primeiro
@@ -14038,7 +13963,7 @@ Score 9-10 (Excelente):
 
 ### Para o gestor
 
-```
+```text
 Relatório executivo deve conter apenas:
   1. Score geral (0-10)
   2. Comparação com auditoria anterior (melhorou/piorou)
@@ -15695,7 +15620,7 @@ Permissões granulares por recurso (projeto, tarefa, relatório, configuração)
 
 ### 5.2 Por que essa stack?
 
-```
+```text
 Empresas usam:     NestJS + Next.js + PostgreSQL + Redis + Docker + AWS
 Não usam:          PHP puro, jQuery, MySQL sem ORM, servidor único
 
@@ -16167,7 +16092,7 @@ docker compose up
 ### 9.5 CI/CD
 
 Pipeline de GitHub Actions:
-```
+```text
 push / PR → main:
   1. Lint (ESLint + Prettier)
   2. Type check (tsc --noEmit)

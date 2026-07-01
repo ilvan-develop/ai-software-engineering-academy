@@ -350,7 +350,7 @@ Alta disponibilidade (HA) é a capacidade do sistema de **permanecer acessível*
 
 ### Métricas de disponibilidade
 
-```
+```text
 Disponibilidade     Downtime/ano       Exemplo
 99% (1 nove)       3.65 dias           Sistemas internos
 99.9% (2 noves)    8.76 horas          SaaS padrão

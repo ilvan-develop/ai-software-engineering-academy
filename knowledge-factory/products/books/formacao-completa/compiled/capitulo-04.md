@@ -40,7 +40,7 @@ Design Thinking é uma abordagem **centrada no ser humano** para solução de pr
 
 ### Abordagem tradicional vs Design Thinking
 
-```
+```text
 TRADICIONAL:                                   DESIGN THINKING:
 Problema → Análise → Solução → Entrega        Problema → Empatia → Definir → Ideias → Protótipo → Teste
                                                                                             ↻
@@ -162,7 +162,7 @@ interface Observacao {
 
 **Exemplo de observação:**
 
-```
+```text
 Usuário: Maria (Analista de BI)
 Tarefa: Gerar relatório mensal de vendas
 
@@ -226,7 +226,7 @@ Na fase de Definir, você sintetiza tudo que aprendeu na empatia para criar um *
 
 Uma boa declaração de problema segue esta estrutura:
 
-```
+```text
 [USUÁRIO] precisa de [NECESSIDADE] porque [INSIGHT]
 ```
 
@@ -715,7 +715,7 @@ DEPOIS:
 
 A IBM criou uma adaptação própria chamada **Enterprise Design Thinking**, que adiciona:
 
-```
+```text
 Princípios IBM:
 1. Foco no resultado do usuário (não nas funcionalidades)
 2. Times multidisciplinares (não silos)
@@ -735,7 +735,7 @@ Hills (Metas):
 
 ## 10. Anti-padrões em Design Thinking
 
-```
+```text
 ❌ Pular a fase de empatia
    "Já conhecemos nossos usuários" — Não, você não conhece.
    Consequência: Solução para o problema errado.

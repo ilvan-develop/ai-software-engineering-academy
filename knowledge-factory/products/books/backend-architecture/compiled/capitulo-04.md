@@ -33,7 +33,7 @@ Custo de prevenir:
 
 ### Mindset de segurança
 
-```
+```text
 ❌ "Segurança é problema do DevOps"
 ❌ "Depois a gente adiciona segurança"
 ❌ "Ninguém vai atacar nosso sistema"

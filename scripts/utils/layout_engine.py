@@ -141,7 +141,14 @@ class LayoutEngine:
 
     def spacing_after(self, block_type: str) -> float:
         key = self.SPACING_AFTER_MAP.get(block_type, "paragraph_after")
-        pt = self._spc.get(key, 6)
+        # Aumentamos os espacamentos padroes para evitar texto "grudado".
+        defaults = {
+            "paragraph_after": 10,
+            "code_block": 12,
+            "callout": 10,
+            "heading_after": 8,
+        }
+        pt = self._spc.get(key, defaults.get(key, 6))
         return _to_baseline(_parse_measure(pt) if isinstance(pt, str) else _pt_to_mm(pt))
 
     def spacing_before_heading(self, level: int) -> float:

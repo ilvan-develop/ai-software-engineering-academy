@@ -13,7 +13,7 @@ Governança de TI é o **sistema de regras, processos e práticas** que garante 
 
 ### Por que governança importa
 
-```
+```text
 Sem governança:
   → Cada time faz do seu jeito
   → Código sem padrão, difícil de manter
@@ -78,7 +78,7 @@ Code review é a **prática mais impactante** de governança de código. Mais do
 
 ### Políticas de Code Review
 
-```
+```text
 Obrigatório para todo PR que:
   → Altere lógica de negócio
   → Adicione ou remova dependências
@@ -95,7 +95,7 @@ Pode pular code review:
 
 ### Checklist de Code Review
 
-```
+```text
 □ A solução resolve o problema proposto?
 □ Existem testes para a mudança?
 □ Testes passam?
@@ -111,7 +111,7 @@ Pode pular code review:
 
 ### Approval Gates
 
-```
+```text
 PR aberto
 
   → Gate 1: CI passa (lint + testes + build)
@@ -307,7 +307,7 @@ Dependências desatualizadas são uma das **maiores fontes de vulnerabilidade** 
 
 ### Políticas de atualização
 
-```
+```text
 Dependabot/Renovate:
   → Diário: patches (1.x.x → 1.x.x)
   → Semanal: minor (1.x → 1.y)
@@ -413,7 +413,7 @@ repos:
 
 ### Se vazar — plano de ação
 
-```
+```text
 1. ROTACIONAR a chave IMEDIATAMENTE (não esperar)
 2. Revogar a chave vazada
 3. Verificar logs de acesso (a chave foi usada por terceiros?)
@@ -454,7 +454,7 @@ Trunk-based (deploy contínuo):
 
 ### Rollback Plan
 
-```
+```text
 Pré-deploy:
   → Tag da imagem Docker atual (sempre manter última N)
   → Backup de banco antes de migration destrutiva
@@ -534,7 +534,7 @@ Adotar PostgreSQL 16 como banco de dados principal.
 
 ### RFCs vs ADRs
 
-```
+```text
 ADR: Documenta uma decisão já tomada (ou em votação)
   → Tamanho: 1 página
   → Quando: após a decisão
@@ -555,7 +555,7 @@ Compliance não é só coisa do jurídico — **impacta diretamente o time de de
 
 ### LGPD (Lei Geral de Proteção de Dados)
 
-```
+```text
 O que o time de dev precisa saber:
   → Dados pessoais não podem ser logados
   → Exclusão lógica não é suficiente: usuário pode solicitar exclusão real
@@ -572,7 +572,7 @@ Na prática:
 
 ### SOC2
 
-```
+```text
 O que o time de dev precisa saber:
   → Controles de acesso (quem fez o quê, quando)
   → Monitoramento contínuo de segurança
@@ -589,7 +589,7 @@ Na prática:
 
 ### ISO 27001
 
-```
+```text
 O que o time de dev precisa saber:
   → Política de segurança da informação documentada
   → Gestão de ativos (inventário de sistemas)
@@ -612,7 +612,7 @@ Métricas que **traduzem qualidade técnica em linguagem de negócio**.
 
 ### Definições
 
-```
+```text
 SLI (Service Level Indicator): métrica técnica
   → Latência p99 < 200ms
   → Error rate < 0.1%
@@ -710,7 +710,7 @@ await createAuditLog({
 
 ### Changelogs automatizados
 
-```
+```text
 Mantido com Conventional Commits + semantic-release:
   → feat → nova entrada em "Features"
   → fix → nova entrada em "Bug Fixes"
@@ -720,7 +720,7 @@ Mantido com Conventional Commits + semantic-release:
 
 ### Rastreamento de decisões
 
-```
+```text
 Toda decisão técnica relevante deve ter:
   → Issue ou ADR associado
   → PR que implementa a decisão
@@ -749,7 +749,7 @@ O maior erro de governança é criar **burocracia que paralisa o time**. Governa
 
 ### Princípios de governança leve
 
-```
+```text
 1. Automatize antes de burocratizar
    → Code review manual é caro; lint/pre-commit é grátis
    → Se pode ser automatizado, automatize
@@ -773,7 +773,7 @@ O maior erro de governança é criar **burocracia que paralisa o time**. Governa
 
 ### Cultura de qualidade
 
-```
+```text
 Como construir:
 
   → Code review é ensinamento, não portaria
@@ -795,7 +795,7 @@ Como construir:
 
 ### Métricas de saúde da governança
 
-```
+```text
 Métrica                | Como medir                        | Alvo
 ----------------------|-----------------------------------|-------------------
 Tempo de code review  | Tempo entre PR e primeiro review  | < 4h úteis
@@ -816,7 +816,7 @@ Ferramentas de medição:
 
 ## Resumo
 
-```
+```text
 Governança não é burocracia — é responsabilidade.
 
 O que levar para o dia a dia:

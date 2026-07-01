@@ -26,7 +26,7 @@ Causas:
 
 ### A solução DevOps
 
-```
+```text
 Containerização (Docker):
   → Mesmo ambiente em dev, staging e produção
   → Dependências isoladas
@@ -153,7 +153,7 @@ volumes:
 
 ### .dockerignore
 
-```
+```text
 node_modules
 .git
 .env
@@ -538,14 +538,4 @@ app.useLogger(
 ### Exemplo de log estruturado
 
 ```json
-{
-  "timestamp": "2026-06-01T10:30:00.000Z",
-  "level": "error",
-  "message": "Falha na autenticação",
-  "context": "AuthService",
-  "userId": "abc123",
-  "ip": "192.168.1.1",
-  "attempt": 3,
-  "stack": "..."
-}
 

@@ -498,7 +498,7 @@ Event-Driven Architecture usa **eventos** para comunicação entre componentes.
 
 ### Conceitos
 
-```
+```text
 Evento:           "Algo aconteceu"
   → PedidoCriado, UsuarioCadastrado, PagamentoConfirmado
 
@@ -640,7 +640,7 @@ Modelagem boa:
 
 ### Tipos de Relacionamento
 
-```
+```text
 1:1  — Um usuário tem um perfil
 1:N  — Um usuário tem muitos pedidos
 N:M  — Um produto está em muitas categorias
@@ -1729,7 +1729,7 @@ Custo de prevenir:
 
 ### Mindset de segurança
 
-```
+```text
 ❌ "Segurança é problema do DevOps"
 ❌ "Depois a gente adiciona segurança"
 ❌ "Ninguém vai atacar nosso sistema"
@@ -2229,11 +2229,11 @@ Segurança em code review:
 
 
 
-# Arquitetura Multi-Tenant
+# Multi-Tenant: Conceitos e Estratégias de Isolamento
 
-# Módulo 13 — Multi-Tenant: Construindo SaaS Escalável
+# Módulo 13 — Multi-Tenant: Conceitos e Estratégias de Isolamento
 
-**Como isolar dados, identidade e recursos entre clientes em uma única aplicação.**
+**Conceitos fundamentais, três abordagens de isolamento de dados e análise comparativa por dimensão.**
 
 ---
 
@@ -2617,11 +2617,20 @@ CREATE INDEX idx_orders_acme_large
 
 ---
 
-## 4. Identificação do Tenant
+
+
+
+# Multi-Tenant: Implementação com NestJS e Prisma
+
+# Módulo 13b — Multi-Tenant: Implementação com NestJS e Prisma
+
+**Middleware de tenant, identificação, serviços NestJS e integração com Prisma para isolamento de dados.**
+
+## 1. Identificação do Tenant
 
 O sistema precisa identificar **qual tenant está fazendo a requisição** antes de qualquer lógica de negócio.
 
-### 4.1 Estratégias de Identificação
+### 1.1 Estratégias de Identificação
 
 | Estratégia | Exemplo | Segurança | Complexidade | Ideal para |
 |-----------|---------|:---------:|:------------:|-----------|
@@ -2631,7 +2640,7 @@ O sistema precisa identificar **qual tenant está fazendo a requisição** antes
 | **Path Parameter** | `/api/acme/users` | Baixa | Baixa | Desenvolvimento/debug |
 | **DNS + SSL** | SNI com cert por tenant | Alta | Alta | Enterprise |
 
-### 4.2 Subdomínio
+### 1.2 Subdomínio
 
 ```typescript
 // tenant.extractor.ts
@@ -2654,7 +2663,7 @@ async function validateTenantSubdomain(
 }
 ```
 
-### 4.3 Header HTTP
+### 1.3 Header HTTP
 
 ```typescript
 // Extração simples e direta
@@ -2676,7 +2685,7 @@ function validateTenantSlug(slug: string): boolean {
 }
 ```text
 
-### 4.4 JWT Claim
+### 1.4 JWT Claim
 
 ```typescript
 // Interface do payload
@@ -2707,7 +2716,7 @@ function extractTenantFromJwt(authHeader?: string): string | null {
 }
 ```
 
-### 4.5 Path Parameter
+### 1.5 Path Parameter
 
 ```typescript
 // Útil para debug, mas não recomendado para produção
@@ -2718,7 +2727,7 @@ findUsers(@Param('tenant') tenantId: string) {
 }
 ```text
 
-### 4.6 Estratégia Combinada (Fallback)
+### 1.6 Estratégia Combinada (Fallback)
 
 ```typescript
 function resolveTenant(req: Request): string {
@@ -2735,9 +2744,9 @@ function resolveTenant(req: Request): string {
 
 ---
 
-## 5. Middleware de Tenant
+## 2. Middleware de Tenant
 
-### 5.1 Implementação com NestJS
+### 2.1 Implementação com NestJS
 
 ```typescript
 // tenant.middleware.ts
@@ -2822,7 +2831,7 @@ export class TenantMiddleware implements NestMiddleware {
 }
 ```text
 
-### 5.2 Aplicação Global ou por Rota
+### 2.2 Aplicação Global ou por Rota
 
 ```typescript
 // app.module.ts
@@ -2846,7 +2855,7 @@ export class AppModule implements NestModule {
 }
 ```
 
-### 5.3 TenantModule
+### 2.3 TenantModule
 
 ```typescript
 // tenant.module.ts
@@ -2862,7 +2871,7 @@ import { TenantMiddleware } from './tenant.middleware';
 export class TenantModule {}
 ```text
 
-### 5.4 TenantService
+### 2.4 TenantService
 
 ```typescript
 // tenant.service.ts
@@ -2903,7 +2912,7 @@ export class TenantService {
 }
 ```
 
-### 5.5 @Tenant() Decorator
+### 2.5 @Tenant() Decorator
 
 ```typescript
 // tenant.decorator.ts
@@ -2934,7 +2943,7 @@ getPlan(@Tenant('plan') plan: string) {
 }
 ```text
 
-### 5.6 AsyncLocalStorage para Contexto
+### 2.6 AsyncLocalStorage para Contexto
 
 ```typescript
 // tenant-context.ts
@@ -2976,9 +2985,9 @@ function getCurrentTenantId(): string {
 
 ---
 
-## 6. Prisma Multi-Tenant
+## 3. Prisma Multi-Tenant
 
-### 6.1 Schema per Tenant com Prisma
+### 3.1 Schema per Tenant com Prisma
 
 ```prisma
 // schema.prisma — modelo base
@@ -3054,7 +3063,7 @@ class PrismaTenantManager {
 export const prismaTenantManager = new PrismaTenantManager();
 ```
 
-### 6.2 Shared Database com Prisma
+### 3.2 Shared Database com Prisma
 
 ```prisma
 // schema.prisma — shared database
@@ -3127,7 +3136,7 @@ export class TenantAwareService {
 }
 ```
 
-### 6.3 Prisma Middleware para Tenant
+### 3.3 Prisma Middleware para Tenant
 
 ```typescript
 // prisma-tenant.middleware.ts
@@ -3162,7 +3171,7 @@ const prisma = new PrismaClient();
 createTenantMiddleware(prisma);
 ```text
 
-### 6.4 Prisma Extension (Prisma >= 5.0)
+### 3.4 Prisma Extension (Prisma >= 5.0)
 
 ```typescript
 // tenant.extension.ts
@@ -3195,11 +3204,18 @@ export const tenantExtension = Prisma.defineExtension((client) => {
 const prisma = new PrismaClient().$extends(tenantExtension);
 ```
 
----
 
-## 7. Migrations Multi-Tenant
 
-### 7.1 Database per Tenant
+
+# Multi-Tenant: Migrations, Dados e Seed
+
+# Módulo 13c — Multi-Tenant: Migrations, Dados e Seed
+
+**Migrations multi-tenant, estratégias de dados compartilhados vs isolados e seed automático por tenant.**
+
+## 1. Migrations Multi-Tenant
+
+### 1.1 Database per Tenant
 
 ```typescript
 // migrate-all-tenants.ts
@@ -3243,7 +3259,7 @@ async function migrateAllTenants(): Promise<void> {
 }
 ```text
 
-### 7.2 Schema per Tenant
+### 1.2 Schema per Tenant
 
 ```typescript
 // schema-migration-runner.ts
@@ -3335,7 +3351,7 @@ async function migrateAllSchemas(): Promise<void> {
 }
 ```
 
-### 7.3 Estratégias de Rollback
+### 1.3 Estratégias de Rollback
 
 ```typescript
 // migrate-with-transaction.ts
@@ -3369,7 +3385,7 @@ async function migrateTenantWithTransaction(
 }
 ```text
 
-### 7.4 Shared Database
+### 1.4 Shared Database
 
 ```typescript
 // shared-migration.ts
@@ -3409,9 +3425,9 @@ async function migrateShared(): Promise<void> {
 
 ---
 
-## 8. Dados Compartilhados vs Por Tenant
+## 2. Dados Compartilhados vs Por Tenant
 
-### 8.1 Tabelas Globais (Compartilhadas)
+### 2.1 Tabelas Globais (Compartilhadas)
 
 Dados que **não pertencem a nenhum tenant específico** e são comuns a todos:
 
@@ -3449,7 +3465,7 @@ interface AuditLog {
 }
 ```text
 
-### 8.2 Tabelas Por Tenant (Isoladas)
+### 2.2 Tabelas Por Tenant (Isoladas)
 
 Dados que **pertencem a um tenant específico** e devem ser isolados:
 
@@ -3493,7 +3509,7 @@ interface Invoice {
 }
 ```
 
-### 8.3 Regra Prática
+### 2.3 Regra Prática
 
 ```text
 ┌─────────────────────────────────────────────────────┐
@@ -3513,7 +3529,7 @@ interface Invoice {
 └─────────────────────────────────────────────────────┘
 ```
 
-### 8.4 Implementação em Schema per Tenant
+### 2.4 Implementação em Schema per Tenant
 
 ```sql
 -- Schema global (público)
@@ -3558,9 +3574,9 @@ WHERE u.email = 'joao@acme.com';
 
 ---
 
-## 9. Seed por Tenant
+## 3. Seed por Tenant
 
-### 9.1 Seed Automático ao Criar Tenant
+### 3.1 Seed Automático ao Criar Tenant
 
 ```typescript
 // tenant-seed.ts
@@ -3649,7 +3665,7 @@ async function createTenant(data: { slug: string; name: string; plan: string }) 
 }
 ```
 
-### 9.2 Comandos CLI (NestJS Command)
+### 3.2 Comandos CLI (NestJS Command)
 
 ```typescript
 // tenant.command.ts
@@ -3677,7 +3693,7 @@ export class TenantCommand extends CommandRunner {
 }
 ```text
 
-### 9.3 Idempotência
+### 3.3 Idempotência
 
 ```typescript
 // Seeds devem ser idempotentes (podem rodar múltiplas vezes)
@@ -3700,9 +3716,20 @@ async function seedSettingsIfNotExists(schema: string): Promise<void> {
 
 ---
 
-## 10. Backup e Restore
 
-### 10.1 Database per Tenant
+
+
+# Multi-Tenant: Operações e Qualidade
+
+# Módulo 13d — Multi-Tenant: Operações e Qualidade
+
+**Backup, restore, performance, rate limiting, pricing baseado em tenancy e testes de isolamento.**
+
+---
+
+## 1. Backup e Restore
+
+### 1.1 Database per Tenant
 
 ```bash
 #!/bin/bash
@@ -3735,7 +3762,7 @@ done
 #   backups/acme_20240101.dump
 ```text
 
-### 10.2 Schema per Tenant — Backup Seletivo
+### 1.2 Schema per Tenant — Backup Seletivo
 
 ```bash
 #!/bin/bash
@@ -3767,7 +3794,7 @@ echo "✅ Schema tenant_${TENANT} salvo em backups/schema_${TENANT}_${DATE}.dump
 #   backups/schema_zeta_20240101.dump
 ```
 
-### 10.3 Estratégia por Plano
+### 1.3 Estratégia por Plano
 
 | Plano | Backup | RPO (Recovery Point Objective) | RTO (Recovery Time Objective) |
 |-------|--------|:-----------------------------:|:-----------------------------:|
@@ -3813,9 +3840,9 @@ async function scheduleTenantBackup(tenant: { id: string; plan: string }): Promi
 
 ---
 
-## 11. Performance
+## 2. Performance
 
-### 11.1 Connection Pooling por Tenant
+### 2.1 Connection Pooling por Tenant
 
 ```typescript
 // pool-manager.ts
@@ -3903,7 +3930,7 @@ class PoolManager {
 export const poolManager = new PoolManager();
 ```
 
-### 11.2 Query Optimization
+### 2.2 Query Optimization
 
 ```typescript
 // query-optimizer.ts
@@ -3932,7 +3959,7 @@ class QueryOptimizer {
 }
 ```text
 
-### 11.3 Rate Limiting por Tenant
+### 2.3 Rate Limiting por Tenant
 
 ```typescript
 // tenant-rate-limiter.ts
@@ -3991,7 +4018,7 @@ export class TenantRateLimiter {
 }
 ```
 
-### 11.4 Indexação para Shared Database
+### 2.4 Indexação para Shared Database
 
 ```sql
 -- Índices essenciais para shared database
@@ -4020,9 +4047,9 @@ WHERE tenant_id = 'acme' AND email = 'joao@acme.com';
 
 ---
 
-## 12. Pricing Baseado em Tenancy
+## 3. Pricing Baseado em Tenancy
 
-### 12.1 Modelo de Planos
+### 3.1 Modelo de Planos
 
 A arquitetura de isolamento escolhida define diretamente o que pode ser oferecido em cada plano:
 
@@ -4033,7 +4060,7 @@ A arquitetura de isolamento escolhida define diretamente o que pode ser oferecid
 | **Business** | Schema per Tenant (dedicado) | 200 usuários, 500 projetos, 50 GB | $99/mês | Médias empresas |
 | **Enterprise** | DB per Tenant + Réplica | Ilimitado | $499/mês | Grandes clientes |
 
-### 12.2 Feature Flags por Plano
+### 3.2 Feature Flags por Plano
 
 ```typescript
 // feature-flags.ts
@@ -4147,7 +4174,7 @@ export class FeatureFlagService {
 }
 ```text
 
-### 12.3 Guard do NestJS para Feature Flags
+### 3.3 Guard do NestJS para Feature Flags
 
 ```typescript
 // feature.guard.ts
@@ -4177,9 +4204,9 @@ getAdvancedReports() {
 
 ---
 
-## 13. Testes de Isolamento entre Tenants
+## 4. Testes de Isolamento entre Tenants
 
-### 13.1 Configuração de Teste
+### 4.1 Configuração de Teste
 
 ```typescript
 // tenant-isolation.spec.ts
@@ -4219,7 +4246,7 @@ describe('Isolamento entre Tenants', () => {
   }
 ```text
 
-### 13.2 Teste 1: Vazamento Zero
+### 4.2 Teste 1: Vazamento Zero
 
 ```typescript
   describe('Vazamento de dados', () => {
@@ -4263,7 +4290,7 @@ describe('Isolamento entre Tenants', () => {
   });
 ```
 
-### 13.3 Teste 2: Concorrência
+### 4.3 Teste 2: Concorrência
 
 ```typescript
   describe('Concorrência entre tenants', () => {
@@ -4296,7 +4323,7 @@ describe('Isolamento entre Tenants', () => {
   });
 ```text
 
-### 13.4 Teste 3: Injeção de Tenant ID
+### 4.4 Teste 3: Injeção de Tenant ID
 
 ```typescript
   describe('Injeção de tenant_id', () => {
@@ -4325,7 +4352,7 @@ describe('Isolamento entre Tenants', () => {
   });
 ```
 
-### 13.5 Teste 4: Rate Limit
+### 4.5 Teste 4: Rate Limit
 
 ```typescript
   describe('Rate limiting por plano', () => {
@@ -4359,7 +4386,7 @@ describe('Isolamento entre Tenants', () => {
   });
 ```text
 
-### 13.6 Teste 5: Migrations
+### 4.6 Teste 5: Migrations
 
 ```typescript
   describe('Migrations multi-tenant', () => {
@@ -4382,7 +4409,7 @@ describe('Isolamento entre Tenants', () => {
   });
 ```
 
-### 13.7 Teste de Quebra Proposital
+### 4.7 Teste de Quebra Proposital
 
 ```typescript
   describe('Teste de quebra (fail-safe)', () => {
@@ -4425,4 +4452,5 @@ describe('Isolamento entre Tenants', () => {
       );
     });
   });
+```
 

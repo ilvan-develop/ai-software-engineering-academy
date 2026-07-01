@@ -540,7 +540,7 @@ Um ecossistema de agentes especializados produz **resultados excelentes em cada 
 
 ### O problema do agente genérico
 
-```
+```text
 Agente Genérico:
   Conhecimento: "sabe de tudo um pouco"
   ├── Frontend: ⭐⭐☆☆☆  (sabe React, mas não Next.js App Router)
@@ -554,7 +554,7 @@ Resultado: código "funciona", mas cheio de dívida técnica
 
 ### A solução dos agentes especializados
 
-```
+```text
 Agente Frontend:
   Conhecimento: Next.js 14, RSC, Tailwind, shadcn/ui
   ├── Performance: ⭐⭐⭐⭐⭐ (Lazy loading, Suspense, Image optimization)
@@ -672,7 +672,7 @@ agente/
 
 ### Passo a passo
 
-```
+```text
 1. Definir o DOMÍNIO do agente
    → Qual área ele cobre? (ex: "segurança de aplicações web")
 
@@ -758,7 +758,7 @@ Product Discovery  ──→  UX Designer  ──→  UI Designer
 
 ### Pipeline de auditoria
 
-```
+```text
 Feature implementada
         │
         ▼
@@ -779,7 +779,7 @@ Relatório consolidado com score geral
 
 ### Pipeline de onboarding
 
-```
+```text
 PO descreve problema em linguagem natural
         │
         ▼
@@ -916,14 +916,7 @@ O próximo passo natural: um **Meta-Agent** que cria agentes especializados sob 
 
 ### Como funcionaria
 
-```
-1. Meta-Agent analisa o problema
-2. Identifica os domínios necessários
-3. Cria um agente especializado para cada domínio
-4. Define os limites e responsabilidades
-5. Testa e ajusta cada agente
-6. Combina em pipeline
-7. Executa o pipeline completo
+```text
 
 
 
