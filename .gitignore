@@ -3,8 +3,10 @@ __pycache__/
 .DS_Store
 node_modules/
 .env
-knowledge-factory/pipeline/runs/
-knowledge-factory/pipeline/reports/
+knowledge-factory/pipeline/runs/*
+!knowledge-factory/pipeline/runs/.gitkeep
+knowledge-factory/pipeline/reports/*
+!knowledge-factory/pipeline/reports/.gitkeep
 *.tmp
 nul
 web/.next/

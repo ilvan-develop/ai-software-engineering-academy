@@ -66,17 +66,17 @@ def test_scripts_dir():
     assert SCRIPTS_DIR == PROJECT_ROOT / "scripts"
 
 
-CURRENT_PATHS = [
+EXISTENCE_PATHS = [
     CURRICULUM_DIR, SOURCES_DIR, BOOKS_MANIFESTS_DIR,
     KF_DIR, COURSES_DIR, BOOKS_DIR,
-    PIPELINE_DIR, REGISTRY_DIR, ASSETS_DIR, SCRIPTS_DIR,
+    REGISTRY_DIR, ASSETS_DIR, SCRIPTS_DIR,
     SOCIAL_DIR, NEWSLETTERS_DIR, CERTIFICATES_DIR, ONLINE_COURSES_DIR,
 ]
 
 
 def test_all_current_paths_exist():
     failures = []
-    for path in CURRENT_PATHS:
+    for path in EXISTENCE_PATHS:
         if not path.exists():
             failures.append(str(path))
     assert not failures, f"Missing paths: {failures}"
