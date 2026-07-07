@@ -18,6 +18,9 @@ on:
       - "curriculum/**"
       - "scripts/**"
       - "config/**"
+      - "knowledge-factory/**"
+      - "tests/**"
+      - ".github/workflows/**"
       - ".github/workflows/**"
 
 jobs:
