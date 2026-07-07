@@ -103,7 +103,7 @@ def main():
     # Exclude .github and venv
     md_files = [
         f for f in md_files
-        if not any(p.name.startswith(".") for p in f.relative_to(ROOT).parts)
+        if not any(p.startswith(".") for p in f.relative_to(ROOT).parts)
         and ".git" not in f.parts
         and "__pycache__" not in f.parts
     ]
