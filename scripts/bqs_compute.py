@@ -794,6 +794,25 @@ def main():
                 r["overall"], r["min_score"], r["passed"],
             ])
 
+    # Salvar JSON detalhado (para dashboard)
+    SCORE_JSON = ROOT / "knowledge-factory" / "products" / "metrics" / "bqs-detailed.json"
+    detailed = {"timestamp": timestamp, "targets": []}
+    for r in results:
+        cats = {c["id"]: {"name": c["name"], "score": c["score"], "weight": c["weight"]} for c in r["details"]["categories"]}
+        detailed["targets"].append({
+            "target_id": r["target_id"],
+            "type": r["type"],
+            "title": r["title"],
+            "overall": r["overall"],
+            "min_score": r["min_score"],
+            "passed": r["passed"],
+            "categories": cats,
+        })
+    SCORE_JSON.parent.mkdir(parents=True, exist_ok=True)
+    with open(SCORE_JSON, "w", encoding="utf-8") as f:
+        json.dump(detailed, f, indent=2, ensure_ascii=False)
+    print(f"  JSON detalhado salvo: {SCORE_JSON}")
+
     print(f"\n[BQS] Resumo:")
     print(f"  Modulos computados: {module_count}")
     print(f"  Livros computados: {book_count}")
