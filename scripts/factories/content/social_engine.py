@@ -184,11 +184,13 @@ def generate_twitter_thread(title: str, sections: list) -> str:
         tweets.append(tweet)
     tweets.append("Curtiu? Salve e compartilhe! 🚀")
 
+    joined = "\n\n".join(tweets)
+
     return f"""{'='*50}
 TWITTER/X — Thread
 {'='*50}
 
-{"\n\n".join(tweets)}
+{joined}
 
 #DevTips #Arquitetura
 """
