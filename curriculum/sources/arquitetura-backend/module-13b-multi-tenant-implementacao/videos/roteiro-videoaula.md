@@ -190,6 +190,7 @@ async function validateTenantSubdomain(
 ```text
 Proximo modulo: [TITULO DO PROXIMO MODULO]
 ```text
+```
 
 **Notas de direcao:**
 - Chamada para acao: inscrever-se, comentar, compartilhar.

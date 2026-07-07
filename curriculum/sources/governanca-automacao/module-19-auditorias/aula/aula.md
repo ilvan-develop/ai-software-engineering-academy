@@ -311,6 +311,7 @@ Na nossa biblioteca, o **Auditor Agent** pode ser invocado a qualquer momento:
 ### Pipeline de auditoria completa
 
 ```text
+```
 1. Código é implementado pelos agentes especializados
 2. QA Agent executa testes
 3. Auditor Agent executa 16 auditorias

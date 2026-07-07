@@ -535,3 +535,4 @@ app.useLogger(
 ### Exemplo de log estruturado
 
 ```json
+```

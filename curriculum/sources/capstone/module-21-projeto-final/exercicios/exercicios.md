@@ -371,6 +371,7 @@ Implemente a integração com Stripe para planos e assinaturas.
      enterprise: { rpm: 5000, projects: Infinity, members: Infinity },
    };
 ```markdown
+```
 
 ### Testes
 

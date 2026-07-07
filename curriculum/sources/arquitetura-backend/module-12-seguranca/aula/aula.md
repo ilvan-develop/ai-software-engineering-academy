@@ -515,6 +515,7 @@ async transfer(@Body() dto: TransferDto, @Req() req) {
 ### Checklist de segurança para code review
 
 ```text
+```
 Segurança em code review:
   [ ] Todos os inputs são validados?
   [ ] Autenticação em todas as rotas protegidas?

@@ -764,3 +764,4 @@ Boas práticas:
 ### Exemplo de Changelog de Wireframe
 
 ```typescript
+```

@@ -201,3 +201,4 @@
 | 2026-07-07 | F8 | scripts/remediate_markdown.py: correcao automatizada de 1074 violacoes em 115 arquivos | ✅ |
 | 2026-07-07 | F8 | qm2 (code blocks com language tag) subiu de ~50% para 100% (zero no-lang fences) | ✅ |
 | 2026-07-07 | F8 | Remediacao preservou todas as 28 suites de teste (28/28 pass) | ✅ |
+| 2026-07-07 | F8 | 14 arquivos com code fences abertos sem fechamento — corrigidos (zero restantes) | ✅ |

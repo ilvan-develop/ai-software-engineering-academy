@@ -1225,6 +1225,7 @@ test-matrix:
 ### Pipeline de Deploy com Environments e Gates
 
 ```yaml
+```
 deploy-production:
   name: Deploy em Produção
   needs: [lint, test, build, security-sast]

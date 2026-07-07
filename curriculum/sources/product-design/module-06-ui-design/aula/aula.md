@@ -950,3 +950,4 @@ function checkFidelity(inspection: UIInspectionChecklist): number {
 Produtos enterprise geralmente precisam de mais densidade que produtos B2C.
 
 ```typescript
+```

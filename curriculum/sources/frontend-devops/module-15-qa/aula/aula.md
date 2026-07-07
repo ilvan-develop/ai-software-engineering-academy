@@ -424,6 +424,7 @@ Refactor: Melhore o código mantendo os verdes
 ### Exemplo prático
 
 ```typescript
+```
 // 1. RED — Escrever teste primeiro
 describe('OrderService', () => {
   it('não deve criar pedido com valor abaixo do mínimo', () => {

@@ -548,6 +548,7 @@ export default function RootLayout({ children }) {
 ### Dynamic Import
 
 ```typescript
+```
 import dynamic from 'next/dynamic';
 
 // Só carrega quando precisar

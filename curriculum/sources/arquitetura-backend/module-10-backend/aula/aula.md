@@ -549,6 +549,7 @@ export class HealthController {
 ## 10. Testes
 
 ```typescript
+```
 // Teste de service
 describe('UserService', () => {
   let service: UserService;

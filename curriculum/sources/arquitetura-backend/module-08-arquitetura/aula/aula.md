@@ -539,6 +539,7 @@ class EmailHandler {
 ### Estrutura de pastas seguindo Clean Architecture + DDD
 
 ```text
+```
 src/
 ├── domain/                    # Círculo mais interno
 │   ├── entities/              # Entidades de domínio
