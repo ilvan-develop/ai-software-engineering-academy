@@ -1,0 +1,26 @@
+book_id: formacao-completa
+title: "Arquitetura de Software Enterprise com IA"
+subtitle: "Formação completa — do discovery ao deploy assistido por agentes"
+author: "AI Software Engineering Academy"
+language: pt-BR
+edition: 1
+year: 2026
+isbn: "978-65-00-00006-1"
+isbn_ebook: "978-65-00-00007-8"
+publisher: "AI Software Engineering Academy"
+rights: "© 2026 AI Software Engineering Academy. Todos os direitos reservados."
+categories:
+  - Tecnologia
+  - Arquitetura de Software
+  - Inteligência Artificial
+tags:
+  - arquitetura
+  - ia
+  - agentes
+  - enterprise
+  - devops
+  - fullstack
+description: "Formação completa em arquitetura de software enterprise — do product discovery ao deploy assistido por agentes de IA. Cobre design thinking, arquitetura backend, frontend, DevOps, governança e projeto capstone."
+pages_estimate: 600
+cover_image: assets/capa.png
+cover_alt_text: "Capa do livro Arquitetura de Software Enterprise com IA com design tecnológico e gradiente"

@@ -1,0 +1,27 @@
+book_id: backend-architecture
+title: "Arquitetura Backend Enterprise"
+subtitle: "Clean Architecture, DDD, Segurança e Multi-Tenancy com TypeScript"
+author: "AI Software Engineering Academy"
+language: pt-BR
+edition: 1
+year: 2026
+isbn: "978-65-00-00004-7"
+isbn_ebook: "978-65-00-00005-4"
+publisher: "AI Software Engineering Academy"
+rights: "© 2026 AI Software Engineering Academy. Todos os direitos reservados."
+categories:
+  - Tecnologia
+  - Arquitetura de Software
+  - Backend
+tags:
+  - arquitetura
+  - ddd
+  - clean-architecture
+  - nestjs
+  - prisma
+  - multi-tenant
+  - typescript
+description: "Clean Architecture, DDD, Segurança e Multi-Tenancy com TypeScript. Um guia prático para arquitetos e desenvolvedores backend que desejam construir sistemas enterprise robustos, escaláveis e seguros usando práticas modernas de desenvolvimento."
+pages_estimate: 350
+cover_image: assets/capa.png
+cover_alt_text: "Capa do livro Arquitetura Backend Enterprise com design corporativo em tons de azul"

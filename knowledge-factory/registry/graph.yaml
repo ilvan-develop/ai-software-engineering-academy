@@ -1,0 +1,255 @@
+version: 1
+metadata:
+  generated_by: catalog_populator.py
+  generated_at: '2026-07-07T14:31:25.394795'
+nodes:
+- id: fundamentos-enterprise/module-00-introducao
+  type: module
+  title: Introdução — O Papel do Arquiteto
+- id: fundamentos-enterprise/module-01-mentalidade-enterprise
+  type: module
+  title: Mentalidade Enterprise
+- id: fundamentos-enterprise/module-09-erro-90-ia
+  type: module
+  title: O Erro de 90% ao Usar IA para Programar
+- id: product-design/module-02-product-discovery
+  type: module
+  title: Product Discovery
+- id: product-design/module-03-design-thinking
+  type: module
+  title: Design Thinking
+- id: product-design/module-04-ux
+  type: module
+  title: UX Research & Design
+- id: product-design/module-05-wireframes
+  type: module
+  title: Wireframes e Prototipação
+- id: product-design/module-06-ui-design
+  type: module
+  title: UI Design
+- id: product-design/module-07-design-system
+  type: module
+  title: Design System
+- id: arquitetura-backend/module-08-arquitetura
+  type: module
+  title: Arquitetura de Software
+- id: arquitetura-backend/module-09-modelagem
+  type: module
+  title: Modelagem de Sistemas
+- id: arquitetura-backend/module-10-backend
+  type: module
+  title: Desenvolvimento Backend
+- id: arquitetura-backend/module-12-seguranca
+  type: module
+  title: Segurança
+- id: arquitetura-backend/module-13-multi-tenant
+  type: module
+  title: 'Multi-Tenant: Conceitos e Estratégias de Isolamento'
+- id: arquitetura-backend/module-13b-multi-tenant-implementacao
+  type: module
+  title: 'Multi-Tenant: Implementação com NestJS e Prisma'
+- id: arquitetura-backend/module-13c-multi-tenant-dados
+  type: module
+  title: 'Multi-Tenant: Migrations, Dados e Seed'
+- id: arquitetura-backend/module-13d-multi-tenant-operacoes
+  type: module
+  title: 'Multi-Tenant: Operações e Qualidade'
+- id: frontend-devops/module-11-frontend
+  type: module
+  title: Desenvolvimento Frontend
+- id: frontend-devops/module-14-devops
+  type: module
+  title: DevOps e Infraestrutura
+- id: frontend-devops/module-15-qa
+  type: module
+  title: Qualidade e Testes
+- id: frontend-devops/module-16-observabilidade
+  type: module
+  title: Observabilidade
+- id: governanca-automacao/module-17-governanca
+  type: module
+  title: Governança de Software
+- id: governanca-automacao/module-18-agentes-ia
+  type: module
+  title: Agentes de IA
+- id: governanca-automacao/module-19-auditorias
+  type: module
+  title: Auditorias
+- id: governanca-automacao/module-20-automacao
+  type: module
+  title: Automação do Ciclo de Desenvolvimento
+- id: capstone/module-21-projeto-final
+  type: module
+  title: Construindo um SaaS Enterprise
+- id: formacao-completa
+  type: book
+  title: Arquitetura de Software Enterprise com IA
+- id: backend-architecture
+  type: book
+  title: Arquitetura Backend Enterprise
+- id: product-design-book
+  type: book
+  title: Product Design Engineering
+- id: ia-para-devs
+  type: book
+  title: IA para Desenvolvedores
+edges:
+- source: fundamentos-enterprise/module-00-introducao
+  target: formacao-completa
+  type: used_in
+- source: fundamentos-enterprise/module-01-mentalidade-enterprise
+  target: formacao-completa
+  type: used_in
+- source: fundamentos-enterprise/module-09-erro-90-ia
+  target: formacao-completa
+  type: used_in
+- source: fundamentos-enterprise/module-09-erro-90-ia
+  target: product-design/module-02-product-discovery
+  type: prerequisite
+- source: product-design/module-02-product-discovery
+  target: formacao-completa
+  type: used_in
+- source: fundamentos-enterprise/module-09-erro-90-ia
+  target: product-design/module-03-design-thinking
+  type: prerequisite
+- source: product-design/module-03-design-thinking
+  target: formacao-completa
+  type: used_in
+- source: fundamentos-enterprise/module-09-erro-90-ia
+  target: product-design/module-04-ux
+  type: prerequisite
+- source: product-design/module-04-ux
+  target: formacao-completa
+  type: used_in
+- source: fundamentos-enterprise/module-09-erro-90-ia
+  target: product-design/module-05-wireframes
+  type: prerequisite
+- source: product-design/module-05-wireframes
+  target: formacao-completa
+  type: used_in
+- source: fundamentos-enterprise/module-09-erro-90-ia
+  target: product-design/module-06-ui-design
+  type: prerequisite
+- source: product-design/module-06-ui-design
+  target: formacao-completa
+  type: used_in
+- source: fundamentos-enterprise/module-09-erro-90-ia
+  target: product-design/module-07-design-system
+  type: prerequisite
+- source: product-design/module-07-design-system
+  target: formacao-completa
+  type: used_in
+- source: product-design/module-07-design-system
+  target: arquitetura-backend/module-08-arquitetura
+  type: prerequisite
+- source: arquitetura-backend/module-08-arquitetura
+  target: formacao-completa
+  type: used_in
+- source: product-design/module-07-design-system
+  target: arquitetura-backend/module-09-modelagem
+  type: prerequisite
+- source: arquitetura-backend/module-09-modelagem
+  target: formacao-completa
+  type: used_in
+- source: product-design/module-07-design-system
+  target: arquitetura-backend/module-10-backend
+  type: prerequisite
+- source: arquitetura-backend/module-10-backend
+  target: formacao-completa
+  type: used_in
+- source: product-design/module-07-design-system
+  target: arquitetura-backend/module-12-seguranca
+  type: prerequisite
+- source: arquitetura-backend/module-12-seguranca
+  target: formacao-completa
+  type: used_in
+- source: product-design/module-07-design-system
+  target: arquitetura-backend/module-13-multi-tenant
+  type: prerequisite
+- source: arquitetura-backend/module-13-multi-tenant
+  target: formacao-completa
+  type: used_in
+- source: arquitetura-backend/module-13-multi-tenant
+  target: backend-architecture
+  type: used_in
+- source: product-design/module-07-design-system
+  target: arquitetura-backend/module-13b-multi-tenant-implementacao
+  type: prerequisite
+- source: arquitetura-backend/module-13b-multi-tenant-implementacao
+  target: formacao-completa
+  type: used_in
+- source: arquitetura-backend/module-13b-multi-tenant-implementacao
+  target: backend-architecture
+  type: used_in
+- source: product-design/module-07-design-system
+  target: arquitetura-backend/module-13c-multi-tenant-dados
+  type: prerequisite
+- source: arquitetura-backend/module-13c-multi-tenant-dados
+  target: formacao-completa
+  type: used_in
+- source: arquitetura-backend/module-13c-multi-tenant-dados
+  target: backend-architecture
+  type: used_in
+- source: product-design/module-07-design-system
+  target: arquitetura-backend/module-13d-multi-tenant-operacoes
+  type: prerequisite
+- source: arquitetura-backend/module-13d-multi-tenant-operacoes
+  target: formacao-completa
+  type: used_in
+- source: arquitetura-backend/module-13d-multi-tenant-operacoes
+  target: backend-architecture
+  type: used_in
+- source: arquitetura-backend/module-13d-multi-tenant-operacoes
+  target: frontend-devops/module-11-frontend
+  type: prerequisite
+- source: frontend-devops/module-11-frontend
+  target: formacao-completa
+  type: used_in
+- source: arquitetura-backend/module-13d-multi-tenant-operacoes
+  target: frontend-devops/module-14-devops
+  type: prerequisite
+- source: frontend-devops/module-14-devops
+  target: formacao-completa
+  type: used_in
+- source: arquitetura-backend/module-13d-multi-tenant-operacoes
+  target: frontend-devops/module-15-qa
+  type: prerequisite
+- source: frontend-devops/module-15-qa
+  target: formacao-completa
+  type: used_in
+- source: arquitetura-backend/module-13d-multi-tenant-operacoes
+  target: frontend-devops/module-16-observabilidade
+  type: prerequisite
+- source: frontend-devops/module-16-observabilidade
+  target: formacao-completa
+  type: used_in
+- source: frontend-devops/module-16-observabilidade
+  target: governanca-automacao/module-17-governanca
+  type: prerequisite
+- source: governanca-automacao/module-17-governanca
+  target: formacao-completa
+  type: used_in
+- source: frontend-devops/module-16-observabilidade
+  target: governanca-automacao/module-18-agentes-ia
+  type: prerequisite
+- source: governanca-automacao/module-18-agentes-ia
+  target: formacao-completa
+  type: used_in
+- source: frontend-devops/module-16-observabilidade
+  target: governanca-automacao/module-19-auditorias
+  type: prerequisite
+- source: governanca-automacao/module-19-auditorias
+  target: formacao-completa
+  type: used_in
+- source: frontend-devops/module-16-observabilidade
+  target: governanca-automacao/module-20-automacao
+  type: prerequisite
+- source: governanca-automacao/module-20-automacao
+  target: formacao-completa
+  type: used_in
+- source: governanca-automacao/module-20-automacao
+  target: capstone/module-21-projeto-final
+  type: prerequisite
+- source: capstone/module-21-projeto-final
+  target: formacao-completa
+  type: used_in

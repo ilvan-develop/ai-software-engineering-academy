@@ -104,7 +104,7 @@ const tasks = [
     sucesso: 'encontra a opção em < 2 cliques',
   },
 ];
-```text
+```
 
 **Métricas de usabilidade:**
 | Métrica | O que mede |
@@ -390,7 +390,7 @@ R
 >
   Salvar
 </div>
-```text
+```
 
 ### Screen Readers
 
@@ -432,7 +432,7 @@ const checkA11y: A11yChecklist = {
   keyboardNav: false,  // ❌ dropdown não abre com Enter
   // ...
 };
-```text
+```
 
 ---
 
@@ -500,7 +500,7 @@ const errorMessages = {
   502: 'Serviço temporariamente indisponível. Tente novamente.',
   503: 'Manutenção programada. Volte em instantes.',
 };
-```text
+```
 
 ### Princípios de UX Writing
 

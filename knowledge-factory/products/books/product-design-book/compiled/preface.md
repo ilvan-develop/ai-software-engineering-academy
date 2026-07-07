@@ -1,30 +1,29 @@
 # Prefácio
+Product design não é sobre fazer telas bonitas. É sobre **resolver problemas reais** com decisões conscientes — de pesquisa com usuários a sistemas de design escaláveis.
 
-Conheci a inteligência artificial generativa em 2022, quando o ChatGPT ainda engatinhava. Lembro de pedir um código de validação de CPF — ele gerou algo que parecia certo, compilava, mas ignorava dígitos verificadores. Na hora, pensei: "útil, mas perigoso". Anos depois, esse momento define minha abordagem: IA não é resposta final, é ponto de partida que exige crítica.
+Este livro nasce da constatação de que o mercado está cheio de produtos bonitos que ninguém consegue usar, e de produtos funcionais que ninguém consegue olhar. A engenharia de produto digital exige um equilíbrio delicado entre desejo, viabilidade técnica e valor de negócio.
 
-Este livro nasce dessa experiência. Não é uma celebração cega da IA, nem um manual de alarmismo. É um guia prático para desenvolvedores que querem usar IA no dia a dia sem cair nas armadilhas que eu mesmo já caí — e vi centenas de colegas caírem.
+Aqui você não vai encontrar teoria descolada da prática. Cada capítulo foi construído a partir de experiências reais em dezenas de produtos digitais — alguns bem-sucedidos, outros nem tanto. E são os fracassos que mais ensinaram.
 
 ## Para quem é este livro
 
-- Desenvolvedores que já usam (ou querem usar) IA e sentem que poderiam extrair mais
-- Arquitetos que precisam integrar agentes sem comprometer qualidade
-- Líderes técnicos cansados de código gerado por IA que "funciona" mas ninguém entende
+- **Product designers** que querem estruturar seu processo de discovery e design
+- **Desenvolvedores** que precisam entender a lógica por trás das decisões de design
+- **PMs e líderes** que precisam integrar design thinking no ciclo de desenvolvimento
+- **Estudantes** que querem entrar na área com uma base sólida
 
 ## Como usar
 
-Cada capítulo é autônomo. Se você só quer entender por que a IA gera código bugado, vá direto ao capítulo 1. Se quer montar um time de agentes, pule para o capítulo 2. Se precisa automatizar pipelines, capítulo 3 é seu ponto de partida.
+O livro segue a ordem natural do design de produto: começa com discovery e pesquisa, passa por ideação e prototipação, e culmina em UI design e design systems. Se você já tem experiência, pode navegar pelos capítulos de forma não linear.
 
-O que você vai encontrar:
+Cada capítulo inclui:
+- **Exemplos reais** com TypeScript e React
+- **Diagramas** para visualizar conceitos abstratos
+- **Código prático** de componentes e tokens
+- **Exercícios** para fixação
 
-- **Código real** — os exemplos são de projetos que coloquei em produção, não teóricos
-- **Diagramas** — porque arquitetura se entende melhor visualmente
-- **Exercícios** — no final de cada capítulo, para fixar o que foi visto
+Boa leitura. Que seus produtos resolvam problemas reais.
 
-## Minha promessa
 
-Nenhuma seção deste livro foi escrita por IA. Usei IA para revisar, testar hipóteses e gerar exemplos iniciais — mas cada parágrafo, cada opinião e cada "isso não funciona na prática" veio de experiência vivida.
-
-Boa leitura. E lembre-se: o código é seu. A responsabilidade também.
-
-*Ilvan Joaquim*
+*AI Software Engineering Academy*
 2026

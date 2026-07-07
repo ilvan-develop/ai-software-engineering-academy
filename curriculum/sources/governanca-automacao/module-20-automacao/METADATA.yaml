@@ -1,0 +1,23 @@
+id: governanca-automacao/module-20-automacao
+title: Automação do Ciclo de Desenvolvimento
+description: Módulo Automação do Ciclo de Desenvolvimento do curso governanca-automacao.
+status: publicado
+version: 1
+topics:
+- governanca
+- automacao
+level: advanced
+audience:
+- architects
+- managers
+prerequisites:
+- frontend-devops/module-16-observabilidade
+author: AI Software Engineering Academy
+reviewers: []
+bqs_score: 72.8
+duration_minutes: null
+changelog:
+- date: '2026-06-27'
+  version: '1.0'
+  description: Versão inicial
+  author: AI Software Engineering Academy

@@ -1,30 +1,25 @@
 # Prefácio
+Este livro é fruto de anos de experiência prática em engenharia de software, combinando fundamentos teóricos com aplicação direta em projetos reais. Cada capítulo foi desenhado para oferecer conhecimento acionável — código que funciona, padrões que escalam e decisões que fazem diferença.
 
-Conheci a inteligência artificial generativa em 2022, quando o ChatGPT ainda engatinhava. Lembro de pedir um código de validação de CPF — ele gerou algo que parecia certo, compilava, mas ignorava dígitos verificadores. Na hora, pensei: "útil, mas perigoso". Anos depois, esse momento define minha abordagem: IA não é resposta final, é ponto de partida que exige crítica.
-
-Este livro nasce dessa experiência. Não é uma celebração cega da IA, nem um manual de alarmismo. É um guia prático para desenvolvedores que querem usar IA no dia a dia sem cair nas armadilhas que eu mesmo já caí — e vi centenas de colegas caírem.
+Acreditamos que a melhor forma de aprender engenharia de software é **construindo**. Por isso, este livro prioriza exemplos práticos sobre discussões abstratas.
 
 ## Para quem é este livro
 
-- Desenvolvedores que já usam (ou querem usar) IA e sentem que poderiam extrair mais
-- Arquitetos que precisam integrar agentes sem comprometer qualidade
-- Líderes técnicos cansados de código gerado por IA que "funciona" mas ninguém entende
+- Desenvolvedores que buscam aprofundamento técnico
+- Arquitetos que precisam de referências práticas
+- Líderes técnicos que orientam times de engenharia
 
 ## Como usar
 
-Cada capítulo é autônomo. Se você só quer entender por que a IA gera código bugado, vá direto ao capítulo 1. Se quer montar um time de agentes, pule para o capítulo 2. Se precisa automatizar pipelines, capítulo 3 é seu ponto de partida.
+Cada capítulo é autocontido, mas a progressão sugerida segue a ordem apresentada no sumário.
 
 O que você vai encontrar:
-
-- **Código real** — os exemplos são de projetos que coloquei em produção, não teóricos
+- **Código real** — exemplos de projetos em produção
 - **Diagramas** — porque arquitetura se entende melhor visualmente
-- **Exercícios** — no final de cada capítulo, para fixar o que foi visto
+- **Exercícios** — no final de cada capítulo
 
-## Minha promessa
+Boa leitura.
 
-Nenhuma seção deste livro foi escrita por IA. Usei IA para revisar, testar hipóteses e gerar exemplos iniciais — mas cada parágrafo, cada opinião e cada "isso não funciona na prática" veio de experiência vivida.
 
-Boa leitura. E lembre-se: o código é seu. A responsabilidade também.
-
-*Ilvan Joaquim*
+*AI Software Engineering Academy*
 2026

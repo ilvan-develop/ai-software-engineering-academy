@@ -7,3 +7,11 @@ knowledge-factory/pipeline/runs/
 knowledge-factory/pipeline/reports/
 *.tmp
 nul
+web/.next/
+web/out/
+web/node_modules/
+web/package-lock.json
+*.pdf
+*.epub
+*.docx
+*.zip

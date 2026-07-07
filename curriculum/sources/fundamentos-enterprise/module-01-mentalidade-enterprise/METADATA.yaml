@@ -1,0 +1,23 @@
+id: fundamentos-enterprise/module-01-mentalidade-enterprise
+title: Mentalidade Enterprise
+description: Módulo Mentalidade Enterprise do curso fundamentos-enterprise.
+status: publicado
+version: 1
+topics:
+- fundamentos
+- mentalidade
+level: beginner
+audience:
+- devs
+- architects
+- students
+prerequisites: []
+author: AI Software Engineering Academy
+reviewers: []
+bqs_score: 76.1
+duration_minutes: null
+changelog:
+- date: '2026-06-27'
+  version: '1.0'
+  description: Versão inicial
+  author: AI Software Engineering Academy

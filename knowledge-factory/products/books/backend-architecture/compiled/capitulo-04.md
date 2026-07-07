@@ -69,7 +69,7 @@ async getOrder(@Param('id') id: string, @Req() req) {
   }
   return order;
 }
-```text
+```
 
 ### 2. Cryptographic Failures
 
@@ -102,7 +102,7 @@ const users = await prisma.$queryRawUnsafe(
 const user = await prisma.user.findUnique({
   where: { email }
 });
-```text
+```
 
 ### 4. Insecure Design
 
@@ -136,7 +136,7 @@ app.enableCors({
   origin: ['https://app.meusistema.com'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
 });
-```text
+```
 
 ### 6-10: Vulnerable Components, Auth Failures, Data Integrity, Logging, SSRF
 
@@ -282,7 +282,7 @@ export function defineAbilitiesFor(user: User): PureAbility {
     cannot('delete', 'all');
   });
 }
-```text
+```
 
 ### Uso no controller
 
@@ -333,7 +333,7 @@ async login(@Body() dto: LoginDto) {
 async requestPasswordReset(@Body() dto: ResetDto) {
   // ...
 }
-```text
+```
 
 ### Estratégias adicionais
 
@@ -384,7 +384,7 @@ app.use(helmet.contentSecurityPolicy({
     upgradeInsecureRequests: [],
   },
 }));
-```text
+```
 
 ---
 
@@ -415,7 +415,7 @@ import DOMPurify from 'isomorphic-dompurify';
 
 // ✅ No backend, escapar output
 const sanitized = escapeHtml(userComment);
-```text
+```
 
 ### CSRF (Cross-Site Request Forgery)
 
@@ -447,7 +447,7 @@ DB_PASSWORD=minha-senha
 
 // ❌ No código fonte
 config.service.apiKey = 'sk-1234567890abcdef';
-```text
+```
 
 ### O que fazer
 
@@ -513,7 +513,7 @@ async transfer(@Body() dto: TransferDto, @Req() req) {
   });
   return result;
 }
-```text
+```
 
 ### Checklist de segurança para code review
 

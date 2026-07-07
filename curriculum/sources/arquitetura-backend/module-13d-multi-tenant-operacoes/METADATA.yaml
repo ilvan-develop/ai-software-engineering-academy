@@ -1,0 +1,23 @@
+id: arquitetura-backend/module-13d-multi-tenant-operacoes
+title: 'Multi-Tenant: Operações e Qualidade'
+description: 'Módulo Multi-Tenant: Operações e Qualidade do curso arquitetura-backend.'
+status: publicado
+version: 1
+topics:
+- arquitetura-backend
+- multi-tenant
+level: advanced
+audience:
+- architects
+- devs
+prerequisites:
+- product-design/module-07-design-system
+author: AI Software Engineering Academy
+reviewers: []
+bqs_score: 72.0
+duration_minutes: null
+changelog:
+- date: '2026-06-30'
+  version: '1.0'
+  description: Versão inicial
+  author: AI Software Engineering Academy

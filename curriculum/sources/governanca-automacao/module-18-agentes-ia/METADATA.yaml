@@ -1,0 +1,23 @@
+id: governanca-automacao/module-18-agentes-ia
+title: Agentes de IA
+description: Módulo Agentes de IA do curso governanca-automacao.
+status: publicado
+version: 1
+topics:
+- governanca
+- agentes-ia
+level: advanced
+audience:
+- architects
+- managers
+prerequisites:
+- frontend-devops/module-16-observabilidade
+author: AI Software Engineering Academy
+reviewers: []
+bqs_score: 74.4
+duration_minutes: null
+changelog:
+- date: '2026-06-27'
+  version: '1.0'
+  description: Versão inicial
+  author: AI Software Engineering Academy

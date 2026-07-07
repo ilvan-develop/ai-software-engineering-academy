@@ -403,3 +403,86 @@ departments:
         input: "score-card.yaml + audit-trail.log"
         output: "compliance-report.md"
         quality_gate: "100% de conformidade com gate-policy.yaml"
+
+  - id: branding
+    name: "Departamento de Branding"
+    description: "Define e executa a estrategia de marca, posicionamento, distribuicao e presenca digital da editora"
+    sort_order: 6
+    gate_exit: "branding_to_publico"
+    agents:
+      - id: chief-branding-officer
+        name: "Chief Branding Officer"
+        description: "Define missao, visao, proposta de valor, tom de voz e estrategia de posicionamento da editora. Aprova toda comunicacao publica."
+        input: "livros-publicados + metrics"
+        output: "brand-strategy.md"
+        quality_gate: "coerencia de marca ≥95"
+
+      - id: brand-strategist
+        name: "Brand Strategist"
+        description: "Pesquisa mercado, audiencia, concorrentes e tendencias. Define posicionamento diferencial da editora no mercado tech-educacional."
+        input: "brand-strategy.md + market-data"
+        output: "positioning-report.md"
+        quality_gate: "posicionamento ≥95"
+
+      - id: social-media-manager
+        name: "Social Media Manager"
+        description: "Cria calendario editorial multiplataforma (LinkedIn, Instagram, YouTube, Twitter/X) e coordena publicacao de conteudo."
+        input: "brand-strategy.md + module-content"
+        output: "social-calendar.yaml"
+        quality_gate: "cobertura de redes ≥95"
+
+      - id: content-distributor
+        name: "Content Distributor"
+        description: "Adapta e distribui conteudo dos modulos para canais externos (dev.to, Medium, Substack, LinkedIn Articles)."
+        input: "module-content + social-calendar.yaml"
+        output: "distributed-content/"
+        quality_gate: "alcance ≥95"
+
+      - id: community-manager
+        name: "Community Manager"
+        description: "Cria e gerencia comunidade de alunos e leitores. Responde duvidas, promove discussoes e coleta feedback."
+        input: "brand-strategy.md + feedback-data"
+        output: "community-report.md"
+        quality_gate: "engajamento ≥95"
+
+      - id: lead-generator
+        name: "Lead Generator"
+        description: "Projeta e executa estrategias de captacao de leads: landing pages, newsletters, webinars, e-books gratuitos."
+        input: "brand-strategy.md + catalog.yaml"
+        output: "lead-campaign.yaml"
+        quality_gate: "taxa de conversao ≥95"
+
+      - id: seo-specialist
+        name: "SEO Specialist"
+        description: "Otimiza todo o conteudo publicado para mecanismos de busca (Google, YouTube, Amazon KDP)."
+        input: "module-content + catalog.yaml"
+        output: "seo-strategy.yaml"
+        quality_gate: "otimizacao SEO ≥95"
+
+      - id: analytics-reporter
+        name: "Analytics Reporter"
+        description: "Coleta, analisa e reporta metricas de desempenho: visualizacoes, downloads, leads, engajamento, conversao."
+        input: "social-metrics + site-analytics + lead-data"
+        output: "analytics-report.md"
+        quality_gate: "precisao de metricas ≥95"
+
+      - id: newsletter-editor
+        name: "Newsletter Editor"
+        description: "Compila e edita newsletters semanais com curadoria de novos conteudos, lancamentos e artigos em destaque."
+        input: "module-content + brand-strategy.md"
+        output: "newsletter-weekly.md"
+        quality_gate: "qualidade editorial ≥95"
+
+      - id: pr-communicator
+        name: "PR & Communicator"
+        description: "Prepara releases, pitchs para podcasts/eventos, parcerias com comunidades tech e menciona veiculos de imprensa."
+        input: "brand-strategy.md + livros-publicados"
+        output: "press-release.md"
+        quality_gate: "cobertura de imprensa ≥95"
+
+      - id: visual-brand-guardian
+        name: "Visual Brand Guardian"
+        description: "Audita toda comunicacao visual externa contra o brand book. Garante consistencia de logo, cores, tipografia e tom visual."
+        input: "brand-book.md + social-posts + site-pages"
+        output: "brand-consistency-audit.md"
+        quality_gate: "consistencia visual 100%"

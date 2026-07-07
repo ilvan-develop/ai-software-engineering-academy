@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://ai-software-engineering.academy/schemas/metadata",
+  "title": "Module Metadata",
+  "description": "Schema for METADATA.yaml in each module directory",
+  "type": "object",
+  "required": ["id", "title", "status", "version", "topics", "level", "audience"],
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "description": { "type": "string" },
+    "status": {
+      "type": "string",
+      "enum": ["raw", "em_andamento", "revisao", "publicado", "arquivado"]
+    },
+    "version": { "type": "integer", "minimum": 1 },
+    "topics": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "level": {
+      "type": "string",
+      "enum": ["beginner", "intermediate", "advanced"]
+    },
+    "audience": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "prerequisites": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "author": { "type": "string" },
+    "reviewers": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "bqs_score": { "type": "number" },
+    "duration_minutes": { "type": ["integer", "null"] },
+    "changelog": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["date", "version", "description"],
+        "properties": {
+          "date": { "type": "string", "format": "date" },
+          "version": { "type": "string" },
+          "description": { "type": "string" },
+          "author": { "type": "string" }
+        }
+      }
+    }
+  }
+}

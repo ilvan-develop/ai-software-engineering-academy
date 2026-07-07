@@ -1,0 +1,23 @@
+id: arquitetura-backend/module-08-arquitetura
+title: Arquitetura de Software
+description: Módulo Arquitetura de Software do curso arquitetura-backend.
+status: publicado
+version: 1
+topics:
+- arquitetura-backend
+- clean-architecture
+level: advanced
+audience:
+- architects
+- devs
+prerequisites:
+- product-design/module-07-design-system
+author: AI Software Engineering Academy
+reviewers: []
+bqs_score: 73.0
+duration_minutes: null
+changelog:
+- date: '2026-06-27'
+  version: '1.0'
+  description: Versão inicial
+  author: AI Software Engineering Academy

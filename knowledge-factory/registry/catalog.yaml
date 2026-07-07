@@ -1,23 +1,734 @@
-# catalog.yaml — Content Registry
-# TODO item do conhecimento no Knowledge Factory.
-# Populado automaticamente via scripts/registry/populate_catalog.py
-#
-# Schema v1
-# items:
-#   - id: string           # Identificador unico (ex: mod-08-arquitetura)
-#     type: string         # module | book | asset | social | newsletter | certificate
-#     title: string
-#     source: string       # Path relativo ao source original
-#     version: int
-#     taxonomy:
-#       topics: [string]
-#       level: string      # beginner | intermediate | advanced
-#       audience: [string]
-#     relationships:
-#       used_in: [string]  # IDs dos produtos que usam este item
-#       prerequisites: [string]
-#     outputs:
-#       format: path       # Path relativo em products/
-
 version: 1
-items: []
+items:
+- id: fundamentos-enterprise/module-00-introducao
+  type: module
+  title: Introdução — O Papel do Arquiteto
+  source: curriculum/sources/fundamentos-enterprise/module-00-introducao/aula/aula.md
+  version: 1
+  taxonomy:
+    topics:
+    - fundamentos
+    - introducao
+    level: beginner
+    audience: &id001
+    - devs
+    - architects
+    - students
+  relationships:
+    used_in:
+    - formacao-completa
+    prerequisites: []
+  outputs:
+    aula: publicado
+    slides: gerado
+    video: gerado
+    exercicios: gerado
+    quiz: gerado
+    projeto: gerado
+    workshop: gerado
+- id: fundamentos-enterprise/module-01-mentalidade-enterprise
+  type: module
+  title: Mentalidade Enterprise
+  source: curriculum/sources/fundamentos-enterprise/module-01-mentalidade-enterprise/aula/aula.md
+  version: 1
+  taxonomy:
+    topics:
+    - fundamentos
+    - mentalidade
+    level: beginner
+    audience: *id001
+  relationships:
+    used_in:
+    - formacao-completa
+    prerequisites: []
+  outputs:
+    aula: publicado
+    slides: gerado
+    video: gerado
+    exercicios: gerado
+    quiz: gerado
+    projeto: gerado
+    workshop: gerado
+- id: fundamentos-enterprise/module-09-erro-90-ia
+  type: module
+  title: O Erro de 90% ao Usar IA para Programar
+  source: curriculum/sources/fundamentos-enterprise/module-09-erro-90-ia/aula/aula.md
+  version: 1
+  taxonomy:
+    topics:
+    - fundamentos
+    - erro-90
+    level: beginner
+    audience: *id001
+  relationships:
+    used_in:
+    - formacao-completa
+    prerequisites: []
+  outputs:
+    aula: publicado
+    slides: gerado
+    video: gerado
+    exercicios: gerado
+    quiz: gerado
+    projeto: gerado
+    workshop: gerado
+- id: product-design/module-02-product-discovery
+  type: module
+  title: Product Discovery
+  source: curriculum/sources/product-design/module-02-product-discovery/aula/aula.md
+  version: 1
+  taxonomy:
+    topics:
+    - product-design
+    - discovery
+    level: intermediate
+    audience: &id002
+    - designers
+    - devs
+  relationships:
+    used_in:
+    - formacao-completa
+    prerequisites:
+    - fundamentos-enterprise/module-09-erro-90-ia
+  outputs:
+    aula: publicado
+    slides: gerado
+    video: gerado
+    exercicios: gerado
+    quiz: gerado
+    projeto: gerado
+    workshop: gerado
+- id: product-design/module-03-design-thinking
+  type: module
+  title: Design Thinking
+  source: curriculum/sources/product-design/module-03-design-thinking/aula/aula.md
+  version: 1
+  taxonomy:
+    topics:
+    - product-design
+    - design-thinking
+    level: intermediate
+    audience: *id002
+  relationships:
+    used_in:
+    - formacao-completa
+    prerequisites:
+    - fundamentos-enterprise/module-09-erro-90-ia
+  outputs:
+    aula: publicado
+    slides: gerado
+    video: gerado
+    exercicios: gerado
+    quiz: gerado
+    projeto: gerado
+    workshop: gerado
+- id: product-design/module-04-ux
+  type: module
+  title: UX Research & Design
+  source: curriculum/sources/product-design/module-04-ux/aula/aula.md
+  version: 1
+  taxonomy:
+    topics:
+    - product-design
+    - ux
+    level: intermediate
+    audience: *id002
+  relationships:
+    used_in:
+    - formacao-completa
+    prerequisites:
+    - fundamentos-enterprise/module-09-erro-90-ia
+  outputs:
+    aula: publicado
+    slides: gerado
+    video: gerado
+    exercicios: gerado
+    quiz: gerado
+    projeto: gerado
+    workshop: gerado
+- id: product-design/module-05-wireframes
+  type: module
+  title: Wireframes e Prototipação
+  source: curriculum/sources/product-design/module-05-wireframes/aula/aula.md
+  version: 1
+  taxonomy:
+    topics:
+    - product-design
+    - wireframes
+    level: intermediate
+    audience: *id002
+  relationships:
+    used_in:
+    - formacao-completa
+    prerequisites:
+    - fundamentos-enterprise/module-09-erro-90-ia
+  outputs:
+    aula: publicado
+    slides: gerado
+    video: gerado
+    exercicios: gerado
+    quiz: gerado
+    projeto: gerado
+    workshop: gerado
+- id: product-design/module-06-ui-design
+  type: module
+  title: UI Design
+  source: curriculum/sources/product-design/module-06-ui-design/aula/aula.md
+  version: 1
+  taxonomy:
+    topics:
+    - product-design
+    - ui
+    level: intermediate
+    audience: *id002
+  relationships:
+    used_in:
+    - formacao-completa
+    prerequisites:
+    - fundamentos-enterprise/module-09-erro-90-ia
+  outputs:
+    aula: publicado
+    slides: gerado
+    video: gerado
+    exercicios: gerado
+    quiz: gerado
+    projeto: gerado
+    workshop: gerado
+- id: product-design/module-07-design-system
+  type: module
+  title: Design System
+  source: curriculum/sources/product-design/module-07-design-system/aula/aula.md
+  version: 1
+  taxonomy:
+    topics:
+    - product-design
+    - design-system
+    level: intermediate
+    audience: *id002
+  relationships:
+    used_in:
+    - formacao-completa
+    prerequisites:
+    - fundamentos-enterprise/module-09-erro-90-ia
+  outputs:
+    aula: publicado
+    slides: gerado
+    video: gerado
+    exercicios: gerado
+    quiz: gerado
+    projeto: gerado
+    workshop: gerado
+- id: arquitetura-backend/module-08-arquitetura
+  type: module
+  title: Arquitetura de Software
+  source: curriculum/sources/arquitetura-backend/module-08-arquitetura/aula/aula.md
+  version: 1
+  taxonomy:
+    topics:
+    - arquitetura-backend
+    - clean-architecture
+    level: advanced
+    audience: &id003
+    - architects
+    - devs
+  relationships:
+    used_in:
+    - formacao-completa
+    prerequisites:
+    - product-design/module-07-design-system
+  outputs:
+    aula: publicado
+    slides: gerado
+    video: gerado
+    exercicios: gerado
+    quiz: gerado
+    projeto: gerado
+    workshop: gerado
+- id: arquitetura-backend/module-09-modelagem
+  type: module
+  title: Modelagem de Sistemas
+  source: curriculum/sources/arquitetura-backend/module-09-modelagem/aula/aula.md
+  version: 1
+  taxonomy:
+    topics:
+    - arquitetura-backend
+    - ddd
+    - modelagem
+    level: advanced
+    audience: *id003
+  relationships:
+    used_in:
+    - formacao-completa
+    prerequisites:
+    - product-design/module-07-design-system
+  outputs:
+    aula: publicado
+    slides: gerado
+    video: gerado
+    exercicios: gerado
+    quiz: gerado
+    projeto: gerado
+    workshop: gerado
+- id: arquitetura-backend/module-10-backend
+  type: module
+  title: Desenvolvimento Backend
+  source: curriculum/sources/arquitetura-backend/module-10-backend/aula/aula.md
+  version: 1
+  taxonomy:
+    topics:
+    - arquitetura-backend
+    - clean-architecture
+    level: advanced
+    audience: *id003
+  relationships:
+    used_in:
+    - formacao-completa
+    prerequisites:
+    - product-design/module-07-design-system
+  outputs:
+    aula: publicado
+    slides: gerado
+    video: gerado
+    exercicios: gerado
+    quiz: gerado
+    projeto: gerado
+    workshop: gerado
+- id: arquitetura-backend/module-12-seguranca
+  type: module
+  title: Segurança
+  source: curriculum/sources/arquitetura-backend/module-12-seguranca/aula/aula.md
+  version: 1
+  taxonomy:
+    topics:
+    - arquitetura-backend
+    - seguranca
+    level: advanced
+    audience: *id003
+  relationships:
+    used_in:
+    - formacao-completa
+    prerequisites:
+    - product-design/module-07-design-system
+  outputs:
+    aula: publicado
+    slides: gerado
+    video: gerado
+    exercicios: gerado
+    quiz: gerado
+    projeto: gerado
+    workshop: gerado
+- id: arquitetura-backend/module-13-multi-tenant
+  type: module
+  title: 'Multi-Tenant: Conceitos e Estratégias de Isolamento'
+  source: curriculum/sources/arquitetura-backend/module-13-multi-tenant/aula/aula.md
+  version: 1
+  taxonomy:
+    topics:
+    - arquitetura-backend
+    - multi-tenant
+    level: advanced
+    audience: *id003
+  relationships:
+    used_in:
+    - formacao-completa
+    - backend-architecture
+    prerequisites:
+    - product-design/module-07-design-system
+  outputs:
+    aula: publicado
+    slides: gerado
+    video: gerado
+    exercicios: gerado
+    quiz: gerado
+    projeto: gerado
+    workshop: gerado
+- id: arquitetura-backend/module-13b-multi-tenant-implementacao
+  type: module
+  title: 'Multi-Tenant: Implementação com NestJS e Prisma'
+  source: curriculum/sources/arquitetura-backend/module-13b-multi-tenant-implementacao/aula/aula.md
+  version: 1
+  taxonomy:
+    topics:
+    - arquitetura-backend
+    - multi-tenant
+    level: advanced
+    audience: *id003
+  relationships:
+    used_in:
+    - formacao-completa
+    - backend-architecture
+    prerequisites:
+    - product-design/module-07-design-system
+  outputs:
+    aula: publicado
+    slides: gerado
+    video: gerado
+    exercicios: gerado
+    quiz: gerado
+    projeto: gerado
+    workshop: gerado
+- id: arquitetura-backend/module-13c-multi-tenant-dados
+  type: module
+  title: 'Multi-Tenant: Migrations, Dados e Seed'
+  source: curriculum/sources/arquitetura-backend/module-13c-multi-tenant-dados/aula/aula.md
+  version: 1
+  taxonomy:
+    topics:
+    - arquitetura-backend
+    - multi-tenant
+    level: advanced
+    audience: *id003
+  relationships:
+    used_in:
+    - formacao-completa
+    - backend-architecture
+    prerequisites:
+    - product-design/module-07-design-system
+  outputs:
+    aula: publicado
+    slides: gerado
+    video: gerado
+    exercicios: gerado
+    quiz: gerado
+    projeto: gerado
+    workshop: gerado
+- id: arquitetura-backend/module-13d-multi-tenant-operacoes
+  type: module
+  title: 'Multi-Tenant: Operações e Qualidade'
+  source: curriculum/sources/arquitetura-backend/module-13d-multi-tenant-operacoes/aula/aula.md
+  version: 1
+  taxonomy:
+    topics:
+    - arquitetura-backend
+    - multi-tenant
+    level: advanced
+    audience: *id003
+  relationships:
+    used_in:
+    - formacao-completa
+    - backend-architecture
+    prerequisites:
+    - product-design/module-07-design-system
+  outputs:
+    aula: publicado
+    slides: gerado
+    video: gerado
+    exercicios: gerado
+    quiz: gerado
+    projeto: gerado
+    workshop: gerado
+- id: frontend-devops/module-11-frontend
+  type: module
+  title: Desenvolvimento Frontend
+  source: curriculum/sources/frontend-devops/module-11-frontend/aula/aula.md
+  version: 1
+  taxonomy:
+    topics:
+    - frontend
+    level: intermediate
+    audience: &id004
+    - devs
+  relationships:
+    used_in:
+    - formacao-completa
+    prerequisites:
+    - arquitetura-backend/module-13d-multi-tenant-operacoes
+  outputs:
+    aula: publicado
+    slides: gerado
+    video: gerado
+    exercicios: gerado
+    quiz: gerado
+    projeto: gerado
+    workshop: gerado
+- id: frontend-devops/module-14-devops
+  type: module
+  title: DevOps e Infraestrutura
+  source: curriculum/sources/frontend-devops/module-14-devops/aula/aula.md
+  version: 1
+  taxonomy:
+    topics:
+    - frontend
+    - devops
+    level: intermediate
+    audience: *id004
+  relationships:
+    used_in:
+    - formacao-completa
+    prerequisites:
+    - arquitetura-backend/module-13d-multi-tenant-operacoes
+  outputs:
+    aula: publicado
+    slides: gerado
+    video: gerado
+    exercicios: gerado
+    quiz: gerado
+    projeto: gerado
+    workshop: gerado
+- id: frontend-devops/module-15-qa
+  type: module
+  title: Qualidade e Testes
+  source: curriculum/sources/frontend-devops/module-15-qa/aula/aula.md
+  version: 1
+  taxonomy:
+    topics:
+    - frontend
+    - qualidade
+    level: intermediate
+    audience: *id004
+  relationships:
+    used_in:
+    - formacao-completa
+    prerequisites:
+    - arquitetura-backend/module-13d-multi-tenant-operacoes
+  outputs:
+    aula: publicado
+    slides: gerado
+    video: gerado
+    exercicios: gerado
+    quiz: gerado
+    projeto: gerado
+    workshop: gerado
+- id: frontend-devops/module-16-observabilidade
+  type: module
+  title: Observabilidade
+  source: curriculum/sources/frontend-devops/module-16-observabilidade/aula/aula.md
+  version: 1
+  taxonomy:
+    topics:
+    - frontend
+    - observabilidade
+    level: intermediate
+    audience: *id004
+  relationships:
+    used_in:
+    - formacao-completa
+    prerequisites:
+    - arquitetura-backend/module-13d-multi-tenant-operacoes
+  outputs:
+    aula: publicado
+    slides: gerado
+    video: gerado
+    exercicios: gerado
+    quiz: gerado
+    projeto: gerado
+    workshop: gerado
+- id: governanca-automacao/module-17-governanca
+  type: module
+  title: Governança de Software
+  source: curriculum/sources/governanca-automacao/module-17-governanca/aula/aula.md
+  version: 1
+  taxonomy:
+    topics:
+    - governanca
+    level: advanced
+    audience: &id005
+    - architects
+    - managers
+  relationships:
+    used_in:
+    - formacao-completa
+    prerequisites:
+    - frontend-devops/module-16-observabilidade
+  outputs:
+    aula: publicado
+    slides: gerado
+    video: gerado
+    exercicios: gerado
+    quiz: gerado
+    projeto: gerado
+    workshop: gerado
+- id: governanca-automacao/module-18-agentes-ia
+  type: module
+  title: Agentes de IA
+  source: curriculum/sources/governanca-automacao/module-18-agentes-ia/aula/aula.md
+  version: 1
+  taxonomy:
+    topics:
+    - governanca
+    - agentes-ia
+    level: advanced
+    audience: *id005
+  relationships:
+    used_in:
+    - formacao-completa
+    prerequisites:
+    - frontend-devops/module-16-observabilidade
+  outputs:
+    aula: publicado
+    slides: gerado
+    video: gerado
+    exercicios: gerado
+    quiz: gerado
+    projeto: gerado
+    workshop: gerado
+- id: governanca-automacao/module-19-auditorias
+  type: module
+  title: Auditorias
+  source: curriculum/sources/governanca-automacao/module-19-auditorias/aula/aula.md
+  version: 1
+  taxonomy:
+    topics:
+    - governanca
+    - auditorias
+    level: advanced
+    audience: *id005
+  relationships:
+    used_in:
+    - formacao-completa
+    prerequisites:
+    - frontend-devops/module-16-observabilidade
+  outputs:
+    aula: publicado
+    slides: gerado
+    video: gerado
+    exercicios: gerado
+    quiz: gerado
+    projeto: gerado
+    workshop: gerado
+- id: governanca-automacao/module-20-automacao
+  type: module
+  title: Automação do Ciclo de Desenvolvimento
+  source: curriculum/sources/governanca-automacao/module-20-automacao/aula/aula.md
+  version: 1
+  taxonomy:
+    topics:
+    - governanca
+    - automacao
+    level: advanced
+    audience: *id005
+  relationships:
+    used_in:
+    - formacao-completa
+    prerequisites:
+    - frontend-devops/module-16-observabilidade
+  outputs:
+    aula: publicado
+    slides: gerado
+    video: gerado
+    exercicios: gerado
+    quiz: gerado
+    projeto: gerado
+    workshop: gerado
+- id: capstone/module-21-projeto-final
+  type: module
+  title: Construindo um SaaS Enterprise
+  source: curriculum/sources/capstone/module-21-projeto-final/aula/aula.md
+  version: 1
+  taxonomy:
+    topics:
+    - arquitetura-backend
+    - clean-architecture
+    level: advanced
+    audience:
+    - architects
+    - devs
+  relationships:
+    used_in:
+    - formacao-completa
+    prerequisites:
+    - governanca-automacao/module-20-automacao
+  outputs:
+    aula: publicado
+    slides: gerado
+    video: gerado
+    exercicios: gerado
+    quiz: gerado
+    projeto: gerado
+    workshop: gerado
+- id: formacao-completa
+  type: book
+  title: Arquitetura de Software Enterprise com IA
+  source: knowledge-factory/products/books/formacao-completa/compiled/book.md
+  version: 1
+  taxonomy:
+    topics:
+    - fundamentos
+    - arquitetura-backend
+    - product-design
+    - governanca
+    level: advanced
+    audience:
+    - architects
+    - devs
+  relationships:
+    used_in: []
+    prerequisites: []
+  outputs:
+    docx: publicado
+    epub: publicado
+    pdf_digital: publicado
+    pdf_print: publicado
+    component_pipeline: publicado
+- id: backend-architecture
+  type: book
+  title: Arquitetura Backend Enterprise
+  source: knowledge-factory/products/books/backend-architecture/compiled/book.md
+  version: 1
+  taxonomy:
+    topics:
+    - fundamentos
+    - arquitetura-backend
+    - product-design
+    - governanca
+    level: advanced
+    audience:
+    - architects
+    - devs
+  relationships:
+    used_in: []
+    prerequisites: []
+  outputs:
+    docx: publicado
+    epub: publicado
+    pdf_digital: publicado
+    pdf_print: publicado
+    component_pipeline: publicado
+- id: product-design-book
+  type: book
+  title: Product Design Engineering
+  source: knowledge-factory/products/books/product-design-book/compiled/book.md
+  version: 1
+  taxonomy:
+    topics:
+    - fundamentos
+    - arquitetura-backend
+    - product-design
+    - governanca
+    level: advanced
+    audience:
+    - architects
+    - devs
+  relationships:
+    used_in: []
+    prerequisites: []
+  outputs:
+    docx: publicado
+    epub: publicado
+    pdf_digital: publicado
+    pdf_print: publicado
+    component_pipeline: publicado
+- id: ia-para-devs
+  type: book
+  title: IA para Desenvolvedores
+  source: knowledge-factory/products/books/ia-para-devs/compiled/book.md
+  version: 1
+  taxonomy:
+    topics:
+    - fundamentos
+    - arquitetura-backend
+    - product-design
+    - governanca
+    level: advanced
+    audience:
+    - architects
+    - devs
+  relationships:
+    used_in: []
+    prerequisites: []
+  outputs:
+    docx: publicado
+    epub: publicado
+    pdf_digital: publicado
+    pdf_print: publicado
+    component_pipeline: publicado

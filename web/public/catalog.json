@@ -1,0 +1,491 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "fundamentos-enterprise/module-00-introducao",
+      "type": "module",
+      "title": "Introdução — O Papel do Arquiteto",
+      "taxonomy": {
+        "topics": [
+          "fundamentos",
+          "introducao"
+        ],
+        "level": "beginner",
+        "audience": [
+          "devs",
+          "architects",
+          "students"
+        ]
+      }
+    },
+    {
+      "id": "fundamentos-enterprise/module-01-mentalidade-enterprise",
+      "type": "module",
+      "title": "Mentalidade Enterprise",
+      "taxonomy": {
+        "topics": [
+          "fundamentos",
+          "mentalidade"
+        ],
+        "level": "beginner",
+        "audience": [
+          "devs",
+          "architects",
+          "students"
+        ]
+      }
+    },
+    {
+      "id": "fundamentos-enterprise/module-09-erro-90-ia",
+      "type": "module",
+      "title": "O Erro de 90% ao Usar IA para Programar",
+      "taxonomy": {
+        "topics": [
+          "fundamentos",
+          "erro-90"
+        ],
+        "level": "beginner",
+        "audience": [
+          "devs",
+          "architects",
+          "students"
+        ]
+      }
+    },
+    {
+      "id": "product-design/module-02-product-discovery",
+      "type": "module",
+      "title": "Product Discovery",
+      "taxonomy": {
+        "topics": [
+          "product-design",
+          "discovery"
+        ],
+        "level": "intermediate",
+        "audience": [
+          "designers",
+          "devs"
+        ]
+      }
+    },
+    {
+      "id": "product-design/module-03-design-thinking",
+      "type": "module",
+      "title": "Design Thinking",
+      "taxonomy": {
+        "topics": [
+          "product-design",
+          "design-thinking"
+        ],
+        "level": "intermediate",
+        "audience": [
+          "designers",
+          "devs"
+        ]
+      }
+    },
+    {
+      "id": "product-design/module-04-ux",
+      "type": "module",
+      "title": "UX Research & Design",
+      "taxonomy": {
+        "topics": [
+          "product-design",
+          "ux"
+        ],
+        "level": "intermediate",
+        "audience": [
+          "designers",
+          "devs"
+        ]
+      }
+    },
+    {
+      "id": "product-design/module-05-wireframes",
+      "type": "module",
+      "title": "Wireframes e Prototipação",
+      "taxonomy": {
+        "topics": [
+          "product-design",
+          "wireframes"
+        ],
+        "level": "intermediate",
+        "audience": [
+          "designers",
+          "devs"
+        ]
+      }
+    },
+    {
+      "id": "product-design/module-06-ui-design",
+      "type": "module",
+      "title": "UI Design",
+      "taxonomy": {
+        "topics": [
+          "product-design",
+          "ui"
+        ],
+        "level": "intermediate",
+        "audience": [
+          "designers",
+          "devs"
+        ]
+      }
+    },
+    {
+      "id": "product-design/module-07-design-system",
+      "type": "module",
+      "title": "Design System",
+      "taxonomy": {
+        "topics": [
+          "product-design",
+          "design-system"
+        ],
+        "level": "intermediate",
+        "audience": [
+          "designers",
+          "devs"
+        ]
+      }
+    },
+    {
+      "id": "arquitetura-backend/module-08-arquitetura",
+      "type": "module",
+      "title": "Arquitetura de Software",
+      "taxonomy": {
+        "topics": [
+          "arquitetura-backend",
+          "clean-architecture"
+        ],
+        "level": "advanced",
+        "audience": [
+          "architects",
+          "devs"
+        ]
+      }
+    },
+    {
+      "id": "arquitetura-backend/module-09-modelagem",
+      "type": "module",
+      "title": "Modelagem de Sistemas",
+      "taxonomy": {
+        "topics": [
+          "arquitetura-backend",
+          "ddd",
+          "modelagem"
+        ],
+        "level": "advanced",
+        "audience": [
+          "architects",
+          "devs"
+        ]
+      }
+    },
+    {
+      "id": "arquitetura-backend/module-10-backend",
+      "type": "module",
+      "title": "Desenvolvimento Backend",
+      "taxonomy": {
+        "topics": [
+          "arquitetura-backend",
+          "clean-architecture"
+        ],
+        "level": "advanced",
+        "audience": [
+          "architects",
+          "devs"
+        ]
+      }
+    },
+    {
+      "id": "arquitetura-backend/module-12-seguranca",
+      "type": "module",
+      "title": "Segurança",
+      "taxonomy": {
+        "topics": [
+          "arquitetura-backend",
+          "seguranca"
+        ],
+        "level": "advanced",
+        "audience": [
+          "architects",
+          "devs"
+        ]
+      }
+    },
+    {
+      "id": "arquitetura-backend/module-13-multi-tenant",
+      "type": "module",
+      "title": "Multi-Tenant: Conceitos e Estratégias de Isolamento",
+      "taxonomy": {
+        "topics": [
+          "arquitetura-backend",
+          "multi-tenant"
+        ],
+        "level": "advanced",
+        "audience": [
+          "architects",
+          "devs"
+        ]
+      }
+    },
+    {
+      "id": "arquitetura-backend/module-13b-multi-tenant-implementacao",
+      "type": "module",
+      "title": "Multi-Tenant: Implementação com NestJS e Prisma",
+      "taxonomy": {
+        "topics": [
+          "arquitetura-backend",
+          "multi-tenant"
+        ],
+        "level": "advanced",
+        "audience": [
+          "architects",
+          "devs"
+        ]
+      }
+    },
+    {
+      "id": "arquitetura-backend/module-13c-multi-tenant-dados",
+      "type": "module",
+      "title": "Multi-Tenant: Migrations, Dados e Seed",
+      "taxonomy": {
+        "topics": [
+          "arquitetura-backend",
+          "multi-tenant"
+        ],
+        "level": "advanced",
+        "audience": [
+          "architects",
+          "devs"
+        ]
+      }
+    },
+    {
+      "id": "arquitetura-backend/module-13d-multi-tenant-operacoes",
+      "type": "module",
+      "title": "Multi-Tenant: Operações e Qualidade",
+      "taxonomy": {
+        "topics": [
+          "arquitetura-backend",
+          "multi-tenant"
+        ],
+        "level": "advanced",
+        "audience": [
+          "architects",
+          "devs"
+        ]
+      }
+    },
+    {
+      "id": "frontend-devops/module-11-frontend",
+      "type": "module",
+      "title": "Desenvolvimento Frontend",
+      "taxonomy": {
+        "topics": [
+          "frontend"
+        ],
+        "level": "intermediate",
+        "audience": [
+          "devs"
+        ]
+      }
+    },
+    {
+      "id": "frontend-devops/module-14-devops",
+      "type": "module",
+      "title": "DevOps e Infraestrutura",
+      "taxonomy": {
+        "topics": [
+          "frontend",
+          "devops"
+        ],
+        "level": "intermediate",
+        "audience": [
+          "devs"
+        ]
+      }
+    },
+    {
+      "id": "frontend-devops/module-15-qa",
+      "type": "module",
+      "title": "Qualidade e Testes",
+      "taxonomy": {
+        "topics": [
+          "frontend",
+          "qualidade"
+        ],
+        "level": "intermediate",
+        "audience": [
+          "devs"
+        ]
+      }
+    },
+    {
+      "id": "frontend-devops/module-16-observabilidade",
+      "type": "module",
+      "title": "Observabilidade",
+      "taxonomy": {
+        "topics": [
+          "frontend",
+          "observabilidade"
+        ],
+        "level": "intermediate",
+        "audience": [
+          "devs"
+        ]
+      }
+    },
+    {
+      "id": "governanca-automacao/module-17-governanca",
+      "type": "module",
+      "title": "Governança de Software",
+      "taxonomy": {
+        "topics": [
+          "governanca"
+        ],
+        "level": "advanced",
+        "audience": [
+          "architects",
+          "managers"
+        ]
+      }
+    },
+    {
+      "id": "governanca-automacao/module-18-agentes-ia",
+      "type": "module",
+      "title": "Agentes de IA",
+      "taxonomy": {
+        "topics": [
+          "governanca",
+          "agentes-ia"
+        ],
+        "level": "advanced",
+        "audience": [
+          "architects",
+          "managers"
+        ]
+      }
+    },
+    {
+      "id": "governanca-automacao/module-19-auditorias",
+      "type": "module",
+      "title": "Auditorias",
+      "taxonomy": {
+        "topics": [
+          "governanca",
+          "auditorias"
+        ],
+        "level": "advanced",
+        "audience": [
+          "architects",
+          "managers"
+        ]
+      }
+    },
+    {
+      "id": "governanca-automacao/module-20-automacao",
+      "type": "module",
+      "title": "Automação do Ciclo de Desenvolvimento",
+      "taxonomy": {
+        "topics": [
+          "governanca",
+          "automacao"
+        ],
+        "level": "advanced",
+        "audience": [
+          "architects",
+          "managers"
+        ]
+      }
+    },
+    {
+      "id": "capstone/module-21-projeto-final",
+      "type": "module",
+      "title": "Construindo um SaaS Enterprise",
+      "taxonomy": {
+        "topics": [
+          "arquitetura-backend",
+          "clean-architecture"
+        ],
+        "level": "advanced",
+        "audience": [
+          "architects",
+          "devs"
+        ]
+      }
+    },
+    {
+      "id": "formacao-completa",
+      "type": "book",
+      "title": "Arquitetura de Software Enterprise com IA",
+      "taxonomy": {
+        "topics": [
+          "fundamentos",
+          "arquitetura-backend",
+          "product-design",
+          "governanca"
+        ],
+        "level": "advanced",
+        "audience": [
+          "architects",
+          "devs"
+        ]
+      }
+    },
+    {
+      "id": "backend-architecture",
+      "type": "book",
+      "title": "Arquitetura Backend Enterprise",
+      "taxonomy": {
+        "topics": [
+          "fundamentos",
+          "arquitetura-backend",
+          "product-design",
+          "governanca"
+        ],
+        "level": "advanced",
+        "audience": [
+          "architects",
+          "devs"
+        ]
+      }
+    },
+    {
+      "id": "product-design-book",
+      "type": "book",
+      "title": "Product Design Engineering",
+      "taxonomy": {
+        "topics": [
+          "fundamentos",
+          "arquitetura-backend",
+          "product-design",
+          "governanca"
+        ],
+        "level": "advanced",
+        "audience": [
+          "architects",
+          "devs"
+        ]
+      }
+    },
+    {
+      "id": "ia-para-devs",
+      "type": "book",
+      "title": "IA para Desenvolvedores",
+      "taxonomy": {
+        "topics": [
+          "fundamentos",
+          "arquitetura-backend",
+          "product-design",
+          "governanca"
+        ],
+        "level": "advanced",
+        "audience": [
+          "architects",
+          "devs"
+        ]
+      }
+    }
+  ]
+}

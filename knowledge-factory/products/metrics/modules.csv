@@ -1,0 +1,61 @@
+timestamp,target_id,type,title,overall,min_score,passed
+2026-07-07 14:32,fundamentos-enterprise/module-00-introducao,module,Introdução — O Papel do Arquiteto,76.0,69.7,False
+2026-07-07 14:32,fundamentos-enterprise/module-01-mentalidade-enterprise,module,Mentalidade Enterprise,76.1,68.8,False
+2026-07-07 14:32,fundamentos-enterprise/module-09-erro-90-ia,module,O Erro de 90% ao Usar IA para Programar,75.6,67.7,False
+2026-07-07 14:32,product-design/module-02-product-discovery,module,Product Discovery,75.8,66.3,False
+2026-07-07 14:32,product-design/module-03-design-thinking,module,Design Thinking,75.6,64.8,False
+2026-07-07 14:32,product-design/module-04-ux,module,UX Research & Design,76.1,70.7,False
+2026-07-07 14:32,product-design/module-05-wireframes,module,Wireframes e Prototipação,75.3,65.6,False
+2026-07-07 14:32,product-design/module-06-ui-design,module,UI Design,74.5,57.1,False
+2026-07-07 14:32,product-design/module-07-design-system,module,Design System,72.8,47.3,False
+2026-07-07 14:32,arquitetura-backend/module-08-arquitetura,module,Arquitetura de Software,73.0,37.9,False
+2026-07-07 14:32,arquitetura-backend/module-09-modelagem,module,Modelagem de Sistemas,74.9,52.4,False
+2026-07-07 14:32,arquitetura-backend/module-10-backend,module,Desenvolvimento Backend,72.7,36.7,False
+2026-07-07 14:32,arquitetura-backend/module-12-seguranca,module,Segurança,74.9,61.7,False
+2026-07-07 14:32,arquitetura-backend/module-13-multi-tenant,module,Multi-Tenant: Conceitos e Estratégias de Isolamento,73.5,36.2,False
+2026-07-07 14:32,arquitetura-backend/module-13b-multi-tenant-implementacao,module,Multi-Tenant: Implementação com NestJS e Prisma,73.2,37.3,False
+2026-07-07 14:32,arquitetura-backend/module-13c-multi-tenant-dados,module,"Multi-Tenant: Migrations, Dados e Seed",72.8,37.7,False
+2026-07-07 14:32,arquitetura-backend/module-13d-multi-tenant-operacoes,module,Multi-Tenant: Operações e Qualidade,72.0,34.5,False
+2026-07-07 14:32,frontend-devops/module-11-frontend,module,Desenvolvimento Frontend,73.9,57.4,False
+2026-07-07 14:32,frontend-devops/module-14-devops,module,DevOps e Infraestrutura,72.3,28.8,False
+2026-07-07 14:32,frontend-devops/module-15-qa,module,Qualidade e Testes,74.1,54.0,False
+2026-07-07 14:32,frontend-devops/module-16-observabilidade,module,Observabilidade,74.9,57.6,False
+2026-07-07 14:32,governanca-automacao/module-17-governanca,module,Governança de Software,75.4,58.1,False
+2026-07-07 14:32,governanca-automacao/module-18-agentes-ia,module,Agentes de IA,74.4,54.6,False
+2026-07-07 14:32,governanca-automacao/module-19-auditorias,module,Auditorias,75.7,65.9,False
+2026-07-07 14:32,governanca-automacao/module-20-automacao,module,Automação do Ciclo de Desenvolvimento,72.8,40.5,False
+2026-07-07 14:32,capstone/module-21-projeto-final,module,Construindo um SaaS Enterprise,76.0,68.0,False
+2026-07-07 14:32,formacao-completa,book,Arquitetura de Software Enterprise com IA,72.7,46.0,False
+2026-07-07 14:32,backend-architecture,book,Arquitetura Backend Enterprise,71.9,40.1,False
+2026-07-07 14:32,product-design-book,book,Product Design Engineering,73.0,52.9,False
+2026-07-07 14:32,ia-para-devs,book,IA para Desenvolvedores,73.5,45.8,False
+2026-07-07 17:02,fundamentos-enterprise/module-00-introducao,module,Introdução — O Papel do Arquiteto,76.0,69.7,False
+2026-07-07 17:02,fundamentos-enterprise/module-01-mentalidade-enterprise,module,Mentalidade Enterprise,76.1,68.8,False
+2026-07-07 17:02,fundamentos-enterprise/module-09-erro-90-ia,module,O Erro de 90% ao Usar IA para Programar,75.6,67.7,False
+2026-07-07 17:02,product-design/module-02-product-discovery,module,Product Discovery,75.8,66.3,False
+2026-07-07 17:02,product-design/module-03-design-thinking,module,Design Thinking,75.6,64.8,False
+2026-07-07 17:02,product-design/module-04-ux,module,UX Research & Design,76.1,70.7,False
+2026-07-07 17:02,product-design/module-05-wireframes,module,Wireframes e Prototipação,75.3,65.6,False
+2026-07-07 17:02,product-design/module-06-ui-design,module,UI Design,74.5,57.1,False
+2026-07-07 17:02,product-design/module-07-design-system,module,Design System,72.8,47.3,False
+2026-07-07 17:02,arquitetura-backend/module-08-arquitetura,module,Arquitetura de Software,73.0,37.9,False
+2026-07-07 17:02,arquitetura-backend/module-09-modelagem,module,Modelagem de Sistemas,74.9,52.4,False
+2026-07-07 17:02,arquitetura-backend/module-10-backend,module,Desenvolvimento Backend,72.7,36.7,False
+2026-07-07 17:02,arquitetura-backend/module-12-seguranca,module,Segurança,74.9,61.7,False
+2026-07-07 17:02,arquitetura-backend/module-13-multi-tenant,module,Multi-Tenant: Conceitos e Estratégias de Isolamento,73.5,36.2,False
+2026-07-07 17:02,arquitetura-backend/module-13b-multi-tenant-implementacao,module,Multi-Tenant: Implementação com NestJS e Prisma,73.2,37.3,False
+2026-07-07 17:02,arquitetura-backend/module-13c-multi-tenant-dados,module,"Multi-Tenant: Migrations, Dados e Seed",72.8,37.7,False
+2026-07-07 17:02,arquitetura-backend/module-13d-multi-tenant-operacoes,module,Multi-Tenant: Operações e Qualidade,72.0,34.5,False
+2026-07-07 17:02,frontend-devops/module-11-frontend,module,Desenvolvimento Frontend,73.9,57.4,False
+2026-07-07 17:02,frontend-devops/module-14-devops,module,DevOps e Infraestrutura,72.3,28.8,False
+2026-07-07 17:02,frontend-devops/module-15-qa,module,Qualidade e Testes,74.1,54.0,False
+2026-07-07 17:02,frontend-devops/module-16-observabilidade,module,Observabilidade,74.9,57.6,False
+2026-07-07 17:02,governanca-automacao/module-17-governanca,module,Governança de Software,75.4,58.1,False
+2026-07-07 17:02,governanca-automacao/module-18-agentes-ia,module,Agentes de IA,74.4,54.6,False
+2026-07-07 17:02,governanca-automacao/module-19-auditorias,module,Auditorias,75.7,65.9,False
+2026-07-07 17:02,governanca-automacao/module-20-automacao,module,Automação do Ciclo de Desenvolvimento,72.8,40.5,False
+2026-07-07 17:02,capstone/module-21-projeto-final,module,Construindo um SaaS Enterprise,76.0,68.0,False
+2026-07-07 17:02,formacao-completa,book,Arquitetura de Software Enterprise com IA,72.7,46.0,False
+2026-07-07 17:02,backend-architecture,book,Arquitetura Backend Enterprise,71.9,40.1,False
+2026-07-07 17:02,product-design-book,book,Product Design Engineering,73.0,52.9,False
+2026-07-07 17:02,ia-para-devs,book,IA para Desenvolvedores,73.5,45.8,False

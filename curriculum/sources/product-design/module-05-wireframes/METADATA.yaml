@@ -1,0 +1,23 @@
+id: product-design/module-05-wireframes
+title: Wireframes e Prototipação
+description: Módulo Wireframes e Prototipação do curso product-design.
+status: publicado
+version: 1
+topics:
+- product-design
+- wireframes
+level: intermediate
+audience:
+- designers
+- devs
+prerequisites:
+- fundamentos-enterprise/module-09-erro-90-ia
+author: AI Software Engineering Academy
+reviewers: []
+bqs_score: 75.3
+duration_minutes: null
+changelog:
+- date: '2026-06-27'
+  version: '1.0'
+  description: Versão inicial
+  author: AI Software Engineering Academy

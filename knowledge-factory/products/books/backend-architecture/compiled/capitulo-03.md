@@ -33,7 +33,7 @@ NestJS é o framework Node.js mais adequado para sistemas Enterprise.
   exports: [UserService],
 })
 export class UserModule {}
-```text
+```
 
 ![Arquitetura de Referencia Backend](/knowledge-factory/products/courses/arquitetura-backend/module-10-backend/assets/diagram-arquitetura-backend.svg)
 
@@ -183,7 +183,7 @@ export class UserService {
     return this.userRepo.findAll(pagination);
   }
 }
-```text
+```
 
 ### Repository
 
@@ -293,7 +293,7 @@ export class CreateUserPipe implements PipeTransform {
     return result.data;
   }
 }
-```text
+```
 
 ### Uso no controller
 
@@ -376,7 +376,7 @@ export class InvalidEmailError extends DomainError {
   readonly code = 'INVALID_EMAIL';
   constructor() { super('Formato de email inválido'); }
 }
-```text
+```
 
 ---
 
@@ -424,7 +424,7 @@ export class RolesGuard implements CanActivate {
 async remove(@Param('id') id: string) {
   return this.userService.softDelete(id);
 }
-```text
+```
 
 ---
 
@@ -497,7 +497,7 @@ async findById(id: string): Promise<UserResponse> {
     () => this.fetchUser(id),
   );
 }
-```text
+```
 
 ---
 

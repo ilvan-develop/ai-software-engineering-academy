@@ -1,9 +1,9 @@
 ## Sobre o Autor
+**Ilvan Joaquim** é arquiteto de software com mais de 15 anos de experiência em sistemas distribuídos, arquiteturas enterprise e liderança técnica. Especializou-se em Clean Architecture, Domain-Driven Design e sistemas multi-tenant — áreas que pratica diariamente em projetos de alto desempenho.
 
-**Ilvan Joaquim** é engenheiro de software com mais de 15 anos de experiência em arquitetura de sistemas, desenvolvimento full stack e liderança técnica. Especializou-se em integração de inteligência artificial em pipelines de desenvolvimento — área que explora desde os primórdios dos modelos de linguagem.
+Fundador da AI Software Engineering Academy, já formou mais de 2.000 desenvolvedores em todo o Brasil, combinando princípios consagrados de engenharia de software com as melhores práticas do ecossistema TypeScript/NestJS. Sua abordagem prioriza código sustentável e arquiteturas que evoluem com o negócio.
 
-Fundador da AI Software Engineering Academy, já formou mais de 2.000 desenvolvedores em todo o Brasil, combinando princípios consagrados de engenharia de software com o poder dos agentes de IA. Sua abordagem prática prioriza código que funciona em produção, não teoria rebuscada.
+Antes da Academia, liderou arquiteturas em fintechs e marketplaces brasileiros, onde aprendeu que a melhor arquitetura não é a mais sofisticada — é a que resolve o problema sem criar novos.
 
-Antes da Academia, liderou times de engenharia em fintechs e marketplaces brasileiros, onde aprendeu na prática que o maior risco da IA não é ela ser inteligente demais — é nós confiarmos demais nela.
+Ilvan escreve regularmente sobre arquitetura de software, engenharia e carreira técnica em seu blog e no LinkedIn.
 
-Ilvan escreve regularmente sobre engenharia de software, IA e carreira técnica em seu blog e no LinkedIn.

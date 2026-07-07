@@ -38,7 +38,7 @@ interface DesignSystemPurpose {
   qualidade:     'Componentes testados, acessíveis, documentados';
   colaboracao:   'Linguagem comum entre devs, designers, PMs, QA';
 }
-```text
+```
 
 > "Design Systems are how we scale design decisions across an organization." — Nathan Curtis
 
@@ -116,7 +116,7 @@ function TextField({ label, name, value, onChange, error, required }: TextFieldP
     </div>
   );
 }
-```text
+```
 
 #### Organismos
 
@@ -165,7 +165,7 @@ function SignupPage() {
     </AuthTemplate>
   );
 }
-```text
+```
 
 ### Por que Atomic Design no Enterprise?
 
@@ -246,7 +246,7 @@ export const typography = {
     'overline':    { fontSize: '0.75rem', lineHeight: '1rem', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.08em' },
   },
 } as const;
-```text
+```
 
 ### Spacing
 
@@ -310,7 +310,7 @@ export const mediaQueries = {
   xl:  `@media (min-width: ${breakpoints.xl}px)`,
   '2xl': `@media (min-width: ${breakpoints['2xl']}px)`,
 } as const;
-```text
+```
 
 ### CSS Custom Properties a partir dos Tokens
 
@@ -425,7 +425,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     );
   }
 );
-```text
+```
 
 ### Input
 
@@ -552,7 +552,7 @@ export function Modal({ open, onClose, title, size = 'md', children, footer }: M
     </div>
   );
 }
-```text
+```
 
 ### Tabela
 
@@ -719,7 +719,7 @@ export function Select({ label, options, value, onChange, placeholder, error, re
     </div>
   );
 }
-```text
+```
 
 ---
 
@@ -907,7 +907,7 @@ if (appearance && !variant) {
   console.warn('[DS] Button: `appearance` is deprecated. Use `variant` instead.');
   variant = appearance;
 }
-```text
+```
 
 ### Migration Guides
 
@@ -997,7 +997,7 @@ npx @acme/ds-codemod button-appearance-to-variant
   "sideEffects": false,
   "files": ["dist", "README.md", "LICENSE"]
 }
-```text
+```
 
 ### Tree-shaking
 

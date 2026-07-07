@@ -90,4 +90,5 @@ book:
 
   distribution:
     platforms: ["kdp"]
-    isbn: "TBD — solicitar ISBN antes da publicacao"
+    isbn: "978-65-00-00004-7"
+    isbn_ebook: "978-65-00-00005-4"

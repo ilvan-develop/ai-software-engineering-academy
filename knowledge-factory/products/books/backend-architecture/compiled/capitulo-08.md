@@ -116,7 +116,7 @@ async function scheduleTenantBackup(tenant: { id: string; plan: string }): Promi
       break;
   }
 }
-```text
+```
 
 ---
 
@@ -237,7 +237,7 @@ class QueryOptimizer {
     ]).then(r => r.rows);
   }
 }
-```text
+```
 
 ### 2.3 Rate Limiting por Tenant
 
@@ -452,7 +452,7 @@ export class FeatureFlagService {
     return { ...this.planFeatures };
   }
 }
-```text
+```
 
 ### 3.3 Guard do NestJS para Feature Flags
 
@@ -524,7 +524,7 @@ describe('Isolamento entre Tenants', () => {
     const jwt = require('jsonwebtoken');
     return jwt.sign(payload, process.env.JWT_SECRET || 'test-secret');
   }
-```text
+```
 
 ### 4.2 Teste 1: Vazamento Zero
 
@@ -601,7 +601,7 @@ describe('Isolamento entre Tenants', () => {
       }
     });
   });
-```text
+```
 
 ### 4.4 Teste 3: Injeção de Tenant ID
 
@@ -664,7 +664,7 @@ describe('Isolamento entre Tenants', () => {
       expect(tooManyRequests).toHaveLength(0);
     });
   });
-```text
+```
 
 ### 4.6 Teste 5: Migrations
 

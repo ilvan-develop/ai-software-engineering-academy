@@ -1,0 +1,24 @@
+id: arquitetura-backend/module-09-modelagem
+title: Modelagem de Sistemas
+description: Módulo Modelagem de Sistemas do curso arquitetura-backend.
+status: publicado
+version: 1
+topics:
+- arquitetura-backend
+- ddd
+- modelagem
+level: advanced
+audience:
+- architects
+- devs
+prerequisites:
+- product-design/module-07-design-system
+author: AI Software Engineering Academy
+reviewers: []
+bqs_score: 74.9
+duration_minutes: null
+changelog:
+- date: '2026-06-27'
+  version: '1.0'
+  description: Versão inicial
+  author: AI Software Engineering Academy

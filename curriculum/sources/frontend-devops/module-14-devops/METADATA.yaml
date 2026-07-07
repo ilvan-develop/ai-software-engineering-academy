@@ -1,0 +1,22 @@
+id: frontend-devops/module-14-devops
+title: DevOps e Infraestrutura
+description: Módulo DevOps e Infraestrutura do curso frontend-devops.
+status: publicado
+version: 1
+topics:
+- frontend
+- devops
+level: intermediate
+audience:
+- devs
+prerequisites:
+- arquitetura-backend/module-13d-multi-tenant-operacoes
+author: AI Software Engineering Academy
+reviewers: []
+bqs_score: 72.3
+duration_minutes: null
+changelog:
+- date: '2026-06-27'
+  version: '1.0'
+  description: Versão inicial
+  author: AI Software Engineering Academy

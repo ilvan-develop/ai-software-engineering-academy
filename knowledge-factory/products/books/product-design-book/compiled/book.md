@@ -750,7 +750,7 @@ Sem empatia, você constrói soluções baseadas em **suposições**. Com empati
 ## Fechamento (5 min)
 - "Mais alguma coisa que gostaria de compartilhar?"
 - "Posso voltar a falar com você se surgir mais dúvidas?"
-```text
+```
 
 **Regras de ouro para entrevistas:**
 
@@ -905,7 +905,7 @@ HMWs:
 6. HMW eliminar a necessidade de relatórios manuais completamente?
 7. HMW transformar Maria em power-user que ajuda outros colegas?
 8. HMW integrar as 5 fontes em um único dashboard em tempo real?
-```text
+```
 
 ### Matriz de Priorização
 
@@ -1030,7 +1030,7 @@ Vantagens:
 • Baixíssimo custo
 
 Materiais: Papel, caneta, post-it, tesoura, celular para filmar
-```text
+```
 
 #### Protótipos de média fidelidade (Wireframes)
 
@@ -1061,7 +1061,7 @@ Use quando:
 • Precisa testar interações complexas
 • Stakeholders precisam visualizar o produto final
 • Vai apresentar para clientes
-```text
+```
 
 ### Exemplo: Protótipo de baixa fidelidade para app mobile
 

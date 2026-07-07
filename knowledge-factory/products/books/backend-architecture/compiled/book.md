@@ -91,7 +91,7 @@ class EmailService {
 class ReportGenerator {
   generate(): Report { /* ... */ }
 }
-```text
+```
 
 ### O — Open/Closed Principle
 
@@ -137,7 +137,7 @@ interface FlyingBird extends Bird {
 }
 class Penguin implements Bird { }
 class Sparrow implements Bird, FlyingBird { }
-```text
+```
 
 ### I — Interface Segregation Principle
 
@@ -173,7 +173,7 @@ class OrderService {
     private repository: OrderRepository  // interface
   ) { }
 }
-```text
+```
 
 ---
 
@@ -408,7 +408,7 @@ interface PedidoRepository {
 interface CriarPedidoUseCase {
   execute(input: CriarPedidoInput): Promise<CriarPedidoOutput>;
 }
-```text
+```
 
 ### Adaptadores
 
@@ -553,7 +553,7 @@ class EmailHandler {
     });
   }
 }
-```text
+```
 
 ---
 
@@ -705,7 +705,7 @@ model ProductCategory {
 
   @@id([productId, categoryId])
 }
-```text
+```
 
 ---
 
@@ -744,7 +744,7 @@ class UserService {
     return this.prisma.user.findMany();
   }
 }
-```text
+```
 
 ### Audit Trail
 
@@ -799,7 +799,7 @@ prisma.$use(async (params, next) => {
 
   return result;
 });
-```text
+```
 
 ---
 
@@ -862,7 +862,7 @@ const orders = await prisma.order.findMany({
     user: true,
   },
 });
-```text
+```
 
 ---
 
@@ -907,7 +907,7 @@ await prisma.user.updateMany({
 model User {
   name String  // Único campo
 }
-```text
+```
 
 ---
 
@@ -1141,7 +1141,7 @@ NestJS é o framework Node.js mais adequado para sistemas Enterprise.
   exports: [UserService],
 })
 export class UserModule {}
-```text
+```
 
 ![Arquitetura de Referencia Backend](/knowledge-factory/products/courses/arquitetura-backend/module-10-backend/assets/diagram-arquitetura-backend.svg)
 
@@ -1291,7 +1291,7 @@ export class UserService {
     return this.userRepo.findAll(pagination);
   }
 }
-```text
+```
 
 ### Repository
 
@@ -1401,7 +1401,7 @@ export class CreateUserPipe implements PipeTransform {
     return result.data;
   }
 }
-```text
+```
 
 ### Uso no controller
 
@@ -1484,7 +1484,7 @@ export class InvalidEmailError extends DomainError {
   readonly code = 'INVALID_EMAIL';
   constructor() { super('Formato de email inválido'); }
 }
-```text
+```
 
 ---
 
@@ -1532,7 +1532,7 @@ export class RolesGuard implements CanActivate {
 async remove(@Param('id') id: string) {
   return this.userService.softDelete(id);
 }
-```text
+```
 
 ---
 
@@ -1605,7 +1605,7 @@ async findById(id: string): Promise<UserResponse> {
     () => this.fetchUser(id),
   );
 }
-```text
+```
 
 ---
 
@@ -1765,7 +1765,7 @@ async getOrder(@Param('id') id: string, @Req() req) {
   }
   return order;
 }
-```text
+```
 
 ### 2. Cryptographic Failures
 
@@ -1798,7 +1798,7 @@ const users = await prisma.$queryRawUnsafe(
 const user = await prisma.user.findUnique({
   where: { email }
 });
-```text
+```
 
 ### 4. Insecure Design
 
@@ -1832,7 +1832,7 @@ app.enableCors({
   origin: ['https://app.meusistema.com'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
 });
-```text
+```
 
 ### 6-10: Vulnerable Components, Auth Failures, Data Integrity, Logging, SSRF
 
@@ -1978,7 +1978,7 @@ export function defineAbilitiesFor(user: User): PureAbility {
     cannot('delete', 'all');
   });
 }
-```text
+```
 
 ### Uso no controller
 
@@ -2029,7 +2029,7 @@ async login(@Body() dto: LoginDto) {
 async requestPasswordReset(@Body() dto: ResetDto) {
   // ...
 }
-```text
+```
 
 ### Estratégias adicionais
 
@@ -2080,7 +2080,7 @@ app.use(helmet.contentSecurityPolicy({
     upgradeInsecureRequests: [],
   },
 }));
-```text
+```
 
 ---
 
@@ -2111,7 +2111,7 @@ import DOMPurify from 'isomorphic-dompurify';
 
 // ✅ No backend, escapar output
 const sanitized = escapeHtml(userComment);
-```text
+```
 
 ### CSRF (Cross-Site Request Forgery)
 
@@ -2143,7 +2143,7 @@ DB_PASSWORD=minha-senha
 
 // ❌ No código fonte
 config.service.apiKey = 'sk-1234567890abcdef';
-```text
+```
 
 ### O que fazer
 
@@ -2209,7 +2209,7 @@ async transfer(@Body() dto: TransferDto, @Req() req) {
   });
   return result;
 }
-```text
+```
 
 ### Checklist de segurança para code review
 
@@ -2346,7 +2346,7 @@ class DatabaseRouter {
     return this.pools.get(tenantId)!;
   }
 }
-```text
+```
 
 **Vantagens:**
 - **Isolamento total** — um tenant nunca vê dados do outro, mesmo com SQL injection
@@ -2432,7 +2432,7 @@ class SchemaTenantService {
     }
   }
 }
-```text
+```
 
 **Vantagens:**
 - **Banco único** — uma conexão, pool compartilhado, menos overhead
@@ -2503,7 +2503,7 @@ class UserRepository {
     return result.rows[0];
   }
 }
-```text
+```
 
 **Vantagens:**
 - **Máximo compartilhamento** — um banco, uma conexão, custo mínimo
@@ -2588,7 +2588,7 @@ await pool.query("SET app.tenant_id = 'acme'");
 CREATE INDEX idx_orders_acme_large
   ON orders (total DESC)
   WHERE tenant_id = 'acme' AND total > 10000;
-```text
+```
 
 ### 3.3 Custo
 
@@ -2683,7 +2683,7 @@ const TENANT_SLUG_REGEX = /^[a-z0-9-]{3,50}$/;
 function validateTenantSlug(slug: string): boolean {
   return TENANT_SLUG_REGEX.test(slug);
 }
-```text
+```
 
 ### 1.4 JWT Claim
 
@@ -2725,7 +2725,7 @@ function extractTenantFromJwt(authHeader?: string): string | null {
 findUsers(@Param('tenant') tenantId: string) {
   return this.userService.findAll(tenantId);
 }
-```text
+```
 
 ### 1.6 Estratégia Combinada (Fallback)
 
@@ -2829,7 +2829,7 @@ export class TenantMiddleware implements NestMiddleware {
     }
   }
 }
-```text
+```
 
 ### 2.2 Aplicação Global ou por Rota
 
@@ -2869,7 +2869,7 @@ import { TenantMiddleware } from './tenant.middleware';
   exports: [TenantService],
 })
 export class TenantModule {}
-```text
+```
 
 ### 2.4 TenantService
 
@@ -2941,7 +2941,7 @@ findAll(@Tenant() tenant: Tenant) {
 getPlan(@Tenant('plan') plan: string) {
   return { plan };
 }
-```text
+```
 
 ### 2.6 AsyncLocalStorage para Contexto
 
@@ -3169,7 +3169,7 @@ export function createTenantMiddleware(prisma: PrismaClient): void {
 // Inicialização
 const prisma = new PrismaClient();
 createTenantMiddleware(prisma);
-```text
+```
 
 ### 3.4 Prisma Extension (Prisma >= 5.0)
 
@@ -3257,7 +3257,7 @@ async function migrateAllTenants(): Promise<void> {
     }
   }
 }
-```text
+```
 
 ### 1.2 Schema per Tenant
 
@@ -3383,7 +3383,7 @@ async function migrateTenantWithTransaction(
     client.release();
   }
 }
-```text
+```
 
 ### 1.4 Shared Database
 
@@ -3463,7 +3463,7 @@ interface AuditLog {
   metadata: JSON;
   createdAt: Date;
 }
-```text
+```
 
 ### 2.2 Tabelas Por Tenant (Isoladas)
 
@@ -3570,7 +3570,7 @@ FROM tenant_acme.users u
 JOIN public.tenants t ON t.id = u.tenant_id
 JOIN public.plans p ON p.id = t.plan_id
 WHERE u.email = 'joao@acme.com';
-```text
+```
 
 ---
 
@@ -3691,7 +3691,7 @@ export class TenantCommand extends CommandRunner {
     console.log(`✅ Tenant ${tenant.slug} criado com sucesso!`);
   }
 }
-```text
+```
 
 ### 3.3 Idempotência
 
@@ -3836,7 +3836,7 @@ async function scheduleTenantBackup(tenant: { id: string; plan: string }): Promi
       break;
   }
 }
-```text
+```
 
 ---
 
@@ -3957,7 +3957,7 @@ class QueryOptimizer {
     ]).then(r => r.rows);
   }
 }
-```text
+```
 
 ### 2.3 Rate Limiting por Tenant
 
@@ -4172,7 +4172,7 @@ export class FeatureFlagService {
     return { ...this.planFeatures };
   }
 }
-```text
+```
 
 ### 3.3 Guard do NestJS para Feature Flags
 
@@ -4244,7 +4244,7 @@ describe('Isolamento entre Tenants', () => {
     const jwt = require('jsonwebtoken');
     return jwt.sign(payload, process.env.JWT_SECRET || 'test-secret');
   }
-```text
+```
 
 ### 4.2 Teste 1: Vazamento Zero
 
@@ -4321,7 +4321,7 @@ describe('Isolamento entre Tenants', () => {
       }
     });
   });
-```text
+```
 
 ### 4.4 Teste 3: Injeção de Tenant ID
 
@@ -4384,7 +4384,7 @@ describe('Isolamento entre Tenants', () => {
       expect(tooManyRequests).toHaveLength(0);
     });
   });
-```text
+```
 
 ### 4.6 Teste 5: Migrations
 

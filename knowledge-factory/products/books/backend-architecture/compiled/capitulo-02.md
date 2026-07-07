@@ -103,7 +103,7 @@ model ProductCategory {
 
   @@id([productId, categoryId])
 }
-```text
+```
 
 ---
 
@@ -142,7 +142,7 @@ class UserService {
     return this.prisma.user.findMany();
   }
 }
-```text
+```
 
 ### Audit Trail
 
@@ -197,7 +197,7 @@ prisma.$use(async (params, next) => {
 
   return result;
 });
-```text
+```
 
 ---
 
@@ -260,7 +260,7 @@ const orders = await prisma.order.findMany({
     user: true,
   },
 });
-```text
+```
 
 ---
 
@@ -305,7 +305,7 @@ await prisma.user.updateMany({
 model User {
   name String  // Único campo
 }
-```text
+```
 
 ---
 

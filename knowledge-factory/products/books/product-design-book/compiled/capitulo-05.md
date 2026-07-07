@@ -51,7 +51,7 @@ const bad = { primary: '#4A90D9', secondary: '#5BA0E9' };
 
 // ✅ Contraste claro entre ações
 const good = { primary: '#1A73E8', secondary: '#E8F0FE' };
-```text
+```
 
 - Contraste de **cor**: fundo vs texto, botão primário vs secundário
 - Contraste de **tamanho**: título vs corpo
@@ -167,7 +167,7 @@ const enterprisePalette: ColorPalette = {
     900: '#202124',
   },
 };
-```text
+```
 
 ### Acessibilidade e Contraste
 
@@ -222,7 +222,7 @@ interface BrandTokens {
     };
   };
 }
-```text
+```
 
 ---
 
@@ -287,7 +287,7 @@ const bodyStyle = {
   lineHeight: 1.5,
   maxWidth: '66ch', // controle de largura
 };
-```text
+```
 
 ---
 
@@ -316,7 +316,7 @@ const badCard = { padding: 17, gap: 11 };
 
 // ✅ Espaçamento da escala
 const goodCard = { padding: spacing.lg, gap: spacing.md };
-```text
+```
 
 ### Grid Systems
 
@@ -394,7 +394,7 @@ const buttonStyles: Record<ButtonVariant, { bg: string; color: string; border: s
   ghost:     { bg: 'transparent', color: '#5F6368', border: 'transparent' },
   danger:    { bg: '#EA4335', color: '#FFFFFF', border: 'transparent' },
 };
-```text
+```
 
 ### Inputs e Formulários
 
@@ -433,7 +433,7 @@ const cardVariants = {
   elevated: { bg: '#FFFFFF', border: 'none', boxShadow: '0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06)' },
   outlined: { bg: '#FFFFFF', border: '1px solid #DADCE0', boxShadow: 'none' },
 };
-```text
+```
 
 ### Modais
 
@@ -484,7 +484,7 @@ interface TableProps<T> {
   emptyMessage?: string;
   onRowClick?: (row: T) => void;
 }
-```text
+```
 
 ### Dropdowns e Selects
 
@@ -542,7 +542,7 @@ function Breadcrumb({ items }: { items: BreadcrumbItem[] }) {
     </nav>
   );
 }
-```text
+```
 
 ### Formulários
 
@@ -604,7 +604,7 @@ const onboarding: OnboardingStep[] = [
     position: 'right',
   },
 ];
-```text
+```
 
 ### Empty States
 
@@ -659,7 +659,7 @@ Microinterações são **pequenos momentos de feedback** que comunicam o resulta
   cursor: not-allowed;
   transform: none;
 }
-```text
+```
 
 ### Animações
 
@@ -805,7 +805,7 @@ const darkTheme: Theme = {
     },
   },
 };
-```text
+```
 
 ### Contraste no Dark Mode
 
@@ -890,7 +890,7 @@ const faithfulImplementation = {
   padding: 12, // da escala: spacing.sm
   gap: 8,      // da escala: spacing.xs
 };
-```text
+```
 
 ### Implementação Fiel
 
@@ -953,4 +953,60 @@ function checkFidelity(inspection: UIInspectionChecklist): number {
 Produtos enterprise geralmente precisam de mais densidade que produtos B2C.
 
 ```typescript
+// Comparação de densidade
+interface DensityConfig {
+  label: string;
+  padding: 'compact' | 'comfortable' | 'spacious';
+  fontSize: number;
+  rowHeight: number;
+}
+
+const enterpriseDensity: DensityConfig = {
+  label: 'Enterprise (alta densidade)',
+  padding: 'compact',
+  fontSize: 12,
+  rowHeight: 32,
+};
+
+const consumerDensity: DensityConfig = {
+  label: 'Consumer (baixa densidade)',
+  padding: 'spacious',
+  fontSize: 14,
+  rowHeight: 48,
+};
+```
+
+---
+
+## Resumo do Capítulo
+
+Neste capítulo, você aprendeu os fundamentos de UI Design que todo desenvolvedor front-end precisa dominar:
+
+| Conceito | Aplicação Prática |
+|----------|------------------|
+| **CRAP** (Contraste, Repetição, Alinhamento, Proximidade) | Princípios universais de design visual |
+| **Cor** | Paletas funcionais, tokens, acessibilidade WCAG 4.5:1 |
+| **Tipografia** | Hierarquia visual, escalas modulares, legibilidade |
+| **Espaçamento e Grid** | Escalas consistentes, grid responsivo, layouts |
+| **Componentes** | Botões, inputs, modais, tabelas, selects |
+| **Design Patterns** | Navegação, formulários, feedback, onboarding |
+| **Microinterações** | Estados visuais, animações, tokens de easing |
+| **Dark Mode** | Temas alternativos, ThemeProvider, contraste perceptual |
+| **UI para Devs** | Inspeção Figma, fidelidade, densidade |
+
+### Checklist do Desenvolvedor UI
+
+- [ ] Usa tokens do design system (não valores hardcoded)
+- [ ] Contraste WCAG AA (4.5:1 texto normal, 3:1 componentes)
+- [ ] Estados: default, hover, focus, active, disabled, error
+- [ ] Responsivo: mobile, tablet e desktop
+- [ ] Acessível: ARIA labels, teclado, focus visible
+- [ ] Microinterações: feedback visual em cada ação
+
+### Para Aprofundar
+
+- **Leitura**: *Refactoring UI* (Adam Wathan & Steve Schoger)
+- **Ferramenta**: Stark plugin para Figma (auditoria de contraste)
+- **Prática**: Reimplemente um componente famoso seguindo a checklist de fidelidade
+- **Referência**: [shadcn/ui](https://ui.shadcn.com) — componentes acessíveis com Radix UI e Tailwind
 

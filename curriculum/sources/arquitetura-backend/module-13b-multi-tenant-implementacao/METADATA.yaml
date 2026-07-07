@@ -1,0 +1,23 @@
+id: arquitetura-backend/module-13b-multi-tenant-implementacao
+title: 'Multi-Tenant: Implementação com NestJS e Prisma'
+description: 'Módulo Multi-Tenant: Implementação com NestJS e Prisma do curso arquitetura-backend.'
+status: publicado
+version: 1
+topics:
+- arquitetura-backend
+- multi-tenant
+level: advanced
+audience:
+- architects
+- devs
+prerequisites:
+- product-design/module-07-design-system
+author: AI Software Engineering Academy
+reviewers: []
+bqs_score: 73.2
+duration_minutes: null
+changelog:
+- date: '2026-06-30'
+  version: '1.0'
+  description: Versão inicial
+  author: AI Software Engineering Academy

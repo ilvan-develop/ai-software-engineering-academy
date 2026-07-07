@@ -47,7 +47,7 @@ interface WireframeElement {
   boundingBox: { x: number; y: number; w: number; h: number };
   placeholder: string; // "imagem do produto", "título"
 }
-```text
+```
 
 ---
 
@@ -149,7 +149,7 @@ function colWidth(cols: number, grid: Grid): number {
 }
 ```
 
-```text
+```
 Wireframe com grid de 12 colunas:
 ┌──────────────────────────────────────────────────┐
 │   Header (12 col)                                │
@@ -264,7 +264,7 @@ const loginWireframe: ExcalidrawElement[] = [
   { type: 'text', x: 10, y: 20, width: 200, height: 20, backgroundColor: 'transparent', strokeStyle: 'solid' },
   // ...mais elementos
 ];
-```text
+```
 
 > 💡 **Dica Enterprise**: Figma é o padrão da indústria. Invista em aprender componentes, auto-layout e variants. Balsamiq é ótimo para documentação regulatória (foco em estrutura, não em visual).
 
@@ -442,7 +442,7 @@ interface NavItem {
   active: boolean;
   children?: NavItem[];
 }
-```text
+```
 
 ### Padrões de layout comuns
 
@@ -502,7 +502,7 @@ interface SkeletonBox {
 }
 ```
 
-```text
+```
 Wireframe de estado loading (skeleton):
 ┌──────────────────────────────────────┐
 │  ┌────────────────────────────────┐  │
@@ -549,7 +549,7 @@ interface Transition {
 }
 ```
 
-```text
+```
 Representação de transição no wireframe:
 ┌────────────┐      push(300ms)      ┌────────────┐
 │  Tela A    │ ────────────────────▶ │  Tela B    │
@@ -590,7 +590,7 @@ interface Hotspot {
   action: 'navigate' | 'showModal' | 'showToast';
   target: string; // id da tela ou ação
 }
-```text
+```
 
 Ferramentas para criar clickable wireframes:
 - **Figma** — Prototyping mode (conecta frames com setas)
@@ -697,7 +697,7 @@ interface Approval {
   status: 'pending' | 'approved' | 'changes_requested';
   comments?: string;
 }
-```text
+```
 
 ### Handoff para Devs
 

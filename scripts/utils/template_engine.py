@@ -25,6 +25,7 @@ def generate_frontmatter(templates_dir: Path, book_data: dict) -> dict:
             title=book_data["title"],
             author=book_data["author"],
             year=book_data.get("year", 2026),
+            book_theme=book_data.get("book_theme", ""),
             course_names=book_data.get("course_names", []),
         )
 
@@ -42,6 +43,7 @@ def generate_frontmatter(templates_dir: Path, book_data: dict) -> dict:
         frontmatter["about_author"] = engine.render(
             "frontmatter/sobre_autor.md.j2",
             author=book_data["author"],
+            book_theme=book_data.get("book_theme", ""),
             description=book_data.get("author_description", ""),
         )
 

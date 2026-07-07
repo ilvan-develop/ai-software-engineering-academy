@@ -116,7 +116,7 @@ class DatabaseRouter {
     return this.pools.get(tenantId)!;
   }
 }
-```text
+```
 
 **Vantagens:**
 - **Isolamento total** — um tenant nunca vê dados do outro, mesmo com SQL injection
@@ -202,7 +202,7 @@ class SchemaTenantService {
     }
   }
 }
-```text
+```
 
 **Vantagens:**
 - **Banco único** — uma conexão, pool compartilhado, menos overhead
@@ -273,7 +273,7 @@ class UserRepository {
     return result.rows[0];
   }
 }
-```text
+```
 
 **Vantagens:**
 - **Máximo compartilhamento** — um banco, uma conexão, custo mínimo
@@ -358,7 +358,7 @@ await pool.query("SET app.tenant_id = 'acme'");
 CREATE INDEX idx_orders_acme_large
   ON orders (total DESC)
   WHERE tenant_id = 'acme' AND total > 10000;
-```text
+```
 
 ### 3.3 Custo
 

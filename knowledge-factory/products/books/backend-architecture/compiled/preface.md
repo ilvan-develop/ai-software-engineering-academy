@@ -1,30 +1,29 @@
 # Prefácio
+Arquitetura de software é a arte de tomar decisões que **hoje parecem custosas, mas amanhã evitam catástrofes**. Este livro é sobre essas decisões.
 
-Conheci a inteligência artificial generativa em 2022, quando o ChatGPT ainda engatinhava. Lembro de pedir um código de validação de CPF — ele gerou algo que parecia certo, compilava, mas ignorava dígitos verificadores. Na hora, pensei: "útil, mas perigoso". Anos depois, esse momento define minha abordagem: IA não é resposta final, é ponto de partida que exige crítica.
+Passei anos construindo sistemas que começaram simples e se transformaram em monstros de complexidade acidental. Aprendi que arquitetura não é sobre diagramas bonitos — é sobre **estruturar o código de forma que mudanças sejam seguras, previsíveis e baratas**.
 
-Este livro nasce dessa experiência. Não é uma celebração cega da IA, nem um manual de alarmismo. É um guia prático para desenvolvedores que querem usar IA no dia a dia sem cair nas armadilhas que eu mesmo já caí — e vi centenas de colegas caírem.
+Este livro compila o essencial de Clean Architecture, Domain-Driven Design, SOLID e padrões enterprise aplicados no ecossistema TypeScript/NestJS. Não é uma coleção de teorias acadêmicas, mas um **guia prático** para arquitetos e desenvolvedores que precisam construir sistemas que duram.
 
 ## Para quem é este livro
 
-- Desenvolvedores que já usam (ou querem usar) IA e sentem que poderiam extrair mais
-- Arquitetos que precisam integrar agentes sem comprometer qualidade
-- Líderes técnicos cansados de código gerado por IA que "funciona" mas ninguém entende
+- **Arquitetos de software** que buscam referências práticas de DDD e Clean Arch
+- **Desenvolvedores backend** que querem evoluir de "código que funciona" para "código que escala"
+- **Tech leads** que precisam estruturar projetos enterprise com TypeScript
+- **Equipes** que estão migrando de monólitos para arquiteturas modulares
 
 ## Como usar
 
-Cada capítulo é autônomo. Se você só quer entender por que a IA gera código bugado, vá direto ao capítulo 1. Se quer montar um time de agentes, pule para o capítulo 2. Se precisa automatizar pipelines, capítulo 3 é seu ponto de partida.
+Os capítulos 1–3 estabelecem a fundação teórica (arquitetura, modelagem, SOLID). Os capítulos 4–8 aplicam esses conceitos em temas avançados como segurança, multi-tenancy e operações.
 
-O que você vai encontrar:
+Cada capítulo inclui:
+- **Código TypeScript real** — extraído de projetos em produção
+- **Diagramas C4 e de componentes**
+- **Padrões enterprise** com NestJS, Prisma e PostgreSQL
+- **Exercícios práticos** no final
 
-- **Código real** — os exemplos são de projetos que coloquei em produção, não teóricos
-- **Diagramas** — porque arquitetura se entende melhor visualmente
-- **Exercícios** — no final de cada capítulo, para fixar o que foi visto
+Boa leitura. Que suas abstrações sejam coerentes.
 
-## Minha promessa
 
-Nenhuma seção deste livro foi escrita por IA. Usei IA para revisar, testar hipóteses e gerar exemplos iniciais — mas cada parágrafo, cada opinião e cada "isso não funciona na prática" veio de experiência vivida.
-
-Boa leitura. E lembre-se: o código é seu. A responsabilidade também.
-
-*Ilvan Joaquim*
+*AI Software Engineering Academy*
 2026

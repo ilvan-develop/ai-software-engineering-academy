@@ -141,6 +141,14 @@ def build_book_content(manifest: dict, curriculum_base: Path, book_dir: Path) ->
         all_content.append(chapter_text)
 
     # Generate frontmatter
+    # Mapeamento book_id → theme para templates parametrizáveis
+    BOOK_THEME_MAP = {
+        "product-design-book": "product-design",
+        "backend-architecture": "backend-architecture",
+        "ia-para-devs": "ia-devs",
+    }
+    book_theme = BOOK_THEME_MAP.get(book_id, None)
+
     rendered = generate_frontmatter(
         Path(__file__).resolve().parent / "templates",
         {
@@ -152,6 +160,7 @@ def build_book_content(manifest: dict, curriculum_base: Path, book_dir: Path) ->
             "generate_preface": True,
             "generate_copyright": True,
             "generate_about": True,
+            "book_theme": book_theme,
             "course_names": [],
             "author_description": "",
         },

@@ -1,0 +1,26 @@
+book_id: product-design-book
+title: "Product Design Engineering"
+subtitle: "Do Discovery ao Design System — Produtos Digitais que Resolvem Problemas Reais"
+author: "AI Software Engineering Academy"
+language: pt-BR
+edition: 1
+year: 2026
+isbn: "978-65-00-00002-3"
+isbn_ebook: "978-65-00-00003-0"
+publisher: "AI Software Engineering Academy"
+rights: "© 2026 AI Software Engineering Academy. Todos os direitos reservados."
+categories:
+  - Design
+  - Produto
+  - Tecnologia
+tags:
+  - product-design
+  - discovery
+  - design-thinking
+  - ux
+  - ui
+  - design-system
+description: "Do Discovery ao Design System — um guia completo para product designers e engenheiros de software criarem produtos digitais que resolvem problemas reais, com metodologias ágeis, pesquisa com usuários e design system escalável."
+pages_estimate: 280
+cover_image: assets/capa.png
+cover_alt_text: "Capa do livro Product Design Engineering com design moderno e cores vibrantes"

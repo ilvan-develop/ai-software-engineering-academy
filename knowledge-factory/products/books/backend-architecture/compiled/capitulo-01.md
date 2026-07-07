@@ -71,7 +71,7 @@ class EmailService {
 class ReportGenerator {
   generate(): Report { /* ... */ }
 }
-```text
+```
 
 ### O — Open/Closed Principle
 
@@ -117,7 +117,7 @@ interface FlyingBird extends Bird {
 }
 class Penguin implements Bird { }
 class Sparrow implements Bird, FlyingBird { }
-```text
+```
 
 ### I — Interface Segregation Principle
 
@@ -153,7 +153,7 @@ class OrderService {
     private repository: OrderRepository  // interface
   ) { }
 }
-```text
+```
 
 ---
 
@@ -388,7 +388,7 @@ interface PedidoRepository {
 interface CriarPedidoUseCase {
   execute(input: CriarPedidoInput): Promise<CriarPedidoOutput>;
 }
-```text
+```
 
 ### Adaptadores
 
@@ -533,7 +533,7 @@ class EmailHandler {
     });
   }
 }
-```text
+```
 
 ---
 

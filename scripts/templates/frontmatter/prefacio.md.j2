@@ -1,30 +1,86 @@
 # Prefácio
+{# ------------------------------------------------------------------ #}
+{# Template parametrizável de prefácio por tema do livro.              #}
+{# Uso:                                                                #}
+{#   book_theme: "product-design" | "backend-architecture" | "ia-devs" #}
+{#   course_names: lista de nomes de cursos                            #}
+{# ------------------------------------------------------------------ #}
+{% if book_theme == "product-design" %}
+Product design não é sobre fazer telas bonitas. É sobre **resolver problemas reais** com decisões conscientes — de pesquisa com usuários a sistemas de design escaláveis.
 
-Conheci a inteligência artificial generativa em 2022, quando o ChatGPT ainda engatinhava. Lembro de pedir um código de validação de CPF — ele gerou algo que parecia certo, compilava, mas ignorava dígitos verificadores. Na hora, pensei: "útil, mas perigoso". Anos depois, esse momento define minha abordagem: IA não é resposta final, é ponto de partida que exige crítica.
+Este livro nasce da constatação de que o mercado está cheio de produtos bonitos que ninguém consegue usar, e de produtos funcionais que ninguém consegue olhar. A engenharia de produto digital exige um equilíbrio delicado entre desejo, viabilidade técnica e valor de negócio.
 
-Este livro nasce dessa experiência. Não é uma celebração cega da IA, nem um manual de alarmismo. É um guia prático para desenvolvedores que querem usar IA no dia a dia sem cair nas armadilhas que eu mesmo já caí — e vi centenas de colegas caírem.
+Aqui você não vai encontrar teoria descolada da prática. Cada capítulo foi construído a partir de experiências reais em dezenas de produtos digitais — alguns bem-sucedidos, outros nem tanto. E são os fracassos que mais ensinaram.
 
 ## Para quem é este livro
 
-- Desenvolvedores que já usam (ou querem usar) IA e sentem que poderiam extrair mais
-- Arquitetos que precisam integrar agentes sem comprometer qualidade
-- Líderes técnicos cansados de código gerado por IA que "funciona" mas ninguém entende
+- **Product designers** que querem estruturar seu processo de discovery e design
+- **Desenvolvedores** que precisam entender a lógica por trás das decisões de design
+- **PMs e líderes** que precisam integrar design thinking no ciclo de desenvolvimento
+- **Estudantes** que querem entrar na área com uma base sólida
 
 ## Como usar
 
-Cada capítulo é autônomo. Se você só quer entender por que a IA gera código bugado, vá direto ao capítulo 1. Se quer montar um time de agentes, pule para o capítulo 2. Se precisa automatizar pipelines, capítulo 3 é seu ponto de partida.
+O livro segue a ordem natural do design de produto: começa com discovery e pesquisa, passa por ideação e prototipação, e culmina em UI design e design systems. Se você já tem experiência, pode navegar pelos capítulos de forma não linear.
+
+Cada capítulo inclui:
+- **Exemplos reais** com TypeScript e React
+- **Diagramas** para visualizar conceitos abstratos
+- **Código prático** de componentes e tokens
+- **Exercícios** para fixação
+
+Boa leitura. Que seus produtos resolvam problemas reais.
+
+{% elif book_theme == "backend-architecture" %}
+Arquitetura de software é a arte de tomar decisões que **hoje parecem custosas, mas amanhã evitam catástrofes**. Este livro é sobre essas decisões.
+
+Passei anos construindo sistemas que começaram simples e se transformaram em monstros de complexidade acidental. Aprendi que arquitetura não é sobre diagramas bonitos — é sobre **estruturar o código de forma que mudanças sejam seguras, previsíveis e baratas**.
+
+Este livro compila o essencial de Clean Architecture, Domain-Driven Design, SOLID e padrões enterprise aplicados no ecossistema TypeScript/NestJS. Não é uma coleção de teorias acadêmicas, mas um **guia prático** para arquitetos e desenvolvedores que precisam construir sistemas que duram.
+
+## Para quem é este livro
+
+- **Arquitetos de software** que buscam referências práticas de DDD e Clean Arch
+- **Desenvolvedores backend** que querem evoluir de "código que funciona" para "código que escala"
+- **Tech leads** que precisam estruturar projetos enterprise com TypeScript
+- **Equipes** que estão migrando de monólitos para arquiteturas modulares
+
+## Como usar
+
+Os capítulos 1–3 estabelecem a fundação teórica (arquitetura, modelagem, SOLID). Os capítulos 4–8 aplicam esses conceitos em temas avançados como segurança, multi-tenancy e operações.
+
+Cada capítulo inclui:
+- **Código TypeScript real** — extraído de projetos em produção
+- **Diagramas C4 e de componentes**
+- **Padrões enterprise** com NestJS, Prisma e PostgreSQL
+- **Exercícios práticos** no final
+
+Boa leitura. Que suas abstrações sejam coerentes.
+
+{% else %}
+{# Fallback genérico — usado quando book_theme não é especificado #}
+Este livro é fruto de anos de experiência prática em engenharia de software, combinando fundamentos teóricos com aplicação direta em projetos reais. Cada capítulo foi desenhado para oferecer conhecimento acionável — código que funciona, padrões que escalam e decisões que fazem diferença.
+
+Acreditamos que a melhor forma de aprender engenharia de software é **construindo**. Por isso, este livro prioriza exemplos práticos sobre discussões abstratas.
+
+## Para quem é este livro
+
+- Desenvolvedores que buscam aprofundamento técnico
+- Arquitetos que precisam de referências práticas
+- Líderes técnicos que orientam times de engenharia
+
+## Como usar
+
+Cada capítulo é autocontido, mas a progressão sugerida segue a ordem apresentada no sumário.
 
 O que você vai encontrar:
-
-- **Código real** — os exemplos são de projetos que coloquei em produção, não teóricos
+- **Código real** — exemplos de projetos em produção
 - **Diagramas** — porque arquitetura se entende melhor visualmente
-- **Exercícios** — no final de cada capítulo, para fixar o que foi visto
+- **Exercícios** — no final de cada capítulo
 
-## Minha promessa
+Boa leitura.
 
-Nenhuma seção deste livro foi escrita por IA. Usei IA para revisar, testar hipóteses e gerar exemplos iniciais — mas cada parágrafo, cada opinião e cada "isso não funciona na prática" veio de experiência vivida.
+{% endif %}
 
-Boa leitura. E lembre-se: o código é seu. A responsabilidade também.
-
-*Ilvan Joaquim*
-2026
+*AI Software Engineering Academy*
+{{ year }}

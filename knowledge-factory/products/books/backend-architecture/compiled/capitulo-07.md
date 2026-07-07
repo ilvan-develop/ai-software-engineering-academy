@@ -49,7 +49,7 @@ async function migrateAllTenants(): Promise<void> {
     }
   }
 }
-```text
+```
 
 ### 1.2 Schema per Tenant
 
@@ -175,7 +175,7 @@ async function migrateTenantWithTransaction(
     client.release();
   }
 }
-```text
+```
 
 ### 1.4 Shared Database
 
@@ -255,7 +255,7 @@ interface AuditLog {
   metadata: JSON;
   createdAt: Date;
 }
-```text
+```
 
 ### 2.2 Tabelas Por Tenant (Isoladas)
 
@@ -362,7 +362,7 @@ FROM tenant_acme.users u
 JOIN public.tenants t ON t.id = u.tenant_id
 JOIN public.plans p ON p.id = t.plan_id
 WHERE u.email = 'joao@acme.com';
-```text
+```
 
 ---
 
@@ -483,7 +483,7 @@ export class TenantCommand extends CommandRunner {
     console.log(`✅ Tenant ${tenant.slug} criado com sucesso!`);
   }
 }
-```text
+```
 
 ### 3.3 Idempotência
 

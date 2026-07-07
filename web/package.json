@@ -1,0 +1,23 @@
+{
+  "name": "ai-software-engineering-academy",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "prebuild": "python ../scripts/prebuild_site.py",
+    "dev": "next dev",
+    "build": "npm run prebuild && next build",
+    "start": "next start",
+    "export": "npm run prebuild && next build && next export"
+  },
+  "dependencies": {
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "fuse.js": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "typescript": "^5.6.0"
+  }
+}

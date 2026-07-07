@@ -62,7 +62,7 @@ const TENANT_SLUG_REGEX = /^[a-z0-9-]{3,50}$/;
 function validateTenantSlug(slug: string): boolean {
   return TENANT_SLUG_REGEX.test(slug);
 }
-```text
+```
 
 ### 1.4 JWT Claim
 
@@ -104,7 +104,7 @@ function extractTenantFromJwt(authHeader?: string): string | null {
 findUsers(@Param('tenant') tenantId: string) {
   return this.userService.findAll(tenantId);
 }
-```text
+```
 
 ### 1.6 Estratégia Combinada (Fallback)
 
@@ -208,7 +208,7 @@ export class TenantMiddleware implements NestMiddleware {
     }
   }
 }
-```text
+```
 
 ### 2.2 Aplicação Global ou por Rota
 
@@ -248,7 +248,7 @@ import { TenantMiddleware } from './tenant.middleware';
   exports: [TenantService],
 })
 export class TenantModule {}
-```text
+```
 
 ### 2.4 TenantService
 
@@ -320,7 +320,7 @@ findAll(@Tenant() tenant: Tenant) {
 getPlan(@Tenant('plan') plan: string) {
   return { plan };
 }
-```text
+```
 
 ### 2.6 AsyncLocalStorage para Contexto
 
@@ -548,7 +548,7 @@ export function createTenantMiddleware(prisma: PrismaClient): void {
 // Inicialização
 const prisma = new PrismaClient();
 createTenantMiddleware(prisma);
-```text
+```
 
 ### 3.4 Prisma Extension (Prisma >= 5.0)
 

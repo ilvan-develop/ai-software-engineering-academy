@@ -1,9 +1,9 @@
 ## Sobre o Autor
+**Ilvan Joaquim** é engenheiro de software formado pela Universidade Federal de Santa Catarina, com especialização em Design de Interação pela PUC-Rio. São mais de 15 anos de experiência construindo produtos digitais — desde startups early-stage até plataformas enterprise com milhões de usuários.
 
-**Ilvan Joaquim** é engenheiro de software com mais de 15 anos de experiência em arquitetura de sistemas, desenvolvimento full stack e liderança técnica. Especializou-se em integração de inteligência artificial em pipelines de desenvolvimento — área que explora desde os primórdios dos modelos de linguagem.
+Como fundador da AI Software Engineering Academy, já capacitou mais de 2.000 profissionais em todo o Brasil, unindo engineering e design thinking. Sua abordagem prática coloca o usuário no centro do processo sem sacrificar a excelência técnica.
 
-Fundador da AI Software Engineering Academy, já formou mais de 2.000 desenvolvedores em todo o Brasil, combinando princípios consagrados de engenharia de software com o poder dos agentes de IA. Sua abordagem prática prioriza código que funciona em produção, não teoria rebuscada.
+Antes da Academia, liderou times de produto e engenharia em fintechs e marketplaces, onde aprendeu que o melhor design não é o mais bonito — é o que resolve o problema certo.
 
-Antes da Academia, liderou times de engenharia em fintechs e marketplaces brasileiros, onde aprendeu na prática que o maior risco da IA não é ela ser inteligente demais — é nós confiarmos demais nela.
+Ilvan escreve regularmente sobre product design, engenharia de software e carreira técnica em seu blog e no LinkedIn.
 
-Ilvan escreve regularmente sobre engenharia de software, IA e carreira técnica em seu blog e no LinkedIn.

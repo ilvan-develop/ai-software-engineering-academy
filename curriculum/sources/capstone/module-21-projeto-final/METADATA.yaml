@@ -1,0 +1,23 @@
+id: capstone/module-21-projeto-final
+title: Construindo um SaaS Enterprise
+description: Módulo Construindo um SaaS Enterprise do curso capstone.
+status: publicado
+version: 1
+topics:
+- arquitetura-backend
+- clean-architecture
+level: advanced
+audience:
+- architects
+- devs
+prerequisites:
+- governanca-automacao/module-20-automacao
+author: AI Software Engineering Academy
+reviewers: []
+bqs_score: 76.0
+duration_minutes: null
+changelog:
+- date: '2026-06-27'
+  version: '1.0'
+  description: Versão inicial
+  author: AI Software Engineering Academy

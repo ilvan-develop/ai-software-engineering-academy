@@ -1,0 +1,26 @@
+id: fundamentos-enterprise/module-00-introducao
+title: Introdução — O Papel do Arquiteto
+description: Módulo Introdução — O Papel do Arquiteto do curso fundamentos-enterprise.
+status: publicado
+version: 1
+topics:
+- fundamentos
+- introducao
+level: beginner
+audience:
+- devs
+- architects
+- students
+prerequisites: []
+author: AI Software Engineering Academy
+reviewers: []
+bqs_score: 76.0
+duration_minutes: null
+changelog:
+- date: '2026-06-27'
+  version: '1.0'
+  description: Versão inicial
+  author: AI Software Engineering Academy
+lang: en-US
+source_lang: pt-BR
+translation_status: pending

@@ -1,0 +1,23 @@
+id: product-design/module-04-ux
+title: UX Research & Design
+description: Módulo UX Research & Design do curso product-design.
+status: publicado
+version: 1
+topics:
+- product-design
+- ux
+level: intermediate
+audience:
+- designers
+- devs
+prerequisites:
+- fundamentos-enterprise/module-09-erro-90-ia
+author: AI Software Engineering Academy
+reviewers: []
+bqs_score: 76.1
+duration_minutes: null
+changelog:
+- date: '2026-06-27'
+  version: '1.0'
+  description: Versão inicial
+  author: AI Software Engineering Academy

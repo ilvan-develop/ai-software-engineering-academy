@@ -1,0 +1,22 @@
+id: frontend-devops/module-15-qa
+title: Qualidade e Testes
+description: Módulo Qualidade e Testes do curso frontend-devops.
+status: publicado
+version: 1
+topics:
+- frontend
+- qualidade
+level: intermediate
+audience:
+- devs
+prerequisites:
+- arquitetura-backend/module-13d-multi-tenant-operacoes
+author: AI Software Engineering Academy
+reviewers: []
+bqs_score: 74.1
+duration_minutes: null
+changelog:
+- date: '2026-06-27'
+  version: '1.0'
+  description: Versão inicial
+  author: AI Software Engineering Academy
