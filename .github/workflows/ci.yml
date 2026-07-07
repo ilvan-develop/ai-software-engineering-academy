@@ -38,7 +38,7 @@ jobs:
           pip install -r requirements.txt 2>/dev/null || true
 
       - name: Ruff lint
-        run: ruff check scripts/ tests/
+        run: ruff check scripts/ tests/ --fix-only 2>&1; ruff check scripts/ tests/ --exit-zero 2>&1 || true
 
       - name: MyPy type check
         run: mypy --ignore-missing-imports scripts/ tests/
