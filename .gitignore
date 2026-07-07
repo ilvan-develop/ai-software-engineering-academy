@@ -10,7 +10,7 @@ nul
 web/.next/
 web/out/
 web/node_modules/
-web/package-lock.json
+
 *.pdf
 *.epub
 *.docx
