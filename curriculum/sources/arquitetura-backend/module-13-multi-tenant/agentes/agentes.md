@@ -39,7 +39,7 @@ export class TenantAwareService {
     });
   }
 }
-```
+```markdown
 
 ### Security Analyst Agent
 
@@ -82,7 +82,7 @@ interface PricingTier {
   features: string[];
   supportLevel: 'community' | 'email' | 'priority' | 'dedicated';
 }
-```
+```markdown
 
 ### DevOps Expert Agent
 

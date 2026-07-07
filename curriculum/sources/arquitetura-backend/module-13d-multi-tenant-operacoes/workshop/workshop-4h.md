@@ -203,7 +203,6 @@ Por favor, avalie o workshop de 1 a 5:
 
 **Sugestoes de melhoria:**
 
-
 ---
 
 *Workshop gerado automaticamente pela AI Software Engineering Academy*

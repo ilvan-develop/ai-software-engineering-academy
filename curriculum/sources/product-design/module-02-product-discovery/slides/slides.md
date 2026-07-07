@@ -11,14 +11,14 @@ Validando ideias antes de construir
 
 ## Slide 2: Discovery vs Delivery
 
-```
+```text
 DISCOVERY                        DELIVERY
 "Construímos a coisa certa?"     "Construímos a coisa certo?"
 Alta incerteza, baixo custo      Baixa incerteza, alto custo
 Perguntas, hipóteses             Requisitos, código
 
 "Devo construir isso?"          "Como construir isso?"
-```
+```json
 
 [imagem: diagrama split-screen Discovery vs Delivery com lupa vs engrenagens]
 
@@ -30,11 +30,11 @@ Sem discovery: 3 sprints perdidos com algo que ninguém usa
 
 ## Slide 3: Processo de Discovery
 
-```
+```text
 OPORTUNIDADE → PESQUISA → IDEAÇÃO → PROTOTIPAÇÃO → VALIDAÇÃO
       │                                                   │
       └─────────────────── (iterar) ──────────────────────┘
-```
+```json
 
 [imagem: fluxo circular do processo de discovery com setas de retroalimentação]
 
@@ -59,7 +59,7 @@ Regra de ouro: pergunte sobre **comportamento passado**, não intenção futura
 
 ## Slide 5: Entrevistas — Estrutura
 
-```
+```text
 1. Abertura (5min)
    "Não estamos testando você"
 
@@ -71,7 +71,7 @@ Regra de ouro: pergunte sobre **comportamento passado**, não intenção futura
 
 4. Fechamento (5min)
    "Algo mais que gostaria de compartilhar?"
-```
+```markdown
 
 Ratio 80/20: escute 80%, fale 20%
 
@@ -79,7 +79,7 @@ Ratio 80/20: escute 80%, fale 20%
 
 ## Slide 6: JTBD — Jobs to be Done
 
-```
+```yaml
 Usuários não compram produtos,
 eles "contratam" serviços para fazer um trabalho.
 
@@ -90,7 +90,7 @@ Opções "contratadas":
   Newsletter (R$ 0, 5min/dia)
   Twitter (R$ 0, 15min/dia)
   Podcast (R$ 0, 1h/dia no trânsito)
-```
+```markdown
 
 Funcional → Emocional → Social
 
@@ -98,7 +98,7 @@ Funcional → Emocional → Social
 
 ## Slide 7: Lean Canvas
 
-```
+```text
 ┌──────────┬─────────┬──────────┬──────────┬──────────┐
 │ PROBLEMA │ SOLUÇÃO │ PROPOSTA │ VANTAGEM │ SEGMENTO │
 │          │         │ DE VALOR │ COMPET.  │ CLIENTES │
@@ -107,7 +107,7 @@ Funcional → Emocional → Social
 ├──────────┴─────────┴──────────┴──────────┴──────────┤
 │ CUSTOS                              RECEITAS        │
 └─────────────────────────────────────────────────────┘
-```
+```markdown
 
 Uma página para validar o modelo de negócio
 
@@ -115,7 +115,7 @@ Uma página para validar o modelo de negócio
 
 ## Slide 8: Value Proposition Canvas
 
-```
+```text
 ┌────────────────────┬────────────────────┐
 │ PRODUTO            │ CLIENTE            │
 │                    │                    │
@@ -126,13 +126,13 @@ Uma página para validar o modelo de negócio
 └────────────────────┴────────────────────┘
 
 Encaixe: solutions > dores + ganhos
-```
+```markdown
 
 ---
 
 ## Slide 9: Opportunity Solution Tree
 
-```
+```text
 OUTCOME
   ├── Oportunidade A
   │   ├── Solução 1 → Experimento
@@ -142,7 +142,7 @@ OUTCOME
   │   └── Solução 4 → Experimento
   └── Oportunidade C
       └── Solução 5 → Experimento
-```
+```markdown
 
 Teresa Torres — conecta resultado a oportunidades a soluções a experimentos
 
@@ -150,7 +150,7 @@ Teresa Torres — conecta resultado a oportunidades a soluções a experimentos
 
 ## Slide 10: User Story Mapping
 
-```
+```yaml
 Jornada: "Gerenciar projetos"
             Semana 1    Semana 2    Semana 3
 Criar       Criar nome  Convidar
@@ -158,7 +158,7 @@ Organizar   Colunas     Cards       Arrastar
 Acompanhar                        Dashboard
 
             ↑ MVP        ↑ R2        ↑ R3
-```
+```markdown
 
 Backlog como fluxo, não lista
 
@@ -166,7 +166,7 @@ Backlog como fluxo, não lista
 
 ## Slide 11: Validação de Hipóteses
 
-```
+```yaml
 HIPÓTESE:
 Acreditamos que [solução] para [público]
 resultará em [outcome].
@@ -175,7 +175,7 @@ Saberemos que estamos certos quando [métrica].
 Exemplo:
 "Acreditamos que onboarding guiado resultará
 em 30% mais ativação no D7."
-```
+```markdown
 
 MVP não é produto mínimo — é o **menor experimento que valida uma hipótese**
 
@@ -200,7 +200,7 @@ Escolha o menor experimento que responde sua pergunta
 
 ## Slide 13: Discovery em Enterprise
 
-```
+```yaml
 Desafios:
   Muitos stakeholders → prioridades conflitantes
   Processos lentos → discovery engessado
@@ -212,13 +212,13 @@ Como fazer:
   3. Envolva stakeholders no processo
   4. 20-30% do tempo dedicado a discovery
   5. Cultura de "falhe rápido, aprenda barato"
-```
+```markdown
 
 ---
 
 ## Slide 14: Saídas do Discovery
 
-```
+```yaml
 Backlog refinado:
   Antes: "Tela de relatórios" (achismo)
   Depois: "Exportar CSV" (validado com 78% dos users)
@@ -231,7 +231,7 @@ User Stories:
 
 Opportunity Backlog:
   Backlog de problemas, não de soluções
-```
+```markdown
 
 ---
 

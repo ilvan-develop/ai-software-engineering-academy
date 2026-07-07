@@ -23,7 +23,7 @@ APIs robustas, testáveis e seguras
 
 ## Slide 3: Estrutura de módulos
 
-```
+```text
 src/
 ├── modules/
 │   ├── users/        (controller, service, repository, dto)
@@ -32,7 +32,7 @@ src/
 ├── common/           (guards, pipes, filters)
 ├── config/
 └── main.ts
-```
+```markdown
 
 Cada módulo é autocontido e testável
 
@@ -40,7 +40,7 @@ Cada módulo é autocontido e testável
 
 ## Slide 4: Camadas
 
-```
+```text
 Controller (rota) → DTO (validação)
     ↓
 Service (lógica de negócio)
@@ -48,7 +48,7 @@ Service (lógica de negócio)
 Repository (persistência)
     ↓
 Prisma (banco)
-```
+```markdown
 
 Cada camada tem responsabilidade única
 
@@ -66,17 +66,17 @@ const CreateUserSchema = z.object({
 
 // Valida + transforma
 email: z.string().email().transform(v => v.toLowerCase())
-```
+```markdown
 
 ---
 
 ## Slide 6: Exception Filters
 
-```
+```text
 Erro de Domínio:    400 + código (EMAIL_ALREADY_EXISTS)
 Erro HTTP:          status + mensagem
 Erro não mapeado:   500 + log (não expõe stack)
-```
+```text
 
 ```typescript
 @Catch()
@@ -87,7 +87,7 @@ export class GlobalExceptionFilter {
     // 500 genérico
   }
 }
-```
+```markdown
 
 ---
 
@@ -112,7 +112,7 @@ async getOrSet<T>(key, ttl, fetcher) {
   await redis.set(key, JSON.stringify(data), 'EX', ttl);
   return data;
 }
-```
+```markdown
 
 Cache + Invalidação por padrão
 
@@ -120,7 +120,7 @@ Cache + Invalidação por padrão
 
 ## Slide 9: Health Checks
 
-```
+```css
 GET /health
 
 {
@@ -130,7 +130,7 @@ GET /health
     { name: 'redis', status: 'healthy' },
   ]
 }
-```
+```markdown
 
 ---
 
@@ -143,7 +143,7 @@ const service = new UserService(repo, emailService);
 // Testar service sem banco real
 await service.create(dto);
 expect(repo.save).toHaveBeenCalled();
-```
+```markdown
 
 DI torna testes isolados e rápidos
 

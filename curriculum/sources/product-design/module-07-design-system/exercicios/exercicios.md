@@ -48,7 +48,7 @@ export const colors = {
     info:    '#______',  // azul info
   },
 };
-```
+```javascript
 
 **Perguntas:**
 1. Qual a importância de ter 10 shades (50-950) para uma cor primária?
@@ -89,7 +89,7 @@ export function Avatar({ src, name, size = 'md', status, className }: AvatarProp
   // 4. Se status existir, exiba um indicador no canto inferior direito
   // 5. Adicione aria-label com o nome do usuário
 }
-```
+```markdown
 
 ---
 
@@ -113,20 +113,20 @@ Escreva um migration guide seguindo o formato:
 **Antes:**
 ```tsx
 <Button appearance="primary" />
-```
+```text
 
 **Depois:**
 ```tsx
 <Button variant="primary" />
-```
+```text
 
 **Codemod:**
 ```bash
 npx @acme/ds-codemod button-appearance-to-variant
-```
+```text
 
 <!-- Continue para os outros 4 itens... -->
-```
+```markdown
 
 ---
 

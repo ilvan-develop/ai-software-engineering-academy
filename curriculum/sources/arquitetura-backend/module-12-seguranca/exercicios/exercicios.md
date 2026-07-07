@@ -10,14 +10,14 @@ Para cada código, identifique qual vulnerabilidade OWASP está presente e propo
 async listUsers() {
   return this.userRepo.findAll();
 }
-```
+```text
 
 **Código B:**
 ```typescript
 const user = await prisma.$queryRawUnsafe(
   `SELECT * FROM users WHERE email = '${email}'`
 );
-```
+```text
 
 **Código C:**
 ```typescript
@@ -28,17 +28,17 @@ async login(@Body() dto: LoginDto) {
   if (user.password !== dto.password) throw new UnauthorizedException();
   return this.jwtService.sign({ userId: user.id });
 }
-```
+```text
 
 **Código D:**
 ```typescript
 app.enableCors();
-```
+```text
 
 **Código E:**
 ```typescript
 const apiKey = 'sk-proj-abc123def456';
-```
+```markdown
 
 ---
 
@@ -65,7 +65,7 @@ export class AuthController {
     // 6. Retornar tokens
   }
 }
-```
+```markdown
 
 ---
 
@@ -84,7 +84,7 @@ export function defineAbilitiesFor(user: User): PureAbility {
     // Implementar regras
   });
 }
-```
+```markdown
 
 ---
 
@@ -105,7 +105,7 @@ async function bootstrap() {
 
   await app.listen(3000);
 }
-```
+```markdown
 
 ---
 

@@ -17,7 +17,7 @@ Alta incerteza, baixo custo           Baixa incerteza, alto custo
 Perguntas, hipóteses, experimentos    Requisitos, planejamento, código
 Falsificável, iterativo               Definido, incremental
 "Devo construir isso?"                "Como construir isso?"
-```
+```javascript
 
 ![Discovery vs Delivery](/knowledge-factory/products/courses/product-design/module-02-product-discovery/assets/diagram-discovery-vs-delivery.svg)
 
@@ -36,7 +36,7 @@ Com Discovery:
   → Descoberta: ele quer exportar dados pra planilha
   → Solução: botão de exportar CSV em 1 dia
   → Valida: ele testa, funciona, usa todo dia
-```
+```markdown
 
 ### Armadilha comum
 
@@ -51,7 +51,7 @@ Por quê?
 - Ninguém perguntou se o problema era real
 - Ninguém validou se chat bot era a melhor solução
 - Ninguém testou com usuários antes de construir
-```
+```markdown
 
 ![Mapa mental do Product Discovery](/knowledge-factory/products/courses/product-design/module-02-product-discovery/assets/diagram-discovery-mindmap.svg)
 
@@ -65,7 +65,7 @@ O discovery não é linear — é um ciclo iterativo. O modelo mais comum tem 4 
 OPORTUNIDADE → PESQUISA → IDEAÇÃO → PROTOTIPAÇÃO → VALIDAÇÃO
       │                                                 │
       └───────────────── (iterate) ────────────────────┘
-```
+```markdown
 
 ![Processo de Product Discovery](/knowledge-factory/products/courses/product-design/module-02-product-discovery/assets/diagram-discovery-flow.svg)
 
@@ -99,7 +99,7 @@ HMW: "Como poderíamos reduzir o atrito no cadastro?"
      → "Como poderíamos deixar o cadastro opcional?"
      → "Como poderíamos usar login social?"
      → "Como poderíamos pré-preencher dados?"
-```
+```markdown
 
 ### 2.4 Prototipação
 
@@ -113,7 +113,7 @@ Wireframe     Horas      Layout, estrutura
 Mockup        Dias       Visual, branding
 Prototype     Dias       Interação, fluxo real
 MVP           Semanas    Valor real no mercado
-```
+```markdown
 
 ### 2.5 Validação
 
@@ -148,7 +148,7 @@ A ferramenta mais poderosa de discovery.
 4. Fechamento (5min)
    "Algo mais que gostaria de compartilhar?"
    "Posso voltar a te procurar se tiver mais perguntas?"
-```
+```text
 
 **Regras de ouro:**
 - Não faça perguntas indutoras ("Você não acha que X é melhor?")
@@ -167,7 +167,7 @@ Bom para validar achados qualitativos com escala.
 ✅ "Na última semana, quantas vezes você precisou exportar
     dados do sistema?"
    (comportamento real, mensurável)
-```
+```text
 
 **Dicas de surveys:**
 - Máximo 10 perguntas
@@ -185,7 +185,7 @@ Não tem W              Tem W mas é confuso      Tem W excelente
 Feedback: lento        Feedback: caro           Feedback: complexo
 
 Oportunidade: X + W simples + preço acessível
-```
+```text
 
 **O que analisar:**
 - Proposta de valor
@@ -211,7 +211,7 @@ Métricas de Discovery:
 | NPS / CSAT               | Satisfação geral                         |
 | Search terms             | O que usuários procuram (e não acham)    |
 | Feature usage            | O que realmente é usado                  |
-```
+```markdown
 
 ---
 
@@ -234,7 +234,7 @@ Opção D: Podcasts                  (R$ 0, 1h/dia no trânsito)
 
 "Contratamos" a opção que melhor resolve o job
 dado nosso contexto (tempo, dinheiro, momento)
-```
+```text
 
 **Estrutura JTBD:**
 
@@ -244,7 +244,7 @@ Quando [situação], eu quero [motivação] para [resultado esperado].
 Exemplo:
 "Quando estou começando um novo projeto, eu quero entender o
 que outros times já tentaram antes, para não repetir erros."
-```
+```text
 
 **Jobs principais vs jobs funcionais:**
 - **Functional:** "Organizar tarefas do time"
@@ -271,7 +271,7 @@ Uma página que resume o modelo de negócio. Ideal para early stage.
 │ ESTRUTURA DE CUSTOS                                │ RECEITAS                         │
 │ Fixos, variáveis, custo de aquisição               │ Como ganha dinheiro              │
 └────────────────────────────────────────────────────┴─────────────────────────────────┘
-```
+```markdown
 
 ### 4.3 Value Proposition Canvas
 
@@ -298,7 +298,7 @@ VALUE PROPOSITION CANVAS
 │                              │                              │
 │         ENCAIXE: quando solutions > jobs + pains           │
 └──────────────────────────────┴──────────────────────────────┘
-```
+```markdown
 
 ---
 
@@ -327,7 +327,7 @@ RESULTADO ESPEREADO
 └── OPORTUNIDADE: Produto é caro para PMEs
     ├── SOLUÇÃO: Plano "Starter" com funcionalidades limitadas
     └── EXPERIMENTO: Landing page com pricing e botão de compra
-```
+```text
 
 **Como construir:**
 1. Defina o **outcome** (resultado esperado, ex: "aumentar ativação em 30%")
@@ -354,7 +354,7 @@ Acompanhar    │               │              │ Dashboard     │
 progresso     │               │              │ de progresso   │
 ──────────────┴───────────────┴──────────────┴────────────────┘
   ↑ MVP (corta aqui)            ↑ Release 2          ↑ Release 3
-```
+```text
 
 **Por que usar:**
 - Mostra o produto como um **fluxo**, não uma lista
@@ -379,7 +379,7 @@ Exemplo:
 resultará em 30% mais ativação no D7.
 Saberemos que estamos certos quando a taxa de ativação
 subir de 40% para 52% no teste A/B."
-```
+```markdown
 
 ### Tipos de experimento
 
@@ -394,7 +394,7 @@ Concierge MVP       | Alto    | Alta      | Validar valor real
 Wizard of Oz MVP    | Médio   | Alta      | Validar viabilidade
 Single-feature MVP  | Médio   | Alta      | Testar feature isolada
 Piecemeal MVP       | Baixo   | Média     | Validar sem construir
-```
+```markdown
 
 ### Exemplo: Landing page fake
 
@@ -414,7 +414,7 @@ Ideia: "App que agenda reuniões automaticamente"
 4. Resultado:
    Se < 5% clica → interesse baixo, repense a proposta
    Se > 15% clica → interesse real, continue
-```
+```markdown
 
 ### MVP não é produto mínimo
 
@@ -424,7 +424,7 @@ REAL: MVP é o menor experimento que valida ou invalida uma hipótese
 
 MVP serve para APRENDER, não para entregar valor.
 Se você já sabe que funciona, não precisa de MVP.
-```
+```markdown
 
 ---
 
@@ -443,7 +443,7 @@ Métrica de sucesso errada  Time mede output, não outcome
 Times isolados             Descobertas não são compartilhadas
 Gerenciamento de risco     Medo de errar → pouca experimentação
 Orçamento anual fixo       Discovery não é orçado → não existe
-```
+```markdown
 
 ### Como fazer discovery em Enterprise
 
@@ -456,7 +456,7 @@ OKR da empresa: "Aumentar receita recorrente em 25%"
 → Discovery: por que os clientes estão cancelando?
 → Outcome: reduzir churn pela metade
 → Backlog: funcionalidades que endereçam as causas
-```
+```text
 
 **2. Discovery Sprints**
 
@@ -467,7 +467,7 @@ Sprint Discovery (2 semanas):
   Semana 1: Pesquisa (entrevistas, analytics, concorrência)
   Semana 2: Ideação, prototipação, testes com usuários
   Saída: Backlog priorizado para as próximas 6 semanas de delivery
-```
+```text
 
 **3. Envolva stakeholders cedo**
 
@@ -480,7 +480,7 @@ Engenharia       | "Isso é viável tecnicamente?"      | Prototipação
 Design           | "Isso é usável?"                    | Prototipação, teste
 Comercial        | "O cliente pagaria por isso?"      | Pesquisa, validação
 Sucesso do cl.   | "Isso reduz chamados?"             | Pesquisa
-```
+```text
 
 **4. Discovery contínuo vs Discovery por projeto**
 
@@ -494,7 +494,7 @@ Discovery por Projeto (menos eficaz):
   Discovery só acontece no início do projeto
   Depois que o delivery começa, não se questiona mais
   Se descobrir algo errado no meio, é tarde demais
-```
+```markdown
 
 ### Cultura de Experimentação
 
@@ -511,7 +511,7 @@ Cultura que NÃO funciona:
   "Quem decide é o VP"
   "A gente sabe o que o cliente quer"
   "Se deu trabalho, vamos lançar mesmo assim"
-```
+```markdown
 
 ---
 
@@ -535,7 +535,7 @@ Depois do Discovery:
   - [ ] Relatório de vendas (validado: resolve job #2)
   - [ ] Tema escuro (despriorizado: 12% pediram)
   - [ ] Integração Slack (despriorizado: 3 clientes, custo alto)
-```
+```markdown
 
 ### 8.2 Proto-personas
 
@@ -555,7 +555,7 @@ Comportamento:   Usa Excel, Tableau, SQL (básico)
 Job to be done:  "Quando preciso responder uma pergunta de negócio,
                   quero encontrar os dados certos em minutos, para
                   não perder credibilidade com o diretor."
-```
+```markdown
 
 ### 8.3 User Stories
 
@@ -576,7 +576,7 @@ Critérios de aceite:
 - Arquivo baixa em até 10s (para < 100k linhas)
 - Colunas traduzidas para pt-BR
 - Nome do arquivo: `export-{tipo}-{data}.csv`
-```
+```markdown
 
 ### 8.4 Opportunity Backlog
 
@@ -589,7 +589,7 @@ O01 | Usuários não encontram dados no sistema   | 45% dos chamados       | Gra
 O02 | Demora para gerar relatórios              | Survey: 78% citaram    | Médio   | P0
 O03 | Não confiabilidade dos dados              | NPS: 4.2 (crítico)     | Grande  | P1
 O04 | Integração com ferramentas externas       | 3 clientes enterprise  | Médio   | P2
-```
+```markdown
 
 ---
 

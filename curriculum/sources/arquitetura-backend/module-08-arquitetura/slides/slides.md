@@ -11,7 +11,7 @@ Clean Architecture, DDD, SOLID e padrões Enterprise
 
 ## Slide 2: Por que arquitetura importa?
 
-```
+```text
 Arquitetura Ruim:
   Feature nova: 2 semanas ("código macarrão")
   Bug: quebra tudo ("medo de mexer")
@@ -19,7 +19,7 @@ Arquitetura Ruim:
 Arquitetura Boa:
   Feature nova: 2 dias ("só adicionar módulo")
   Bug: localizado ("testes garantem")
-```
+```markdown
 
 ---
 
@@ -35,7 +35,7 @@ Arquitetura Boa:
 
 ## Slide 4: Clean Architecture
 
-```
+```text
        ENTITIES (regras enterprise)
     ┌─┴─┐
     │ UC │ USE CASES (regras da aplicação)
@@ -44,7 +44,7 @@ Arquitetura Boa:
 ┌─┴─────────┴─┐
 │ FRAMEWORKS   │ (NestJS, Prisma, Next.js)
 └──────────────┘
-```
+```yaml
 
 Regra: dependências apontam **para dentro**
 
@@ -82,20 +82,20 @@ class Usuario {
     this.perfil = novo;
   }
 }
-```
+```markdown
 
 ---
 
 ## Slide 7: Hexagonal (Ports & Adapters)
 
-```
+```javascript
 DOMAIN ←──→ Ports ←──→ Adapters ←──→ External
 
 Porta (interface):    PedidoRepository { save, findById }
 Adaptador (impl):     PrismaPedidoRepository
 
 Vantagem: troca Prisma por TypeORM sem tocar no domínio
-```
+```markdown
 
 ---
 
@@ -114,11 +114,11 @@ Vantagem: troca Prisma por TypeORM sem tocar no domínio
 
 ## Slide 9: Event-Driven Architecture
 
-```
+```text
 PedidoCriado → EventBus → EmailService (envia confirmação)
                         → EstoqueService (baixa estoque)
                         → FaturamentoService (emite nota)
-```
+```markdown
 
 Desacopla produtores de consumidores
 
@@ -126,14 +126,14 @@ Desacopla produtores de consumidores
 
 ## Slide 10: Estrutura NestJS + Clean Arch
 
-```
+```javascript
 src/
 ├── domain/           Entities, VOs, Repository interfaces
 ├── application/      Use Cases, DTOs
 ├── infrastructure/   Prisma, email, queue (implementações)
 ├── presentation/     Controllers, guards
 └── main.ts
-```
+```javascript
 
 Regra de ouro: **Domain não importa nada externo**
 

@@ -54,7 +54,7 @@ function extractTenantFromHost(host: string): string | null {
 async function validateTenantSubdomain(
   host: string,
 ...
-```
+```javascript
 
 ---
 ## Exemplo: typescript
@@ -73,7 +73,7 @@ function extractTenantFromHeader(req: Request): string | undefined {
 
 // Com validação de formato (slug)
 ...
-```
+```markdown
 
 ---
 ## Recap

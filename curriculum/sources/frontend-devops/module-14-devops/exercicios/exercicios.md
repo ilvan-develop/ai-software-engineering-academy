@@ -69,7 +69,7 @@ Retorne:
     { "name": "memory", "status": "healthy", "available": "512MB" }
   ]
 }
-```
+```markdown
 
 ---
 

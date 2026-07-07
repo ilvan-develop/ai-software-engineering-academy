@@ -31,9 +31,9 @@
 - Tela de abertura com titulo do modulo. Animacao suave com o nome do curso.
 
 **Texto na tela:**
-```
+```json
 [TITULO] Módulo 13b — Multi-Tenant: Implementação com NestJS e Prisma
-```
+```text
 
 **Notas de direcao:**
 - Tom energico e convidativo. Apresentar o problema que sera resolvido.
@@ -55,12 +55,12 @@
 findUsers(@Param('tenant') tenantId: string) {
   return this.userService.findAll(tenantId);
 }
-```
+```text
 
 **Texto na tela:**
-```
+```json
 [1. Identificação do Tenant]
-```
+```text
 
 **Notas de direcao:**
 - Secao 2 de 4. Usar exemplos praticos.
@@ -82,12 +82,12 @@ findUsers(@Param('tenant') tenantId: string) {
 findUsers(@Param('tenant') tenantId: string) {
   return this.userService.findAll(tenantId);
 }
-```
+```text
 
 **Texto na tela:**
-```
+```json
 [2. Middleware de Tenant]
-```
+```text
 
 **Notas de direcao:**
 - Secao 3 de 4. Usar exemplos praticos.
@@ -109,12 +109,12 @@ findUsers(@Param('tenant') tenantId: string) {
 findUsers(@Param('tenant') tenantId: string) {
   return this.userService.findAll(tenantId);
 }
-```
+```text
 
 **Texto na tela:**
-```
+```json
 [3. Prisma Multi-Tenant]
-```
+```text
 
 **Notas de direcao:**
 - Secao 4 de 4. Usar exemplos praticos.
@@ -132,7 +132,7 @@ findUsers(@Param('tenant') tenantId: string) {
 - Tela dividida: editor de codigo a esquerda, terminal/output a direita.
 
 **Texto na tela:**
-```
+```text
 ```typescript
 // tenant.extractor.ts
 function extractTenantFromHost(host: string): string | null {
@@ -146,8 +146,8 @@ function extractTenantFromHost(host: string): string | null {
 // Em produção, validar contra lista de tenants permitidos
 async function validateTenantSubdomain(
   host: string,
-```
-```
+```text
+```javascript
 
 **Notas de direcao:**
 - Explicar linha por linha. Destacar pontos importantes com zoom ou realce.
@@ -165,11 +165,11 @@ async function validateTenantSubdomain(
 - Lista resumida com icones. Transicao suave para encerramento.
 
 **Texto na tela:**
-```
+```text
 ✓ 1. Identificação do Tenant
 ✓ 2. Middleware de Tenant
 ✓ 3. Prisma Multi-Tenant
-```
+```text
 
 **Notas de direcao:**
 - Reforcar os aprendizados principais. Conectar com o proximo modulo.
@@ -187,9 +187,9 @@ async function validateTenantSubdomain(
 - Tela final com links, inscricao, e teaser da proxima aula.
 
 **Texto na tela:**
-```
+```text
 Proximo modulo: [TITULO DO PROXIMO MODULO]
-```
+```text
 
 **Notas de direcao:**
 - Chamada para acao: inscrever-se, comentar, compartilhar.

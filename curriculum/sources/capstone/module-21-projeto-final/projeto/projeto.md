@@ -42,7 +42,7 @@ Uma plataforma SaaS que unifica:
 - `Invite` (id, tenantId, email, role, token, expiresAt, status, createdAt)
 
 **Endpoints:**
-```
+```text
 POST   /api/auth/register          — Registrar tenant + owner
 POST   /api/auth/login             — Login
 POST   /api/auth/refresh           — Refresh token
@@ -56,7 +56,7 @@ POST   /api/tenants/accept-invite  — Aceitar convite
 GET    /api/tenants/:id/members    — Listar membros
 PATCH  /api/tenants/:id/members/:userId/role — Alterar papel
 DELETE /api/tenants/:id/members/:userId       — Remover membro
-```
+```text
 
 **Regras:**
 - `tenant_id` presente em todas as tabelas do sistema
@@ -71,7 +71,7 @@ DELETE /api/tenants/:id/members/:userId       — Remover membro
 - `ProjectTemplate` (id, tenantId, name, description, columns, createdAt)
 
 **Endpoints:**
-```
+```sql
 GET    /api/projects               — Listar projetos (filtros: status, priority, tags)
 POST   /api/projects               — Criar projeto
 GET    /api/projects/:id           — Detalhe do projeto
@@ -81,7 +81,7 @@ POST   /api/projects/:id/members   — Adicionar membro ao projeto
 DELETE /api/projects/:id/members/:userId — Remover membro
 POST   /api/projects/:id/template  — Salvar como template
 POST   /api/projects/from-template/:templateId — Criar a partir de template
-```
+```sql
 
 #### 1.3 Módulo de Tarefas
 
@@ -93,7 +93,7 @@ POST   /api/projects/from-template/:templateId — Criar a partir de template
 - `TaskHistory` (id, taskId, userId, field, oldValue, newValue, createdAt)
 
 **Endpoints:**
-```
+```sql
 GET    /api/projects/:projectId/tasks          — Listar tarefas
 POST   /api/projects/:projectId/tasks          — Criar tarefa
 GET    /api/tasks/:id                          — Detalhe da tarefa
@@ -116,7 +116,7 @@ POST   /api/tasks/:id/time/stop                — Parar time tracking
 GET    /api/tasks/:id/time                     — Tempo total gasto
 
 GET    /api/tasks/:id/history                  — Histórico de alterações
-```
+```javascript
 
 #### 1.4 Módulo de Notificações
 
@@ -125,13 +125,13 @@ GET    /api/tasks/:id/history                  — Histórico de alterações
 - `NotificationPreference` (id, userId, type, email, inApp, push)
 
 **Endpoints:**
-```
+```text
 GET    /api/notifications              — Listar notificações do usuário
 PATCH  /api/notifications/:id/read     — Marcar como lida
 POST   /api/notifications/read-all     — Marcar todas como lidas
 GET    /api/notifications/preferences  — Preferências
 PUT    /api/notifications/preferences  — Atualizar preferências
-```
+```text
 
 **Tipos de notificação:**
 - `task.assigned` — Tarefa atribuída a você
@@ -144,13 +144,13 @@ PUT    /api/notifications/preferences  — Atualizar preferências
 #### 1.5 Módulo de Relatórios
 
 **Endpoints:**
-```
+```text
 GET    /api/reports/dashboard          — Métricas do dashboard
 GET    /api/reports/projects           — Relatório de projetos (PDF)
 GET    /api/reports/hours              — Relatório de horas (PDF)
 GET    /api/reports/hours/csv          — Relatório de horas (CSV)
 GET    /api/reports/member/:userId     — Relatório por membro
-```
+```text
 
 **Métricas do dashboard:**
 ```json
@@ -170,7 +170,7 @@ GET    /api/reports/member/:userId     — Relatório por membro
     { "date": "2026-06-02", "remaining": 115 }
   ]
 }
-```
+```markdown
 
 #### 1.6 Módulo de Pagamentos
 
@@ -179,25 +179,25 @@ GET    /api/reports/member/:userId     — Relatório por membro
 - `Invoice` (id, tenantId, stripeInvoiceId, amount, currency, status, pdfUrl, paidAt, createdAt)
 
 **Endpoints:**
-```
+```text
 POST   /api/payments/create-checkout     — Criar sessão Stripe Checkout
 GET    /api/payments/portal              — Portal de faturamento
 GET    /api/payments/invoices            — Histórico de faturas
 GET    /api/payments/current             — Plano atual
 
 POST   /api/webhooks/stripe              — Webhook do Stripe (público)
-```
+```markdown
 
 #### 1.7 Módulo de Administração
 
 **Endpoints:**
-```
+```sql
 GET    /api/admin/logs          — Logs de atividade do tenant
 GET    /api/admin/audit         — Relatório de auditoria
 GET    /api/admin/webhooks      — Listar webhooks configurados
 POST   /api/admin/webhooks      — Criar webhook de saída
 DELETE /api/admin/webhooks/:id  — Remover webhook
-```
+```markdown
 
 ---
 
@@ -259,7 +259,7 @@ COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./
 EXPOSE 3001
 CMD ["node", "dist/main"]
-```
+```text
 
 **Dockerfile.frontend** (multi-stage):
 ```dockerfile
@@ -279,7 +279,7 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/package.json ./
 EXPOSE 3000
 CMD ["npm", "start"]
-```
+```text
 
 **docker-compose.yml:**
 ```yaml
@@ -318,7 +318,7 @@ services:
       NEXT_PUBLIC_API_URL: http://localhost:3001
 
 volumes: { pgdata: }
-```
+```markdown
 
 #### 3.2 CI/CD (GitHub Actions)
 
@@ -389,7 +389,7 @@ jobs:
       - uses: actions/checkout@v4
       - run: echo "Deploy para produção..."
       # aws ecs update-service --cluster production --service backend --force-new-deployment
-```
+```markdown
 
 ---
 
@@ -410,7 +410,7 @@ jobs:
   "durationMs": 42,
   "message": "Project created successfully"
 }
-```
+```markdown
 
 #### 4.2 Métricas (Prometheus)
 
@@ -425,12 +425,12 @@ jobs:
 
 #### 4.3 Tracing (OpenTelemetry)
 
-```
+```text
 frontend (Browser) ──→ Next.js ──→ NestJS ──→ PostgreSQL / Redis
        ↑                   ↑           ↑              ↑
     trace-id          span-id      span-id        span-id
     (mesmo trace-id em toda a cadeia)
-```
+```markdown
 
 #### 4.4 Dashboards (Grafana)
 
@@ -444,7 +444,7 @@ Três dashboards obrigatórios:
 
 ### 5. Estrutura de Pastas (Monorepo)
 
-```
+```text
 project-root/
 ├── apps/
 │   ├── backend/
@@ -526,7 +526,7 @@ project-root/
 ├── .gitignore
 ├── README.md
 └── package.json (raiz — scripts do monorepo)
-```
+```markdown
 
 ---
 
@@ -824,7 +824,7 @@ model Invoice {
 
   @@index([tenantId])
 }
-```
+```markdown
 
 ---
 
@@ -915,13 +915,13 @@ git clone <repo-url>
 cd <repo-name>
 cp .env.example .env
 docker compose up
-```
+```markdown
 
 Acesse http://localhost:3000
 
 ## Estrutura
 
-```
+```text
 apps/
 ├── backend/   → NestJS API (porta 3001)
 └── frontend/  → Next.js App (porta 3000)
@@ -929,7 +929,7 @@ packages/
 └── shared/    → Tipos, schemas, constantes
 docs/
 └── adrs/      → Decisões arquiteturais
-```
+```markdown
 
 ## Testes
 
@@ -945,7 +945,7 @@ npm run test:integration
 
 # Cobertura
 npm run test:coverage
-```
+```markdown
 
 ## Deploy
 
@@ -964,7 +964,7 @@ npm run test:coverage
 ## Licença
 
 MIT
-```
+```markdown
 
 ---
 

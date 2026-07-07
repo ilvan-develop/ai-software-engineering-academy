@@ -26,7 +26,7 @@ Custo de prevenir:
   │  Ferramentas de segurança: R$ 1k/mês         │
   │  Revisão de código: parte do processo        │
   └──────────────────────────────────────────────┘
-```
+```markdown
 
 ### Mindset de segurança
 
@@ -38,7 +38,7 @@ Custo de prevenir:
 ✅ "Segurança é responsabilidade de todos"
 ✅ "Segurança é parte da definição de 'pronto'"
 ✅ "Se tem valor, vai ser atacado"
-```
+```markdown
 
 ---
 
@@ -83,7 +83,7 @@ const hashedPassword = await bcrypt.hash(req.body.password, 12);
 const user = await prisma.user.create({
   data: { password: hashedPassword }
 });
-```
+```markdown
 
 ### 3. Injection
 
@@ -118,7 +118,7 @@ async login(@Body() dto: LoginDto) {
 async login(@Body() dto: LoginDto) {
   // ...
 }
-```
+```markdown
 
 ### 5. Security Misconfiguration
 
@@ -158,7 +158,7 @@ app.enableCors({
 4. Cliente armazena e envia access token em requisições
 5. Servidor valida token em cada requisição (AuthGuard)
 6. Quando access token expira, cliente usa refresh token para obter novo
-```
+```markdown
 
 ### Implementação
 
@@ -242,7 +242,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     return { id: payload.sub, email: payload.email, role: payload.role };
   }
 }
-```
+```markdown
 
 ---
 
@@ -297,7 +297,7 @@ async delete(@Param('id') id: string, @Req() req) {
   ForbiddenError.from(ability).throwUnlessCan('delete', 'Order');
   // Nunca chega aqui — admin também não pode deletar
 }
-```
+```markdown
 
 ---
 
@@ -344,7 +344,7 @@ Rate Limiting por:
 Respostas:
   429 Too Many Requests
   Header: Retry-After: X segundos
-```
+```markdown
 
 ---
 
@@ -364,7 +364,7 @@ app.use(helmet());
 // X-XSS-Protection: 0
 // Strict-Transport-Security
 // Referrer-Policy
-```
+```markdown
 
 ### CSP (Content Security Policy)
 
@@ -398,7 +398,7 @@ const user = await prisma.user.findUnique({ where: { email } });
 
 // ✅ Se precisar de raw query, usar parametrização
 const users = await prisma.$queryRaw`SELECT * FROM users WHERE email = ${email}`;
-```
+```markdown
 
 ### XSS (Cross-Site Scripting)
 
@@ -425,7 +425,7 @@ app.use(csurf({ cookie: true }));
 // Enviar token CSRF em formulários/headers
 // <meta name="csrf-token" content="{{csrfToken}}">
 // Header: X-CSRF-Token
-```
+```markdown
 
 ---
 
@@ -467,7 +467,7 @@ for (const varName of requiredEnvVars) {
     throw new Error(`Variável de ambiente ${varName} não configurada`);
   }
 }
-```
+```markdown
 
 ---
 
@@ -514,7 +514,7 @@ async transfer(@Body() dto: TransferDto, @Req() req) {
 
 ### Checklist de segurança para code review
 
-```
+```text
 Segurança em code review:
   [ ] Todos os inputs são validados?
   [ ] Autenticação em todas as rotas protegidas?

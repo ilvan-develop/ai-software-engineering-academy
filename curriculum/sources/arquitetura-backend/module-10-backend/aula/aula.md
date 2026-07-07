@@ -65,7 +65,7 @@ src/
 ├── config/
 │   └── app.config.ts
 └── main.ts
-```
+```markdown
 
 ### Por que essa estrutura?
 
@@ -79,7 +79,7 @@ Módulo raiz (AppModule):
   → Importa os módulos de domínio
   → Tempo de inicialização mais rápido
   → Testes mais isolados
-```
+```markdown
 
 ---
 
@@ -95,7 +95,7 @@ Service (Lógica de negócio)
 Repository (Persistência)
   ↓
 Database (Prisma)
-```
+```markdown
 
 ### Controller
 
@@ -139,7 +139,7 @@ export class UserController {
     await this.userService.softDelete(id);
   }
 }
-```
+```markdown
 
 ### Service
 
@@ -255,7 +255,7 @@ export class UserRepository {
     };
   }
 }
-```
+```markdown
 
 ---
 
@@ -299,7 +299,7 @@ export class CreateUserPipe implements PipeTransform {
 async create(@Body(new CreateUserPipe()) dto: CreateUserDto) {
   return this.userService.create(dto);
 }
-```
+```markdown
 
 ### Validação vs Sanitização
 
@@ -350,7 +350,7 @@ export class GlobalExceptionFilter implements ExceptionFilter {
     });
   }
 }
-```
+```markdown
 
 ### Domain Errors
 
@@ -397,7 +397,7 @@ export class TransformInterceptor<T> implements NestInterceptor<T, ApiResponse<T
 
 // Uso global
 app.useGlobalInterceptors(new TransformInterceptor());
-```
+```markdown
 
 ### Guards (proteção de rotas)
 
@@ -458,7 +458,7 @@ async findAll(input: CursorPaginationInput): Promise<CursorPaginatedResult<User>
     hasMore,
   };
 }
-```
+```markdown
 
 ---
 
@@ -542,7 +542,7 @@ export class HealthController {
     }
   }
 }
-```
+```markdown
 
 ---
 

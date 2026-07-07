@@ -42,7 +42,7 @@ interface ProductInput {
   categoryId: string;  // UUID válido
   description: string; // min 10, max 1000
 }
-```
+```yaml
 
 Inclua:
 - Validação com Zod
@@ -64,7 +64,7 @@ interface CartItem {
   quantity: number;
   image: string;
 }
-```
+```yaml
 
 Funcionalidades:
 - Adicionar item (se já existe, incrementar)
@@ -116,7 +116,7 @@ export default function ProductsPage() {
     </div>
   );
 }
-```
+```text
 
 Refatore para:
 - Server Component para listagem

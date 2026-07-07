@@ -25,10 +25,10 @@ Defina:
 ### 2. workflow.md — Processo
 
 Descreva o fluxo de trabalho em 7-10 passos:
-```
+```text
 1. Receber requisição de análise
 2. ...
-```
+```markdown
 
 ### 3. checklist.md — Qualidade
 

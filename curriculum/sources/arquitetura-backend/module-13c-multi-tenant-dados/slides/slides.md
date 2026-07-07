@@ -54,7 +54,7 @@ async function migrateAllTenants(): Promise<void> {
 
   const migrations = await readMigrationFiles();
 ...
-```
+```javascript
 
 ---
 ## Exemplo: typescript
@@ -73,7 +73,7 @@ const MIGRATIONS = [
         email TEXT NOT NULL,
         role TEXT NOT NULL DEFAULT 'member',
 ...
-```
+```markdown
 
 ---
 ## Recap

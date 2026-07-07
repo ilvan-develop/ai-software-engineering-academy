@@ -11,13 +11,13 @@ Como usar IA sem comprometer seu código
 
 ## Slide 2: O Problema
 
-```
+```text
 63% dos devs encontraram erros inesperados ao usar IA
 68% têm dificuldade em integrar IA nos workflows
 
 Sem regras:   ~40% de erro no código gerado
 Com 12 regras: ~3% de erro → 13,3x melhor
-```
+```markdown
 
 A IA não erra por hesitação — erra com confiança
 
@@ -37,7 +37,7 @@ A IA não erra por hesitação — erra com confiança
 
 ## Slide 4: Erro 1 — Confiar Cegamente
 
-```
+```javascript
 // Código gerado por IA — parece certo, está errado
 function calculateDiscount(price, coupon) {
   if (coupon === 'SAVE10') return price * 0.9;
@@ -45,7 +45,7 @@ function calculateDiscount(price, coupon) {
 }
 
 calculateDiscount('cem reais', 'SAVE10'); // NaN
-```
+```markdown
 
 **Solução:** Leia cada linha. Teste casos extremos. Valide dependências.
 
@@ -53,7 +53,7 @@ calculateDiscount('cem reais', 'SAVE10'); // NaN
 
 ## Slide 5: Erro 2 — Prompts Vagos
 
-```
+```text
 ❌ "Melhore esse código"
    - Qual linguagem? Critério? Contexto?
 
@@ -61,7 +61,7 @@ calculateDiscount('cem reais', 'SAVE10'); // NaN
    para usar async/await com try-catch,
    mantendo comportamento e padrão do projeto"
    - Arquivo, ação, restrições, formato
-```
+```markdown
 
 **Regra de ouro:** Contexto + Intenção + Formato Esperado
 
@@ -69,13 +69,13 @@ calculateDiscount('cem reais', 'SAVE10'); // NaN
 
 ## Slide 6: Erro 3 — Pular Code Review
 
-```
+```text
 "Se você copia e cola sem ler,
 o erro deixa de ser da ferramenta.
 Passa a ser seu."
 
 — TechTudo
-```
+```text
 
 **Solução:**
 1. Code review obrigatório (como revisaria de um colega)
@@ -86,14 +86,14 @@ Passa a ser seu."
 
 ## Slide 7: Erro 4 — Ignorar Configuração
 
-```
+```javascript
 Sem AGENTS.md/CLAUDE.md → IA chuta padrões
 
 AGENTS.md mínimo:
   Stack: React 18 + TS + Tailwind
   Regras: arrow functions, const, Vitest
   Estrutura: components/, pages/, lib/
-```
+```markdown
 
 **5 minutos de setup economizam horas de retrabalho**
 
@@ -101,7 +101,7 @@ AGENTS.md mínimo:
 
 ## Slide 8: Erro 5 — Tratar como Resposta Final
 
-```
+```text
 🚫 Primeira resposta:
   validateEmail(email) { return email.includes('@'); }
 
@@ -110,7 +110,7 @@ AGENTS.md mínimo:
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
   }
-```
+```markdown
 
 **IA é processo iterativo, não resposta final**
 
@@ -118,11 +118,11 @@ AGENTS.md mínimo:
 
 ## Slide 9: Fluxo Ideal
 
-```
+```json
 [Prompt] → [IA rascunha] → [Review] → [Testes] → [Refinamento] → [Commit]
     ↑                                                          │
     └────────────────── Iteração (feedback) ──────────────────┘
-```
+```markdown
 
 ---
 
@@ -140,7 +140,7 @@ AGENTS.md mínimo:
 
 ## Slide 11: Analogia Final
 
-```
+```text
 Usar IA é como ter um estagiário brilhante, mas inexperiente:
   ✅ Rápido, escreve bem
   ❗ Precisa de supervisão, contexto, revisão
@@ -149,7 +149,7 @@ Usar IA é como ter um estagiário brilhante, mas inexperiente:
 
 O profissional sábio sabe quando delegar,
 quando revisar e como orientar.
-```
+```markdown
 
 ---
 

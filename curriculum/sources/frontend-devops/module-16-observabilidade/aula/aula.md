@@ -18,7 +18,7 @@ Eventos discretos              Dados agregados                  Fluxo de requisi
 Ex:                            Ex:                              Ex:
 "Usuário X fez login"          "500 req/s, p95=200ms"           "GET /orders → Auth → DB"
 "Falha no pagamento"            "Error rate: 0.5%"              "POST /payment → API → Queue"
-```
+```markdown
 
 ### Sem observabilidade
 
@@ -29,7 +29,7 @@ Usuário: "Não sei, só está lento"
 Dev:     "Não consigo reproduzir"
 
 → Sem dados, sem diagnóstico
-```
+```markdown
 
 ### Com observabilidade
 
@@ -39,7 +39,7 @@ Logs:    "14:30:01 - DB query timeout"
 Trace:   "14:30:01 - span database: 5s (normal: 50ms)"
 
 → Causa identificada em minutos
-```
+```markdown
 
 ---
 
@@ -92,7 +92,7 @@ export const logger = winston.createLogger({
     }),
   ],
 });
-```
+```markdown
 
 ### Níveis de log
 
@@ -102,7 +102,7 @@ warn:    Algo inesperado (mas não quebrou)
 info:    Evento importante (login, criação)
 debug:   Detalhes para diagnóstico
 verbose: Tudo (usar apenas em dev)
-```
+```markdown
 
 ### O que logar
 
@@ -131,7 +131,7 @@ Counter:      Valor que só aumenta (req total, errors total)
 Gauge:        Valor que sobe e desce (memória, conexões ativas)
 Histogram:    Distribuição de valores (response time p50, p95, p99)
 Summary:      Similar ao histogram (latência, tamanho de resposta)
-```
+```markdown
 
 ### Métricas essenciais
 
@@ -156,7 +156,7 @@ orders_revenue_total
 process_cpu_seconds_total
 process_resident_memory_bytes
 nodejs_eventloop_lag_seconds
-```
+```markdown
 
 ### Implementação com Prometheus client
 
@@ -234,7 +234,7 @@ Requisição: POST /api/orders
   │                                                      │
   │ Total: 457ms                                         │
   └─────────────────────────────────────────────────────┘
-```
+```markdown
 
 ### Implementação com OpenTelemetry
 
@@ -265,7 +265,7 @@ const sdk = new NodeSDK({
 });
 
 sdk.start();
-```
+```markdown
 
 ### Span customizado
 
@@ -320,7 +320,7 @@ RED Method (Rate, Errors, Duration):
 | DB Connections        | Conexões ativas no banco   | Gauge    |
 | Query Duration        | Duração de queries         | Histogram|
 | Error Logs Rate       | Quantidade de logs de erro | Counter  |
-```
+```markdown
 
 ### Painel de resposta rápida
 
@@ -340,7 +340,7 @@ RED Method (Rate, Errors, Duration):
 │  14:30:01 - POST /payment - timeout (5x)                    │
 │  14:29:00 - GET /products - connection refused (2x)         │
 └─────────────────────────────────────────────────────────────┘
-```
+```markdown
 
 ---
 
@@ -366,7 +366,7 @@ P2 (Resposta em 24h):
   - p99 latency > 3s
   - Cache hit rate < 50%
   - Queries lentas (> 500ms)
-```
+```markdown
 
 ### Exemplo de alerta (Prometheus + Alertmanager)
 
@@ -397,7 +397,7 @@ groups:
           severity: critical
         annotations:
           summary: "p95 latency above 2s"
-```
+```markdown
 
 ---
 
@@ -439,7 +439,7 @@ services:
 
 # Contar erros por endpoint
 sum by (path) (count_over_time({service="api"} |= "error" [5m]))
-```
+```markdown
 
 ---
 

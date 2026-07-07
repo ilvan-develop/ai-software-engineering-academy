@@ -13,20 +13,20 @@ Da startup ao enterprise — o que muda?
 
 ## Slide 2: O que é Governança?
 
-```
+```text
 Sistema de regras, processos e práticas
 que garante que a TI entregue valor
 com riscos controlados.
 
 Sem governança → caos
 Com governança → previsibilidade
-```
+```markdown
 
 ---
 
 ## Slide 3: Pilares da Governança de Software
 
-```
+```text
 ┌─────────────┬───────────────┬──────────────┐
 │  POLÍTICAS  │   PADRÕES     │  PROCESSOS   │
 │  O que é    │   Como fazer  │  Quem faz    │
@@ -36,7 +36,7 @@ Com governança → previsibilidade
 │ Branch str. │ Prettier      │ Code review  │
 │ Segredos    │ ADR template  │ Deploy       │
 └─────────────┴───────────────┴──────────────┘
-```
+```markdown
 
 ---
 
@@ -65,7 +65,7 @@ Checklist: solução, testes, padrões, docs, segredos?
   - [ ] Lint passa
   - [ ] Sem segredos
 ## Linked Issues
-```
+```markdown
 
 ---
 
@@ -86,7 +86,7 @@ Automação > memorando
 
 ## Slide 7: Conventional Commits
 
-```
+```text
 feat(auth): add login com Google
 fix(api): correct 404 para usuários
 chore(deps): upgrade express
@@ -94,13 +94,13 @@ docs(readme): setup instructions
 BREAKING CHANGE: nova API de pagamentos
 
 Gera changelog automaticamente!
-```
+```markdown
 
 ---
 
 ## Slide 8: Gestão de Dependências
 
-```
+```text
 Dependabot / Renovate:
   → Diário: patches (automerge)
   → Semanal: minor (automerge)
@@ -110,7 +110,7 @@ Snyk: scan de vulnerabilidades
 
 Regra de ouro:
   CVE conhecida → atualizar em 48h
-```
+```markdown
 
 ---
 
@@ -118,7 +118,7 @@ Regra de ouro:
 
 **NUNCA commitar segredos!**
 
-```
+```text
 ✓ .env.example (valores fictícios)
 ✓ .env no .gitignore
 ✓ Secrets no CI/CD (não no código)
@@ -127,13 +127,13 @@ Regra de ouro:
 ✓ Rotação a cada 90 dias
 
 Vazou? Rotacione IMEDIATAMENTE.
-```
+```markdown
 
 ---
 
 ## Slide 10: Políticas de Deploy
 
-```
+```text
 Branch strategy:
   Git Flow vs Trunk-based
 
@@ -143,7 +143,7 @@ Rollback plan:
   → Health check pós-deploy
   → Rollback automático se falhar
   → Monitoring por 30min
-```
+```markdown
 
 ---
 
@@ -151,14 +151,14 @@ Rollback plan:
 
 Documentar **decisões arquiteturais**:
 
-```
+```yaml
 ADR-001: PostgreSQL como banco principal
   Status: Aceito
   Contexto: Precisamos de ACID + multi-tenant
   Decisão: PostgreSQL 16
   Consequências: + maturidade, - escalabilidade horizontal
   Alternativas: MySQL, CockroachDB, MongoDB
-```
+```markdown
 
 ---
 
@@ -176,7 +176,7 @@ Compliance não é só do jurídico.
 
 ## Slide 13: SLAs, SLOs e SLIs
 
-```
+```text
 SLI → métrica técnica (p99 < 200ms)
 SLO → meta (p99 < 200ms em 95% do mês)
 SLA → compromisso contratual (crédito se falhar)
@@ -186,13 +186,13 @@ Dashboard executivo:
   ✅ SLOs atingidos?
   🔥 Incidentes relevantes
   📈 Tendência
-```
+```markdown
 
 ---
 
 ## Slide 14: Auditoria e Rastreabilidade
 
-```
+```sql
 Toda decisão técnica deve ser rastreável:
 
 Issue → ADR → PR → Review → Testes → Commit
@@ -200,13 +200,13 @@ Issue → ADR → PR → Review → Testes → Commit
 Audit logs: append-only, nunca alterar
 
 Changelogs: automatizados com conventional commits
-```
+```markdown
 
 ---
 
 ## Slide 15: Governança Leve
 
-```
+```text
 1. Automatize antes de burocratizar
 2. Comece pequeno, evolua
 3. Documente o "porquê"
@@ -219,16 +219,16 @@ Métricas de saúde:
   → Dependency drift < 5%
   → Rollback rate < 2%
   → Incidentes de segredo: ZERO
-```
+```markdown
 
 ---
 
 ## Slide 16: Para levar para casa
 
-```
+```text
 Governança não é burocracia — é responsabilidade.
 
 Code review + padrões + ADRs + compliance
 + SLOs + auditoria = código que respeita
 quem mantém, quem opera e quem usa.
-```
+```text

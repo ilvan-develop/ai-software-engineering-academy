@@ -11,7 +11,7 @@ Configure o ambiente de desenvolvimento local com toda a stack do projeto final.
 ### Requisitos
 
 1. Crie um monorepo com a seguinte estrutura:
-   ```
+```text
    apps/
      backend/     (NestJS + Prisma)
      frontend/    (Next.js 14+)
@@ -21,7 +21,7 @@ Configure o ambiente de desenvolvimento local com toda a stack do projeto final.
      docker-compose.yml
      Dockerfile.backend
      Dockerfile.frontend
-   ```
+```text
 
 2. O `docker-compose.yml` deve subir:
    - PostgreSQL 16
@@ -39,7 +39,7 @@ Configure o ambiente de desenvolvimento local com toda a stack do projeto final.
    STRIPE_WEBHOOK_SECRET=
    GOOGLE_CLIENT_ID=
    GOOGLE_CLIENT_SECRET=
-   ```
+```markdown
 
 4. O backend deve expor `GET /health` e `GET /ready` com verificação de banco e Redis.
 
@@ -58,49 +58,49 @@ Implemente o módulo de autenticação completo com suporte multi-tenant.
 ### Especificação
 
 1. **Registro de tenant + owner:**
-   ```
+```text
    POST /api/auth/register
    Body: { companyName, adminName, adminEmail, adminPassword }
    
    Response: { accessToken, refreshToken, tenant, user }
-   ```
+```text
 
 2. **Login com e-mail + senha:**
-   ```
+```text
    POST /api/auth/login
    Body: { email, password }
    
    Response: { accessToken, refreshToken, tenant, user }
-   ```
+```text
 
 3. **Refresh token:**
-   ```
+```text
    POST /api/auth/refresh
    Body: { refreshToken }
    
    Response: { accessToken, refreshToken }
-   ```
+```text
 
 4. **Logout (invalidar refresh token):**
-   ```
+```text
    POST /api/auth/logout
    Headers: Authorization: Bearer <accessToken>
    Body: { refreshToken }
-   ```
+```text
 
 5. **Convidar membro:**
-   ```
+```text
    POST /api/tenants/:tenantId/invite
    Body: { email, role (Admin | Manager | Developer | Viewer) }
    
    Efeito: enviar e-mail com link de aceite
-   ```
+```text
 
 6. **Aceitar convite:**
-   ```
+```text
    POST /api/auth/accept-invite
    Body: { token (do link do e-mail), name, password }
-   ```
+```markdown
 
 ### Regras de negócio
 
@@ -127,13 +127,13 @@ Implemente o sistema de RBAC com papéis hierárquicos e permissões por recurso
 
 ### Estrutura de papéis
 
-```
+```text
 Owner    → tudo (inclusive faturamento e exclusão do tenant)
 Admin    → gerenciar membros, configurar workspace, criar projetos
 Manager  → criar/editar projetos, alocar tarefas, relatórios
 Developer→ executar tarefas, comentar, anexar arquivos
 Viewer   → somente leitura
-```
+```markdown
 
 ### Permissões por recurso
 
@@ -163,7 +163,7 @@ Defina permissões no formato `{recurso}:{acao}`:
    @Permissions('project:create')
    @Post()
    createProject(@Body() dto: CreateProjectDto) { }
-   ```
+```markdown
 
 ### Testes
 
@@ -181,18 +181,18 @@ Implemente o quadro Kanban com drag & drop e atualização em tempo real via Web
 ### Funcionalidades
 
 1. **Colunas personalizáveis:**
-   ```
+```css
    GET /api/projects/:projectId/board
    Response: { columns: [{ id, name, tasks: [...] }] }
-   ```
+```text
 
 2. **Mover tarefa entre colunas:**
-   ```
+```text
    PATCH /api/tasks/:taskId/move
    Body: { columnId, position }
    
    WebSocket: emitir 'task:moved' para todos no projeto
-   ```
+```text
 
 3. **WebSocket Gateway:**
    ```typescript
@@ -206,7 +206,7 @@ Implemente o quadro Kanban com drag & drop e atualização em tempo real via Web
        this.server.to(`project:${payload.projectId}`).emit('task:moved', payload);
      }
    }
-   ```
+```sql
 
 4. **Frontend com drag & drop:**
    - Use `@dnd-kit/core` para drag & drop
@@ -214,10 +214,10 @@ Implemente o quadro Kanban com drag & drop e atualização em tempo real via Web
    - Rollback se a API rejeitar
 
 5. **Indicador de "alguém está editando":**
-   ```
+```yaml
    WebSocket: 'task:editing' → { taskId, userId, userName }
    Exibir: "João está editando esta tarefa"
-   ```
+```markdown
 
 ### Regras
 
@@ -280,7 +280,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Deploy para produção (manual trigger)"
-```
+```markdown
 
 ### Deploy (AWS - exemplo)
 
@@ -327,12 +327,12 @@ Implemente a integração com Stripe para planos e assinaturas.
 ### Funcionalidades
 
 1. **Checkout:**
-   ```
+```text
    POST /api/payments/create-checkout
    Body: { priceId (do Stripe Dashboard), tenantId }
    
    Response: { url (redirect para Stripe Checkout) }
-   ```
+```text
 
 2. **Webhook:**
    ```typescript
@@ -353,7 +353,7 @@ Implemente a integração com Stripe para planos e assinaturas.
          break;
      }
    }
-   ```
+```text
 
 3. **Planos:**
    | Plano | Preço | Projetos | Membros | Storage |
@@ -370,7 +370,7 @@ Implemente a integração com Stripe para planos e assinaturas.
      pro: { rpm: 1000, projects: Infinity, members: 50 },
      enterprise: { rpm: 5000, projects: Infinity, members: Infinity },
    };
-   ```
+```markdown
 
 ### Testes
 

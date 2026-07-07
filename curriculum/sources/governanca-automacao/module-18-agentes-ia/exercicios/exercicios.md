@@ -49,7 +49,7 @@ Estrutura esperada:
 
 ## Prompt template: Criar Tela
 ...
-```
+```markdown
 
 ---
 
@@ -77,7 +77,7 @@ graph LR
     A[Product Discovery] --> B[UX Designer]
     B --> C[Enterprise Architect]
     ...
-```
+```markdown
 
 ---
 

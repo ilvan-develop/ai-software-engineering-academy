@@ -23,7 +23,7 @@ Multi-tenancy é um padrão arquitetural onde **uma única instância de softwar
 │              │  API + DB     │                          │
 │              └───────────────┘                          │
 └──────────────────────────────────────────────────────────┘
-```
+```markdown
 
 ### 1.1 Conceito
 
@@ -81,7 +81,7 @@ Cada tenant tem **seu próprio banco de dados**. O roteador de conexão decide q
 │  │ tenant_1 │  │ tenant_2 │  │ tenant_3 │    │
 │  └──────────┘  └──────────┘  └──────────┘    │
 └──────────────────────────────────────────────┘
-```
+```text
 
 ```typescript
 // Router de conexão com lazy initialization
@@ -144,7 +144,7 @@ Um banco de dados compartilhado, mas cada tenant tem seu **próprio schema** (na
 │  │  products│  │  products│  │  products│    │
 │  └──────────┘  └──────────┘  └──────────┘    │
 └──────────────────────────────────────────────┘
-```
+```text
 
 ```sql
 -- Criar schema para novo tenant
@@ -169,7 +169,7 @@ CREATE TABLE tenant_acme.orders (
 
 -- Query com schema dinâmico
 SELECT * FROM tenant_acme.users WHERE email = 'joao@acme.com';
-```
+```text
 
 ```typescript
 // Abstração para schema dinâmico
@@ -238,7 +238,7 @@ interface Order {
   status: 'pending' | 'paid' | 'cancelled';
   created_at: Date;
 }
-```
+```text
 
 ```typescript
 // Repositório que SEMPRE filtra por tenant
@@ -334,7 +334,7 @@ CREATE POLICY tenant_isolation ON users
 
 -- Na aplicação, antes de qualquer query:
 await pool.query("SET app.tenant_id = 'acme'");
-```
+```sql
 
 ### 3.2 Performance
 

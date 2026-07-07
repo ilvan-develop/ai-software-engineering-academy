@@ -59,7 +59,7 @@ interface AuditEntry {
   newValue?: unknown;
   ipAddress?: string;
 }
-```
+```sql
 
 **Requisitos:**
 - Função `createAuditLog` que salva no banco (append-only)

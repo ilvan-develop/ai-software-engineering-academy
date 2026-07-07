@@ -22,7 +22,7 @@ Agente Genérico:
   └── DevOps:   ⭐☆☆☆☆  (Dockerfile sem multi-stage)
 
 Resultado: código "funciona", mas cheio de dívida técnica
-```
+```markdown
 
 ### A solução dos agentes especializados
 
@@ -35,7 +35,7 @@ Agente Frontend:
   └── TypeScript: ⭐⭐⭐⭐⭐ (strict mode, generics)
 
 Resultado: código de produção, pronto para review
-```
+```markdown
 
 ---
 
@@ -51,7 +51,7 @@ agente/
 ├── prompts/            # Instruções: templates de prompt para tarefas comuns
 │   ├── prompt-tarefa-1.md
 │   └── prompt-tarefa-2.md
-```
+```markdown
 
 ### Componentes de um agente eficaz
 
@@ -81,7 +81,7 @@ agente/
 │  Formato de saída (o que entrega)    │
 │  Como reportar problemas             │
 └──────────────────────────────────────┘
-```
+```markdown
 
 ---
 
@@ -165,7 +165,7 @@ agente/
 
 7. TESTAR com um caso real
    → Executar o agente, revisar o output, ajustar
-```
+```markdown
 
 ### Exemplo: Criando o Security Expert Agent
 
@@ -197,7 +197,7 @@ agente/
 - [ ] Helmet.js ativado
 - [ ] Input validation em todos os endpoints
 - [ ] SQL injection prevenido (ORM)
-```
+```markdown
 
 ---
 
@@ -226,7 +226,7 @@ Product Discovery  ──→  UX Designer  ──→  UI Designer
                      Auditor Agent
                              │
                     Documentation Agent
-```
+```markdown
 
 ### Pipeline de auditoria
 
@@ -247,7 +247,7 @@ Code Quality Auditor ──→ Se abaixo do padrão → Refactoring Agent
         │
         ▼
 Relatório consolidado com score geral
-```
+```markdown
 
 ### Pipeline de onboarding
 
@@ -280,7 +280,7 @@ DevOps Agent → Deploy
         │
         ▼
 Auditor Agent → Score final
-```
+```markdown
 
 ---
 
@@ -323,7 +323,7 @@ Auditor Agent → Score final
 - Suporte a sort e filter
 - Paginação
 - Loading state com Suspense
-```
+```markdown
 
 ### Como fazer um agente revisar outro
 
@@ -331,7 +331,7 @@ Auditor Agent → Score final
 @auditor Revise a segurança deste endpoint.
 
 [endpoint code]
-```
+```markdown
 
 ---
 
@@ -378,7 +378,7 @@ Regras:
 - Zod para validação
 - Swagger para documentação
 - Tratamento de erros com NestJS exception filters"
-```
+```markdown
 
 ---
 

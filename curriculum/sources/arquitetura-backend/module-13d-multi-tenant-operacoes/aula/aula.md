@@ -69,7 +69,7 @@ echo "✅ Schema tenant_${TENANT} salvo em backups/schema_${TENANT}_${DATE}.dump
 #   --schema="tenant_${TENANT}" \
 #   --clean \
 #   backups/schema_zeta_20240101.dump
-```
+```markdown
 
 ### 1.3 Estratégia por Plano
 
@@ -205,7 +205,7 @@ class PoolManager {
 }
 
 export const poolManager = new PoolManager();
-```
+```markdown
 
 ### 2.2 Query Optimization
 
@@ -293,7 +293,7 @@ export class TenantRateLimiter {
     this.concurrentCounts.set(tenantId, Math.max(0, current - 1));
   }
 }
-```
+```markdown
 
 ### 2.4 Indexação para Shared Database
 
@@ -392,7 +392,7 @@ const PLANS: Record<string, PlanFeatures> = {
     whiteLabel: true,
   },
 };
-```
+```text
 
 ```typescript
 // feature-flag.service.ts
@@ -477,7 +477,7 @@ getAdvancedReports() {
   // Só executa se o plano do tenant tiver advancedReports = true
   return this.reportService.generate();
 }
-```
+```markdown
 
 ---
 
@@ -565,7 +565,7 @@ describe('Isolamento entre Tenants', () => {
       expect(response.body.message).toContain('não encontrado');
     });
   });
-```
+```markdown
 
 ### 4.3 Teste 2: Concorrência
 
@@ -627,7 +627,7 @@ describe('Isolamento entre Tenants', () => {
       );
     });
   });
-```
+```markdown
 
 ### 4.5 Teste 4: Rate Limit
 
@@ -684,7 +684,7 @@ describe('Isolamento entre Tenants', () => {
       }
     });
   });
-```
+```markdown
 
 ### 4.7 Teste de Quebra Proposital
 
@@ -729,4 +729,4 @@ describe('Isolamento entre Tenants', () => {
       );
     });
   });
-```
+```text

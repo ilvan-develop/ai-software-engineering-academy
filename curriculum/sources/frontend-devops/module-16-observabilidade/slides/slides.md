@@ -11,14 +11,14 @@ Logs, Métricas e Tracing
 
 ## Slide 2: Os 3 pilares
 
-```
+```text
 LOGS              MÉTRICAS           TRACING
 "O quê?"          "Quantos?"         "Por onde?"
                   "Quanto tempo?"
 
 Usuário logou     500 req/s          GET /orders → Auth → DB
 Erro no pgto      p95: 200ms
-```
+```markdown
 
 Sem observabilidade: "O sistema está lento" (e não sabe onde)
 
@@ -26,7 +26,7 @@ Sem observabilidade: "O sistema está lento" (e não sabe onde)
 
 ## Slide 3: Logs Estruturados
 
-```
+```javascript
 ❌ console.log('Usuário', id, 'logou')
 
 ✅ logger.info('Usuário autenticado', {
@@ -34,7 +34,7 @@ Sem observabilidade: "O sistema está lento" (e não sabe onde)
     email: 'joao@email.com',
     ip: '192.168.1.1',
   })
-```
+```yaml
 
 Níveis: error → warn → info → debug
 **Nunca** logar senhas, dados sensíveis
@@ -60,7 +60,7 @@ const httpRequestDuration = new Histogram({
   name: 'http_request_duration_seconds',
   buckets: [0.01, 0.05, 0.1, 0.5, 1, 2, 5],
 });
-```
+```markdown
 
 Middleware captura: method, path, status, duration
 
@@ -68,7 +68,7 @@ Middleware captura: method, path, status, duration
 
 ## Slide 6: Tracing — Rastreando requisições
 
-```
+```text
 POST /api/orders (Trace: abc123)
   ├── Auth Service (5ms)
   ├── Order Service (150ms)
@@ -76,7 +76,7 @@ POST /api/orders (Trace: abc123)
   │   └── Redis Cache (20ms)
   └── Payment API (300ms)
   Total: 457ms
-```
+```yaml
 
 OpenTelemetry: instrumentação automática
 
@@ -95,7 +95,7 @@ const sdk = new NodeSDK({
     }),
   ],
 });
-```
+```markdown
 
 Plug and play — instrumenta a maioria das bibliotecas
 
@@ -103,7 +103,7 @@ Plug and play — instrumenta a maioria das bibliotecas
 
 ## Slide 8: Grafana Dashboard
 
-```
+```text
 ┌─────────────────────────────────────────────────┐
 │  STATUS: ✅ OPERACIONAL                         │
 ├──────────┬──────────┬──────────────────────────┤
@@ -113,13 +113,13 @@ Plug and play — instrumenta a maioria das bibliotecas
 │ Latency by Endpoint                             │
 │ GET /products     45ms  ████████               │
 │ POST /orders     320ms  ██████████████████      │
-```
+```markdown
 
 ---
 
 ## Slide 9: Alertas
 
-```
+```text
 P0 (imediato):
   Error rate > 5% │ p95 > 2s │ Servidor down
 
@@ -128,17 +128,17 @@ P1 (1 hora):
 
 P2 (24h):
   Error rate > 0.5% │ Cache hit < 50%
-```
+```markdown
 
 ---
 
 ## Slide 10: Stack de Observabilidade
 
-```
+```text
 App → Prometheus (métricas) → Grafana (dashboard)
 App → Loki (logs) → Grafana (explore)
 App → OpenTelemetry → Jaeger/Tempo (traces)
-```
+```markdown
 
 Tudo centralizado no Grafana
 

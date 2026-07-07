@@ -23,7 +23,7 @@ grid, regras de uso             tabelas, cards                  processos, gover
 
 Exemplo:                        Exemplo:                        Exemplo:
 Manual de marca                 Material UI                     Shopify Polaris
-```
+```markdown
 
 ### Propósito
 
@@ -60,7 +60,7 @@ Tag        Campo de      Footer =      estrutura)    reais)
 Cor        texto         Página
 Tipografia
 Espaçamento
-```
+```markdown
 
 #### Átomos
 
@@ -84,7 +84,7 @@ function Label({ text, variant, size }: LabelProps) {
     </span>
   );
 }
-```
+```markdown
 
 #### Moléculas
 
@@ -136,7 +136,7 @@ function SignupForm({ onSubmit }: SignupFormProps) {
     </form>
   );
 }
-```
+```markdown
 
 #### Templates e Páginas
 
@@ -173,7 +173,7 @@ Sem Atomic Design:                         Com Atomic Design:
   que aquele?"                               (sempre consistente)
 "Este formulário quebrou porque            "Mudei o Input, todos os
   mudei o Input em 10 lugares"               formulários atualizam"
-```
+```markdown
 
 ---
 
@@ -217,7 +217,7 @@ export const colors = {
 } as const;
 
 export type ColorToken = keyof typeof colors.semantic;
-```
+```markdown
 
 ### Tipografia
 
@@ -267,7 +267,7 @@ export const spacing = {
 } as const;
 
 export type SpacingToken = keyof typeof spacing;
-```
+```markdown
 
 ### Shadows, Border Radius e Breakpoints
 
@@ -353,7 +353,7 @@ export function generateCSSVariables(): string {
 //   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 //   --radius-md: 8px;
 // }
-```
+```markdown
 
 ---
 
@@ -480,7 +480,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     );
   }
 );
-```
+```markdown
 
 ### Modal
 
@@ -659,7 +659,7 @@ export function Table<T extends Record<string, unknown>>({
     </div>
   );
 }
-```
+```sql
 
 ### Select
 
@@ -806,7 +806,7 @@ export const FullWidth: Story = {
     fullWidth: true,
   },
 };
-```
+```markdown
 
 ### Specs e Guidelines
 
@@ -858,7 +858,7 @@ Cada componente deve ter uma **especificação técnica** (spec) e **diretrizes 
 // - @storybook/addon-a11y: auditoria de acessibilidade
 // - @storybook/addon-interactions: testar interações
 // - storybook-addon-designs: embed do Figma
-```
+```markdown
 
 ---
 
@@ -882,7 +882,7 @@ MINOR (x.1.x → x.2.0):
 PATCH (x.x.1 → x.x.2):
   Correções — bug fix, acessibilidade, performance
   Ex: Corrigir contraste do Button danger, ARIA label no Modal
-```
+```markdown
 
 ### Breaking Changes
 
@@ -921,12 +921,12 @@ if (appearance && !variant) {
 ```tsx
 
 **Depois:**
-```
+```text
 <Button variant="primary" />
 ```bash
 
 **Codemod:**
-```
+```text
 npx @acme/ds-codemod button-appearance-to-variant
 ```text
 
@@ -937,7 +937,7 @@ npx @acme/ds-codemod button-appearance-to-variant
 | `size="small"` | `size="sm"` |
 | `size="medium"` | `size="md"` |
 | `size="large"` | `size="lg"` |
-```
+```markdown
 
 ### Changelog
 
@@ -966,7 +966,7 @@ npx @acme/ds-codemod button-appearance-to-variant
 - Button: `appearance` → `variant`
 - Modal: `size="small"|"medium"|"large"` → `size="sm"|"md"|"lg"`
 - Tokens: `--color-blue-*` → `--color-primary-*`
-```
+```bash
 
 ---
 
@@ -1013,7 +1013,7 @@ export { colors } from './tokens/colors';
 export { typography } from './tokens/typography';
 export { spacing } from './tokens/spacing';
 export { shadows, borderRadius } from './tokens/effects';
-```
+```text
 
 ```typescript
 // Consumo com tree-shaking
@@ -1059,7 +1059,7 @@ export function ThemeProvider({ theme, children }: { theme?: Partial<Theme>; chi
 export function useTheme(): Theme {
   return useContext(ThemeContext);
 }
-```
+```markdown
 
 ### Customização (Override via CSS Custom Properties)
 
@@ -1071,13 +1071,13 @@ export function useTheme(): Theme {
   --radius-md: 4px;
   --font-family-sans: 'Roboto', sans-serif;
 }
-```
+```text
 
 ```typescript
 // Uso
 import '@empresa/design-system/styles.css';
 import './overrides.css';
-```
+```markdown
 
 ---
 
@@ -1105,7 +1105,7 @@ Rituais:
 - Monthly showcase (novos componentes)
 - Quarterly review (ROI, métricas)
 - Voting on RFCs (propostas de mudança)
-```
+```markdown
 
 ### Contribuição
 
@@ -1168,7 +1168,7 @@ interface DesignReviewChecklist {
     'Bundle size < 5KB (gzip) para componente simples',
   ];
 }
-```
+```markdown
 
 ### Changelog Automatizado
 
@@ -1213,7 +1213,7 @@ Sem DS:                          Com DS:
                                   │   │ │   │ │   │
                                   │ok │ │ok │ │ok │
                                   └───┘ └───┘ └───┘
-```
+```markdown
 
 ### Consistência
 
@@ -1227,7 +1227,7 @@ const SquadC = () => <div class="action-btn" onclick={save}>Salvar</div>;
 const SquadA = () => <Button variant="primary">Salvar</Button>;
 const SquadB = () => <Button variant="primary">Salvar</Button>;
 const SquadC = () => <Button variant="primary">Salvar</Button>;
-```
+```markdown
 
 ### Eficiência e ROI
 
@@ -1253,7 +1253,7 @@ Cálculo de ROI:
 
   Custo do DS Squad: 4 pessoas × R$ 250K = R$ 1M/ano
   Net: R$ 3.8M/ano    (fonte: dados hipotéticos para ilustração)
-```
+```markdown
 
 ---
 
@@ -1307,7 +1307,7 @@ my-design-system/
 │   └── preview.ts
 ├── package.json
 └── tsconfig.json
-```
+```markdown
 
 ### Configuração do Vite para build
 
@@ -1337,7 +1337,7 @@ export default defineConfig({
     },
   },
 });
-```
+```markdown
 
 ### Storybook config
 
@@ -1392,7 +1392,7 @@ const preview: Preview = {
 };
 
 export default preview;
-```
+```markdown
 
 ### Estilos base
 

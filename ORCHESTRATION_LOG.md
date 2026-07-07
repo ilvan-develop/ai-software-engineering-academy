@@ -198,3 +198,6 @@
 | 2026-07-07 | F8 | LLMScorer class: prompt builder, OpenAI API call, JSON parser, fallback graceful | ✅ |
 | 2026-07-07 | F8 | tests/test_bqs.py: 14 testes para todas as novas categorias | ✅ |
 | 2026-07-07 | F8 | BQS pipeline re-executado: scores reais (60-71) vs default 75 anteriores | ✅ |
+| 2026-07-07 | F8 | scripts/remediate_markdown.py: correcao automatizada de 1074 violacoes em 115 arquivos | ✅ |
+| 2026-07-07 | F8 | qm2 (code blocks com language tag) subiu de ~50% para 100% (zero no-lang fences) | ✅ |
+| 2026-07-07 | F8 | Remediacao preservou todas as 28 suites de teste (28/28 pass) | ✅ |

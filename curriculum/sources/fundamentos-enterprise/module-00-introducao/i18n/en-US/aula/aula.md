@@ -85,7 +85,7 @@ O arquiteto de software no mundo dos agentes não desapareceu — ele se tornou 
 │  • Decidir o que delegar vs. o que reter    │
 │  • Validar outputs dos agentes              │
 └─────────────────────────────────────────────┘
-```
+```markdown
 
 ### Decisões que o arquiteto **não pode** delegar
 
@@ -140,7 +140,7 @@ A IA não é um substituto — é um **membro do time** com habilidades específ
 NÃO:  "A IA vai substituir os desenvolvedores"
 SIM:  "A IA é um desenvolvedor júnior infinitamente rápido e disposto,
        que precisa de supervisão técnica e contexto de negócio"
-```
+```markdown
 
 ### O que a IA faz bem
 
@@ -179,7 +179,7 @@ SIM:  "A IA é um desenvolvedor júnior infinitamente rápido e disposto,
                   Baixa complexidade
 
                 Baixo risco              Alto risco
-```
+```markdown
 
 ### Regras de ouro
 
@@ -218,7 +218,7 @@ O ciclo completo que usaremos na formação:
 │  Cada etapa alimenta a próxima                           │
 │                                                         │
 └─────────────────────────────────────────────────────────┘
-```
+```markdown
 
 ---
 

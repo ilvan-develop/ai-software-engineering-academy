@@ -25,7 +25,7 @@ Com governança:
   → Deploy previsível e seguro
   → Decisões documentadas e rastreáveis
   → Auditoria tranquila
-```
+```markdown
 
 ### Frameworks de Governança
 
@@ -61,7 +61,7 @@ Governança de software é a aplicação prática dos princípios de governança
 │   nunca no  │   template    │   periódica   │
 │   reposit.  │               │               │
 └─────────────┴───────────────┴───────────────┘
-```
+```markdown
 
 Calendario operacional de governanca (cadencia de tarefas e janelas):
 
@@ -88,7 +88,7 @@ Pode pular code review:
   → Alteração em arquivo .gitignore
   → Documentação simples
   → Hotfix com autorização do tech lead
-```
+```markdown
 
 ### Checklist de Code Review
 
@@ -104,7 +104,7 @@ Pode pular code review:
 □ Documentação foi atualizada?
 □ Segredos/credenciais no código? (NUNCA!)
 □ Performance: impacto aceitável?
-```
+```markdown
 
 ### Approval Gates
 
@@ -123,7 +123,7 @@ Proteções de branch (GitHub):
   - Requer CI passar
   - Desabilitar merge direto na main
   - Stale reviews são descartados após novo push
-```
+```markdown
 
 O fluxo acima em notação BPMN:
 
@@ -200,7 +200,7 @@ Padrões de código são **regras automatizadas** que garantem consistência sem
     "prefer-const": "error"
   }
 }
-```
+```markdown
 
 ### Prettier
 
@@ -233,7 +233,7 @@ insert_final_newline = true
 
 [*.md]
 trim_trailing_whitespace = false
-```
+```markdown
 
 ### Husky + lint-staged + commitlint
 
@@ -243,7 +243,7 @@ trim_trailing_whitespace = false
 
 // .husky/pre-commit
 // npx lint-staged
-```
+```text
 
 ```jsonc
 // package.json (trechos relevantes)
@@ -262,7 +262,7 @@ trim_trailing_whitespace = false
     "extends": ["@commitlint/config-conventional"]
   }
 }
-```
+```markdown
 
 ### Conventional Commits
 
@@ -285,7 +285,7 @@ Exemplos:
   fix(api): correct 404 handling for users
   chore(deps): upgrade express to 4.19
   docs(readme): update setup instructions
-```
+```markdown
 
 ---
 
@@ -316,7 +316,7 @@ Regras:
   → Dependency drift > 30 dias: alerta
   → Dependências não mantidas (>1 ano sem release): substituir
   → Dependências com CVE conhecida: atualizar em 48h
-```
+```markdown
 
 ### Configuração Renovate
 
@@ -360,7 +360,7 @@ Regras:
 ✓ Variáveis de ambiente em secrets do CI/CD
 ✓ Gestão centralizada: Vault (HashiCorp), AWS Secrets Manager, Azure Key Vault
 ✓ Rotação periódica de chaves (90 dias recomendado)
-```
+```markdown
 
 ### .env.example
 
@@ -371,7 +371,7 @@ REDIS_URL=redis://localhost:6379
 API_KEY=sk-your-key-here
 NODE_ENV=development
 PORT=3000
-```
+```markdown
 
 ### git-secrets — prevenir vazamentos
 
@@ -406,7 +406,7 @@ repos:
     hooks:
       - id: detect-secrets
         args: ["--baseline", ".secrets.baseline"]
-```
+```markdown
 
 ### Se vazar — plano de ação
 
@@ -417,7 +417,7 @@ repos:
 4. Commitar arquivo .gitignore atualizado
 5. Se necessário: forçar push com filter-branch (BFG Repo Cleaner)
 6. Post-mortem: como evitamos que aconteça de novo?
-```
+```markdown
 
 ---
 
@@ -440,7 +440,7 @@ Trunk-based (deploy contínuo):
              │     │     │     │     │
   branch  ───┘─────┘─────┘─────┘─────┘
   (curta, horas/dias, não semanas)
-```
+```text
 
 | Característica | Git Flow | Trunk-based |
 |---------------|----------|-------------|
@@ -466,7 +466,7 @@ Pós-deploy:
   → Monitoring ativo por 30min
   → Se erro rate > baseline em 2x → rollback manual
   → Post-mortem se rollback ocorreu
-```
+```javascript
 
 ---
 
@@ -527,7 +527,7 @@ Adotar PostgreSQL 16 como banco de dados principal.
 
 ## Referências
 - https://www.postgresql.org/docs/16/index.html
-```
+```markdown
 
 ### RFCs vs ADRs
 
@@ -542,7 +542,7 @@ RFC: Proposta aberta para discussão
   → Quando: antes da decisão
   → Público: todo o time + stakeholders
   → Inclui: problema, proposta, prós/contra, perguntas em aberto
-```
+```markdown
 
 ---
 
@@ -565,7 +565,7 @@ Na prática:
   - Implementar endpoint de deleção de conta
   - Rotacionar dados sensíveis em staging
   - Usar hash + salt para dados identificáveis
-```
+```markdown
 
 ### SOC2
 
@@ -582,7 +582,7 @@ Na prática:
   - CI/CD com trilha de auditoria
   - Revisão periódica de acessos
   - Pentests agendados
-```
+```markdown
 
 ### ISO 27001
 
@@ -599,7 +599,7 @@ Na prática:
   - Manter inventário de serviços e versões
   - Revisar acessos trimestralmente
   - Plano de resposta a incidentes testado
-```
+```markdown
 
 ---
 
@@ -620,7 +620,7 @@ SLO (Service Level Objective): meta baseada no SLI
 
 SLA (Service Level Agreement): compromisso formal com o cliente
   → "Se uptime < 99.9%, cliente recebe 10% de crédito"
-```
+```markdown
 
 ### Monitoramento na prática
 
@@ -664,7 +664,7 @@ Relatório trimestral:
   → MTBF (Mean Time Between Failures)
   → Top 3 causas de incidentes
   → Plano de ação para melhoria
-```
+```markdown
 
 ---
 
@@ -703,7 +703,7 @@ await createAuditLog({
   previousValue: userBeforeDelete,
   ipAddress: req.ip,
 });
-```
+```markdown
 
 ### Changelogs automatizados
 
@@ -713,7 +713,7 @@ Mantido com Conventional Commits + semantic-release:
   → fix → nova entrada em "Bug Fixes"
   → BREAKING CHANGE → nova entrada em "Breaking Changes"
   → Gerado automaticamente no momento do release
-```
+```markdown
 
 ### Rastreamento de decisões
 
@@ -736,7 +736,7 @@ Exemplo:
   Tests: cache.test.ts (90% cobertura)
     ↓
   Commit: feat(api): add Redis caching layer
-```
+```markdown
 
 ---
 
@@ -766,7 +766,7 @@ O maior erro de governança é criar **burocracia que paralisa o time**. Governa
 5. Liderança pelo exemplo
    → Tech lead e seniors seguem as regras PRIMEIRO
    → Ninguém está acima das políticas
-```
+```markdown
 
 ### Cultura de qualidade
 
@@ -788,7 +788,7 @@ Como construir:
   → Celebrar vitórias de governança
     - "Reduzimos MTTR em 40% esse trimestre!"
     - "Zero incidentes de segurança em 6 meses!"
-```
+```markdown
 
 ### Métricas de saúde da governança
 
@@ -807,7 +807,7 @@ Ferramentas de medição:
   → Dependabot / Renovate dashboard
   → Datadog / Grafana para SLOs
   → Ferramenta de ADR (adr-tools, madr, GitHub wiki)
-```
+```markdown
 
 ---
 
@@ -826,4 +826,4 @@ O que levar para o dia a dia:
   → Compliance integrada ao processo (não depois)
   → SLOs que todo time conhece
   → Cultura de qualidade, não de culpa
-```
+```text

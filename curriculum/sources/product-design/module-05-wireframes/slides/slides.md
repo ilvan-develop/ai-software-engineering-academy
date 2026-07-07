@@ -13,10 +13,10 @@ Estrutura antes de visual. Validação antes de código.
 
 Esqueleto visual da interface — foco em **layout, hierarquia, conteúdo**.
 
-```
+```text
 ❌ SEM CORES    ❌ SEM FONTES    ❌ SEM IMAGENS
 ✅ ESTRUTURA    ✅ FLUXO         ✅ FUNCIONALIDADE
-```
+```markdown
 
 ---
 
@@ -32,12 +32,12 @@ Esqueleto visual da interface — foco em **layout, hierarquia, conteúdo**.
 
 ## Slide 4: Wireframe vs Mockup vs Protótipo
 
-```
+```text
 Wireframe     Mockup       Protótipo
 Estrutura     Visual       Interação
 Caixas        Cores        Clica
 Hierarquia    Fontes       Navega
-```
+```markdown
 
 Wireframe = **o que**. Mockup = **como parece**. Protótipo = **como funciona**.
 
@@ -47,7 +47,7 @@ Wireframe = **o que**. Mockup = **como parece**. Protótipo = **como funciona**.
 
 Grid de 12 colunas é o padrão da indústria.
 
-```
+```text
 ┌──────────────────────────────────────────┐
 │  Header (12 col)                         │
 ├──────┬──────┬──────┬────────────────────┤
@@ -57,7 +57,7 @@ Grid de 12 colunas é o padrão da indústria.
 ├────────────────────────┴────────────────┤
 │  Footer (12 col)                        │
 └──────────────────────────────────────────┘
-```
+```javascript
 
 ---
 
@@ -88,13 +88,13 @@ Organize por **importância**:
 
 8 variações de uma tela em 8 minutos.
 
-```
+```text
 1. Defina o problema
 2. Dobre a folha em 8 partes
 3. 1 minuto por quadro — sem repetir
 4. Vote na melhor ideia
 5. Refine em um wireframe único
-```
+```markdown
 
 Força **divergência criativa** antes de convergir.
 
@@ -104,7 +104,7 @@ Força **divergência criativa** antes de convergir.
 
 Caixas cinzas para representar elementos.
 
-```
+```text
 ┌─────────────────────────────────────┐
 │  ████  ████████████████  ██  ██  │  ← header
 ├─────────────────────────────────────┤
@@ -115,19 +115,19 @@ Caixas cinzas para representar elementos.
 │  │ ██ │ │ ██ │ │ ██ │              │  ← cards
 │  └────┘ └────┘ └────┘              │
 └─────────────────────────────────────┘
-```
+```markdown
 
 ---
 
 ## Slide 10: Anatomia de uma Tela
 
-```
+```text
 HEADER → Logo + Navegação
 HERO   → Título + CTA
 CONTEÚDO → Cards, listas, formulários
 CTA    → Ação principal (destacado)
 FOOTER → Links + Legal
-```
+```markdown
 
 Toda tela segue essa estrutura básica.
 
@@ -151,9 +151,9 @@ Sempre mapeie **todos os estados** no wireframe.
 
 Clickable wireframe → Teste com usuário → Itere
 
-```
+```text
 Esboçar → Validar → Aprender → Refinar → (repetir)
-```
+```javascript
 
 Ferramentas: Figma (prototype mode), Balsamiq (links).
 
@@ -163,14 +163,14 @@ Ferramentas: Figma (prototype mode), Balsamiq (links).
 
 Wireframe vira **documento de especificação**:
 
-```
+```json
 [ ] ID: WF-001
 [ ] User Story: US-042
 [ ] Versão: 1.3
 [ ] Aprovações: PO, DesignLead, TechLead
 [ ] Handoff: medidas, grid, breakpoints, estados
 [ ] Changelog por versão
-```
+```yaml
 
 ---
 
@@ -178,7 +178,7 @@ Wireframe vira **documento de especificação**:
 
 Checklist:
 
-```
+```json
 [ ] Grid definido (colunas, gutters)
 [ ] Medidas exatas dos elementos
 [ ] Espaçamentos documentados
@@ -186,7 +186,7 @@ Checklist:
 [ ] Breakpoints (mobile, tablet, desktop)
 [ ] Nomes consistentes com design system
 [ ] Fluxo de navegação diagramado
-```
+```markdown
 
 ---
 

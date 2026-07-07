@@ -11,7 +11,7 @@ Design centrado no usuário para produtos enterprise
 
 ## Slide 2: UX vs UI
 
-```
+```text
 UX                                        UI
 "Como o usuário se sente?"               "Como o produto se parece?"
 Pesquisa, arquitetura, fluxo             Cores, tipografia, ícones
@@ -19,13 +19,13 @@ Funcionalidade e usabilidade             Estética e identidade
 
 UI sem UX: carro bonito sem motor
 UX sem UI: motor sem carroceria
-```
+```markdown
 
 ---
 
 ## Slide 3: Os 5 Planos de Garrett
 
-```
+```text
 ┌─────────────────────────────────┐
 │ 5. SUPERFÍCIE    Visual Design  │
 ├─────────────────────────────────┤
@@ -37,7 +37,7 @@ UX sem UI: motor sem carroceria
 ├─────────────────────────────────┤
 │ 1. ESTRATÉGIA    Negócio        │
 └─────────────────────────────────┘
-```
+```markdown
 
 Cada plano responde um "por quê" diferente
 
@@ -59,7 +59,7 @@ Regra de ouro: **comportamento passado** > intenção futura
 
 ## Slide 5: Estrutura da Entrevista
 
-```
+```text
 1. Abertura (5min)
    "Não estamos testando você"
 
@@ -74,7 +74,7 @@ Regra de ouro: **comportamento passado** > intenção futura
 
 5. Fechamento (5min)
    "Algo mais?"
-```
+```markdown
 
 Fale 20%, ouça 80%. Nada de perguntas indutoras.
 
@@ -84,33 +84,33 @@ Fale 20%, ouça 80%. Nada de perguntas indutoras.
 
 **4 componentes:**
 
-```
+```text
 ORGANIZAÇÃO   → Como o conteúdo é agrupado
 NAVEGAÇÃO     → Como o usuário se movimenta
 LABELING      → Nomes e rótulos (consistência > criatividade)
 BUSCA         → Sistema de busca interna
-```
+```text
 
 **Para devs:** URLs refletem sua IA
 
-```
+```javascript
 ❌ /products/list?type=all
 ✅ /produtos
 ✅ /minha-conta/pedidos
-```
+```markdown
 
 ---
 
 ## Slide 7: Jornada do Usuário
 
-```
+```text
 FASE          AÇÕES                   EMOÇÃO
 ─────────     ──────────────           ─────────
 DESCOBERTA    "Pesquisei soluções"     🤔 Curioso
 AVALIAÇÃO     "Testei 14 dias"         😊 Animado
 ATIVAÇÃO      "Configurei o time"      😰 Ansioso
 RETENÇÃO      "Uso diário"             😍 Leal
-```
+```markdown
 
 Service Blueprint: inclui o backstage (API, jobs, integrações)
 
@@ -118,12 +118,12 @@ Service Blueprint: inclui o backstage (API, jobs, integrações)
 
 ## Slide 8: Personas
 
-```
+```text
 Proto-persona                    Data-driven persona
 Baseada em hipóteses             Baseada em dados reais
 Rápida (1 workshop)              Leva semanas
 "Eu acho que..."                 "Os dados mostram..."
-```
+```text
 
 **Anti-persona:** quem NÃO é seu público
 - Gera custo, não receita
@@ -133,12 +133,12 @@ Rápida (1 workshop)              Leva semanas
 
 ## Slide 9: Acessibilidade — WCAG
 
-```
+```text
 P ─ Perceptível     Alt text, legendas, contraste
 O ─ Operável        Navegação por teclado
 U ─ Compreensível   Idioma, erros claros
 R ─ Robusto         Screen readers, HTML semântico
-```
+```text
 
 | Nível | Obrigatório | Contraste |
 |-------|-------------|-----------|
@@ -161,7 +161,7 @@ R ─ Robusto         Screen readers, HTML semântico
 <button aria-label="Configurações">
   <i class="icon-cog"></i>
 </button>
-```
+```markdown
 
 Teste com **teclado** antes de testar com mouse
 
@@ -169,13 +169,13 @@ Teste com **teclado** antes de testar com mouse
 
 ## Slide 11: UX Writing
 
-```
+```text
 ❌ "Erro 0x87E50007: Falha na autenticação"
 ✅ "Seu login expirou. Faça login novamente."
 
 ❌ "Requisição inválida"
 ✅ "Preencha todos os campos obrigatórios."
-```
+```text
 
 | Princípio | Exemplo |
 |-----------|---------|
@@ -190,7 +190,7 @@ Teste com **teclado** antes de testar com mouse
 
 As 10 mais importantes em 1 slide:
 
-```
+```text
 1.  Status do sistema         → "Salvando..." + "Salvo!"
 2.  Mundo real                → "Pasta principal" (não "diretório raiz")
 3.  Controle e liberdade      → Desfazer sempre disponível
@@ -201,19 +201,19 @@ As 10 mais importantes em 1 slide:
 8.  Design minimalista        → 5 métricas, não 20 gráficos
 9.  Mensagens de erro         → Claras e acionáveis
 10. Ajuda e documentação      → "?" contextual + FAQ
-```
+```markdown
 
 ---
 
 ## Slide 13: Severidade de problemas
 
-```
+```text
 0 ─ Não é problema
 1 ─ Cosmético (arrumar se sobrar tempo)
 2 ─ Menor (baixo impacto)
 3 ─ Grave (deve corrigir)
 4 ─ Catástrofe (usuário não consegue usar)
-```
+```markdown
 
 **Exemplo real:** "Erro 500" sem mensagem = severidade 4
 
@@ -238,7 +238,7 @@ As 10 mais importantes em 1 slide:
 
 ## Slide 15: Recado Final
 
-```
+```text
 UX não é responsabilidade do designer.
 É responsabilidade do time inteiro.
 
@@ -247,6 +247,6 @@ cada mensagem de erro que você escreve,
 cada fluxo que você implementa:
 
 Isso é UX.
-```
+```text
 
 Pergunte antes de codificar: **"Isso resolve o problema do usuário?"**

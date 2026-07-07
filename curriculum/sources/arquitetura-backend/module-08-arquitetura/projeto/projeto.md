@@ -68,13 +68,13 @@ Identifique 3 anti-padrões comuns que este sistema deve evitar e como preveni-l
 | ...      | ...             |
 
 ## Estrutura de Pastas
-```
+```text
 src/
 ├── domain/
 ...
-```
+```markdown
 
 ## ADRs
 ### ADR-001: ...
 ...
-```
+```text

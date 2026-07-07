@@ -77,7 +77,7 @@ Crie um plano de ação com:
 
 ## Recomendações
 ...
-```
+```markdown
 
 ## Critérios de avaliação
 

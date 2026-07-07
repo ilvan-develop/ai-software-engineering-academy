@@ -269,7 +269,7 @@ React 18 + TypeScript + Tailwind CSS
 - Erros devem usar `Result<T, E>` (never throw)
 - Nomes de arquivo em kebab-case
 - Componentes em `src/components/`, páginas em `src/pages/`
-```
+```text
 
 > [!TIP]
 > Invista 5 minutos agora para criar o `AGENTS.md`. É o investimento com maior retorno por minuto no uso de IA para programar. A cada novo projeto, comece por ele.
@@ -352,7 +352,7 @@ Usar IA para programar não é sobre aceitar código — é sobre **colaboraçã
 [Prompt Estruturado] → [IA gera rascunho] → [Code Review] → [Testes] → [Refinamento] → [Commit]
         ↑                                                                                |
         └────────────────────── Iteração (feedback) ────────────────────────────────────┘
-```
+```markdown
 
 ### Analogia principal
 
@@ -375,7 +375,7 @@ function validateEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email); // ✅ Validação mais robusta
 }
-```
+```text
 
 **Sugestão de diagrama:** Mapa mental dos 5 erros com causas e correções lado a lado, em formato de tabela visual.
 
@@ -484,7 +484,7 @@ def save_user(username, password):
     conn.commit()
     cursor.close()
     conn.close()
-```
+```markdown
 
 ---
 

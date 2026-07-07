@@ -79,4 +79,4 @@ Documente um exemplo real de revisão de código gerado por IA, mostrando:
 3. PROMPTS DEVEM seguir o formato Contexto + Intenção + Formato
 4. NENHUM código gerado por IA pode ser commitado sem aprovação
 5. TODO commit com código de IA DEVE ser identificado na mensagem
-```
+```text

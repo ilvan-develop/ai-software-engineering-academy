@@ -138,7 +138,7 @@ async function migrateAllSchemas(): Promise<void> {
     await migrateSchema(`tenant_${tenant.slug}`);
   }
 }
-```
+```markdown
 
 ### 1.3 Estratégias de Rollback
 
@@ -210,7 +210,7 @@ async function migrateShared(): Promise<void> {
     client.release();
   }
 }
-```
+```markdown
 
 ---
 
@@ -296,7 +296,7 @@ interface Invoice {
   status: 'pending' | 'paid' | 'cancelled';
   dueDate: Date;
 }
-```
+```markdown
 
 ### 2.3 Regra Prática
 
@@ -316,7 +316,7 @@ interface Invoice {
 │  • Configurações do tenant   • Logs de atividade     │
 │  • Arquivos e uploads        • Relatórios gerados    │
 └─────────────────────────────────────────────────────┘
-```
+```markdown
 
 ### 2.4 Implementação em Schema per Tenant
 
@@ -452,7 +452,7 @@ async function createTenant(data: { slug: string; name: string; plan: string }) 
 
   return tenant;
 }
-```
+```markdown
 
 ### 3.2 Comandos CLI (NestJS Command)
 
@@ -501,6 +501,6 @@ async function seedSettingsIfNotExists(schema: string): Promise<void> {
     `, [setting.key, setting.value]);
   }
 }
-```
+```text
 
 ---

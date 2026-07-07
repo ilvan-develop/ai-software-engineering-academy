@@ -46,7 +46,7 @@ Fonte: Stack Overflow Survey 2024
 
 ## Slide 5: O papel do Arquiteto
 
-```
+```yaml
 Antes:
 • Escolher tecnologia
 • Desenhar diagramas
@@ -57,7 +57,7 @@ Agora (+):
 • Criar templates de prompt
 • Configurar checklists
 • Decidir o que delegar vs. reter
-```
+```markdown
 
 ---
 
@@ -83,7 +83,7 @@ Agora (+):
 
 ## Slide 8: A Matriz de Delegação
 
-```
+```text
                     Alta complexidade
                           │
     HUMANO DECIDE         │   HUMANO + AGENTE
@@ -97,13 +97,13 @@ Agora (+):
                     Baixa complexidade
 
                   Baixo risco      Alto risco
-```
+```markdown
 
 ---
 
 ## Slide 9: O ciclo de desenvolvimento
 
-```
+```text
 Product Discovery → Design → Arquitetura → Modelagem
                                              ↓
                                     Implementação
@@ -113,7 +113,7 @@ Product Discovery → Design → Arquitetura → Modelagem
                                     Auditoria
                                              ↓
                                     Refatoração
-```
+```markdown
 
 Cada etapa: agente especializado + artefato revisável
 

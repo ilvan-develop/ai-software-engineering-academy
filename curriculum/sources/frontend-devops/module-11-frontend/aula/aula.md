@@ -27,7 +27,7 @@ Client Component ("use client"):
   │  Pode ter interatividade           │
   │  Mais JavaScript no cliente        │
   └────────────────────────────────────┘
-```
+```markdown
 
 ### Regra de ouro
 
@@ -87,7 +87,7 @@ async function getDashboardStats(): Promise<Stats> {
 
   return { totalUsers, totalOrders, revenue: revenue._sum.total ?? 0 };
 }
-```
+```markdown
 
 ### Cache e Revalidação
 
@@ -149,7 +149,7 @@ function ProductsSkeleton() {
     </div>
   );
 }
-```
+```markdown
 
 ### Error Boundary
 
@@ -203,7 +203,7 @@ function ProductsList({ products }: { products: Product[] }) {
     </div>
   );
 }
-```
+```markdown
 
 ---
 
@@ -279,7 +279,7 @@ export function ProductForm() {
     </form>
   );
 }
-```
+```markdown
 
 ---
 
@@ -375,7 +375,7 @@ function CartTotal() {
   const total = useCartStore(state => state.total());
   return <span>Total: R$ {total.toFixed(2)}</span>;
 }
-```
+```markdown
 
 ---
 
@@ -417,7 +417,7 @@ Perceptível:      Todo conteúdo deve ser percebível (alternativas para mídia
 Operável:         Toda interface deve ser operável (teclado, voz)
 Compreensível:    Conteúdo e interface devem ser compreensíveis
 Robusto:          Conteúdo deve funcionar em diferentes tecnologias
-```
+```markdown
 
 ### Práticas essenciais
 
@@ -454,7 +454,7 @@ function Toast({ message }: { message: string }) {
     </div>
   );
 }
-```
+```markdown
 
 ---
 
@@ -502,7 +502,7 @@ function Toast({ message }: { message: string }) {
 ">
   {items.map(item => <MobileCard key={item.id} item={item} />)}
 </div>
-```
+```markdown
 
 ---
 
@@ -543,7 +543,7 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-```
+```markdown
 
 ### Dynamic Import
 

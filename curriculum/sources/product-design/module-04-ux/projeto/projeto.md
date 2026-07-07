@@ -31,11 +31,11 @@ Crie:
 
 Avalie **3 telas principais** do produto usando as 10 heurísticas de Nielsen:
 
-```
+```text
 Tela 1: Dashboard / Home
 Tela 2: Fluxo de criação/edição
 Tela 3: Página de configurações
-```
+```text
 
 Para cada tela, entregue uma tabela:
 
@@ -76,7 +76,7 @@ Escolha **3 componentes** reais do produto e refatore para melhorar a UX:
   action="Tentar novamente"
   onAction={handleRetry}
 />
-```
+```text
 
 **Componente 2 — Botão de ação**
 ```typescript
@@ -93,7 +93,7 @@ Escolha **3 componentes** reais do produto e refatore para melhorar a UX:
 >
   {isSaving ? 'Salvando...' : isSaved ? 'Salvo!' : 'Salvar'}
 </Button>
-```
+```text
 
 **Componente 3 — Menu de navegação**
 ```typescript
@@ -106,7 +106,7 @@ Escolha **3 componentes** reais do produto e refatore para melhorar a UX:
     <MenuItem icon={SettingsIcon} href="/configuracoes">Configurações</MenuItem>
   </Menu>
 </nav>
-```
+```text
 
 Cada componente deve incluir:
 - Estados: loading, vazio, erro, sucesso (quando aplicável)
@@ -118,14 +118,14 @@ Cada componente deve incluir:
 
 Compile tudo em um relatório com:
 
-```
+```text
 1. Resumo executivo (1 parágrafo)
 2. Personas e Jornada
 3. Avaliação heurística (3 telas)
 4. Auditoria de acessibilidade
 5. Código refatorado (3 componentes)
 6. Próximos passos (top 3 prioridades)
-```
+```markdown
 
 ## Critérios de avaliação
 

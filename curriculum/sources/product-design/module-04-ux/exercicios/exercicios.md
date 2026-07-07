@@ -13,7 +13,7 @@ Para cada situação abaixo, identifique **qual plano de Garrett** o problema pe
 6. (  ) A logo ocupa 40% da tela, empurrando o conteúdo principal para baixo do fold
 7. (  ) O campo de busca filtra resultados, mas não há indicador de quantos resultados existem
 8. (  ) O design system usa 4 variações de azul, mas nenhuma comunica "erro" ou "alerta"
-```
+```javascript
 
 ---
 
@@ -50,7 +50,7 @@ interface SUSStatement {
   statement: string;
   type: 'positive' | 'negative'; // SUS alterna positivas e negativas
 }
-```
+```markdown
 
 ---
 
@@ -60,7 +60,7 @@ Uma plataforma de cursos online tem esta navegação atual:
 
 ```text
 Home | Cursos | Meus Cursos | Professores | Comunidade | Blog | FAQ | Suporte | Sobre | Parcerias | Seja um Professor | Central de Ajuda | Configurações | Minha Conta | Sair
-```
+```text
 
 O time percebeu que usuários demoram para encontrar opções. A taxa de cliques nos itens de navegação é baixa (média de 1.2 itens por sessão).
 
@@ -79,7 +79,7 @@ const routes = {
   '/cursos': 'Cursos',
   // ...
 };
-```
+```markdown
 
 ---
 
@@ -104,7 +104,7 @@ interface HeuristicResult {
   problem: string;
   suggestion: string;
 }
-```
+```text
 
 Entregue um array com 10 itens (um por heurística) identificando:
 - Quais heurísticas estão violadas
@@ -131,7 +131,7 @@ const currentErrors = {
   502: 'Bad Gateway',
   503: 'Service Unavailable',
 };
-```
+```text
 
 **a)** Reescreva cada mensagem seguindo os princípios de UX Writing (claro, conciso, útil, humano, consistente). Considere que o produto é um SaaS B2B de gestão de projetos.
 
@@ -141,7 +141,7 @@ const improvedErrors: Record<number, { title: string; description: string }> = {
   // 400: { title: 'Dados inválidos', description: 'Verifique os campos destacados e tente novamente.' },
   // ...
 };
-```
+```text
 
 **b)** Crie um **componente React** que exiba essas mensagens de erro com:
 
@@ -154,6 +154,6 @@ interface ErrorDisplayProps {
   statusCode: number;
   onRetry?: () => void;
 }
-```
+```text
 
 **c)** Explique qual tom de voz foi usado para cada faixa de erro (4xx vs 5xx) e por quê.

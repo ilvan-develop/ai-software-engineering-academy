@@ -31,9 +31,9 @@
 - Tela de abertura com titulo do modulo. Animacao suave com o nome do curso.
 
 **Texto na tela:**
-```
+```json
 [TITULO] Módulo 13d — Multi-Tenant: Operações e Qualidade
-```
+```text
 
 **Notas de direcao:**
 - Tom energico e convidativo. Apresentar o problema que sera resolvido.
@@ -51,9 +51,9 @@
 - Slides com topicos-chave. Diagrama explicativo
 
 **Texto na tela:**
-```
+```json
 [1. Backup e Restore]
-```
+```text
 
 **Notas de direcao:**
 - Secao 2 de 5. Usar exemplos praticos.
@@ -71,9 +71,9 @@
 - Slides com topicos-chave. Diagrama explicativo
 
 **Texto na tela:**
-```
+```json
 [2. Performance]
-```
+```text
 
 **Notas de direcao:**
 - Secao 3 de 5. Usar exemplos praticos.
@@ -91,9 +91,9 @@
 - Slides com topicos-chave. Diagrama explicativo
 
 **Texto na tela:**
-```
+```json
 [3. Pricing Baseado em Tenancy]
-```
+```text
 
 **Notas de direcao:**
 - Secao 4 de 5. Usar exemplos praticos.
@@ -111,9 +111,9 @@
 - Slides com topicos-chave. Diagrama explicativo
 
 **Texto na tela:**
-```
+```json
 [4. Testes de Isolamento entre Tenants]
-```
+```text
 
 **Notas de direcao:**
 - Secao 5 de 5. Usar exemplos praticos.
@@ -131,7 +131,7 @@
 - Tela dividida: editor de codigo a esquerda, terminal/output a direita.
 
 **Texto na tela:**
-```
+```text
 ```bash
 #!/bin/bash
 # backup-all-tenants.sh — backup individual por tenant
@@ -145,8 +145,8 @@ mkdir -p "$BACKUP_DIR"
 for TENANT in "${TENANTS[@]}"; do
   echo "Iniciando backup do tenant: $TENANT"
 
-```
-```
+```text
+```javascript
 
 **Notas de direcao:**
 - Explicar linha por linha. Destacar pontos importantes com zoom ou realce.
@@ -164,12 +164,12 @@ for TENANT in "${TENANTS[@]}"; do
 - Lista resumida com icones. Transicao suave para encerramento.
 
 **Texto na tela:**
-```
+```text
 ✓ 1. Backup e Restore
 ✓ 2. Performance
 ✓ 3. Pricing Baseado em Tenancy
 ✓ 4. Testes de Isolamento entre Tenants
-```
+```text
 
 **Notas de direcao:**
 - Reforcar os aprendizados principais. Conectar com o proximo modulo.
@@ -187,9 +187,9 @@ for TENANT in "${TENANTS[@]}"; do
 - Tela final com links, inscricao, e teaser da proxima aula.
 
 **Texto na tela:**
-```
+```text
 Proximo modulo: [TITULO DO PROXIMO MODULO]
-```
+```text
 
 **Notas de direcao:**
 - Chamada para acao: inscrever-se, comentar, compartilhar.

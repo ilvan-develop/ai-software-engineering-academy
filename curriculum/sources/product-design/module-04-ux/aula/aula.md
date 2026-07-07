@@ -17,7 +17,7 @@ Experiência completa                      Superfície visual
 Pesquisa, arquitetura, fluxo             Cores, tipografia, ícones
 Funcionalidade e usabilidade             Estética e identidade
 Ciência + Design                         Design + Arte
-```
+```markdown
 
 > UI sem UX é como um carro bonito sem motor. UX sem UI é como um motor potente sem carroceria.
 
@@ -37,7 +37,7 @@ O modelo mais clássico para estruturar UX, de baixo (abstrato) para cima (concr
 ├─────────────────────────────────────────────┤
 │ 1. ESTRATÉGIA      Necessidades do negócio  │  ← Objetivos, dores
 └─────────────────────────────────────────────┘
-```
+```text
 
 | Plano | Pergunta central | Entregável típico |
 |-------|------------------|-------------------|
@@ -60,7 +60,7 @@ Pesquisa não é opcional — é o que impede você de construir a feature errad
 ```text
 ❌ "Você usaria um botão de exportar CSV?"
 ✅ "Me conta como você faz para gerar relatórios hoje."
-```
+```text
 
 **Estrutura de uma entrevista:**
 
@@ -70,7 +70,7 @@ Pesquisa não é opcional — é o que impede você de construir a feature errad
 3. Tarefa (15min) — "Você pode tentar fazer X enquanto pensa em voz alta?"
 4. Exploração (10min) — "Por que você fez isso? O que esperava que acontecesse?"
 5. Fechamento (5min) — "Algo mais que não perguntei?"
-```
+```text
 
 **Bons hábitos:**
 - Pergunte sobre **comportamento passado** (não intenção futura)
@@ -151,7 +151,7 @@ Arquitetura da Informação é a **organização estrutural do conteúdo** — c
    ├── Autocomplete
    ├── Filtros
    └── Resultados relevantes
-```
+```markdown
 
 ### Princípios de IA
 
@@ -174,7 +174,7 @@ Arquitetura da Informação é a **organização estrutural do conteúdo** — c
 /produtos/:id
 /minha-conta/dados
 /minha-conta/pedidos
-```
+```markdown
 
 ---
 
@@ -202,7 +202,7 @@ ATIVAÇÃO      "Convidei time"         😰 Ansioso  Convite em massa
 RETENÇÃO      "Uso semanal"           😊 Satisf.  Notificações
               "Preciso de ajuda"      😠 Irrit.   Chat + FAQ
               "Renovei contrato"      😍 Leal     Programa de fidelidade
-```
+```markdown
 
 ### Service Blueprint
 
@@ -216,7 +216,7 @@ FRONTSTAGE      Interações com o sistema (UI, API calls)
 BACKSTAGE       Ações internas invisíveis ao usuário
                     ↓
 PROCESSOS       Sistemas, jobs, integrações
-```
+```text
 
 **Exemplo (simplificado de uma compra):**
 
@@ -243,7 +243,7 @@ Baseada em hipóteses do time         Baseada em dados reais
 Rápida (1 workshop)                  Leva semanas
 "Eu acho que o usuário..."           "Os dados mostram que..."
 Valida: "Erramos, vamos pesquisar"   Valida: "Confirmamos nossas hipóteses"
-```
+```markdown
 
 ### Estrutura de uma persona
 
@@ -286,7 +286,7 @@ Anti-persona: "Usuário Free"
 - Gera custo operacional sem retorno financeiro
 
 O que NÃO fazer: não projetar para ele.
-```
+```markdown
 
 ### Para devs: personas no código
 
@@ -309,7 +309,7 @@ const flags: Record<string, FeatureFlag> = {
     rollout: 10, // Lançamento gradual
   },
 };
-```
+```markdown
 
 ---
 
@@ -345,7 +345,7 @@ R
 │   ├── HTML semântico
 │   ├── ARIA labels
 │   └── Funciona com screen readers
-```
+```markdown
 
 ### Níveis de conformidade
 
@@ -367,7 +367,7 @@ R
    #CCCCCC sobre #FFFFFF   — texto cinza claro
    #999999 sobre #EEEEEE   — links desativados
    #FFCC00 sobre #FFFFFF   — alertas amarelos
-```
+```markdown
 
 ### Navegação por teclado
 
@@ -409,7 +409,7 @@ R
 
 <!-- ✅ Tabela com scopo -->
 <th scope="col">Nome</th>
-```
+```markdown
 
 ### Para devs: checklist de acessibilidade no código
 
@@ -451,7 +451,7 @@ UX Writing é a **criação de textos para interfaces** que guiam o usuário de 
 
 // ✅ Claro e acionável
 "Preencha todos os campos obrigatórios antes de continuar."
-```
+```markdown
 
 ### Tom de voz
 
@@ -472,7 +472,7 @@ UX Writing é a **criação de textos para interfaces** que guiam o usuário de 
 ✅ "E-mail ou senha incorretos. Tente novamente."
 ✅ "O servidor não respondeu. Seu rascunho foi salvo automaticamente."
 ✅ "O campo 'CNPJ' precisa ter 14 dígitos."
-```
+```markdown
 
 ### Para devs: UX Writing no frontend
 
@@ -507,7 +507,7 @@ CONCISO        → "E-mail inválido" (não "O endereço de e-mail digitado não
 ÚTIL           → "Digite seu e-mail corporativo" (orienta, não só rotula)
 CONSISTENTE    → Sempre "Excluir", não "Excluir"/"Remover"/"Deletar" aleatoriamente
 HUMANO         → "Algo deu errado, mas já estamos cuidando disso"
-```
+```javascript
 
 ---
 
@@ -567,7 +567,7 @@ As 10 heurísticas são **critérios de usabilidade** que funcionam como checkli
     "Se o usuário precisa de ajuda, ela deve estar disponível."
     ❌ Documentação escondida
     ✅ "?" contextual + FAQ + chat
-```
+```markdown
 
 ### Como avaliar com as heurísticas
 
@@ -602,7 +602,7 @@ const evaluation: HeuristicEvaluation[] = [
     suggestion: 'Mensagem amigável + log no backend',
   },
 ];
-```
+```markdown
 
 ---
 
@@ -616,7 +616,7 @@ ANTES                             DEPOIS
 "Está no requisito"              "O usuário realmente precisa disso?"
 "Funciona no meu ambiente"       "Funciona para o usuário real?"
 "O design está errado"           "Qual problema estamos resolvendo?"
-```
+```markdown
 
 ### Como colaborar com designers
 
@@ -685,7 +685,7 @@ function TelaRelatorios() {
     </Page>
   );
 }
-```
+```markdown
 
 ### Perguntas que todo dev deveria fazer
 
@@ -697,7 +697,7 @@ function TelaRelatorios() {
 5. "O usuário consegue desfazer essa ação?"
 6. "Onde o usuário vai procurar essa funcionalidade?"
 7. "Em quanto tempo isso carrega no 3G?"
-```
+```markdown
 
 ---
 

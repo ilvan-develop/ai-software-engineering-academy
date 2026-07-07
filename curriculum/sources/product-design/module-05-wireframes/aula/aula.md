@@ -19,7 +19,7 @@ Wireframe serve para:
 │  Servir de contrato entre produto e dev      │
 │  Acelerar o ciclo de iteração                │
 └──────────────────────────────────────────────┘
-```
+```markdown
 
 ### Níveis de Fidelidade
 
@@ -62,7 +62,7 @@ interface WireframeElement {
   Hierarquia       Fontes        Navega
   Fluxo            Ícones        Anima
   Sem estilo       Imagens       Testa
-```
+```markdown
 
 ### Comparação
 
@@ -110,7 +110,7 @@ const stages: DesignStage[] = [
     estimatedTime: '2 — 5 dias',
   },
 ];
-```
+```markdown
 
 ---
 
@@ -144,7 +144,7 @@ function colWidth(cols: number, grid: Grid): number {
   const colSize = (contentWidth - totalGutter) / grid.columns;
   return colSize * cols + (cols - 1) * grid.gutter;
 }
-```
+```text
 
 ```text
 Wireframe com grid de 12 colunas:
@@ -157,7 +157,7 @@ Wireframe com grid de 12 colunas:
 ├──────────────────────────┴───────────────────────┤
 │   Footer (12 col)                                │
 └──────────────────────────────────────────────────┘
-```
+```javascript
 
 ### Hierarquia Visual
 
@@ -171,7 +171,7 @@ Hierarquia no wireframe:
 3. Seções de conteúdo         (blocos médios, organizados)
 4. Navegação secundária       (menor, no topo ou sidebar)
 5. Footer                     (menor destaque, no final)
-```
+```markdown
 
 ### Espaçamento
 
@@ -189,7 +189,7 @@ const space = {
 
 // Regra: elementos relacionados ficam mais próximos (8-16px)
 // Seções diferentes ficam mais distantes (32-48px)
-```
+```markdown
 
 ### Proporção
 
@@ -203,7 +203,7 @@ Use proporções familiares para criar harmonia visual:
 ║  3:2   — Imagens de destaque        ║
 ║  2:1   — Painéis e dashboards       ║
 ╚══════════════════════════════════════╝
-```
+```markdown
 
 ---
 
@@ -240,7 +240,7 @@ Use proporções familiares para criar harmonia visual:
   → Componentes reutilizáveis
   → Handoff para devs
   → Protótipos interativos
-```
+```markdown
 
 ### Excalidraw — Exemplo rápido
 
@@ -280,7 +280,7 @@ Como fazer:
 3. Desenhe 8 versões diferentes (sem repetir)
 4. Ao final, vote na melhor ideia
 5. Refine a vencedora em um wireframe único
-```
+```markdown
 
 ### Grey Box
 
@@ -305,7 +305,7 @@ Exemplo de Grey Box:
 ├─────────────────────────────────────────────────┤
 │  [Links]         [Contato]         © 2025       │  ← footer (cinza escuro)
 └─────────────────────────────────────────────────┘
-```
+```markdown
 
 ### Wireflow
 
@@ -324,7 +324,7 @@ Wireflow de cadastro:
 │ Toast:   │           │ Tela     │
 │ "Email"  │           │ Login    │
 └──────────┘           └──────────┘
-```
+```text
 
 ```typescript
 interface Wireflow {
@@ -339,7 +339,7 @@ interface Transition {
   element?: string;      // elemento que dispara (ex: "btn-login")
   condition?: string;    // condição (ex: "campos válidos")
 }
-```
+```markdown
 
 ### Sketching (Desenho à mão)
 
@@ -352,7 +352,7 @@ Vantagens do sketching:
 ├── Qualquer um participa: não precisa saber ferramenta
 └── Memorável: estudos mostram que esboços manuais
     geram mais feedback honesto que protótipos polidos
-```
+```markdown
 
 ---
 
@@ -399,7 +399,7 @@ Anatomia padrão de uma página:
 │  │ Links│  │ Redes sociais│  │ © 2025 Company   │  │
 │  └──────┘  └──────────────┘  └──────────────────┘  │
 └──────────────────────────────────────────────────────┘
-```
+```markdown
 
 ### Detalhamento dos elementos
 
@@ -455,7 +455,7 @@ interface NavItem {
 │   no conteúdo   │  │          │               │  │  │   │ │   │ │   │ │
 │                 │  │          │               │  │  └───┘ └───┘ └───┘ │
 └─────────────────┘  └──────────┴──────────────┘  └─────────────────────┘
-```
+```javascript
 
 ---
 
@@ -474,7 +474,7 @@ interface StatefulComponent {
   name: string;
   states: Record<ComponentState, WireframeElement>;
 }
-```
+```markdown
 
 ### Como representar cada estado no wireframe
 
@@ -497,7 +497,7 @@ interface SkeletonBox {
   borderRadius: number;
   lines?: number;          // para texto simulado
 }
-```
+```text
 
 ```text
 Wireframe de estado loading (skeleton):
@@ -512,7 +512,7 @@ Wireframe de estado loading (skeleton):
 │  │ ▓▓▓▓▓    │  │ ▓▓▓▓▓    │          │
 │  └──────────┘  └──────────┘          │
 └──────────────────────────────────────┘
-```
+```markdown
 
 ### Estado Empty
 
@@ -532,7 +532,7 @@ Wireframe de estado vazio (empty):
 │    [Criar Projeto]                    │
 │                                       │
 └──────────────────────────────────────┘
-```
+```markdown
 
 ### Transições
 
@@ -544,7 +544,7 @@ interface Transition {
   duration: number;  // ms
   trigger: string;   // ação do usuário
 }
-```
+```text
 
 ```text
 Representação de transição no wireframe:
@@ -563,7 +563,7 @@ Representação de transição no wireframe:
 │ │ [OK]   │ │
 │ └────────┘ │
 └────────────┘
-```
+```markdown
 
 ---
 
@@ -617,14 +617,14 @@ Roteiro de teste de wireframe:
    - "O que você acha que esse elemento faz?"
    - "O que você esperaria ao clicar aqui?"
    - "Faltou alguma informação?"
-```
+```markdown
 
 ### Iteração
 
 O ciclo ideal:
 ```typescript
 Esboçar → Validar → Aprender → Refinar → (repetir)
-```
+```text
 
 ```typescript
 interface IterationCycle {
@@ -650,7 +650,7 @@ const cycle: IterationCycle = {
   ],
   nextSteps: ['Testar versão 4 com 5 usuários'],
 };
-```
+```markdown
 
 ---
 
@@ -700,7 +700,7 @@ interface Approval {
 
 O handoff é o momento em que o wireframe vira código. Para que seja eficiente:
 
-```
+```markdown
 Checklist de handoff (wireframe → dev):
 ──────────────────────────────────────────
 [ ] Grid definido (colunas, gutters, margens)
@@ -732,7 +732,7 @@ interface HandoffSpec {
     responseFields: string[];
   }[];
 }
-```
+```markdown
 
 ### Versionamento
 
@@ -759,7 +759,7 @@ Boas práticas:
   ├── Versão major = mudança estrutural
   ├── Versão minor = ajuste de layout
   └── Mantenha changelog por versão
-```
+```markdown
 
 ### Exemplo de Changelog de Wireframe
 

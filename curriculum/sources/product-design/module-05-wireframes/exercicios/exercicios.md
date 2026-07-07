@@ -17,7 +17,7 @@ interface Variation {
   description: string;
   keyDifference: string;
 }
-```
+```yaml
 
 Instruções:
 1. Desenhe 8 variações diferentes da tela de cadastro (no papel ou Excalidraw)
@@ -54,7 +54,7 @@ interface GreyBoxSection {
   height: string;
   elements: string[];  // descrição dos elementos
 }
-```
+```markdown
 
 Preencha a estrutura acima com as dimensões e descrições de cada seção. Use proporções realistas (ex: sidebar 250px, card de saldo em destaque).
 
@@ -78,7 +78,7 @@ interface WireflowExercise {
   transitions: Transition[];
   errorPaths: number;  // quantos caminhos de erro foram mapeados
 }
-```
+```markdown
 
 Mapeie todas as telas e transições, incluindo **todos os caminhos de erro** (pelo menos 3). Represente como array de `Transition`.
 
@@ -120,7 +120,7 @@ const wireframeDoc: WireframeDocumentation = {
     // Crie uma aprovação com status 'pending'
   ],
 };
-```
+```markdown
 
 Use nomes e IDs realistas. Justifique cada campo que você preencheu.
 
@@ -161,6 +161,6 @@ interface HandoffSpec {
   };
   notes: string; // observações para o desenvolvedor
 }
-```
+```text
 
 Preencha todos os campos com valores realistas. Nas notes, inclua observações sobre ordenação, paginação e estado vazio.

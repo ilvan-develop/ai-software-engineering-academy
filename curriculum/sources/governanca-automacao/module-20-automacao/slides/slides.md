@@ -34,9 +34,9 @@ transition: "slide"
 
 **Continuous Deployment:** deploy automático após CI passar
 
-```
+```text
 Push → Lint → Testes → Build → SAST → Deploy → Health Check
-```
+```markdown
 
 GitHub Actions e GitLab CI são as plataformas mais usadas no mercado brasileiro.
 
@@ -50,7 +50,7 @@ jobs:
   test:       # Unit + Integration (com banco real em service)
   build:      # Compilação + artefato
   security:   # SAST + dependency scan
-```
+```text
 
 ```yaml
 - uses: actions/checkout@v4
@@ -59,18 +59,18 @@ jobs:
 - run: pnpm test:integration
   env:
     DATABASE_URL: ${{ secrets.DATABASE_URL }}
-```
+```markdown
 
 ---
 
 ## Slide 4 — Automação de Testes (Pirâmide)
 
-```
+```text
         ⬆ E2E (Playwright, Cypress)
       ⬆⬆ Integração (Supertest, MSW)
     ⬆⬆⬆ Unitários (Vitest, Jest)
   ⬆⬆⬆⬆ Static (ESLint, TypeScript)
-```
+```yaml
 
 - **Unitários:** rápidos, isolados, sem side effects
 - **Integração:** banco real ou em memória, testa contratos
@@ -90,9 +90,9 @@ Gerenciar infraestrutura com arquivos versionados.
 | Pulumi | TypeScript/Python | Times que já usam a linguagem |
 | CloudFormation | YAML/JSON | AWS nativo |
 
-```
+```bash
 git push → terraform plan → review → terraform apply
-```
+```markdown
 
 ---
 
@@ -123,7 +123,7 @@ git push → terraform plan → review → terraform apply
 - name: Rollback (se falhar)
   if: failure()
   run: psql $DATABASE_URL < /tmp/backup.sql
-```
+```markdown
 
 ---
 
@@ -160,11 +160,11 @@ Bots e linters que revisam código antes do review humano.
 
 **Semantic Release** + **Conventional Commits**:
 
-```
+```yaml
 feat: → minor (1.2.0 → 1.3.0)
 fix:  → patch (1.2.0 → 1.2.1)
 BREAKING CHANGE: → major (1.2.0 → 2.0.0)
-```
+```text
 
 Gera automaticamente:
 - Changelog
@@ -178,11 +178,11 @@ Gera automaticamente:
 
 Ambiente criado automaticamente para cada PR.
 
-```
+```text
 Branch feature/login → Deploy → https://pr-42.app.io
 Branch main          → Deploy → https://staging.app.io
 Tag v1.0.0           → Deploy → https://app.io (prod)
-```
+```yaml
 
 **Duração:** enquanto o PR estiver aberto  
 **Destruição automática:** ao fechar o PR  
@@ -203,7 +203,7 @@ if (running < desired) {
     forceNewDeployment: true,
   }))
 }
-```
+```markdown
 
 **Runbooks automáticos:** workflows que executam receitas de recuperação com um clique.
 
@@ -222,13 +222,13 @@ if (running < desired) {
 # Job reutilizável
 - uses: ./.github/actions/setup-node
 - run: pnpm test
-```
+```markdown
 
 ---
 
 ## Slide 14 — Exemplo de Pipeline Completa
 
-```
+```json
 [Push] → [Lint & Format] → [Testes Unitários]
                                   ↓
                            [Testes Integração]
@@ -250,7 +250,7 @@ if (running < desired) {
            [Health Check]
                     ↓
            [Monitoramento]
-```
+```markdown
 
 ---
 

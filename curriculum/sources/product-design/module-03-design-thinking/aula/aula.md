@@ -33,7 +33,7 @@ Design Thinking é uma abordagem **centrada no ser humano** para solução de pr
 │  • Otimista (toda solução é possível)             │
 │  • Iterativo (nunca está pronto)                  │
 └─────────────────────────────────────────────────┘
-```
+```markdown
 
 ### Abordagem tradicional vs Design Thinking
 
@@ -41,7 +41,7 @@ Design Thinking é uma abordagem **centrada no ser humano** para solução de pr
 TRADICIONAL:                                   DESIGN THINKING:
 Problema → Análise → Solução → Entrega        Problema → Empatia → Definir → Ideias → Protótipo → Teste
                                                                                             ↻
-```
+```markdown
 
 Enquanto a abordagem tradicional busca a **solução certa** de primeira, o Design Thinking busca **entender o problema certo** antes de solucionar, iterando quantas vezes for necessário.
 
@@ -71,7 +71,7 @@ O processo é dividido em 5 fases **não-lineares** — você pode (e deve) volt
                    ┌─────────────────────┐
                    │       TESTAR        │←──── Iteração
                    └─────────────────────┘
-```
+```text
 
 Cada fase responde a uma pergunta central:
 
@@ -133,7 +133,7 @@ Sem empatia, você constrói soluções baseadas em **suposições**. Com empati
   • Interromper o usuário
   • Defender ideias ou justificar o sistema atual
   • Buscar validação para sua solução
-```
+```markdown
 
 #### 3.2 Observação contextual
 
@@ -155,7 +155,7 @@ interface Observacao {
   workarounds: string[];
   insights: string[];
 }
-```
+```text
 
 **Exemplo de observação:**
 
@@ -168,7 +168,7 @@ Tarefa: Gerar relatório mensal de vendas
 09:03 → Seleciona filtros (mês, região, produto) — 30s
 09:05 → Sistema trava ao carregar 3 meses de dados — frustração: 4/5
 09:07 → Chama o suporte, enquanto isso abre Excel e começa a fazer manual
-```
+```markdown
 
 **Insight:** A usuária prefere fazer manual no Excel (30 min) do que esperar o sistema travar repetidamente.
 
@@ -209,7 +209,7 @@ A imersão coloca o time **na pele do usuário**. Você experimenta o problema e
 │  • Falta de suporte humano      • Interface intuitiva           │
 │  • Retrabalho constante         • Reconhecimento do chefe       │
 └─────────────────────────────────────────────────────────────────┘
-```
+```markdown
 
 ---
 
@@ -225,7 +225,7 @@ Uma boa declaração de problema segue esta estrutura:
 
 ```text
 [USUÁRIO] precisa de [NECESSIDADE] porque [INSIGHT]
-```
+```text
 
 **Exemplos:**
 
@@ -242,7 +242,7 @@ Uma boa declaração de problema segue esta estrutura:
     consolidar dados de 5 fontes diferentes em tempo
     real porque as decisões baseadas em dados de
     ontem já não são competitivas"
-```
+```markdown
 
 ### How Might We (HMW)
 
@@ -254,7 +254,7 @@ HMW = How Might We (Como Poderíamos)
 How  → Assume que é possível (mente aberta)
 Might → Permite tentativa e erro (não precisa acertar)
 We   → É colaborativo (não é individual)
-```
+```text
 
 **Técnica:** Para cada problem statement, gere 5-10 HMWs em diferentes direções:
 
@@ -297,7 +297,7 @@ HMWs:
                         │
                     BAIXO IMPACTO
    BAIXO ESFORÇO ─────────────────── ALTO ESFORÇO
-```
+```markdown
 
 ---
 
@@ -314,7 +314,7 @@ REGRAS DO BRAINSTORMING:
 5. 🎯 Seja visual — desenhe, rabisque, use post-its
 6. ⏱ Tempo curto — 15-30 minutos no máximo
 7. 🗂 Um tópico por vez
-```
+```markdown
 
 ### Crazy 8
 
@@ -330,7 +330,7 @@ Crazy 8 é uma técnica de **divergência rápida**: cada pessoa dobra uma folha
 │          │          │          │          │
 │ (esboço) │ (esboço) │ (esboço) │ (esboço) │
 └──────────┴──────────┴──────────┴──────────┘
-```
+```markdown
 
 **Por que funciona:** A pressão do tempo impede o perfeccionismo e força o cérebro a criar conexões inesperadas.
 
@@ -353,7 +353,7 @@ Exemplo de priorização para um sistema de onboarding:
 | Chat ao vivo com suporte                | Alto    | Alto    | 2º (Big Bet) |
 | Remover campos obrigatórios desnecessários | Alto | Baixo   | 1º         |
 | Gamificação com badges                  | Baixo   | Médio   | 3º         |
-```
+```markdown
 
 ### Outras técnicas de ideação
 
@@ -380,7 +380,7 @@ Prototipar transforma ideias abstratas em algo **tangível** que pode ser testad
 BAIXA FIDELIDADE                        ALTA FIDELIDADE
 ├─────────────────────────────────────────────────────┤
   Papel → Wireframe → Mockup → Protótipo clicável → MVP
-```
+```markdown
 
 #### Protótipos de baixa fidelidade
 
@@ -406,7 +406,7 @@ interface WireframeElement {
   conteudo: string;
   estado?: 'normal' | 'hover' | 'error' | 'loading' | 'empty' | 'success';
 }
-```
+```yaml
 
 Ferramentas: Figma, Balsamiq, Whimsical, Miro.
 
@@ -455,7 +455,7 @@ Use quando:
 ├──────────────────────┤
 │ 🏠  🔍  🛒  👤     │  ← Navigation bar
 └──────────────────────┘
-```
+```markdown
 
 ### Dicas para prototipar
 
@@ -472,7 +472,7 @@ Use quando:
   • Gastar horas em detalhes visuais antes de validar
   • Apresentar protótipo como "quase pronto"
   • Pular etapas (papel → direto para código)
-```
+```markdown
 
 ---
 
@@ -487,7 +487,7 @@ Use quando:
 │                                                          │
 │                    (e recomeça)                           │
 └─────────────────────────────────────────────────────────┘
-```
+```markdown
 
 ### Tipos de teste
 
@@ -540,7 +540,7 @@ Use quando:
 
 ❌ Moderador: "Aqui você clica nesse botão e abre um modal..."
 ✅ Moderador: "O que você faria agora?"
-```
+```markdown
 
 ### Feedback Loop
 
@@ -551,7 +551,7 @@ Gravações              Agrupar padrões          Definir o que
 Anotações              Priorizar problemas      mudar no protótipo
 Métricas (tempo,       Identificar              Iterar e testar
 taxa de sucesso)       insights                 novamente
-```
+```text
 
 Documente os achados com:
 
@@ -582,7 +582,7 @@ Ideiar (soluções)          ───────→    Sprint Planning (discut
 Prototipar (testar)        ───────→    Sprint (desenvolvimento)
 Testar (validar)           ───────→    Sprint Review (feedback do usuário)
                          ↻
-```
+```markdown
 
 #### Discovery Sprints
 
@@ -603,7 +603,7 @@ Semana 2 — Ideiar + Prototipar
   Qua: Prototipação de baixa fidelidade
   Qui: Teste do protótipo com 3-5 usuários
   Sex: Iteração + apresentação para stakeholders
-```
+```markdown
 
 #### Kanban com Design Thinking
 
@@ -619,7 +619,7 @@ Adicione colunas de Discovery no Kanban:
 │  Item G  │  HMW #2  │  HMW #1  │  Wirefr. │  Dev #3  │  Valid.  │
 │          │          │          │          │          │          │
 └──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘
-```
+```markdown
 
 ### Ritmo: Discovery + Delivery
 
@@ -637,7 +637,7 @@ TRACK 2 — DELIVERY (Ágil)
 ├── Sprint Planning
 ├── Desenvolvimento
 └── Sprint Review
-```
+```markdown
 
 ---
 
@@ -706,7 +706,7 @@ DEPOIS:
   [ ] Compartilhar com stakeholders ausentes
   [ ] Agendar follow-up para validação
   [ ] Medir impacto (o que mudou depois do workshop?)
-```
+```markdown
 
 #### 3. Enterprise Design Thinking (IBM)
 
@@ -726,7 +726,7 @@ Hills (Metas):
     "Um gerente de operações consegue identificar gargalos
      logísticos em tempo real e tomar ações corretivas
      antes que impactem o cliente final"
-```
+```markdown
 
 ---
 
@@ -756,7 +756,7 @@ Hills (Metas):
 ❌ Tratar DT como processo linear
    "Já testamos, passamos para a próxima fase"
    Consequência: Perde-se o principal benefício: a iteração.
-```
+```markdown
 
 ---
 

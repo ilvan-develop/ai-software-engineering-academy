@@ -61,7 +61,7 @@ for TENANT in "${TENANTS[@]}"; do
   echo "Iniciando backup do tenant: $TENANT"
 
 ...
-```
+```markdown
 
 ---
 ## Exemplo: bash
@@ -80,7 +80,7 @@ fi
 
 DB_URL="postgresql://user:pass@localhost:5432/shared_db"
 ...
-```
+```markdown
 
 ---
 ## Recap

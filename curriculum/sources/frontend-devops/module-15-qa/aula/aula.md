@@ -25,7 +25,7 @@ Com testes:
   │  Regressão: 0 (testes previnem)            │
   │  Confiança do time: alta ("posso refatorar")│
   └────────────────────────────────────────────┘
-```
+```markdown
 
 ### A pirâmide de testes
 
@@ -41,7 +41,7 @@ Com testes:
   ╱                    ╲ Testes de serviço/função
  ╱──────────────────────╲
   MUITOS (rápidos)         POUCOS (lentos)
-```
+```markdown
 
 ### Estratégia de cobertura
 
@@ -49,7 +49,7 @@ Com testes:
 Unitários:        70%+ cobertura (services, utils)
 Integração:       20% (endpoints, fluxos críticos)
 E2E:              10% (fluxos principais, felizes e infelizes)
-```
+```markdown
 
 ---
 
@@ -119,7 +119,7 @@ expect(mockUserRepo.save).toHaveBeenCalledTimes(1);
 expect(mockUserRepo.save).toHaveBeenCalledWith(expect.objectContaining({
   name: 'João',
 }));
-```
+```markdown
 
 ### Testando erros
 
@@ -217,7 +217,7 @@ describe('UserController (integration)', () => {
     });
   });
 });
-```
+```markdown
 
 ---
 
@@ -312,7 +312,7 @@ test.describe('CRUD de produtos', () => {
     await expect(page.locator('text=Preço é obrigatório')).toBeVisible();
   });
 });
-```
+```markdown
 
 ---
 
@@ -351,7 +351,7 @@ export default {
 ❌ Módulos:      só declaram providers/imports
 ❌ Config:       valores estáticos
 ❌ DTOs:         schemas Zod (testados indiretamente)
-```
+```markdown
 
 ---
 
@@ -407,7 +407,7 @@ jobs:
         with:
           name: coverage
           path: coverage/
-```
+```markdown
 
 ---
 
@@ -419,7 +419,7 @@ jobs:
 Red:   Escreva um teste que falha
 Green: Faça o teste passar (código mínimo)
 Refactor: Melhore o código mantendo os verdes
-```
+```markdown
 
 ### Exemplo prático
 

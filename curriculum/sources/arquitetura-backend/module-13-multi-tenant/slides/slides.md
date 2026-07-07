@@ -14,7 +14,7 @@ Módulo 13 — Transição de Dev para Enterprise
 
 ## Slide 2: O que é Multi-Tenancy?
 
-```
+```text
 ┌──────────────────────────────────────┐
 │           UMA INSTÂNCIA               │
 │                                       │
@@ -25,7 +25,7 @@ Módulo 13 — Transição de Dev para Enterprise
 │                │                      │
 │            API + DB                   │
 └──────────────────────────────────────┘
-```
+```yaml
 
 Uma única aplicação servindo múltiplos clientes com dados isolados
 
@@ -47,7 +47,7 @@ Exemplos: Slack (workspaces), Shopify (lojas), Notion (equipes), GitHub (orgs)
 
 ## Slide 4: Database per Tenant
 
-```
+```text
   ┌─────────────┐     ┌─────────────┐     ┌─────────────┐
   │   DB Acme   │     │  DB Zeta    │     │  DB Omega   │
   │  ┌───────┐  │     │  ┌───────┐  │     │  ┌───────┐  │
@@ -55,7 +55,7 @@ Exemplos: Slack (workspaces), Shopify (lojas), Notion (equipes), GitHub (orgs)
   │  │orders │  │     │  │orders │  │     │  │orders │  │
   │  └───────┘  │     │  └───────┘  │     │  └───────┘  │
   └─────────────┘     └─────────────┘     └─────────────┘
-```
+```text
 
 ✅ Isolamento total — nem SQL injection vaza dados
 💰 Custo mais alto — N bancos = N × preço
@@ -65,7 +65,7 @@ Exemplos: Slack (workspaces), Shopify (lojas), Notion (equipes), GitHub (orgs)
 
 ## Slide 5: Schema per Tenant
 
-```
+```text
   ┌────────────────────────────────────┐
   │         Banco Compartilhado         │
   │  ┌──────────┐  ┌──────────┐       │
@@ -74,7 +74,7 @@ Exemplos: Slack (workspaces), Shopify (lojas), Notion (equipes), GitHub (orgs)
   │  │  orders  │  │  orders  │       │
   │  └──────────┘  └──────────┘       │
   └────────────────────────────────────┘
-```
+```text
 
 ✅ Bom custo-benefício para planos Pro
 ⚠️ Queries pesadas de um tenant afetam os outros
@@ -84,7 +84,7 @@ Exemplos: Slack (workspaces), Shopify (lojas), Notion (equipes), GitHub (orgs)
 
 ## Slide 6: Shared Database
 
-```
+```text
 Tabela única com tenant_id como discriminador
 
   users
@@ -95,7 +95,7 @@ Tabela única com tenant_id como discriminador
   │ 2    │ zeta      │ Maria │ maria@... │
   │ 3    │ acme      │ Pedro │ pedro@... │
   └──────┴───────────┴───────┴───────────┘
-```
+```sql
 
 ⚠️ Um `SELECT` sem `WHERE tenant_id` vaza dados de todos os tenants
 🔑 Índices compostos com `tenant_id` na primeira posição
@@ -136,7 +136,7 @@ export class TenantMiddleware implements NestMiddleware {
     next();
   }
 }
-```
+```markdown
 
 AsyncLocalStorage mantém o contexto vivo durante toda a requisição
 
@@ -144,7 +144,7 @@ AsyncLocalStorage mantém o contexto vivo durante toda a requisição
 
 ## Slide 9: Dados Compartilhados vs Por Tenant
 
-```
+```text
 ┌────────────────────────────────────┐
 │       GLOBAIS (todos os tenants)    │
 │  • Planos e preços                 │
@@ -157,7 +157,7 @@ AsyncLocalStorage mantém o contexto vivo durante toda a requisição
 │  • Projetos e tarefas              │
 │  • Configurações do tenant         │
 └────────────────────────────────────┘
-```
+```markdown
 
 Sempre pergunte: "esse dado é do sistema ou do cliente?"
 
@@ -180,7 +180,7 @@ async function migrateSchema(schema: string) {
     }
   }
 }
-```
+```markdown
 
 ⚠️ Falha em um tenant não deve bloquear os demais (ou deve?)
 
@@ -221,7 +221,7 @@ pg_dump "postgresql://.../acme_db" \
 pg_dump "postgresql://.../shared" \
   --schema="tenant_acme" \
   --file="backups/schema_acme.dump"
-```
+```markdown
 
 ---
 
@@ -240,7 +240,7 @@ const PLANS = {
   pro:   { customDomain: false, apiAccess: true },
   enterprise: { customDomain: true, apiAccess: true },
 };
-```
+```markdown
 
 ---
 
@@ -258,7 +258,7 @@ it('Tenant A não vê dados do Tenant B', async () => {
     expect.objectContaining({ email: 'joao@acme.com' })
   );
 });
-```
+```text
 
 **Testes obrigatórios:**
 - Vazamento zero
@@ -271,7 +271,7 @@ it('Tenant A não vê dados do Tenant B', async () => {
 
 ## Slide 15: Anti-padrões
 
-```
+```text
 ❌ Esquecer tenant_id em uma query — dados vazam
 ❌ Pool único para todos os tenants — um pesado degrada os outros
 ❌ Migration sem rollback individual — um tenant quebra o deploy
@@ -279,7 +279,7 @@ it('Tenant A não vê dados do Tenant B', async () => {
 ❌ Backup só global — restaurar um tenant vira pesadelo
 ❌ Sem testes de isolamento — até que um cliente descubra
 ❌ tenant_id vindo do body da requisição — injeção
-```
+```markdown
 
 ---
 

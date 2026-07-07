@@ -16,7 +16,7 @@ function UserCard({ name, role, email }: { name: string; role: string; email: st
     </div>
   );
 }
-```
+```yaml
 
 Tarefas:
 1. Identifique qual(is) princípio(s) CRAP cada problema viola
@@ -57,7 +57,7 @@ interface IndustrialPalette {
     sidebar: string;
   };
 }
-```
+```yaml
 
 Tarefas:
 1. Escolha uma cor primária que remeta ao segmento industrial (justifique)
@@ -88,7 +88,7 @@ interface DataTableProps<T> {
   onSort?: (key: keyof T, direction: 'asc' | 'desc') => void;
   pageSize?: number;
 }
-```
+```yaml
 
 Requisitos:
 1. Estados: **default**, **loading** (skeleton de 3 linhas), **empty** (mensagem + ilustração textual), **error**
@@ -116,7 +116,7 @@ interface AnimatedButtonProps {
   children: React.ReactNode;
   onClick: () => void;
 }
-```
+```text
 
 Requisitos de microinteração:
 1. `hover`: mudança suave de cor (150ms ease)
@@ -146,7 +146,7 @@ interface FullTheme {
   spacing: typeof spacing;
   typography: typeof typography;
 }
-```
+```yaml
 
 Tarefas:
 1. Defina `lightTheme` e `darkTheme` completos

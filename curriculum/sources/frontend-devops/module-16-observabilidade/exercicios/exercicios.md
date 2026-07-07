@@ -9,14 +9,14 @@ Converta os logs abaixo para o formato estruturado (JSON):
 console.log('Usuário', email, 'criou pedido', orderId, 'de R$', total);
 console.log('Erro ao processar pagamento:', error.message);
 console.log('Login de', email, '- sucesso:', success);
-```
+```text
 
 Formato esperado:
 ```typescript
 logger.info('Pedido criado', {
   // ...
 });
-```
+```yaml
 
 Inclua: timestamp, userId, ip, user-agent, nível apropriado.
 
@@ -37,7 +37,7 @@ export const cartItemsAdded = new Counter({
   name: 'cart_items_added_total',
   help: 'Itens adicionados ao carrinho',
 });
-```
+```markdown
 
 ---
 
@@ -62,7 +62,7 @@ Painel: Request Rate
 Tipo: Time series
 Query: rate(http_requests_total[5m])
 Threshold: warning > 1000, critical > 2000
-```
+```markdown
 
 ---
 
@@ -80,7 +80,7 @@ class PaymentService {
     return gatewayResult;
   }
 }
-```
+```text
 
 Crie spans para:
 - `processPayment` — span principal

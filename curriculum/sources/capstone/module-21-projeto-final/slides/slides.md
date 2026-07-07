@@ -28,20 +28,20 @@ Plataforma SaaS multi-tenant de gestão de projetos e tarefas
 
 ## Slide 3: Stack Tecnológica
 
-```
+```yaml
 Frontend:     Next.js 14 + Tailwind + shadcn/ui + React Query
 Backend:      NestJS + Prisma + Zod
 Banco:        PostgreSQL 16 + Redis
 Infra:        Docker + AWS (ECS/RDS/ElastiCache)
 CI/CD:        GitHub Actions
 Obs:          OpenTelemetry + Grafana + Loki + Tempo
-```
+```markdown
 
 ---
 
 ## Slide 4: Arquitetura — Visão Geral
 
-```
+```text
 Cliente (Browser)
     │
     ▼
@@ -56,7 +56,7 @@ NestJS Modular Monolith
     ▼       ▼           ▼
 PostgreSQL  Redis       S3
 (RDS)    (ElastiCache) (Arquivos)
-```
+```markdown
 
 ---
 
@@ -75,7 +75,7 @@ PostgreSQL  Redis       S3
 
 ## Slide 6: Autenticação Multi-tenant
 
-```
+```text
 Register → Cria Tenant + Owner
              ↓
 Convite por e-mail → Aceita → Membro do Tenant
@@ -83,7 +83,7 @@ Convite por e-mail → Aceita → Membro do Tenant
 Login → JWT (15min) + Refresh (7d)
              ↓
 OAuth → Google / GitHub
-```
+```yaml
 
 RBAC: Owner > Admin > Manager > Developer > Viewer
 
@@ -91,7 +91,7 @@ RBAC: Owner > Admin > Manager > Developer > Viewer
 
 ## Slide 7: Kanban Board em Tempo Real
 
-```
+```text
 ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐
 │ To Do    │ │ In Prog  │ │ Review   │ │ Done     │
 │          │ │          │ │          │ │          │
@@ -99,7 +99,7 @@ RBAC: Owner > Admin > Manager > Developer > Viewer
 │ [Tarefa]│ │ [Tarefa]│ │          │ │ [Tarefa] │
 │          │ │          │ │          │ │          │
 └──────────┘ └──────────┘ └──────────┘ └──────────┘
-```
+```yaml
 
 WebSocket: movimento reflete em todos os clients
 
@@ -107,7 +107,7 @@ WebSocket: movimento reflete em todos os clients
 
 ## Slide 8: Notificações e Tempo Real
 
-```
+```text
 Evento (task.assigned)
     │
     ▼
@@ -116,7 +116,7 @@ Event Emitter (in-process)
     ├── Notificação in-app (WebSocket)
     ├── E-mail transacional (Bull Queue)
     └── Push notification (futuro)
-```
+```markdown
 
 Usuário configura preferências por tipo
 
@@ -124,7 +124,7 @@ Usuário configura preferências por tipo
 
 ## Slide 9: Relatórios e Dashboards
 
-```
+```text
 Dashboard (tempo real):
   - Tarefas por status (gráfico de pizza)
   - Burndown chart (sprint)
@@ -134,7 +134,7 @@ Dashboard (tempo real):
 Relatórios (exportáveis):
   - PDF: Relatório de projetos
   - CSV: Horas por membro
-```
+```markdown
 
 Dados agregados por tenant (sem vazamento)
 
@@ -142,7 +142,7 @@ Dados agregados por tenant (sem vazamento)
 
 ## Slide 10: Pagamentos com Stripe
 
-```
+```text
 Free (3 projetos, 5 membros)
     → Upgrade
 Pro (ilimitado, 50 membros)
@@ -152,7 +152,7 @@ Fluxo:
   Stripe Checkout → Webhook → Ativar subscription
   Trial 14 dias → E-mail de expiração
   Downgrade/Upgrade com proration
-```
+```markdown
 
 Rate limits por plano (API, storage, members)
 
@@ -160,7 +160,7 @@ Rate limits por plano (API, storage, members)
 
 ## Slide 11: DevOps e CI/CD
 
-```
+```yaml
 Pipeline GitHub Actions:
   Push → Lint → Type Check → Test → Build → Deploy
 
@@ -173,7 +173,7 @@ Monitoramento:
   - Health checks (/health, /ready)
   - Prometheus + Grafana
   - Loki (logs) + Tempo (traces)
-```
+```markdown
 
 ---
 
@@ -192,7 +192,7 @@ Monitoramento:
 
 ## Slide 13: Critérios de Avaliação
 
-```
+```text
 Código        (40%) — estrutura, TS, segurança, multi-tenant
 Testes        (20%) — unit, integração, E2E, cobertura
 Documentação  (15%) — README, ADRs, Swagger, runbook
@@ -201,13 +201,13 @@ Apresentação  (10%) — pitch, demo, lições aprendidas
 
 Corte: 70% geral, 50% por categoria
 Reprovação automática: vazamento de dados entre tenants
-```
+```markdown
 
 ---
 
 ## Slide 14: Apresentação Final
 
-```
+```text
 Pitch de 5 minutos:
   0:30 — Problema
   0:30 — Solução
@@ -218,7 +218,7 @@ Pitch de 5 minutos:
   0:30 — Deploy e monitoramento
   0:30 — Lições aprendidas
   0:30 — Próximos passos
-```
+```markdown
 
 Demo obrigatória: registro → projeto → tarefas → Kanban → notificações
 

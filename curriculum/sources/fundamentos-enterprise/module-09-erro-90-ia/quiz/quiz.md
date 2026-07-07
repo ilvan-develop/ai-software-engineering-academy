@@ -91,7 +91,7 @@ Qual tipo de bug está presente neste código?
 function hashPassword(password) {
   return hashlib.md5(password).hexdigest();
 }
-```
+```text
 
 - a) Lógica
 - b) Segurança

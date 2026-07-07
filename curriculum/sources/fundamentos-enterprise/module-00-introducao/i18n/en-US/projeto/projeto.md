@@ -76,7 +76,7 @@ Escreva as primeiras 10 regras que os agentes devem seguir neste projeto.
 
 ## AGENTS.md
 ...
-```
+```markdown
 
 ## Critérios de avaliação
 

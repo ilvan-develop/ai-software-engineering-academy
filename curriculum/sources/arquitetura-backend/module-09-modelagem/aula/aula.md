@@ -27,7 +27,7 @@ Modelagem boa:
   │  Constraints → validade dos dados        │
   │  Migrações testadas → sem surpresas      │
   └──────────────────────────────────────────┘
-```
+```markdown
 
 ---
 
@@ -39,7 +39,7 @@ Modelagem boa:
 1:1  — Um usuário tem um perfil
 1:N  — Um usuário tem muitos pedidos
 N:M  — Um produto está em muitas categorias
-```
+```markdown
 
 ### Exemplo no Prisma
 
@@ -122,7 +122,7 @@ model User {
   // Filtro global no Prisma
   @@where("@deletedAt is null")
 }
-```
+```text
 
 ```typescript
 // Service
@@ -159,7 +159,7 @@ model AuditLog {
   @@index([userId])
   @@index([createdAt])
 }
-```
+```text
 
 ```typescript
 // AuditService
@@ -222,7 +222,7 @@ model Order {
   // Índice parcial para pedidos ativos
   @@index([status, createdAt])
 }
-```
+```markdown
 
 ### Regras de índices
 
@@ -237,7 +237,7 @@ Evite:
   - Índices em colunas de baixa cardinalidade (boolean)
   - Muitos índices em tabelas pequenas (< 1000 registros)
   - Índices que nunca são usados
-```
+```markdown
 
 ### Query Performance
 
@@ -274,7 +274,7 @@ npx prisma migrate deploy
 
 # Resetar banco (dev)
 npx prisma migrate reset
-```
+```markdown
 
 ### Migrações sem downtime
 
@@ -324,7 +324,7 @@ Incremental: Apenas mudanças desde o último backup
 WAL (Write-Ahead Log): Log de transações
   Quando: Contínuo
   Uso:    Point-in-time recovery
-```
+```markdown
 
 ### Script de backup
 
@@ -346,7 +346,7 @@ pg_dump -U $DB_USER -d $DB_NAME \
 find $BACKUP_DIR -name "*.dump" -mtime +7 -delete
 
 echo "Backup concluído: $DB_NAME-$DATE.dump"
-```
+```markdown
 
 ### Restore
 
@@ -484,7 +484,7 @@ model AuditLog {
   @@index([createdAt])
   @@map("audit_logs")
 }
-```
+```markdown
 
 ---
 

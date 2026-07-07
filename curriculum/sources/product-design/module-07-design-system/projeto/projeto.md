@@ -57,7 +57,7 @@ export const colors = {
 // tokens/typography.ts — Defina a type scale (ao menos 6 níveis)
 // tokens/spacing.ts — Defina a escala de spacing (base 8px, ao menos 10 valores)
 // tokens/effects.ts — Defina shadows e border-radius
-```
+```markdown
 
 ### 2. Componentes
 
@@ -96,13 +96,13 @@ Para cada componente, crie **stories** do Storybook:
 
 // Modal.stories.ts
 // - Pelo menos 3 stories (sm, md, lg, com footer)
-```
+```markdown
 
 ### 4. Estratégia de Consumo
 
 Crie um plano de como o DS será consumido pelos 4 produtos:
 
-```
+```javascript
 package.json — exports, sideEffects, build config
 src/index.ts — barrel export
 src/styles.css — CSS custom properties
@@ -113,7 +113,7 @@ Responda:
 3. Como garantir tree-shaking?
 4. Como versionar (SemVer)?
 5. Como documentar breaking changes?
-```
+```markdown
 
 ### 5. Estratégia de Adoção
 

@@ -42,7 +42,7 @@ interface DesignTokens {
     easing: Record<string, string>;
   };
 }
-```
+```yaml
 
 Tarefas:
 1. Escolha uma cor primária para a marca (justifique com base no segmento RH)
@@ -103,7 +103,7 @@ Implemente dark mode completo:
 Implemente uma página funcional que demonstre o sistema. Escolha UMA das telas abaixo:
 
 #### Opção A — Dashboard de Recrutamento
-```
+```text
 ┌──────────────────────────────────────────────┐
 │  Header (logo + search + avatar + theme btn) │
 ├──────────┬───────────────────────────────────┤
@@ -117,10 +117,10 @@ Implemente uma página funcional que demonstre o sistema. Escolha UMA das telas 
 │          │  │ (DataTable com sort+page)    │   │
 │          │  └─────────────────────────────┘   │
 └──────────┴───────────────────────────────────┘
-```
+```markdown
 
 #### Opção B — Formulário de Cadastro de Funcionário
-```
+```text
 ┌─────────────────────────────────┐
 │  Header + Breadcrumb            │
 ├─────────────────────────────────┤
@@ -140,10 +140,10 @@ Implemente uma página funcional que demonstre o sistema. Escolha UMA das telas 
 │  └───────────────────────────┘  │
 │  [Salvar] [Cancelar]           │
 └─────────────────────────────────┘
-```
+```markdown
 
 #### Opção C — Kanban de Processo Seletivo
-```
+```text
 ┌──────────────────────────────────────────────┐
 │  Header + Filtros + Botão "Nova vaga"        │
 ├──────────┬──────────┬──────────┬─────────────┤
@@ -157,7 +157,7 @@ Implemente uma página funcional que demonstre o sistema. Escolha UMA das telas 
 │ │Dev   │ │ │Dev   │ │ │Dev   │ │             │
 │ └──────┘ │ └──────┘ │ └──────┘ │             │
 └──────────┴──────────┴──────────┴─────────────┘
-```
+```sql
 
 Requisitos da página:
 - Use **todos os 5 componentes core** (Button, Input, Modal, DataTable, Select)
@@ -171,7 +171,7 @@ Requisitos da página:
 
 Crie um arquivo `README.md` com:
 
-```
+```markdown
 # PeopleFlow — Design System
 
 ## Tokens
@@ -195,13 +195,13 @@ Crie um arquivo `README.md` com:
 ```typescript
 import { Button, Input, Modal, DataTable, Select } from '@peopleflow/ui';
 import { ThemeProvider, useTheme } from '@peopleflow/ui/theme';
-```
+```markdown
 
 ## Contribuição
 - Convenções de código
 - Como adicionar novo componente
 - Como testar
-```
+```markdown
 
 ## Critérios de avaliação
 

@@ -109,7 +109,7 @@ Ao integrar IA:
 
 ## Fluxo de trabalho recomendado
 
-```
+```text
 Sprint 1 (Setup):
   DevOps → Docker, CI/CD, infra cloud
   Backend → Auth + Tenant modules
@@ -135,4 +135,4 @@ Sprint 5 (Polish & Deploy):
   DevOps → Deploy produção, monitoramento ativo
   Documentação → README, ADRs, Swagger, runbook
   Preparação → Pitch, demo, slides
-```
+```text

@@ -46,7 +46,7 @@ interface Crazy8ProjectResult {
   justification: string;
   refinedWireframe: WireframeSpec;
 }
-```
+```markdown
 
 ### 2. Grey Box — Tela de Cadastro de Transação (weight: 20%)
 
@@ -83,7 +83,7 @@ interface GreyBoxProjectResult {
     success: WireframeElement[];
   };
 }
-```
+```markdown
 
 ### 3. Wireflow — Fluxo Completo de Lançamento Financeiro (weight: 25%)
 
@@ -119,7 +119,7 @@ interface WireflowProjectResult {
     errorPaths: string[];
   };
 }
-```
+```yaml
 
 ### 4. Anatomia da Tela — Especificação Enterprise (weight: 20%)
 
@@ -159,7 +159,7 @@ const dashboardDoc: WireframeDocumentation = {
     { role: 'DesignLead', name: '', date: '', status: 'pending' },
   ],
 };
-```
+```markdown
 
 ### 5. Especificação de Handoff (weight: 20%)
 
@@ -197,7 +197,7 @@ interface HandoffProjectResult {
   };
   notes: string;
 }
-```
+```markdown
 
 Preencha todos os campos com valores realistas e observações relevantes para o desenvolvedor (ex: "ordenar por data decrescente", "coluna valor com formatação monetária", "em mobile transformar tabela em cards").
 

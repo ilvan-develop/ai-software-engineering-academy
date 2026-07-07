@@ -29,7 +29,7 @@ model Post {
   author    User     @relation(fields: [authorId], references: [id])
   createdAt DateTime @default(now())
 }
-```
+```sql
 
 Além do soft delete:
 - O service deve filtrar posts deletados automaticamente
@@ -50,7 +50,7 @@ model Order {
   userId    String
   // ...
 }
-```
+```yaml
 
 Crie:
 1. Um audit log que registra cada mudança de status
@@ -70,7 +70,7 @@ Formato do log:
   "userId": "user123",
   "timestamp": "..."
 }
-```
+```markdown
 
 ---
 
@@ -92,7 +92,7 @@ model Transaction {
 
   @@index([type])
 }
-```
+```text
 
 Consultas comuns:
 1. Buscar todas as transações de uma conta

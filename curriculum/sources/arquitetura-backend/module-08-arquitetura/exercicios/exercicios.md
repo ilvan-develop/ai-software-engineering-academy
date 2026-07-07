@@ -12,7 +12,7 @@ class UserService {
   generateReport() { /* SQL + formata + exporta */ }
   sendNewsletter() { /* seleciona + envia */ }
 }
-```
+```text
 
 **Código B:**
 ```typescript
@@ -23,7 +23,7 @@ class DiscountCalculator {
     if (type === 'clearance') return value * 0.3;
   }
 }
-```
+```text
 
 **Código C:**
 ```typescript
@@ -36,7 +36,7 @@ class MySQLUserRepository {
 class UserService {
   private repo = new MySQLUserRepository(); // dependência concreta
 }
-```
+```markdown
 
 ---
 
@@ -119,7 +119,7 @@ app.post('/users', async (req, res) => {
 });
 
 app.listen(3000);
-```
+```text
 
 Refatore criando:
 1. `domain/entities/user.ts`

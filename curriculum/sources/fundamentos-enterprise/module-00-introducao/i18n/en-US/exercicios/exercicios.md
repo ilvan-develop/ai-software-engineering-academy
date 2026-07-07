@@ -50,7 +50,7 @@ Use o formato:
 
 ## Testes
 - ...
-```
+```markdown
 
 ---
 

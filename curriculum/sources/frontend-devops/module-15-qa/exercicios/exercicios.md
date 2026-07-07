@@ -35,7 +35,7 @@ class ProductService {
     return product;
   }
 }
-```
+```yaml
 
 Cubra:
 - Criação com sucesso
@@ -66,7 +66,7 @@ export class ProductController {
   @Delete(':id')
   async remove(@Param('id') id: string) { /* ... */ }
 }
-```
+```yaml
 
 Cubra:
 - POST /products com dados válidos → 201
@@ -109,7 +109,7 @@ class OrderService {
     // Implementar seguindo TDD
   }
 }
-```
+```yaml
 
 Passos:
 1. RED: Escreva o teste que espera o erro

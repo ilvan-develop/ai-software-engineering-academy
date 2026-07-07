@@ -19,7 +19,7 @@ Causas:
   - Banco de dados diferente
   - Sistema operacional diferente
   - Permissões diferentes
-```
+```markdown
 
 ### A solução DevOps
 
@@ -33,7 +33,7 @@ CI/CD:
   → Cada push é testado automaticamente
   → Deploy é um processo, não um evento
   → Rollback rápido se algo der errado
-```
+```markdown
 
 ---
 
@@ -54,7 +54,7 @@ CI/CD:
 │  │  Sistema (Alpine Linux)          │  │
 │  └──────────────────────────────────┘  │
 └────────────────────────────────────────┘
-```
+```markdown
 
 ### Dockerfile multi-stage (o padrão correto)
 
@@ -146,7 +146,7 @@ services:
 volumes:
   postgres_data:
   redis_data:
-```
+```markdown
 
 ### .dockerignore
 
@@ -158,7 +158,7 @@ dist
 .gitignore
 *.md
 coverage
-```
+```markdown
 
 ---
 
@@ -267,7 +267,7 @@ jobs:
             docker compose pull
             docker compose up -d --force-recreate
             docker system prune -f
-```
+```markdown
 
 ---
 
@@ -289,7 +289,7 @@ REDIS_URL=redis://localhost:6379
 # API
 PORT=3000
 NODE_ENV=development
-```
+```markdown
 
 ### Validação na inicialização
 
@@ -341,7 +341,7 @@ Passo 1: Deploy da versão verde
 Passo 2: Testar versão verde
 Passo 3: Troca LB para verde
 Passo 4: Se erro, troca de volta (rollback imediato)
-```
+```sql
 
 ### Rolling Update
 
@@ -352,7 +352,7 @@ Passo 3: Repete até todas serem v2
 
 Prós: Sem downtime
 Contras: Duas versões convivem
-```
+```markdown
 
 ### Canary Release
 
@@ -362,7 +362,7 @@ Se estável → 25% → 50% → 100%
 
 Prós: Risco mínimo
 Contras: Complexo de configurar
-```
+```markdown
 
 ---
 
@@ -391,7 +391,7 @@ services:
   redis:
     ports:
       - "6379:6379"
-```
+```markdown
 
 ### docker-compose.prod.yml (produção)
 
@@ -470,7 +470,7 @@ async live(): Promise<{ status: string }> {
   // Liveness = servidor está rodando
   return { status: 'alive' };
 }
-```
+```markdown
 
 ### Graceful Shutdown
 
@@ -530,7 +530,7 @@ app.useLogger(
     ],
   })
 );
-```
+```markdown
 
 ### Exemplo de log estruturado
 

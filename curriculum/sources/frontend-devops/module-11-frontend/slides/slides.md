@@ -11,7 +11,7 @@ Server Components, performance e acessibilidade
 
 ## Slide 2: Server vs Client Components
 
-```
+```text
 Server Component (padrão):
   ✅ Renderiza no servidor
   ✅ Acessa banco/API direto
@@ -24,7 +24,7 @@ Client Component ("use client"):
   ✅ useState, useEffect, eventos
 
 Regra: Server por padrão, Client só quando precisar
-```
+```markdown
 
 ---
 
@@ -36,7 +36,7 @@ async function ProductsPage() {
   const products = await prisma.product.findMany();
   return <ProductList products={products} />;
 }
-```
+```text
 
 - Sem `useEffect`
 - Sem estado de loading
@@ -47,7 +47,7 @@ async function ProductsPage() {
 
 ## Slide 4: Os 3 estados de todo componente
 
-```
+```text
 1. Loading (Suspense)
    ┌──────────────────────┐
    │  [Skeleton loading]  │
@@ -64,7 +64,7 @@ async function ProductsPage() {
    │  Nenhum resultado    │
    │  [Adicionar]         │
    └──────────────────────┘
-```
+```markdown
 
 ---
 
@@ -80,7 +80,7 @@ export async function createProduct(formData: FormData) {
   await prisma.product.create({ data: result.data });
   revalidatePath('/products');
 }
-```
+```markdown
 
 Sem API Route, sem fetch, tipagem automática
 
@@ -96,7 +96,7 @@ const useCartStore = create<CartStore>((set, get) => ({
   })),
   total: () => get().items.reduce(...),
 }));
-```
+```markdown
 
 Simples, tipado, sem boilerplate
 
@@ -104,30 +104,30 @@ Simples, tipado, sem boilerplate
 
 ## Slide 7: Acessibilidade — WCAG 2.1
 
-```
+```yaml
 Perceptível:  aria-label em ícones
 Operável:     navegação por teclado
 Compreensível: labels em formulários
 Robusto:      role="alert" em mensagens
-```
+```text
 
 ```typescript
 <button aria-label="Fechar">
   <XIcon />
 </button>
 <label htmlFor="email">Email</label>
-```
+```markdown
 
 ---
 
 ## Slide 8: Responsividade Mobile-first
 
-```
+```text
 grid grid-cols-1        Mobile: 1 coluna
   sm:grid-cols-2        Tablet: 2 colunas
   lg:grid-cols-3        Desktop: 3 colunas
   xl:grid-cols-4        Wide: 4 colunas
-```
+```text
 
 Sidebar vira drawer:
 - Mobile: fixed + -translate-x-full
@@ -137,18 +137,18 @@ Sidebar vira drawer:
 
 ## Slide 9: Performance
 
-```
+```javascript
 Imagens:    next/image (WebP, lazy, blur placeholder)
 Fontes:     next/font (swap, auto-otimizada)
 Código:     dynamic import (só carrega quando precisa)
 Cache:      staleTime no TanStack Query
-```
+```markdown
 
 ---
 
 ## Slide 10: Estrutura do projeto
 
-```
+```text
 app/
 ├── layout.tsx          (Root Layout)
 ├── page.tsx            (Home)
@@ -163,7 +163,7 @@ app/
 │       └── page.tsx    (Formulário)
 └── actions/
     └── products.ts     (Server Actions)
-```
+```markdown
 
 ---
 

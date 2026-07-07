@@ -19,7 +19,7 @@ Implementar uma API REST completa para um e-commerce usando NestJS + Prisma + Po
 
 ### 1. Estrutura de pastas
 
-```
+```text
 src/
 ├── modules/
 │   ├── products/
@@ -29,7 +29,7 @@ src/
 │   └── auth/
 ├── common/
 └── main.ts
-```
+```markdown
 
 ### 2. Schema Prisma
 

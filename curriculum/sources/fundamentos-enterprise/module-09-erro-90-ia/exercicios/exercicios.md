@@ -53,7 +53,7 @@ const upload = multer({ storage });
 app.post('/upload', upload.single('file'), (req, res) => {
   res.json({ message: 'Arquivo enviado com sucesso!' });
 });
-```
+```text
 
 **O que verificar:**
 - Erro 1: confiar cegamente? Há problemas de segurança?

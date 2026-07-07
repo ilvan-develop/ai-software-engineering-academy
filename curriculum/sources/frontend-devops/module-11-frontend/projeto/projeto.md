@@ -28,7 +28,7 @@ Criar um dashboard administrativo completo usando Next.js App Router, Server Com
 
 ### Estrutura
 
-```
+```text
 app/
 ├── layout.tsx
 ├── page.tsx                    (Dashboard)
@@ -54,7 +54,7 @@ app/
     ├── products.ts
     ├── users.ts
     └── orders.ts
-```
+```markdown
 
 ### Entregáveis
 

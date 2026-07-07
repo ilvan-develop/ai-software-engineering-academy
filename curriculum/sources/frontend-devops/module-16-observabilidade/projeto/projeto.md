@@ -49,7 +49,7 @@ services:
   loki:
   grafana:
   tempo:  # ou jaeger
-```
+```markdown
 
 ### 5. Dashboard Grafana
 

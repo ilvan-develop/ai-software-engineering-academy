@@ -11,12 +11,12 @@ Protegendo sistemas Enterprise contra ameaças reais
 
 ## Slide 2: O custo de uma falha
 
-```
+```text
 Dados vazados
 Multas LGPD (até 2% do faturamento)
 Perda de confiança dos clientes
 Custo de remediação: R$ 200k-2M
-```
+```markdown
 
 Custo de prevenir: treinamento + ferramentas + processo
 
@@ -24,7 +24,7 @@ Custo de prevenir: treinamento + ferramentas + processo
 
 ## Slide 3: Mindset de segurança
 
-```
+```text
 ❌ "Segurança é do DevOps"
 ❌ "Depois a gente adiciona"
 ❌ "Ninguém vai atacar"
@@ -32,7 +32,7 @@ Custo de prevenir: treinamento + ferramentas + processo
 ✅ "Segurança é de todos"
 ✅ "Parte da definição de 'pronto'"
 ✅ "Se tem valor, vai ser atacado"
-```
+```markdown
 
 ---
 
@@ -58,7 +58,7 @@ Custo de prevenir: treinamento + ferramentas + processo
 
 ## Slide 6: JWT Flow
 
-```
+```yaml
 Login → Access Token (15min) + Refresh Token (7d)
 
 Requisição:
@@ -67,7 +67,7 @@ Requisição:
 Expirou?
   POST /auth/refresh { refreshToken }
   → novos tokens (com rotação)
-```
+```markdown
 
 ---
 
@@ -85,52 +85,52 @@ can('update', 'Order', { userId: user.id, status: 'pending' });
 
 // Ninguém deleta
 cannot('delete', 'all');
-```
+```markdown
 
 ---
 
 ## Slide 8: Rate Limiting
 
-```
+```yaml
 Login:       5 tentativas/minuto
 Password Reset: 3 tentativas/minuto
 API geral:   60 requisições/minuto
 Upload:      10 requisições/minuto
 
 Resposta: 429 Too Many Requests
-```
+```markdown
 
 ---
 
 ## Slide 9: Headers de Segurança
 
-```
+```text
 Helmet ativa:
   Content-Security-Policy
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   Strict-Transport-Security
   Referrer-Policy: no-referrer
-```
+```markdown
 
 ---
 
 ## Slide 10: Proteções específicas
 
-```
+```yaml
 SQL Injection:    ORM + queries parametrizadas
 XSS:              DOMPurify (frontend)
 CSRF:             csurf token (backend)
 
 Nunca:
   SELECT * FROM users WHERE email = '${email}'
-```
+```markdown
 
 ---
 
 ## Slide 11: Secrets Management
 
-```
+```typescript
 ❌ Código fonte:         API_KEY = 'sk-123'
 ❌ .env commitado:       DB_PASSWORD=minha-senha
 ❌ Logs:                 console.log(user.cpf)
@@ -138,7 +138,7 @@ Nunca:
 ✅ .env.example (sem valores reais)
 ✅ .env oculto (.gitignore)
 ✅ Validação na inicialização
-```
+```markdown
 
 ---
 

@@ -11,14 +11,14 @@ Construindo seu exército de agentes especializados
 
 ## Slide 2: Agente genérico vs. especializados
 
-```
+```yaml
 Genérico:                     Especializados:
 Frontend: ⭐⭐                 Frontend: ⭐⭐⭐⭐⭐
 Backend:  ⭐⭐⭐                Backend:  ⭐⭐⭐⭐⭐
 Segurança: ⭐                  Segurança: ⭐⭐⭐⭐⭐
 Banco:    ⭐⭐                  Banco:    ⭐⭐⭐⭐⭐
 DevOps:   ⭐                    DevOps:   ⭐⭐⭐⭐⭐
-```
+```markdown
 
 Código "funciona" vs. código de produção
 
@@ -26,7 +26,7 @@ Código "funciona" vs. código de produção
 
 ## Slide 3: Anatomia de um agente
 
-```
+```text
 ┌──────────────────────────────┐
 │  IDENTIDADE                  │
 │  → Quem é, o que sabe, limites│
@@ -43,7 +43,7 @@ Código "funciona" vs. código de produção
 │  COMUNICAÇÃO                 │
 │  → Formato entrada/saída     │
 └──────────────────────────────┘
-```
+```markdown
 
 ---
 
@@ -80,7 +80,7 @@ Código "funciona" vs. código de produção
 
 **Security Expert Agent**
 
-```
+```yaml
 Domínio: Segurança de aplicações web
 Conhecimento: OWASP Top 10, JWT, bcrypt, Helmet
 Responsabilidades:
@@ -90,13 +90,13 @@ Checklist:
   - [ ] Senhas com bcrypt
   - [ ] JWT com expiração curta
   - [ ] CSP e Helmet configurados
-```
+```markdown
 
 ---
 
 ## Slide 8: Pipeline de features
 
-```
+```text
 Product Discovery → UX Designer → UI Designer
          ↓
 Enterprise Architect
@@ -104,7 +104,7 @@ Enterprise Architect
 Backend + Frontend + Prisma + Security
          ↓
 QA → DevOps → Auditor → Documentation
-```
+```markdown
 
 Cada etapa: agente certo, artefato certo, qualidade certa
 
@@ -112,7 +112,7 @@ Cada etapa: agente certo, artefato certo, qualidade certa
 
 ## Slide 9: Prompt eficaz vs. ineficaz
 
-```
+```yaml
 RUIM: "Crie uma API de usuários."
 
 BOM: "Crie API REST com NestJS + Clean Architecture.
@@ -120,7 +120,7 @@ BOM: "Crie API REST com NestJS + Clean Architecture.
       Validações: email único, senha 8+ chars.
       Stack: Prisma + Zod + Swagger.
       Regras: tratamento de erros com filters."
-```
+```markdown
 
 ---
 
@@ -128,7 +128,7 @@ BOM: "Crie API REST com NestJS + Clean Architecture.
 
 **Agentes que criam agentes**
 
-```
+```text
 1. Meta-Agent analisa o problema
 2. Identifica domínios necessários
 3. Cria agente para cada domínio
@@ -136,7 +136,7 @@ BOM: "Crie API REST com NestJS + Clean Architecture.
 5. Testa e ajusta cada agente
 6. Combina em pipeline
 7. Executa o pipeline completo
-```
+```markdown
 
 ---
 

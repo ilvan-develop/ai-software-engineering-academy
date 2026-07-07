@@ -135,7 +135,7 @@ Crie um arquivo `README.md` na raiz do repositório contendo:
 
 ## Exemplo de Estrutura do Repositório
 
-```
+```text
 pagbrasil-api/
 ├── .github/
 │   ├── workflows/
@@ -174,7 +174,7 @@ pagbrasil-api/
 ├── tsconfig.json
 ├── package.json
 └── README.md
-```
+```markdown
 
 ---
 

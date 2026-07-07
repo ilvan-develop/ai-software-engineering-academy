@@ -25,7 +25,7 @@ Cada empresa que se cadastra no TaskHub vira um **tenant**. Dentro do tenant, os
 
 ### Estrutura do Projeto
 
-```
+```text
 taskhub/
 ├── src/
 │   ├── tenant/
@@ -71,7 +71,7 @@ taskhub/
 ├── docker-compose.yml
 ├── package.json
 └── tsconfig.json
-```
+```markdown
 
 ## Entregáveis
 
@@ -99,7 +99,7 @@ export class TenantMiddleware implements NestMiddleware {
     // 6. next()
   }
 }
-```
+```text
 
 Crie também o decorator `@Tenant()`:
 
@@ -116,7 +116,7 @@ export const Tenant = createParamDecorator(
 getProfile(@Tenant() tenant: TenantInfo) { ... }
 @Get('plan')
 getPlan(@Tenant('plan') plan: string) { ... }
-```
+```markdown
 
 ### 2. TenantRepository Genérico (src/common/repositories/)
 
@@ -172,7 +172,7 @@ class TenantRepository<T extends BaseEntity> {
     // WHERE tenantId + filtros
   }
 }
-```
+```yaml
 
 ### 3. Feature Flags por Plano (src/plans/)
 
@@ -201,7 +201,7 @@ export class ProjectsController {
     return this.projectsService.generateReports();
   }
 }
-```
+```markdown
 
 ### 4. Prisma Schema e Migrations (prisma/ + scripts/)
 
@@ -240,7 +240,7 @@ model User {
 }
 
 // Project, Task — similar pattern
-```
+```markdown
 
 ### 5. Testes de Isolamento (test/tenant-isolation.spec.ts)
 
@@ -288,7 +288,7 @@ describe('TaskHub — Isolamento Multi-Tenant', () => {
     it('Enterprise acessa customDomain', async () => { /* ... */ });
   });
 });
-```
+```markdown
 
 ### 6. Pool Manager (src/common/pool-manager.ts)
 

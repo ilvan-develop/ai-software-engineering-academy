@@ -39,7 +39,7 @@ A regra prática: **automatize tudo que for executado mais de 2 vezes.**
 ```text
 Custo de automatizar = (tempo para criar + tempo para manter) × custo-hora
 Benefício = (tempo economizado por execução × frequência × horizonte) - custo
-```
+```markdown
 
 Se o benefício for positivo em 6 meses, vale a pena automatizar.
 
@@ -219,7 +219,7 @@ deploy:
     - main
   when: manual
   environment: production
-```
+```markdown
 
 ---
 
@@ -282,7 +282,7 @@ describe('POST /users', () => {
     expect(response.json()).toHaveProperty('id')
   })
 })
-```
+```markdown
 
 ### Testes E2E
 
@@ -309,7 +309,7 @@ e2e:
     - run: pnpm test:e2e
       env:
         BASE_URL: http://localhost:3000
-```
+```text
 
 ```typescript
 // E2E com Playwright
@@ -324,7 +324,7 @@ test('usuário consegue finalizar compra', async ({ page }) => {
 
   await expect(page.locator('text=Pedido confirmado')).toBeVisible()
 })
-```
+```markdown
 
 ---
 
@@ -411,7 +411,7 @@ new aws.ecs.Service('app-service', {
     securityGroups: [config.require('securityGroupId')],
   },
 })
-```
+```markdown
 
 ### CloudFormation (AWS)
 
@@ -482,7 +482,7 @@ iac-apply:
       with:
         name: tfplan
     - run: terraform apply tfplan
-```
+```markdown
 
 ---
 
@@ -498,7 +498,7 @@ USUÁRIOS → Load Balancer → Blue (v1.0) ✅
 
 Switch: DNS/ALB aponta para Green
 Rollback: reverter DNS para Blue
-```
+```markdown
 
 ### Canary Deployment
 
@@ -553,7 +553,7 @@ services:
       rollback_config:
         parallelism: 1
         order: stop-first
-```
+```markdown
 
 ### Feature Flags
 
@@ -603,7 +603,7 @@ migrate:
     - run: pnpm db:migrate
       env:
         DATABASE_URL: ${{ secrets.DATABASE_URL }}
-```
+```markdown
 
 ### Exemplo com Prisma Migrate
 
@@ -661,7 +661,7 @@ seed()
     process.exit(1)
   })
   .finally(() => prisma.$disconnect())
-```
+```yaml
 
 ### Rollback Automático
 
@@ -731,7 +731,7 @@ security-sast:
         image-ref: meuregistro/app:${{ github.sha }}
         format: sarif
         output: trivy-results.sarif
-```
+```markdown
 
 ### DAST (Dynamic Application Security Testing)
 
@@ -775,7 +775,7 @@ dependency-scan:
     # npm audit
     - name: npm audit
       run: pnpm audit --audit-level=high
-```
+```markdown
 
 ---
 
@@ -852,7 +852,7 @@ updates:
     commit-message:
       prefix: "chore"
       include: "scope"
-```
+```markdown
 
 ---
 
@@ -910,7 +910,7 @@ docs: atualiza README
 refactor: extrai lógica de pagamento para serviço
 perf: otimiza consulta de histórico
 test: adiciona testes para o módulo de notas fiscais
-```
+```markdown
 
 ### Changelog Gerado Automaticamente
 
@@ -928,7 +928,7 @@ O `semantic-release` com plugin `@semantic-release/changelog` gera:
 ### Bug Fixes
 * **auth:** corrige timeout na renovação do token ([ghi9012](https://github.com/org/repo/commit/ghi9012))
 * **validacao:** CPF com formatação agora é aceito ([jkl3456](https://github.com/org/repo/commit/jkl3456))
-```
+```markdown
 
 ---
 
@@ -1009,7 +1009,7 @@ vercel-preview:
         vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
         github-token: ${{ secrets.GITHUB_TOKEN }}
         github-comment: true
-```
+```markdown
 
 ---
 
@@ -1079,7 +1079,7 @@ async function healService(cluster: string, service: string) {
 }
 
 healService('production', 'app-service').catch(console.error)
-```
+```markdown
 
 ### Runbooks Automáticos
 
@@ -1185,7 +1185,7 @@ runs:
         cache: pnpm
     - run: pnpm install --frozen-lockfile
       shell: bash
-```
+```text
 
 Uso da action reutilizável:
 
@@ -1220,7 +1220,7 @@ test-matrix:
       with:
         node-version: ${{ matrix.node-version }}
     - run: pnpm test:ci
-```
+```markdown
 
 ### Pipeline de Deploy com Environments e Gates
 

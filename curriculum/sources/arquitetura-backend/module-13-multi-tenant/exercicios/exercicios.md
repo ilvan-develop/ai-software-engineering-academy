@@ -43,7 +43,7 @@ export class TenantMiddleware implements NestMiddleware {
     // 5. Anexar ao request e chamar next()
   }
 }
-```
+```markdown
 
 **Bônus:** Use `AsyncLocalStorage` para manter o contexto do tenant e crie um decorator `@Tenant()` para injetar o tenant nos controllers.
 
@@ -96,7 +96,7 @@ class TenantRepository<T extends BaseEntity> {
     // Implementar com COUNT + tenant_id
   }
 }
-```
+```text
 
 Crie também uma factory:
 
@@ -113,7 +113,7 @@ class RepositoryFactory {
 // Uso
 const userRepo = RepositoryFactory.create<User>('users', pool);
 const acmeUsers = userRepo('acme'); // TenantRepository<User> com tenantId = acme
-```
+```markdown
 
 ---
 
@@ -149,7 +149,7 @@ const PLANS: Record<string, PlanFeatures> = {
     advancedReports: true, auditLog: true,
   },
 };
-```
+```yaml
 
 Implemente:
 
@@ -176,7 +176,7 @@ export class UsersController {
     // Só cria se não excedeu limite de usuários do plano
   }
 }
-```
+```markdown
 
 **Dica:** Guards precisam acessar o `TenantService` para saber o plano.
 
@@ -237,7 +237,7 @@ class PoolManager {
     // Implementar: retornar estatísticas de cada pool
   }
 }
-```
+```markdown
 
 **Bônus:** Adicione um `setInterval` que roda `closeIdlePools` a cada minuto.
 
@@ -296,7 +296,7 @@ describe('Isolamento entre Tenants', () => {
     // 4. Repetir como Enterprise — deve funcionar
   });
 });
-```
+```text
 
 **Dica:** Use `beforeEach` para limpar dados entre os testes e garantir isolamento também nos testes.
 
@@ -309,4 +309,4 @@ it('prova de isolamento — query sem WHERE tenant_id retorna dados de todos', a
   const tenants = new Set(result.rows.map((r: any) => r.tenant_id));
   expect(tenants.size).toBeGreaterThan(1);
 });
-```
+```text

@@ -31,9 +31,9 @@
 - Tela de abertura com titulo do modulo. Animacao suave com o nome do curso.
 
 **Texto na tela:**
-```
+```json
 [TITULO] Módulo 13c — Multi-Tenant: Migrations, Dados e Seed
-```
+```text
 
 **Notas de direcao:**
 - Tom energico e convidativo. Apresentar o problema que sera resolvido.
@@ -51,9 +51,9 @@
 - Slides com topicos-chave. Diagrama explicativo
 
 **Texto na tela:**
-```
+```json
 [1. Migrations Multi-Tenant]
-```
+```text
 
 **Notas de direcao:**
 - Secao 2 de 4. Usar exemplos praticos.
@@ -71,9 +71,9 @@
 - Slides com topicos-chave. Diagrama explicativo
 
 **Texto na tela:**
-```
+```json
 [2. Dados Compartilhados vs Por Tenant]
-```
+```text
 
 **Notas de direcao:**
 - Secao 3 de 4. Usar exemplos praticos.
@@ -91,9 +91,9 @@
 - Slides com topicos-chave. Diagrama explicativo
 
 **Texto na tela:**
-```
+```json
 [3. Seed por Tenant]
-```
+```text
 
 **Notas de direcao:**
 - Secao 4 de 4. Usar exemplos praticos.
@@ -111,7 +111,7 @@
 - Tela dividida: editor de codigo a esquerda, terminal/output a direita.
 
 **Texto na tela:**
-```
+```text
 ```typescript
 // migrate-all-tenants.ts
 import { Pool } from 'pg';
@@ -125,8 +125,8 @@ async function migrateAllTenants(): Promise<void> {
   ];
 
   const migrations = await readMigrationFiles();
-```
-```
+```text
+```javascript
 
 **Notas de direcao:**
 - Explicar linha por linha. Destacar pontos importantes com zoom ou realce.
@@ -144,11 +144,11 @@ async function migrateAllTenants(): Promise<void> {
 - Lista resumida com icones. Transicao suave para encerramento.
 
 **Texto na tela:**
-```
+```text
 ✓ 1. Migrations Multi-Tenant
 ✓ 2. Dados Compartilhados vs Por Tenant
 ✓ 3. Seed por Tenant
-```
+```text
 
 **Notas de direcao:**
 - Reforcar os aprendizados principais. Conectar com o proximo modulo.
@@ -166,9 +166,9 @@ async function migrateAllTenants(): Promise<void> {
 - Tela final com links, inscricao, e teaser da proxima aula.
 
 **Texto na tela:**
-```
+```text
 Proximo modulo: [TITULO DO PROXIMO MODULO]
-```
+```text
 
 **Notas de direcao:**
 - Chamada para acao: inscrever-se, comentar, compartilhar.

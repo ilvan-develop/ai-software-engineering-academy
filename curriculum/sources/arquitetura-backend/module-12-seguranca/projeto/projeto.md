@@ -60,7 +60,7 @@ async transfer(@Body() dto: TransferDto, @Req() req) {
 // .env
 DATABASE_URL=postgresql://admin:Admin123!@localhost:5432/fintech
 JWT_SECRET=minha-chave-super-secreta
-```
+```markdown
 
 ## Entregáveis
 

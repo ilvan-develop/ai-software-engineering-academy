@@ -26,7 +26,7 @@ Arquitetura Boa:
   │  "Mudei uma coisa sem quebrar nada"      │
   │  "Testes garantem que funciona"          │
   └──────────────────────────────────────────┘
-```
+```markdown
 
 ### O que arquitetura define
 
@@ -36,7 +36,7 @@ Comunicação:      Como as partes se comunicam?
 Dados:            Como os dados fluem e são armazenados?
 Tecnologia:       Qual stack suporta a estrutura?
 Equipe:           Como o time se organiza para desenvolver?
-```
+```markdown
 
 ---
 
@@ -91,7 +91,7 @@ interface PaymentMethod {
 
 class CreditCardPayment implements PaymentMethod { /* ... */ }
 class PixPayment implements PaymentMethod { /* ... */ }
-```
+```markdown
 
 ### L — Liskov Substitution Principle
 
@@ -132,7 +132,7 @@ interface Worker {
 interface Workable { work(): void; }
 interface Eatable { eat(): void; }
 interface Sleepable { sleep(): void; }
-```
+```markdown
 
 ### D — Dependency Inversion Principle
 
@@ -182,7 +182,7 @@ Clean Architecture é uma arquitetura que organiza o código em **círculos conc
     │   FRAMEWORKS & DRIVERS                        │
     │  (NestJS, Prisma, Next.js, PostgreSQL...)     │
     └──────────────────────────────────────────────┘
-```
+```markdown
 
 ### A Regra da Dependência
 
@@ -196,7 +196,7 @@ Clean Architecture é uma arquitetura que organiza o código em **círculos conc
 ✅ CERTO: Use Case depende de interface
   UseCase → UserRepository (interface)
   PrismaUserRepository → UserRepository (implementa)
-```
+```javascript
 
 ### O que vai em cada camada
 
@@ -223,7 +223,7 @@ Código:  client.openTicket(ticket)  ✅
 
 Negócio: "Um cliente pode abrir um ticket de suporte"
 Código:  client.createSupportTicket(ticket)  ❌ (outra linguagem)
-```
+```markdown
 
 ### Bounded Contexts
 
@@ -236,7 +236,7 @@ Contexto de Vendas:         Contexto de Logística:
   Pedido = carrinho          Pedido = carga para entrega
 
 São modelos DIFERENTES do mesmo conceito!
-```
+```markdown
 
 ### Elementos do DDD
 
@@ -266,7 +266,7 @@ São modelos DIFERENTES do mesmo conceito!
 │  → Regra de negócio sem estado           │
 │  → Opera em múltiplas entidades          │
 └──────────────────────────────────────────┘
-```
+```markdown
 
 ### Exemplo prático de DDD
 
@@ -332,7 +332,7 @@ class AlterarPerfilUseCase {
     await this.emailService.enviarNotificacao(usuario.email);
   }
 }
-```
+```markdown
 
 ---
 
@@ -366,7 +366,7 @@ A arquitetura hexagonal é uma variação da Clean Architecture que usa o concei
                │  (NestJS,    │   │  (Prisma,      │
                │   Express)   │   │   email, queue)│
                └──────────────┘   └────────────────┘
-```
+```markdown
 
 Abaixo, uma visão de container C4 da mesma arquitetura:
 
@@ -417,7 +417,7 @@ class PedidoController {
     return this.criarPedido.execute(this.toInput(body));
   }
 }
-```
+```markdown
 
 ---
 
@@ -440,7 +440,7 @@ Quando usar:
   - Sistema com domínios fortemente acoplados
   - Startup / MVP
   - Quando velocidade > escala
-```
+```markdown
 
 ### Microservices
 
@@ -459,7 +459,7 @@ Quando usar:
   - Domínios claramente separados
   - Escala global
   - Times autônomos por domínio
-```
+```markdown
 
 ### A recomendação
 
@@ -487,7 +487,7 @@ Consumidor:       Quem reage ao evento
 
 Barramento:       Meio de transporte
   → RabbitMQ, Kafka, Redis Pub/Sub
-```
+```markdown
 
 ### Exemplo
 
@@ -538,7 +538,7 @@ class EmailHandler {
 
 ### Estrutura de pastas seguindo Clean Architecture + DDD
 
-```
+```text
 src/
 ├── domain/                    # Círculo mais interno
 │   ├── entities/              # Entidades de domínio

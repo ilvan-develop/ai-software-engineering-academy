@@ -140,7 +140,7 @@ Papéis e responsabilidades dos envolvidos no processo de automação dentro de 
 
 ## Fluxo de Interação entre Agentes
 
-```
+```json
 [Dev] escreve código + testes
   → push → [Pipeline CI] executa lint, test, build, SAST
   → [Code Review] humano + bots (Dependabot, CodeQL)
@@ -151,7 +151,7 @@ Papéis e responsabilidades dos envolvidos no processo de automação dentro de 
   → [Pipeline Deploy] canary → 100% (com feature flags)
   → [SRE] monitora métricas e alertas
   → [Self-Healing] responde automaticamente a incidentes
-```
+```markdown
 
 ---
 

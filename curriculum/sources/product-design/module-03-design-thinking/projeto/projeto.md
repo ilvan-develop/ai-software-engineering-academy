@@ -68,7 +68,7 @@ Conduza teste com **3 participantes** da sua empresa (ou colegas simulando as pe
 ## Iteração
 
 Anexar protótipo ajustado com base no feedback (foto do antes/depois)
-```
+```markdown
 
 ### 5. Discovery Sprint Plan
 
@@ -98,7 +98,7 @@ Monte o plano de uma **Discovery Sprint de 2 semanas** completa:
 | 2      | Qua |           | Testar     |               |         |            |
 | 2      | Qui |           | Iterar     |               |         |            |
 | 2      | Sex |           | Apresentar |               |         |            |
-```
+```markdown
 
 ### 6. Pitch de Apresentação (formato texto)
 

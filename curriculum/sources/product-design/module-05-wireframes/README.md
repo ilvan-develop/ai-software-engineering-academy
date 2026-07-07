@@ -4,9 +4,9 @@
 
 ## Progressão
 
-```
+```text
 Baixa fidelidade → Média fidelidade → Alta fidelidade
-```
+```markdown
 
 ## Ferramentas
 

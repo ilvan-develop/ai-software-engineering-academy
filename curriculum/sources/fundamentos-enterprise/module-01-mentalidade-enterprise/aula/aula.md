@@ -29,7 +29,7 @@ Software de Consumo:                Software Enterprise:
 - Atualização quando quiser         - Atualização com rollback e migração
 - Suporte via chat                  - SLA definido contratualmente
 - Compliance: nenhum                - Compliance: LGPD, SOC2, ISO 27001
-```
+```markdown
 
 ---
 
@@ -51,7 +51,7 @@ Escala Horizontal (Scale Out):
   1 servidor → 10 servidores
   Balanceador de carga na frente
   Limite: gerenciamento de estado
-```
+```markdown
 
 ### O que escalar no sistema Enterprise
 
@@ -60,7 +60,7 @@ Usuários       → Autenticação, session, rate limiting
 Dados          → Índices, partições, sharding
 Funcionalidades→ Módulos, microserviços, feature flags
 Times          → Código modular, documentação, padronização
-```
+```markdown
 
 ### Anti-padrões de escalabilidade
 
@@ -90,7 +90,7 @@ Governança é o conjunto de **regras e processos** que garantem consistência e
 │ Padrões       │ ADRs          │ Retention     │
 │ Arquitetura   │ Documentação  │ Compliance    │
 └───────────────┴───────────────┴──────────────┘
-```
+```markdown
 
 ### Exemplos de regras de governança
 
@@ -137,7 +137,7 @@ Código com manutenibilidade:
   │  Onboarding dev novo   │  1 semana          │
   │  Refatorar módulo     │  2 dias            │
   └────────────────────────────────────────────┘
-```
+```markdown
 
 ### Como garantir manutenibilidade
 
@@ -164,7 +164,7 @@ Exemplos:                       Exemplos:                   Exemplos:
 - log.error("Falha no pgto")    - response_time_p95         - span do endpoint
 - log.info("Usuário logou")     - error_rate                - span do banco
 - log.warn("Rate limit")        - cpu/memory usage          - span do cache
-```
+```markdown
 
 ### O que observar em um sistema Enterprise
 
@@ -187,7 +187,7 @@ Segurança:
   - Tentativas de login falhas
   - Rate limiting acionado
   - Acessos não autorizados
-```
+```markdown
 
 ---
 
@@ -200,7 +200,7 @@ Segurança em software Enterprise não é opcional — é **pré-requisito**.
 ```text
 Não: "Vamos adicionar segurança depois"
 Sim: "Segurança é parte da definição de "pronto""
-```
+```markdown
 
 ### Camadas de segurança
 
@@ -219,7 +219,7 @@ Camada 4: Rede
 
 Camada 5: Infraestrutura
   → Secrets management, network isolation, backup
-```
+```markdown
 
 ### Checklist Enterprise de segurança
 
@@ -283,7 +283,7 @@ async function esquecerUsuario(usuarioId: string) {
     where: { usuarioId },
   });
 }
-```
+```markdown
 
 ---
 
@@ -311,7 +311,7 @@ Row-Level Security:
   Contras: risco de vazamento entre tenants
   Quando: dados de baixa sensibilidade
   Custo: $
-```
+```markdown
 
 ### Implementação prática (RLS no Prisma)
 
@@ -328,7 +328,7 @@ model Usuario {
   tenant    Tenant   @relation(fields: [tenantId], references: [id])
   email     String
 }
-```
+```text
 
 ```typescript
 // Middleware que filtra por tenant
@@ -337,7 +337,7 @@ async function getUsuarios(tenantId: string) {
     where: { tenantId },
   });
 }
-```
+```markdown
 
 ---
 
@@ -353,7 +353,7 @@ Disponibilidade     Downtime/ano       Exemplo
 99.9% (2 noves)    8.76 horas          SaaS padrão
 99.99% (3 noves)   52.56 minutos       Enterprise crítico
 99.999% (4 noves)  5.26 minutos        Missão crítica
-```
+```markdown
 
 ### Estratégias de HA
 
@@ -372,7 +372,7 @@ Recuperação:
   - Health checks → reinício automático
   - Backup automático + testado
   - Disaster recovery plan
-```
+```markdown
 
 ---
 

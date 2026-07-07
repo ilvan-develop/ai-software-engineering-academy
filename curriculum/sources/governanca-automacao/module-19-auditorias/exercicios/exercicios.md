@@ -39,7 +39,7 @@ async function login(email: string, senha: string) {
   }
   throw new Error('Credenciais inválidas');
 }
-```
+```text
 
 **Problemas a identificar:**
 
@@ -61,7 +61,7 @@ Formato:
 
 ## Score
 [Score calculado com justificativa]
-```
+```markdown
 
 ---
 
@@ -96,7 +96,7 @@ Para cada tipo de auditoria abaixo, crie 5 itens de checklist:
 
 Dado o relatório de auditoria abaixo, crie um plano de ação priorizado:
 
-```
+```yaml
 Score geral: 4.2/10
 Riscos: 2 Blocker, 3 Critical, 5 Major, 8 Minor
 
@@ -115,7 +115,7 @@ Major:
 3. Sem health checks nos serviços
 4. Variáveis de ambiente sem .env.example
 5. Imagens sem lazy loading
-```
+```text
 
 Crie o plano:
 

@@ -11,7 +11,7 @@ Da máquina do desenvolvedor à produção
 
 ## Slide 2: O problema clássico
 
-```
+```yaml
 "Funciona na minha máquina" → "Não funciona no servidor"
 
 Causas:
@@ -19,7 +19,7 @@ Causas:
 - Variáveis de ambiente ausentes
 - Banco diferente
 - SO diferente
-```
+```markdown
 
 Docker resolve: **mesmo ambiente em todo lugar**
 
@@ -27,11 +27,11 @@ Docker resolve: **mesmo ambiente em todo lugar**
 
 ## Slide 3: Docker multi-stage
 
-```
+```yaml
 deps:      npm ci → node_modules
 builder:   npm ci + npm run build → dist
 runner:    node_modules + dist (imagem LEVE)
-```
+```yaml
 
 Final: só o necessário para rodar
 Segurança: usuário não-root
@@ -41,13 +41,13 @@ Health check: integrado
 
 ## Slide 4: Pipeline CI/CD
 
-```
+```javascript
 CI (todo push):
   lint → typecheck → test (com banco real) → build
 
 CD (push na main):
   lint → test → build → docker push → deploy SSH
-```
+```markdown
 
 Pipeline falhou? Não vai para produção
 
@@ -64,7 +64,7 @@ const EnvSchema = z.object({
 
 // Falha na inicialização se algo faltar
 if (!result.success) process.exit(1);
-```
+```markdown
 
 Falhe cedo, não no meio da execução
 
@@ -72,7 +72,7 @@ Falhe cedo, não no meio da execução
 
 ## Slide 6: Estratégias de deploy
 
-```
+```yaml
 Blue-Green:
   v1 (ativo) ──► v2 (novo) ──► switch ──► v1 (standby)
 
@@ -81,17 +81,17 @@ Rolling:
 
 Canary:
   5% → 25% → 50% → 100% (risco mínimo)
-```
+```markdown
 
 ---
 
 ## Slide 7: Health checks
 
-```
+```text
 /health    → todas as dependências
 /ready     → pronto para receber tráfego
 /live      → servidor está rodando
-```
+```markdown
 
 Usado pelo Docker e orquestradores
 
@@ -99,7 +99,7 @@ Usado pelo Docker e orquestradores
 
 ## Slide 8: Graceful Shutdown
 
-```
+```text
 SIGTERM recebido:
   1. Parar de aceitar novas conexões
   2. Finalizar requisições em andamento
@@ -107,13 +107,13 @@ SIGTERM recebido:
   4. Sair
 
 Sem graceful shutdown: conexões são cortadas no meio
-```
+```markdown
 
 ---
 
 ## Slide 9: Logs estruturados
 
-```
+```javascript
 ❌ console.log('Usuário logou')
 
 ✅ {
@@ -123,7 +123,7 @@ Sem graceful shutdown: conexões são cortadas no meio
     "userId": "abc123",
     "ip": "192.168.1.1"
   }
-```
+```markdown
 
 JSON é searchável por ferramentas (Datadog, ELK, Grafana)
 
@@ -131,7 +131,7 @@ JSON é searchável por ferramentas (Datadog, ELK, Grafana)
 
 ## Slide 10: Estrutura do projeto
 
-```
+```text
 /
 ├── Dockerfile
 ├── Dockerfile.dev
@@ -145,7 +145,7 @@ JSON é searchável por ferramentas (Datadog, ELK, Grafana)
 │       ├── ci.yml
 │       └── cd.yml
 └── src/
-```
+```markdown
 
 ---
 

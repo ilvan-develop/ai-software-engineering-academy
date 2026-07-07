@@ -37,7 +37,7 @@ async function validateTenantSubdomain(
   if (!subdomain) return null;
   return tenantService.findBySubdomain(subdomain);
 }
-```
+```markdown
 
 ### 1.3 Header HTTP
 
@@ -90,7 +90,7 @@ function extractTenantFromJwt(authHeader?: string): string | null {
     return null; // token inválido
   }
 }
-```
+```markdown
 
 ### 1.5 Path Parameter
 
@@ -116,7 +116,7 @@ function resolveTenant(req: Request): string {
     (() => { throw new BadRequestException('Tenant não identificado'); })()
   );
 }
-```
+```markdown
 
 ---
 
@@ -229,7 +229,7 @@ export class AppModule implements NestModule {
       .forRoutes('*');
   }
 }
-```
+```markdown
 
 ### 2.3 TenantModule
 
@@ -286,7 +286,7 @@ export class TenantService {
     return this.getPlan() === 'enterprise';
   }
 }
-```
+```markdown
 
 ### 2.5 @Tenant() Decorator
 
@@ -357,7 +357,7 @@ function getCurrentTenantId(): string {
   if (!ctx) throw new Error('Fora de contexto de tenant');
   return ctx.tenantId;
 }
-```
+```markdown
 
 ---
 
@@ -437,7 +437,7 @@ class PrismaTenantManager {
 }
 
 export const prismaTenantManager = new PrismaTenantManager();
-```
+```markdown
 
 ### 3.2 Shared Database com Prisma
 
@@ -510,7 +510,7 @@ export class TenantAwareService {
     });
   }
 }
-```
+```markdown
 
 ### 3.3 Prisma Middleware para Tenant
 
@@ -578,4 +578,4 @@ export const tenantExtension = Prisma.defineExtension((client) => {
 
 // Uso
 const prisma = new PrismaClient().$extends(tenantExtension);
-```
+```text

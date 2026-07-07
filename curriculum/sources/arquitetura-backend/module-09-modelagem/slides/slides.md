@@ -11,13 +11,13 @@ Prisma, PostgreSQL e boas práticas
 
 ## Slide 2: Por que modelagem importa
 
-```
+```text
 Modelagem ruim:               Modelagem boa:
 Query lenta                   Queries rápidas
 Dados inconsistentes          Dados íntegros
 Perda de dados                Dados seguros
 Horas de migração             Migrações testadas
-```
+```markdown
 
 Erro de modelagem é o mais caro de corrigir
 
@@ -25,11 +25,11 @@ Erro de modelagem é o mais caro de corrigir
 
 ## Slide 3: Relacionamentos
 
-```
+```yaml
 1:1  → User ── Profile
 1:N  → User ──< Order
 N:M  → Product >─< Category
-```
+```sql
 
 No Prisma: `@relation`, `@unique` (1:1), `@@id([a, b])` (N:M)
 
@@ -42,7 +42,7 @@ model User {
   id        String
   deletedAt DateTime?   // Nunca deletar fisicamente
 }
-```
+```text
 
 ```typescript
 // Service
@@ -52,7 +52,7 @@ async softDelete(id: string) {
     data: { deletedAt: new Date() },
   });
 }
-```
+```markdown
 
 ---
 
@@ -66,7 +66,7 @@ model AuditLog {
   changes  Json?    // { before, after }
   userId   String?
 }
-```
+```javascript
 
 Toda ação importante é registrada
 
@@ -78,7 +78,7 @@ Toda ação importante é registrada
 @@index([userId])              // FK
 @@index([userId, status])      // Filtro comum
 @@index([createdAt])           // Ordenação
-```
+```yaml
 
 Regras:
 - Toda FK precisa de índice
@@ -102,19 +102,19 @@ for (const order of orders) {
 const orders = await prisma.order.findMany({
   include: { items: true, user: true },
 });
-```
+```markdown
 
 ---
 
 ## Slide 8: Migrações seguras
 
-```
+```text
 Expand → Migrate → Contract
 
 Passo 1: Adicionar coluna (nullable)
 Passo 2: Preencher dados
 Passo 3: Remover coluna antiga (próxima release)
-```
+```yaml
 
 Nunca: renomear/deletar coluna diretamente
 
@@ -122,23 +122,23 @@ Nunca: renomear/deletar coluna diretamente
 
 ## Slide 9: Backup
 
-```
+```yaml
 Full:       Diário, cópia completa
 Incremental: Horário, só mudanças
 WAL:         Contínuo, point-in-time recovery
 
 Regra: teste o restore periodicamente!
-```
+```markdown
 
 ---
 
 ## Slide 10: Schema completo
 
-```
+```text
 tenants → users → orders → order_items
                         ↓
                   products ← audit_logs
-```
+```sql
 
 Índices, soft delete, audit trail, enums
 

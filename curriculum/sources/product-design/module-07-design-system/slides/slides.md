@@ -11,7 +11,7 @@ Como construir, manter e escalar sistemas de design no Enterprise
 
 ## Slide 2: O que é Design System?
 
-```
+```text
 Style Guide:             Component Library:         Design System:
 "Guia de estilos"        "Biblioteca de             "Ecossistema vivo"
                          componentes"
@@ -21,7 +21,7 @@ grid                     tabelas, cards              processos,
                                                      governance,
 ─ Estático               ─ Dinâmico                  tooling,
 ─ PDF/doc                ─ npm package               documentação
-```
+```markdown
 
 > "Um Design System não é um projeto. É um produto que serve outros produtos."
 
@@ -29,7 +29,7 @@ grid                     tabelas, cards              processos,
 
 ## Slide 3: Atomic Design (Brad Frost)
 
-```
+```text
 Átomos ─→ Moléculas ─→ Organismos ─→ Templates ─→ Páginas
   │            │             │             │            │
 Botão       Input +       Formulário    Layout da     Página de
@@ -37,7 +37,7 @@ Botão       Input +       Formulário    Layout da     Página de
 Label       Error =       Footer        cadastro      (com dados)
 Tag         Campo de      = Página      (vazia)
 Cor
-```
+```markdown
 
 5 níveis de complexidade → do mais simples ao mais completo
 
@@ -47,13 +47,13 @@ Cor
 
 Variáveis visuais que abstraem decisões de design:
 
-```
+```text
 Cores           Tipografia          Spacing          Efeitos
 ──────────      ──────────          ────────         ────────
 Primary 500     display-xl          spacing-4        shadow-md
 Semantic error  body                spacing-8        radius-lg
 Neutral 900     caption             spacing-16       radius-full
-```
+```text
 
 ```typescript
 const colors = {
@@ -61,7 +61,7 @@ const colors = {
   semantic: { success: '#10b981', error: '#ef4444' },
   neutral: { 100: '#f3f4f6', 900: '#111827' },
 } as const;
-```
+```markdown
 
 ---
 
@@ -77,7 +77,7 @@ interface ButtonProps {
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
 }
-```
+```sql
 
 | Variant | Visual | Uso |
 |---------|--------|-----|
@@ -91,7 +91,7 @@ interface ButtonProps {
 
 ## Slide 6: Componentes — Input, Select, Modal, Table
 
-```
+```yaml
 Input:                              Select:
 ┌─────────────────────────────────┐ ┌─────────────────────────────────┐
 │ Email                           │ │  Cargo                          │
@@ -109,7 +109,7 @@ Modal:                              Table:
 │ ────────────────────        │   └─────────┴─────────┴─────────┘
 │ [Cancelar] [Salvar]         │
 └─────────────────────────────┘
-```
+```markdown
 
 Cada componente: padronizado, acessível, documentado, testado
 
@@ -132,7 +132,7 @@ export default {
 export const Primary = {
   args: { variant: 'primary', children: 'Salvar' },
 };
-```
+```text
 
 Storybook oferece:
 - 📖 Documentação automática (autodocs)
@@ -145,7 +145,7 @@ Storybook oferece:
 
 ## Slide 8: Versionamento — SemVer
 
-```
+```text
 MAJOR (1.x.x → 2.0.0):
   Breaking changes
   Button: `appearance="primary"` → `variant="primary"`
@@ -160,7 +160,7 @@ PATCH (x.x.1 → x.x.2):
   Correções
   Contraste do Button danger
   Fechamento do Modal via Escape
-```
+```text
 
 ❌ Breaking sem aviso → projetos quebram
 ✅ Depreciação gradual + migration guide + codemod
@@ -169,14 +169,14 @@ PATCH (x.x.1 → x.x.2):
 
 ## Slide 9: Consumo em Projetos
 
-```
+```javascript
 npm package (@empresa/design-system)
          │
          ├── Tree-shaking (import { Button })
          ├── CSS Custom Properties (theming)
          ├── ThemeProvider (contexto)
          └── Types (TypeScript)
-```
+```text
 
 ```json
 {
@@ -186,19 +186,19 @@ npm package (@empresa/design-system)
     "./tokens": "./dist/tokens/index.js"
   }
 }
-```
+```text
 
 ```typescript
 // Consumo
 import { Button, Modal, Input } from '@empresa/design-system';
 import '@empresa/design-system/styles.css';
-```
+```markdown
 
 ---
 
 ## Slide 10: Manutenção e Governance
 
-```
+```text
 DS Squad:
 ┌────────────────────────────────────┐
 │  Core Team (dedicado)              │
@@ -211,7 +211,7 @@ DS Squad:
 │  ├── Devs frontend                 │
 │  └── QA / Acessibilidade           │
 └────────────────────────────────────┘
-```
+```text
 
 Processo de contribuição:
 1. RFC → 2. Review DS Squad → 3. Implementação → 4. Code Review (design + a11y) → 5. Release
@@ -243,16 +243,16 @@ pnpm init
 pnpm add react react-dom
 pnpm add -D typescript vite storybook
 pnpm dlx storybook@latest init --builder=vite
-```
+```text
 
-```
+```javascript
 my-design-system/
 ├── tokens/          → colors, typography, spacing
 ├── src/components/  → Button, Input, Modal, Table, Select
 ├── src/index.ts     → barrel export
 ├── .storybook/      → main.ts, preview.ts
 └── vite.config.ts   → build lib
-```
+```markdown
 
 Próximo passo: criar o primeiro componente com tokens!
 

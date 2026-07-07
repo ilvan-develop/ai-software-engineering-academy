@@ -15,11 +15,11 @@ Resolvendo problemas complexos com empatia, criatividade e iteração
 
 Abordagem **human-centered** para solução de problemas
 
-```
+```yaml
 TRADICIONAL:                            DESIGN THINKING:
 Problema → Análise → Solução            Problema → Empatia → Definir → Ideias
                                                   → Protótipo → Teste → ↻
-```
+```text
 
 **Mindset:**
 - Centrado no ser humano
@@ -38,7 +38,7 @@ Problema → Análise → Solução            Problema → Empatia → Definir 
 
 ## Slide 4: As 5 Fases
 
-```
+```text
                ┌─────────────┐
                │  EMPATIZAR  │
                └──────┬──────┘
@@ -58,7 +58,7 @@ Problema → Análise → Solução            Problema → Empatia → Definir 
           ┌─────────────────────┐
           │       TESTAR        │←──── Iteração
           └─────────────────────┘
-```
+```text
 
 | Fase | Pergunta |
 |------|----------|
@@ -79,7 +79,7 @@ Técnicas:
 - **Observação** — O que fazem vs. o que dizem
 - **Imersão** — Viver a experiência do usuário
 
-```
+```text
 Mapa de Empatia:
 ┌─────────────┬─────────────┐
 │   FALA      │    FAZ      │
@@ -88,7 +88,7 @@ Mapa de Empatia:
 ├─────────────┴─────────────┤
 │   DORES      │   GANHOS   │
 └─────────────┴─────────────┘
-```
+```markdown
 
 ---
 
@@ -96,21 +96,21 @@ Mapa de Empatia:
 
 **Sintetizar para focar.**
 
-```
+```yaml
 Problem Statement:
 [USUÁRIO] precisa de [NECESSIDADE] porque [INSIGHT]
 
 Exemplo:
 "Maria, analista de BI, precisa gerar relatórios
 sem depender do TI porque cada solicitação leva 3 dias"
-```
+```text
 
 **How Might We (HMW):**
-```
+```text
 HMW tornar a criação de relatórios tão fácil
 quanto escrever um email?
 HMW reduzir o tempo de 3 dias para 5 minutos?
-```
+```markdown
 
 ---
 
@@ -118,14 +118,14 @@ HMW reduzir o tempo de 3 dias para 5 minutos?
 
 **Quantidade gera qualidade.**
 
-```
+```text
 REGRAS DO BRAINSTORMING:
 1. Quantidade primeiro
 2. Sem críticas
 3. Construa sobre ideias alheias
 4. Ideias selvagens são bem-vindas
 5. Seja visual
-```
+```text
 
 **Crazy 8:** 8 ideias em 8 minutos (1 min/ideia)
 
@@ -140,7 +140,7 @@ REGRAS DO BRAINSTORMING:
 
 ## Slide 8: Crazy 8 na prática
 
-```
+```text
 ┌──────────┬──────────┬──────────┬──────────┐
 │ Ideia 1  │ Ideia 2  │ Ideia 3  │ Ideia 4  │
 │          │          │          │          │
@@ -150,7 +150,7 @@ REGRAS DO BRAINSTORMING:
 │          │          │          │          │
 │ (esboço) │ (esboço) │ (esboço) │ (esboço) │
 └──────────┴──────────┴──────────┴──────────┘
-```
+```markdown
 
 Dobre a folha em 8 — 1 minuto por quadrante — sem julgar
 
@@ -160,11 +160,11 @@ Dobre a folha em 8 — 1 minuto por quadrante — sem julgar
 
 **Transformar ideias em algo tangível.**
 
-```
+```text
 BAIXA FIDELIDADE                  ALTA FIDELIDADE
 ├─────────────────────────────────────────────┤
 Papel → Wireframe → Mockup → Clicável → MVP
-```
+```text
 
 | Tipo | Tempo | Custo | Iterações |
 |------|-------|-------|-----------|
@@ -179,7 +179,7 @@ Use papel primeiro — sempre.
 
 ## Slide 10: Protótipo de baixa fidelidade
 
-```
+```text
 ┌──────────────────────┐
 │ 📱 09:41          ≡ │
 ├──────────────────────┤
@@ -197,7 +197,7 @@ Use papel primeiro — sempre.
 ├──────────────────────┤
 │ 🏠  🔍  🛒  👤     │
 └──────────────────────┘
-```
+```markdown
 
 Desenhe, corte, cole — teste em 5 minutos
 
@@ -207,9 +207,9 @@ Desenhe, corte, cole — teste em 5 minutos
 
 **Validar com usuários reais.**
 
-```
+```text
 PROTÓTIPO → TESTAR → APRENDER → ITERAR → PROTÓTIPO ↻
-```
+```text
 
 **O que observar:**
 - O usuário completa a tarefa?
@@ -217,10 +217,10 @@ PROTÓTIPO → TESTAR → APRENDER → ITERAR → PROTÓTIPO ↻
 - O que verbaliza?
 
 **Erro comum:**
-```
+```text
 ❌ "Aqui você clica nesse botão..."
 ✅ "O que você faria agora?"
-```
+```markdown
 
 **5 usuários já revelam 85% dos problemas** (Nielsen Norman Group)
 
@@ -230,25 +230,25 @@ PROTÓTIPO → TESTAR → APRENDER → ITERAR → PROTÓTIPO ↻
 
 **Complementares, não concorrentes.**
 
-```
+```text
 DESIGN THINKING               SCRUM
 ────────────────────          ──────────────────
 Empatizar                     Sprint 0 / Discovery
 Definir                       Product Backlog
 Ideiar                        Sprint Planning
 Prototipar + Testar           Sprint + Review
-```
+```text
 
 **Two-track model:**
 
-```
+```text
 DISCOVERY (DT) ─── hipóteses validadas ───→ DELIVERY (Ágil)
-```
+```text
 
 **Kanban com Discovery:**
-```
+```text
 | BACKLOG | DISCOVERY | IDEATION | PROTOT. | DEV | DONE |
-```
+```markdown
 
 ---
 
@@ -271,7 +271,7 @@ DISCOVERY (DT) ─── hipóteses validadas ───→ DELIVERY (Ágil)
 
 ## Slide 14: Anti-padrões
 
-```
+```text
 ❌ Pular empatia
    "Já conhecemos nossos usuários" → Solução errada
 
@@ -286,7 +286,7 @@ DISCOVERY (DT) ─── hipóteses validadas ───→ DELIVERY (Ágil)
 
 ❌ Brainstorming sem regras
    Líder domina, ideias morrem → Mesmas soluções
-```
+```markdown
 
 ---
 

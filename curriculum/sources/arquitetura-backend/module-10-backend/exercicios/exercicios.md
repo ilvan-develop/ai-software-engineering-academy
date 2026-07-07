@@ -33,7 +33,7 @@ interface CreateOrderInput {
   discount?: number;         // 0-100 (percentual)
   notes?: string;            // max 500 caracteres
 }
-```
+```markdown
 
 Crie o schema Zod e o pipe de validação.
 
@@ -62,7 +62,7 @@ async findAll(
 ) {
   // Implementar
 }
-```
+```yaml
 
 Inclua:
 - Filtro por categoria (query param `category`)
@@ -104,7 +104,7 @@ export class ApiController {
     return { success: true };
   }
 }
-```
+```text
 
 Problemas a corrigir:
 - Nomes de rotas inconsistentes

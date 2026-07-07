@@ -15,7 +15,7 @@ Classifique cada atividade como **Discovery (D)** ou **Delivery (V)**:
 8. (  ) Fazer deploy de uma nova versão do app
 9. (  ) Conduzir sessão de ideação com o time
 10. (  ) Criar wireframe de fluxo de recuperação de senha
-```
+```markdown
 
 Justifique cada resposta em uma frase.
 
@@ -25,11 +25,11 @@ Justifique cada resposta em uma frase.
 
 Transforme as afirmações abaixo em **hipóteses testáveis** usando o formato:
 
-```
+```text
 Acreditamos que [solução] para [público]
 resultará em [outcome].
 Saberemos que estamos certos quando [métrica/meta].
-```
+```text
 
 **a)** "O usuário não finaliza a compra porque o frete é caro."
 
@@ -103,7 +103,7 @@ O Product Owner recebeu estas demandas para o próximo quarter:
 6. "Dark mode"                                — Time de design
 7. "API pública"                              — 5 prospects em reunião
 8. "Dashboard com métricas de time"           — 3 clientes pagantes
-```
+```text
 
 Seu trabalho:
 

@@ -11,13 +11,13 @@ Código sem teste é legacy
 
 ## Slide 2: O custo de não testar
 
-```
+```yaml
 Sem testes:               Com testes:
 Bug em prod: 2 dias       Bug: 0 (teste pegou)
 Correção: 1 hora          Correção: 30 min
 Regressão: 3 bugs         Regressão: 0
 Confiança: baixa          Confiança: alta
-```
+```markdown
 
 **Teste não é custo. É investimento.**
 
@@ -25,7 +25,7 @@ Confiança: baixa          Confiança: alta
 
 ## Slide 3: Pirâmide de testes
 
-```
+```text
       ╱╲
      ╱  ╲     E2E (Playwright) — poucos, lentos
     ╱────────╲
@@ -33,7 +33,7 @@ Confiança: baixa          Confiança: alta
   ╱────────────────╲
  ╱                  ╲  Unitários (Jest) — muitos, rápidos
 ╱──────────────────────╲
-```
+```markdown
 
 70% unitários, 20% integração, 10% E2E
 
@@ -57,7 +57,7 @@ describe('UserService', () => {
     });
   });
 });
-```
+```markdown
 
 ---
 
@@ -79,7 +79,7 @@ expect(repo.save).toHaveBeenCalledTimes(1);
 expect(repo.save).toHaveBeenCalledWith(
   expect.objectContaining({ name: 'João' })
 );
-```
+```markdown
 
 ---
 
@@ -93,7 +93,7 @@ request(app.getHttpServer())
   .expect(res => {
     expect(res.body).toHaveProperty('id');
   });
-```
+```markdown
 
 Testa controller + validação + service + banco
 
@@ -113,7 +113,7 @@ test('deve criar produto', async ({ page }) => {
 
   await expect(page.locator('text=Produto X')).toBeVisible();
 });
-```
+```markdown
 
 ---
 
@@ -128,7 +128,7 @@ coverageThreshold: {
     statements: 80,
   },
 }
-```
+```markdown
 
 **Mínimo 80%** — pipeline quebra se abaixo
 
@@ -136,14 +136,14 @@ coverageThreshold: {
 
 ## Slide 9: CI com Testes
 
-```
+```javascript
 Todo push:
   npm run lint
   npm run typecheck
   npm run test          (unitários + cobertura)
   npm run test:e2e      (integração)
   npm run test:playwright (E2E)
-```
+```markdown
 
 Se algum falhar: ❌ pipeline vermelho = não merge
 
@@ -151,13 +151,13 @@ Se algum falhar: ❌ pipeline vermelho = não merge
 
 ## Slide 10: TDD — Red/Green/Refactor
 
-```
+```yaml
 1. RED:     Escrever teste que falha
 2. GREEN:   Código mínimo para passar
 3. REFACTOR: Melhorar código mantendo testes verdes
 
 Benefício: código nasce testado
-```
+```markdown
 
 ---
 

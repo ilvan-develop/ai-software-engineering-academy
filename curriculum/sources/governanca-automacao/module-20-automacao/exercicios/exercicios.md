@@ -49,14 +49,14 @@
 
 **Exemplo de saída esperada:**
 
-```
+```json
 [2025-06-15T10:30:00Z] 🔍 Verificando cluster: production
 [2025-06-15T10:30:01Z] ✅ app-service: 3/3 tasks running
 [2025-06-15T10:30:02Z] 🔧 worker-service: 1/2 tasks running — forçando deploy...
 [2025-06-15T10:30:03Z] ✅ worker-service: deploy forçado enviado
 [2025-06-15T10:30:04Z] ⚠️ worker-service: task stopped — exit code 137 (OOMKilled)
 [2025-06-15T10:30:05Z] 📤 Notificação enviada ao Slack
-```
+```markdown
 
 ---
 
@@ -92,7 +92,7 @@ const stack = pulumi.getStack()
 // ... seu código aqui
 
 export const url = loadBalancer.dnsName
-```
+```markdown
 
 ---
 

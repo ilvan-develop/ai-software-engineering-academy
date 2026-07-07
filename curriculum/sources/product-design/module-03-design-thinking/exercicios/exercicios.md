@@ -6,7 +6,7 @@ Você é o tech lead de um time que vai construir um novo **sistema de onboardin
 
 Conduza uma sessão de empatia fictícia e preencha o mapa de empatia para o persona **"Carlos, dev junior de 24 anos, primeiro emprego em tech"** :
 
-```
+```text
 ┌──────────────────────────────────────────────────────┐
 │                   MAPA DE EMPATIA                     │
 ├──────────────┬───────────────────────────────────────┤
@@ -24,7 +24,7 @@ Conduza uma sessão de empatia fictícia e preencha o mapa de empatia para o per
 │  DORES (Frustrações)     GANHOS (Desejos)             │
 │                                                       │
 └───────────────────────────────────────────────────────┘
-```
+```markdown
 
 **Entregue:** O mapa preenchido com pelo menos 3 itens por quadrante.
 
@@ -39,7 +39,7 @@ Com base no mapa de empatia do Exercício 1, crie:
 
 Avalie cada HMW usando a matriz de priorização:
 
-```
+```text
                ALTO IMPACTO
                     │
     ┌───────────────┼───────────────┐
@@ -54,7 +54,7 @@ Avalie cada HMW usando a matriz de priorização:
                     │
                BAIXO IMPACTO
      BAIXO ESFORÇO ──────── ALTO ESFORÇO
-```
+```markdown
 
 **Entregue:** Problem statement + 8 HMWs + matriz priorizada com os HMWs posicionados.
 
@@ -109,7 +109,7 @@ Com o protótipo do Exercício 3, conduza um teste de usabilidade com um colega.
 | 2      |            |       |            |       |             |
 | 3      |            |       |            |       |             |
 | 4      |            |       |            |       |             |
-```
+```text
 
 **Entregue:** Relatório de teste com:
 - Tabela de observações preenchida
@@ -147,7 +147,7 @@ Planeje uma Discovery Sprint de 2 semanas seguindo o Design Thinking. Preencha:
 | Qua |           |               |         |            |
 | Qui |           |               |         |            |
 | Sex |           |               |         |            |
-```
+```text
 
 **Entregue:** O cronograma completo com:
 - Mínimo de 5 técnicas diferentes de DT

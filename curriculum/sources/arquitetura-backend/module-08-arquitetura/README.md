@@ -4,9 +4,9 @@
 
 ## Fluxo
 
-```
+```text
 Arquitetura → Domínio → Camadas → Módulos → Dependências → Padrões
-```
+```javascript
 
 ## Conteúdo
 

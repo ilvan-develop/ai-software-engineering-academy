@@ -42,7 +42,7 @@ Home → Início do curso: 85%
 Início curso → Aula 2: 60%
 Aula 2 → Aula 5: 35%
 Aula 5 → Conclusão: 18%
-```
+```text
 
 - Qual etapa tem a maior queda relativa?
 - Qual hipótese isso gera?
@@ -91,11 +91,11 @@ Crie um User Story Map para a solução que você considera mais promissora:
 
 **a)** Escreva **3 hipóteses** no formato:
 
-```
+```text
 Acreditamos que [solução] para [público]
 resultará em [outcome].
 Saberemos que estamos certos quando [métrica/meta].
-```
+```text
 
 **b)** Para cada hipótese, proponha um experimento (pode ser diferente — landing page, protótipo, teste A/B, concierge MVP) e detalhe:
 

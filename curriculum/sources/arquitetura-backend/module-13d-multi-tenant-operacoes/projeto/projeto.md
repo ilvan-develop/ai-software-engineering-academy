@@ -51,7 +51,7 @@ Voce foi contratado como arquiteto de software para construir um sistema enterpr
 
 ## Estrutura Esperada
 
-```
+```yaml
 projeto-módulo-13d---multi-tenant:-operações-e-qualidade/
 ├── src/
 │   ├── core/          # Logica de dominio
@@ -69,7 +69,7 @@ projeto-módulo-13d---multi-tenant:-operações-e-qualidade/
 ├── README.md
 ├── package.json
 └── tsconfig.json
-```
+```markdown
 
 ---
 

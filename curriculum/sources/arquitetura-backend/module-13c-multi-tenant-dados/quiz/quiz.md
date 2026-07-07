@@ -1,18 +1,12 @@
 # Quiz — Módulo 13c — Multi-Tenant: Migrations, Dados e Seed
 
-
-
 **Total de perguntas:** 10
 
 **Distribuição:** 2 Fáceis, 5 Médias, 3 Difíceis
 
 **Tempo estimado:** 20 minutos
 
-
-
 ---
-
-
 
 ## Pergunta 1 (Fácil)
 
