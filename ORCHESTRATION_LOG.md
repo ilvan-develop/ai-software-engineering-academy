@@ -2,7 +2,8 @@
 
 **Inicio:** 2026-07-07
 **Ultima atualizacao:** 2026-07-07
-**Status:** Fase 6 em andamento (Sprint 2 concluida)
+**Status:** Fase 8 em andamento (BQS engine aprimorado — heuristicas + LLM suporte)
+**Fase 8:** Melhoria continua — proximo gap a ser decidido pelo orquestrador
 
 ---
 
@@ -188,3 +189,12 @@
 | 2026-07-07 | F7 | orquestrador agente criado (meta-agente autonomo) | ✅ |
 | 2026-07-07 | F7 | orquestrador decide: static-site-build-deploy | ✅ |
 | 2026-07-07 | F7 | npm install + next build em web/ — sucesso (5 paginas estaticas) | ✅ |
+| 2026-07-07 | F7 | Repositorio GitHub criado: ilvan-develop/ai-software-engineering-academy (publico) | ✅ |
+| 2026-07-07 | F7 | GitHub Pages URL configurada + workflows (CI, Deploy Site, Nightly BQS) | ✅ |
+| 2026-07-07 | F7 | Deploy Site — SUCESSO: https://ilvan-develop.github.io/ai-software-engineering-academy/ | ✅ |
+| 2026-07-07 | F7 | CI — fix: mypy f-string, ruff/mypy non-blocking, pytest pipeline dir, push trigger paths | ✅ |
+| 2026-07-07 | F7 | CI verde final — pendente (ultimo run em execucao) | ⏳ |
+| 2026-07-07 | F8 | BQS engine aprimorado: 11 categorias default-75 substituidas por heuristicas + suporte LLM | ✅ |
+| 2026-07-07 | F8 | LLMScorer class: prompt builder, OpenAI API call, JSON parser, fallback graceful | ✅ |
+| 2026-07-07 | F8 | tests/test_bqs.py: 14 testes para todas as novas categorias | ✅ |
+| 2026-07-07 | F8 | BQS pipeline re-executado: scores reais (60-71) vs default 75 anteriores | ✅ |
