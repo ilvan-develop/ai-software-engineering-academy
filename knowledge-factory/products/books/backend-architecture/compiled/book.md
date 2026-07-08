@@ -6,7 +6,7 @@
 
 
 
-**Autor:** AI Software Engineering Academy
+**Autor:** Ilvan Joaquim
 
 **Idioma:** pt-BR
 

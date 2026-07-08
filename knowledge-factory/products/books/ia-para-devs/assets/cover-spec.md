@@ -32,7 +32,7 @@
 
 A descrição da capa para fins de acessibilidade deve seguir o padrão:
 
-**Alt text:** "Capa do livro IA para Desenvolvedores: fundo gradiente do azul escuro (#1A1A2E) para azul médio (#0F3460) com linhas abstratas de circuito em coral (#E94560) a 30% de opacidade. Título 'IA PARA DESENVOLVEDORES' em Calibri Bold branco centralizado. Subtítulo 'Como Usar Inteligência Artificial para Programar Melhor — sem Cair nos Erros Comuns' em Calibri Light coral. Autor 'AI Software Engineering Academy' em Calibri Regular cinza claro na parte inferior."
+**Alt text:** "Capa do livro IA para Desenvolvedores: fundo gradiente do azul escuro (#1A1A2E) para azul médio (#0F3460) com linhas abstratas de circuito em coral (#E94560) a 30% de opacidade. Título 'IA PARA DESENVOLVEDORES' em Calibri Bold branco centralizado. Subtítulo 'Como Usar Inteligência Artificial para Programar Melhor — sem Cair nos Erros Comuns' em Calibri Light coral. Autor 'Ilvan Joaquim' em Calibri Regular cinza claro na parte inferior."
 
 ---
 
@@ -72,5 +72,5 @@ A descrição da capa para fins de acessibilidade deve seguir o padrão:
 
 - Fundo: sólido #1A1A2E
 - Texto: resumo do livro em Calibri Light 10pt, branco
-- CTA: "Disponível em AI Software Engineering Academy"
+- CTA: "Disponível em Ilvan Joaquim — AI Software Engineering Academy"
 - Código de barras: canto inferior direito

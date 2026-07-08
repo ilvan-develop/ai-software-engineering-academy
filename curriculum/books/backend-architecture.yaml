@@ -5,7 +5,7 @@ book:
   id: "backend-architecture"
   title: "Arquitetura Backend Enterprise"
   subtitle: "Clean Architecture, DDD, Segurança e Multi-Tenancy com TypeScript"
-  author: "AI Software Engineering Academy"
+  author: "Ilvan Joaquim"
   language: pt-BR
   edition: 1
   year: 2026
