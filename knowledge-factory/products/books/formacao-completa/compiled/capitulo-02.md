@@ -7,7 +7,25 @@
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 01 Mentalidade Enterprise
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. O que é software Enterprise?
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Software Enterprise é aquele construído para **organizações**, não para indivíduos.
 
@@ -32,7 +50,23 @@ Software de Consumo:                Software Enterprise:
 - Atualização quando quiser         - Atualização com rollback e migração
 - Suporte via chat                  - SLA definido contratualmente
 - Compliance: nenhum                - Compliance: LGPD, SOC2, ISO 27001
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ---
 
@@ -54,7 +88,7 @@ Escala Horizontal (Scale Out):
   1 servidor → 10 servidores
   Balanceador de carga na frente
   Limite: gerenciamento de estado
-```
+```markdown
 
 ### O que escalar no sistema Enterprise
 
@@ -63,7 +97,7 @@ Usuários       → Autenticação, session, rate limiting
 Dados          → Índices, partições, sharding
 Funcionalidades→ Módulos, microserviços, feature flags
 Times          → Código modular, documentação, padronização
-```
+```markdown
 
 ### Anti-padrões de escalabilidade
 
@@ -93,7 +127,7 @@ Governança é o conjunto de **regras e processos** que garantem consistência e
 │ Padrões       │ ADRs          │ Retention     │
 │ Arquitetura   │ Documentação  │ Compliance    │
 └───────────────┴───────────────┴──────────────┘
-```
+```markdown
 
 ### Exemplos de regras de governança
 
@@ -140,7 +174,7 @@ Código com manutenibilidade:
   │  Onboarding dev novo   │  1 semana          │
   │  Refatorar módulo     │  2 dias            │
   └────────────────────────────────────────────┘
-```
+```markdown
 
 ### Como garantir manutenibilidade
 
@@ -167,7 +201,7 @@ Exemplos:                       Exemplos:                   Exemplos:
 - log.error("Falha no pgto")    - response_time_p95         - span do endpoint
 - log.info("Usuário logou")     - error_rate                - span do banco
 - log.warn("Rate limit")        - cpu/memory usage          - span do cache
-```
+```markdown
 
 ### O que observar em um sistema Enterprise
 
@@ -190,7 +224,7 @@ Segurança:
   - Tentativas de login falhas
   - Rate limiting acionado
   - Acessos não autorizados
-```
+```markdown
 
 ---
 
@@ -203,7 +237,7 @@ Segurança em software Enterprise não é opcional — é **pré-requisito**.
 ```text
 Não: "Vamos adicionar segurança depois"
 Sim: "Segurança é parte da definição de "pronto""
-```
+```markdown
 
 ### Camadas de segurança
 
@@ -222,7 +256,7 @@ Camada 4: Rede
 
 Camada 5: Infraestrutura
   → Secrets management, network isolation, backup
-```
+```markdown
 
 ### Checklist Enterprise de segurança
 
@@ -286,7 +320,7 @@ async function esquecerUsuario(usuarioId: string) {
     where: { usuarioId },
   });
 }
-```
+```markdown
 
 ---
 
@@ -314,7 +348,7 @@ Row-Level Security:
   Contras: risco de vazamento entre tenants
   Quando: dados de baixa sensibilidade
   Custo: $
-```
+```markdown
 
 ### Implementação prática (RLS no Prisma)
 
@@ -331,7 +365,7 @@ model Usuario {
   tenant    Tenant   @relation(fields: [tenantId], references: [id])
   email     String
 }
-```
+```text
 
 ```typescript
 // Middleware que filtra por tenant
@@ -340,7 +374,7 @@ async function getUsuarios(tenantId: string) {
     where: { tenantId },
   });
 }
-```
+```markdown
 
 ---
 
@@ -356,7 +390,7 @@ Disponibilidade     Downtime/ano       Exemplo
 99.9% (2 noves)    8.76 horas          SaaS padrão
 99.99% (3 noves)   52.56 minutos       Enterprise crítico
 99.999% (4 noves)  5.26 minutos        Missão crítica
-```
+```markdown
 
 ### Estratégias de HA
 
@@ -375,7 +409,7 @@ Recuperação:
   - Health checks → reinício automático
   - Backup automático + testado
   - Disaster recovery plan
-```
+```markdown
 
 ---
 
@@ -390,4 +424,54 @@ Recuperação:
 7. **Compliance** — LGPD/GDPR não são opcionais
 8. **Multi-tenant** — escolha a estratégia de isolamento certa
 9. **Alta disponibilidade** — sem ponto único de falha
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 

@@ -7,7 +7,25 @@
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 19 Auditorias
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. Por que auditoria é o diferencial
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 A maioria dos cursos ensina a **construir** software. Quase nenhum ensina a **avaliar** a qualidade do que foi construído.
 
@@ -23,7 +41,23 @@ Esta formação:
   │  Construir  │  Testar  │  AUDITAR  │  OK   │
   └────────────────────────────────────────────┘
   Nota: score 0-10 com riscos classificados
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### O que uma auditoria responde
 
@@ -58,7 +92,7 @@ Cada dimensão = 0-10 baseado em:
   40% checklists automatizados
   30% análise estática (lint, types, cobertura)
   30% análise qualitativa do auditor
-```
+```markdown
 
 ### Exemplo: Auditoria de uma API
 
@@ -73,7 +107,7 @@ Dimensões avaliadas:
 
 Score geral: (9+10+6+8+7+9) / 6 = 8.2 → "Bom"
 Riscos: 1 Critical, 2 Major, 3 Minor
-```
+```markdown
 
 ---
 
@@ -97,7 +131,7 @@ Riscos: 1 Critical, 2 Major, 3 Minor
 │ADR        │ Isolamento │ Limpeza   │Vuln.     │ Strict mode  │
 │Git Flow   │ RLS        │ Padrões   │Licenças  │ Generics     │
 └───────────┴────────────┴───────────┴──────────┴──────────────┘
-```
+```markdown
 
 ### Auditorias que todo projeto deveria ter
 
@@ -209,7 +243,7 @@ estes itens antes de qualquer release.
 - **Impacto:** Ataque de força bruta ilimitado
 - **Correção:** Implementar @Throttle(5, 60) no endpoint
 - **Dependência:** Nenhuma
-```
+```markdown
 
 ---
 
@@ -240,7 +274,7 @@ Sim:
   │  10. Relatório executivo para stakeholders        │
   │                                                   │
   └──────────────────────────────────────────────────┘
-```
+```markdown
 
 ### Ferramentas para auditoria automatizada
 
@@ -281,7 +315,7 @@ Score 9-10 (Excelente):
   🏆 Referência para outros módulos
   🏆 Compartilhar práticas com o time
   🏆 Foco em inovação, não em correção
-```
+```markdown
 
 ### Para o gestor
 
@@ -292,7 +326,7 @@ Relatório executivo deve conter apenas:
   3. Top 3 riscos que precisam de atenção
   4. Prazo estimado para correções
   5. Impacto nos prazos do projeto
-```
+```markdown
 
 ---
 
@@ -313,6 +347,7 @@ Na nossa biblioteca, o **Auditor Agent** pode ser invocado a qualquer momento:
 
 ### Pipeline de auditoria completa
 
+```text
 ```
 1. Código é implementado pelos agentes especializados
 2. QA Agent executa testes
@@ -321,4 +356,54 @@ Na nossa biblioteca, o **Auditor Agent** pode ser invocado a qualquer momento:
 5. Riscos Blocker/Critical são atribuídos aos agentes corretivos
 6. Agentes corrigem e re-audita
 7. Score mínimo é atingido → deploy autorizado
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 

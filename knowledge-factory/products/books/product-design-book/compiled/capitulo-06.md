@@ -7,7 +7,25 @@
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 07 Design System
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. O que é Design System
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Design System é um **conjunto integrado de padrões, componentes, diretrizes e ferramentas** que orientam a criação de interfaces digitais de forma consistente e escalável.
 
@@ -26,7 +44,23 @@ grid, regras de uso             tabelas, cards                  processos, gover
 
 Exemplo:                        Exemplo:                        Exemplo:
 Manual de marca                 Material UI                     Shopify Polaris
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### Propósito
 
@@ -38,7 +72,7 @@ interface DesignSystemPurpose {
   qualidade:     'Componentes testados, acessíveis, documentados';
   colaboracao:   'Linguagem comum entre devs, designers, PMs, QA';
 }
-```
+```text
 
 > "Design Systems are how we scale design decisions across an organization." — Nathan Curtis
 
@@ -63,7 +97,7 @@ Tag        Campo de      Footer =      estrutura)    reais)
 Cor        texto         Página
 Tipografia
 Espaçamento
-```
+```markdown
 
 #### Átomos
 
@@ -87,7 +121,7 @@ function Label({ text, variant, size }: LabelProps) {
     </span>
   );
 }
-```
+```markdown
 
 #### Moléculas
 
@@ -116,7 +150,7 @@ function TextField({ label, name, value, onChange, error, required }: TextFieldP
     </div>
   );
 }
-```
+```text
 
 #### Organismos
 
@@ -139,7 +173,7 @@ function SignupForm({ onSubmit }: SignupFormProps) {
     </form>
   );
 }
-```
+```markdown
 
 #### Templates e Páginas
 
@@ -165,7 +199,7 @@ function SignupPage() {
     </AuthTemplate>
   );
 }
-```
+```text
 
 ### Por que Atomic Design no Enterprise?
 
@@ -176,7 +210,7 @@ Sem Atomic Design:                         Com Atomic Design:
   que aquele?"                               (sempre consistente)
 "Este formulário quebrou porque            "Mudei o Input, todos os
   mudei o Input em 10 lugares"               formulários atualizam"
-```
+```markdown
 
 ---
 
@@ -220,7 +254,7 @@ export const colors = {
 } as const;
 
 export type ColorToken = keyof typeof colors.semantic;
-```
+```markdown
 
 ### Tipografia
 
@@ -246,7 +280,7 @@ export const typography = {
     'overline':    { fontSize: '0.75rem', lineHeight: '1rem', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.08em' },
   },
 } as const;
-```
+```text
 
 ### Spacing
 
@@ -270,7 +304,7 @@ export const spacing = {
 } as const;
 
 export type SpacingToken = keyof typeof spacing;
-```
+```markdown
 
 ### Shadows, Border Radius e Breakpoints
 
@@ -310,7 +344,7 @@ export const mediaQueries = {
   xl:  `@media (min-width: ${breakpoints.xl}px)`,
   '2xl': `@media (min-width: ${breakpoints['2xl']}px)`,
 } as const;
-```
+```text
 
 ### CSS Custom Properties a partir dos Tokens
 
@@ -356,7 +390,7 @@ export function generateCSSVariables(): string {
 //   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 //   --radius-md: 8px;
 // }
-```
+```markdown
 
 ---
 
@@ -425,7 +459,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     );
   }
 );
-```
+```text
 
 ### Input
 
@@ -483,7 +517,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     );
   }
 );
-```
+```markdown
 
 ### Modal
 
@@ -552,7 +586,7 @@ export function Modal({ open, onClose, title, size = 'md', children, footer }: M
     </div>
   );
 }
-```
+```text
 
 ### Tabela
 
@@ -662,7 +696,7 @@ export function Table<T extends Record<string, unknown>>({
     </div>
   );
 }
-```
+```sql
 
 ### Select
 
@@ -719,7 +753,7 @@ export function Select({ label, options, value, onChange, placeholder, error, re
     </div>
   );
 }
-```
+```text
 
 ---
 
@@ -809,7 +843,7 @@ export const FullWidth: Story = {
     fullWidth: true,
   },
 };
-```
+```markdown
 
 ### Specs e Guidelines
 
@@ -861,7 +895,7 @@ Cada componente deve ter uma **especificação técnica** (spec) e **diretrizes 
 // - @storybook/addon-a11y: auditoria de acessibilidade
 // - @storybook/addon-interactions: testar interações
 // - storybook-addon-designs: embed do Figma
-```
+```markdown
 
 ---
 
@@ -885,7 +919,7 @@ MINOR (x.1.x → x.2.0):
 PATCH (x.x.1 → x.x.2):
   Correções — bug fix, acessibilidade, performance
   Ex: Corrigir contraste do Button danger, ARIA label no Modal
-```
+```markdown
 
 ### Breaking Changes
 
@@ -907,7 +941,7 @@ if (appearance && !variant) {
   console.warn('[DS] Button: `appearance` is deprecated. Use `variant` instead.');
   variant = appearance;
 }
-```
+```text
 
 ### Migration Guides
 
@@ -924,12 +958,12 @@ if (appearance && !variant) {
 ```tsx
 
 **Depois:**
-```
+```text
 <Button variant="primary" />
 ```bash
 
 **Codemod:**
-```
+```text
 npx @acme/ds-codemod button-appearance-to-variant
 ```text
 
@@ -940,7 +974,7 @@ npx @acme/ds-codemod button-appearance-to-variant
 | `size="small"` | `size="sm"` |
 | `size="medium"` | `size="md"` |
 | `size="large"` | `size="lg"` |
-```
+```markdown
 
 ### Changelog
 
@@ -969,7 +1003,7 @@ npx @acme/ds-codemod button-appearance-to-variant
 - Button: `appearance` → `variant`
 - Modal: `size="small"|"medium"|"large"` → `size="sm"|"md"|"lg"`
 - Tokens: `--color-blue-*` → `--color-primary-*`
-```
+```bash
 
 ---
 
@@ -997,7 +1031,7 @@ npx @acme/ds-codemod button-appearance-to-variant
   "sideEffects": false,
   "files": ["dist", "README.md", "LICENSE"]
 }
-```
+```text
 
 ### Tree-shaking
 
@@ -1016,7 +1050,7 @@ export { colors } from './tokens/colors';
 export { typography } from './tokens/typography';
 export { spacing } from './tokens/spacing';
 export { shadows, borderRadius } from './tokens/effects';
-```
+```text
 
 ```typescript
 // Consumo com tree-shaking
@@ -1062,7 +1096,7 @@ export function ThemeProvider({ theme, children }: { theme?: Partial<Theme>; chi
 export function useTheme(): Theme {
   return useContext(ThemeContext);
 }
-```
+```markdown
 
 ### Customização (Override via CSS Custom Properties)
 
@@ -1074,13 +1108,13 @@ export function useTheme(): Theme {
   --radius-md: 4px;
   --font-family-sans: 'Roboto', sans-serif;
 }
-```
+```text
 
 ```typescript
 // Uso
 import '@empresa/design-system/styles.css';
 import './overrides.css';
-```
+```markdown
 
 ---
 
@@ -1108,7 +1142,7 @@ Rituais:
 - Monthly showcase (novos componentes)
 - Quarterly review (ROI, métricas)
 - Voting on RFCs (propostas de mudança)
-```
+```markdown
 
 ### Contribuição
 
@@ -1171,7 +1205,7 @@ interface DesignReviewChecklist {
     'Bundle size < 5KB (gzip) para componente simples',
   ];
 }
-```
+```markdown
 
 ### Changelog Automatizado
 
@@ -1216,7 +1250,7 @@ Sem DS:                          Com DS:
                                   │   │ │   │ │   │
                                   │ok │ │ok │ │ok │
                                   └───┘ └───┘ └───┘
-```
+```markdown
 
 ### Consistência
 
@@ -1230,7 +1264,7 @@ const SquadC = () => <div class="action-btn" onclick={save}>Salvar</div>;
 const SquadA = () => <Button variant="primary">Salvar</Button>;
 const SquadB = () => <Button variant="primary">Salvar</Button>;
 const SquadC = () => <Button variant="primary">Salvar</Button>;
-```
+```markdown
 
 ### Eficiência e ROI
 
@@ -1256,7 +1290,7 @@ Cálculo de ROI:
 
   Custo do DS Squad: 4 pessoas × R$ 250K = R$ 1M/ano
   Net: R$ 3.8M/ano    (fonte: dados hipotéticos para ilustração)
-```
+```markdown
 
 ---
 
@@ -1310,7 +1344,7 @@ my-design-system/
 │   └── preview.ts
 ├── package.json
 └── tsconfig.json
-```
+```markdown
 
 ### Configuração do Vite para build
 
@@ -1340,7 +1374,7 @@ export default defineConfig({
     },
   },
 });
-```
+```markdown
 
 ### Storybook config
 
@@ -1395,11 +1429,12 @@ const preview: Preview = {
 };
 
 export default preview;
-```
+```markdown
 
 ### Estilos base
 
 ```css
+```
 /* src/styles.css */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
@@ -1443,4 +1478,65 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 

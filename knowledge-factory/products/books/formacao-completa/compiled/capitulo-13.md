@@ -7,7 +7,25 @@
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 13 Multi Tenant
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. O que é Multi-Tenancy?
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Multi-tenancy é um padrão arquitetural onde **uma única instância de software atende múltiplos clientes (tenants)**, mantendo os dados de cada um logicamente isolados e invisíveis entre si.
 
@@ -26,7 +44,23 @@ Multi-tenancy é um padrão arquitetural onde **uma única instância de softwar
 │              │  API + DB     │                          │
 │              └───────────────┘                          │
 └──────────────────────────────────────────────────────────┘
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### 1.1 Conceito
 
@@ -84,7 +118,7 @@ Cada tenant tem **seu próprio banco de dados**. O roteador de conexão decide q
 │  │ tenant_1 │  │ tenant_2 │  │ tenant_3 │    │
 │  └──────────┘  └──────────┘  └──────────┘    │
 └──────────────────────────────────────────────┘
-```
+```text
 
 ```typescript
 // Router de conexão com lazy initialization
@@ -147,7 +181,7 @@ Um banco de dados compartilhado, mas cada tenant tem seu **próprio schema** (na
 │  │  products│  │  products│  │  products│    │
 │  └──────────┘  └──────────┘  └──────────┘    │
 └──────────────────────────────────────────────┘
-```
+```text
 
 ```sql
 -- Criar schema para novo tenant
@@ -172,7 +206,7 @@ CREATE TABLE tenant_acme.orders (
 
 -- Query com schema dinâmico
 SELECT * FROM tenant_acme.users WHERE email = 'joao@acme.com';
-```
+```text
 
 ```typescript
 // Abstração para schema dinâmico
@@ -241,7 +275,7 @@ interface Order {
   status: 'pending' | 'paid' | 'cancelled';
   created_at: Date;
 }
-```
+```text
 
 ```typescript
 // Repositório que SEMPRE filtra por tenant
@@ -337,7 +371,7 @@ CREATE POLICY tenant_isolation ON users
 
 -- Na aplicação, antes de qualquer query:
 await pool.query("SET app.tenant_id = 'acme'");
-```
+```sql
 
 ### 3.2 Performance
 
@@ -386,4 +420,65 @@ CREATE INDEX idx_orders_acme_large
 | Migração de plano | Sobe de instância | Altera resource limits | Migra para schema/DB |
 
 ---
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 

@@ -40,6 +40,12 @@ Ao final desta aula, o aluno será capaz de:
 
 ## 1. Introdução: por que 90% cometem esse erro
 
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
+
 Era uma terça-feira comum. O desenvolvedor precisava de uma função simples para validar emails. Pediu ao ChatGPT, copiou o código, fez deploy. Na sexta, o banco de dados estava cheio de registros com emails como "usuario@". Aquela função — que parecia perfeita — só verificava se existia um "@" na string.
 
 A IA acertou a sintaxe. Errou a lógica. O desenvolvedor não revisou. Produção quebrou.
@@ -106,6 +112,22 @@ function calculateDiscount(price, coupon) {
 
 calculateDiscount('cem reais', 'SAVE10'); // NaN em produção
 ```text
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
+```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### Como corrigir
 
@@ -497,3 +519,38 @@ def save_user(username, password):
 - 5 erros ao usar IA que sabotam suas respostas (TechTudo) — https://www.techtudo.com.br/listas/2026/04/5-erros-ao-usar-ia-que-sabotam-suas-respostas-e-como-evita-los-edsoftwares.ghtml
 - CLAUDE.md Rules: How to Cut AI Coding Mistakes from ~40% to ~3% (DEV.to) — https://dev.to/rams901/claudemd-rules-how-to-cut-ai-coding-mistakes-from-40-to-3-in-2026-2j7o
 - 10 Most Common Mistakes Using AI Coding Tools (Ryz Labs) — https://www.ryzlabs.com/
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos

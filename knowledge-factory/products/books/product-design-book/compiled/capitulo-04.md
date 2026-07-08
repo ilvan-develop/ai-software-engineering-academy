@@ -7,7 +7,25 @@
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 05 Wireframes
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. O que são Wireframes
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Wireframe é o **esqueleto visual** de uma tela. É a representação estrutural da interface, focando em **layout, hierarquia, conteúdo e funcionalidade** — sem nenhum polimento visual (cores, fontes, imagens).
 
@@ -22,7 +40,23 @@ Wireframe serve para:
 │  Servir de contrato entre produto e dev      │
 │  Acelerar o ciclo de iteração                │
 └──────────────────────────────────────────────┘
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### Níveis de Fidelidade
 
@@ -47,7 +81,7 @@ interface WireframeElement {
   boundingBox: { x: number; y: number; w: number; h: number };
   placeholder: string; // "imagem do produto", "título"
 }
-```
+```text
 
 ---
 
@@ -65,7 +99,7 @@ interface WireframeElement {
   Hierarquia       Fontes        Navega
   Fluxo            Ícones        Anima
   Sem estilo       Imagens       Testa
-```
+```markdown
 
 ### Comparação
 
@@ -113,7 +147,7 @@ const stages: DesignStage[] = [
     estimatedTime: '2 — 5 dias',
   },
 ];
-```
+```markdown
 
 ---
 
@@ -147,9 +181,9 @@ function colWidth(cols: number, grid: Grid): number {
   const colSize = (contentWidth - totalGutter) / grid.columns;
   return colSize * cols + (cols - 1) * grid.gutter;
 }
-```
+```text
 
-```
+```text
 Wireframe com grid de 12 colunas:
 ┌──────────────────────────────────────────────────┐
 │   Header (12 col)                                │
@@ -160,7 +194,7 @@ Wireframe com grid de 12 colunas:
 ├──────────────────────────┴───────────────────────┤
 │   Footer (12 col)                                │
 └──────────────────────────────────────────────────┘
-```
+```javascript
 
 ### Hierarquia Visual
 
@@ -174,7 +208,7 @@ Hierarquia no wireframe:
 3. Seções de conteúdo         (blocos médios, organizados)
 4. Navegação secundária       (menor, no topo ou sidebar)
 5. Footer                     (menor destaque, no final)
-```
+```markdown
 
 ### Espaçamento
 
@@ -192,7 +226,7 @@ const space = {
 
 // Regra: elementos relacionados ficam mais próximos (8-16px)
 // Seções diferentes ficam mais distantes (32-48px)
-```
+```markdown
 
 ### Proporção
 
@@ -206,7 +240,7 @@ Use proporções familiares para criar harmonia visual:
 ║  3:2   — Imagens de destaque        ║
 ║  2:1   — Painéis e dashboards       ║
 ╚══════════════════════════════════════╝
-```
+```markdown
 
 ---
 
@@ -243,7 +277,7 @@ Use proporções familiares para criar harmonia visual:
   → Componentes reutilizáveis
   → Handoff para devs
   → Protótipos interativos
-```
+```markdown
 
 ### Excalidraw — Exemplo rápido
 
@@ -264,7 +298,7 @@ const loginWireframe: ExcalidrawElement[] = [
   { type: 'text', x: 10, y: 20, width: 200, height: 20, backgroundColor: 'transparent', strokeStyle: 'solid' },
   // ...mais elementos
 ];
-```
+```text
 
 > 💡 **Dica Enterprise**: Figma é o padrão da indústria. Invista em aprender componentes, auto-layout e variants. Balsamiq é ótimo para documentação regulatória (foco em estrutura, não em visual).
 
@@ -283,7 +317,7 @@ Como fazer:
 3. Desenhe 8 versões diferentes (sem repetir)
 4. Ao final, vote na melhor ideia
 5. Refine a vencedora em um wireframe único
-```
+```markdown
 
 ### Grey Box
 
@@ -308,7 +342,7 @@ Exemplo de Grey Box:
 ├─────────────────────────────────────────────────┤
 │  [Links]         [Contato]         © 2025       │  ← footer (cinza escuro)
 └─────────────────────────────────────────────────┘
-```
+```markdown
 
 ### Wireflow
 
@@ -327,7 +361,7 @@ Wireflow de cadastro:
 │ Toast:   │           │ Tela     │
 │ "Email"  │           │ Login    │
 └──────────┘           └──────────┘
-```
+```text
 
 ```typescript
 interface Wireflow {
@@ -342,7 +376,7 @@ interface Transition {
   element?: string;      // elemento que dispara (ex: "btn-login")
   condition?: string;    // condição (ex: "campos válidos")
 }
-```
+```markdown
 
 ### Sketching (Desenho à mão)
 
@@ -355,7 +389,7 @@ Vantagens do sketching:
 ├── Qualquer um participa: não precisa saber ferramenta
 └── Memorável: estudos mostram que esboços manuais
     geram mais feedback honesto que protótipos polidos
-```
+```markdown
 
 ---
 
@@ -402,7 +436,7 @@ Anatomia padrão de uma página:
 │  │ Links│  │ Redes sociais│  │ © 2025 Company   │  │
 │  └──────┘  └──────────────┘  └──────────────────┘  │
 └──────────────────────────────────────────────────────┘
-```
+```markdown
 
 ### Detalhamento dos elementos
 
@@ -442,7 +476,7 @@ interface NavItem {
   active: boolean;
   children?: NavItem[];
 }
-```
+```text
 
 ### Padrões de layout comuns
 
@@ -458,7 +492,7 @@ interface NavItem {
 │   no conteúdo   │  │          │               │  │  │   │ │   │ │   │ │
 │                 │  │          │               │  │  └───┘ └───┘ └───┘ │
 └─────────────────┘  └──────────┴──────────────┘  └─────────────────────┘
-```
+```javascript
 
 ---
 
@@ -477,7 +511,7 @@ interface StatefulComponent {
   name: string;
   states: Record<ComponentState, WireframeElement>;
 }
-```
+```markdown
 
 ### Como representar cada estado no wireframe
 
@@ -500,9 +534,9 @@ interface SkeletonBox {
   borderRadius: number;
   lines?: number;          // para texto simulado
 }
-```
+```text
 
-```
+```text
 Wireframe de estado loading (skeleton):
 ┌──────────────────────────────────────┐
 │  ┌────────────────────────────────┐  │
@@ -515,7 +549,7 @@ Wireframe de estado loading (skeleton):
 │  │ ▓▓▓▓▓    │  │ ▓▓▓▓▓    │          │
 │  └──────────┘  └──────────┘          │
 └──────────────────────────────────────┘
-```
+```markdown
 
 ### Estado Empty
 
@@ -535,7 +569,7 @@ Wireframe de estado vazio (empty):
 │    [Criar Projeto]                    │
 │                                       │
 └──────────────────────────────────────┘
-```
+```markdown
 
 ### Transições
 
@@ -547,9 +581,9 @@ interface Transition {
   duration: number;  // ms
   trigger: string;   // ação do usuário
 }
-```
+```text
 
-```
+```text
 Representação de transição no wireframe:
 ┌────────────┐      push(300ms)      ┌────────────┐
 │  Tela A    │ ────────────────────▶ │  Tela B    │
@@ -566,7 +600,7 @@ Representação de transição no wireframe:
 │ │ [OK]   │ │
 │ └────────┘ │
 └────────────┘
-```
+```markdown
 
 ---
 
@@ -590,7 +624,7 @@ interface Hotspot {
   action: 'navigate' | 'showModal' | 'showToast';
   target: string; // id da tela ou ação
 }
-```
+```text
 
 Ferramentas para criar clickable wireframes:
 - **Figma** — Prototyping mode (conecta frames com setas)
@@ -620,14 +654,14 @@ Roteiro de teste de wireframe:
    - "O que você acha que esse elemento faz?"
    - "O que você esperaria ao clicar aqui?"
    - "Faltou alguma informação?"
-```
+```markdown
 
 ### Iteração
 
 O ciclo ideal:
 ```typescript
 Esboçar → Validar → Aprender → Refinar → (repetir)
-```
+```text
 
 ```typescript
 interface IterationCycle {
@@ -653,7 +687,7 @@ const cycle: IterationCycle = {
   ],
   nextSteps: ['Testar versão 4 com 5 usuários'],
 };
-```
+```markdown
 
 ---
 
@@ -697,13 +731,13 @@ interface Approval {
   status: 'pending' | 'approved' | 'changes_requested';
   comments?: string;
 }
-```
+```text
 
 ### Handoff para Devs
 
 O handoff é o momento em que o wireframe vira código. Para que seja eficiente:
 
-```
+```markdown
 Checklist de handoff (wireframe → dev):
 ──────────────────────────────────────────
 [ ] Grid definido (colunas, gutters, margens)
@@ -735,7 +769,7 @@ interface HandoffSpec {
     responseFields: string[];
   }[];
 }
-```
+```markdown
 
 ### Versionamento
 
@@ -762,9 +796,71 @@ Boas práticas:
   ├── Versão major = mudança estrutural
   ├── Versão minor = ajuste de layout
   └── Mantenha changelog por versão
-```
+```markdown
 
 ### Exemplo de Changelog de Wireframe
 
 ```typescript
+```
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 

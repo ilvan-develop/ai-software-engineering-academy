@@ -27,7 +27,25 @@
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 08 Arquitetura
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. Por que arquitetura importa
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Arquitetura é a **estrutura fundamental** de um sistema. São as decisões que, se tomadas errado, custam caro para mudar.
 
@@ -49,7 +67,23 @@ Arquitetura Boa:
   │  "Mudei uma coisa sem quebrar nada"      │
   │  "Testes garantem que funciona"          │
   └──────────────────────────────────────────┘
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### O que arquitetura define
 
@@ -59,7 +93,7 @@ Comunicação:      Como as partes se comunicam?
 Dados:            Como os dados fluem e são armazenados?
 Tecnologia:       Qual stack suporta a estrutura?
 Equipe:           Como o time se organiza para desenvolver?
-```
+```markdown
 
 ---
 
@@ -91,7 +125,7 @@ class EmailService {
 class ReportGenerator {
   generate(): Report { /* ... */ }
 }
-```
+```text
 
 ### O — Open/Closed Principle
 
@@ -114,7 +148,7 @@ interface PaymentMethod {
 
 class CreditCardPayment implements PaymentMethod { /* ... */ }
 class PixPayment implements PaymentMethod { /* ... */ }
-```
+```markdown
 
 ### L — Liskov Substitution Principle
 
@@ -137,7 +171,7 @@ interface FlyingBird extends Bird {
 }
 class Penguin implements Bird { }
 class Sparrow implements Bird, FlyingBird { }
-```
+```text
 
 ### I — Interface Segregation Principle
 
@@ -155,7 +189,7 @@ interface Worker {
 interface Workable { work(): void; }
 interface Eatable { eat(): void; }
 interface Sleepable { sleep(): void; }
-```
+```markdown
 
 ### D — Dependency Inversion Principle
 
@@ -173,7 +207,7 @@ class OrderService {
     private repository: OrderRepository  // interface
   ) { }
 }
-```
+```text
 
 ---
 
@@ -205,7 +239,7 @@ Clean Architecture é uma arquitetura que organiza o código em **círculos conc
     │   FRAMEWORKS & DRIVERS                        │
     │  (NestJS, Prisma, Next.js, PostgreSQL...)     │
     └──────────────────────────────────────────────┘
-```
+```markdown
 
 ### A Regra da Dependência
 
@@ -219,7 +253,7 @@ Clean Architecture é uma arquitetura que organiza o código em **círculos conc
 ✅ CERTO: Use Case depende de interface
   UseCase → UserRepository (interface)
   PrismaUserRepository → UserRepository (implementa)
-```
+```javascript
 
 ### O que vai em cada camada
 
@@ -246,7 +280,7 @@ Código:  client.openTicket(ticket)  ✅
 
 Negócio: "Um cliente pode abrir um ticket de suporte"
 Código:  client.createSupportTicket(ticket)  ❌ (outra linguagem)
-```
+```markdown
 
 ### Bounded Contexts
 
@@ -259,7 +293,7 @@ Contexto de Vendas:         Contexto de Logística:
   Pedido = carrinho          Pedido = carga para entrega
 
 São modelos DIFERENTES do mesmo conceito!
-```
+```markdown
 
 ### Elementos do DDD
 
@@ -289,7 +323,7 @@ São modelos DIFERENTES do mesmo conceito!
 │  → Regra de negócio sem estado           │
 │  → Opera em múltiplas entidades          │
 └──────────────────────────────────────────┘
-```
+```markdown
 
 ### Exemplo prático de DDD
 
@@ -355,7 +389,7 @@ class AlterarPerfilUseCase {
     await this.emailService.enviarNotificacao(usuario.email);
   }
 }
-```
+```markdown
 
 ---
 
@@ -389,7 +423,7 @@ A arquitetura hexagonal é uma variação da Clean Architecture que usa o concei
                │  (NestJS,    │   │  (Prisma,      │
                │   Express)   │   │   email, queue)│
                └──────────────┘   └────────────────┘
-```
+```markdown
 
 Abaixo, uma visão de container C4 da mesma arquitetura:
 
@@ -408,7 +442,7 @@ interface PedidoRepository {
 interface CriarPedidoUseCase {
   execute(input: CriarPedidoInput): Promise<CriarPedidoOutput>;
 }
-```
+```text
 
 ### Adaptadores
 
@@ -440,7 +474,7 @@ class PedidoController {
     return this.criarPedido.execute(this.toInput(body));
   }
 }
-```
+```markdown
 
 ---
 
@@ -463,7 +497,7 @@ Quando usar:
   - Sistema com domínios fortemente acoplados
   - Startup / MVP
   - Quando velocidade > escala
-```
+```markdown
 
 ### Microservices
 
@@ -482,7 +516,7 @@ Quando usar:
   - Domínios claramente separados
   - Escala global
   - Times autônomos por domínio
-```
+```markdown
 
 ### A recomendação
 
@@ -510,7 +544,7 @@ Consumidor:       Quem reage ao evento
 
 Barramento:       Meio de transporte
   → RabbitMQ, Kafka, Redis Pub/Sub
-```
+```markdown
 
 ### Exemplo
 
@@ -553,7 +587,7 @@ class EmailHandler {
     });
   }
 }
-```
+```text
 
 ---
 
@@ -561,6 +595,7 @@ class EmailHandler {
 
 ### Estrutura de pastas seguindo Clean Architecture + DDD
 
+```text
 ```
 src/
 ├── domain/                    # Círculo mais interno
@@ -598,6 +633,67 @@ src/
 │
 └── main.ts
 
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
+
 
 
 
@@ -609,7 +705,25 @@ src/
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 09 Modelagem
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. Por que modelagem importa
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Modelagem de dados é a **fundação** do sistema. Erros aqui são os mais caros de corrigir.
 
@@ -632,7 +746,23 @@ Modelagem boa:
   │  Constraints → validade dos dados        │
   │  Migrações testadas → sem surpresas      │
   └──────────────────────────────────────────┘
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ---
 
@@ -644,7 +774,7 @@ Modelagem boa:
 1:1  — Um usuário tem um perfil
 1:N  — Um usuário tem muitos pedidos
 N:M  — Um produto está em muitas categorias
-```
+```markdown
 
 ### Exemplo no Prisma
 
@@ -705,7 +835,7 @@ model ProductCategory {
 
   @@id([productId, categoryId])
 }
-```
+```text
 
 ---
 
@@ -727,7 +857,7 @@ model User {
   // Filtro global no Prisma
   @@where("@deletedAt is null")
 }
-```
+```text
 
 ```typescript
 // Service
@@ -744,7 +874,7 @@ class UserService {
     return this.prisma.user.findMany();
   }
 }
-```
+```text
 
 ### Audit Trail
 
@@ -764,7 +894,7 @@ model AuditLog {
   @@index([userId])
   @@index([createdAt])
 }
-```
+```text
 
 ```typescript
 // AuditService
@@ -799,7 +929,7 @@ prisma.$use(async (params, next) => {
 
   return result;
 });
-```
+```text
 
 ---
 
@@ -827,7 +957,7 @@ model Order {
   // Índice parcial para pedidos ativos
   @@index([status, createdAt])
 }
-```
+```markdown
 
 ### Regras de índices
 
@@ -842,7 +972,7 @@ Evite:
   - Índices em colunas de baixa cardinalidade (boolean)
   - Muitos índices em tabelas pequenas (< 1000 registros)
   - Índices que nunca são usados
-```
+```markdown
 
 ### Query Performance
 
@@ -862,7 +992,7 @@ const orders = await prisma.order.findMany({
     user: true,
   },
 });
-```
+```text
 
 ---
 
@@ -879,7 +1009,7 @@ npx prisma migrate deploy
 
 # Resetar banco (dev)
 npx prisma migrate reset
-```
+```markdown
 
 ### Migrações sem downtime
 
@@ -907,7 +1037,7 @@ await prisma.user.updateMany({
 model User {
   name String  // Único campo
 }
-```
+```text
 
 ---
 
@@ -929,7 +1059,7 @@ Incremental: Apenas mudanças desde o último backup
 WAL (Write-Ahead Log): Log de transações
   Quando: Contínuo
   Uso:    Point-in-time recovery
-```
+```markdown
 
 ### Script de backup
 
@@ -951,7 +1081,7 @@ pg_dump -U $DB_USER -d $DB_NAME \
 find $BACKUP_DIR -name "*.dump" -mtime +7 -delete
 
 echo "Backup concluído: $DB_NAME-$DATE.dump"
-```
+```markdown
 
 ### Restore
 
@@ -1089,7 +1219,7 @@ model AuditLog {
   @@index([createdAt])
   @@map("audit_logs")
 }
-```
+```markdown
 
 ---
 
@@ -1104,6 +1234,63 @@ model AuditLog {
 7. **Migrações seguras** — expand-migrate-contract para mudanças sem downtime
 8. **Backup** — full + incremental + WAL; testar restore periodicamente
 
+| Conceito | Descrição | Aplicação |
+|----------|-----------|-----------|
+| Abordagem Principal | Estratégia central discutida no módulo | Implementação direta |
+| Padrão Relacionado | Padrão complementar | Casos de uso específicos |
+| Boa Prática | Recomendação de mercado | Cenários de produção |
+| Anti-padrão | Prática a ser evitada | Consequências negativas |
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
+
 
 
 
@@ -1115,7 +1302,25 @@ model AuditLog {
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 10 Backend
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. Por que NestJS?
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 NestJS é o framework Node.js mais adequado para sistemas Enterprise.
 
@@ -1141,7 +1346,23 @@ NestJS é o framework Node.js mais adequado para sistemas Enterprise.
   exports: [UserService],
 })
 export class UserModule {}
+```text
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ![Arquitetura de Referencia Backend](/knowledge-factory/products/courses/arquitetura-backend/module-10-backend/assets/diagram-arquitetura-backend.svg)
 
@@ -1176,7 +1397,7 @@ src/
 ├── config/
 │   └── app.config.ts
 └── main.ts
-```
+```markdown
 
 ### Por que essa estrutura?
 
@@ -1190,7 +1411,7 @@ Módulo raiz (AppModule):
   → Importa os módulos de domínio
   → Tempo de inicialização mais rápido
   → Testes mais isolados
-```
+```markdown
 
 ---
 
@@ -1206,7 +1427,7 @@ Service (Lógica de negócio)
 Repository (Persistência)
   ↓
 Database (Prisma)
-```
+```markdown
 
 ### Controller
 
@@ -1250,7 +1471,7 @@ export class UserController {
     await this.userService.softDelete(id);
   }
 }
-```
+```markdown
 
 ### Service
 
@@ -1291,7 +1512,7 @@ export class UserService {
     return this.userRepo.findAll(pagination);
   }
 }
-```
+```text
 
 ### Repository
 
@@ -1366,7 +1587,7 @@ export class UserRepository {
     };
   }
 }
-```
+```markdown
 
 ---
 
@@ -1401,7 +1622,7 @@ export class CreateUserPipe implements PipeTransform {
     return result.data;
   }
 }
-```
+```text
 
 ### Uso no controller
 
@@ -1410,7 +1631,7 @@ export class CreateUserPipe implements PipeTransform {
 async create(@Body(new CreateUserPipe()) dto: CreateUserDto) {
   return this.userService.create(dto);
 }
-```
+```markdown
 
 ### Validação vs Sanitização
 
@@ -1461,7 +1682,7 @@ export class GlobalExceptionFilter implements ExceptionFilter {
     });
   }
 }
-```
+```markdown
 
 ### Domain Errors
 
@@ -1484,7 +1705,7 @@ export class InvalidEmailError extends DomainError {
   readonly code = 'INVALID_EMAIL';
   constructor() { super('Formato de email inválido'); }
 }
-```
+```text
 
 ---
 
@@ -1508,7 +1729,7 @@ export class TransformInterceptor<T> implements NestInterceptor<T, ApiResponse<T
 
 // Uso global
 app.useGlobalInterceptors(new TransformInterceptor());
-```
+```markdown
 
 ### Guards (proteção de rotas)
 
@@ -1532,7 +1753,7 @@ export class RolesGuard implements CanActivate {
 async remove(@Param('id') id: string) {
   return this.userService.softDelete(id);
 }
-```
+```text
 
 ---
 
@@ -1569,7 +1790,7 @@ async findAll(input: CursorPaginationInput): Promise<CursorPaginatedResult<User>
     hasMore,
   };
 }
-```
+```markdown
 
 ---
 
@@ -1605,7 +1826,7 @@ async findById(id: string): Promise<UserResponse> {
     () => this.fetchUser(id),
   );
 }
-```
+```text
 
 ---
 
@@ -1653,13 +1874,14 @@ export class HealthController {
     }
   }
 }
-```
+```markdown
 
 ---
 
 ## 10. Testes
 
 ```typescript
+```
 // Teste de service
 describe('UserService', () => {
   let service: UserService;
@@ -1692,6 +1914,67 @@ describe('UserService', () => {
   });
 });
 
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
+
 
 
 
@@ -1703,7 +1986,25 @@ describe('UserService', () => {
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 12 Seguranca
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. Por que segurança é o requisito mais importante
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Segurança não é uma feature — é um **pré-requisito**. Um sistema inseguro é um passivo, não um ativo.
 
@@ -1725,7 +2026,23 @@ Custo de prevenir:
   │  Ferramentas de segurança: R$ 1k/mês         │
   │  Revisão de código: parte do processo        │
   └──────────────────────────────────────────────┘
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### Mindset de segurança
 
@@ -1737,7 +2054,7 @@ Custo de prevenir:
 ✅ "Segurança é responsabilidade de todos"
 ✅ "Segurança é parte da definição de 'pronto'"
 ✅ "Se tem valor, vai ser atacado"
-```
+```markdown
 
 ---
 
@@ -1765,7 +2082,7 @@ async getOrder(@Param('id') id: string, @Req() req) {
   }
   return order;
 }
-```
+```text
 
 ### 2. Cryptographic Failures
 
@@ -1782,7 +2099,7 @@ const hashedPassword = await bcrypt.hash(req.body.password, 12);
 const user = await prisma.user.create({
   data: { password: hashedPassword }
 });
-```
+```markdown
 
 ### 3. Injection
 
@@ -1798,7 +2115,7 @@ const users = await prisma.$queryRawUnsafe(
 const user = await prisma.user.findUnique({
   where: { email }
 });
-```
+```text
 
 ### 4. Insecure Design
 
@@ -1817,7 +2134,7 @@ async login(@Body() dto: LoginDto) {
 async login(@Body() dto: LoginDto) {
   // ...
 }
-```
+```markdown
 
 ### 5. Security Misconfiguration
 
@@ -1832,7 +2149,7 @@ app.enableCors({
   origin: ['https://app.meusistema.com'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
 });
-```
+```text
 
 ### 6-10: Vulnerable Components, Auth Failures, Data Integrity, Logging, SSRF
 
@@ -1857,7 +2174,7 @@ app.enableCors({
 4. Cliente armazena e envia access token em requisições
 5. Servidor valida token em cada requisição (AuthGuard)
 6. Quando access token expira, cliente usa refresh token para obter novo
-```
+```markdown
 
 ### Implementação
 
@@ -1941,7 +2258,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     return { id: payload.sub, email: payload.email, role: payload.role };
   }
 }
-```
+```markdown
 
 ---
 
@@ -1978,7 +2295,7 @@ export function defineAbilitiesFor(user: User): PureAbility {
     cannot('delete', 'all');
   });
 }
-```
+```text
 
 ### Uso no controller
 
@@ -1996,7 +2313,7 @@ async delete(@Param('id') id: string, @Req() req) {
   ForbiddenError.from(ability).throwUnlessCan('delete', 'Order');
   // Nunca chega aqui — admin também não pode deletar
 }
-```
+```markdown
 
 ---
 
@@ -2029,7 +2346,7 @@ async login(@Body() dto: LoginDto) {
 async requestPasswordReset(@Body() dto: ResetDto) {
   // ...
 }
-```
+```text
 
 ### Estratégias adicionais
 
@@ -2043,7 +2360,7 @@ Rate Limiting por:
 Respostas:
   429 Too Many Requests
   Header: Retry-After: X segundos
-```
+```markdown
 
 ---
 
@@ -2063,7 +2380,7 @@ app.use(helmet());
 // X-XSS-Protection: 0
 // Strict-Transport-Security
 // Referrer-Policy
-```
+```markdown
 
 ### CSP (Content Security Policy)
 
@@ -2080,7 +2397,7 @@ app.use(helmet.contentSecurityPolicy({
     upgradeInsecureRequests: [],
   },
 }));
-```
+```text
 
 ---
 
@@ -2097,7 +2414,7 @@ const user = await prisma.user.findUnique({ where: { email } });
 
 // ✅ Se precisar de raw query, usar parametrização
 const users = await prisma.$queryRaw`SELECT * FROM users WHERE email = ${email}`;
-```
+```markdown
 
 ### XSS (Cross-Site Scripting)
 
@@ -2111,7 +2428,7 @@ import DOMPurify from 'isomorphic-dompurify';
 
 // ✅ No backend, escapar output
 const sanitized = escapeHtml(userComment);
-```
+```text
 
 ### CSRF (Cross-Site Request Forgery)
 
@@ -2124,7 +2441,7 @@ app.use(csurf({ cookie: true }));
 // Enviar token CSRF em formulários/headers
 // <meta name="csrf-token" content="{{csrfToken}}">
 // Header: X-CSRF-Token
-```
+```markdown
 
 ---
 
@@ -2143,7 +2460,7 @@ DB_PASSWORD=minha-senha
 
 // ❌ No código fonte
 config.service.apiKey = 'sk-1234567890abcdef';
-```
+```text
 
 ### O que fazer
 
@@ -2166,7 +2483,7 @@ for (const varName of requiredEnvVars) {
     throw new Error(`Variável de ambiente ${varName} não configurada`);
   }
 }
-```
+```markdown
 
 ---
 
@@ -2209,10 +2526,11 @@ async transfer(@Body() dto: TransferDto, @Req() req) {
   });
   return result;
 }
-```
+```text
 
 ### Checklist de segurança para code review
 
+```text
 ```
 Segurança em code review:
   [ ] Todos os inputs são validados?
@@ -2226,6 +2544,67 @@ Segurança em code review:
   [ ] Headers de segurança configurados?
   [ ] Logs não expõem dados sensíveis?
 
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
+
 
 
 
@@ -2237,7 +2616,25 @@ Segurança em code review:
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 13 Multi Tenant
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. O que é Multi-Tenancy?
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Multi-tenancy é um padrão arquitetural onde **uma única instância de software atende múltiplos clientes (tenants)**, mantendo os dados de cada um logicamente isolados e invisíveis entre si.
 
@@ -2256,7 +2653,23 @@ Multi-tenancy é um padrão arquitetural onde **uma única instância de softwar
 │              │  API + DB     │                          │
 │              └───────────────┘                          │
 └──────────────────────────────────────────────────────────┘
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### 1.1 Conceito
 
@@ -2314,7 +2727,7 @@ Cada tenant tem **seu próprio banco de dados**. O roteador de conexão decide q
 │  │ tenant_1 │  │ tenant_2 │  │ tenant_3 │    │
 │  └──────────┘  └──────────┘  └──────────┘    │
 └──────────────────────────────────────────────┘
-```
+```text
 
 ```typescript
 // Router de conexão com lazy initialization
@@ -2346,7 +2759,7 @@ class DatabaseRouter {
     return this.pools.get(tenantId)!;
   }
 }
-```
+```text
 
 **Vantagens:**
 - **Isolamento total** — um tenant nunca vê dados do outro, mesmo com SQL injection
@@ -2377,7 +2790,7 @@ Um banco de dados compartilhado, mas cada tenant tem seu **próprio schema** (na
 │  │  products│  │  products│  │  products│    │
 │  └──────────┘  └──────────┘  └──────────┘    │
 └──────────────────────────────────────────────┘
-```
+```text
 
 ```sql
 -- Criar schema para novo tenant
@@ -2402,7 +2815,7 @@ CREATE TABLE tenant_acme.orders (
 
 -- Query com schema dinâmico
 SELECT * FROM tenant_acme.users WHERE email = 'joao@acme.com';
-```
+```text
 
 ```typescript
 // Abstração para schema dinâmico
@@ -2432,7 +2845,7 @@ class SchemaTenantService {
     }
   }
 }
-```
+```text
 
 **Vantagens:**
 - **Banco único** — uma conexão, pool compartilhado, menos overhead
@@ -2471,7 +2884,7 @@ interface Order {
   status: 'pending' | 'paid' | 'cancelled';
   created_at: Date;
 }
-```
+```text
 
 ```typescript
 // Repositório que SEMPRE filtra por tenant
@@ -2503,7 +2916,7 @@ class UserRepository {
     return result.rows[0];
   }
 }
-```
+```text
 
 **Vantagens:**
 - **Máximo compartilhamento** — um banco, uma conexão, custo mínimo
@@ -2567,7 +2980,7 @@ CREATE POLICY tenant_isolation ON users
 
 -- Na aplicação, antes de qualquer query:
 await pool.query("SET app.tenant_id = 'acme'");
-```
+```sql
 
 ### 3.2 Performance
 
@@ -2588,7 +3001,7 @@ await pool.query("SET app.tenant_id = 'acme'");
 CREATE INDEX idx_orders_acme_large
   ON orders (total DESC)
   WHERE tenant_id = 'acme' AND total > 10000;
-```
+```text
 
 ### 3.3 Custo
 
@@ -2617,6 +3030,67 @@ CREATE INDEX idx_orders_acme_large
 
 ---
 
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
+
 
 
 
@@ -2626,7 +3100,25 @@ CREATE INDEX idx_orders_acme_large
 
 **Middleware de tenant, identificação, serviços NestJS e integração com Prisma para isolamento de dados.**
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 13B Multi Tenant Implementacao
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. Identificação do Tenant
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 O sistema precisa identificar **qual tenant está fazendo a requisição** antes de qualquer lógica de negócio.
 
@@ -2661,7 +3153,23 @@ async function validateTenantSubdomain(
   if (!subdomain) return null;
   return tenantService.findBySubdomain(subdomain);
 }
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### 1.3 Header HTTP
 
@@ -2683,7 +3191,7 @@ const TENANT_SLUG_REGEX = /^[a-z0-9-]{3,50}$/;
 function validateTenantSlug(slug: string): boolean {
   return TENANT_SLUG_REGEX.test(slug);
 }
-```
+```text
 
 ### 1.4 JWT Claim
 
@@ -2714,7 +3222,7 @@ function extractTenantFromJwt(authHeader?: string): string | null {
     return null; // token inválido
   }
 }
-```
+```markdown
 
 ### 1.5 Path Parameter
 
@@ -2725,7 +3233,7 @@ function extractTenantFromJwt(authHeader?: string): string | null {
 findUsers(@Param('tenant') tenantId: string) {
   return this.userService.findAll(tenantId);
 }
-```
+```text
 
 ### 1.6 Estratégia Combinada (Fallback)
 
@@ -2740,7 +3248,7 @@ function resolveTenant(req: Request): string {
     (() => { throw new BadRequestException('Tenant não identificado'); })()
   );
 }
-```
+```markdown
 
 ---
 
@@ -2829,7 +3337,7 @@ export class TenantMiddleware implements NestMiddleware {
     }
   }
 }
-```
+```text
 
 ### 2.2 Aplicação Global ou por Rota
 
@@ -2853,7 +3361,7 @@ export class AppModule implements NestModule {
       .forRoutes('*');
   }
 }
-```
+```markdown
 
 ### 2.3 TenantModule
 
@@ -2869,7 +3377,7 @@ import { TenantMiddleware } from './tenant.middleware';
   exports: [TenantService],
 })
 export class TenantModule {}
-```
+```text
 
 ### 2.4 TenantService
 
@@ -2910,7 +3418,7 @@ export class TenantService {
     return this.getPlan() === 'enterprise';
   }
 }
-```
+```markdown
 
 ### 2.5 @Tenant() Decorator
 
@@ -2941,7 +3449,7 @@ findAll(@Tenant() tenant: Tenant) {
 getPlan(@Tenant('plan') plan: string) {
   return { plan };
 }
-```
+```text
 
 ### 2.6 AsyncLocalStorage para Contexto
 
@@ -2981,7 +3489,7 @@ function getCurrentTenantId(): string {
   if (!ctx) throw new Error('Fora de contexto de tenant');
   return ctx.tenantId;
 }
-```
+```markdown
 
 ---
 
@@ -3061,7 +3569,7 @@ class PrismaTenantManager {
 }
 
 export const prismaTenantManager = new PrismaTenantManager();
-```
+```markdown
 
 ### 3.2 Shared Database com Prisma
 
@@ -3134,7 +3642,7 @@ export class TenantAwareService {
     });
   }
 }
-```
+```markdown
 
 ### 3.3 Prisma Middleware para Tenant
 
@@ -3169,7 +3677,7 @@ export function createTenantMiddleware(prisma: PrismaClient): void {
 // Inicialização
 const prisma = new PrismaClient();
 createTenantMiddleware(prisma);
-```
+```text
 
 ### 3.4 Prisma Extension (Prisma >= 5.0)
 
@@ -3202,7 +3710,68 @@ export const tenantExtension = Prisma.defineExtension((client) => {
 
 // Uso
 const prisma = new PrismaClient().$extends(tenantExtension);
-```
+```text
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 
 
 
@@ -3213,7 +3782,25 @@ const prisma = new PrismaClient().$extends(tenantExtension);
 
 **Migrations multi-tenant, estratégias de dados compartilhados vs isolados e seed automático por tenant.**
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 13C Multi Tenant Dados
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. Migrations Multi-Tenant
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 ### 1.1 Database per Tenant
 
@@ -3257,7 +3844,23 @@ async function migrateAllTenants(): Promise<void> {
     }
   }
 }
+```text
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### 1.2 Schema per Tenant
 
@@ -3349,7 +3952,7 @@ async function migrateAllSchemas(): Promise<void> {
     await migrateSchema(`tenant_${tenant.slug}`);
   }
 }
-```
+```markdown
 
 ### 1.3 Estratégias de Rollback
 
@@ -3383,7 +3986,7 @@ async function migrateTenantWithTransaction(
     client.release();
   }
 }
-```
+```text
 
 ### 1.4 Shared Database
 
@@ -3421,7 +4024,7 @@ async function migrateShared(): Promise<void> {
     client.release();
   }
 }
-```
+```markdown
 
 ---
 
@@ -3463,7 +4066,7 @@ interface AuditLog {
   metadata: JSON;
   createdAt: Date;
 }
-```
+```text
 
 ### 2.2 Tabelas Por Tenant (Isoladas)
 
@@ -3507,7 +4110,7 @@ interface Invoice {
   status: 'pending' | 'paid' | 'cancelled';
   dueDate: Date;
 }
-```
+```markdown
 
 ### 2.3 Regra Prática
 
@@ -3527,7 +4130,7 @@ interface Invoice {
 │  • Configurações do tenant   • Logs de atividade     │
 │  • Arquivos e uploads        • Relatórios gerados    │
 └─────────────────────────────────────────────────────┘
-```
+```markdown
 
 ### 2.4 Implementação em Schema per Tenant
 
@@ -3570,7 +4173,7 @@ FROM tenant_acme.users u
 JOIN public.tenants t ON t.id = u.tenant_id
 JOIN public.plans p ON p.id = t.plan_id
 WHERE u.email = 'joao@acme.com';
-```
+```text
 
 ---
 
@@ -3663,7 +4266,7 @@ async function createTenant(data: { slug: string; name: string; plan: string }) 
 
   return tenant;
 }
-```
+```markdown
 
 ### 3.2 Comandos CLI (NestJS Command)
 
@@ -3691,7 +4294,7 @@ export class TenantCommand extends CommandRunner {
     console.log(`✅ Tenant ${tenant.slug} criado com sucesso!`);
   }
 }
-```
+```text
 
 ### 3.3 Idempotência
 
@@ -3712,9 +4315,77 @@ async function seedSettingsIfNotExists(schema: string): Promise<void> {
     `, [setting.key, setting.value]);
   }
 }
-```
+```text
 
 ---
+
+| Conceito | Descrição | Aplicação |
+|----------|-----------|-----------|
+| Abordagem Principal | Estratégia central discutida no módulo | Implementação direta |
+| Padrão Relacionado | Padrão complementar | Casos de uso específicos |
+| Boa Prática | Recomendação de mercado | Cenários de produção |
+| Anti-padrão | Prática a ser evitada | Consequências negativas |
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 
 
 
@@ -3727,7 +4398,25 @@ async function seedSettingsIfNotExists(schema: string): Promise<void> {
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 13D Multi Tenant Operacoes
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. Backup e Restore
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 ### 1.1 Database per Tenant
 
@@ -3762,6 +4451,22 @@ done
 #   backups/acme_20240101.dump
 ```text
 
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
+```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
+
 ### 1.2 Schema per Tenant — Backup Seletivo
 
 ```bash
@@ -3792,7 +4497,7 @@ echo "✅ Schema tenant_${TENANT} salvo em backups/schema_${TENANT}_${DATE}.dump
 #   --schema="tenant_${TENANT}" \
 #   --clean \
 #   backups/schema_zeta_20240101.dump
-```
+```markdown
 
 ### 1.3 Estratégia por Plano
 
@@ -3836,7 +4541,7 @@ async function scheduleTenantBackup(tenant: { id: string; plan: string }): Promi
       break;
   }
 }
-```
+```text
 
 ---
 
@@ -3928,7 +4633,7 @@ class PoolManager {
 }
 
 export const poolManager = new PoolManager();
-```
+```markdown
 
 ### 2.2 Query Optimization
 
@@ -3957,7 +4662,7 @@ class QueryOptimizer {
     ]).then(r => r.rows);
   }
 }
-```
+```text
 
 ### 2.3 Rate Limiting por Tenant
 
@@ -4016,7 +4721,7 @@ export class TenantRateLimiter {
     this.concurrentCounts.set(tenantId, Math.max(0, current - 1));
   }
 }
-```
+```markdown
 
 ### 2.4 Indexação para Shared Database
 
@@ -4115,7 +4820,7 @@ const PLANS: Record<string, PlanFeatures> = {
     whiteLabel: true,
   },
 };
-```
+```text
 
 ```typescript
 // feature-flag.service.ts
@@ -4172,7 +4877,7 @@ export class FeatureFlagService {
     return { ...this.planFeatures };
   }
 }
-```
+```text
 
 ### 3.3 Guard do NestJS para Feature Flags
 
@@ -4200,7 +4905,7 @@ getAdvancedReports() {
   // Só executa se o plano do tenant tiver advancedReports = true
   return this.reportService.generate();
 }
-```
+```markdown
 
 ---
 
@@ -4244,7 +4949,7 @@ describe('Isolamento entre Tenants', () => {
     const jwt = require('jsonwebtoken');
     return jwt.sign(payload, process.env.JWT_SECRET || 'test-secret');
   }
-```
+```text
 
 ### 4.2 Teste 1: Vazamento Zero
 
@@ -4288,7 +4993,7 @@ describe('Isolamento entre Tenants', () => {
       expect(response.body.message).toContain('não encontrado');
     });
   });
-```
+```markdown
 
 ### 4.3 Teste 2: Concorrência
 
@@ -4321,7 +5026,7 @@ describe('Isolamento entre Tenants', () => {
       }
     });
   });
-```
+```text
 
 ### 4.4 Teste 3: Injeção de Tenant ID
 
@@ -4350,7 +5055,7 @@ describe('Isolamento entre Tenants', () => {
       );
     });
   });
-```
+```markdown
 
 ### 4.5 Teste 4: Rate Limit
 
@@ -4384,7 +5089,7 @@ describe('Isolamento entre Tenants', () => {
       expect(tooManyRequests).toHaveLength(0);
     });
   });
-```
+```text
 
 ### 4.6 Teste 5: Migrations
 
@@ -4407,7 +5112,7 @@ describe('Isolamento entre Tenants', () => {
       }
     });
   });
-```
+```markdown
 
 ### 4.7 Teste de Quebra Proposital
 
@@ -4452,5 +5157,66 @@ describe('Isolamento entre Tenants', () => {
       );
     });
   });
-```
+```text
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 

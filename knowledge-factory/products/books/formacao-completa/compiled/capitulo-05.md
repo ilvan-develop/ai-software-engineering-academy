@@ -7,7 +7,25 @@
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 04 Ux
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. O que é UX?
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 UX (User Experience) é a **percepção geral que uma pessoa tem ao interagir com um produto, sistema ou serviço**. Não se trata apenas de telas bonitas — envolve emoções, eficiência, acessibilidade e satisfação.
 
@@ -20,7 +38,23 @@ Experiência completa                      Superfície visual
 Pesquisa, arquitetura, fluxo             Cores, tipografia, ícones
 Funcionalidade e usabilidade             Estética e identidade
 Ciência + Design                         Design + Arte
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 > UI sem UX é como um carro bonito sem motor. UX sem UI é como um motor potente sem carroceria.
 
@@ -40,7 +74,7 @@ O modelo mais clássico para estruturar UX, de baixo (abstrato) para cima (concr
 ├─────────────────────────────────────────────┤
 │ 1. ESTRATÉGIA      Necessidades do negócio  │  ← Objetivos, dores
 └─────────────────────────────────────────────┘
-```
+```text
 
 | Plano | Pergunta central | Entregável típico |
 |-------|------------------|-------------------|
@@ -63,7 +97,7 @@ Pesquisa não é opcional — é o que impede você de construir a feature errad
 ```text
 ❌ "Você usaria um botão de exportar CSV?"
 ✅ "Me conta como você faz para gerar relatórios hoje."
-```
+```text
 
 **Estrutura de uma entrevista:**
 
@@ -73,7 +107,7 @@ Pesquisa não é opcional — é o que impede você de construir a feature errad
 3. Tarefa (15min) — "Você pode tentar fazer X enquanto pensa em voz alta?"
 4. Exploração (10min) — "Por que você fez isso? O que esperava que acontecesse?"
 5. Fechamento (5min) — "Algo mais que não perguntei?"
-```
+```text
 
 **Bons hábitos:**
 - Pergunte sobre **comportamento passado** (não intenção futura)
@@ -154,7 +188,7 @@ Arquitetura da Informação é a **organização estrutural do conteúdo** — c
    ├── Autocomplete
    ├── Filtros
    └── Resultados relevantes
-```
+```markdown
 
 ### Princípios de IA
 
@@ -177,7 +211,7 @@ Arquitetura da Informação é a **organização estrutural do conteúdo** — c
 /produtos/:id
 /minha-conta/dados
 /minha-conta/pedidos
-```
+```markdown
 
 ---
 
@@ -205,7 +239,7 @@ ATIVAÇÃO      "Convidei time"         😰 Ansioso  Convite em massa
 RETENÇÃO      "Uso semanal"           😊 Satisf.  Notificações
               "Preciso de ajuda"      😠 Irrit.   Chat + FAQ
               "Renovei contrato"      😍 Leal     Programa de fidelidade
-```
+```markdown
 
 ### Service Blueprint
 
@@ -219,7 +253,7 @@ FRONTSTAGE      Interações com o sistema (UI, API calls)
 BACKSTAGE       Ações internas invisíveis ao usuário
                     ↓
 PROCESSOS       Sistemas, jobs, integrações
-```
+```text
 
 **Exemplo (simplificado de uma compra):**
 
@@ -246,7 +280,7 @@ Baseada em hipóteses do time         Baseada em dados reais
 Rápida (1 workshop)                  Leva semanas
 "Eu acho que o usuário..."           "Os dados mostram que..."
 Valida: "Erramos, vamos pesquisar"   Valida: "Confirmamos nossas hipóteses"
-```
+```markdown
 
 ### Estrutura de uma persona
 
@@ -289,7 +323,7 @@ Anti-persona: "Usuário Free"
 - Gera custo operacional sem retorno financeiro
 
 O que NÃO fazer: não projetar para ele.
-```
+```markdown
 
 ### Para devs: personas no código
 
@@ -312,7 +346,7 @@ const flags: Record<string, FeatureFlag> = {
     rollout: 10, // Lançamento gradual
   },
 };
-```
+```markdown
 
 ---
 
@@ -348,7 +382,7 @@ R
 │   ├── HTML semântico
 │   ├── ARIA labels
 │   └── Funciona com screen readers
-```
+```markdown
 
 ### Níveis de conformidade
 
@@ -370,7 +404,7 @@ R
    #CCCCCC sobre #FFFFFF   — texto cinza claro
    #999999 sobre #EEEEEE   — links desativados
    #FFCC00 sobre #FFFFFF   — alertas amarelos
-```
+```markdown
 
 ### Navegação por teclado
 
@@ -412,7 +446,7 @@ R
 
 <!-- ✅ Tabela com scopo -->
 <th scope="col">Nome</th>
-```
+```markdown
 
 ### Para devs: checklist de acessibilidade no código
 
@@ -454,7 +488,7 @@ UX Writing é a **criação de textos para interfaces** que guiam o usuário de 
 
 // ✅ Claro e acionável
 "Preencha todos os campos obrigatórios antes de continuar."
-```
+```markdown
 
 ### Tom de voz
 
@@ -475,7 +509,7 @@ UX Writing é a **criação de textos para interfaces** que guiam o usuário de 
 ✅ "E-mail ou senha incorretos. Tente novamente."
 ✅ "O servidor não respondeu. Seu rascunho foi salvo automaticamente."
 ✅ "O campo 'CNPJ' precisa ter 14 dígitos."
-```
+```markdown
 
 ### Para devs: UX Writing no frontend
 
@@ -510,7 +544,7 @@ CONCISO        → "E-mail inválido" (não "O endereço de e-mail digitado não
 ÚTIL           → "Digite seu e-mail corporativo" (orienta, não só rotula)
 CONSISTENTE    → Sempre "Excluir", não "Excluir"/"Remover"/"Deletar" aleatoriamente
 HUMANO         → "Algo deu errado, mas já estamos cuidando disso"
-```
+```javascript
 
 ---
 
@@ -570,7 +604,7 @@ As 10 heurísticas são **critérios de usabilidade** que funcionam como checkli
     "Se o usuário precisa de ajuda, ela deve estar disponível."
     ❌ Documentação escondida
     ✅ "?" contextual + FAQ + chat
-```
+```markdown
 
 ### Como avaliar com as heurísticas
 
@@ -605,7 +639,7 @@ const evaluation: HeuristicEvaluation[] = [
     suggestion: 'Mensagem amigável + log no backend',
   },
 ];
-```
+```markdown
 
 ---
 
@@ -619,7 +653,7 @@ ANTES                             DEPOIS
 "Está no requisito"              "O usuário realmente precisa disso?"
 "Funciona no meu ambiente"       "Funciona para o usuário real?"
 "O design está errado"           "Qual problema estamos resolvendo?"
-```
+```markdown
 
 ### Como colaborar com designers
 
@@ -688,7 +722,7 @@ function TelaRelatorios() {
     </Page>
   );
 }
-```
+```markdown
 
 ### Perguntas que todo dev deveria fazer
 
@@ -700,7 +734,7 @@ function TelaRelatorios() {
 5. "O usuário consegue desfazer essa ação?"
 6. "Onde o usuário vai procurar essa funcionalidade?"
 7. "Em quanto tempo isso carrega no 3G?"
-```
+```markdown
 
 ---
 
@@ -718,4 +752,54 @@ function TelaRelatorios() {
 | UX Writing | Mensagens claras, concisas e humanas |
 | Heurísticas | 10 critérios para avaliar qualquer interface |
 | Dev + UX | Pergunte "por quê" antes de codificar |
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 

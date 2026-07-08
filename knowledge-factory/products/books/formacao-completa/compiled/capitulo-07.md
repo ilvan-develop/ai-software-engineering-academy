@@ -7,7 +7,25 @@
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 06 Ui Design
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. O que é UI Design
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 UI (User Interface) Design é a disciplina responsável pela **aparência e comportamento visual** de um produto digital. Enquanto UX define a estrutura e a experiência, UI traduz essa estrutura em pixels — cores, tipografia, espaçamento, componentes e animações.
 
@@ -21,7 +39,23 @@ Cores, tipografia, ícones        Pesquisa, jornada, AI
 Layout e componentes             Fluxo e arquitetura
 Microinterações                  Emoção e usabilidade
 "Como vê?"                       "Como se sente?"
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 UI é a **camada de superfície** dos 5 Planos de Garrett. É o que o usuário vê e com o que interage diretamente.
 
@@ -31,7 +65,7 @@ UI é a **camada de superfície** dos 5 Planos de Garrett. É o que o usuário v
 UX sem UI: ideia sem forma, impossível de usar
 UI sem UX: bonito mas inútil, frustrante
 UI + UX: útil, usável e desejável
-```
+```markdown
 
 O papel do dev é implementar a UI com **fidelidade ao design**, respeitando decisões de UX embutidas nos componentes.
 
@@ -66,7 +100,7 @@ Repita estilos visuais para criar consistência.
 Mesma cor de link        → usuário reconhece que é clicável
 Mesmo padding nos cards  → ritmo visual previsível
 Mesmo border-radius      → identidade visual consistente
-```
+```markdown
 
 ### Alinhamento
 
@@ -86,7 +120,7 @@ const aligned = {
   body: { marginLeft: 16 },
   action: { marginLeft: 16 },
 };
-```
+```markdown
 
 ### Proximidade
 
@@ -101,7 +135,7 @@ Itens relacionados devem ficar **próximos** visualmente. Itens não relacionado
   [Nome] [Email]          ← Dados pessoais
   [Telefone]              ← Contato
   [Senha] [Confirmar]     ← Segurança
-```
+```markdown
 
 ---
 
@@ -194,7 +228,7 @@ const theme = {
 };
 
 console.log(isAccessible(theme.textPrimary, theme.bgPrimary)); // true
-```
+```markdown
 
 ### Cor e Branding
 
@@ -252,7 +286,7 @@ const enterpriseTypography: TypographyScale = {
   bodySmall:  { size: 12, lineHeight: 16, weight: 400 },
   caption:    { size: 11, lineHeight: 16, weight: 400 },
 };
-```
+```markdown
 
 ### Escalas Modulares
 
@@ -264,7 +298,7 @@ Escala 1.25 (Major Second):
 
 Escala 1.333 (Major Third):
 12 → 16 → 20 → 24 → 32 → 40 → 48
-```
+```markdown
 
 ### Legibilidade
 
@@ -308,7 +342,7 @@ const spacing = {
   xxl:  32,  // 32px — padding de página
   xxxl: 48,  // 48px — seções grandes no layout
 };
-```
+```text
 
 ```typescript
 // ❌ Espaçamento arbitrário
@@ -345,7 +379,7 @@ function colWidth(columns: number, totalColumns: number, gutter: number): string
   const fraction = columns / totalColumns;
   return `calc(${fraction * 100}% - ${gutter}px)`;
 }
-```
+```markdown
 
 ### Layout Patterns
 
@@ -365,7 +399,7 @@ Split Screen:
 ┌────────────────────┬───────────────────┐
 │    List (1fr)      │   Detail (1fr)    │
 └────────────────────┴───────────────────┘
-```
+```markdown
 
 ---
 
@@ -417,7 +451,7 @@ const inputStates = {
   error:   { border: '#EA4335', bg: '#FFFFFF' },
   disabled: { border: '#E8EAED', bg: '#F1F3F4', color: '#9AA0A6' },
 };
-```
+```markdown
 
 ### Cards
 
@@ -463,7 +497,7 @@ const overlayStyles = {
   justifyContent: 'center',
   zIndex: 1000,
 };
-```
+```markdown
 
 ### Tabelas
 
@@ -504,7 +538,7 @@ interface SelectProps {
   searchable?: boolean;
   clearable?: boolean;
 }
-```
+```markdown
 
 ---
 
@@ -568,7 +602,7 @@ function formatPhone(value: string): string {
   if (digits.length <= 7) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
   return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
 }
-```
+```markdown
 
 ### Feedback
 
@@ -621,7 +655,7 @@ const emptyState = {
   description: 'Crie seu primeiro projeto para começar a organizar suas tarefas.',
   action: { label: 'Criar projeto', href: '/projects/new' },
 };
-```
+```markdown
 
 ---
 
@@ -694,7 +728,7 @@ const modalAnimation = {
     easing: 'cubic-bezier(0.4, 0.0, 1, 1)',
   },
 };
-```
+```markdown
 
 ### Microinterações Essenciais
 
@@ -709,7 +743,7 @@ Toast           | Appear          | Slide in da direita
 Skeleton        | Load            | Pulse shimmer
 Link            | Hover           | Underline aparece
 Checkbox        | Toggle          | Check animado
-```
+```markdown
 
 ---
 
@@ -828,7 +862,7 @@ Light mode:          Dark mode:
 │ #1A73E8    │      │ #8AB4F8    │
 │  primary   │      │  primary   │
 └────────────┘      └────────────┘
-```
+```markdown
 
 ### Implementação com Context
 
@@ -858,7 +892,7 @@ function ThemeProvider({ children }: { children: React.ReactNode }) {
     </ThemeContext.Provider>
   );
 }
-```
+```markdown
 
 ---
 
@@ -876,7 +910,7 @@ Input        | padding, border, border-radius, font-size, label position
 Card         | padding, border-radius, box-shadow, gap entre filhos
 Text         | font-family, font-size, line-height, letter-spacing, color
 Spacing      | margin, gap, top/left/bottom/right values
-```
+```markdown
 
 ### Medidas e Densidade
 
@@ -946,11 +980,73 @@ function checkFidelity(inspection: UIInspectionChecklist): number {
   const passed = items.filter(Boolean).length;
   return Math.round((passed / total) * 100);
 }
-```
+```markdown
 
 ### Densidade de Informação
 
 Produtos enterprise geralmente precisam de mais densidade que produtos B2C.
 
 ```typescript
+```
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 

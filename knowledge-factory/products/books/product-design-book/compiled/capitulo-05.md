@@ -7,7 +7,25 @@
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 06 Ui Design
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. O que é UI Design
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 UI (User Interface) Design é a disciplina responsável pela **aparência e comportamento visual** de um produto digital. Enquanto UX define a estrutura e a experiência, UI traduz essa estrutura em pixels — cores, tipografia, espaçamento, componentes e animações.
 
@@ -21,7 +39,23 @@ Cores, tipografia, ícones        Pesquisa, jornada, AI
 Layout e componentes             Fluxo e arquitetura
 Microinterações                  Emoção e usabilidade
 "Como vê?"                       "Como se sente?"
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 UI é a **camada de superfície** dos 5 Planos de Garrett. É o que o usuário vê e com o que interage diretamente.
 
@@ -31,7 +65,7 @@ UI é a **camada de superfície** dos 5 Planos de Garrett. É o que o usuário v
 UX sem UI: ideia sem forma, impossível de usar
 UI sem UX: bonito mas inútil, frustrante
 UI + UX: útil, usável e desejável
-```
+```markdown
 
 O papel do dev é implementar a UI com **fidelidade ao design**, respeitando decisões de UX embutidas nos componentes.
 
@@ -51,7 +85,7 @@ const bad = { primary: '#4A90D9', secondary: '#5BA0E9' };
 
 // ✅ Contraste claro entre ações
 const good = { primary: '#1A73E8', secondary: '#E8F0FE' };
-```
+```text
 
 - Contraste de **cor**: fundo vs texto, botão primário vs secundário
 - Contraste de **tamanho**: título vs corpo
@@ -66,7 +100,7 @@ Repita estilos visuais para criar consistência.
 Mesma cor de link        → usuário reconhece que é clicável
 Mesmo padding nos cards  → ritmo visual previsível
 Mesmo border-radius      → identidade visual consistente
-```
+```markdown
 
 ### Alinhamento
 
@@ -86,7 +120,7 @@ const aligned = {
   body: { marginLeft: 16 },
   action: { marginLeft: 16 },
 };
-```
+```markdown
 
 ### Proximidade
 
@@ -101,7 +135,7 @@ Itens relacionados devem ficar **próximos** visualmente. Itens não relacionado
   [Nome] [Email]          ← Dados pessoais
   [Telefone]              ← Contato
   [Senha] [Confirmar]     ← Segurança
-```
+```markdown
 
 ---
 
@@ -167,7 +201,7 @@ const enterprisePalette: ColorPalette = {
     900: '#202124',
   },
 };
-```
+```text
 
 ### Acessibilidade e Contraste
 
@@ -194,7 +228,7 @@ const theme = {
 };
 
 console.log(isAccessible(theme.textPrimary, theme.bgPrimary)); // true
-```
+```markdown
 
 ### Cor e Branding
 
@@ -222,7 +256,7 @@ interface BrandTokens {
     };
   };
 }
-```
+```text
 
 ---
 
@@ -252,7 +286,7 @@ const enterpriseTypography: TypographyScale = {
   bodySmall:  { size: 12, lineHeight: 16, weight: 400 },
   caption:    { size: 11, lineHeight: 16, weight: 400 },
 };
-```
+```markdown
 
 ### Escalas Modulares
 
@@ -264,7 +298,7 @@ Escala 1.25 (Major Second):
 
 Escala 1.333 (Major Third):
 12 → 16 → 20 → 24 → 32 → 40 → 48
-```
+```markdown
 
 ### Legibilidade
 
@@ -287,7 +321,7 @@ const bodyStyle = {
   lineHeight: 1.5,
   maxWidth: '66ch', // controle de largura
 };
-```
+```text
 
 ---
 
@@ -308,7 +342,7 @@ const spacing = {
   xxl:  32,  // 32px — padding de página
   xxxl: 48,  // 48px — seções grandes no layout
 };
-```
+```text
 
 ```typescript
 // ❌ Espaçamento arbitrário
@@ -316,7 +350,7 @@ const badCard = { padding: 17, gap: 11 };
 
 // ✅ Espaçamento da escala
 const goodCard = { padding: spacing.lg, gap: spacing.md };
-```
+```text
 
 ### Grid Systems
 
@@ -345,7 +379,7 @@ function colWidth(columns: number, totalColumns: number, gutter: number): string
   const fraction = columns / totalColumns;
   return `calc(${fraction * 100}% - ${gutter}px)`;
 }
-```
+```markdown
 
 ### Layout Patterns
 
@@ -365,7 +399,7 @@ Split Screen:
 ┌────────────────────┬───────────────────┐
 │    List (1fr)      │   Detail (1fr)    │
 └────────────────────┴───────────────────┘
-```
+```markdown
 
 ---
 
@@ -394,7 +428,7 @@ const buttonStyles: Record<ButtonVariant, { bg: string; color: string; border: s
   ghost:     { bg: 'transparent', color: '#5F6368', border: 'transparent' },
   danger:    { bg: '#EA4335', color: '#FFFFFF', border: 'transparent' },
 };
-```
+```text
 
 ### Inputs e Formulários
 
@@ -417,7 +451,7 @@ const inputStates = {
   error:   { border: '#EA4335', bg: '#FFFFFF' },
   disabled: { border: '#E8EAED', bg: '#F1F3F4', color: '#9AA0A6' },
 };
-```
+```markdown
 
 ### Cards
 
@@ -433,7 +467,7 @@ const cardVariants = {
   elevated: { bg: '#FFFFFF', border: 'none', boxShadow: '0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06)' },
   outlined: { bg: '#FFFFFF', border: '1px solid #DADCE0', boxShadow: 'none' },
 };
-```
+```text
 
 ### Modais
 
@@ -463,7 +497,7 @@ const overlayStyles = {
   justifyContent: 'center',
   zIndex: 1000,
 };
-```
+```markdown
 
 ### Tabelas
 
@@ -484,7 +518,7 @@ interface TableProps<T> {
   emptyMessage?: string;
   onRowClick?: (row: T) => void;
 }
-```
+```text
 
 ### Dropdowns e Selects
 
@@ -504,7 +538,7 @@ interface SelectProps {
   searchable?: boolean;
   clearable?: boolean;
 }
-```
+```markdown
 
 ---
 
@@ -542,7 +576,7 @@ function Breadcrumb({ items }: { items: BreadcrumbItem[] }) {
     </nav>
   );
 }
-```
+```text
 
 ### Formulários
 
@@ -568,7 +602,7 @@ function formatPhone(value: string): string {
   if (digits.length <= 7) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
   return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
 }
-```
+```markdown
 
 ### Feedback
 
@@ -604,7 +638,7 @@ const onboarding: OnboardingStep[] = [
     position: 'right',
   },
 ];
-```
+```text
 
 ### Empty States
 
@@ -621,7 +655,7 @@ const emptyState = {
   description: 'Crie seu primeiro projeto para começar a organizar suas tarefas.',
   action: { label: 'Criar projeto', href: '/projects/new' },
 };
-```
+```markdown
 
 ---
 
@@ -659,7 +693,7 @@ Microinterações são **pequenos momentos de feedback** que comunicam o resulta
   cursor: not-allowed;
   transform: none;
 }
-```
+```text
 
 ### Animações
 
@@ -694,7 +728,7 @@ const modalAnimation = {
     easing: 'cubic-bezier(0.4, 0.0, 1, 1)',
   },
 };
-```
+```markdown
 
 ### Microinterações Essenciais
 
@@ -709,7 +743,7 @@ Toast           | Appear          | Slide in da direita
 Skeleton        | Load            | Pulse shimmer
 Link            | Hover           | Underline aparece
 Checkbox        | Toggle          | Check animado
-```
+```markdown
 
 ---
 
@@ -805,7 +839,7 @@ const darkTheme: Theme = {
     },
   },
 };
-```
+```text
 
 ### Contraste no Dark Mode
 
@@ -828,7 +862,7 @@ Light mode:          Dark mode:
 │ #1A73E8    │      │ #8AB4F8    │
 │  primary   │      │  primary   │
 └────────────┘      └────────────┘
-```
+```markdown
 
 ### Implementação com Context
 
@@ -858,7 +892,7 @@ function ThemeProvider({ children }: { children: React.ReactNode }) {
     </ThemeContext.Provider>
   );
 }
-```
+```markdown
 
 ---
 
@@ -876,7 +910,7 @@ Input        | padding, border, border-radius, font-size, label position
 Card         | padding, border-radius, box-shadow, gap entre filhos
 Text         | font-family, font-size, line-height, letter-spacing, color
 Spacing      | margin, gap, top/left/bottom/right values
-```
+```markdown
 
 ### Medidas e Densidade
 
@@ -890,7 +924,7 @@ const faithfulImplementation = {
   padding: 12, // da escala: spacing.sm
   gap: 8,      // da escala: spacing.xs
 };
-```
+```text
 
 ### Implementação Fiel
 
@@ -946,67 +980,73 @@ function checkFidelity(inspection: UIInspectionChecklist): number {
   const passed = items.filter(Boolean).length;
   return Math.round((passed / total) * 100);
 }
-```
+```markdown
 
 ### Densidade de Informação
 
 Produtos enterprise geralmente precisam de mais densidade que produtos B2C.
 
 ```typescript
-// Comparação de densidade
-interface DensityConfig {
-  label: string;
-  padding: 'compact' | 'comfortable' | 'spacious';
-  fontSize: number;
-  rowHeight: number;
-}
-
-const enterpriseDensity: DensityConfig = {
-  label: 'Enterprise (alta densidade)',
-  padding: 'compact',
-  fontSize: 12,
-  rowHeight: 32,
-};
-
-const consumerDensity: DensityConfig = {
-  label: 'Consumer (baixa densidade)',
-  padding: 'spacious',
-  fontSize: 14,
-  rowHeight: 48,
-};
 ```
 
----
+## Exercícios: Prática
 
-## Resumo do Capítulo
+### Nível 1 — Fácil
 
-Neste capítulo, você aprendeu os fundamentos de UI Design que todo desenvolvedor front-end precisa dominar:
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
 
-| Conceito | Aplicação Prática |
-|----------|------------------|
-| **CRAP** (Contraste, Repetição, Alinhamento, Proximidade) | Princípios universais de design visual |
-| **Cor** | Paletas funcionais, tokens, acessibilidade WCAG 4.5:1 |
-| **Tipografia** | Hierarquia visual, escalas modulares, legibilidade |
-| **Espaçamento e Grid** | Escalas consistentes, grid responsivo, layouts |
-| **Componentes** | Botões, inputs, modais, tabelas, selects |
-| **Design Patterns** | Navegação, formulários, feedback, onboarding |
-| **Microinterações** | Estados visuais, animações, tokens de easing |
-| **Dark Mode** | Temas alternativos, ThemeProvider, contraste perceptual |
-| **UI para Devs** | Inspeção Figma, fidelidade, densidade |
+### Nível 2 — Intermediário
 
-### Checklist do Desenvolvedor UI
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
 
-- [ ] Usa tokens do design system (não valores hardcoded)
-- [ ] Contraste WCAG AA (4.5:1 texto normal, 3:1 componentes)
-- [ ] Estados: default, hover, focus, active, disabled, error
-- [ ] Responsivo: mobile, tablet e desktop
-- [ ] Acessível: ARIA labels, teclado, focus visible
-- [ ] Microinterações: feedback visual em cada ação
+### Nível 3 — Difícil
 
-### Para Aprofundar
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
 
-- **Leitura**: *Refactoring UI* (Adam Wathan & Steve Schoger)
-- **Ferramenta**: Stark plugin para Figma (auditoria de contraste)
-- **Prática**: Reimplemente um componente famoso seguindo a checklist de fidelidade
-- **Referência**: [shadcn/ui](https://ui.shadcn.com) — componentes acessíveis com Radix UI e Tailwind
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 

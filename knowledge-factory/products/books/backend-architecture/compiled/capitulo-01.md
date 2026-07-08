@@ -7,7 +7,25 @@
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 08 Arquitetura
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. Por que arquitetura importa
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Arquitetura é a **estrutura fundamental** de um sistema. São as decisões que, se tomadas errado, custam caro para mudar.
 
@@ -29,7 +47,23 @@ Arquitetura Boa:
   │  "Mudei uma coisa sem quebrar nada"      │
   │  "Testes garantem que funciona"          │
   └──────────────────────────────────────────┘
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### O que arquitetura define
 
@@ -39,7 +73,7 @@ Comunicação:      Como as partes se comunicam?
 Dados:            Como os dados fluem e são armazenados?
 Tecnologia:       Qual stack suporta a estrutura?
 Equipe:           Como o time se organiza para desenvolver?
-```
+```markdown
 
 ---
 
@@ -71,7 +105,7 @@ class EmailService {
 class ReportGenerator {
   generate(): Report { /* ... */ }
 }
-```
+```text
 
 ### O — Open/Closed Principle
 
@@ -94,7 +128,7 @@ interface PaymentMethod {
 
 class CreditCardPayment implements PaymentMethod { /* ... */ }
 class PixPayment implements PaymentMethod { /* ... */ }
-```
+```markdown
 
 ### L — Liskov Substitution Principle
 
@@ -117,7 +151,7 @@ interface FlyingBird extends Bird {
 }
 class Penguin implements Bird { }
 class Sparrow implements Bird, FlyingBird { }
-```
+```text
 
 ### I — Interface Segregation Principle
 
@@ -135,7 +169,7 @@ interface Worker {
 interface Workable { work(): void; }
 interface Eatable { eat(): void; }
 interface Sleepable { sleep(): void; }
-```
+```markdown
 
 ### D — Dependency Inversion Principle
 
@@ -153,7 +187,7 @@ class OrderService {
     private repository: OrderRepository  // interface
   ) { }
 }
-```
+```text
 
 ---
 
@@ -185,7 +219,7 @@ Clean Architecture é uma arquitetura que organiza o código em **círculos conc
     │   FRAMEWORKS & DRIVERS                        │
     │  (NestJS, Prisma, Next.js, PostgreSQL...)     │
     └──────────────────────────────────────────────┘
-```
+```markdown
 
 ### A Regra da Dependência
 
@@ -199,7 +233,7 @@ Clean Architecture é uma arquitetura que organiza o código em **círculos conc
 ✅ CERTO: Use Case depende de interface
   UseCase → UserRepository (interface)
   PrismaUserRepository → UserRepository (implementa)
-```
+```javascript
 
 ### O que vai em cada camada
 
@@ -226,7 +260,7 @@ Código:  client.openTicket(ticket)  ✅
 
 Negócio: "Um cliente pode abrir um ticket de suporte"
 Código:  client.createSupportTicket(ticket)  ❌ (outra linguagem)
-```
+```markdown
 
 ### Bounded Contexts
 
@@ -239,7 +273,7 @@ Contexto de Vendas:         Contexto de Logística:
   Pedido = carrinho          Pedido = carga para entrega
 
 São modelos DIFERENTES do mesmo conceito!
-```
+```markdown
 
 ### Elementos do DDD
 
@@ -269,7 +303,7 @@ São modelos DIFERENTES do mesmo conceito!
 │  → Regra de negócio sem estado           │
 │  → Opera em múltiplas entidades          │
 └──────────────────────────────────────────┘
-```
+```markdown
 
 ### Exemplo prático de DDD
 
@@ -335,7 +369,7 @@ class AlterarPerfilUseCase {
     await this.emailService.enviarNotificacao(usuario.email);
   }
 }
-```
+```markdown
 
 ---
 
@@ -369,7 +403,7 @@ A arquitetura hexagonal é uma variação da Clean Architecture que usa o concei
                │  (NestJS,    │   │  (Prisma,      │
                │   Express)   │   │   email, queue)│
                └──────────────┘   └────────────────┘
-```
+```markdown
 
 Abaixo, uma visão de container C4 da mesma arquitetura:
 
@@ -388,7 +422,7 @@ interface PedidoRepository {
 interface CriarPedidoUseCase {
   execute(input: CriarPedidoInput): Promise<CriarPedidoOutput>;
 }
-```
+```text
 
 ### Adaptadores
 
@@ -420,7 +454,7 @@ class PedidoController {
     return this.criarPedido.execute(this.toInput(body));
   }
 }
-```
+```markdown
 
 ---
 
@@ -443,7 +477,7 @@ Quando usar:
   - Sistema com domínios fortemente acoplados
   - Startup / MVP
   - Quando velocidade > escala
-```
+```markdown
 
 ### Microservices
 
@@ -462,7 +496,7 @@ Quando usar:
   - Domínios claramente separados
   - Escala global
   - Times autônomos por domínio
-```
+```markdown
 
 ### A recomendação
 
@@ -490,7 +524,7 @@ Consumidor:       Quem reage ao evento
 
 Barramento:       Meio de transporte
   → RabbitMQ, Kafka, Redis Pub/Sub
-```
+```markdown
 
 ### Exemplo
 
@@ -533,7 +567,7 @@ class EmailHandler {
     });
   }
 }
-```
+```text
 
 ---
 
@@ -541,6 +575,7 @@ class EmailHandler {
 
 ### Estrutura de pastas seguindo Clean Architecture + DDD
 
+```text
 ```
 src/
 ├── domain/                    # Círculo mais interno
@@ -577,4 +612,65 @@ src/
 │       └── jwt-auth.guard.ts
 │
 └── main.ts
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 

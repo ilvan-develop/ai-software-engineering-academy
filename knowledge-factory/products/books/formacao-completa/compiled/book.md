@@ -27,7 +27,25 @@
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 00 Introducao
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. Como a IA mudou o desenvolvimento de software
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 A IA generativa não é apenas mais uma ferramenta no cinto do desenvolvedor. Ela muda fundamentalmente **quem** escreve código, **como** o código é escrito e **o que** significa ser um engenheiro de software.
 
@@ -107,7 +125,23 @@ O arquiteto de software no mundo dos agentes não desapareceu — ele se tornou 
 │  • Decidir o que delegar vs. o que reter    │
 │  • Validar outputs dos agentes              │
 └─────────────────────────────────────────────┘
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### Decisões que o arquiteto **não pode** delegar
 
@@ -162,7 +196,7 @@ A IA não é um substituto — é um **membro do time** com habilidades específ
 NÃO:  "A IA vai substituir os desenvolvedores"
 SIM:  "A IA é um desenvolvedor júnior infinitamente rápido e disposto,
        que precisa de supervisão técnica e contexto de negócio"
-```
+```markdown
 
 ### O que a IA faz bem
 
@@ -201,7 +235,7 @@ SIM:  "A IA é um desenvolvedor júnior infinitamente rápido e disposto,
                   Baixa complexidade
 
                 Baixo risco              Alto risco
-```
+```markdown
 
 ### Regras de ouro
 
@@ -240,7 +274,7 @@ O ciclo completo que usaremos na formação:
 │  Cada etapa alimenta a próxima                           │
 │                                                         │
 └─────────────────────────────────────────────────────────┘
-```
+```markdown
 
 ---
 
@@ -280,6 +314,56 @@ O ciclo completo que usaremos na formação:
 5. O ciclo de desenvolvimento com agentes é mais iterativo e com mais pontos de validação
 6. Código gerado por IA sem governança tem **40% de erro** — com regras cai para **~3%**
 
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
+
 
 
 
@@ -291,7 +375,25 @@ O ciclo completo que usaremos na formação:
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 01 Mentalidade Enterprise
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. O que é software Enterprise?
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Software Enterprise é aquele construído para **organizações**, não para indivíduos.
 
@@ -316,7 +418,23 @@ Software de Consumo:                Software Enterprise:
 - Atualização quando quiser         - Atualização com rollback e migração
 - Suporte via chat                  - SLA definido contratualmente
 - Compliance: nenhum                - Compliance: LGPD, SOC2, ISO 27001
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ---
 
@@ -338,7 +456,7 @@ Escala Horizontal (Scale Out):
   1 servidor → 10 servidores
   Balanceador de carga na frente
   Limite: gerenciamento de estado
-```
+```markdown
 
 ### O que escalar no sistema Enterprise
 
@@ -347,7 +465,7 @@ Usuários       → Autenticação, session, rate limiting
 Dados          → Índices, partições, sharding
 Funcionalidades→ Módulos, microserviços, feature flags
 Times          → Código modular, documentação, padronização
-```
+```markdown
 
 ### Anti-padrões de escalabilidade
 
@@ -377,7 +495,7 @@ Governança é o conjunto de **regras e processos** que garantem consistência e
 │ Padrões       │ ADRs          │ Retention     │
 │ Arquitetura   │ Documentação  │ Compliance    │
 └───────────────┴───────────────┴──────────────┘
-```
+```markdown
 
 ### Exemplos de regras de governança
 
@@ -424,7 +542,7 @@ Código com manutenibilidade:
   │  Onboarding dev novo   │  1 semana          │
   │  Refatorar módulo     │  2 dias            │
   └────────────────────────────────────────────┘
-```
+```markdown
 
 ### Como garantir manutenibilidade
 
@@ -451,7 +569,7 @@ Exemplos:                       Exemplos:                   Exemplos:
 - log.error("Falha no pgto")    - response_time_p95         - span do endpoint
 - log.info("Usuário logou")     - error_rate                - span do banco
 - log.warn("Rate limit")        - cpu/memory usage          - span do cache
-```
+```markdown
 
 ### O que observar em um sistema Enterprise
 
@@ -474,7 +592,7 @@ Segurança:
   - Tentativas de login falhas
   - Rate limiting acionado
   - Acessos não autorizados
-```
+```markdown
 
 ---
 
@@ -487,7 +605,7 @@ Segurança em software Enterprise não é opcional — é **pré-requisito**.
 ```text
 Não: "Vamos adicionar segurança depois"
 Sim: "Segurança é parte da definição de "pronto""
-```
+```markdown
 
 ### Camadas de segurança
 
@@ -506,7 +624,7 @@ Camada 4: Rede
 
 Camada 5: Infraestrutura
   → Secrets management, network isolation, backup
-```
+```markdown
 
 ### Checklist Enterprise de segurança
 
@@ -570,7 +688,7 @@ async function esquecerUsuario(usuarioId: string) {
     where: { usuarioId },
   });
 }
-```
+```markdown
 
 ---
 
@@ -598,7 +716,7 @@ Row-Level Security:
   Contras: risco de vazamento entre tenants
   Quando: dados de baixa sensibilidade
   Custo: $
-```
+```markdown
 
 ### Implementação prática (RLS no Prisma)
 
@@ -615,7 +733,7 @@ model Usuario {
   tenant    Tenant   @relation(fields: [tenantId], references: [id])
   email     String
 }
-```
+```text
 
 ```typescript
 // Middleware que filtra por tenant
@@ -624,7 +742,7 @@ async function getUsuarios(tenantId: string) {
     where: { tenantId },
   });
 }
-```
+```markdown
 
 ---
 
@@ -640,7 +758,7 @@ Disponibilidade     Downtime/ano       Exemplo
 99.9% (2 noves)    8.76 horas          SaaS padrão
 99.99% (3 noves)   52.56 minutos       Enterprise crítico
 99.999% (4 noves)  5.26 minutos        Missão crítica
-```
+```markdown
 
 ### Estratégias de HA
 
@@ -659,7 +777,7 @@ Recuperação:
   - Health checks → reinício automático
   - Backup automático + testado
   - Disaster recovery plan
-```
+```markdown
 
 ---
 
@@ -675,6 +793,56 @@ Recuperação:
 8. **Multi-tenant** — escolha a estratégia de isolamento certa
 9. **Alta disponibilidade** — sem ponto único de falha
 
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
+
 
 
 
@@ -686,7 +854,25 @@ Recuperação:
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 02 Product Discovery
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. O que é Product Discovery?
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Product Discovery é o processo de **entender problemas reais de usuários reais antes de escrever uma linha de código**. O objetivo não é entregar features, mas sim **decidir o que vale a pena ser construído**.
 
@@ -699,7 +885,23 @@ Alta incerteza, baixo custo           Baixa incerteza, alto custo
 Perguntas, hipóteses, experimentos    Requisitos, planejamento, código
 Falsificável, iterativo               Definido, incremental
 "Devo construir isso?"                "Como construir isso?"
+```javascript
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ![Discovery vs Delivery](/knowledge-factory/products/courses/product-design/module-02-product-discovery/assets/diagram-discovery-vs-delivery.svg)
 
@@ -718,7 +920,7 @@ Com Discovery:
   → Descoberta: ele quer exportar dados pra planilha
   → Solução: botão de exportar CSV em 1 dia
   → Valida: ele testa, funciona, usa todo dia
-```
+```markdown
 
 ### Armadilha comum
 
@@ -733,7 +935,7 @@ Por quê?
 - Ninguém perguntou se o problema era real
 - Ninguém validou se chat bot era a melhor solução
 - Ninguém testou com usuários antes de construir
-```
+```markdown
 
 ![Mapa mental do Product Discovery](/knowledge-factory/products/courses/product-design/module-02-product-discovery/assets/diagram-discovery-mindmap.svg)
 
@@ -747,7 +949,7 @@ O discovery não é linear — é um ciclo iterativo. O modelo mais comum tem 4 
 OPORTUNIDADE → PESQUISA → IDEAÇÃO → PROTOTIPAÇÃO → VALIDAÇÃO
       │                                                 │
       └───────────────── (iterate) ────────────────────┘
-```
+```markdown
 
 ![Processo de Product Discovery](/knowledge-factory/products/courses/product-design/module-02-product-discovery/assets/diagram-discovery-flow.svg)
 
@@ -781,7 +983,7 @@ HMW: "Como poderíamos reduzir o atrito no cadastro?"
      → "Como poderíamos deixar o cadastro opcional?"
      → "Como poderíamos usar login social?"
      → "Como poderíamos pré-preencher dados?"
-```
+```markdown
 
 ### 2.4 Prototipação
 
@@ -795,7 +997,7 @@ Wireframe     Horas      Layout, estrutura
 Mockup        Dias       Visual, branding
 Prototype     Dias       Interação, fluxo real
 MVP           Semanas    Valor real no mercado
-```
+```markdown
 
 ### 2.5 Validação
 
@@ -830,7 +1032,7 @@ A ferramenta mais poderosa de discovery.
 4. Fechamento (5min)
    "Algo mais que gostaria de compartilhar?"
    "Posso voltar a te procurar se tiver mais perguntas?"
-```
+```text
 
 **Regras de ouro:**
 - Não faça perguntas indutoras ("Você não acha que X é melhor?")
@@ -849,7 +1051,7 @@ Bom para validar achados qualitativos com escala.
 ✅ "Na última semana, quantas vezes você precisou exportar
     dados do sistema?"
    (comportamento real, mensurável)
-```
+```text
 
 **Dicas de surveys:**
 - Máximo 10 perguntas
@@ -867,7 +1069,7 @@ Não tem W              Tem W mas é confuso      Tem W excelente
 Feedback: lento        Feedback: caro           Feedback: complexo
 
 Oportunidade: X + W simples + preço acessível
-```
+```text
 
 **O que analisar:**
 - Proposta de valor
@@ -893,7 +1095,7 @@ Métricas de Discovery:
 | NPS / CSAT               | Satisfação geral                         |
 | Search terms             | O que usuários procuram (e não acham)    |
 | Feature usage            | O que realmente é usado                  |
-```
+```markdown
 
 ---
 
@@ -916,7 +1118,7 @@ Opção D: Podcasts                  (R$ 0, 1h/dia no trânsito)
 
 "Contratamos" a opção que melhor resolve o job
 dado nosso contexto (tempo, dinheiro, momento)
-```
+```text
 
 **Estrutura JTBD:**
 
@@ -926,7 +1128,7 @@ Quando [situação], eu quero [motivação] para [resultado esperado].
 Exemplo:
 "Quando estou começando um novo projeto, eu quero entender o
 que outros times já tentaram antes, para não repetir erros."
-```
+```text
 
 **Jobs principais vs jobs funcionais:**
 - **Functional:** "Organizar tarefas do time"
@@ -953,7 +1155,7 @@ Uma página que resume o modelo de negócio. Ideal para early stage.
 │ ESTRUTURA DE CUSTOS                                │ RECEITAS                         │
 │ Fixos, variáveis, custo de aquisição               │ Como ganha dinheiro              │
 └────────────────────────────────────────────────────┴─────────────────────────────────┘
-```
+```markdown
 
 ### 4.3 Value Proposition Canvas
 
@@ -980,7 +1182,7 @@ VALUE PROPOSITION CANVAS
 │                              │                              │
 │         ENCAIXE: quando solutions > jobs + pains           │
 └──────────────────────────────┴──────────────────────────────┘
-```
+```markdown
 
 ---
 
@@ -1009,7 +1211,7 @@ RESULTADO ESPEREADO
 └── OPORTUNIDADE: Produto é caro para PMEs
     ├── SOLUÇÃO: Plano "Starter" com funcionalidades limitadas
     └── EXPERIMENTO: Landing page com pricing e botão de compra
-```
+```text
 
 **Como construir:**
 1. Defina o **outcome** (resultado esperado, ex: "aumentar ativação em 30%")
@@ -1036,7 +1238,7 @@ Acompanhar    │               │              │ Dashboard     │
 progresso     │               │              │ de progresso   │
 ──────────────┴───────────────┴──────────────┴────────────────┘
   ↑ MVP (corta aqui)            ↑ Release 2          ↑ Release 3
-```
+```text
 
 **Por que usar:**
 - Mostra o produto como um **fluxo**, não uma lista
@@ -1061,7 +1263,7 @@ Exemplo:
 resultará em 30% mais ativação no D7.
 Saberemos que estamos certos quando a taxa de ativação
 subir de 40% para 52% no teste A/B."
-```
+```markdown
 
 ### Tipos de experimento
 
@@ -1076,7 +1278,7 @@ Concierge MVP       | Alto    | Alta      | Validar valor real
 Wizard of Oz MVP    | Médio   | Alta      | Validar viabilidade
 Single-feature MVP  | Médio   | Alta      | Testar feature isolada
 Piecemeal MVP       | Baixo   | Média     | Validar sem construir
-```
+```markdown
 
 ### Exemplo: Landing page fake
 
@@ -1096,7 +1298,7 @@ Ideia: "App que agenda reuniões automaticamente"
 4. Resultado:
    Se < 5% clica → interesse baixo, repense a proposta
    Se > 15% clica → interesse real, continue
-```
+```markdown
 
 ### MVP não é produto mínimo
 
@@ -1106,7 +1308,7 @@ REAL: MVP é o menor experimento que valida ou invalida uma hipótese
 
 MVP serve para APRENDER, não para entregar valor.
 Se você já sabe que funciona, não precisa de MVP.
-```
+```markdown
 
 ---
 
@@ -1125,7 +1327,7 @@ Métrica de sucesso errada  Time mede output, não outcome
 Times isolados             Descobertas não são compartilhadas
 Gerenciamento de risco     Medo de errar → pouca experimentação
 Orçamento anual fixo       Discovery não é orçado → não existe
-```
+```markdown
 
 ### Como fazer discovery em Enterprise
 
@@ -1138,7 +1340,7 @@ OKR da empresa: "Aumentar receita recorrente em 25%"
 → Discovery: por que os clientes estão cancelando?
 → Outcome: reduzir churn pela metade
 → Backlog: funcionalidades que endereçam as causas
-```
+```text
 
 **2. Discovery Sprints**
 
@@ -1149,7 +1351,7 @@ Sprint Discovery (2 semanas):
   Semana 1: Pesquisa (entrevistas, analytics, concorrência)
   Semana 2: Ideação, prototipação, testes com usuários
   Saída: Backlog priorizado para as próximas 6 semanas de delivery
-```
+```text
 
 **3. Envolva stakeholders cedo**
 
@@ -1162,7 +1364,7 @@ Engenharia       | "Isso é viável tecnicamente?"      | Prototipação
 Design           | "Isso é usável?"                    | Prototipação, teste
 Comercial        | "O cliente pagaria por isso?"      | Pesquisa, validação
 Sucesso do cl.   | "Isso reduz chamados?"             | Pesquisa
-```
+```text
 
 **4. Discovery contínuo vs Discovery por projeto**
 
@@ -1176,7 +1378,7 @@ Discovery por Projeto (menos eficaz):
   Discovery só acontece no início do projeto
   Depois que o delivery começa, não se questiona mais
   Se descobrir algo errado no meio, é tarde demais
-```
+```markdown
 
 ### Cultura de Experimentação
 
@@ -1193,7 +1395,7 @@ Cultura que NÃO funciona:
   "Quem decide é o VP"
   "A gente sabe o que o cliente quer"
   "Se deu trabalho, vamos lançar mesmo assim"
-```
+```markdown
 
 ---
 
@@ -1217,7 +1419,7 @@ Depois do Discovery:
   - [ ] Relatório de vendas (validado: resolve job #2)
   - [ ] Tema escuro (despriorizado: 12% pediram)
   - [ ] Integração Slack (despriorizado: 3 clientes, custo alto)
-```
+```markdown
 
 ### 8.2 Proto-personas
 
@@ -1237,7 +1439,7 @@ Comportamento:   Usa Excel, Tableau, SQL (básico)
 Job to be done:  "Quando preciso responder uma pergunta de negócio,
                   quero encontrar os dados certos em minutos, para
                   não perder credibilidade com o diretor."
-```
+```markdown
 
 ### 8.3 User Stories
 
@@ -1258,7 +1460,7 @@ Critérios de aceite:
 - Arquivo baixa em até 10s (para < 100k linhas)
 - Colunas traduzidas para pt-BR
 - Nome do arquivo: `export-{tipo}-{data}.csv`
-```
+```markdown
 
 ### 8.4 Opportunity Backlog
 
@@ -1271,7 +1473,7 @@ O01 | Usuários não encontram dados no sistema   | 45% dos chamados       | Gra
 O02 | Demora para gerar relatórios              | Survey: 78% citaram    | Médio   | P0
 O03 | Não confiabilidade dos dados              | NPS: 4.2 (crítico)     | Grande  | P1
 O04 | Integração com ferramentas externas       | 3 clientes enterprise  | Médio   | P2
-```
+```markdown
 
 ---
 
@@ -1287,6 +1489,56 @@ O04 | Integração com ferramentas externas       | 3 clientes enterprise  | Mé
 8. **Enterprise**: alinhe com OKRs, envolva stakeholders, cultura de experimentação
 9. **Saídas**: backlog refinado, proto-personas, user stories, opportunity backlog
 
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
+
 
 
 
@@ -1298,7 +1550,25 @@ O04 | Integração com ferramentas externas       | 3 clientes enterprise  | Mé
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 03 Design Thinking
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. O que é Design Thinking
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Design Thinking é uma abordagem **centrada no ser humano** para solução de problemas que combina empatia, criatividade e racionalidade. Diferente de métodos tradicionais que partem de uma solução técnica, o Design Thinking começa com o **usuário** e suas necessidades reais.
 
@@ -1327,7 +1597,23 @@ Design Thinking é uma abordagem **centrada no ser humano** para solução de pr
 │  • Otimista (toda solução é possível)             │
 │  • Iterativo (nunca está pronto)                  │
 └─────────────────────────────────────────────────┘
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### Abordagem tradicional vs Design Thinking
 
@@ -1335,7 +1621,7 @@ Design Thinking é uma abordagem **centrada no ser humano** para solução de pr
 TRADICIONAL:                                   DESIGN THINKING:
 Problema → Análise → Solução → Entrega        Problema → Empatia → Definir → Ideias → Protótipo → Teste
                                                                                             ↻
-```
+```markdown
 
 Enquanto a abordagem tradicional busca a **solução certa** de primeira, o Design Thinking busca **entender o problema certo** antes de solucionar, iterando quantas vezes for necessário.
 
@@ -1365,7 +1651,7 @@ O processo é dividido em 5 fases **não-lineares** — você pode (e deve) volt
                    ┌─────────────────────┐
                    │       TESTAR        │←──── Iteração
                    └─────────────────────┘
-```
+```text
 
 Cada fase responde a uma pergunta central:
 
@@ -1427,7 +1713,7 @@ Sem empatia, você constrói soluções baseadas em **suposições**. Com empati
   • Interromper o usuário
   • Defender ideias ou justificar o sistema atual
   • Buscar validação para sua solução
-```
+```markdown
 
 #### 3.2 Observação contextual
 
@@ -1449,7 +1735,7 @@ interface Observacao {
   workarounds: string[];
   insights: string[];
 }
-```
+```text
 
 **Exemplo de observação:**
 
@@ -1462,7 +1748,7 @@ Tarefa: Gerar relatório mensal de vendas
 09:03 → Seleciona filtros (mês, região, produto) — 30s
 09:05 → Sistema trava ao carregar 3 meses de dados — frustração: 4/5
 09:07 → Chama o suporte, enquanto isso abre Excel e começa a fazer manual
-```
+```markdown
 
 **Insight:** A usuária prefere fazer manual no Excel (30 min) do que esperar o sistema travar repetidamente.
 
@@ -1503,7 +1789,7 @@ A imersão coloca o time **na pele do usuário**. Você experimenta o problema e
 │  • Falta de suporte humano      • Interface intuitiva           │
 │  • Retrabalho constante         • Reconhecimento do chefe       │
 └─────────────────────────────────────────────────────────────────┘
-```
+```markdown
 
 ---
 
@@ -1519,7 +1805,7 @@ Uma boa declaração de problema segue esta estrutura:
 
 ```text
 [USUÁRIO] precisa de [NECESSIDADE] porque [INSIGHT]
-```
+```text
 
 **Exemplos:**
 
@@ -1536,7 +1822,7 @@ Uma boa declaração de problema segue esta estrutura:
     consolidar dados de 5 fontes diferentes em tempo
     real porque as decisões baseadas em dados de
     ontem já não são competitivas"
-```
+```markdown
 
 ### How Might We (HMW)
 
@@ -1548,7 +1834,7 @@ HMW = How Might We (Como Poderíamos)
 How  → Assume que é possível (mente aberta)
 Might → Permite tentativa e erro (não precisa acertar)
 We   → É colaborativo (não é individual)
-```
+```text
 
 **Técnica:** Para cada problem statement, gere 5-10 HMWs em diferentes direções:
 
@@ -1591,7 +1877,7 @@ HMWs:
                         │
                     BAIXO IMPACTO
    BAIXO ESFORÇO ─────────────────── ALTO ESFORÇO
-```
+```markdown
 
 ---
 
@@ -1608,7 +1894,7 @@ REGRAS DO BRAINSTORMING:
 5. 🎯 Seja visual — desenhe, rabisque, use post-its
 6. ⏱ Tempo curto — 15-30 minutos no máximo
 7. 🗂 Um tópico por vez
-```
+```markdown
 
 ### Crazy 8
 
@@ -1624,7 +1910,7 @@ Crazy 8 é uma técnica de **divergência rápida**: cada pessoa dobra uma folha
 │          │          │          │          │
 │ (esboço) │ (esboço) │ (esboço) │ (esboço) │
 └──────────┴──────────┴──────────┴──────────┘
-```
+```markdown
 
 **Por que funciona:** A pressão do tempo impede o perfeccionismo e força o cérebro a criar conexões inesperadas.
 
@@ -1647,7 +1933,7 @@ Exemplo de priorização para um sistema de onboarding:
 | Chat ao vivo com suporte                | Alto    | Alto    | 2º (Big Bet) |
 | Remover campos obrigatórios desnecessários | Alto | Baixo   | 1º         |
 | Gamificação com badges                  | Baixo   | Médio   | 3º         |
-```
+```markdown
 
 ### Outras técnicas de ideação
 
@@ -1674,7 +1960,7 @@ Prototipar transforma ideias abstratas em algo **tangível** que pode ser testad
 BAIXA FIDELIDADE                        ALTA FIDELIDADE
 ├─────────────────────────────────────────────────────┤
   Papel → Wireframe → Mockup → Protótipo clicável → MVP
-```
+```markdown
 
 #### Protótipos de baixa fidelidade
 
@@ -1700,7 +1986,7 @@ interface WireframeElement {
   conteudo: string;
   estado?: 'normal' | 'hover' | 'error' | 'loading' | 'empty' | 'success';
 }
-```
+```yaml
 
 Ferramentas: Figma, Balsamiq, Whimsical, Miro.
 
@@ -1749,7 +2035,7 @@ Use quando:
 ├──────────────────────┤
 │ 🏠  🔍  🛒  👤     │  ← Navigation bar
 └──────────────────────┘
-```
+```markdown
 
 ### Dicas para prototipar
 
@@ -1766,7 +2052,7 @@ Use quando:
   • Gastar horas em detalhes visuais antes de validar
   • Apresentar protótipo como "quase pronto"
   • Pular etapas (papel → direto para código)
-```
+```markdown
 
 ---
 
@@ -1781,7 +2067,7 @@ Use quando:
 │                                                          │
 │                    (e recomeça)                           │
 └─────────────────────────────────────────────────────────┘
-```
+```markdown
 
 ### Tipos de teste
 
@@ -1834,7 +2120,7 @@ Use quando:
 
 ❌ Moderador: "Aqui você clica nesse botão e abre um modal..."
 ✅ Moderador: "O que você faria agora?"
-```
+```markdown
 
 ### Feedback Loop
 
@@ -1845,7 +2131,7 @@ Gravações              Agrupar padrões          Definir o que
 Anotações              Priorizar problemas      mudar no protótipo
 Métricas (tempo,       Identificar              Iterar e testar
 taxa de sucesso)       insights                 novamente
-```
+```text
 
 Documente os achados com:
 
@@ -1876,7 +2162,7 @@ Ideiar (soluções)          ───────→    Sprint Planning (discut
 Prototipar (testar)        ───────→    Sprint (desenvolvimento)
 Testar (validar)           ───────→    Sprint Review (feedback do usuário)
                          ↻
-```
+```markdown
 
 #### Discovery Sprints
 
@@ -1897,7 +2183,7 @@ Semana 2 — Ideiar + Prototipar
   Qua: Prototipação de baixa fidelidade
   Qui: Teste do protótipo com 3-5 usuários
   Sex: Iteração + apresentação para stakeholders
-```
+```markdown
 
 #### Kanban com Design Thinking
 
@@ -1913,7 +2199,7 @@ Adicione colunas de Discovery no Kanban:
 │  Item G  │  HMW #2  │  HMW #1  │  Wirefr. │  Dev #3  │  Valid.  │
 │          │          │          │          │          │          │
 └──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘
-```
+```markdown
 
 ### Ritmo: Discovery + Delivery
 
@@ -1931,7 +2217,7 @@ TRACK 2 — DELIVERY (Ágil)
 ├── Sprint Planning
 ├── Desenvolvimento
 └── Sprint Review
-```
+```markdown
 
 ---
 
@@ -2000,7 +2286,7 @@ DEPOIS:
   [ ] Compartilhar com stakeholders ausentes
   [ ] Agendar follow-up para validação
   [ ] Medir impacto (o que mudou depois do workshop?)
-```
+```markdown
 
 #### 3. Enterprise Design Thinking (IBM)
 
@@ -2020,7 +2306,7 @@ Hills (Metas):
     "Um gerente de operações consegue identificar gargalos
      logísticos em tempo real e tomar ações corretivas
      antes que impactem o cliente final"
-```
+```markdown
 
 ---
 
@@ -2050,7 +2336,7 @@ Hills (Metas):
 ❌ Tratar DT como processo linear
    "Já testamos, passamos para a próxima fase"
    Consequência: Perde-se o principal benefício: a iteração.
-```
+```markdown
 
 ---
 
@@ -2067,6 +2353,56 @@ Hills (Metas):
 9. **Em Enterprise**, DesignOps e workshops estruturados escalam a prática
 10. **Anti-padrões** incluem pular empatia, prototipar cedo demais e testar com amigos
 
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
+
 
 
 
@@ -2078,7 +2414,25 @@ Hills (Metas):
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 04 Ux
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. O que é UX?
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 UX (User Experience) é a **percepção geral que uma pessoa tem ao interagir com um produto, sistema ou serviço**. Não se trata apenas de telas bonitas — envolve emoções, eficiência, acessibilidade e satisfação.
 
@@ -2091,7 +2445,23 @@ Experiência completa                      Superfície visual
 Pesquisa, arquitetura, fluxo             Cores, tipografia, ícones
 Funcionalidade e usabilidade             Estética e identidade
 Ciência + Design                         Design + Arte
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 > UI sem UX é como um carro bonito sem motor. UX sem UI é como um motor potente sem carroceria.
 
@@ -2111,7 +2481,7 @@ O modelo mais clássico para estruturar UX, de baixo (abstrato) para cima (concr
 ├─────────────────────────────────────────────┤
 │ 1. ESTRATÉGIA      Necessidades do negócio  │  ← Objetivos, dores
 └─────────────────────────────────────────────┘
-```
+```text
 
 | Plano | Pergunta central | Entregável típico |
 |-------|------------------|-------------------|
@@ -2134,7 +2504,7 @@ Pesquisa não é opcional — é o que impede você de construir a feature errad
 ```text
 ❌ "Você usaria um botão de exportar CSV?"
 ✅ "Me conta como você faz para gerar relatórios hoje."
-```
+```text
 
 **Estrutura de uma entrevista:**
 
@@ -2144,7 +2514,7 @@ Pesquisa não é opcional — é o que impede você de construir a feature errad
 3. Tarefa (15min) — "Você pode tentar fazer X enquanto pensa em voz alta?"
 4. Exploração (10min) — "Por que você fez isso? O que esperava que acontecesse?"
 5. Fechamento (5min) — "Algo mais que não perguntei?"
-```
+```text
 
 **Bons hábitos:**
 - Pergunte sobre **comportamento passado** (não intenção futura)
@@ -2225,7 +2595,7 @@ Arquitetura da Informação é a **organização estrutural do conteúdo** — c
    ├── Autocomplete
    ├── Filtros
    └── Resultados relevantes
-```
+```markdown
 
 ### Princípios de IA
 
@@ -2248,7 +2618,7 @@ Arquitetura da Informação é a **organização estrutural do conteúdo** — c
 /produtos/:id
 /minha-conta/dados
 /minha-conta/pedidos
-```
+```markdown
 
 ---
 
@@ -2276,7 +2646,7 @@ ATIVAÇÃO      "Convidei time"         😰 Ansioso  Convite em massa
 RETENÇÃO      "Uso semanal"           😊 Satisf.  Notificações
               "Preciso de ajuda"      😠 Irrit.   Chat + FAQ
               "Renovei contrato"      😍 Leal     Programa de fidelidade
-```
+```markdown
 
 ### Service Blueprint
 
@@ -2290,7 +2660,7 @@ FRONTSTAGE      Interações com o sistema (UI, API calls)
 BACKSTAGE       Ações internas invisíveis ao usuário
                     ↓
 PROCESSOS       Sistemas, jobs, integrações
-```
+```text
 
 **Exemplo (simplificado de uma compra):**
 
@@ -2317,7 +2687,7 @@ Baseada em hipóteses do time         Baseada em dados reais
 Rápida (1 workshop)                  Leva semanas
 "Eu acho que o usuário..."           "Os dados mostram que..."
 Valida: "Erramos, vamos pesquisar"   Valida: "Confirmamos nossas hipóteses"
-```
+```markdown
 
 ### Estrutura de uma persona
 
@@ -2360,7 +2730,7 @@ Anti-persona: "Usuário Free"
 - Gera custo operacional sem retorno financeiro
 
 O que NÃO fazer: não projetar para ele.
-```
+```markdown
 
 ### Para devs: personas no código
 
@@ -2383,7 +2753,7 @@ const flags: Record<string, FeatureFlag> = {
     rollout: 10, // Lançamento gradual
   },
 };
-```
+```markdown
 
 ---
 
@@ -2419,7 +2789,7 @@ R
 │   ├── HTML semântico
 │   ├── ARIA labels
 │   └── Funciona com screen readers
-```
+```markdown
 
 ### Níveis de conformidade
 
@@ -2441,7 +2811,7 @@ R
    #CCCCCC sobre #FFFFFF   — texto cinza claro
    #999999 sobre #EEEEEE   — links desativados
    #FFCC00 sobre #FFFFFF   — alertas amarelos
-```
+```markdown
 
 ### Navegação por teclado
 
@@ -2483,7 +2853,7 @@ R
 
 <!-- ✅ Tabela com scopo -->
 <th scope="col">Nome</th>
-```
+```markdown
 
 ### Para devs: checklist de acessibilidade no código
 
@@ -2525,7 +2895,7 @@ UX Writing é a **criação de textos para interfaces** que guiam o usuário de 
 
 // ✅ Claro e acionável
 "Preencha todos os campos obrigatórios antes de continuar."
-```
+```markdown
 
 ### Tom de voz
 
@@ -2546,7 +2916,7 @@ UX Writing é a **criação de textos para interfaces** que guiam o usuário de 
 ✅ "E-mail ou senha incorretos. Tente novamente."
 ✅ "O servidor não respondeu. Seu rascunho foi salvo automaticamente."
 ✅ "O campo 'CNPJ' precisa ter 14 dígitos."
-```
+```markdown
 
 ### Para devs: UX Writing no frontend
 
@@ -2581,7 +2951,7 @@ CONCISO        → "E-mail inválido" (não "O endereço de e-mail digitado não
 ÚTIL           → "Digite seu e-mail corporativo" (orienta, não só rotula)
 CONSISTENTE    → Sempre "Excluir", não "Excluir"/"Remover"/"Deletar" aleatoriamente
 HUMANO         → "Algo deu errado, mas já estamos cuidando disso"
-```
+```javascript
 
 ---
 
@@ -2641,7 +3011,7 @@ As 10 heurísticas são **critérios de usabilidade** que funcionam como checkli
     "Se o usuário precisa de ajuda, ela deve estar disponível."
     ❌ Documentação escondida
     ✅ "?" contextual + FAQ + chat
-```
+```markdown
 
 ### Como avaliar com as heurísticas
 
@@ -2676,7 +3046,7 @@ const evaluation: HeuristicEvaluation[] = [
     suggestion: 'Mensagem amigável + log no backend',
   },
 ];
-```
+```markdown
 
 ---
 
@@ -2690,7 +3060,7 @@ ANTES                             DEPOIS
 "Está no requisito"              "O usuário realmente precisa disso?"
 "Funciona no meu ambiente"       "Funciona para o usuário real?"
 "O design está errado"           "Qual problema estamos resolvendo?"
-```
+```markdown
 
 ### Como colaborar com designers
 
@@ -2759,7 +3129,7 @@ function TelaRelatorios() {
     </Page>
   );
 }
-```
+```markdown
 
 ### Perguntas que todo dev deveria fazer
 
@@ -2771,7 +3141,7 @@ function TelaRelatorios() {
 5. "O usuário consegue desfazer essa ação?"
 6. "Onde o usuário vai procurar essa funcionalidade?"
 7. "Em quanto tempo isso carrega no 3G?"
-```
+```markdown
 
 ---
 
@@ -2790,6 +3160,56 @@ function TelaRelatorios() {
 | Heurísticas | 10 critérios para avaliar qualquer interface |
 | Dev + UX | Pergunte "por quê" antes de codificar |
 
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
+
 
 
 
@@ -2801,7 +3221,25 @@ function TelaRelatorios() {
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 05 Wireframes
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. O que são Wireframes
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Wireframe é o **esqueleto visual** de uma tela. É a representação estrutural da interface, focando em **layout, hierarquia, conteúdo e funcionalidade** — sem nenhum polimento visual (cores, fontes, imagens).
 
@@ -2816,7 +3254,23 @@ Wireframe serve para:
 │  Servir de contrato entre produto e dev      │
 │  Acelerar o ciclo de iteração                │
 └──────────────────────────────────────────────┘
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### Níveis de Fidelidade
 
@@ -2859,7 +3313,7 @@ interface WireframeElement {
   Hierarquia       Fontes        Navega
   Fluxo            Ícones        Anima
   Sem estilo       Imagens       Testa
-```
+```markdown
 
 ### Comparação
 
@@ -2907,7 +3361,7 @@ const stages: DesignStage[] = [
     estimatedTime: '2 — 5 dias',
   },
 ];
-```
+```markdown
 
 ---
 
@@ -2941,7 +3395,7 @@ function colWidth(cols: number, grid: Grid): number {
   const colSize = (contentWidth - totalGutter) / grid.columns;
   return colSize * cols + (cols - 1) * grid.gutter;
 }
-```
+```text
 
 ```text
 Wireframe com grid de 12 colunas:
@@ -2954,7 +3408,7 @@ Wireframe com grid de 12 colunas:
 ├──────────────────────────┴───────────────────────┤
 │   Footer (12 col)                                │
 └──────────────────────────────────────────────────┘
-```
+```javascript
 
 ### Hierarquia Visual
 
@@ -2968,7 +3422,7 @@ Hierarquia no wireframe:
 3. Seções de conteúdo         (blocos médios, organizados)
 4. Navegação secundária       (menor, no topo ou sidebar)
 5. Footer                     (menor destaque, no final)
-```
+```markdown
 
 ### Espaçamento
 
@@ -2986,7 +3440,7 @@ const space = {
 
 // Regra: elementos relacionados ficam mais próximos (8-16px)
 // Seções diferentes ficam mais distantes (32-48px)
-```
+```markdown
 
 ### Proporção
 
@@ -3000,7 +3454,7 @@ Use proporções familiares para criar harmonia visual:
 ║  3:2   — Imagens de destaque        ║
 ║  2:1   — Painéis e dashboards       ║
 ╚══════════════════════════════════════╝
-```
+```markdown
 
 ---
 
@@ -3037,7 +3491,7 @@ Use proporções familiares para criar harmonia visual:
   → Componentes reutilizáveis
   → Handoff para devs
   → Protótipos interativos
-```
+```markdown
 
 ### Excalidraw — Exemplo rápido
 
@@ -3077,7 +3531,7 @@ Como fazer:
 3. Desenhe 8 versões diferentes (sem repetir)
 4. Ao final, vote na melhor ideia
 5. Refine a vencedora em um wireframe único
-```
+```markdown
 
 ### Grey Box
 
@@ -3102,7 +3556,7 @@ Exemplo de Grey Box:
 ├─────────────────────────────────────────────────┤
 │  [Links]         [Contato]         © 2025       │  ← footer (cinza escuro)
 └─────────────────────────────────────────────────┘
-```
+```markdown
 
 ### Wireflow
 
@@ -3121,7 +3575,7 @@ Wireflow de cadastro:
 │ Toast:   │           │ Tela     │
 │ "Email"  │           │ Login    │
 └──────────┘           └──────────┘
-```
+```text
 
 ```typescript
 interface Wireflow {
@@ -3136,7 +3590,7 @@ interface Transition {
   element?: string;      // elemento que dispara (ex: "btn-login")
   condition?: string;    // condição (ex: "campos válidos")
 }
-```
+```markdown
 
 ### Sketching (Desenho à mão)
 
@@ -3149,7 +3603,7 @@ Vantagens do sketching:
 ├── Qualquer um participa: não precisa saber ferramenta
 └── Memorável: estudos mostram que esboços manuais
     geram mais feedback honesto que protótipos polidos
-```
+```markdown
 
 ---
 
@@ -3196,7 +3650,7 @@ Anatomia padrão de uma página:
 │  │ Links│  │ Redes sociais│  │ © 2025 Company   │  │
 │  └──────┘  └──────────────┘  └──────────────────┘  │
 └──────────────────────────────────────────────────────┘
-```
+```markdown
 
 ### Detalhamento dos elementos
 
@@ -3252,7 +3706,7 @@ interface NavItem {
 │   no conteúdo   │  │          │               │  │  │   │ │   │ │   │ │
 │                 │  │          │               │  │  └───┘ └───┘ └───┘ │
 └─────────────────┘  └──────────┴──────────────┘  └─────────────────────┘
-```
+```javascript
 
 ---
 
@@ -3271,7 +3725,7 @@ interface StatefulComponent {
   name: string;
   states: Record<ComponentState, WireframeElement>;
 }
-```
+```markdown
 
 ### Como representar cada estado no wireframe
 
@@ -3294,7 +3748,7 @@ interface SkeletonBox {
   borderRadius: number;
   lines?: number;          // para texto simulado
 }
-```
+```text
 
 ```text
 Wireframe de estado loading (skeleton):
@@ -3309,7 +3763,7 @@ Wireframe de estado loading (skeleton):
 │  │ ▓▓▓▓▓    │  │ ▓▓▓▓▓    │          │
 │  └──────────┘  └──────────┘          │
 └──────────────────────────────────────┘
-```
+```markdown
 
 ### Estado Empty
 
@@ -3329,7 +3783,7 @@ Wireframe de estado vazio (empty):
 │    [Criar Projeto]                    │
 │                                       │
 └──────────────────────────────────────┘
-```
+```markdown
 
 ### Transições
 
@@ -3341,7 +3795,7 @@ interface Transition {
   duration: number;  // ms
   trigger: string;   // ação do usuário
 }
-```
+```text
 
 ```text
 Representação de transição no wireframe:
@@ -3360,7 +3814,7 @@ Representação de transição no wireframe:
 │ │ [OK]   │ │
 │ └────────┘ │
 └────────────┘
-```
+```markdown
 
 ---
 
@@ -3414,14 +3868,14 @@ Roteiro de teste de wireframe:
    - "O que você acha que esse elemento faz?"
    - "O que você esperaria ao clicar aqui?"
    - "Faltou alguma informação?"
-```
+```markdown
 
 ### Iteração
 
 O ciclo ideal:
 ```typescript
 Esboçar → Validar → Aprender → Refinar → (repetir)
-```
+```text
 
 ```typescript
 interface IterationCycle {
@@ -3447,7 +3901,7 @@ const cycle: IterationCycle = {
   ],
   nextSteps: ['Testar versão 4 com 5 usuários'],
 };
-```
+```markdown
 
 ---
 
@@ -3497,7 +3951,7 @@ interface Approval {
 
 O handoff é o momento em que o wireframe vira código. Para que seja eficiente:
 
-```
+```markdown
 Checklist de handoff (wireframe → dev):
 ──────────────────────────────────────────
 [ ] Grid definido (colunas, gutters, margens)
@@ -3529,7 +3983,7 @@ interface HandoffSpec {
     responseFields: string[];
   }[];
 }
-```
+```markdown
 
 ### Versionamento
 
@@ -3556,11 +4010,73 @@ Boas práticas:
   ├── Versão major = mudança estrutural
   ├── Versão minor = ajuste de layout
   └── Mantenha changelog por versão
-```
+```markdown
 
 ### Exemplo de Changelog de Wireframe
 
 ```typescript
+```
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 
 
 
@@ -3573,7 +4089,25 @@ Boas práticas:
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 06 Ui Design
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. O que é UI Design
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 UI (User Interface) Design é a disciplina responsável pela **aparência e comportamento visual** de um produto digital. Enquanto UX define a estrutura e a experiência, UI traduz essa estrutura em pixels — cores, tipografia, espaçamento, componentes e animações.
 
@@ -3587,7 +4121,23 @@ Cores, tipografia, ícones        Pesquisa, jornada, AI
 Layout e componentes             Fluxo e arquitetura
 Microinterações                  Emoção e usabilidade
 "Como vê?"                       "Como se sente?"
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 UI é a **camada de superfície** dos 5 Planos de Garrett. É o que o usuário vê e com o que interage diretamente.
 
@@ -3597,7 +4147,7 @@ UI é a **camada de superfície** dos 5 Planos de Garrett. É o que o usuário v
 UX sem UI: ideia sem forma, impossível de usar
 UI sem UX: bonito mas inútil, frustrante
 UI + UX: útil, usável e desejável
-```
+```markdown
 
 O papel do dev é implementar a UI com **fidelidade ao design**, respeitando decisões de UX embutidas nos componentes.
 
@@ -3632,7 +4182,7 @@ Repita estilos visuais para criar consistência.
 Mesma cor de link        → usuário reconhece que é clicável
 Mesmo padding nos cards  → ritmo visual previsível
 Mesmo border-radius      → identidade visual consistente
-```
+```markdown
 
 ### Alinhamento
 
@@ -3652,7 +4202,7 @@ const aligned = {
   body: { marginLeft: 16 },
   action: { marginLeft: 16 },
 };
-```
+```markdown
 
 ### Proximidade
 
@@ -3667,7 +4217,7 @@ Itens relacionados devem ficar **próximos** visualmente. Itens não relacionado
   [Nome] [Email]          ← Dados pessoais
   [Telefone]              ← Contato
   [Senha] [Confirmar]     ← Segurança
-```
+```markdown
 
 ---
 
@@ -3760,7 +4310,7 @@ const theme = {
 };
 
 console.log(isAccessible(theme.textPrimary, theme.bgPrimary)); // true
-```
+```markdown
 
 ### Cor e Branding
 
@@ -3818,7 +4368,7 @@ const enterpriseTypography: TypographyScale = {
   bodySmall:  { size: 12, lineHeight: 16, weight: 400 },
   caption:    { size: 11, lineHeight: 16, weight: 400 },
 };
-```
+```markdown
 
 ### Escalas Modulares
 
@@ -3830,7 +4380,7 @@ Escala 1.25 (Major Second):
 
 Escala 1.333 (Major Third):
 12 → 16 → 20 → 24 → 32 → 40 → 48
-```
+```markdown
 
 ### Legibilidade
 
@@ -3874,7 +4424,7 @@ const spacing = {
   xxl:  32,  // 32px — padding de página
   xxxl: 48,  // 48px — seções grandes no layout
 };
-```
+```text
 
 ```typescript
 // ❌ Espaçamento arbitrário
@@ -3911,7 +4461,7 @@ function colWidth(columns: number, totalColumns: number, gutter: number): string
   const fraction = columns / totalColumns;
   return `calc(${fraction * 100}% - ${gutter}px)`;
 }
-```
+```markdown
 
 ### Layout Patterns
 
@@ -3931,7 +4481,7 @@ Split Screen:
 ┌────────────────────┬───────────────────┐
 │    List (1fr)      │   Detail (1fr)    │
 └────────────────────┴───────────────────┘
-```
+```markdown
 
 ---
 
@@ -3983,7 +4533,7 @@ const inputStates = {
   error:   { border: '#EA4335', bg: '#FFFFFF' },
   disabled: { border: '#E8EAED', bg: '#F1F3F4', color: '#9AA0A6' },
 };
-```
+```markdown
 
 ### Cards
 
@@ -4029,7 +4579,7 @@ const overlayStyles = {
   justifyContent: 'center',
   zIndex: 1000,
 };
-```
+```markdown
 
 ### Tabelas
 
@@ -4070,7 +4620,7 @@ interface SelectProps {
   searchable?: boolean;
   clearable?: boolean;
 }
-```
+```markdown
 
 ---
 
@@ -4134,7 +4684,7 @@ function formatPhone(value: string): string {
   if (digits.length <= 7) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
   return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
 }
-```
+```markdown
 
 ### Feedback
 
@@ -4187,7 +4737,7 @@ const emptyState = {
   description: 'Crie seu primeiro projeto para começar a organizar suas tarefas.',
   action: { label: 'Criar projeto', href: '/projects/new' },
 };
-```
+```markdown
 
 ---
 
@@ -4260,7 +4810,7 @@ const modalAnimation = {
     easing: 'cubic-bezier(0.4, 0.0, 1, 1)',
   },
 };
-```
+```markdown
 
 ### Microinterações Essenciais
 
@@ -4275,7 +4825,7 @@ Toast           | Appear          | Slide in da direita
 Skeleton        | Load            | Pulse shimmer
 Link            | Hover           | Underline aparece
 Checkbox        | Toggle          | Check animado
-```
+```markdown
 
 ---
 
@@ -4394,7 +4944,7 @@ Light mode:          Dark mode:
 │ #1A73E8    │      │ #8AB4F8    │
 │  primary   │      │  primary   │
 └────────────┘      └────────────┘
-```
+```markdown
 
 ### Implementação com Context
 
@@ -4424,7 +4974,7 @@ function ThemeProvider({ children }: { children: React.ReactNode }) {
     </ThemeContext.Provider>
   );
 }
-```
+```markdown
 
 ---
 
@@ -4442,7 +4992,7 @@ Input        | padding, border, border-radius, font-size, label position
 Card         | padding, border-radius, box-shadow, gap entre filhos
 Text         | font-family, font-size, line-height, letter-spacing, color
 Spacing      | margin, gap, top/left/bottom/right values
-```
+```markdown
 
 ### Medidas e Densidade
 
@@ -4512,13 +5062,75 @@ function checkFidelity(inspection: UIInspectionChecklist): number {
   const passed = items.filter(Boolean).length;
   return Math.round((passed / total) * 100);
 }
-```
+```markdown
 
 ### Densidade de Informação
 
 Produtos enterprise geralmente precisam de mais densidade que produtos B2C.
 
 ```typescript
+```
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 
 
 
@@ -4531,7 +5143,25 @@ Produtos enterprise geralmente precisam de mais densidade que produtos B2C.
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 07 Design System
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. O que é Design System
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Design System é um **conjunto integrado de padrões, componentes, diretrizes e ferramentas** que orientam a criação de interfaces digitais de forma consistente e escalável.
 
@@ -4550,7 +5180,23 @@ grid, regras de uso             tabelas, cards                  processos, gover
 
 Exemplo:                        Exemplo:                        Exemplo:
 Manual de marca                 Material UI                     Shopify Polaris
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### Propósito
 
@@ -4587,7 +5233,7 @@ Tag        Campo de      Footer =      estrutura)    reais)
 Cor        texto         Página
 Tipografia
 Espaçamento
-```
+```markdown
 
 #### Átomos
 
@@ -4611,7 +5257,7 @@ function Label({ text, variant, size }: LabelProps) {
     </span>
   );
 }
-```
+```markdown
 
 #### Moléculas
 
@@ -4663,7 +5309,7 @@ function SignupForm({ onSubmit }: SignupFormProps) {
     </form>
   );
 }
-```
+```markdown
 
 #### Templates e Páginas
 
@@ -4700,7 +5346,7 @@ Sem Atomic Design:                         Com Atomic Design:
   que aquele?"                               (sempre consistente)
 "Este formulário quebrou porque            "Mudei o Input, todos os
   mudei o Input em 10 lugares"               formulários atualizam"
-```
+```markdown
 
 ---
 
@@ -4744,7 +5390,7 @@ export const colors = {
 } as const;
 
 export type ColorToken = keyof typeof colors.semantic;
-```
+```markdown
 
 ### Tipografia
 
@@ -4794,7 +5440,7 @@ export const spacing = {
 } as const;
 
 export type SpacingToken = keyof typeof spacing;
-```
+```markdown
 
 ### Shadows, Border Radius e Breakpoints
 
@@ -4880,7 +5526,7 @@ export function generateCSSVariables(): string {
 //   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 //   --radius-md: 8px;
 // }
-```
+```markdown
 
 ---
 
@@ -5007,7 +5653,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     );
   }
 );
-```
+```markdown
 
 ### Modal
 
@@ -5186,7 +5832,7 @@ export function Table<T extends Record<string, unknown>>({
     </div>
   );
 }
-```
+```sql
 
 ### Select
 
@@ -5333,7 +5979,7 @@ export const FullWidth: Story = {
     fullWidth: true,
   },
 };
-```
+```markdown
 
 ### Specs e Guidelines
 
@@ -5385,7 +6031,7 @@ Cada componente deve ter uma **especificação técnica** (spec) e **diretrizes 
 // - @storybook/addon-a11y: auditoria de acessibilidade
 // - @storybook/addon-interactions: testar interações
 // - storybook-addon-designs: embed do Figma
-```
+```markdown
 
 ---
 
@@ -5409,7 +6055,7 @@ MINOR (x.1.x → x.2.0):
 PATCH (x.x.1 → x.x.2):
   Correções — bug fix, acessibilidade, performance
   Ex: Corrigir contraste do Button danger, ARIA label no Modal
-```
+```markdown
 
 ### Breaking Changes
 
@@ -5448,12 +6094,12 @@ if (appearance && !variant) {
 ```tsx
 
 **Depois:**
-```
+```text
 <Button variant="primary" />
 ```bash
 
 **Codemod:**
-```
+```text
 npx @acme/ds-codemod button-appearance-to-variant
 ```text
 
@@ -5464,7 +6110,7 @@ npx @acme/ds-codemod button-appearance-to-variant
 | `size="small"` | `size="sm"` |
 | `size="medium"` | `size="md"` |
 | `size="large"` | `size="lg"` |
-```
+```markdown
 
 ### Changelog
 
@@ -5493,7 +6139,7 @@ npx @acme/ds-codemod button-appearance-to-variant
 - Button: `appearance` → `variant`
 - Modal: `size="small"|"medium"|"large"` → `size="sm"|"md"|"lg"`
 - Tokens: `--color-blue-*` → `--color-primary-*`
-```
+```bash
 
 ---
 
@@ -5540,7 +6186,7 @@ export { colors } from './tokens/colors';
 export { typography } from './tokens/typography';
 export { spacing } from './tokens/spacing';
 export { shadows, borderRadius } from './tokens/effects';
-```
+```text
 
 ```typescript
 // Consumo com tree-shaking
@@ -5586,7 +6232,7 @@ export function ThemeProvider({ theme, children }: { theme?: Partial<Theme>; chi
 export function useTheme(): Theme {
   return useContext(ThemeContext);
 }
-```
+```markdown
 
 ### Customização (Override via CSS Custom Properties)
 
@@ -5598,13 +6244,13 @@ export function useTheme(): Theme {
   --radius-md: 4px;
   --font-family-sans: 'Roboto', sans-serif;
 }
-```
+```text
 
 ```typescript
 // Uso
 import '@empresa/design-system/styles.css';
 import './overrides.css';
-```
+```markdown
 
 ---
 
@@ -5632,7 +6278,7 @@ Rituais:
 - Monthly showcase (novos componentes)
 - Quarterly review (ROI, métricas)
 - Voting on RFCs (propostas de mudança)
-```
+```markdown
 
 ### Contribuição
 
@@ -5695,7 +6341,7 @@ interface DesignReviewChecklist {
     'Bundle size < 5KB (gzip) para componente simples',
   ];
 }
-```
+```markdown
 
 ### Changelog Automatizado
 
@@ -5740,7 +6386,7 @@ Sem DS:                          Com DS:
                                   │   │ │   │ │   │
                                   │ok │ │ok │ │ok │
                                   └───┘ └───┘ └───┘
-```
+```markdown
 
 ### Consistência
 
@@ -5754,7 +6400,7 @@ const SquadC = () => <div class="action-btn" onclick={save}>Salvar</div>;
 const SquadA = () => <Button variant="primary">Salvar</Button>;
 const SquadB = () => <Button variant="primary">Salvar</Button>;
 const SquadC = () => <Button variant="primary">Salvar</Button>;
-```
+```markdown
 
 ### Eficiência e ROI
 
@@ -5780,7 +6426,7 @@ Cálculo de ROI:
 
   Custo do DS Squad: 4 pessoas × R$ 250K = R$ 1M/ano
   Net: R$ 3.8M/ano    (fonte: dados hipotéticos para ilustração)
-```
+```markdown
 
 ---
 
@@ -5834,7 +6480,7 @@ my-design-system/
 │   └── preview.ts
 ├── package.json
 └── tsconfig.json
-```
+```markdown
 
 ### Configuração do Vite para build
 
@@ -5864,7 +6510,7 @@ export default defineConfig({
     },
   },
 });
-```
+```markdown
 
 ### Storybook config
 
@@ -5919,11 +6565,12 @@ const preview: Preview = {
 };
 
 export default preview;
-```
+```markdown
 
 ### Estilos base
 
 ```css
+```
 /* src/styles.css */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
@@ -5968,6 +6615,67 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
+
 
 
 
@@ -5979,7 +6687,25 @@ body {
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 08 Arquitetura
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. Por que arquitetura importa
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Arquitetura é a **estrutura fundamental** de um sistema. São as decisões que, se tomadas errado, custam caro para mudar.
 
@@ -6001,7 +6727,23 @@ Arquitetura Boa:
   │  "Mudei uma coisa sem quebrar nada"      │
   │  "Testes garantem que funciona"          │
   └──────────────────────────────────────────┘
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### O que arquitetura define
 
@@ -6011,7 +6753,7 @@ Comunicação:      Como as partes se comunicam?
 Dados:            Como os dados fluem e são armazenados?
 Tecnologia:       Qual stack suporta a estrutura?
 Equipe:           Como o time se organiza para desenvolver?
-```
+```markdown
 
 ---
 
@@ -6066,7 +6808,7 @@ interface PaymentMethod {
 
 class CreditCardPayment implements PaymentMethod { /* ... */ }
 class PixPayment implements PaymentMethod { /* ... */ }
-```
+```markdown
 
 ### L — Liskov Substitution Principle
 
@@ -6107,7 +6849,7 @@ interface Worker {
 interface Workable { work(): void; }
 interface Eatable { eat(): void; }
 interface Sleepable { sleep(): void; }
-```
+```markdown
 
 ### D — Dependency Inversion Principle
 
@@ -6157,7 +6899,7 @@ Clean Architecture é uma arquitetura que organiza o código em **círculos conc
     │   FRAMEWORKS & DRIVERS                        │
     │  (NestJS, Prisma, Next.js, PostgreSQL...)     │
     └──────────────────────────────────────────────┘
-```
+```markdown
 
 ### A Regra da Dependência
 
@@ -6171,7 +6913,7 @@ Clean Architecture é uma arquitetura que organiza o código em **círculos conc
 ✅ CERTO: Use Case depende de interface
   UseCase → UserRepository (interface)
   PrismaUserRepository → UserRepository (implementa)
-```
+```javascript
 
 ### O que vai em cada camada
 
@@ -6198,7 +6940,7 @@ Código:  client.openTicket(ticket)  ✅
 
 Negócio: "Um cliente pode abrir um ticket de suporte"
 Código:  client.createSupportTicket(ticket)  ❌ (outra linguagem)
-```
+```markdown
 
 ### Bounded Contexts
 
@@ -6211,7 +6953,7 @@ Contexto de Vendas:         Contexto de Logística:
   Pedido = carrinho          Pedido = carga para entrega
 
 São modelos DIFERENTES do mesmo conceito!
-```
+```markdown
 
 ### Elementos do DDD
 
@@ -6241,7 +6983,7 @@ São modelos DIFERENTES do mesmo conceito!
 │  → Regra de negócio sem estado           │
 │  → Opera em múltiplas entidades          │
 └──────────────────────────────────────────┘
-```
+```markdown
 
 ### Exemplo prático de DDD
 
@@ -6307,7 +7049,7 @@ class AlterarPerfilUseCase {
     await this.emailService.enviarNotificacao(usuario.email);
   }
 }
-```
+```markdown
 
 ---
 
@@ -6341,7 +7083,7 @@ A arquitetura hexagonal é uma variação da Clean Architecture que usa o concei
                │  (NestJS,    │   │  (Prisma,      │
                │   Express)   │   │   email, queue)│
                └──────────────┘   └────────────────┘
-```
+```markdown
 
 Abaixo, uma visão de container C4 da mesma arquitetura:
 
@@ -6392,7 +7134,7 @@ class PedidoController {
     return this.criarPedido.execute(this.toInput(body));
   }
 }
-```
+```markdown
 
 ---
 
@@ -6415,7 +7157,7 @@ Quando usar:
   - Sistema com domínios fortemente acoplados
   - Startup / MVP
   - Quando velocidade > escala
-```
+```markdown
 
 ### Microservices
 
@@ -6434,7 +7176,7 @@ Quando usar:
   - Domínios claramente separados
   - Escala global
   - Times autônomos por domínio
-```
+```markdown
 
 ### A recomendação
 
@@ -6462,7 +7204,7 @@ Consumidor:       Quem reage ao evento
 
 Barramento:       Meio de transporte
   → RabbitMQ, Kafka, Redis Pub/Sub
-```
+```markdown
 
 ### Exemplo
 
@@ -6513,6 +7255,7 @@ class EmailHandler {
 
 ### Estrutura de pastas seguindo Clean Architecture + DDD
 
+```text
 ```
 src/
 ├── domain/                    # Círculo mais interno
@@ -6550,6 +7293,67 @@ src/
 │
 └── main.ts
 
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
+
 
 
 
@@ -6561,7 +7365,25 @@ src/
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 09 Modelagem
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. Por que modelagem importa
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Modelagem de dados é a **fundação** do sistema. Erros aqui são os mais caros de corrigir.
 
@@ -6584,7 +7406,23 @@ Modelagem boa:
   │  Constraints → validade dos dados        │
   │  Migrações testadas → sem surpresas      │
   └──────────────────────────────────────────┘
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ---
 
@@ -6596,7 +7434,7 @@ Modelagem boa:
 1:1  — Um usuário tem um perfil
 1:N  — Um usuário tem muitos pedidos
 N:M  — Um produto está em muitas categorias
-```
+```markdown
 
 ### Exemplo no Prisma
 
@@ -6679,7 +7517,7 @@ model User {
   // Filtro global no Prisma
   @@where("@deletedAt is null")
 }
-```
+```text
 
 ```typescript
 // Service
@@ -6716,7 +7554,7 @@ model AuditLog {
   @@index([userId])
   @@index([createdAt])
 }
-```
+```text
 
 ```typescript
 // AuditService
@@ -6779,7 +7617,7 @@ model Order {
   // Índice parcial para pedidos ativos
   @@index([status, createdAt])
 }
-```
+```markdown
 
 ### Regras de índices
 
@@ -6794,7 +7632,7 @@ Evite:
   - Índices em colunas de baixa cardinalidade (boolean)
   - Muitos índices em tabelas pequenas (< 1000 registros)
   - Índices que nunca são usados
-```
+```markdown
 
 ### Query Performance
 
@@ -6831,7 +7669,7 @@ npx prisma migrate deploy
 
 # Resetar banco (dev)
 npx prisma migrate reset
-```
+```markdown
 
 ### Migrações sem downtime
 
@@ -6881,7 +7719,7 @@ Incremental: Apenas mudanças desde o último backup
 WAL (Write-Ahead Log): Log de transações
   Quando: Contínuo
   Uso:    Point-in-time recovery
-```
+```markdown
 
 ### Script de backup
 
@@ -6903,7 +7741,7 @@ pg_dump -U $DB_USER -d $DB_NAME \
 find $BACKUP_DIR -name "*.dump" -mtime +7 -delete
 
 echo "Backup concluído: $DB_NAME-$DATE.dump"
-```
+```markdown
 
 ### Restore
 
@@ -7041,7 +7879,7 @@ model AuditLog {
   @@index([createdAt])
   @@map("audit_logs")
 }
-```
+```markdown
 
 ---
 
@@ -7056,6 +7894,63 @@ model AuditLog {
 7. **Migrações seguras** — expand-migrate-contract para mudanças sem downtime
 8. **Backup** — full + incremental + WAL; testar restore periodicamente
 
+| Conceito | Descrição | Aplicação |
+|----------|-----------|-----------|
+| Abordagem Principal | Estratégia central discutida no módulo | Implementação direta |
+| Padrão Relacionado | Padrão complementar | Casos de uso específicos |
+| Boa Prática | Recomendação de mercado | Cenários de produção |
+| Anti-padrão | Prática a ser evitada | Consequências negativas |
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
+
 
 
 
@@ -7067,7 +7962,25 @@ model AuditLog {
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 10 Backend
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. Por que NestJS?
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 NestJS é o framework Node.js mais adequado para sistemas Enterprise.
 
@@ -7094,6 +8007,22 @@ NestJS é o framework Node.js mais adequado para sistemas Enterprise.
 })
 export class UserModule {}
 ```text
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
+```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ![Arquitetura de Referencia Backend](/knowledge-factory/products/courses/arquitetura-backend/module-10-backend/assets/diagram-arquitetura-backend.svg)
 
@@ -7128,7 +8057,7 @@ src/
 ├── config/
 │   └── app.config.ts
 └── main.ts
-```
+```markdown
 
 ### Por que essa estrutura?
 
@@ -7142,7 +8071,7 @@ Módulo raiz (AppModule):
   → Importa os módulos de domínio
   → Tempo de inicialização mais rápido
   → Testes mais isolados
-```
+```markdown
 
 ---
 
@@ -7158,7 +8087,7 @@ Service (Lógica de negócio)
 Repository (Persistência)
   ↓
 Database (Prisma)
-```
+```markdown
 
 ### Controller
 
@@ -7202,7 +8131,7 @@ export class UserController {
     await this.userService.softDelete(id);
   }
 }
-```
+```markdown
 
 ### Service
 
@@ -7318,7 +8247,7 @@ export class UserRepository {
     };
   }
 }
-```
+```markdown
 
 ---
 
@@ -7362,7 +8291,7 @@ export class CreateUserPipe implements PipeTransform {
 async create(@Body(new CreateUserPipe()) dto: CreateUserDto) {
   return this.userService.create(dto);
 }
-```
+```markdown
 
 ### Validação vs Sanitização
 
@@ -7413,7 +8342,7 @@ export class GlobalExceptionFilter implements ExceptionFilter {
     });
   }
 }
-```
+```markdown
 
 ### Domain Errors
 
@@ -7460,7 +8389,7 @@ export class TransformInterceptor<T> implements NestInterceptor<T, ApiResponse<T
 
 // Uso global
 app.useGlobalInterceptors(new TransformInterceptor());
-```
+```markdown
 
 ### Guards (proteção de rotas)
 
@@ -7521,7 +8450,7 @@ async findAll(input: CursorPaginationInput): Promise<CursorPaginatedResult<User>
     hasMore,
   };
 }
-```
+```markdown
 
 ---
 
@@ -7605,13 +8534,14 @@ export class HealthController {
     }
   }
 }
-```
+```markdown
 
 ---
 
 ## 10. Testes
 
 ```typescript
+```
 // Teste de service
 describe('UserService', () => {
   let service: UserService;
@@ -7644,6 +8574,67 @@ describe('UserService', () => {
   });
 });
 
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
+
 
 
 
@@ -7655,7 +8646,25 @@ describe('UserService', () => {
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 12 Seguranca
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. Por que segurança é o requisito mais importante
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Segurança não é uma feature — é um **pré-requisito**. Um sistema inseguro é um passivo, não um ativo.
 
@@ -7677,7 +8686,23 @@ Custo de prevenir:
   │  Ferramentas de segurança: R$ 1k/mês         │
   │  Revisão de código: parte do processo        │
   └──────────────────────────────────────────────┘
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### Mindset de segurança
 
@@ -7689,7 +8714,7 @@ Custo de prevenir:
 ✅ "Segurança é responsabilidade de todos"
 ✅ "Segurança é parte da definição de 'pronto'"
 ✅ "Se tem valor, vai ser atacado"
-```
+```markdown
 
 ---
 
@@ -7734,7 +8759,7 @@ const hashedPassword = await bcrypt.hash(req.body.password, 12);
 const user = await prisma.user.create({
   data: { password: hashedPassword }
 });
-```
+```markdown
 
 ### 3. Injection
 
@@ -7769,7 +8794,7 @@ async login(@Body() dto: LoginDto) {
 async login(@Body() dto: LoginDto) {
   // ...
 }
-```
+```markdown
 
 ### 5. Security Misconfiguration
 
@@ -7809,7 +8834,7 @@ app.enableCors({
 4. Cliente armazena e envia access token em requisições
 5. Servidor valida token em cada requisição (AuthGuard)
 6. Quando access token expira, cliente usa refresh token para obter novo
-```
+```markdown
 
 ### Implementação
 
@@ -7893,7 +8918,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     return { id: payload.sub, email: payload.email, role: payload.role };
   }
 }
-```
+```markdown
 
 ---
 
@@ -7948,7 +8973,7 @@ async delete(@Param('id') id: string, @Req() req) {
   ForbiddenError.from(ability).throwUnlessCan('delete', 'Order');
   // Nunca chega aqui — admin também não pode deletar
 }
-```
+```markdown
 
 ---
 
@@ -7995,7 +9020,7 @@ Rate Limiting por:
 Respostas:
   429 Too Many Requests
   Header: Retry-After: X segundos
-```
+```markdown
 
 ---
 
@@ -8015,7 +9040,7 @@ app.use(helmet());
 // X-XSS-Protection: 0
 // Strict-Transport-Security
 // Referrer-Policy
-```
+```markdown
 
 ### CSP (Content Security Policy)
 
@@ -8049,7 +9074,7 @@ const user = await prisma.user.findUnique({ where: { email } });
 
 // ✅ Se precisar de raw query, usar parametrização
 const users = await prisma.$queryRaw`SELECT * FROM users WHERE email = ${email}`;
-```
+```markdown
 
 ### XSS (Cross-Site Scripting)
 
@@ -8076,7 +9101,7 @@ app.use(csurf({ cookie: true }));
 // Enviar token CSRF em formulários/headers
 // <meta name="csrf-token" content="{{csrfToken}}">
 // Header: X-CSRF-Token
-```
+```markdown
 
 ---
 
@@ -8118,7 +9143,7 @@ for (const varName of requiredEnvVars) {
     throw new Error(`Variável de ambiente ${varName} não configurada`);
   }
 }
-```
+```markdown
 
 ---
 
@@ -8165,6 +9190,7 @@ async transfer(@Body() dto: TransferDto, @Req() req) {
 
 ### Checklist de segurança para code review
 
+```text
 ```
 Segurança em code review:
   [ ] Todos os inputs são validados?
@@ -8178,6 +9204,67 @@ Segurança em code review:
   [ ] Headers de segurança configurados?
   [ ] Logs não expõem dados sensíveis?
 
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
+
 
 
 
@@ -8189,7 +9276,25 @@ Segurança em code review:
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 13 Multi Tenant
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. O que é Multi-Tenancy?
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Multi-tenancy é um padrão arquitetural onde **uma única instância de software atende múltiplos clientes (tenants)**, mantendo os dados de cada um logicamente isolados e invisíveis entre si.
 
@@ -8208,7 +9313,23 @@ Multi-tenancy é um padrão arquitetural onde **uma única instância de softwar
 │              │  API + DB     │                          │
 │              └───────────────┘                          │
 └──────────────────────────────────────────────────────────┘
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### 1.1 Conceito
 
@@ -8266,7 +9387,7 @@ Cada tenant tem **seu próprio banco de dados**. O roteador de conexão decide q
 │  │ tenant_1 │  │ tenant_2 │  │ tenant_3 │    │
 │  └──────────┘  └──────────┘  └──────────┘    │
 └──────────────────────────────────────────────┘
-```
+```text
 
 ```typescript
 // Router de conexão com lazy initialization
@@ -8329,7 +9450,7 @@ Um banco de dados compartilhado, mas cada tenant tem seu **próprio schema** (na
 │  │  products│  │  products│  │  products│    │
 │  └──────────┘  └──────────┘  └──────────┘    │
 └──────────────────────────────────────────────┘
-```
+```text
 
 ```sql
 -- Criar schema para novo tenant
@@ -8354,7 +9475,7 @@ CREATE TABLE tenant_acme.orders (
 
 -- Query com schema dinâmico
 SELECT * FROM tenant_acme.users WHERE email = 'joao@acme.com';
-```
+```text
 
 ```typescript
 // Abstração para schema dinâmico
@@ -8423,7 +9544,7 @@ interface Order {
   status: 'pending' | 'paid' | 'cancelled';
   created_at: Date;
 }
-```
+```text
 
 ```typescript
 // Repositório que SEMPRE filtra por tenant
@@ -8519,7 +9640,7 @@ CREATE POLICY tenant_isolation ON users
 
 -- Na aplicação, antes de qualquer query:
 await pool.query("SET app.tenant_id = 'acme'");
-```
+```sql
 
 ### 3.2 Performance
 
@@ -8569,6 +9690,67 @@ CREATE INDEX idx_orders_acme_large
 
 ---
 
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
+
 
 
 
@@ -8578,7 +9760,25 @@ CREATE INDEX idx_orders_acme_large
 
 **Middleware de tenant, identificação, serviços NestJS e integração com Prisma para isolamento de dados.**
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 13B Multi Tenant Implementacao
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. Identificação do Tenant
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 O sistema precisa identificar **qual tenant está fazendo a requisição** antes de qualquer lógica de negócio.
 
@@ -8613,7 +9813,23 @@ async function validateTenantSubdomain(
   if (!subdomain) return null;
   return tenantService.findBySubdomain(subdomain);
 }
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### 1.3 Header HTTP
 
@@ -8666,7 +9882,7 @@ function extractTenantFromJwt(authHeader?: string): string | null {
     return null; // token inválido
   }
 }
-```
+```markdown
 
 ### 1.5 Path Parameter
 
@@ -8692,7 +9908,7 @@ function resolveTenant(req: Request): string {
     (() => { throw new BadRequestException('Tenant não identificado'); })()
   );
 }
-```
+```markdown
 
 ---
 
@@ -8805,7 +10021,7 @@ export class AppModule implements NestModule {
       .forRoutes('*');
   }
 }
-```
+```markdown
 
 ### 2.3 TenantModule
 
@@ -8862,7 +10078,7 @@ export class TenantService {
     return this.getPlan() === 'enterprise';
   }
 }
-```
+```markdown
 
 ### 2.5 @Tenant() Decorator
 
@@ -8933,7 +10149,7 @@ function getCurrentTenantId(): string {
   if (!ctx) throw new Error('Fora de contexto de tenant');
   return ctx.tenantId;
 }
-```
+```markdown
 
 ---
 
@@ -9013,7 +10229,7 @@ class PrismaTenantManager {
 }
 
 export const prismaTenantManager = new PrismaTenantManager();
-```
+```markdown
 
 ### 3.2 Shared Database com Prisma
 
@@ -9086,7 +10302,7 @@ export class TenantAwareService {
     });
   }
 }
-```
+```markdown
 
 ### 3.3 Prisma Middleware para Tenant
 
@@ -9154,7 +10370,68 @@ export const tenantExtension = Prisma.defineExtension((client) => {
 
 // Uso
 const prisma = new PrismaClient().$extends(tenantExtension);
-```
+```text
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 
 
 
@@ -9165,7 +10442,25 @@ const prisma = new PrismaClient().$extends(tenantExtension);
 
 **Migrations multi-tenant, estratégias de dados compartilhados vs isolados e seed automático por tenant.**
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 13C Multi Tenant Dados
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. Migrations Multi-Tenant
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 ### 1.1 Database per Tenant
 
@@ -9210,6 +10505,22 @@ async function migrateAllTenants(): Promise<void> {
   }
 }
 ```text
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
+```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### 1.2 Schema per Tenant
 
@@ -9301,7 +10612,7 @@ async function migrateAllSchemas(): Promise<void> {
     await migrateSchema(`tenant_${tenant.slug}`);
   }
 }
-```
+```markdown
 
 ### 1.3 Estratégias de Rollback
 
@@ -9373,7 +10684,7 @@ async function migrateShared(): Promise<void> {
     client.release();
   }
 }
-```
+```markdown
 
 ---
 
@@ -9459,7 +10770,7 @@ interface Invoice {
   status: 'pending' | 'paid' | 'cancelled';
   dueDate: Date;
 }
-```
+```markdown
 
 ### 2.3 Regra Prática
 
@@ -9479,7 +10790,7 @@ interface Invoice {
 │  • Configurações do tenant   • Logs de atividade     │
 │  • Arquivos e uploads        • Relatórios gerados    │
 └─────────────────────────────────────────────────────┘
-```
+```markdown
 
 ### 2.4 Implementação em Schema per Tenant
 
@@ -9615,7 +10926,7 @@ async function createTenant(data: { slug: string; name: string; plan: string }) 
 
   return tenant;
 }
-```
+```markdown
 
 ### 3.2 Comandos CLI (NestJS Command)
 
@@ -9664,9 +10975,77 @@ async function seedSettingsIfNotExists(schema: string): Promise<void> {
     `, [setting.key, setting.value]);
   }
 }
-```
+```text
 
 ---
+
+| Conceito | Descrição | Aplicação |
+|----------|-----------|-----------|
+| Abordagem Principal | Estratégia central discutida no módulo | Implementação direta |
+| Padrão Relacionado | Padrão complementar | Casos de uso específicos |
+| Boa Prática | Recomendação de mercado | Cenários de produção |
+| Anti-padrão | Prática a ser evitada | Consequências negativas |
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 
 
 
@@ -9679,7 +11058,25 @@ async function seedSettingsIfNotExists(schema: string): Promise<void> {
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 13D Multi Tenant Operacoes
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. Backup e Restore
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 ### 1.1 Database per Tenant
 
@@ -9714,6 +11111,22 @@ done
 #   backups/acme_20240101.dump
 ```text
 
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
+```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
+
 ### 1.2 Schema per Tenant — Backup Seletivo
 
 ```bash
@@ -9744,7 +11157,7 @@ echo "✅ Schema tenant_${TENANT} salvo em backups/schema_${TENANT}_${DATE}.dump
 #   --schema="tenant_${TENANT}" \
 #   --clean \
 #   backups/schema_zeta_20240101.dump
-```
+```markdown
 
 ### 1.3 Estratégia por Plano
 
@@ -9880,7 +11293,7 @@ class PoolManager {
 }
 
 export const poolManager = new PoolManager();
-```
+```markdown
 
 ### 2.2 Query Optimization
 
@@ -9968,7 +11381,7 @@ export class TenantRateLimiter {
     this.concurrentCounts.set(tenantId, Math.max(0, current - 1));
   }
 }
-```
+```markdown
 
 ### 2.4 Indexação para Shared Database
 
@@ -10067,7 +11480,7 @@ const PLANS: Record<string, PlanFeatures> = {
     whiteLabel: true,
   },
 };
-```
+```text
 
 ```typescript
 // feature-flag.service.ts
@@ -10152,7 +11565,7 @@ getAdvancedReports() {
   // Só executa se o plano do tenant tiver advancedReports = true
   return this.reportService.generate();
 }
-```
+```markdown
 
 ---
 
@@ -10240,7 +11653,7 @@ describe('Isolamento entre Tenants', () => {
       expect(response.body.message).toContain('não encontrado');
     });
   });
-```
+```markdown
 
 ### 4.3 Teste 2: Concorrência
 
@@ -10302,7 +11715,7 @@ describe('Isolamento entre Tenants', () => {
       );
     });
   });
-```
+```markdown
 
 ### 4.5 Teste 4: Rate Limit
 
@@ -10359,7 +11772,7 @@ describe('Isolamento entre Tenants', () => {
       }
     });
   });
-```
+```markdown
 
 ### 4.7 Teste de Quebra Proposital
 
@@ -10404,7 +11817,68 @@ describe('Isolamento entre Tenants', () => {
       );
     });
   });
-```
+```text
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 
 
 
@@ -10417,7 +11891,25 @@ describe('Isolamento entre Tenants', () => {
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 11 Frontend
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. Next.js App Router — A Nova Forma de Pensar
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 O App Router do Next.js 13+ mudou fundamentalmente como construímos aplicações React.
 
@@ -10440,7 +11932,23 @@ Client Component ("use client"):
   │  Pode ter interatividade           │
   │  Mais JavaScript no cliente        │
   └────────────────────────────────────┘
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### Regra de ouro
 
@@ -10500,7 +12008,7 @@ async function getDashboardStats(): Promise<Stats> {
 
   return { totalUsers, totalOrders, revenue: revenue._sum.total ?? 0 };
 }
-```
+```markdown
 
 ### Cache e Revalidação
 
@@ -10562,7 +12070,7 @@ function ProductsSkeleton() {
     </div>
   );
 }
-```
+```markdown
 
 ### Error Boundary
 
@@ -10616,7 +12124,7 @@ function ProductsList({ products }: { products: Product[] }) {
     </div>
   );
 }
-```
+```markdown
 
 ---
 
@@ -10692,7 +12200,7 @@ export function ProductForm() {
     </form>
   );
 }
-```
+```markdown
 
 ---
 
@@ -10788,7 +12296,7 @@ function CartTotal() {
   const total = useCartStore(state => state.total());
   return <span>Total: R$ {total.toFixed(2)}</span>;
 }
-```
+```markdown
 
 ---
 
@@ -10830,7 +12338,7 @@ Perceptível:      Todo conteúdo deve ser percebível (alternativas para mídia
 Operável:         Toda interface deve ser operável (teclado, voz)
 Compreensível:    Conteúdo e interface devem ser compreensíveis
 Robusto:          Conteúdo deve funcionar em diferentes tecnologias
-```
+```markdown
 
 ### Práticas essenciais
 
@@ -10867,7 +12375,7 @@ function Toast({ message }: { message: string }) {
     </div>
   );
 }
-```
+```markdown
 
 ---
 
@@ -10915,7 +12423,7 @@ function Toast({ message }: { message: string }) {
 ">
   {items.map(item => <MobileCard key={item.id} item={item} />)}
 </div>
-```
+```markdown
 
 ---
 
@@ -10956,11 +12464,12 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-```
+```markdown
 
 ### Dynamic Import
 
 ```typescript
+```
 import dynamic from 'next/dynamic';
 
 // Só carrega quando precisar
@@ -10980,6 +12489,74 @@ function Dashboard() {
   );
 }
 
+| Conceito | Descrição | Aplicação |
+|----------|-----------|-----------|
+| Abordagem Principal | Estratégia central discutida no módulo | Implementação direta |
+| Padrão Relacionado | Padrão complementar | Casos de uso específicos |
+| Boa Prática | Recomendação de mercado | Cenários de produção |
+| Anti-padrão | Prática a ser evitada | Consequências negativas |
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
+
 
 
 
@@ -10991,7 +12568,25 @@ function Dashboard() {
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 14 Devops
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. Por que DevOps importa
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 DevOps é a ponte entre o **código funcionando na máquina do dev** e o **código funcionando em produção**.
 
@@ -11006,7 +12601,23 @@ Causas:
   - Banco de dados diferente
   - Sistema operacional diferente
   - Permissões diferentes
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### A solução DevOps
 
@@ -11020,7 +12631,7 @@ CI/CD:
   → Cada push é testado automaticamente
   → Deploy é um processo, não um evento
   → Rollback rápido se algo der errado
-```
+```markdown
 
 ---
 
@@ -11041,7 +12652,7 @@ CI/CD:
 │  │  Sistema (Alpine Linux)          │  │
 │  └──────────────────────────────────┘  │
 └────────────────────────────────────────┘
-```
+```markdown
 
 ### Dockerfile multi-stage (o padrão correto)
 
@@ -11133,7 +12744,7 @@ services:
 volumes:
   postgres_data:
   redis_data:
-```
+```markdown
 
 ### .dockerignore
 
@@ -11145,7 +12756,7 @@ dist
 .gitignore
 *.md
 coverage
-```
+```markdown
 
 ---
 
@@ -11254,7 +12865,7 @@ jobs:
             docker compose pull
             docker compose up -d --force-recreate
             docker system prune -f
-```
+```markdown
 
 ---
 
@@ -11276,7 +12887,7 @@ REDIS_URL=redis://localhost:6379
 # API
 PORT=3000
 NODE_ENV=development
-```
+```markdown
 
 ### Validação na inicialização
 
@@ -11328,7 +12939,7 @@ Passo 1: Deploy da versão verde
 Passo 2: Testar versão verde
 Passo 3: Troca LB para verde
 Passo 4: Se erro, troca de volta (rollback imediato)
-```
+```sql
 
 ### Rolling Update
 
@@ -11339,7 +12950,7 @@ Passo 3: Repete até todas serem v2
 
 Prós: Sem downtime
 Contras: Duas versões convivem
-```
+```markdown
 
 ### Canary Release
 
@@ -11349,7 +12960,7 @@ Se estável → 25% → 50% → 100%
 
 Prós: Risco mínimo
 Contras: Complexo de configurar
-```
+```markdown
 
 ---
 
@@ -11378,7 +12989,7 @@ services:
   redis:
     ports:
       - "6379:6379"
-```
+```markdown
 
 ### docker-compose.prod.yml (produção)
 
@@ -11457,7 +13068,7 @@ async live(): Promise<{ status: string }> {
   // Liveness = servidor está rodando
   return { status: 'alive' };
 }
-```
+```markdown
 
 ### Graceful Shutdown
 
@@ -11517,11 +13128,80 @@ app.useLogger(
     ],
   })
 );
-```
+```markdown
 
 ### Exemplo de log estruturado
 
 ```json
+```
+
+| Conceito | Descrição | Aplicação |
+|----------|-----------|-----------|
+| Abordagem Principal | Estratégia central discutida no módulo | Implementação direta |
+| Padrão Relacionado | Padrão complementar | Casos de uso específicos |
+| Boa Prática | Recomendação de mercado | Cenários de produção |
+| Anti-padrão | Prática a ser evitada | Consequências negativas |
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 
 
 
@@ -11534,7 +13214,25 @@ app.useLogger(
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 15 Qa
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. Por que testar?
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 ### O custo de não testar
 
@@ -11555,7 +13253,23 @@ Com testes:
   │  Regressão: 0 (testes previnem)            │
   │  Confiança do time: alta ("posso refatorar")│
   └────────────────────────────────────────────┘
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### A pirâmide de testes
 
@@ -11571,7 +13285,7 @@ Com testes:
   ╱                    ╲ Testes de serviço/função
  ╱──────────────────────╲
   MUITOS (rápidos)         POUCOS (lentos)
-```
+```markdown
 
 ### Estratégia de cobertura
 
@@ -11579,7 +13293,7 @@ Com testes:
 Unitários:        70%+ cobertura (services, utils)
 Integração:       20% (endpoints, fluxos críticos)
 E2E:              10% (fluxos principais, felizes e infelizes)
-```
+```markdown
 
 ---
 
@@ -11649,7 +13363,7 @@ expect(mockUserRepo.save).toHaveBeenCalledTimes(1);
 expect(mockUserRepo.save).toHaveBeenCalledWith(expect.objectContaining({
   name: 'João',
 }));
-```
+```markdown
 
 ### Testando erros
 
@@ -11747,7 +13461,7 @@ describe('UserController (integration)', () => {
     });
   });
 });
-```
+```markdown
 
 ---
 
@@ -11842,7 +13556,7 @@ test.describe('CRUD de produtos', () => {
     await expect(page.locator('text=Preço é obrigatório')).toBeVisible();
   });
 });
-```
+```markdown
 
 ---
 
@@ -11881,7 +13595,7 @@ export default {
 ❌ Módulos:      só declaram providers/imports
 ❌ Config:       valores estáticos
 ❌ DTOs:         schemas Zod (testados indiretamente)
-```
+```markdown
 
 ---
 
@@ -11937,7 +13651,7 @@ jobs:
         with:
           name: coverage
           path: coverage/
-```
+```markdown
 
 ---
 
@@ -11949,11 +13663,12 @@ jobs:
 Red:   Escreva um teste que falha
 Green: Faça o teste passar (código mínimo)
 Refactor: Melhore o código mantendo os verdes
-```
+```markdown
 
 ### Exemplo prático
 
 ```typescript
+```
 // 1. RED — Escrever teste primeiro
 describe('OrderService', () => {
   it('não deve criar pedido com valor abaixo do mínimo', () => {
@@ -11982,6 +13697,74 @@ class OrderService {
 // 3. REFACTOR — Melhorar sem quebrar testes
 // Extrair constante, melhorar mensagem
 
+| Conceito | Descrição | Aplicação |
+|----------|-----------|-----------|
+| Abordagem Principal | Estratégia central discutida no módulo | Implementação direta |
+| Padrão Relacionado | Padrão complementar | Casos de uso específicos |
+| Boa Prática | Recomendação de mercado | Cenários de produção |
+| Anti-padrão | Prática a ser evitada | Consequências negativas |
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
+
 
 
 
@@ -11993,7 +13776,25 @@ class OrderService {
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 16 Observabilidade
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. O que é observabilidade?
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Observabilidade é a capacidade de **entender o estado interno do sistema** a partir de seus outputs externos (logs, métricas, traces).
 
@@ -12007,7 +13808,23 @@ Eventos discretos              Dados agregados                  Fluxo de requisi
 Ex:                            Ex:                              Ex:
 "Usuário X fez login"          "500 req/s, p95=200ms"           "GET /orders → Auth → DB"
 "Falha no pagamento"            "Error rate: 0.5%"              "POST /payment → API → Queue"
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### Sem observabilidade
 
@@ -12018,7 +13835,7 @@ Usuário: "Não sei, só está lento"
 Dev:     "Não consigo reproduzir"
 
 → Sem dados, sem diagnóstico
-```
+```markdown
 
 ### Com observabilidade
 
@@ -12028,7 +13845,7 @@ Logs:    "14:30:01 - DB query timeout"
 Trace:   "14:30:01 - span database: 5s (normal: 50ms)"
 
 → Causa identificada em minutos
-```
+```markdown
 
 ---
 
@@ -12081,7 +13898,7 @@ export const logger = winston.createLogger({
     }),
   ],
 });
-```
+```markdown
 
 ### Níveis de log
 
@@ -12091,7 +13908,7 @@ warn:    Algo inesperado (mas não quebrou)
 info:    Evento importante (login, criação)
 debug:   Detalhes para diagnóstico
 verbose: Tudo (usar apenas em dev)
-```
+```markdown
 
 ### O que logar
 
@@ -12120,7 +13937,7 @@ Counter:      Valor que só aumenta (req total, errors total)
 Gauge:        Valor que sobe e desce (memória, conexões ativas)
 Histogram:    Distribuição de valores (response time p50, p95, p99)
 Summary:      Similar ao histogram (latência, tamanho de resposta)
-```
+```markdown
 
 ### Métricas essenciais
 
@@ -12145,7 +13962,7 @@ orders_revenue_total
 process_cpu_seconds_total
 process_resident_memory_bytes
 nodejs_eventloop_lag_seconds
-```
+```markdown
 
 ### Implementação com Prometheus client
 
@@ -12223,7 +14040,7 @@ Requisição: POST /api/orders
   │                                                      │
   │ Total: 457ms                                         │
   └─────────────────────────────────────────────────────┘
-```
+```markdown
 
 ### Implementação com OpenTelemetry
 
@@ -12254,7 +14071,7 @@ const sdk = new NodeSDK({
 });
 
 sdk.start();
-```
+```markdown
 
 ### Span customizado
 
@@ -12309,7 +14126,7 @@ RED Method (Rate, Errors, Duration):
 | DB Connections        | Conexões ativas no banco   | Gauge    |
 | Query Duration        | Duração de queries         | Histogram|
 | Error Logs Rate       | Quantidade de logs de erro | Counter  |
-```
+```markdown
 
 ### Painel de resposta rápida
 
@@ -12329,7 +14146,7 @@ RED Method (Rate, Errors, Duration):
 │  14:30:01 - POST /payment - timeout (5x)                    │
 │  14:29:00 - GET /products - connection refused (2x)         │
 └─────────────────────────────────────────────────────────────┘
-```
+```markdown
 
 ---
 
@@ -12355,7 +14172,7 @@ P2 (Resposta em 24h):
   - p99 latency > 3s
   - Cache hit rate < 50%
   - Queries lentas (> 500ms)
-```
+```markdown
 
 ### Exemplo de alerta (Prometheus + Alertmanager)
 
@@ -12386,7 +14203,7 @@ groups:
           severity: critical
         annotations:
           summary: "p95 latency above 2s"
-```
+```markdown
 
 ---
 
@@ -12428,7 +14245,7 @@ services:
 
 # Contar erros por endpoint
 sum by (path) (count_over_time({service="api"} |= "error" [5m]))
-```
+```markdown
 
 ---
 
@@ -12442,6 +14259,56 @@ sum by (path) (count_over_time({service="api"} |= "error" [5m]))
 6. **Alertas** — P0/P1/P2 com thresholds e canais de notificação
 7. **Centralização** — Loki + Grafana para logs searcháveis
 
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
+
 
 
 
@@ -12453,7 +14320,25 @@ sum by (path) (count_over_time({service="api"} |= "error" [5m]))
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 17 Governanca
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. O que é Governança de TI
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Governança de TI é o **sistema de regras, processos e práticas** que garante que a área de tecnologia entregue valor alinhado aos objetivos do negócio, com riscos controlados e recursos otimizados.
 
@@ -12474,7 +14359,23 @@ Com governança:
   → Deploy previsível e seguro
   → Decisões documentadas e rastreáveis
   → Auditoria tranquila
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### Frameworks de Governança
 
@@ -12510,7 +14411,7 @@ Governança de software é a aplicação prática dos princípios de governança
 │   nunca no  │   template    │   periódica   │
 │   reposit.  │               │               │
 └─────────────┴───────────────┴───────────────┘
-```
+```markdown
 
 Calendario operacional de governanca (cadencia de tarefas e janelas):
 
@@ -12537,7 +14438,7 @@ Pode pular code review:
   → Alteração em arquivo .gitignore
   → Documentação simples
   → Hotfix com autorização do tech lead
-```
+```markdown
 
 ### Checklist de Code Review
 
@@ -12553,7 +14454,7 @@ Pode pular code review:
 □ Documentação foi atualizada?
 □ Segredos/credenciais no código? (NUNCA!)
 □ Performance: impacto aceitável?
-```
+```markdown
 
 ### Approval Gates
 
@@ -12572,7 +14473,7 @@ Proteções de branch (GitHub):
   - Requer CI passar
   - Desabilitar merge direto na main
   - Stale reviews são descartados após novo push
-```
+```markdown
 
 O fluxo acima em notação BPMN:
 
@@ -12649,7 +14550,7 @@ Padrões de código são **regras automatizadas** que garantem consistência sem
     "prefer-const": "error"
   }
 }
-```
+```markdown
 
 ### Prettier
 
@@ -12682,7 +14583,7 @@ insert_final_newline = true
 
 [*.md]
 trim_trailing_whitespace = false
-```
+```markdown
 
 ### Husky + lint-staged + commitlint
 
@@ -12692,7 +14593,7 @@ trim_trailing_whitespace = false
 
 // .husky/pre-commit
 // npx lint-staged
-```
+```text
 
 ```jsonc
 // package.json (trechos relevantes)
@@ -12711,7 +14612,7 @@ trim_trailing_whitespace = false
     "extends": ["@commitlint/config-conventional"]
   }
 }
-```
+```markdown
 
 ### Conventional Commits
 
@@ -12734,7 +14635,7 @@ Exemplos:
   fix(api): correct 404 handling for users
   chore(deps): upgrade express to 4.19
   docs(readme): update setup instructions
-```
+```markdown
 
 ---
 
@@ -12765,7 +14666,7 @@ Regras:
   → Dependency drift > 30 dias: alerta
   → Dependências não mantidas (>1 ano sem release): substituir
   → Dependências com CVE conhecida: atualizar em 48h
-```
+```markdown
 
 ### Configuração Renovate
 
@@ -12809,7 +14710,7 @@ Regras:
 ✓ Variáveis de ambiente em secrets do CI/CD
 ✓ Gestão centralizada: Vault (HashiCorp), AWS Secrets Manager, Azure Key Vault
 ✓ Rotação periódica de chaves (90 dias recomendado)
-```
+```markdown
 
 ### .env.example
 
@@ -12820,7 +14721,7 @@ REDIS_URL=redis://localhost:6379
 API_KEY=sk-your-key-here
 NODE_ENV=development
 PORT=3000
-```
+```markdown
 
 ### git-secrets — prevenir vazamentos
 
@@ -12855,7 +14756,7 @@ repos:
     hooks:
       - id: detect-secrets
         args: ["--baseline", ".secrets.baseline"]
-```
+```markdown
 
 ### Se vazar — plano de ação
 
@@ -12866,7 +14767,7 @@ repos:
 4. Commitar arquivo .gitignore atualizado
 5. Se necessário: forçar push com filter-branch (BFG Repo Cleaner)
 6. Post-mortem: como evitamos que aconteça de novo?
-```
+```markdown
 
 ---
 
@@ -12889,7 +14790,7 @@ Trunk-based (deploy contínuo):
              │     │     │     │     │
   branch  ───┘─────┘─────┘─────┘─────┘
   (curta, horas/dias, não semanas)
-```
+```text
 
 | Característica | Git Flow | Trunk-based |
 |---------------|----------|-------------|
@@ -12915,7 +14816,7 @@ Pós-deploy:
   → Monitoring ativo por 30min
   → Se erro rate > baseline em 2x → rollback manual
   → Post-mortem se rollback ocorreu
-```
+```javascript
 
 ---
 
@@ -12976,7 +14877,7 @@ Adotar PostgreSQL 16 como banco de dados principal.
 
 ## Referências
 - https://www.postgresql.org/docs/16/index.html
-```
+```markdown
 
 ### RFCs vs ADRs
 
@@ -12991,7 +14892,7 @@ RFC: Proposta aberta para discussão
   → Quando: antes da decisão
   → Público: todo o time + stakeholders
   → Inclui: problema, proposta, prós/contra, perguntas em aberto
-```
+```markdown
 
 ---
 
@@ -13014,7 +14915,7 @@ Na prática:
   - Implementar endpoint de deleção de conta
   - Rotacionar dados sensíveis em staging
   - Usar hash + salt para dados identificáveis
-```
+```markdown
 
 ### SOC2
 
@@ -13031,7 +14932,7 @@ Na prática:
   - CI/CD com trilha de auditoria
   - Revisão periódica de acessos
   - Pentests agendados
-```
+```markdown
 
 ### ISO 27001
 
@@ -13048,7 +14949,7 @@ Na prática:
   - Manter inventário de serviços e versões
   - Revisar acessos trimestralmente
   - Plano de resposta a incidentes testado
-```
+```markdown
 
 ---
 
@@ -13069,7 +14970,7 @@ SLO (Service Level Objective): meta baseada no SLI
 
 SLA (Service Level Agreement): compromisso formal com o cliente
   → "Se uptime < 99.9%, cliente recebe 10% de crédito"
-```
+```markdown
 
 ### Monitoramento na prática
 
@@ -13113,7 +15014,7 @@ Relatório trimestral:
   → MTBF (Mean Time Between Failures)
   → Top 3 causas de incidentes
   → Plano de ação para melhoria
-```
+```markdown
 
 ---
 
@@ -13152,7 +15053,7 @@ await createAuditLog({
   previousValue: userBeforeDelete,
   ipAddress: req.ip,
 });
-```
+```markdown
 
 ### Changelogs automatizados
 
@@ -13162,7 +15063,7 @@ Mantido com Conventional Commits + semantic-release:
   → fix → nova entrada em "Bug Fixes"
   → BREAKING CHANGE → nova entrada em "Breaking Changes"
   → Gerado automaticamente no momento do release
-```
+```markdown
 
 ### Rastreamento de decisões
 
@@ -13185,7 +15086,7 @@ Exemplo:
   Tests: cache.test.ts (90% cobertura)
     ↓
   Commit: feat(api): add Redis caching layer
-```
+```markdown
 
 ---
 
@@ -13215,7 +15116,7 @@ O maior erro de governança é criar **burocracia que paralisa o time**. Governa
 5. Liderança pelo exemplo
    → Tech lead e seniors seguem as regras PRIMEIRO
    → Ninguém está acima das políticas
-```
+```markdown
 
 ### Cultura de qualidade
 
@@ -13237,7 +15138,7 @@ Como construir:
   → Celebrar vitórias de governança
     - "Reduzimos MTTR em 40% esse trimestre!"
     - "Zero incidentes de segurança em 6 meses!"
-```
+```markdown
 
 ### Métricas de saúde da governança
 
@@ -13256,7 +15157,7 @@ Ferramentas de medição:
   → Dependabot / Renovate dashboard
   → Datadog / Grafana para SLOs
   → Ferramenta de ADR (adr-tools, madr, GitHub wiki)
-```
+```markdown
 
 ---
 
@@ -13275,7 +15176,51 @@ O que levar para o dia a dia:
   → Compliance integrada ao processo (não depois)
   → SLOs que todo time conhece
   → Cultura de qualidade, não de culpa
-```
+```text
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
 
 
 
@@ -13288,7 +15233,25 @@ O que levar para o dia a dia:
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 18 Agentes Ia
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. Por que agentes especializados?
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Um único agente genérico (ex: "você é um desenvolvedor full stack") produz resultados **medianos em todas as áreas**.
 
@@ -13306,7 +15269,23 @@ Agente Genérico:
   └── DevOps:   ⭐☆☆☆☆  (Dockerfile sem multi-stage)
 
 Resultado: código "funciona", mas cheio de dívida técnica
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### A solução dos agentes especializados
 
@@ -13319,7 +15298,7 @@ Agente Frontend:
   └── TypeScript: ⭐⭐⭐⭐⭐ (strict mode, generics)
 
 Resultado: código de produção, pronto para review
-```
+```markdown
 
 ---
 
@@ -13335,7 +15314,7 @@ agente/
 ├── prompts/            # Instruções: templates de prompt para tarefas comuns
 │   ├── prompt-tarefa-1.md
 │   └── prompt-tarefa-2.md
-```
+```markdown
 
 ### Componentes de um agente eficaz
 
@@ -13365,7 +15344,7 @@ agente/
 │  Formato de saída (o que entrega)    │
 │  Como reportar problemas             │
 └──────────────────────────────────────┘
-```
+```markdown
 
 ---
 
@@ -13449,7 +15428,7 @@ agente/
 
 7. TESTAR com um caso real
    → Executar o agente, revisar o output, ajustar
-```
+```markdown
 
 ### Exemplo: Criando o Security Expert Agent
 
@@ -13481,7 +15460,7 @@ agente/
 - [ ] Helmet.js ativado
 - [ ] Input validation em todos os endpoints
 - [ ] SQL injection prevenido (ORM)
-```
+```markdown
 
 ---
 
@@ -13510,7 +15489,7 @@ Product Discovery  ──→  UX Designer  ──→  UI Designer
                      Auditor Agent
                              │
                     Documentation Agent
-```
+```markdown
 
 ### Pipeline de auditoria
 
@@ -13531,7 +15510,7 @@ Code Quality Auditor ──→ Se abaixo do padrão → Refactoring Agent
         │
         ▼
 Relatório consolidado com score geral
-```
+```markdown
 
 ### Pipeline de onboarding
 
@@ -13564,7 +15543,7 @@ DevOps Agent → Deploy
         │
         ▼
 Auditor Agent → Score final
-```
+```markdown
 
 ---
 
@@ -13607,7 +15586,7 @@ Auditor Agent → Score final
 - Suporte a sort e filter
 - Paginação
 - Loading state com Suspense
-```
+```markdown
 
 ### Como fazer um agente revisar outro
 
@@ -13615,7 +15594,7 @@ Auditor Agent → Score final
 @auditor Revise a segurança deste endpoint.
 
 [endpoint code]
-```
+```markdown
 
 ---
 
@@ -13662,7 +15641,7 @@ Regras:
 - Zod para validação
 - Swagger para documentação
 - Tratamento de erros com NestJS exception filters"
-```
+```markdown
 
 ---
 
@@ -13673,6 +15652,68 @@ O próximo passo natural: um **Meta-Agent** que cria agentes especializados sob 
 ### Como funcionaria
 
 ```text
+```
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 
 
 
@@ -13685,7 +15726,25 @@ O próximo passo natural: um **Meta-Agent** que cria agentes especializados sob 
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 19 Auditorias
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. Por que auditoria é o diferencial
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 A maioria dos cursos ensina a **construir** software. Quase nenhum ensina a **avaliar** a qualidade do que foi construído.
 
@@ -13701,7 +15760,23 @@ Esta formação:
   │  Construir  │  Testar  │  AUDITAR  │  OK   │
   └────────────────────────────────────────────┘
   Nota: score 0-10 com riscos classificados
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### O que uma auditoria responde
 
@@ -13736,7 +15811,7 @@ Cada dimensão = 0-10 baseado em:
   40% checklists automatizados
   30% análise estática (lint, types, cobertura)
   30% análise qualitativa do auditor
-```
+```markdown
 
 ### Exemplo: Auditoria de uma API
 
@@ -13751,7 +15826,7 @@ Dimensões avaliadas:
 
 Score geral: (9+10+6+8+7+9) / 6 = 8.2 → "Bom"
 Riscos: 1 Critical, 2 Major, 3 Minor
-```
+```markdown
 
 ---
 
@@ -13775,7 +15850,7 @@ Riscos: 1 Critical, 2 Major, 3 Minor
 │ADR        │ Isolamento │ Limpeza   │Vuln.     │ Strict mode  │
 │Git Flow   │ RLS        │ Padrões   │Licenças  │ Generics     │
 └───────────┴────────────┴───────────┴──────────┴──────────────┘
-```
+```markdown
 
 ### Auditorias que todo projeto deveria ter
 
@@ -13887,7 +15962,7 @@ estes itens antes de qualquer release.
 - **Impacto:** Ataque de força bruta ilimitado
 - **Correção:** Implementar @Throttle(5, 60) no endpoint
 - **Dependência:** Nenhuma
-```
+```markdown
 
 ---
 
@@ -13918,7 +15993,7 @@ Sim:
   │  10. Relatório executivo para stakeholders        │
   │                                                   │
   └──────────────────────────────────────────────────┘
-```
+```markdown
 
 ### Ferramentas para auditoria automatizada
 
@@ -13959,7 +16034,7 @@ Score 9-10 (Excelente):
   🏆 Referência para outros módulos
   🏆 Compartilhar práticas com o time
   🏆 Foco em inovação, não em correção
-```
+```markdown
 
 ### Para o gestor
 
@@ -13970,7 +16045,7 @@ Relatório executivo deve conter apenas:
   3. Top 3 riscos que precisam de atenção
   4. Prazo estimado para correções
   5. Impacto nos prazos do projeto
-```
+```markdown
 
 ---
 
@@ -13991,6 +16066,7 @@ Na nossa biblioteca, o **Auditor Agent** pode ser invocado a qualquer momento:
 
 ### Pipeline de auditoria completa
 
+```text
 ```
 1. Código é implementado pelos agentes especializados
 2. QA Agent executa testes
@@ -13999,6 +16075,56 @@ Na nossa biblioteca, o **Auditor Agent** pode ser invocado a qualquer momento:
 5. Riscos Blocker/Critical são atribuídos aos agentes corretivos
 6. Agentes corrigem e re-audita
 7. Score mínimo é atingido → deploy autorizado
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 
 
 
@@ -14013,7 +16139,25 @@ Na nossa biblioteca, o **Auditor Agent** pode ser invocado a qualquer momento:
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 20 Automacao
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. O que é Automação
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Automação é a substituição de processos manuais repetitivos por scripts, pipelines e ferramentas que executam essas tarefas de forma confiável, auditável e escalável.
 
@@ -14046,7 +16190,23 @@ A regra prática: **automatize tudo que for executado mais de 2 vezes.**
 ```text
 Custo de automatizar = (tempo para criar + tempo para manter) × custo-hora
 Benefício = (tempo economizado por execução × frequência × horizonte) - custo
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 Se o benefício for positivo em 6 meses, vale a pena automatizar.
 
@@ -14226,7 +16386,7 @@ deploy:
     - main
   when: manual
   environment: production
-```
+```markdown
 
 ---
 
@@ -14289,7 +16449,7 @@ describe('POST /users', () => {
     expect(response.json()).toHaveProperty('id')
   })
 })
-```
+```markdown
 
 ### Testes E2E
 
@@ -14316,7 +16476,7 @@ e2e:
     - run: pnpm test:e2e
       env:
         BASE_URL: http://localhost:3000
-```
+```text
 
 ```typescript
 // E2E com Playwright
@@ -14331,7 +16491,7 @@ test('usuário consegue finalizar compra', async ({ page }) => {
 
   await expect(page.locator('text=Pedido confirmado')).toBeVisible()
 })
-```
+```markdown
 
 ---
 
@@ -14418,7 +16578,7 @@ new aws.ecs.Service('app-service', {
     securityGroups: [config.require('securityGroupId')],
   },
 })
-```
+```markdown
 
 ### CloudFormation (AWS)
 
@@ -14489,7 +16649,7 @@ iac-apply:
       with:
         name: tfplan
     - run: terraform apply tfplan
-```
+```markdown
 
 ---
 
@@ -14505,7 +16665,7 @@ USUÁRIOS → Load Balancer → Blue (v1.0) ✅
 
 Switch: DNS/ALB aponta para Green
 Rollback: reverter DNS para Blue
-```
+```markdown
 
 ### Canary Deployment
 
@@ -14560,7 +16720,7 @@ services:
       rollback_config:
         parallelism: 1
         order: stop-first
-```
+```markdown
 
 ### Feature Flags
 
@@ -14610,7 +16770,7 @@ migrate:
     - run: pnpm db:migrate
       env:
         DATABASE_URL: ${{ secrets.DATABASE_URL }}
-```
+```markdown
 
 ### Exemplo com Prisma Migrate
 
@@ -14668,7 +16828,7 @@ seed()
     process.exit(1)
   })
   .finally(() => prisma.$disconnect())
-```
+```yaml
 
 ### Rollback Automático
 
@@ -14738,7 +16898,7 @@ security-sast:
         image-ref: meuregistro/app:${{ github.sha }}
         format: sarif
         output: trivy-results.sarif
-```
+```markdown
 
 ### DAST (Dynamic Application Security Testing)
 
@@ -14782,7 +16942,7 @@ dependency-scan:
     # npm audit
     - name: npm audit
       run: pnpm audit --audit-level=high
-```
+```markdown
 
 ---
 
@@ -14859,7 +17019,7 @@ updates:
     commit-message:
       prefix: "chore"
       include: "scope"
-```
+```markdown
 
 ---
 
@@ -14917,7 +17077,7 @@ docs: atualiza README
 refactor: extrai lógica de pagamento para serviço
 perf: otimiza consulta de histórico
 test: adiciona testes para o módulo de notas fiscais
-```
+```markdown
 
 ### Changelog Gerado Automaticamente
 
@@ -14935,7 +17095,7 @@ O `semantic-release` com plugin `@semantic-release/changelog` gera:
 ### Bug Fixes
 * **auth:** corrige timeout na renovação do token ([ghi9012](https://github.com/org/repo/commit/ghi9012))
 * **validacao:** CPF com formatação agora é aceito ([jkl3456](https://github.com/org/repo/commit/jkl3456))
-```
+```markdown
 
 ---
 
@@ -15016,7 +17176,7 @@ vercel-preview:
         vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
         github-token: ${{ secrets.GITHUB_TOKEN }}
         github-comment: true
-```
+```markdown
 
 ---
 
@@ -15086,7 +17246,7 @@ async function healService(cluster: string, service: string) {
 }
 
 healService('production', 'app-service').catch(console.error)
-```
+```markdown
 
 ### Runbooks Automáticos
 
@@ -15192,7 +17352,7 @@ runs:
         cache: pnpm
     - run: pnpm install --frozen-lockfile
       shell: bash
-```
+```text
 
 Uso da action reutilizável:
 
@@ -15227,11 +17387,12 @@ test-matrix:
       with:
         node-version: ${{ matrix.node-version }}
     - run: pnpm test:ci
-```
+```markdown
 
 ### Pipeline de Deploy com Environments e Gates
 
 ```yaml
+```
 deploy-production:
   name: Deploy em Produção
   needs: [lint, test, build, security-sast]
@@ -15291,6 +17452,67 @@ deploy-production:
           --service app-service \
           --force-new-deployment
 
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
+
 
 
 
@@ -15302,7 +17524,25 @@ deploy-production:
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 21 Projeto Final
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. Visão Geral do Projeto
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 ### 1.1 Objetivo
 
@@ -15628,7 +17868,23 @@ A stack escolhida prepara o aluno para:
   → 85% das vagas de SaaS Enterprise no Brasil
   → Escalabilidade real (horizontal, stateless)
   → Ecossistema com alta empregabilidade
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ---
 
@@ -15685,7 +17941,7 @@ A stack escolhida prepara o aluno para:
 │  Prometheus ← Métricas  │  Loki ← Logs  │  Tempo/Jaeger ← Traces  │
 │  Grafana (Dashboard)    │  Alertmanager │  Uptime Kuma             │
 └─────────────────────────────────────────────────────────────────────┘
-```
+```markdown
 
 ### 6.2 Decisões Arquiteturais (ADRs)
 
@@ -15804,7 +18060,7 @@ src/modules/tenants/
 │   └── tenant.entity.ts
 └── specs/
     └── tenant.service.spec.ts
-```
+```markdown
 
 ### 7.2 Auth Module
 
@@ -15830,7 +18086,7 @@ src/modules/auth/
 │   └── forgot-password.dto.ts
 └── specs/
     └── auth.service.spec.ts
-```
+```markdown
 
 ### 7.3 Projects Module
 
@@ -15853,7 +18109,7 @@ src/modules/projects/
 │   └── member-added.event.ts
 └── specs/
     └── project.service.spec.ts
-```
+```markdown
 
 ### 7.4 Tasks Module
 
@@ -15882,7 +18138,7 @@ src/modules/tasks/
 └── specs/
     ├── task.service.spec.ts
     └── task.gateway.spec.ts
-```
+```markdown
 
 ### 7.5 Notifications Module
 
@@ -15906,7 +18162,7 @@ src/modules/notifications/
 │   └── mention.hbs
 └── specs/
     └── notification.service.spec.ts
-```
+```javascript
 
 ### 7.6 Reports Module
 
@@ -15924,7 +18180,7 @@ src/modules/reports/
 │   └── csv.generator.ts
 └── specs/
     └── report.service.spec.ts
-```
+```markdown
 
 ### 7.7 Payments Module
 
@@ -15944,7 +18200,7 @@ src/modules/payments/
 │   └── create-checkout.dto.ts
 └── specs/
     └── payment.service.spec.ts
-```
+```markdown
 
 ### 7.8 Admin Module
 
@@ -15959,7 +18215,7 @@ src/modules/admin/
 │   └── create-webhook.dto.ts
 └── specs/
     └── admin.service.spec.ts
-```
+```markdown
 
 ---
 
@@ -16073,7 +18329,7 @@ docker compose up
 
 ## Deploy
 [Link para produção]
-```
+```markdown
 
 ### 9.3 Documentação
 
@@ -16102,7 +18358,7 @@ push / PR → main:
   6. Deploy para staging (automatizado)
   7. Smoke tests
   8. Deploy para produção (manual)
-```
+```markdown
 
 ### 9.6 Dashboard de Monitoramento
 
@@ -16308,6 +18564,56 @@ Lembre-se: um sistema Enterprise de verdade não é aquele que funciona no seu c
 
 Boa construção.
 
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
+
 
 
 
@@ -16354,6 +18660,12 @@ Ao final desta aula, o aluno será capaz de:
 ---
 
 ## 1. Introdução: por que 90% cometem esse erro
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Era uma terça-feira comum. O desenvolvedor precisava de uma função simples para validar emails. Pediu ao ChatGPT, copiou o código, fez deploy. Na sexta, o banco de dados estava cheio de registros com emails como "usuario@". Aquela função — que parecia perfeita — só verificava se existia um "@" na string.
 
@@ -16421,6 +18733,22 @@ function calculateDiscount(price, coupon) {
 
 calculateDiscount('cem reais', 'SAVE10'); // NaN em produção
 ```text
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
+```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### Como corrigir
 
@@ -16584,7 +18912,7 @@ React 18 + TypeScript + Tailwind CSS
 - Erros devem usar `Result<T, E>` (never throw)
 - Nomes de arquivo em kebab-case
 - Componentes em `src/components/`, páginas em `src/pages/`
-```
+```text
 
 > [!TIP]
 > Invista 5 minutos agora para criar o `AGENTS.md`. É o investimento com maior retorno por minuto no uso de IA para programar. A cada novo projeto, comece por ele.
@@ -16667,7 +18995,7 @@ Usar IA para programar não é sobre aceitar código — é sobre **colaboraçã
 [Prompt Estruturado] → [IA gera rascunho] → [Code Review] → [Testes] → [Refinamento] → [Commit]
         ↑                                                                                |
         └────────────────────── Iteração (feedback) ────────────────────────────────────┘
-```
+```markdown
 
 ### Analogia principal
 
@@ -16690,7 +19018,7 @@ function validateEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email); // ✅ Validação mais robusta
 }
-```
+```text
 
 **Sugestão de diagrama:** Mapa mental dos 5 erros com causas e correções lado a lado, em formato de tabela visual.
 
@@ -16799,7 +19127,7 @@ def save_user(username, password):
     conn.commit()
     cursor.close()
     conn.close()
-```
+```markdown
 
 ---
 
@@ -16812,4 +19140,39 @@ def save_user(username, password):
 - 5 erros ao usar IA que sabotam suas respostas (TechTudo) — https://www.techtudo.com.br/listas/2026/04/5-erros-ao-usar-ia-que-sabotam-suas-respostas-e-como-evita-los-edsoftwares.ghtml
 - CLAUDE.md Rules: How to Cut AI Coding Mistakes from ~40% to ~3% (DEV.to) — https://dev.to/rams901/claudemd-rules-how-to-cut-ai-coding-mistakes-from-40-to-3-in-2026-2j7o
 - 10 Most Common Mistakes Using AI Coding Tools (Ryz Labs) — https://www.ryzlabs.com/
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
 

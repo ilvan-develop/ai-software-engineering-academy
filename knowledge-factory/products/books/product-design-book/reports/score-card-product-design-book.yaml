@@ -5,96 +5,96 @@ categories:
 - category_id: estrutura_conteudo
   name: Estrutura do Conteúdo
   weight: 8
-  score: 52.9
+  score: 74.7
   passed: false
   details:
   - criterion_id: ec1
     name: Hierarquia de títulos
-    score: 53.6
+    score: 79.3
     weight: 20
-    weighted: 10.72
+    weighted: 15.86
   - criterion_id: ec2
     name: Completude estrutural
-    score: 48.6
+    score: 71.1
     weight: 20
-    weighted: 9.72
+    weighted: 14.22
   - criterion_id: ec3
     name: Progressão lógica
-    score: 50.5
+    score: 76.9
     weight: 25
-    weighted: 12.62
+    weighted: 19.23
   - criterion_id: ec4
     name: Tamanho das seções
-    score: 57.3
+    score: 78.4
     weight: 15
-    weighted: 8.6
+    weighted: 11.76
   - criterion_id: ec5
     name: Transições
-    score: 48.9
+    score: 69.8
     weight: 20
-    weighted: 9.78
+    weighted: 13.96
 - category_id: progressao_pedagogica
   name: Progressão Pedagógica
   weight: 8
-  score: 51.2
+  score: 53.2
   passed: false
   details:
   - criterion_id: pp1
     name: Objetivos de aprendizagem
-    score: 46.7
+    score: 56.1
     weight: 20
-    weighted: 9.34
+    weighted: 11.22
   - criterion_id: pp2
     name: Sequência didática
-    score: 54.8
+    score: 48.6
     weight: 25
-    weighted: 13.7
+    weighted: 12.15
   - criterion_id: pp3
     name: Carga cognitiva
-    score: 46.5
+    score: 57.6
     weight: 20
-    weighted: 9.3
+    weighted: 11.52
   - criterion_id: pp4
     name: Mecanismos de retenção
-    score: 53.0
+    score: 55.3
     weight: 15
-    weighted: 7.95
+    weighted: 8.29
   - criterion_id: pp5
     name: Adequação ao público
-    score: 48.4
+    score: 55.3
     weight: 20
-    weighted: 9.68
+    weighted: 11.06
 - category_id: qualidade_tecnica
   name: Qualidade Técnica
   weight: 10
-  score: 78.0
+  score: 79.5
   passed: false
   details:
   - criterion_id: qt1
     name: Precisão factual
-    score: 78.7
+    score: 78.3
     weight: 25
-    weighted: 19.68
+    weighted: 19.57
   - criterion_id: qt2
     name: Código funcional
-    score: 75.7
+    score: 79.7
     weight: 25
-    weighted: 18.93
+    weighted: 19.93
   - criterion_id: qt3
     name: APIs e versões corretas
-    score: 81.7
+    score: 81.3
     weight: 20
-    weighted: 16.34
+    weighted: 16.26
   - criterion_id: qt4
     name: Boas práticas
-    score: 77.1
+    score: 82.1
     weight: 15
-    weighted: 11.56
+    weighted: 12.31
   - criterion_id: qt5
     name: Comandos e configurações
-    score: 76.8
+    score: 81.2
     weight: 15
-    weighted: 11.52
+    weighted: 12.18
 - category_id: consistencia_terminologica
   name: Consistência Terminológica
   weight: 4
@@ -103,102 +103,102 @@ categories:
   details:
   - criterion_id: ct1
     name: Glossário uniforme
-    score: 80.8
+    score: 79.9
     weight: 30
-    weighted: 24.24
+    weighted: 23.97
   - criterion_id: ct2
     name: Termos em inglês
-    score: 87.2
+    score: 87.4
     weight: 25
-    weighted: 21.8
+    weighted: 21.85
   - criterion_id: ct3
     name: Siglas na primeira menção
-    score: 84.9
+    score: 81.5
     weight: 20
-    weighted: 16.98
+    weighted: 16.3
   - criterion_id: ct4
     name: STYLE_GUIDE compliance
-    score: 81.2
+    score: 83.8
     weight: 25
-    weighted: 20.3
+    weighted: 20.95
 - category_id: qualidade_exemplos
   name: Qualidade dos Exemplos
   weight: 8
-  score: 92.0
+  score: 94.2
   passed: false
   details:
   - criterion_id: qe1
     name: Contexto realista
-    score: 88.0
+    score: 90.1
     weight: 25
-    weighted: 22.0
+    weighted: 22.52
   - criterion_id: qe2
     name: Completude
-    score: 89.8
+    score: 95.4
     weight: 20
-    weighted: 17.96
+    weighted: 19.08
   - criterion_id: qe3
     name: Código executável
-    score: 94.4
+    score: 90.1
     weight: 20
-    weighted: 18.88
+    weighted: 18.02
   - criterion_id: qe4
     name: Analogias eficazes
-    score: 94.5
+    score: 95.8
     weight: 15
-    weighted: 14.18
+    weighted: 14.37
   - criterion_id: qe5
     name: Anti-exemplos
-    score: 90.9
+    score: 97.9
     weight: 20
-    weighted: 18.18
+    weighted: 19.58
 - category_id: exercicios_avaliacoes
   name: Exercícios e Avaliações
   weight: 8
-  score: 78.0
+  score: 88.0
   passed: false
   details:
   - criterion_id: ea1
     name: Progressão de dificuldade
-    score: 77.4
+    score: 87.9
     weight: 20
-    weighted: 15.48
+    weighted: 17.58
   - criterion_id: ea2
     name: Cobertura do conteúdo
-    score: 76.0
+    score: 90.1
     weight: 20
-    weighted: 15.2
+    weighted: 18.02
   - criterion_id: ea3
     name: Gabarito comentado
-    score: 76.7
+    score: 86.9
     weight: 20
-    weighted: 15.34
+    weighted: 17.38
   - criterion_id: ea4
     name: Quiz com alternativas plausíveis
-    score: 78.1
+    score: 86.6
     weight: 20
-    weighted: 15.62
+    weighted: 17.32
   - criterion_id: ea5
     name: Critérios de correção
-    score: 81.7
+    score: 88.4
     weight: 20
-    weighted: 16.34
+    weighted: 17.68
 - category_id: tom_legibilidade
   name: Tom e Legibilidade
   weight: 4
-  score: 72.1
+  score: 71.7
   passed: false
   details:
   - criterion_id: tl1
     name: Tom técnico-didático
-    score: 71.8
+    score: 70.1
     weight: 25
-    weighted: 17.95
+    weighted: 17.52
   - criterion_id: tl2
     name: Frases curtas
-    score: 70.6
+    score: 70.8
     weight: 20
-    weighted: 14.12
+    weighted: 14.16
   - criterion_id: tl3
     name: Voz passiva evitada
     score: 76.5
@@ -206,81 +206,81 @@ categories:
     weighted: 15.3
   - criterion_id: tl4
     name: Uniformidade de pessoa
-    score: 76.3
+    score: 71.2
     weight: 20
-    weighted: 15.26
+    weighted: 14.24
   - criterion_id: tl5
     name: Jargões explicados
-    score: 75.2
+    score: 76.0
     weight: 15
-    weighted: 11.28
+    weighted: 11.4
 - category_id: design_hierarquia_visual
   name: Design e Hierarquia Visual
   weight: 7
-  score: 61.5
+  score: 89.5
   passed: false
   details:
   - criterion_id: dh1
     name: Hierarquia visual
-    score: 60.4
+    score: 93.5
     weight: 20
-    weighted: 12.08
+    weighted: 18.7
   - criterion_id: dh2
     name: Diagramas e ilustrações
-    score: 66.5
+    score: 88.1
     weight: 20
-    weighted: 13.3
+    weighted: 17.62
   - criterion_id: dh3
     name: Blocos de destaque
-    score: 62.1
+    score: 93.6
     weight: 15
-    weighted: 9.31
+    weighted: 14.04
   - criterion_id: dh4
     name: Tipografia consistente
-    score: 62.9
+    score: 92.2
     weight: 15
-    weighted: 9.44
+    weighted: 13.83
   - criterion_id: dh5
     name: Espaçamento e margens
-    score: 66.4
+    score: 90.9
     weight: 15
-    weighted: 9.96
+    weighted: 13.63
   - criterion_id: dh6
     name: Paleta de cores
-    score: 62.2
+    score: 90.0
     weight: 15
-    weighted: 9.33
+    weighted: 13.5
 - category_id: qualidade_markdown
   name: Qualidade do Markdown
   weight: 4
-  score: 70.3
+  score: 80.0
   passed: false
   details:
   - criterion_id: qm1
     name: Markdown válido
-    score: 68.6
+    score: 81.4
     weight: 25
-    weighted: 17.15
+    weighted: 20.35
   - criterion_id: qm2
     name: Blocos de código com linguagem
-    score: 71.3
+    score: 77.9
     weight: 20
-    weighted: 14.26
+    weighted: 15.58
   - criterion_id: qm3
     name: Links válidos
-    score: 66.5
+    score: 80.0
     weight: 20
-    weighted: 13.3
+    weighted: 16.0
   - criterion_id: qm4
     name: Imagens referenciadas
-    score: 70.7
+    score: 75.6
     weight: 15
-    weighted: 10.61
+    weighted: 11.34
   - criterion_id: qm5
     name: Sem HTML bruto
-    score: 69.8
+    score: 80.4
     weight: 20
-    weighted: 13.96
+    weighted: 16.08
 - category_id: qualidade_formatos
   name: Qualidade dos Formatos (DOCX/PDF/EPUB)
   weight: 10
@@ -289,34 +289,34 @@ categories:
   details:
   - criterion_id: qf1
     name: DOCX — estilos corretos
-    score: 72.4
+    score: 70.5
     weight: 20
-    weighted: 14.48
+    weighted: 14.1
   - criterion_id: qf2
     name: DOCX — sumário funcional
-    score: 67.4
+    score: 71.3
     weight: 15
-    weighted: 10.11
+    weighted: 10.7
   - criterion_id: qf3
     name: PDF — fidelidade visual
-    score: 74.7
+    score: 74.8
     weight: 20
-    weighted: 14.94
+    weighted: 14.96
   - criterion_id: qf4
     name: PDF — bookmarks e navegação
-    score: 73.5
+    score: 67.8
     weight: 15
-    weighted: 11.03
+    weighted: 10.17
   - criterion_id: qf5
     name: EPUB — navegação funcional
-    score: 75.0
-    weight: 15
-    weighted: 11.25
-  - criterion_id: qf6
-    name: Metadados
     score: 73.7
     weight: 15
     weighted: 11.05
+  - criterion_id: qf6
+    name: Metadados
+    score: 72.0
+    weight: 15
+    weighted: 10.8
 - category_id: acessibilidade
   name: Acessibilidade
   weight: 4
@@ -325,29 +325,29 @@ categories:
   details:
   - criterion_id: ac1
     name: Contraste WCAG AA
-    score: 72.8
+    score: 70.6
     weight: 25
-    weighted: 18.2
+    weighted: 17.65
   - criterion_id: ac2
     name: Estrutura semântica
-    score: 66.9
+    score: 68.0
     weight: 20
-    weighted: 13.38
+    weighted: 13.6
   - criterion_id: ac3
     name: Alt text em imagens
-    score: 66.0
+    score: 70.4
     weight: 20
-    weighted: 13.2
+    weighted: 14.08
   - criterion_id: ac4
     name: Código legível
-    score: 68.2
+    score: 70.4
     weight: 20
-    weighted: 13.64
+    weighted: 14.08
   - criterion_id: ac5
     name: EPUB acessível
-    score: 68.5
+    score: 69.0
     weight: 15
-    weighted: 10.28
+    weighted: 10.35
 - category_id: identidade_visual
   name: Identidade Visual
   weight: 5
@@ -356,91 +356,91 @@ categories:
   details:
   - criterion_id: iv1
     name: Aderência ao brand book
-    score: 75.5
+    score: 72.1
     weight: 25
-    weighted: 18.88
+    weighted: 18.02
   - criterion_id: iv2
     name: Design tokens aplicados
-    score: 77.6
+    score: 79.8
     weight: 25
-    weighted: 19.4
+    weighted: 19.95
   - criterion_id: iv3
     name: Família visual
-    score: 79.1
+    score: 76.6
     weight: 20
-    weighted: 15.82
+    weighted: 15.32
   - criterion_id: iv4
     name: Consistência entre formatos
-    score: 74.7
+    score: 77.6
     weight: 15
-    weighted: 11.21
+    weighted: 11.64
   - criterion_id: iv5
     name: Originalidade
-    score: 70.9
+    score: 74.3
     weight: 15
-    weighted: 10.63
+    weighted: 11.14
 - category_id: qualidade_tipografica
   name: Qualidade Tipográfica
   weight: 5
-  score: 78.9
+  score: 81.7
   passed: false
   details:
   - criterion_id: tp1
     name: Hierarquia tipográfica
-    score: 79.1
+    score: 84.3
     weight: 25
-    weighted: 19.77
+    weighted: 21.07
   - criterion_id: tp2
     name: Rhythm vertical
-    score: 78.7
+    score: 83.0
     weight: 20
-    weighted: 15.74
+    weighted: 16.6
   - criterion_id: tp3
     name: Comprimento de linha
-    score: 80.9
+    score: 82.3
     weight: 20
-    weighted: 16.18
+    weighted: 16.46
   - criterion_id: tp4
     name: Tracking e leading
-    score: 78.4
+    score: 78.7
     weight: 15
-    weighted: 11.76
+    weighted: 11.8
   - criterion_id: tp5
     name: Tratamento de código
-    score: 79.5
+    score: 80.4
     weight: 20
-    weighted: 15.9
+    weighted: 16.08
 - category_id: design_informacao
   name: Design de Informação
   weight: 5
-  score: 55.2
+  score: 81.2
   passed: false
   details:
   - criterion_id: di1
     name: Diagramas claros
-    score: 59.5
+    score: 83.6
     weight: 25
-    weighted: 14.88
+    weighted: 20.9
   - criterion_id: di2
     name: Iconografia consistente
-    score: 50.5
+    score: 76.8
     weight: 15
-    weighted: 7.58
+    weighted: 11.52
   - criterion_id: di3
     name: Tabelas informativas
-    score: 59.0
+    score: 81.4
     weight: 20
-    weighted: 11.8
+    weighted: 16.28
   - criterion_id: di4
     name: Infográficos
-    score: 51.6
+    score: 84.8
     weight: 20
-    weighted: 10.32
+    weighted: 16.96
   - criterion_id: di5
     name: Funciona em P&B
-    score: 58.2
+    score: 81.8
     weight: 20
-    weighted: 11.64
+    weighted: 16.36
 - category_id: acessibilidade_visual
   name: Acessibilidade Visual
   weight: 5
@@ -449,29 +449,29 @@ categories:
   details:
   - criterion_id: av1
     name: Contraste WCAG AA+
-    score: 67.3
+    score: 74.6
     weight: 25
-    weighted: 16.82
+    weighted: 18.65
   - criterion_id: av2
     name: Daltônico-safe
-    score: 71.8
+    score: 68.2
     weight: 20
-    weighted: 14.36
+    weighted: 13.64
   - criterion_id: av3
     name: Font-size mínimo
-    score: 76.3
+    score: 73.4
     weight: 20
-    weighted: 15.26
+    weighted: 14.68
   - criterion_id: av4
     name: Navegação semântica
-    score: 67.0
+    score: 72.1
     weight: 20
-    weighted: 13.4
+    weighted: 14.42
   - criterion_id: av5
     name: Dark mode ready
-    score: 70.5
+    score: 74.3
     weight: 15
-    weighted: 10.57
+    weighted: 11.14
 - category_id: consistencia_formatos
   name: Consistência entre Formatos
   weight: 5
@@ -480,32 +480,32 @@ categories:
   details:
   - criterion_id: cf1
     name: Mesma hierarquia visual
-    score: 68.2
+    score: 72.8
     weight: 25
-    weighted: 17.05
+    weighted: 18.2
   - criterion_id: cf2
     name: Cores consistentes
-    score: 75.1
-    weight: 20
-    weighted: 15.02
-  - criterion_id: cf3
-    name: Tipografia equivalente
-    score: 75.2
-    weight: 20
-    weighted: 15.04
-  - criterion_id: cf4
-    name: Elementos visuais preservados
     score: 72.5
     weight: 20
     weighted: 14.5
+  - criterion_id: cf3
+    name: Tipografia equivalente
+    score: 69.2
+    weight: 20
+    weighted: 13.84
+  - criterion_id: cf4
+    name: Elementos visuais preservados
+    score: 67.4
+    weight: 20
+    weighted: 13.48
   - criterion_id: cf5
     name: Metadados uniformes
-    score: 75.0
+    score: 67.9
     weight: 15
-    weighted: 11.25
+    weighted: 10.19
 overall:
-  overall_score: 70.6
-  minimum_score: 51.2
+  overall_score: 77.4
+  minimum_score: 53.2
   minimum_category: Progressão Pedagógica
   passed_all: false
-  timestamp: '2026-07-07T18:00:32.472Z'
+  timestamp: '2026-07-07T18:19:33.002Z'

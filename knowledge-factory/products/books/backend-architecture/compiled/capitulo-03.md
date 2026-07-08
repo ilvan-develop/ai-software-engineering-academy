@@ -7,7 +7,25 @@
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 10 Backend
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. Por que NestJS?
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 NestJS é o framework Node.js mais adequado para sistemas Enterprise.
 
@@ -33,7 +51,23 @@ NestJS é o framework Node.js mais adequado para sistemas Enterprise.
   exports: [UserService],
 })
 export class UserModule {}
+```text
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ![Arquitetura de Referencia Backend](/knowledge-factory/products/courses/arquitetura-backend/module-10-backend/assets/diagram-arquitetura-backend.svg)
 
@@ -68,7 +102,7 @@ src/
 ├── config/
 │   └── app.config.ts
 └── main.ts
-```
+```markdown
 
 ### Por que essa estrutura?
 
@@ -82,7 +116,7 @@ Módulo raiz (AppModule):
   → Importa os módulos de domínio
   → Tempo de inicialização mais rápido
   → Testes mais isolados
-```
+```markdown
 
 ---
 
@@ -98,7 +132,7 @@ Service (Lógica de negócio)
 Repository (Persistência)
   ↓
 Database (Prisma)
-```
+```markdown
 
 ### Controller
 
@@ -142,7 +176,7 @@ export class UserController {
     await this.userService.softDelete(id);
   }
 }
-```
+```markdown
 
 ### Service
 
@@ -183,7 +217,7 @@ export class UserService {
     return this.userRepo.findAll(pagination);
   }
 }
-```
+```text
 
 ### Repository
 
@@ -258,7 +292,7 @@ export class UserRepository {
     };
   }
 }
-```
+```markdown
 
 ---
 
@@ -293,7 +327,7 @@ export class CreateUserPipe implements PipeTransform {
     return result.data;
   }
 }
-```
+```text
 
 ### Uso no controller
 
@@ -302,7 +336,7 @@ export class CreateUserPipe implements PipeTransform {
 async create(@Body(new CreateUserPipe()) dto: CreateUserDto) {
   return this.userService.create(dto);
 }
-```
+```markdown
 
 ### Validação vs Sanitização
 
@@ -353,7 +387,7 @@ export class GlobalExceptionFilter implements ExceptionFilter {
     });
   }
 }
-```
+```markdown
 
 ### Domain Errors
 
@@ -376,7 +410,7 @@ export class InvalidEmailError extends DomainError {
   readonly code = 'INVALID_EMAIL';
   constructor() { super('Formato de email inválido'); }
 }
-```
+```text
 
 ---
 
@@ -400,7 +434,7 @@ export class TransformInterceptor<T> implements NestInterceptor<T, ApiResponse<T
 
 // Uso global
 app.useGlobalInterceptors(new TransformInterceptor());
-```
+```markdown
 
 ### Guards (proteção de rotas)
 
@@ -424,7 +458,7 @@ export class RolesGuard implements CanActivate {
 async remove(@Param('id') id: string) {
   return this.userService.softDelete(id);
 }
-```
+```text
 
 ---
 
@@ -461,7 +495,7 @@ async findAll(input: CursorPaginationInput): Promise<CursorPaginatedResult<User>
     hasMore,
   };
 }
-```
+```markdown
 
 ---
 
@@ -497,7 +531,7 @@ async findById(id: string): Promise<UserResponse> {
     () => this.fetchUser(id),
   );
 }
-```
+```text
 
 ---
 
@@ -545,13 +579,14 @@ export class HealthController {
     }
   }
 }
-```
+```markdown
 
 ---
 
 ## 10. Testes
 
 ```typescript
+```
 // Teste de service
 describe('UserService', () => {
   let service: UserService;
@@ -583,4 +618,65 @@ describe('UserService', () => {
     });
   });
 });
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 

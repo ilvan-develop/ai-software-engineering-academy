@@ -5,7 +5,25 @@
 
 **Middleware de tenant, identificação, serviços NestJS e integração com Prisma para isolamento de dados.**
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 13B Multi Tenant Implementacao
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. Identificação do Tenant
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 O sistema precisa identificar **qual tenant está fazendo a requisição** antes de qualquer lógica de negócio.
 
@@ -40,7 +58,23 @@ async function validateTenantSubdomain(
   if (!subdomain) return null;
   return tenantService.findBySubdomain(subdomain);
 }
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### 1.3 Header HTTP
 
@@ -62,7 +96,7 @@ const TENANT_SLUG_REGEX = /^[a-z0-9-]{3,50}$/;
 function validateTenantSlug(slug: string): boolean {
   return TENANT_SLUG_REGEX.test(slug);
 }
-```
+```text
 
 ### 1.4 JWT Claim
 
@@ -93,7 +127,7 @@ function extractTenantFromJwt(authHeader?: string): string | null {
     return null; // token inválido
   }
 }
-```
+```markdown
 
 ### 1.5 Path Parameter
 
@@ -104,7 +138,7 @@ function extractTenantFromJwt(authHeader?: string): string | null {
 findUsers(@Param('tenant') tenantId: string) {
   return this.userService.findAll(tenantId);
 }
-```
+```text
 
 ### 1.6 Estratégia Combinada (Fallback)
 
@@ -119,7 +153,7 @@ function resolveTenant(req: Request): string {
     (() => { throw new BadRequestException('Tenant não identificado'); })()
   );
 }
-```
+```markdown
 
 ---
 
@@ -208,7 +242,7 @@ export class TenantMiddleware implements NestMiddleware {
     }
   }
 }
-```
+```text
 
 ### 2.2 Aplicação Global ou por Rota
 
@@ -232,7 +266,7 @@ export class AppModule implements NestModule {
       .forRoutes('*');
   }
 }
-```
+```markdown
 
 ### 2.3 TenantModule
 
@@ -248,7 +282,7 @@ import { TenantMiddleware } from './tenant.middleware';
   exports: [TenantService],
 })
 export class TenantModule {}
-```
+```text
 
 ### 2.4 TenantService
 
@@ -289,7 +323,7 @@ export class TenantService {
     return this.getPlan() === 'enterprise';
   }
 }
-```
+```markdown
 
 ### 2.5 @Tenant() Decorator
 
@@ -320,7 +354,7 @@ findAll(@Tenant() tenant: Tenant) {
 getPlan(@Tenant('plan') plan: string) {
   return { plan };
 }
-```
+```text
 
 ### 2.6 AsyncLocalStorage para Contexto
 
@@ -360,7 +394,7 @@ function getCurrentTenantId(): string {
   if (!ctx) throw new Error('Fora de contexto de tenant');
   return ctx.tenantId;
 }
-```
+```markdown
 
 ---
 
@@ -440,7 +474,7 @@ class PrismaTenantManager {
 }
 
 export const prismaTenantManager = new PrismaTenantManager();
-```
+```markdown
 
 ### 3.2 Shared Database com Prisma
 
@@ -513,7 +547,7 @@ export class TenantAwareService {
     });
   }
 }
-```
+```markdown
 
 ### 3.3 Prisma Middleware para Tenant
 
@@ -548,7 +582,7 @@ export function createTenantMiddleware(prisma: PrismaClient): void {
 // Inicialização
 const prisma = new PrismaClient();
 createTenantMiddleware(prisma);
-```
+```text
 
 ### 3.4 Prisma Extension (Prisma >= 5.0)
 
@@ -581,5 +615,66 @@ export const tenantExtension = Prisma.defineExtension((client) => {
 
 // Uso
 const prisma = new PrismaClient().$extends(tenantExtension);
-```
+```text
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 

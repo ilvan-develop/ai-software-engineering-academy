@@ -7,7 +7,25 @@
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 12 Seguranca
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. Por que segurança é o requisito mais importante
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Segurança não é uma feature — é um **pré-requisito**. Um sistema inseguro é um passivo, não um ativo.
 
@@ -29,7 +47,23 @@ Custo de prevenir:
   │  Ferramentas de segurança: R$ 1k/mês         │
   │  Revisão de código: parte do processo        │
   └──────────────────────────────────────────────┘
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### Mindset de segurança
 
@@ -41,7 +75,7 @@ Custo de prevenir:
 ✅ "Segurança é responsabilidade de todos"
 ✅ "Segurança é parte da definição de 'pronto'"
 ✅ "Se tem valor, vai ser atacado"
-```
+```markdown
 
 ---
 
@@ -69,7 +103,7 @@ async getOrder(@Param('id') id: string, @Req() req) {
   }
   return order;
 }
-```
+```text
 
 ### 2. Cryptographic Failures
 
@@ -86,7 +120,7 @@ const hashedPassword = await bcrypt.hash(req.body.password, 12);
 const user = await prisma.user.create({
   data: { password: hashedPassword }
 });
-```
+```markdown
 
 ### 3. Injection
 
@@ -102,7 +136,7 @@ const users = await prisma.$queryRawUnsafe(
 const user = await prisma.user.findUnique({
   where: { email }
 });
-```
+```text
 
 ### 4. Insecure Design
 
@@ -121,7 +155,7 @@ async login(@Body() dto: LoginDto) {
 async login(@Body() dto: LoginDto) {
   // ...
 }
-```
+```markdown
 
 ### 5. Security Misconfiguration
 
@@ -136,7 +170,7 @@ app.enableCors({
   origin: ['https://app.meusistema.com'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
 });
-```
+```text
 
 ### 6-10: Vulnerable Components, Auth Failures, Data Integrity, Logging, SSRF
 
@@ -161,7 +195,7 @@ app.enableCors({
 4. Cliente armazena e envia access token em requisições
 5. Servidor valida token em cada requisição (AuthGuard)
 6. Quando access token expira, cliente usa refresh token para obter novo
-```
+```markdown
 
 ### Implementação
 
@@ -245,7 +279,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     return { id: payload.sub, email: payload.email, role: payload.role };
   }
 }
-```
+```markdown
 
 ---
 
@@ -282,7 +316,7 @@ export function defineAbilitiesFor(user: User): PureAbility {
     cannot('delete', 'all');
   });
 }
-```
+```text
 
 ### Uso no controller
 
@@ -300,7 +334,7 @@ async delete(@Param('id') id: string, @Req() req) {
   ForbiddenError.from(ability).throwUnlessCan('delete', 'Order');
   // Nunca chega aqui — admin também não pode deletar
 }
-```
+```markdown
 
 ---
 
@@ -333,7 +367,7 @@ async login(@Body() dto: LoginDto) {
 async requestPasswordReset(@Body() dto: ResetDto) {
   // ...
 }
-```
+```text
 
 ### Estratégias adicionais
 
@@ -347,7 +381,7 @@ Rate Limiting por:
 Respostas:
   429 Too Many Requests
   Header: Retry-After: X segundos
-```
+```markdown
 
 ---
 
@@ -367,7 +401,7 @@ app.use(helmet());
 // X-XSS-Protection: 0
 // Strict-Transport-Security
 // Referrer-Policy
-```
+```markdown
 
 ### CSP (Content Security Policy)
 
@@ -384,7 +418,7 @@ app.use(helmet.contentSecurityPolicy({
     upgradeInsecureRequests: [],
   },
 }));
-```
+```text
 
 ---
 
@@ -401,7 +435,7 @@ const user = await prisma.user.findUnique({ where: { email } });
 
 // ✅ Se precisar de raw query, usar parametrização
 const users = await prisma.$queryRaw`SELECT * FROM users WHERE email = ${email}`;
-```
+```markdown
 
 ### XSS (Cross-Site Scripting)
 
@@ -415,7 +449,7 @@ import DOMPurify from 'isomorphic-dompurify';
 
 // ✅ No backend, escapar output
 const sanitized = escapeHtml(userComment);
-```
+```text
 
 ### CSRF (Cross-Site Request Forgery)
 
@@ -428,7 +462,7 @@ app.use(csurf({ cookie: true }));
 // Enviar token CSRF em formulários/headers
 // <meta name="csrf-token" content="{{csrfToken}}">
 // Header: X-CSRF-Token
-```
+```markdown
 
 ---
 
@@ -447,7 +481,7 @@ DB_PASSWORD=minha-senha
 
 // ❌ No código fonte
 config.service.apiKey = 'sk-1234567890abcdef';
-```
+```text
 
 ### O que fazer
 
@@ -470,7 +504,7 @@ for (const varName of requiredEnvVars) {
     throw new Error(`Variável de ambiente ${varName} não configurada`);
   }
 }
-```
+```markdown
 
 ---
 
@@ -513,10 +547,11 @@ async transfer(@Body() dto: TransferDto, @Req() req) {
   });
   return result;
 }
-```
+```text
 
 ### Checklist de segurança para code review
 
+```text
 ```
 Segurança em code review:
   [ ] Todos os inputs são validados?
@@ -529,4 +564,65 @@ Segurança em code review:
   [ ] SQL injection prevenido (ORM)?
   [ ] Headers de segurança configurados?
   [ ] Logs não expõem dados sensíveis?
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 

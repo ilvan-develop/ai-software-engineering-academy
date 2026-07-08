@@ -9,7 +9,25 @@
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 20 Automacao
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. O que é Automação
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Automação é a substituição de processos manuais repetitivos por scripts, pipelines e ferramentas que executam essas tarefas de forma confiável, auditável e escalável.
 
@@ -42,7 +60,23 @@ A regra prática: **automatize tudo que for executado mais de 2 vezes.**
 ```text
 Custo de automatizar = (tempo para criar + tempo para manter) × custo-hora
 Benefício = (tempo economizado por execução × frequência × horizonte) - custo
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 Se o benefício for positivo em 6 meses, vale a pena automatizar.
 
@@ -222,7 +256,7 @@ deploy:
     - main
   when: manual
   environment: production
-```
+```markdown
 
 ---
 
@@ -285,7 +319,7 @@ describe('POST /users', () => {
     expect(response.json()).toHaveProperty('id')
   })
 })
-```
+```markdown
 
 ### Testes E2E
 
@@ -312,7 +346,7 @@ e2e:
     - run: pnpm test:e2e
       env:
         BASE_URL: http://localhost:3000
-```
+```text
 
 ```typescript
 // E2E com Playwright
@@ -327,7 +361,7 @@ test('usuário consegue finalizar compra', async ({ page }) => {
 
   await expect(page.locator('text=Pedido confirmado')).toBeVisible()
 })
-```
+```markdown
 
 ---
 
@@ -414,7 +448,7 @@ new aws.ecs.Service('app-service', {
     securityGroups: [config.require('securityGroupId')],
   },
 })
-```
+```markdown
 
 ### CloudFormation (AWS)
 
@@ -485,7 +519,7 @@ iac-apply:
       with:
         name: tfplan
     - run: terraform apply tfplan
-```
+```markdown
 
 ---
 
@@ -501,7 +535,7 @@ USUÁRIOS → Load Balancer → Blue (v1.0) ✅
 
 Switch: DNS/ALB aponta para Green
 Rollback: reverter DNS para Blue
-```
+```markdown
 
 ### Canary Deployment
 
@@ -556,7 +590,7 @@ services:
       rollback_config:
         parallelism: 1
         order: stop-first
-```
+```markdown
 
 ### Feature Flags
 
@@ -606,7 +640,7 @@ migrate:
     - run: pnpm db:migrate
       env:
         DATABASE_URL: ${{ secrets.DATABASE_URL }}
-```
+```markdown
 
 ### Exemplo com Prisma Migrate
 
@@ -664,7 +698,7 @@ seed()
     process.exit(1)
   })
   .finally(() => prisma.$disconnect())
-```
+```yaml
 
 ### Rollback Automático
 
@@ -734,7 +768,7 @@ security-sast:
         image-ref: meuregistro/app:${{ github.sha }}
         format: sarif
         output: trivy-results.sarif
-```
+```markdown
 
 ### DAST (Dynamic Application Security Testing)
 
@@ -778,7 +812,7 @@ dependency-scan:
     # npm audit
     - name: npm audit
       run: pnpm audit --audit-level=high
-```
+```markdown
 
 ---
 
@@ -855,7 +889,7 @@ updates:
     commit-message:
       prefix: "chore"
       include: "scope"
-```
+```markdown
 
 ---
 
@@ -913,7 +947,7 @@ docs: atualiza README
 refactor: extrai lógica de pagamento para serviço
 perf: otimiza consulta de histórico
 test: adiciona testes para o módulo de notas fiscais
-```
+```markdown
 
 ### Changelog Gerado Automaticamente
 
@@ -931,7 +965,7 @@ O `semantic-release` com plugin `@semantic-release/changelog` gera:
 ### Bug Fixes
 * **auth:** corrige timeout na renovação do token ([ghi9012](https://github.com/org/repo/commit/ghi9012))
 * **validacao:** CPF com formatação agora é aceito ([jkl3456](https://github.com/org/repo/commit/jkl3456))
-```
+```markdown
 
 ---
 
@@ -1012,7 +1046,7 @@ vercel-preview:
         vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
         github-token: ${{ secrets.GITHUB_TOKEN }}
         github-comment: true
-```
+```markdown
 
 ---
 
@@ -1082,7 +1116,7 @@ async function healService(cluster: string, service: string) {
 }
 
 healService('production', 'app-service').catch(console.error)
-```
+```markdown
 
 ### Runbooks Automáticos
 
@@ -1188,7 +1222,7 @@ runs:
         cache: pnpm
     - run: pnpm install --frozen-lockfile
       shell: bash
-```
+```text
 
 Uso da action reutilizável:
 
@@ -1223,11 +1257,12 @@ test-matrix:
       with:
         node-version: ${{ matrix.node-version }}
     - run: pnpm test:ci
-```
+```markdown
 
 ### Pipeline de Deploy com Environments e Gates
 
 ```yaml
+```
 deploy-production:
   name: Deploy em Produção
   needs: [lint, test, build, security-sast]
@@ -1286,4 +1321,65 @@ deploy-production:
           --cluster production \
           --service app-service \
           --force-new-deployment
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 

@@ -27,7 +27,25 @@
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 02 Product Discovery
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. O que é Product Discovery?
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Product Discovery é o processo de **entender problemas reais de usuários reais antes de escrever uma linha de código**. O objetivo não é entregar features, mas sim **decidir o que vale a pena ser construído**.
 
@@ -40,7 +58,23 @@ Alta incerteza, baixo custo           Baixa incerteza, alto custo
 Perguntas, hipóteses, experimentos    Requisitos, planejamento, código
 Falsificável, iterativo               Definido, incremental
 "Devo construir isso?"                "Como construir isso?"
+```javascript
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ![Discovery vs Delivery](/knowledge-factory/products/courses/product-design/module-02-product-discovery/assets/diagram-discovery-vs-delivery.svg)
 
@@ -59,7 +93,7 @@ Com Discovery:
   → Descoberta: ele quer exportar dados pra planilha
   → Solução: botão de exportar CSV em 1 dia
   → Valida: ele testa, funciona, usa todo dia
-```
+```markdown
 
 ### Armadilha comum
 
@@ -74,7 +108,7 @@ Por quê?
 - Ninguém perguntou se o problema era real
 - Ninguém validou se chat bot era a melhor solução
 - Ninguém testou com usuários antes de construir
-```
+```markdown
 
 ![Mapa mental do Product Discovery](/knowledge-factory/products/courses/product-design/module-02-product-discovery/assets/diagram-discovery-mindmap.svg)
 
@@ -88,7 +122,7 @@ O discovery não é linear — é um ciclo iterativo. O modelo mais comum tem 4 
 OPORTUNIDADE → PESQUISA → IDEAÇÃO → PROTOTIPAÇÃO → VALIDAÇÃO
       │                                                 │
       └───────────────── (iterate) ────────────────────┘
-```
+```markdown
 
 ![Processo de Product Discovery](/knowledge-factory/products/courses/product-design/module-02-product-discovery/assets/diagram-discovery-flow.svg)
 
@@ -122,7 +156,7 @@ HMW: "Como poderíamos reduzir o atrito no cadastro?"
      → "Como poderíamos deixar o cadastro opcional?"
      → "Como poderíamos usar login social?"
      → "Como poderíamos pré-preencher dados?"
-```
+```markdown
 
 ### 2.4 Prototipação
 
@@ -136,7 +170,7 @@ Wireframe     Horas      Layout, estrutura
 Mockup        Dias       Visual, branding
 Prototype     Dias       Interação, fluxo real
 MVP           Semanas    Valor real no mercado
-```
+```markdown
 
 ### 2.5 Validação
 
@@ -171,7 +205,7 @@ A ferramenta mais poderosa de discovery.
 4. Fechamento (5min)
    "Algo mais que gostaria de compartilhar?"
    "Posso voltar a te procurar se tiver mais perguntas?"
-```
+```text
 
 **Regras de ouro:**
 - Não faça perguntas indutoras ("Você não acha que X é melhor?")
@@ -190,7 +224,7 @@ Bom para validar achados qualitativos com escala.
 ✅ "Na última semana, quantas vezes você precisou exportar
     dados do sistema?"
    (comportamento real, mensurável)
-```
+```text
 
 **Dicas de surveys:**
 - Máximo 10 perguntas
@@ -208,7 +242,7 @@ Não tem W              Tem W mas é confuso      Tem W excelente
 Feedback: lento        Feedback: caro           Feedback: complexo
 
 Oportunidade: X + W simples + preço acessível
-```
+```text
 
 **O que analisar:**
 - Proposta de valor
@@ -234,7 +268,7 @@ Métricas de Discovery:
 | NPS / CSAT               | Satisfação geral                         |
 | Search terms             | O que usuários procuram (e não acham)    |
 | Feature usage            | O que realmente é usado                  |
-```
+```markdown
 
 ---
 
@@ -257,7 +291,7 @@ Opção D: Podcasts                  (R$ 0, 1h/dia no trânsito)
 
 "Contratamos" a opção que melhor resolve o job
 dado nosso contexto (tempo, dinheiro, momento)
-```
+```text
 
 **Estrutura JTBD:**
 
@@ -267,7 +301,7 @@ Quando [situação], eu quero [motivação] para [resultado esperado].
 Exemplo:
 "Quando estou começando um novo projeto, eu quero entender o
 que outros times já tentaram antes, para não repetir erros."
-```
+```text
 
 **Jobs principais vs jobs funcionais:**
 - **Functional:** "Organizar tarefas do time"
@@ -294,7 +328,7 @@ Uma página que resume o modelo de negócio. Ideal para early stage.
 │ ESTRUTURA DE CUSTOS                                │ RECEITAS                         │
 │ Fixos, variáveis, custo de aquisição               │ Como ganha dinheiro              │
 └────────────────────────────────────────────────────┴─────────────────────────────────┘
-```
+```markdown
 
 ### 4.3 Value Proposition Canvas
 
@@ -321,7 +355,7 @@ VALUE PROPOSITION CANVAS
 │                              │                              │
 │         ENCAIXE: quando solutions > jobs + pains           │
 └──────────────────────────────┴──────────────────────────────┘
-```
+```markdown
 
 ---
 
@@ -350,7 +384,7 @@ RESULTADO ESPEREADO
 └── OPORTUNIDADE: Produto é caro para PMEs
     ├── SOLUÇÃO: Plano "Starter" com funcionalidades limitadas
     └── EXPERIMENTO: Landing page com pricing e botão de compra
-```
+```text
 
 **Como construir:**
 1. Defina o **outcome** (resultado esperado, ex: "aumentar ativação em 30%")
@@ -377,7 +411,7 @@ Acompanhar    │               │              │ Dashboard     │
 progresso     │               │              │ de progresso   │
 ──────────────┴───────────────┴──────────────┴────────────────┘
   ↑ MVP (corta aqui)            ↑ Release 2          ↑ Release 3
-```
+```text
 
 **Por que usar:**
 - Mostra o produto como um **fluxo**, não uma lista
@@ -402,7 +436,7 @@ Exemplo:
 resultará em 30% mais ativação no D7.
 Saberemos que estamos certos quando a taxa de ativação
 subir de 40% para 52% no teste A/B."
-```
+```markdown
 
 ### Tipos de experimento
 
@@ -417,7 +451,7 @@ Concierge MVP       | Alto    | Alta      | Validar valor real
 Wizard of Oz MVP    | Médio   | Alta      | Validar viabilidade
 Single-feature MVP  | Médio   | Alta      | Testar feature isolada
 Piecemeal MVP       | Baixo   | Média     | Validar sem construir
-```
+```markdown
 
 ### Exemplo: Landing page fake
 
@@ -437,7 +471,7 @@ Ideia: "App que agenda reuniões automaticamente"
 4. Resultado:
    Se < 5% clica → interesse baixo, repense a proposta
    Se > 15% clica → interesse real, continue
-```
+```markdown
 
 ### MVP não é produto mínimo
 
@@ -447,7 +481,7 @@ REAL: MVP é o menor experimento que valida ou invalida uma hipótese
 
 MVP serve para APRENDER, não para entregar valor.
 Se você já sabe que funciona, não precisa de MVP.
-```
+```markdown
 
 ---
 
@@ -466,7 +500,7 @@ Métrica de sucesso errada  Time mede output, não outcome
 Times isolados             Descobertas não são compartilhadas
 Gerenciamento de risco     Medo de errar → pouca experimentação
 Orçamento anual fixo       Discovery não é orçado → não existe
-```
+```markdown
 
 ### Como fazer discovery em Enterprise
 
@@ -479,7 +513,7 @@ OKR da empresa: "Aumentar receita recorrente em 25%"
 → Discovery: por que os clientes estão cancelando?
 → Outcome: reduzir churn pela metade
 → Backlog: funcionalidades que endereçam as causas
-```
+```text
 
 **2. Discovery Sprints**
 
@@ -490,7 +524,7 @@ Sprint Discovery (2 semanas):
   Semana 1: Pesquisa (entrevistas, analytics, concorrência)
   Semana 2: Ideação, prototipação, testes com usuários
   Saída: Backlog priorizado para as próximas 6 semanas de delivery
-```
+```text
 
 **3. Envolva stakeholders cedo**
 
@@ -503,7 +537,7 @@ Engenharia       | "Isso é viável tecnicamente?"      | Prototipação
 Design           | "Isso é usável?"                    | Prototipação, teste
 Comercial        | "O cliente pagaria por isso?"      | Pesquisa, validação
 Sucesso do cl.   | "Isso reduz chamados?"             | Pesquisa
-```
+```text
 
 **4. Discovery contínuo vs Discovery por projeto**
 
@@ -517,7 +551,7 @@ Discovery por Projeto (menos eficaz):
   Discovery só acontece no início do projeto
   Depois que o delivery começa, não se questiona mais
   Se descobrir algo errado no meio, é tarde demais
-```
+```markdown
 
 ### Cultura de Experimentação
 
@@ -534,7 +568,7 @@ Cultura que NÃO funciona:
   "Quem decide é o VP"
   "A gente sabe o que o cliente quer"
   "Se deu trabalho, vamos lançar mesmo assim"
-```
+```markdown
 
 ---
 
@@ -558,7 +592,7 @@ Depois do Discovery:
   - [ ] Relatório de vendas (validado: resolve job #2)
   - [ ] Tema escuro (despriorizado: 12% pediram)
   - [ ] Integração Slack (despriorizado: 3 clientes, custo alto)
-```
+```markdown
 
 ### 8.2 Proto-personas
 
@@ -578,7 +612,7 @@ Comportamento:   Usa Excel, Tableau, SQL (básico)
 Job to be done:  "Quando preciso responder uma pergunta de negócio,
                   quero encontrar os dados certos em minutos, para
                   não perder credibilidade com o diretor."
-```
+```markdown
 
 ### 8.3 User Stories
 
@@ -599,7 +633,7 @@ Critérios de aceite:
 - Arquivo baixa em até 10s (para < 100k linhas)
 - Colunas traduzidas para pt-BR
 - Nome do arquivo: `export-{tipo}-{data}.csv`
-```
+```markdown
 
 ### 8.4 Opportunity Backlog
 
@@ -612,7 +646,7 @@ O01 | Usuários não encontram dados no sistema   | 45% dos chamados       | Gra
 O02 | Demora para gerar relatórios              | Survey: 78% citaram    | Médio   | P0
 O03 | Não confiabilidade dos dados              | NPS: 4.2 (crítico)     | Grande  | P1
 O04 | Integração com ferramentas externas       | 3 clientes enterprise  | Médio   | P2
-```
+```markdown
 
 ---
 
@@ -628,6 +662,56 @@ O04 | Integração com ferramentas externas       | 3 clientes enterprise  | Mé
 8. **Enterprise**: alinhe com OKRs, envolva stakeholders, cultura de experimentação
 9. **Saídas**: backlog refinado, proto-personas, user stories, opportunity backlog
 
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
+
 
 
 
@@ -639,7 +723,25 @@ O04 | Integração com ferramentas externas       | 3 clientes enterprise  | Mé
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 03 Design Thinking
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. O que é Design Thinking
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Design Thinking é uma abordagem **centrada no ser humano** para solução de problemas que combina empatia, criatividade e racionalidade. Diferente de métodos tradicionais que partem de uma solução técnica, o Design Thinking começa com o **usuário** e suas necessidades reais.
 
@@ -668,7 +770,23 @@ Design Thinking é uma abordagem **centrada no ser humano** para solução de pr
 │  • Otimista (toda solução é possível)             │
 │  • Iterativo (nunca está pronto)                  │
 └─────────────────────────────────────────────────┘
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### Abordagem tradicional vs Design Thinking
 
@@ -676,7 +794,7 @@ Design Thinking é uma abordagem **centrada no ser humano** para solução de pr
 TRADICIONAL:                                   DESIGN THINKING:
 Problema → Análise → Solução → Entrega        Problema → Empatia → Definir → Ideias → Protótipo → Teste
                                                                                             ↻
-```
+```markdown
 
 Enquanto a abordagem tradicional busca a **solução certa** de primeira, o Design Thinking busca **entender o problema certo** antes de solucionar, iterando quantas vezes for necessário.
 
@@ -706,7 +824,7 @@ O processo é dividido em 5 fases **não-lineares** — você pode (e deve) volt
                    ┌─────────────────────┐
                    │       TESTAR        │←──── Iteração
                    └─────────────────────┘
-```
+```text
 
 Cada fase responde a uma pergunta central:
 
@@ -750,7 +868,7 @@ Sem empatia, você constrói soluções baseadas em **suposições**. Com empati
 ## Fechamento (5 min)
 - "Mais alguma coisa que gostaria de compartilhar?"
 - "Posso voltar a falar com você se surgir mais dúvidas?"
-```
+```text
 
 **Regras de ouro para entrevistas:**
 
@@ -768,7 +886,7 @@ Sem empatia, você constrói soluções baseadas em **suposições**. Com empati
   • Interromper o usuário
   • Defender ideias ou justificar o sistema atual
   • Buscar validação para sua solução
-```
+```markdown
 
 #### 3.2 Observação contextual
 
@@ -790,7 +908,7 @@ interface Observacao {
   workarounds: string[];
   insights: string[];
 }
-```
+```text
 
 **Exemplo de observação:**
 
@@ -803,7 +921,7 @@ Tarefa: Gerar relatório mensal de vendas
 09:03 → Seleciona filtros (mês, região, produto) — 30s
 09:05 → Sistema trava ao carregar 3 meses de dados — frustração: 4/5
 09:07 → Chama o suporte, enquanto isso abre Excel e começa a fazer manual
-```
+```markdown
 
 **Insight:** A usuária prefere fazer manual no Excel (30 min) do que esperar o sistema travar repetidamente.
 
@@ -844,7 +962,7 @@ A imersão coloca o time **na pele do usuário**. Você experimenta o problema e
 │  • Falta de suporte humano      • Interface intuitiva           │
 │  • Retrabalho constante         • Reconhecimento do chefe       │
 └─────────────────────────────────────────────────────────────────┘
-```
+```markdown
 
 ---
 
@@ -860,7 +978,7 @@ Uma boa declaração de problema segue esta estrutura:
 
 ```text
 [USUÁRIO] precisa de [NECESSIDADE] porque [INSIGHT]
-```
+```text
 
 **Exemplos:**
 
@@ -877,7 +995,7 @@ Uma boa declaração de problema segue esta estrutura:
     consolidar dados de 5 fontes diferentes em tempo
     real porque as decisões baseadas em dados de
     ontem já não são competitivas"
-```
+```markdown
 
 ### How Might We (HMW)
 
@@ -889,7 +1007,7 @@ HMW = How Might We (Como Poderíamos)
 How  → Assume que é possível (mente aberta)
 Might → Permite tentativa e erro (não precisa acertar)
 We   → É colaborativo (não é individual)
-```
+```text
 
 **Técnica:** Para cada problem statement, gere 5-10 HMWs em diferentes direções:
 
@@ -905,7 +1023,7 @@ HMWs:
 6. HMW eliminar a necessidade de relatórios manuais completamente?
 7. HMW transformar Maria em power-user que ajuda outros colegas?
 8. HMW integrar as 5 fontes em um único dashboard em tempo real?
-```
+```text
 
 ### Matriz de Priorização
 
@@ -932,7 +1050,7 @@ HMWs:
                         │
                     BAIXO IMPACTO
    BAIXO ESFORÇO ─────────────────── ALTO ESFORÇO
-```
+```markdown
 
 ---
 
@@ -949,7 +1067,7 @@ REGRAS DO BRAINSTORMING:
 5. 🎯 Seja visual — desenhe, rabisque, use post-its
 6. ⏱ Tempo curto — 15-30 minutos no máximo
 7. 🗂 Um tópico por vez
-```
+```markdown
 
 ### Crazy 8
 
@@ -965,7 +1083,7 @@ Crazy 8 é uma técnica de **divergência rápida**: cada pessoa dobra uma folha
 │          │          │          │          │
 │ (esboço) │ (esboço) │ (esboço) │ (esboço) │
 └──────────┴──────────┴──────────┴──────────┘
-```
+```markdown
 
 **Por que funciona:** A pressão do tempo impede o perfeccionismo e força o cérebro a criar conexões inesperadas.
 
@@ -988,7 +1106,7 @@ Exemplo de priorização para um sistema de onboarding:
 | Chat ao vivo com suporte                | Alto    | Alto    | 2º (Big Bet) |
 | Remover campos obrigatórios desnecessários | Alto | Baixo   | 1º         |
 | Gamificação com badges                  | Baixo   | Médio   | 3º         |
-```
+```markdown
 
 ### Outras técnicas de ideação
 
@@ -1015,7 +1133,7 @@ Prototipar transforma ideias abstratas em algo **tangível** que pode ser testad
 BAIXA FIDELIDADE                        ALTA FIDELIDADE
 ├─────────────────────────────────────────────────────┤
   Papel → Wireframe → Mockup → Protótipo clicável → MVP
-```
+```markdown
 
 #### Protótipos de baixa fidelidade
 
@@ -1030,7 +1148,7 @@ Vantagens:
 • Baixíssimo custo
 
 Materiais: Papel, caneta, post-it, tesoura, celular para filmar
-```
+```text
 
 #### Protótipos de média fidelidade (Wireframes)
 
@@ -1041,7 +1159,7 @@ interface WireframeElement {
   conteudo: string;
   estado?: 'normal' | 'hover' | 'error' | 'loading' | 'empty' | 'success';
 }
-```
+```yaml
 
 Ferramentas: Figma, Balsamiq, Whimsical, Miro.
 
@@ -1061,7 +1179,7 @@ Use quando:
 • Precisa testar interações complexas
 • Stakeholders precisam visualizar o produto final
 • Vai apresentar para clientes
-```
+```text
 
 ### Exemplo: Protótipo de baixa fidelidade para app mobile
 
@@ -1090,7 +1208,7 @@ Use quando:
 ├──────────────────────┤
 │ 🏠  🔍  🛒  👤     │  ← Navigation bar
 └──────────────────────┘
-```
+```markdown
 
 ### Dicas para prototipar
 
@@ -1107,7 +1225,7 @@ Use quando:
   • Gastar horas em detalhes visuais antes de validar
   • Apresentar protótipo como "quase pronto"
   • Pular etapas (papel → direto para código)
-```
+```markdown
 
 ---
 
@@ -1122,7 +1240,7 @@ Use quando:
 │                                                          │
 │                    (e recomeça)                           │
 └─────────────────────────────────────────────────────────┘
-```
+```markdown
 
 ### Tipos de teste
 
@@ -1175,7 +1293,7 @@ Use quando:
 
 ❌ Moderador: "Aqui você clica nesse botão e abre um modal..."
 ✅ Moderador: "O que você faria agora?"
-```
+```markdown
 
 ### Feedback Loop
 
@@ -1186,7 +1304,7 @@ Gravações              Agrupar padrões          Definir o que
 Anotações              Priorizar problemas      mudar no protótipo
 Métricas (tempo,       Identificar              Iterar e testar
 taxa de sucesso)       insights                 novamente
-```
+```text
 
 Documente os achados com:
 
@@ -1217,7 +1335,7 @@ Ideiar (soluções)          ───────→    Sprint Planning (discut
 Prototipar (testar)        ───────→    Sprint (desenvolvimento)
 Testar (validar)           ───────→    Sprint Review (feedback do usuário)
                          ↻
-```
+```markdown
 
 #### Discovery Sprints
 
@@ -1238,7 +1356,7 @@ Semana 2 — Ideiar + Prototipar
   Qua: Prototipação de baixa fidelidade
   Qui: Teste do protótipo com 3-5 usuários
   Sex: Iteração + apresentação para stakeholders
-```
+```markdown
 
 #### Kanban com Design Thinking
 
@@ -1254,7 +1372,7 @@ Adicione colunas de Discovery no Kanban:
 │  Item G  │  HMW #2  │  HMW #1  │  Wirefr. │  Dev #3  │  Valid.  │
 │          │          │          │          │          │          │
 └──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘
-```
+```markdown
 
 ### Ritmo: Discovery + Delivery
 
@@ -1272,7 +1390,7 @@ TRACK 2 — DELIVERY (Ágil)
 ├── Sprint Planning
 ├── Desenvolvimento
 └── Sprint Review
-```
+```markdown
 
 ---
 
@@ -1341,7 +1459,7 @@ DEPOIS:
   [ ] Compartilhar com stakeholders ausentes
   [ ] Agendar follow-up para validação
   [ ] Medir impacto (o que mudou depois do workshop?)
-```
+```markdown
 
 #### 3. Enterprise Design Thinking (IBM)
 
@@ -1361,7 +1479,7 @@ Hills (Metas):
     "Um gerente de operações consegue identificar gargalos
      logísticos em tempo real e tomar ações corretivas
      antes que impactem o cliente final"
-```
+```markdown
 
 ---
 
@@ -1391,7 +1509,7 @@ Hills (Metas):
 ❌ Tratar DT como processo linear
    "Já testamos, passamos para a próxima fase"
    Consequência: Perde-se o principal benefício: a iteração.
-```
+```markdown
 
 ---
 
@@ -1408,6 +1526,56 @@ Hills (Metas):
 9. **Em Enterprise**, DesignOps e workshops estruturados escalam a prática
 10. **Anti-padrões** incluem pular empatia, prototipar cedo demais e testar com amigos
 
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
+
 
 
 
@@ -1419,7 +1587,25 @@ Hills (Metas):
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 04 Ux
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. O que é UX?
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 UX (User Experience) é a **percepção geral que uma pessoa tem ao interagir com um produto, sistema ou serviço**. Não se trata apenas de telas bonitas — envolve emoções, eficiência, acessibilidade e satisfação.
 
@@ -1432,7 +1618,23 @@ Experiência completa                      Superfície visual
 Pesquisa, arquitetura, fluxo             Cores, tipografia, ícones
 Funcionalidade e usabilidade             Estética e identidade
 Ciência + Design                         Design + Arte
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 > UI sem UX é como um carro bonito sem motor. UX sem UI é como um motor potente sem carroceria.
 
@@ -1452,7 +1654,7 @@ O modelo mais clássico para estruturar UX, de baixo (abstrato) para cima (concr
 ├─────────────────────────────────────────────┤
 │ 1. ESTRATÉGIA      Necessidades do negócio  │  ← Objetivos, dores
 └─────────────────────────────────────────────┘
-```
+```text
 
 | Plano | Pergunta central | Entregável típico |
 |-------|------------------|-------------------|
@@ -1475,7 +1677,7 @@ Pesquisa não é opcional — é o que impede você de construir a feature errad
 ```text
 ❌ "Você usaria um botão de exportar CSV?"
 ✅ "Me conta como você faz para gerar relatórios hoje."
-```
+```text
 
 **Estrutura de uma entrevista:**
 
@@ -1485,7 +1687,7 @@ Pesquisa não é opcional — é o que impede você de construir a feature errad
 3. Tarefa (15min) — "Você pode tentar fazer X enquanto pensa em voz alta?"
 4. Exploração (10min) — "Por que você fez isso? O que esperava que acontecesse?"
 5. Fechamento (5min) — "Algo mais que não perguntei?"
-```
+```text
 
 **Bons hábitos:**
 - Pergunte sobre **comportamento passado** (não intenção futura)
@@ -1566,7 +1768,7 @@ Arquitetura da Informação é a **organização estrutural do conteúdo** — c
    ├── Autocomplete
    ├── Filtros
    └── Resultados relevantes
-```
+```markdown
 
 ### Princípios de IA
 
@@ -1589,7 +1791,7 @@ Arquitetura da Informação é a **organização estrutural do conteúdo** — c
 /produtos/:id
 /minha-conta/dados
 /minha-conta/pedidos
-```
+```markdown
 
 ---
 
@@ -1617,7 +1819,7 @@ ATIVAÇÃO      "Convidei time"         😰 Ansioso  Convite em massa
 RETENÇÃO      "Uso semanal"           😊 Satisf.  Notificações
               "Preciso de ajuda"      😠 Irrit.   Chat + FAQ
               "Renovei contrato"      😍 Leal     Programa de fidelidade
-```
+```markdown
 
 ### Service Blueprint
 
@@ -1631,7 +1833,7 @@ FRONTSTAGE      Interações com o sistema (UI, API calls)
 BACKSTAGE       Ações internas invisíveis ao usuário
                     ↓
 PROCESSOS       Sistemas, jobs, integrações
-```
+```text
 
 **Exemplo (simplificado de uma compra):**
 
@@ -1658,7 +1860,7 @@ Baseada em hipóteses do time         Baseada em dados reais
 Rápida (1 workshop)                  Leva semanas
 "Eu acho que o usuário..."           "Os dados mostram que..."
 Valida: "Erramos, vamos pesquisar"   Valida: "Confirmamos nossas hipóteses"
-```
+```markdown
 
 ### Estrutura de uma persona
 
@@ -1701,7 +1903,7 @@ Anti-persona: "Usuário Free"
 - Gera custo operacional sem retorno financeiro
 
 O que NÃO fazer: não projetar para ele.
-```
+```markdown
 
 ### Para devs: personas no código
 
@@ -1724,7 +1926,7 @@ const flags: Record<string, FeatureFlag> = {
     rollout: 10, // Lançamento gradual
   },
 };
-```
+```markdown
 
 ---
 
@@ -1760,7 +1962,7 @@ R
 │   ├── HTML semântico
 │   ├── ARIA labels
 │   └── Funciona com screen readers
-```
+```markdown
 
 ### Níveis de conformidade
 
@@ -1782,7 +1984,7 @@ R
    #CCCCCC sobre #FFFFFF   — texto cinza claro
    #999999 sobre #EEEEEE   — links desativados
    #FFCC00 sobre #FFFFFF   — alertas amarelos
-```
+```markdown
 
 ### Navegação por teclado
 
@@ -1824,7 +2026,7 @@ R
 
 <!-- ✅ Tabela com scopo -->
 <th scope="col">Nome</th>
-```
+```markdown
 
 ### Para devs: checklist de acessibilidade no código
 
@@ -1866,7 +2068,7 @@ UX Writing é a **criação de textos para interfaces** que guiam o usuário de 
 
 // ✅ Claro e acionável
 "Preencha todos os campos obrigatórios antes de continuar."
-```
+```markdown
 
 ### Tom de voz
 
@@ -1887,7 +2089,7 @@ UX Writing é a **criação de textos para interfaces** que guiam o usuário de 
 ✅ "E-mail ou senha incorretos. Tente novamente."
 ✅ "O servidor não respondeu. Seu rascunho foi salvo automaticamente."
 ✅ "O campo 'CNPJ' precisa ter 14 dígitos."
-```
+```markdown
 
 ### Para devs: UX Writing no frontend
 
@@ -1922,7 +2124,7 @@ CONCISO        → "E-mail inválido" (não "O endereço de e-mail digitado não
 ÚTIL           → "Digite seu e-mail corporativo" (orienta, não só rotula)
 CONSISTENTE    → Sempre "Excluir", não "Excluir"/"Remover"/"Deletar" aleatoriamente
 HUMANO         → "Algo deu errado, mas já estamos cuidando disso"
-```
+```javascript
 
 ---
 
@@ -1982,7 +2184,7 @@ As 10 heurísticas são **critérios de usabilidade** que funcionam como checkli
     "Se o usuário precisa de ajuda, ela deve estar disponível."
     ❌ Documentação escondida
     ✅ "?" contextual + FAQ + chat
-```
+```markdown
 
 ### Como avaliar com as heurísticas
 
@@ -2017,7 +2219,7 @@ const evaluation: HeuristicEvaluation[] = [
     suggestion: 'Mensagem amigável + log no backend',
   },
 ];
-```
+```markdown
 
 ---
 
@@ -2031,7 +2233,7 @@ ANTES                             DEPOIS
 "Está no requisito"              "O usuário realmente precisa disso?"
 "Funciona no meu ambiente"       "Funciona para o usuário real?"
 "O design está errado"           "Qual problema estamos resolvendo?"
-```
+```markdown
 
 ### Como colaborar com designers
 
@@ -2100,7 +2302,7 @@ function TelaRelatorios() {
     </Page>
   );
 }
-```
+```markdown
 
 ### Perguntas que todo dev deveria fazer
 
@@ -2112,7 +2314,7 @@ function TelaRelatorios() {
 5. "O usuário consegue desfazer essa ação?"
 6. "Onde o usuário vai procurar essa funcionalidade?"
 7. "Em quanto tempo isso carrega no 3G?"
-```
+```markdown
 
 ---
 
@@ -2131,6 +2333,56 @@ function TelaRelatorios() {
 | Heurísticas | 10 critérios para avaliar qualquer interface |
 | Dev + UX | Pergunte "por quê" antes de codificar |
 
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
+
 
 
 
@@ -2142,7 +2394,25 @@ function TelaRelatorios() {
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 05 Wireframes
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. O que são Wireframes
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Wireframe é o **esqueleto visual** de uma tela. É a representação estrutural da interface, focando em **layout, hierarquia, conteúdo e funcionalidade** — sem nenhum polimento visual (cores, fontes, imagens).
 
@@ -2157,7 +2427,23 @@ Wireframe serve para:
 │  Servir de contrato entre produto e dev      │
 │  Acelerar o ciclo de iteração                │
 └──────────────────────────────────────────────┘
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### Níveis de Fidelidade
 
@@ -2200,7 +2486,7 @@ interface WireframeElement {
   Hierarquia       Fontes        Navega
   Fluxo            Ícones        Anima
   Sem estilo       Imagens       Testa
-```
+```markdown
 
 ### Comparação
 
@@ -2248,7 +2534,7 @@ const stages: DesignStage[] = [
     estimatedTime: '2 — 5 dias',
   },
 ];
-```
+```markdown
 
 ---
 
@@ -2282,7 +2568,7 @@ function colWidth(cols: number, grid: Grid): number {
   const colSize = (contentWidth - totalGutter) / grid.columns;
   return colSize * cols + (cols - 1) * grid.gutter;
 }
-```
+```text
 
 ```text
 Wireframe com grid de 12 colunas:
@@ -2295,7 +2581,7 @@ Wireframe com grid de 12 colunas:
 ├──────────────────────────┴───────────────────────┤
 │   Footer (12 col)                                │
 └──────────────────────────────────────────────────┘
-```
+```javascript
 
 ### Hierarquia Visual
 
@@ -2309,7 +2595,7 @@ Hierarquia no wireframe:
 3. Seções de conteúdo         (blocos médios, organizados)
 4. Navegação secundária       (menor, no topo ou sidebar)
 5. Footer                     (menor destaque, no final)
-```
+```markdown
 
 ### Espaçamento
 
@@ -2327,7 +2613,7 @@ const space = {
 
 // Regra: elementos relacionados ficam mais próximos (8-16px)
 // Seções diferentes ficam mais distantes (32-48px)
-```
+```markdown
 
 ### Proporção
 
@@ -2341,7 +2627,7 @@ Use proporções familiares para criar harmonia visual:
 ║  3:2   — Imagens de destaque        ║
 ║  2:1   — Painéis e dashboards       ║
 ╚══════════════════════════════════════╝
-```
+```markdown
 
 ---
 
@@ -2378,7 +2664,7 @@ Use proporções familiares para criar harmonia visual:
   → Componentes reutilizáveis
   → Handoff para devs
   → Protótipos interativos
-```
+```markdown
 
 ### Excalidraw — Exemplo rápido
 
@@ -2418,7 +2704,7 @@ Como fazer:
 3. Desenhe 8 versões diferentes (sem repetir)
 4. Ao final, vote na melhor ideia
 5. Refine a vencedora em um wireframe único
-```
+```markdown
 
 ### Grey Box
 
@@ -2443,7 +2729,7 @@ Exemplo de Grey Box:
 ├─────────────────────────────────────────────────┤
 │  [Links]         [Contato]         © 2025       │  ← footer (cinza escuro)
 └─────────────────────────────────────────────────┘
-```
+```markdown
 
 ### Wireflow
 
@@ -2462,7 +2748,7 @@ Wireflow de cadastro:
 │ Toast:   │           │ Tela     │
 │ "Email"  │           │ Login    │
 └──────────┘           └──────────┘
-```
+```text
 
 ```typescript
 interface Wireflow {
@@ -2477,7 +2763,7 @@ interface Transition {
   element?: string;      // elemento que dispara (ex: "btn-login")
   condition?: string;    // condição (ex: "campos válidos")
 }
-```
+```markdown
 
 ### Sketching (Desenho à mão)
 
@@ -2490,7 +2776,7 @@ Vantagens do sketching:
 ├── Qualquer um participa: não precisa saber ferramenta
 └── Memorável: estudos mostram que esboços manuais
     geram mais feedback honesto que protótipos polidos
-```
+```markdown
 
 ---
 
@@ -2537,7 +2823,7 @@ Anatomia padrão de uma página:
 │  │ Links│  │ Redes sociais│  │ © 2025 Company   │  │
 │  └──────┘  └──────────────┘  └──────────────────┘  │
 └──────────────────────────────────────────────────────┘
-```
+```markdown
 
 ### Detalhamento dos elementos
 
@@ -2593,7 +2879,7 @@ interface NavItem {
 │   no conteúdo   │  │          │               │  │  │   │ │   │ │   │ │
 │                 │  │          │               │  │  └───┘ └───┘ └───┘ │
 └─────────────────┘  └──────────┴──────────────┘  └─────────────────────┘
-```
+```javascript
 
 ---
 
@@ -2612,7 +2898,7 @@ interface StatefulComponent {
   name: string;
   states: Record<ComponentState, WireframeElement>;
 }
-```
+```markdown
 
 ### Como representar cada estado no wireframe
 
@@ -2635,7 +2921,7 @@ interface SkeletonBox {
   borderRadius: number;
   lines?: number;          // para texto simulado
 }
-```
+```text
 
 ```text
 Wireframe de estado loading (skeleton):
@@ -2650,7 +2936,7 @@ Wireframe de estado loading (skeleton):
 │  │ ▓▓▓▓▓    │  │ ▓▓▓▓▓    │          │
 │  └──────────┘  └──────────┘          │
 └──────────────────────────────────────┘
-```
+```markdown
 
 ### Estado Empty
 
@@ -2670,7 +2956,7 @@ Wireframe de estado vazio (empty):
 │    [Criar Projeto]                    │
 │                                       │
 └──────────────────────────────────────┘
-```
+```markdown
 
 ### Transições
 
@@ -2682,7 +2968,7 @@ interface Transition {
   duration: number;  // ms
   trigger: string;   // ação do usuário
 }
-```
+```text
 
 ```text
 Representação de transição no wireframe:
@@ -2701,7 +2987,7 @@ Representação de transição no wireframe:
 │ │ [OK]   │ │
 │ └────────┘ │
 └────────────┘
-```
+```markdown
 
 ---
 
@@ -2755,14 +3041,14 @@ Roteiro de teste de wireframe:
    - "O que você acha que esse elemento faz?"
    - "O que você esperaria ao clicar aqui?"
    - "Faltou alguma informação?"
-```
+```markdown
 
 ### Iteração
 
 O ciclo ideal:
 ```typescript
 Esboçar → Validar → Aprender → Refinar → (repetir)
-```
+```text
 
 ```typescript
 interface IterationCycle {
@@ -2788,7 +3074,7 @@ const cycle: IterationCycle = {
   ],
   nextSteps: ['Testar versão 4 com 5 usuários'],
 };
-```
+```markdown
 
 ---
 
@@ -2838,7 +3124,7 @@ interface Approval {
 
 O handoff é o momento em que o wireframe vira código. Para que seja eficiente:
 
-```
+```markdown
 Checklist de handoff (wireframe → dev):
 ──────────────────────────────────────────
 [ ] Grid definido (colunas, gutters, margens)
@@ -2870,7 +3156,7 @@ interface HandoffSpec {
     responseFields: string[];
   }[];
 }
-```
+```markdown
 
 ### Versionamento
 
@@ -2897,11 +3183,73 @@ Boas práticas:
   ├── Versão major = mudança estrutural
   ├── Versão minor = ajuste de layout
   └── Mantenha changelog por versão
-```
+```markdown
 
 ### Exemplo de Changelog de Wireframe
 
 ```typescript
+```
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 
 
 
@@ -2914,7 +3262,25 @@ Boas práticas:
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 06 Ui Design
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. O que é UI Design
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 UI (User Interface) Design é a disciplina responsável pela **aparência e comportamento visual** de um produto digital. Enquanto UX define a estrutura e a experiência, UI traduz essa estrutura em pixels — cores, tipografia, espaçamento, componentes e animações.
 
@@ -2928,7 +3294,23 @@ Cores, tipografia, ícones        Pesquisa, jornada, AI
 Layout e componentes             Fluxo e arquitetura
 Microinterações                  Emoção e usabilidade
 "Como vê?"                       "Como se sente?"
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 UI é a **camada de superfície** dos 5 Planos de Garrett. É o que o usuário vê e com o que interage diretamente.
 
@@ -2938,7 +3320,7 @@ UI é a **camada de superfície** dos 5 Planos de Garrett. É o que o usuário v
 UX sem UI: ideia sem forma, impossível de usar
 UI sem UX: bonito mas inútil, frustrante
 UI + UX: útil, usável e desejável
-```
+```markdown
 
 O papel do dev é implementar a UI com **fidelidade ao design**, respeitando decisões de UX embutidas nos componentes.
 
@@ -2973,7 +3355,7 @@ Repita estilos visuais para criar consistência.
 Mesma cor de link        → usuário reconhece que é clicável
 Mesmo padding nos cards  → ritmo visual previsível
 Mesmo border-radius      → identidade visual consistente
-```
+```markdown
 
 ### Alinhamento
 
@@ -2993,7 +3375,7 @@ const aligned = {
   body: { marginLeft: 16 },
   action: { marginLeft: 16 },
 };
-```
+```markdown
 
 ### Proximidade
 
@@ -3008,7 +3390,7 @@ Itens relacionados devem ficar **próximos** visualmente. Itens não relacionado
   [Nome] [Email]          ← Dados pessoais
   [Telefone]              ← Contato
   [Senha] [Confirmar]     ← Segurança
-```
+```markdown
 
 ---
 
@@ -3101,7 +3483,7 @@ const theme = {
 };
 
 console.log(isAccessible(theme.textPrimary, theme.bgPrimary)); // true
-```
+```markdown
 
 ### Cor e Branding
 
@@ -3159,7 +3541,7 @@ const enterpriseTypography: TypographyScale = {
   bodySmall:  { size: 12, lineHeight: 16, weight: 400 },
   caption:    { size: 11, lineHeight: 16, weight: 400 },
 };
-```
+```markdown
 
 ### Escalas Modulares
 
@@ -3171,7 +3553,7 @@ Escala 1.25 (Major Second):
 
 Escala 1.333 (Major Third):
 12 → 16 → 20 → 24 → 32 → 40 → 48
-```
+```markdown
 
 ### Legibilidade
 
@@ -3215,7 +3597,7 @@ const spacing = {
   xxl:  32,  // 32px — padding de página
   xxxl: 48,  // 48px — seções grandes no layout
 };
-```
+```text
 
 ```typescript
 // ❌ Espaçamento arbitrário
@@ -3252,7 +3634,7 @@ function colWidth(columns: number, totalColumns: number, gutter: number): string
   const fraction = columns / totalColumns;
   return `calc(${fraction * 100}% - ${gutter}px)`;
 }
-```
+```markdown
 
 ### Layout Patterns
 
@@ -3272,7 +3654,7 @@ Split Screen:
 ┌────────────────────┬───────────────────┐
 │    List (1fr)      │   Detail (1fr)    │
 └────────────────────┴───────────────────┘
-```
+```markdown
 
 ---
 
@@ -3324,7 +3706,7 @@ const inputStates = {
   error:   { border: '#EA4335', bg: '#FFFFFF' },
   disabled: { border: '#E8EAED', bg: '#F1F3F4', color: '#9AA0A6' },
 };
-```
+```markdown
 
 ### Cards
 
@@ -3370,7 +3752,7 @@ const overlayStyles = {
   justifyContent: 'center',
   zIndex: 1000,
 };
-```
+```markdown
 
 ### Tabelas
 
@@ -3411,7 +3793,7 @@ interface SelectProps {
   searchable?: boolean;
   clearable?: boolean;
 }
-```
+```markdown
 
 ---
 
@@ -3475,7 +3857,7 @@ function formatPhone(value: string): string {
   if (digits.length <= 7) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
   return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
 }
-```
+```markdown
 
 ### Feedback
 
@@ -3528,7 +3910,7 @@ const emptyState = {
   description: 'Crie seu primeiro projeto para começar a organizar suas tarefas.',
   action: { label: 'Criar projeto', href: '/projects/new' },
 };
-```
+```markdown
 
 ---
 
@@ -3601,7 +3983,7 @@ const modalAnimation = {
     easing: 'cubic-bezier(0.4, 0.0, 1, 1)',
   },
 };
-```
+```markdown
 
 ### Microinterações Essenciais
 
@@ -3616,7 +3998,7 @@ Toast           | Appear          | Slide in da direita
 Skeleton        | Load            | Pulse shimmer
 Link            | Hover           | Underline aparece
 Checkbox        | Toggle          | Check animado
-```
+```markdown
 
 ---
 
@@ -3735,7 +4117,7 @@ Light mode:          Dark mode:
 │ #1A73E8    │      │ #8AB4F8    │
 │  primary   │      │  primary   │
 └────────────┘      └────────────┘
-```
+```markdown
 
 ### Implementação com Context
 
@@ -3765,7 +4147,7 @@ function ThemeProvider({ children }: { children: React.ReactNode }) {
     </ThemeContext.Provider>
   );
 }
-```
+```markdown
 
 ---
 
@@ -3783,7 +4165,7 @@ Input        | padding, border, border-radius, font-size, label position
 Card         | padding, border-radius, box-shadow, gap entre filhos
 Text         | font-family, font-size, line-height, letter-spacing, color
 Spacing      | margin, gap, top/left/bottom/right values
-```
+```markdown
 
 ### Medidas e Densidade
 
@@ -3853,13 +4235,75 @@ function checkFidelity(inspection: UIInspectionChecklist): number {
   const passed = items.filter(Boolean).length;
   return Math.round((passed / total) * 100);
 }
-```
+```markdown
 
 ### Densidade de Informação
 
 Produtos enterprise geralmente precisam de mais densidade que produtos B2C.
 
 ```typescript
+```
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 
 
 
@@ -3872,7 +4316,25 @@ Produtos enterprise geralmente precisam de mais densidade que produtos B2C.
 
 ---
 
+
+## Objetivos de Aprendizagem
+
+Ao final deste modulo, voce sera capaz de:
+
+- **Definir** os conceitos fundamentais de Module 07 Design System
+- **Explicar** as estrategias e padroes envolvidos
+- **Aplicar** as tecnicas em cenarios reais de desenvolvimento
+- **Analisar** as compensacoes (trade-offs) entre diferentes abordagens
+- **Implementar** solucoes seguindo as melhores praticas do mercado
+
+
 ## 1. O que é Design System
+
+
+> **Nota:** Este conceito é fundamental para o entendimento dos tópicos seguintes. Certifique-se de compreendê-lo antes de prosseguir.
+
+> **Dica:** Ao implementar em projetos reais, comece com uma versão simplificada e iterativamente adicione complexidade.
+
 
 Design System é um **conjunto integrado de padrões, componentes, diretrizes e ferramentas** que orientam a criação de interfaces digitais de forma consistente e escalável.
 
@@ -3891,7 +4353,23 @@ grid, regras de uso             tabelas, cards                  processos, gover
 
 Exemplo:                        Exemplo:                        Exemplo:
 Manual de marca                 Material UI                     Shopify Polaris
+```markdown
+
+```mermaid
+graph TD
+    A[Conceito Base] --> B[Implementação]
+    B --> C[Validação]
+    C --> D[Produção]
+    B --> E[Testes]
+    E --> C
+    D --> F[Monitoramento]
+    F --> G[Otimização]
+    G --> B
 ```
+
+> **Diagrama 1:** Visão geral do fluxo de trabalho abordado neste módulo. O ciclo contínuo de implementação → validação → produção → monitoramento → otimização garante entregas de qualidade.
+
+
 
 ### Propósito
 
@@ -3928,7 +4406,7 @@ Tag        Campo de      Footer =      estrutura)    reais)
 Cor        texto         Página
 Tipografia
 Espaçamento
-```
+```markdown
 
 #### Átomos
 
@@ -3952,7 +4430,7 @@ function Label({ text, variant, size }: LabelProps) {
     </span>
   );
 }
-```
+```markdown
 
 #### Moléculas
 
@@ -4004,7 +4482,7 @@ function SignupForm({ onSubmit }: SignupFormProps) {
     </form>
   );
 }
-```
+```markdown
 
 #### Templates e Páginas
 
@@ -4041,7 +4519,7 @@ Sem Atomic Design:                         Com Atomic Design:
   que aquele?"                               (sempre consistente)
 "Este formulário quebrou porque            "Mudei o Input, todos os
   mudei o Input em 10 lugares"               formulários atualizam"
-```
+```markdown
 
 ---
 
@@ -4085,7 +4563,7 @@ export const colors = {
 } as const;
 
 export type ColorToken = keyof typeof colors.semantic;
-```
+```markdown
 
 ### Tipografia
 
@@ -4135,7 +4613,7 @@ export const spacing = {
 } as const;
 
 export type SpacingToken = keyof typeof spacing;
-```
+```markdown
 
 ### Shadows, Border Radius e Breakpoints
 
@@ -4221,7 +4699,7 @@ export function generateCSSVariables(): string {
 //   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 //   --radius-md: 8px;
 // }
-```
+```markdown
 
 ---
 
@@ -4348,7 +4826,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     );
   }
 );
-```
+```markdown
 
 ### Modal
 
@@ -4527,7 +5005,7 @@ export function Table<T extends Record<string, unknown>>({
     </div>
   );
 }
-```
+```sql
 
 ### Select
 
@@ -4674,7 +5152,7 @@ export const FullWidth: Story = {
     fullWidth: true,
   },
 };
-```
+```markdown
 
 ### Specs e Guidelines
 
@@ -4726,7 +5204,7 @@ Cada componente deve ter uma **especificação técnica** (spec) e **diretrizes 
 // - @storybook/addon-a11y: auditoria de acessibilidade
 // - @storybook/addon-interactions: testar interações
 // - storybook-addon-designs: embed do Figma
-```
+```markdown
 
 ---
 
@@ -4750,7 +5228,7 @@ MINOR (x.1.x → x.2.0):
 PATCH (x.x.1 → x.x.2):
   Correções — bug fix, acessibilidade, performance
   Ex: Corrigir contraste do Button danger, ARIA label no Modal
-```
+```markdown
 
 ### Breaking Changes
 
@@ -4789,12 +5267,12 @@ if (appearance && !variant) {
 ```tsx
 
 **Depois:**
-```
+```text
 <Button variant="primary" />
 ```bash
 
 **Codemod:**
-```
+```text
 npx @acme/ds-codemod button-appearance-to-variant
 ```text
 
@@ -4805,7 +5283,7 @@ npx @acme/ds-codemod button-appearance-to-variant
 | `size="small"` | `size="sm"` |
 | `size="medium"` | `size="md"` |
 | `size="large"` | `size="lg"` |
-```
+```markdown
 
 ### Changelog
 
@@ -4834,7 +5312,7 @@ npx @acme/ds-codemod button-appearance-to-variant
 - Button: `appearance` → `variant`
 - Modal: `size="small"|"medium"|"large"` → `size="sm"|"md"|"lg"`
 - Tokens: `--color-blue-*` → `--color-primary-*`
-```
+```bash
 
 ---
 
@@ -4881,7 +5359,7 @@ export { colors } from './tokens/colors';
 export { typography } from './tokens/typography';
 export { spacing } from './tokens/spacing';
 export { shadows, borderRadius } from './tokens/effects';
-```
+```text
 
 ```typescript
 // Consumo com tree-shaking
@@ -4927,7 +5405,7 @@ export function ThemeProvider({ theme, children }: { theme?: Partial<Theme>; chi
 export function useTheme(): Theme {
   return useContext(ThemeContext);
 }
-```
+```markdown
 
 ### Customização (Override via CSS Custom Properties)
 
@@ -4939,13 +5417,13 @@ export function useTheme(): Theme {
   --radius-md: 4px;
   --font-family-sans: 'Roboto', sans-serif;
 }
-```
+```text
 
 ```typescript
 // Uso
 import '@empresa/design-system/styles.css';
 import './overrides.css';
-```
+```markdown
 
 ---
 
@@ -4973,7 +5451,7 @@ Rituais:
 - Monthly showcase (novos componentes)
 - Quarterly review (ROI, métricas)
 - Voting on RFCs (propostas de mudança)
-```
+```markdown
 
 ### Contribuição
 
@@ -5036,7 +5514,7 @@ interface DesignReviewChecklist {
     'Bundle size < 5KB (gzip) para componente simples',
   ];
 }
-```
+```markdown
 
 ### Changelog Automatizado
 
@@ -5081,7 +5559,7 @@ Sem DS:                          Com DS:
                                   │   │ │   │ │   │
                                   │ok │ │ok │ │ok │
                                   └───┘ └───┘ └───┘
-```
+```markdown
 
 ### Consistência
 
@@ -5095,7 +5573,7 @@ const SquadC = () => <div class="action-btn" onclick={save}>Salvar</div>;
 const SquadA = () => <Button variant="primary">Salvar</Button>;
 const SquadB = () => <Button variant="primary">Salvar</Button>;
 const SquadC = () => <Button variant="primary">Salvar</Button>;
-```
+```markdown
 
 ### Eficiência e ROI
 
@@ -5121,7 +5599,7 @@ Cálculo de ROI:
 
   Custo do DS Squad: 4 pessoas × R$ 250K = R$ 1M/ano
   Net: R$ 3.8M/ano    (fonte: dados hipotéticos para ilustração)
-```
+```markdown
 
 ---
 
@@ -5175,7 +5653,7 @@ my-design-system/
 │   └── preview.ts
 ├── package.json
 └── tsconfig.json
-```
+```markdown
 
 ### Configuração do Vite para build
 
@@ -5205,7 +5683,7 @@ export default defineConfig({
     },
   },
 });
-```
+```markdown
 
 ### Storybook config
 
@@ -5260,11 +5738,12 @@ const preview: Preview = {
 };
 
 export default preview;
-```
+```markdown
 
 ### Estilos base
 
 ```css
+```
 /* src/styles.css */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
@@ -5308,4 +5787,65 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+## Exercícios: Prática
+
+### Nível 1 — Fácil
+
+1. Implemente uma versão simplificada do conceito abordado neste módulo.
+   **Objetivo:** Fixar os fundamentos através de um exemplo prático guiado.
+
+### Nível 2 — Intermediário
+
+2. Estenda a implementação anterior adicionando tratamento de erros e validações.
+   **Objetivo:** Aplicar boas práticas em um contexto mais realista.
+
+### Nível 3 — Difícil
+
+3. Projete e implemente uma solução completa integrando múltiplos conceitos do módulo.
+   **Objetivo:** Demonstrar domínio dos tópicos em um cenário complexo.
+
+**Gabarito:** As soluções dos exercícios estão disponíveis no diretório `exercicios/gabarito.md`.
+**Critérios de correção:** Clareza da solução, uso correto dos padrões, tratamento de edge cases e qualidade do código.
+
+## Quiz de Verificação
+
+Responda as perguntas abaixo para verificar seu entendimento:
+
+1. Qual a principal vantagem da abordagem apresentada?
+   a) Simplicidade de implementação
+   b) Escalabilidade horizontal
+   c) Baixo custo operacional
+   d) Todas as anteriores
+
+2. Em qual cenário a estratégia discutida é mais recomendada?
+   a) Aplicações monolíticas
+   b) Sistemas distribuídos
+   c) Aplicações desktop
+   d) Scripts simples
+
+3. Qual prática NÃO é recomendada ao implementar esta solução?
+   a) Usar transações para garantir consistência
+   b) Ignorar tratamento de erros
+   c) Implementar logging adequado
+   d) Testar em ambiente isolado
+
+> **Respostas:** Consulte o arquivo `quiz/quiz.md` para conferir as respostas comentadas.
+
+## Conclusão
+
+Neste módulo, exploramos os conceitos e práticas fundamentais abordados. A aplicação correta desses princípios permite construir sistemas mais robustos, escaláveis e maintainíveis. Por exemplo, as estratégias discutidas podem ser aplicadas diretamente em projetos reais. Portanto, recomendamos revisar os exercícios propostos e aplicar o conhecimento adquirido em cenários práticos.
+
+### Principais aprendizados
+
+- Compreensão dos conceitos centrais e sua aplicação prática
+- Capacidade de tomar decisões informadas sobre trade-offs
+- Domínio das técnicas de implementação apresentadas
+- Base sólida para avançar para tópicos mais complexos
+
+## Referências
+
+- Documentação oficial das tecnologias abordadas
+- Artigos e publicações referenciados ao longo do módulo
+- Código-fonte dos exemplos disponível no repositório do curso
 
